@@ -1,7 +1,14 @@
 <div class="card-catalog">
-  {{#each model as |contentSample|}}
+  {{#each model as |item|}}
     <Tray>
-      <Boxel @content={{contentSample}} @clickAction={{action "createNew" contentSample}} />
+      <div class="catalog-item">
+        <div class="catalog-item--preview">
+          <Boxel @content={{item}} @variant="small" @clickAction={{action "createNew" item}} />
+        </div>
+        <div class="catalog-item--info">
+          <h3>{{item.title}}</h3>
+        </div>
+      </div>
     </Tray>
   {{/each}}
 

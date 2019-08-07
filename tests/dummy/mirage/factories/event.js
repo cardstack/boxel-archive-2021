@@ -21,7 +21,7 @@ export default Factory.extend({
   },
 
   imageUrl() {
-    return faker.image.imageUrl(320, 240, imageTypes[Math.floor(Math.random()*imageTypes.length)], true, true);
+    return faker.image.imageUrl(640, 480, imageTypes[Math.floor(Math.random()*imageTypes.length)], true, true);
   },
 
   afterCreate(event, server) {
