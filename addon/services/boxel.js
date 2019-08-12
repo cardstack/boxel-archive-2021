@@ -28,5 +28,9 @@ export default Service.extend({
 
   registerPlane(plane) {
     this.planes[plane.name] = plane;
+  },
+
+  registerBoxel(boxel) {
+    this.boxels[boxel.elementId] = boxel;
   }
 });
