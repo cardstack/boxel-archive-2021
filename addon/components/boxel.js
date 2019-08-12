@@ -9,5 +9,11 @@ export default Component.extend({
 
   contentType: readOnly('content.constructor.modelName'),
 
-  clickAction() {}
+  clickAction() {},
+
+  actions: {
+    moveToPlane(planeId) {
+      this.set('plane', planeId);
+    }
+  }
 });
