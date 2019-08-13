@@ -17,6 +17,10 @@ export default Component.extend({
     this.boxel.registerBoxel(this);
   },
 
+  name: computed('elementId', function() {
+    return `boxel-${this.elementId}`;
+  }),
+
   clickAction() {},
 
   actions: {

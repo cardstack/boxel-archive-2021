@@ -11,6 +11,9 @@ Router.map(function() {
     this.route('preview', { path: '/:model/preview' });
     this.route('edit', { path: '/:model/edit' });
   });
+  this.route('tools', function() {
+    this.route('edit', { path: '/:model/edit' });
+  });
   this.route('articles', { path: '/articles/:id'}, function() {
     this.route('preview', { path: '/preview' });
     this.route('edit', { path: '/edit' });
