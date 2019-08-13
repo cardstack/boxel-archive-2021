@@ -1,5 +1,6 @@
 .catalog-item {
   background-color: white;
+  border-radius: 10px;
 }
 
 .catalog-item--preview {
@@ -8,6 +9,7 @@
   justify-content: center;
   height: 200px;
   background-color: var(--catalog-light-purple);
+  border-radius: 10px 0 0 10px;
 }
 
 .catalog-item--info {
@@ -16,6 +18,8 @@
   justify-content: center;
   height: 100px;
   overflow: hidden;
+  border-radius: 0 10px 10px 0;
+  padding: 20px;
 }
 
 .catalog-item--isolated {
@@ -41,4 +45,14 @@
 
 .catalog-item--isolated > .catalog-item--info {
   display: block;
+}
+
+.catalog-item--button-edit {
+  width: 100%;
+  background-color: var(--catalog-light-purple);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
 }
