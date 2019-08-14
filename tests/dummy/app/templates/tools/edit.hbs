@@ -1,7 +1,8 @@
 <Tray @expanded={{true}}>
   <Boxel @name={{concat model.constructor.modelName "-new"}}>
     <div class="catalog-item catalog-item--isolated catalog-item--isolated--edit ">
-      <div class="catalog-item--isolated--image-url" style="background-image: url({{model.imageUrl}})"></div>
+      {{! template-lint-configure no-inline-styles {"allowDynamicStyles": true} }}
+      <div class="catalog-item--isolated--image-url" style={{backgroundImageUrl}}></div>
       <TextField @value={{model.title}} @label="Title" /><br>
       <TextField @value={{model.description}} @label="Description" /><br>
       <TextArea @value={{model.body}} @label="Body" /><br>
