@@ -4,7 +4,7 @@
 </header>
 
 <div class="tools-edit">
-  <Boxel @name={{concat modelName "-new"}} @variant="large">
+  <Boxel @name="{{model.constructor.modelName}}-new" @variant="large">
     <div class="tools-edit--image-preview">
       {{! template-lint-configure no-inline-styles {"allowDynamicStyles": true} }}
       <div class="tools-edit--image-url" style={{backgroundImageUrl}} />

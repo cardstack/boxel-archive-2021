@@ -2,14 +2,14 @@
   <div class="catalog-preview">
     <div class="catalog-preview--boxel-container">
       <AnimatedContainer>
-        {{#animated-value model use=transition duration="700" as |m|}}
+        {{#animated-value this.model use=transition duration="700" as |m|}}
           <Boxel @content={{m}} @variant="medium" />
         {{/animated-value}}
       </AnimatedContainer>
     </div>
     <section class="catalog-preview--info-panel">
       <header>
-        <h2 class="catalog-preview--info-panel-title">Responsive {{model.constructor.modelName}} template</h2>
+        <h2 class="catalog-preview--info-panel-title">Responsive {{this.model.constructor.modelName}} template</h2>
         <span class="catalog-preview--info-panel-sub-title">By Felix Erland</span>
       </header>
 
