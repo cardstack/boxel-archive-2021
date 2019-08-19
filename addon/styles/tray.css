@@ -17,4 +17,5 @@
   align-items: center;
   padding: 50px 20px;
   background-color: #151529;
+  overflow-x: scroll;
 }

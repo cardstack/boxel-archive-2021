@@ -1,4 +1,7 @@
 .card-catalog {
+  --grid-col-width: 244px;
+  --grid-row-height: 374px;
+
   box-sizing: border-box;
   width: 100vw;
   height: 100%;
@@ -29,7 +32,7 @@
   grid-row: 2;
   grid-column: 2;
 
-  padding: 30px 50px;
+  padding: 50px 40px;
 }
 
 .card-catalog--title {
@@ -61,8 +64,8 @@
 
 .card-catalog--grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 244px);
-  grid-auto-rows: 373px;
+  grid-template-columns: repeat(auto-fill, var(--grid-col-width));
+  grid-auto-rows: var(--grid-row-height);
   grid-gap: 30px;
   padding-top: 30px;
 }
@@ -81,6 +84,8 @@
 }
 
 .catalog-item {
+  width: 100%;
+  height: 100%;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 1px 20px rgba(37, 0, 0, 0.25);
@@ -97,7 +102,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 200px;
+  height: 66%;
+  padding: 20px;
   background-color: var(--catalog-light-purple);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -105,7 +111,7 @@
 
 .catalog-item--info-panel {
   box-sizing: border-box;
-  height: 100px;
+  height: 34%;
   padding: 30px;
   overflow: hidden;
 }
