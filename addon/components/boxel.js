@@ -5,7 +5,7 @@ import { inject as service } from '@ember/service';
 import template from '../templates/components/boxel';
 import { layout, tagName } from '@ember-decorators/component';
 import move from 'ember-animated/motions/move';
-import scale from 'ember-animated/motions/scale';
+import resize from 'ember-animated/motions/resize';
 import { parallel, printSprites, wait } from 'ember-animated';
 
 @layout(template)
@@ -56,8 +56,8 @@ export default class BoxelComponent extends Component {
         });
       });
 
-      receivedSprites.forEach(parallel(scale, move));
-      sentSprites.forEach(parallel(scale, move));
+      receivedSprites.forEach(parallel(resize, move));
+      sentSprites.forEach(parallel(resize, move));
     }
 
     catch (err) {

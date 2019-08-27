@@ -28,14 +28,7 @@
 }
 
 .boxel-thumbnail--image {
-  width: 100%;
   height: inherit;
-}
-
-.boxel-thumbnail--text {
-  box-sizing: border-box;
-  height: inherit;
-  padding: 10px;
 }
 
 .boxel-thumbnail img {
@@ -46,16 +39,22 @@
   object-position: center;
 }
 
-.boxel-thumbnail h3 {
+.boxel-thumbnail--text {
+  box-sizing: border-box;
+  height: inherit;
+  /* padding: 10px; */
+}
+
+/* .boxel-thumbnail h3 {
   margin: 0 0 2px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
   font-size: 60%;
-}
+} */
 
-.boxel-thumbnail p {
+/* .boxel-thumbnail p {
   margin: 0;
   padding-bottom: 0;
   display: -webkit-box;
@@ -63,4 +62,4 @@
   -webkit-line-clamp: 3;
   overflow: hidden;
   font-size: 60%;
-}
+} */

@@ -1,25 +1,27 @@
-<Tray @expanded={{true}}>
-  <div class="catalog-preview">
-    <div class="catalog-preview--boxel-container">
-      <AnimatedContainer>
-        <Boxel @name="{{model.constructor.modelName}}-{{model.id}}" @content={{model}} @format="embedded" />
-      </AnimatedContainer>
-    </div>
-    <section class="catalog-preview--info-panel">
-      <header>
-        <h2 class="catalog-preview--info-panel-title">Responsive {{this.model.constructor.modelName}} template</h2>
-        <span class="catalog-preview--info-panel-sub-title">By Felix Erland</span>
-      </header>
-
-      <div class="catalog-preview--info-panel-data">
-        <p>This is a beautiful, clean powerful blog template for people who want tell stories, share important thoughts. This template was designed with great attention to more...</p>
+<AnimatedContainer>
+  <Tray @name="tray-{{model.constructor.modelName}}-{{model.id}}" @expanded={{true}}>
+    <div class="catalog-preview">
+      <div class="catalog-preview--boxel-container">
+        <AnimatedContainer>
+          <Boxel @name="{{model.constructor.modelName}}-{{model.id}}" @content={{model}} @format="embedded" />
+        </AnimatedContainer>
       </div>
+      <section class="catalog-preview--info-panel">
+        <header>
+          <h2 class="catalog-preview--info-panel-title">Responsive {{this.model.constructor.modelName}} template</h2>
+          <span class="catalog-preview--info-panel-sub-title">By Felix Erland</span>
+        </header>
 
-      <footer class="catalog-preview--footer">
-        <button {{action "editModel"}} class="catalog-preview--edit-button" data-test-edit-button>
-          Start Editing
-        </button>
-      </footer>
-    </section>
-  </div>
-</Tray>
+        <div class="catalog-preview--info-panel-data">
+          <p>This is a beautiful, clean powerful blog template for people who want tell stories, share important thoughts. This template was designed with great attention to more...</p>
+        </div>
+
+        <footer class="catalog-preview--footer">
+          <button {{action "editModel"}} class="catalog-preview--edit-button" data-test-edit-button>
+            Start Editing
+          </button>
+        </footer>
+      </section>
+    </div>
+  </Tray>
+</AnimatedContainer>
