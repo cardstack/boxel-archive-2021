@@ -14,14 +14,10 @@ Router.map(function() {
     this.route('edit', { path: '/:model/:id/edit' });
     this.route('preview', { path: '/:model/:id/preview' });
   });
-  this.route('articles', { path: '/articles/:id' }, function() {
-    this.route('edit', { path: '/edit' });
-  });
+  this.route('articles', { path: '/articles/:id' });
   this.route('events', { path: '/events/:id'});
   this.route('cards', function() {
-    this.route('preview', { path: '/:id' });
-    // eslint-disable-next-line ember/routes-segments-snake-case
-    this.route('small', { path: '/:cardId/small' });
+    this.route('small', { path: '/:id/small' });
   });
 });
 
