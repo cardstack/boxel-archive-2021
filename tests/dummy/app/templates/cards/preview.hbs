@@ -1,0 +1,15 @@
+<div class="card-page">
+  <div class="cards-list preview">
+    <AnimatedContainer>
+      <div class="card-container">
+        {{#animated-value model as |m|}}
+          <Boxel>
+            <div class="boxel card-{{m.id}}">
+              {{m.title}}
+            </div>
+          </Boxel>
+        {{/animated-value}}
+      </div>
+    </AnimatedContainer>
+  </div>
+</div>

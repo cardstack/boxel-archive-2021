@@ -1,4 +1,4 @@
-{{#animated-value @content group=@name use=transition duration=this.duration}}
+{{!-- {{#animated-value @content group=@name use=transition duration=this.duration}} --}}
   {{#if (eq @format "thumbnail")}}
     <div class="boxel boxel-thumbnail" data-test-boxel>
       <div class="boxel-thumbnail--image">
@@ -14,7 +14,7 @@
       {{component @component}}
     </div>
   {{else}}
-    <div class="boxel {{if contentType (concat "boxel-" contentType "-" @format) "boxel-default"}}" ...attributes data-test-boxel>
+    <div class="boxel {{if contentType (concat "boxel-" contentType "-" @format) "boxel-default"}}" {{action clickAction}} ...attributes data-test-boxel>
       {{#if @content}}
         {{#if (is-component contentType)}}
           {{component contentType content=@content format=@format}}
@@ -26,4 +26,4 @@
       {{/if}}
     </div>
   {{/if}}
-{{/animated-value}}
+{{!-- {{/animated-value}} --}}
