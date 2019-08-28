@@ -5,6 +5,7 @@ import scale from 'ember-animated/motions/scale';
 import { parallel, printSprites, wait } from 'ember-animated';
 
 export default class CardsController extends Controller {
+  queryParams = ['cardNumber'];
 
   * transition ({ receivedSprites, sentSprites }) {
     try {
@@ -28,6 +29,6 @@ export default class CardsController extends Controller {
 
   @action
   expand(id) {
-    this.transitionToRoute('cards.preview', id);
+    this.transitionToRoute({ queryParams: { cardNumber: id }});
   }
 }

@@ -1,14 +1,12 @@
 <div class="cards-page">
   <div class="cards-list">
-    {{#each model as |card index|}}
+    {{#each model as |card|}}
       <div class="card-container">
-        {{#animated-value card use=transition duration=1000 as |c|}}
-          <Boxel @clickAction={{action 'expand' c.id}}>
-            <div class="card-{{c.id}}">
-              {{card.title}}
-            </div>
-          </Boxel>
-        {{/animated-value}}
+        <Boxel @format={{if (eq cardNumber card.id) "embedded" "thumbnail"}} @name={{concat "card-" card.id}} @clickAction={{action "expand" card.id}}>
+          <div class="card-{{card.id}}">
+            {{card.title}}
+          </div>
+        </Boxel>
       </div>
     {{/each}}
   </div>

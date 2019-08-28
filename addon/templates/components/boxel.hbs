@@ -1,29 +1,33 @@
-{{!-- {{#animated-value @content group=@name use=transition duration=this.duration}} --}}
-  {{#if (eq @format "thumbnail")}}
-    <div class="boxel boxel-thumbnail" data-test-boxel>
-      <div class="boxel-thumbnail--image">
-        <img src={{@content.imageUrl}} alt={{@content.altText}}>
+{{#if @content}}
+  {{#animated-value @content group=@name use=transition duration=this.duration}}
+    {{#if (eq @format "thumbnail")}}
+      <div class="boxel boxel-thumbnail" data-test-boxel>
+        <div class="boxel-thumbnail--image">
+          <img src={{@content.imageUrl}} alt={{@content.altText}}>
+        </div>
+        <div class="boxel-thumbnail--text">
+          <h3>{{@content.title}}</h3>
+          <p>{{@content.description}}</p>
+        </div>
       </div>
-      <div class="boxel-thumbnail--text">
-        <h3>{{@content.title}}</h3>
-        <p>{{@content.description}}</p>
+    {{else if @component}}
+      <div class="boxel boxel-component" ...attributes data-test-boxel>
+        {{component @component}}
       </div>
-    </div>
-  {{else if @component}}
-    <div class="boxel boxel-component" ...attributes data-test-boxel>
-      {{component @component}}
-    </div>
-  {{else}}
-    <div class="boxel {{if contentType (concat "boxel-" contentType "-" @format) "boxel-default"}}" {{action clickAction}} ...attributes data-test-boxel>
-      {{#if @content}}
+    {{else}}
+      <div class="boxel {{if contentType (concat "boxel-" contentType "-" @format) "boxel-default"}} {{if name (concat "boxel-" name)}}" role="button" {{action clickAction}} ...attributes data-test-boxel>
         {{#if (is-component contentType)}}
           {{component contentType content=@content format=@format}}
         {{else}}
           A {{contentType}} component/template must be provided
         {{/if}}
-      {{else}}
-        {{yield}}
-      {{/if}}
+      </div>
+    {{/if}}
+  {{/animated-value}}
+{{else}}
+  {{#animated-value @format group=@name use=transition duration=this.duration}}
+    <div class="boxel boxel-default {{if name (concat "boxel-" name)}} {{concat "boxel-" @format}}" role="button" {{action clickAction}} ...attributes data-test-boxel>
+      {{yield}}
     </div>
-  {{/if}}
-{{!-- {{/animated-value}} --}}
+  {{/animated-value}}
+{{/if}}
