@@ -4,6 +4,7 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import template from '../templates/components/boxel';
 import { layout, tagName } from '@ember-decorators/component';
+import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
 import scale from 'ember-animated/motions/scale';
 import { parallel, printSprites, wait } from 'ember-animated';
@@ -46,7 +47,7 @@ export default class BoxelComponent extends Component {
 
   clickAction() {}
 
-  transition = function*({ receivedSprites, sentSprites }) {
+  transition = function*({ sentSprites, receivedSprites }) {
     try {
       printSprites(arguments[0]);
 
@@ -58,6 +59,30 @@ export default class BoxelComponent extends Component {
 
       receivedSprites.forEach(parallel(scale, move));
       sentSprites.forEach(parallel(scale, move));
+    }
+
+    catch (err) {
+      yield wait();
+      throw new Error(err);
+    }
+  }
+
+  resize = function*({ insertedSprites, removedSprites, keptSprites }) {
+    try {
+      printSprites(arguments[0]);
+
+      let insertedSprite = insertedSprites[0];
+      let removedSprite = removedSprites[0];
+
+      insertedSprite.startAtSprite(removedSprite);
+      removedSprite.endAtSprite(insertedSprite);
+
+      move(insertedSprite);
+      move(removedSprite);
+      resize(insertedSprite);
+      resize(removedSprite);
+
+      keptSprites.forEach(move);
     }
 
     catch (err) {

@@ -33,3 +33,11 @@
   height: 300px;
   border-radius: 20px;
 }
+
+
+.boxel.boxel-embedded {
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  padding: 50px;
+}
