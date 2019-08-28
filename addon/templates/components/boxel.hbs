@@ -5,8 +5,8 @@
         <img src={{@content.imageUrl}} alt={{@content.altText}}>
       </div>
       <div class="boxel-thumbnail--text">
-        <h3>{{@content.title}}</h3>
-        <p>{{@content.description}}</p>
+        <Boxel @name=""><h3>{{@content.title}}</h3></Boxel>
+        <Boxel @name=""><p>{{@content.description}}</p></Boxel>
       </div>
     </div>
   {{else if @component}}

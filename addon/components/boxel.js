@@ -19,6 +19,10 @@ export default class BoxelComponent extends Component {
   @tracked content;
 
   get contentType() {
+    if (this.type) {
+      return this.type;
+    }
+
     if (this.content) {
       return this.content.constructor.modelName;
     }
@@ -35,6 +39,10 @@ export default class BoxelComponent extends Component {
   get name() {
     if (this._name) {
       return this._name;
+    }
+
+    if (this.contentType) {
+      return `boxel-${this.contentType}-${this.content.id ? this.content.id : 'new'}${this.fieldName ? '-' + this.fieldName : ''}`;
     }
 
     return `boxel-${this.elementId}`;
