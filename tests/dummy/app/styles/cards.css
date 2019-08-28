@@ -1,5 +1,5 @@
 .cards-page {
-  width: 100vw;
+  box-sizing: border-box;
   height: 100%;
   min-height: 100vh;
   margin: 0 auto;
@@ -8,23 +8,28 @@
 }
 
 .cards-list {
-  width: 800px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
-  justify-content: center;
-  align-items: center;
-}
-
-.cards-list.preview {
   grid-template-columns: 1fr;
+  grid-gap: 30px;
+  justify-items: center;
 }
 
-.cards-page .boxel {
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  border-radius: 20px;
+.cards-list.triplet {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
   padding: 20px;
+  background-color: mediumpurple;
+  color: black;
+  text-align: center;
+}
+
+.card.expanded {
+  width: 400px;
+  height: 300px;
+  border-radius: 20px;
 }

@@ -1,14 +1,3 @@
 <div class="cards-page">
-  <div class="cards-list">
-    {{#each model as |card|}}
-      <div class="card-container">
-        <Boxel @format={{if (eq cardNumber card.id) "embedded" "thumbnail"}} @name={{concat "card-" card.id}} @clickAction={{action "expand" card.id}}>
-          <div class="card-{{card.id}}">
-            {{card.title}}
-          </div>
-        </Boxel>
-      </div>
-    {{/each}}
-  </div>
   {{outlet}}
 </div>

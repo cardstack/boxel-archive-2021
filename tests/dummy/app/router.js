@@ -19,7 +19,9 @@ Router.map(function() {
   });
   this.route('events', { path: '/events/:id'});
   this.route('cards', function() {
-    this.route('preview', { path: '/:id' })
+    this.route('preview', { path: '/:id' });
+    // eslint-disable-next-line ember/routes-segments-snake-case
+    this.route('small', { path: '/:cardId/small' });
   });
 });
 

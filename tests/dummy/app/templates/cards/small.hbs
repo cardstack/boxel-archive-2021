@@ -1,0 +1,12 @@
+<div class="cards-list">
+  <button {{action "toggleExpand"}}>Toggle Expand</button>
+  {{#animated-if isExpanded use=this.transition duration=500}}
+    <div class="card card-{{model.id}} expanded">
+      {{model.title}}
+    </div>
+  {{else}}
+    <div class="card card-{{model.id}}">
+      {{model.title}}
+    </div>
+  {{/animated-if}}
+</div>
