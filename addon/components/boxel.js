@@ -6,7 +6,10 @@ import template from '../templates/components/boxel';
 import { layout, tagName } from '@ember-decorators/component';
 import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
+import adjustCSS from 'ember-animated/motions/adjust-css';
+// import { easeOut, easeIn } from 'ember-animated/easings/cosine';
 import scale from 'ember-animated/motions/scale';
+import opacity from 'ember-animated/motions/opacity';
 import { parallel, printSprites, wait } from 'ember-animated';
 
 @layout(template)
@@ -14,7 +17,7 @@ import { parallel, printSprites, wait } from 'ember-animated';
 export default class BoxelComponent extends Component {
   @service boxel;
 
-  duration = 700;
+  duration = 1000;
   preserveScrollPosition = true;
 
   @tracked content;
@@ -85,6 +88,28 @@ export default class BoxelComponent extends Component {
       keptSprites.forEach(move);
     }
 
+    catch (err) {
+      yield wait();
+      throw new Error(err);
+    }
+  }
+
+  expand = function*({ insertedSprites, keptSprites, removedSprites, duration }) {
+    try {
+      printSprites(arguments[0]);
+
+      insertedSprites.forEach(sprite => {
+        opacity(sprite, { to: 1, duration: duration * 0.2 });
+        adjustCSS.property('border-radius')(sprite);
+      });
+
+      removedSprites.forEach(sprite => {
+        opacity(sprite, { to: 0, duration: duration * 0.2 });
+        adjustCSS.property('border-radius')(sprite);
+      });
+
+      keptSprites.forEach(move);
+    }
     catch (err) {
       yield wait();
       throw new Error(err);

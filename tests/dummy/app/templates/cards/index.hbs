@@ -1,17 +1,9 @@
-<div class="cards-list triplet">
-  {{#each model as |card|}}
-    {{#if (eq card.id "1")}}
-      <Boxel @format={{if (eq cardNumber card.id) "embedded" "thumbnail"}} @name={{concat "card-" card.id}} @clickAction={{action "toMotionOne" card.id}}>
-        <div class="card-{{card.id}}">
-          {{card.title}}
-        </div>
+<AnimatedContainer>
+  <div class="cards-list triplet">
+    {{#each model as |card|}}
+      <Boxel class="card {{if (eq cardNumber card.id) "expanded"}}" @format={{if (eq cardNumber card.id) "expanded" "thumbnail"}} @name={{concat "card-" card.id}} @clickAction={{action "expand" card.id}}>
+        {{card.title}}
       </Boxel>
-    {{else}}
-      <Boxel @format={{if (eq cardNumber card.id) "embedded" "thumbnail"}} @name={{concat "card-" card.id}} @clickAction={{action "expand" card.id}}>
-        <div class="card-{{card.id}}">
-          {{card.title}}
-        </div>
-      </Boxel>
-    {{/if}}
-  {{/each}}
+    {{/each}}
   </div>
+</AnimatedContainer>
