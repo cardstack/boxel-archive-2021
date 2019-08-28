@@ -17,20 +17,3 @@
 .cards-list.triplet {
   grid-template-columns: repeat(3, 1fr);
 }
-
-.card {
-  box-sizing: border-box;
-  width: 150px;
-  height: 150px;
-  border-radius: 65px;
-  padding: 20px;
-  background-color: mediumpurple;
-  color: black;
-  text-align: center;
-}
-
-.card.expanded {
-  width: 500px;
-  height: 300px;
-  border-radius: 0;
-}

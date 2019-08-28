@@ -1,9 +1,0 @@
-<AnimatedContainer>
-  <div class="cards-list triplet">
-    {{#each model as |card|}}
-      <Boxel class="card {{if (eq cardNumber card.id) "expanded"}}" @format={{if (eq cardNumber card.id) "expanded" "thumbnail"}} @name={{concat "card-" card.id}} @clickAction={{action "expand" card.id}}>
-        {{card.title}}
-      </Boxel>
-    {{/each}}
-  </div>
-</AnimatedContainer>

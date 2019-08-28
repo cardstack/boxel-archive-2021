@@ -11,11 +11,11 @@
         </div>
       </div>
     {{else if @component}}
-      <div class="boxel boxel-component" ...attributes data-test-boxel>
+      <div class="boxel boxel-component" data-test-boxel ...attributes >
         {{component @component}}
       </div>
     {{else}}
-      <div class="boxel {{if contentType (concat "boxel-" contentType "-" @format) "boxel-default"}} {{if name (concat "boxel-" name)}}" role="button" {{action clickAction}} ...attributes data-test-boxel>
+      <div class="boxel {{if contentType (concat "boxel-" contentType "-" @format) "boxel-default"}} {{if name (concat "boxel-" name)}}" role="button" {{action clickAction}} data-test-boxel ...attributes>
         {{#if (is-component contentType)}}
           {{component contentType content=@content format=@format}}
         {{else}}
@@ -26,8 +26,8 @@
   {{/animated-value}}
 {{else}}
 
-  {{#animated-value @format group=@name use=this.expand duration=this.duration}}
-    <div role="button" {{action clickAction}} ...attributes data-test-boxel>
+  {{#animated-value @format group=@name use=this.resize duration=this.duration}}
+    <div class="card {{@format}}" role="button" {{action @clickAction}} data-test-boxel ...attributes>
       {{yield}}
     </div>
   {{/animated-value}}
