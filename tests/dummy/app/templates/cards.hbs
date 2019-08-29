@@ -1,15 +1,15 @@
 <div class="cards-page">
-  <div class="cards-list">
-    {{#each model as |card|}}
-      <div class="cards-list--col">
-        <AnimatedContainer>
-          <Boxel @format={{if (eq cardNumber card.id) "expanded" "thumbnail"}} @name={{concat "card-" card.id}} @clickAction={{action "expand" card.id}}>
-            {{card.title}}
-          </Boxel>
-        </AnimatedContainer>
-      </div>
-    {{/each}}
-  </div>
+
+    <div class="cards-list triplet">
+      {{#each model as |card|}}
+      <AnimatedContainer>
+        <Boxel @format={{if (eq cardNumber card.id) "expanded" "thumbnail"}} @name={{concat "card-" card.id}} @clickAction={{action "expand" card.id}}>
+          {{card.title}}
+        </Boxel>
+      </AnimatedContainer>
+      {{/each}}
+    </div>
+
 
   {{outlet}}
 </div>
