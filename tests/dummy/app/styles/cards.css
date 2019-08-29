@@ -8,18 +8,13 @@
 }
 
 .cards-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 30px;
-  justify-items: center;
-}
-
-.cards-list.triplet {
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
 }
 
 .card {
   opacity: 0.7;
+  margin: 15px;
 }
 
 .card-2 {
