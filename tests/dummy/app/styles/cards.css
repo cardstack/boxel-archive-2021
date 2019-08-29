@@ -17,3 +17,15 @@
 .cards-list.triplet {
   grid-template-columns: repeat(3, 1fr);
 }
+
+.card {
+  opacity: 0.7;
+}
+
+.card-2 {
+  background-color: yellow;
+}
+
+.card-3 {
+  background-color: red;
+}

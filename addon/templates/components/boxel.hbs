@@ -27,7 +27,7 @@
 {{else}}
 
   {{#animated-value @format group=@name use=this.resize duration=this.duration}}
-    <div class="card {{@format}}" role="button" {{action @clickAction}} data-test-boxel ...attributes>
+    <div class="card {{@name}} {{@format}}" role="button" {{action @clickAction}} data-test-boxel ...attributes>
       {{yield}}
     </div>
   {{/animated-value}}
