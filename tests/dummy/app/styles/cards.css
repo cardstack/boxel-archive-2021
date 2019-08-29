@@ -9,17 +9,37 @@
 
 .cards-list {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100vh;
+  grid-gap: 15px;
   justify-items: center;
 }
 
-.cards-list.triplet {
-  grid-template-columns: repeat(3, 1fr);
+.cards-list--col {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .card {
   opacity: 0.7;
+  box-sizing: border-box;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 65px;
+  background-color: mediumpurple;
+  color: black;
+  text-align: center;
+}
+
+.card.expanded {
+  width: 500px;
+  height: 300px;
+  padding: 50px;
+  border-radius: 0;
 }
 
 .card-2 {
