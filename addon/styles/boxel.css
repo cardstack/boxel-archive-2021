@@ -64,25 +64,3 @@
   overflow: hidden;
   font-size: 60%;
 }
-
-
-
-/* Animation test boxels */
-
-.card {
-  box-sizing: border-box;
-  width: 150px;
-  height: 150px;
-  padding: 20px;
-  border-radius: 65px;
-  background-color: mediumpurple;
-  color: black;
-  text-align: center;
-}
-
-.card.expanded {
-  width: 500px;
-  height: 300px;
-  padding: 50px;
-  border-radius: 0;
-}

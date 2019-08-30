@@ -4,8 +4,7 @@ import move from 'ember-animated/motions/move';
 import resize from 'ember-animated/motions/resize';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import { printSprites } from 'ember-animated';
-
-const borderRadius = adjustCSS.property('border-radius');
+import { easeOut } from 'ember-animated/easings/cosine';
 
 export default class CardsController extends Controller {
 
@@ -21,8 +20,11 @@ export default class CardsController extends Controller {
 
   * transition ({ keptSprites }) {
     printSprites(arguments[0]);
-    keptSprites.forEach(move);
-    keptSprites.forEach(resize);
-    keptSprites.forEach(borderRadius);
+    keptSprites.forEach(sprite => {
+      move(sprite, { easing: easeOut });
+      resize(sprite, { easing: easeOut });
+      adjustCSS('border-radius', sprite, { easing: easeOut });
+      adjustCSS('opacity', sprite, { easing: easeOut });
+    });
   }
 }
