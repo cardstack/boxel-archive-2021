@@ -6,6 +6,7 @@ import resize from 'ember-animated/motions/resize';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import { printSprites } from 'ember-animated';
 import { easeOut } from 'ember-animated/easings/cosine';
+import { default as opacity, fadeOut, fadeIn } from 'ember-animated/motions/opacity';
 
 export default class CardsController extends Controller {
   @filterBy('model', 'expanded', true) expandedCards;
@@ -21,12 +22,35 @@ export default class CardsController extends Controller {
   }
 
   * transition ({ keptSprites }) {
-    printSprites(arguments[0]);
+    printSprites(arguments[0], 'transition');
     keptSprites.forEach(sprite => {
       move(sprite, { easing: easeOut });
       resize(sprite, { easing: easeOut });
       adjustCSS('border-radius', sprite, { easing: easeOut });
+      adjustCSS('padding', sprite, { easing: easeOut });
       adjustCSS('opacity', sprite, { easing: easeOut });
     });
+  }
+
+  * descriptionOpacity ({ insertedSprites, removedSprites, sentSprites, receivedSprites }) {
+    printSprites(arguments[0], 'descriptionOpacity');
+    // insertedSprites.forEach(sprite => {
+    //   opacity(sprite);
+    //   // adjustCSS('font-size', sprite, { easing: easeOut });
+    // });
+    // removedSprites.forEach(sprite => {
+    //   opacity(sprite);
+    //   // adjustCSS('font-size', sprite, { easing: easeOut });
+    // });
+    insertedSprites.forEach(fadeIn);
+    removedSprites.forEach(fadeOut);
+    sentSprites.forEach(fadeOut);
+    receivedSprites.forEach(fadeIn);
+  }
+
+  * titleOpacity ({ insertedSprites, removedSprites }) {
+    printSprites(arguments[0], 'titleOpacity');
+    insertedSprites.forEach(fadeIn);
+    removedSprites.forEach(fadeOut);
   }
 }

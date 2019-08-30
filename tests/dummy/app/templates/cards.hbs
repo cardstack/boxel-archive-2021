@@ -1,8 +1,40 @@
 <div class="cards-page">
   <AnimatedContainer class="cards-list triplet {{if this.expandedCards.length "fadeCards"}}">
     {{#animated-each model use=this.transition watch="expanded" as |card|}}
-      <div class="card {{if card.expanded "expanded" "thumbnail"}} card-{{card.id}}" role="button" onclick={{action "toggle" card.id}} >
+      <div class="card {{if card.expanded "expanded" "thumbnail"}} {{if card.faded "faded"}} card-{{card.id}}" role="button" onclick={{action "toggle" card.id}} >
+        <div class="card-contents">
+          {{#animated-if card.expanded use=this.titleOpacity}}
+            <div class="card-title">
+              {{card.title}}
+            </div>
+          {{/animated-if}}
+          {{#animated-value card.expanded use=this.descriptionOpacity}}
+            <div class="card-description">
+              {{card.description}}
+            </div>
+          {{/animated-value}}
+        </div>
       </div>
     {{/animated-each}}
+  </AnimatedContainer>
+  <AnimatedContainer>
+    {{#each model as |card|}}
+      <div class="card {{if card.expanded "expanded" "thumbnail"}} {{if card.faded "faded"}} card-{{card.id}}" role="button" onclick={{action "toggle" card.id}} >
+        {{#animated-if card.expanded use=this.titleOpacity}}
+          <div class="card-title">
+            {{card.title}}
+          </div>
+        {{/animated-if}}
+      </div>
+    {{/each}}
+    {{#each model as |card|}}
+      <div class="card {{if card.expanded "expanded" "thumbnail"}} {{if card.faded "faded"}} card-{{card.id}}" role="button" onclick={{action "toggle" card.id}} >
+        {{#animated-value card.expanded use=this.descriptionOpacity}}
+          <div class="card-description">
+            {{card.description}}
+          </div>
+        {{/animated-value}}
+      </div>
+    {{/each}}
   </AnimatedContainer>
 </div>
