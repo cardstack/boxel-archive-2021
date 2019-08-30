@@ -14,7 +14,9 @@ Router.map(function() {
     this.route('edit', { path: '/:model/:id/edit' });
     this.route('preview', { path: '/:model/:id/preview' });
   });
-  this.route('articles', { path: '/articles/:id' });
+  this.route('articles', { path: '/articles/:id' }, function() {
+    this.route('edit', { path: '/edit' });
+  });
   this.route('events', { path: '/events/:id'});
   this.route('cards');
 });

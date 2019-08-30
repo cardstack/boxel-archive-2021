@@ -1,34 +1,29 @@
-{{#if @content}}
-  {{#animated-value @content group=@name use=this.transition duration=this.duration}}
-    {{#if (eq @format "thumbnail")}}
-      <div class="boxel boxel-thumbnail" data-test-boxel>
-        <div class="boxel-thumbnail--image">
-          <img src={{@content.imageUrl}} alt={{@content.altText}}>
-        </div>
-        <div class="boxel-thumbnail--text">
-          <h3>{{@content.title}}</h3>
-          <p>{{@content.description}}</p>
-        </div>
+{{#animated-value @content group=@name use=transition duration=this.duration}}
+  {{#if (eq @format "thumbnail")}}
+    <div class="boxel boxel-thumbnail" data-test-boxel>
+      <div class="boxel-thumbnail--image">
+        <img src={{@content.imageUrl}} alt={{@content.altText}}>
       </div>
-    {{else if @component}}
-      <div class="boxel boxel-component" data-test-boxel ...attributes >
-        {{component @component}}
+      <div class="boxel-thumbnail--text">
+        <h3>{{@content.title}}</h3>
+        <p>{{@content.description}}</p>
       </div>
-    {{else}}
-      <div class="boxel {{if contentType (concat "boxel-" contentType "-" @format) "boxel-default"}} {{if name (concat "boxel-" name)}}" role="button" {{action clickAction}} data-test-boxel ...attributes>
+    </div>
+  {{else if @component}}
+    <div class="boxel boxel-component" ...attributes data-test-boxel>
+      {{component @component}}
+    </div>
+  {{else}}
+    <div class="boxel {{if contentType (concat "boxel-" contentType "-" @format) "boxel-default"}}" ...attributes data-test-boxel>
+      {{#if @content}}
         {{#if (is-component contentType)}}
           {{component contentType content=@content format=@format}}
         {{else}}
           A {{contentType}} component/template must be provided
         {{/if}}
-      </div>
-    {{/if}}
-  {{/animated-value}}
-{{else}}
-
-  {{#animated-value @format group=@name use=this.resize duration=this.duration}}
-    <div class="card {{@name}} {{@format}}" role="button" {{action @clickAction}} data-test-boxel ...attributes>
-      {{yield}}
+      {{else}}
+        {{yield}}
+      {{/if}}
     </div>
-  {{/animated-value}}
-{{/if}}
+  {{/if}}
+{{/animated-value}}
