@@ -7,13 +7,14 @@ import { printSprites } from 'ember-animated';
 import { easeOut } from 'ember-animated/easings/cosine';
 
 export default class CardsController extends Controller {
-
   @action toggle(id) {
     for (let elt of this.model) {
       if (elt.id === id) {
         set(elt, 'expanded', !elt.expanded);
+        set(elt, 'faded', false);
       } else {
         set(elt, 'expanded', false);
+        set(elt, 'faded', !elt.faded);
       }
     }
   }
