@@ -27,8 +27,8 @@ export default class CardsController extends Controller {
       move(sprite, { easing: easeOut });
       resize(sprite, { easing: easeOut });
       adjustCSS('border-radius', sprite, { easing: easeOut });
-      adjustCSS('padding', sprite, { easing: easeOut });
       adjustCSS('opacity', sprite, { easing: easeOut });
+      adjustCSS('padding', sprite, { easing: easeOut });
     });
   }
 
@@ -36,11 +36,11 @@ export default class CardsController extends Controller {
     printSprites(arguments[0], 'descriptionOpacity');
     // insertedSprites.forEach(sprite => {
     //   opacity(sprite);
-    //   // adjustCSS('font-size', sprite, { easing: easeOut });
+    //   adjustCSS('font-size', sprite, { easing: easeOut });
     // });
     // removedSprites.forEach(sprite => {
     //   opacity(sprite);
-    //   // adjustCSS('font-size', sprite, { easing: easeOut });
+    //   adjustCSS('font-size', sprite, { easing: easeOut });
     // });
     insertedSprites.forEach(fadeIn);
     removedSprites.forEach(fadeOut);
@@ -48,9 +48,28 @@ export default class CardsController extends Controller {
     receivedSprites.forEach(fadeIn);
   }
 
-  * titleOpacity ({ insertedSprites, removedSprites }) {
+  * titleOpacity ({ insertedSprites, removedSprites, receivedSprites }) {
     printSprites(arguments[0], 'titleOpacity');
-    insertedSprites.forEach(fadeIn);
-    removedSprites.forEach(fadeOut);
+    let insertedSprite = insertedSprites[0];
+    let removedSprite = removedSprites[0];
+    // let sentSprite = sentSprites[0];
+    // let receivedSprite = receivedSprites[0];
+
+    if (insertedSprite) {
+      insertedSprite.startAtSprite(removedSprite);
+      opacity(insertedSprite);
+      adjustCSS('font-size', insertedSprite, { easing: easeOut });
+    }
+
+    receivedSprites.forEach(sprite => {
+      opacity(sprite);
+      adjustCSS('font-size', sprite, { easing: easeOut });
+    });
+    // if (insertedSprite) {
+    // removedSprite.endAtSprite(insertedSprite);
+
+    // opacity(removedSprite);
+    // insertedSprites.forEach(opacity);
+    // removedSprites.forEach(opacity);
   }
 }

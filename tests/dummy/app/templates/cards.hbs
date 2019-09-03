@@ -3,21 +3,21 @@
     {{#animated-each model use=this.transition watch="expanded" as |card|}}
       <div class="card {{if card.expanded "expanded" "thumbnail"}} {{if card.faded "faded"}} card-{{card.id}}" role="button" onclick={{action "toggle" card.id}} >
         <div class="card-contents">
-          {{#animated-if card.expanded use=this.titleOpacity}}
+          {{#animated-value card.expanded use=this.titleOpacity}}
             <div class="card-title">
               {{card.title}}
             </div>
-          {{/animated-if}}
-          {{#animated-value card.expanded use=this.descriptionOpacity}}
+          {{/animated-value}}
+          {{!-- {{#animated-value card.expanded use=this.descriptionOpacity}}
             <div class="card-description">
               {{card.description}}
             </div>
-          {{/animated-value}}
+          {{/animated-value}} --}}
         </div>
       </div>
     {{/animated-each}}
   </AnimatedContainer>
-  <AnimatedContainer>
+  {{!-- <AnimatedContainer>
     {{#each model as |card|}}
       <div class="card {{if card.expanded "expanded" "thumbnail"}} {{if card.faded "faded"}} card-{{card.id}}" role="button" onclick={{action "toggle" card.id}} >
         {{#animated-if card.expanded use=this.titleOpacity}}
@@ -36,5 +36,5 @@
         {{/animated-value}}
       </div>
     {{/each}}
-  </AnimatedContainer>
+  </AnimatedContainer> --}}
 </div>

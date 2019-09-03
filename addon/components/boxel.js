@@ -36,7 +36,7 @@ export default class BoxelComponent extends Component {
   }
 
   get name() {
-    if (this._name) {
+    if (this._name) { 
       return this._name;
     }
 

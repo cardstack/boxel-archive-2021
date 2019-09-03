@@ -30,7 +30,8 @@
 }
 
 .card-title {
-  font-size: 48px;
+  font-size: 18px;
+  opacity: .3;
 }
 
 .card-description {
@@ -40,6 +41,11 @@
 
 .card.expanded .card-description {
   font-size: 18px;
+  opacity: 1;
+}
+
+.card.expanded .card-title {
+  font-size: 48px;
   opacity: 1;
 }
 
