@@ -31,19 +31,9 @@
 
 .card-title {
   font-size: 18px;
-  opacity: 0;
+  opacity: 0.3;
   white-space: nowrap;
   /* width: 100px; */
-}
-
-.card-description {
-  font-size: 18px;
-  opacity: 0;
-}
-
-.card.expanded .card-description {
-  font-size: 18px;
-  opacity: 1;
 }
 
 .card.expanded .card-title {
@@ -61,7 +51,7 @@
 }
 
 .fadeCards > .thumbnail {
-  opacity: 0.22;
+  opacity: 0.3;
 }
 
 .card-2 {
