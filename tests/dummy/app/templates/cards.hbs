@@ -3,7 +3,7 @@
     {{#animated-each model use=this.transition watch="expanded" as |card|}}
       <div class="card {{if card.expanded "expanded" "thumbnail"}} {{if card.faded "faded"}} card-{{card.id}}" role="button" onclick={{action "toggle" card.id}} >
         <div class="card-contents">
-          {{#animated-value card.expanded use=this.titleOpacity}}
+          {{#animated-value card key="id" group=(concat "inner-" card.id) use=this.titleOpacity}}
             <div class="card-title">
               {{card.title}}
             </div>
@@ -17,6 +17,23 @@
       </div>
     {{/animated-each}}
   </AnimatedContainer>
+  {{!-- <AnimatedContainer class="cards-list">
+    {{#animated-each model key="id" group=(concat "outer-" card.id) use=this.outer as |card|}}
+      <div class="card card-{{card.id}} {{if model.image "has-image"}}" role="button" onclick={{action "toggle" card.id card.image}}>
+        {{#if (eq card.id "2")}}
+          {{#animated-value card key="id" group=(concat "inner-" card.id) use=this.inner}}
+            <div class="card-{{card.id}}--inner">
+              <div class="header-image" style="background-image: url({{card.image}})"></div>
+              <div class="header">
+                <h3>Haunted Mansion</h3>
+                <div>Photo by Naitian Wang</div>
+              </div>
+            </div>
+          {{/animated-value}}
+        {{/if}}
+      </div>
+    {{/animated-each}}
+  </AnimatedContainer> --}}
   {{!-- <AnimatedContainer>
     {{#each model as |card|}}
       <div class="card {{if card.expanded "expanded" "thumbnail"}} {{if card.faded "faded"}} card-{{card.id}}" role="button" onclick={{action "toggle" card.id}} >
