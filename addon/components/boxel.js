@@ -6,8 +6,6 @@ import template from '../templates/components/boxel';
 import { layout, tagName } from '@ember-decorators/component';
 import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
-// import adjustCSS from 'ember-animated/motions/adjust-css';
-// import { easeOut, easeIn } from 'ember-animated/easings/cosine';
 import scale from 'ember-animated/motions/scale';
 import { parallel, printSprites, wait } from 'ember-animated';
 
@@ -36,7 +34,7 @@ export default class BoxelComponent extends Component {
   }
 
   get name() {
-    if (this._name) { 
+    if (this._name) {
       return this._name;
     }
 
