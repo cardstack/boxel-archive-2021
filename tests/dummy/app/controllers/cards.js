@@ -21,8 +21,8 @@ export default class CardsController extends Controller {
     }
   }
 
-  * transition ({ keptSprites }) {
-    printSprites(arguments[0], 'transition');
+  * cardTransition ({ keptSprites }) {
+    printSprites(arguments[0], 'cardTransition');
 
     keptSprites.forEach(sprite => {
       move(sprite, { easing: easeOut });
@@ -33,8 +33,8 @@ export default class CardsController extends Controller {
     });
   }
 
-  * titleOpacity ({ keptSprites }) {
-    printSprites(arguments[0], 'titleOpacity');
+  * titleTransition ({ keptSprites }) {
+    printSprites(arguments[0], 'titleTransition');
 
     keptSprites.forEach(sprite => {
       move(sprite, { easing: easeOut });
