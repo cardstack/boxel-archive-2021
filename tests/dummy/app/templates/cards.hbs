@@ -4,7 +4,7 @@
       <div class="card {{if card.expanded "expanded" "thumbnail"}} {{if card.faded "faded"}} card-{{card.id}}" role="button" onclick={{action "toggle" card.id}} >
         <div class="card-contents">
           {{#animated-value card group=(concat "inner-" card.id) watch="expanded" use=this.titleOpacity}}
-            <div class="card-title">
+            <div class="card-title {{if card.expanded "expanded"}}">
               {{card.title}}
             </div>
           {{/animated-value}}

@@ -22,7 +22,7 @@
   color: black;
   text-align: center;
   margin: 15px;
-  opacity: 1;
+  opacity: .7;
 }
 
 .card-contents {
@@ -36,7 +36,7 @@
   /* width: 100px; */
 }
 
-.card.expanded .card-title {
+.card-title.expanded {
   font-size: 48px;
   opacity: 1;
   /* width: 400px; */
