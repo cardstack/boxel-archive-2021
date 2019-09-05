@@ -1,7 +1,7 @@
 <div class="cards-page">
-  <AnimatedContainer class="cards-list triplet {{if this.expandedCards.length "fadeCards"}}">
+  <AnimatedContainer class="cards-list triplet">
     {{#animated-each model use=this.transition watch="expanded" as |card|}}
-      <div class="card {{if card.expanded "expanded" "thumbnail"}} {{if card.faded "faded"}} card-{{card.id}}" role="button" onclick={{action "toggle" card.id}} >
+      <div class="card {{if card.expanded "expanded" "thumbnail"}} {{if (and (not card.expanded) this.expandedCards.length) "faded"}} card-{{card.id}}" role="button" onclick={{action "toggle" card.id}} >
         <div class="card-contents">
           {{#animated-value card group=(concat "inner-" card.id) watch="expanded" use=this.titleOpacity}}
             <div class="card-title {{if card.expanded "expanded"}}">
