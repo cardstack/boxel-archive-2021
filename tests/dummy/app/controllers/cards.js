@@ -7,8 +7,11 @@ import adjustCSS from 'ember-animated/motions/adjust-css';
 import { printSprites } from 'ember-animated';
 import { easeOut } from 'ember-animated/easings/cosine';
 import { default as opacity } from 'ember-animated/motions/opacity';
+import fade from 'ember-animated/transitions/fade';
 
 export default class CardsController extends Controller {
+  fade = fade;
+  
   @filterBy('model', 'expanded', true) expandedCards;
 
   @action toggle(id) {
@@ -34,6 +37,17 @@ export default class CardsController extends Controller {
   }
 
   * titleTransition ({ keptSprites }) {
+    printSprites(arguments[0], 'titleTransition');
+
+    keptSprites.forEach(sprite => {
+      move(sprite, { easing: easeOut });
+      resize(sprite, { easing: easeOut });
+      opacity(sprite, { easing: easeOut });
+      adjustCSS('font-size', sprite, { easing: easeOut });
+    });
+  }
+
+  * descriptionTransition ({ keptSprites }) {
     printSprites(arguments[0], 'titleTransition');
 
     keptSprites.forEach(sprite => {

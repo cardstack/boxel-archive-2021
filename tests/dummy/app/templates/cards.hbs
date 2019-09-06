@@ -8,6 +8,11 @@
               {{card.title}}
             </div>
           {{/animated-value}}
+          {{#animated-if card.expanded use=fade}}
+            <div class="card-description {{if card.expanded "expanded"}}">
+              {{card.description}}
+            </div>
+          {{/animated-if}}
         </div>
       </div>
     {{/animated-each}}
