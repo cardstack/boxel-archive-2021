@@ -1,36 +1,18 @@
 <div class="edit-demo-page">
   <AnimatedContainer class="card-container">
-    <div class="demo-card {{if editing "edit" "view"}} card-{{model.id}}">
+    <div class="demo-card {{if this.editing "edit" "view"}} card-{{model.id}}">
       <header class="demo-card-header">
         <button class="btn-edit-toggle" {{action "toggleEdit"}}>{{if this.editing "View" "Edit"}}</button>
       </header>
       <div class="demo-card-content">
         <div class="demo-card-field demo-card-text-field">
-          {{#animated-if editing group="field-title" use=fade}}
-            <TextField @value={{model.title}} @label="Title" @required={{true}} />
-          {{else}}
-            <div class="demo-card-title">
-              {{model.title}}
-            </div>
-          {{/animated-if}}
+          <EditableField @value={{model.title}} @fieldName="title" @label="Title" @editing={{this.editing}}/>
         </div>
         <div class="demo-card-field demo-card-text-field">
-          {{#animated-if editing group="field-title" use=fade}}
-            <TextField @value={{model.description}} @label="Description" @required={{true}} />
-          {{else}}
-            <div class="demo-card-description">
-              {{model.description}}
-            </div>
-          {{/animated-if}}
+          <EditableField @value={{model.description}} @fieldName="description" @label="Description" @editing={{this.editing}}/>
         </div>
         <div class="demo-card-field demo-card-text-area">
-          {{#animated-if editing group="field-body" use=fade}}
-            <TextArea @value={{model.body}} @label="Body" @required={{true}} />
-          {{else}}
-            <div class="demo-card-body">
-              {{model.body}}
-            </div>
-          {{/animated-if}}
+          <EditableField @value={{model.body}} @fieldName="body" @label="Body" @editing={{this.editing}} @componentName="text-area" />
         </div>
       </div>
     </div>
