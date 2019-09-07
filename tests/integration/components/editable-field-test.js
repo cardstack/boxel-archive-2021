@@ -14,13 +14,6 @@ module('Integration | Component | editable-field', function(hooks) {
 
     assert.equal(this.element.textContent.trim(), '');
 
-    // Template block usage:
-    await render(hbs`
-      <EditableField>
-        template block text
-      </EditableField>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    // No emplate block usage..yet
   });
 });
