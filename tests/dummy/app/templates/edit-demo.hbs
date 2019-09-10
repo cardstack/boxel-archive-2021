@@ -1,30 +1,41 @@
-<AnimatedContainer class="card-container">
+<AnimatedContainer class="tray-container">
   {{#animated-value model watch="mode" use=this.trayTransition}}
     <div class="edit-demo-page {{model.mode}}">
-      {{#animated-value model watch="mode" use=this.cardTransition}}
-        <div class="demo-card {{model.mode}} card-{{model.id}}">
-          {{#animated-value model watch="mode" use=this.headerTransition}}
-            <header class="demo-card-header">
-              <button class="btn-edit-toggle" {{action "setMode" (if (eq model.mode "view") "edit" "view")}}>{{if (eq model.mode "view") "Edit" "View"}}</button>
-            </header>
-          {{/animated-value}}
-          {{#animated-value model watch="mode" use=this.bodyTransition}}
-          <div class="demo-card-content {{model.mode}}">
-            <div class="demo-card-field demo-card-text-field">
-              <EditableField @value={{model.title}} @fieldName="title" @label="Title" @mode={{model.mode}} />
-            </div>
-            <div class="demo-card-field demo-card-text-field">
-              <EditableField @value={{model.description}} @fieldName="description" @label="Description"
-                @mode={{model.mode}} />
-            </div>
-            <div class="demo-card-field demo-card-text-area">
-              <EditableField @value={{model.body}} @fieldName="body" @label="Body" @mode={{model.mode}}
-                @componentName="text-area" />
-            </div>
+      <AnimatedContainer class="card-container">
+        {{#animated-value model watch="mode" use=this.cardTransition}}
+          <div class="demo-card {{model.mode}} card-{{model.id}}">
+            <AnimatedContainer class="header-container">
+              {{#animated-value model watch="mode" use=this.headerTransition}}
+                <header class="demo-card-header {{model.mode}}">
+                  {{#animated-if (eq model.mode "view") group="header-name" use=fade}}
+                    <span class="header-title">View Card</span>
+                  {{else}}
+                    <span class="header-title">Edit Card</span>
+                  {{/animated-if}}
+                  <button class="btn-edit-toggle" {{action "setMode" (if (eq model.mode "view") "edit" "view")}}>{{if (eq model.mode "view") "Edit" "View"}}</button>
+                </header>
+              {{/animated-value}}
+            </AnimatedContainer>
+            <AnimatedContainer class="body-container">
+              {{#animated-value model watch="mode" use=this.bodyTransition}}
+                <div class="demo-card-content {{model.mode}}">
+                  <div class="demo-card-field demo-card-text-field">
+                    <EditableField @value={{model.title}} @fieldName="title" @label="Title" @mode={{model.mode}} />
+                  </div>
+                  <div class="demo-card-field demo-card-text-field">
+                    <EditableField @value={{model.description}} @fieldName="description" @label="Description"
+                      @mode={{model.mode}} />
+                  </div>
+                  <div class="demo-card-field demo-card-text-area">
+                    <EditableField @value={{model.body}} @fieldName="body" @label="Body" @mode={{model.mode}}
+                      @componentName="text-area" />
+                  </div>
+                </div>
+              {{/animated-value}}
+            </AnimatedContainer>
           </div>
-          {{/animated-value}}
-        </div>
-      {{/animated-value}}
+        {{/animated-value}}
+      </AnimatedContainer>
     </div>
   {{/animated-value}}
 </AnimatedContainer>

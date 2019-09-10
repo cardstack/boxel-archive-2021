@@ -16,10 +16,13 @@
   justify-content: center; */
 }
 
+.relative-container {
+  position: relative;
+}
+
 .demo-card {
   box-sizing: border-box;
   width: 400px;
-  height: 600px;
   padding: 0;
   border-radius: 10px;
   border: solid 2px var(--catalog-dark-purple);
@@ -38,16 +41,33 @@
 .demo-card-header {
   position: relative;
   height: 60px;
+  box-sizing: border-box;
+  padding: 20px;
   background-color: var(--catalog-darker-purple);
+}
+
+.header-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.demo-card-header.edit {
+  background-color: var(--catalog-light-purple);
+  height: 100px;
 }
 
 .demo-card-content {
   padding: 20px;
   background-color: var(--catalog-light-gray);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .demo-card-content.edit {
   background-color: var(--catalog-dark-gray);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .demo-card-text-field {
