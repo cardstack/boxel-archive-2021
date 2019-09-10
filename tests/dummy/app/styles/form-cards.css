@@ -37,13 +37,6 @@
   opacity: 0.22;
 }
 
-/* .form-card.focused.expanded {
-  width: 556px;
-  height: 838px;
-  box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.3);
-  opacity: 0.99;
-} */
-
 .form-card-2 {
   background-color: #d23ade;
 }
@@ -58,8 +51,6 @@
   position: absolute;
   top: 0;
   background-color: #eeeeee;
-  /* opacity: 0.3; */
-  z-index: 1;
 }
 
 .form-card.isolated {

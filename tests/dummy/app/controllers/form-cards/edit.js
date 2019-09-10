@@ -19,30 +19,35 @@ export default class FormCardsEditController extends Controller {
     this.transitionToRoute('form-cards');
   }
 
-  * transition({ insertedSprites, removedSprites }) {
+  * backgroundTransition ({ insertedSprites, removedSprites }) {
+    printSprites(arguments[0], 'edit background');
+
     insertedSprites.forEach(sprite => {
       sprite.startAtPixel({ y: -1.5 * window.innerHeight })
       move(sprite, { easing: easeIn });
+      sprite.applyStyles({
+        'z-index': 2
+      });
     });
 
     removedSprites.forEach(sprite => {
       sprite.endAtPixel({ y: -1.5 * window.innerHeight })
       move(sprite, { easing: easeOut });
       sprite.applyStyles({
-        'z-index': 1
+        'z-index': 2
       });
     });
   }
 
-  * moveBox({ sentSprites }) {
-    printSprites(arguments[0], 'edit moveBox');
+  * boxTransition({ sentSprites }) {
+    printSprites(arguments[0], 'edit transition');
 
     sentSprites.forEach(sprite => {
       move(sprite, { easing: easeOut });
       resize(sprite, { easing: easeOut });
       adjustCSS('opacity', sprite, { easing: easeOut });
       sprite.applyStyles({
-        'z-index': 2
+        'z-index': 3
       });
     });
   }

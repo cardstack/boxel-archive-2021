@@ -22,7 +22,7 @@ export default class FormCardsIndexController extends Controller {
       if (elt.id === card.id) {
         set(elt, 'selected', true);
         set(elt, 'expanded', true);
-        // this.boxel.moveBoxelToPlane(`boxel-${card.id}`, 'tools');
+        this.boxel.moveBoxelToPlane(`boxel-${card.id}`, 'tools');
         this.transitionToRoute('form-cards.edit', card);
       } else {
         set(elt, 'selected', false);
@@ -39,7 +39,7 @@ export default class FormCardsIndexController extends Controller {
     });
   }
 
-  * layerAway ({ removedSprites, insertedSprites }) {
+  * backgroundTransition({ removedSprites, insertedSprites }) {
     printSprites(arguments[0], 'index layerAway');
 
     let factor = 0.8;
@@ -71,30 +71,15 @@ export default class FormCardsIndexController extends Controller {
     });
   }
 
-  * transition ({ keptSprites, sentSprites, receivedSprites }) {
+  * boxTransition({ sentSprites }) {
     printSprites(arguments[0], 'index transition');
-    // keptSprites.forEach(sprite => {
-    //   move(sprite, { easing: easeOut });
-    //   resize(sprite, { easing: easeOut });
-    //   adjustCSS('opacity', sprite, { easing: easeOut });
-    // });
-
     sentSprites.forEach(sprite => {
       move(sprite, { easing: easeOut });
       resize(sprite, { easing: easeOut });
       adjustCSS('opacity', sprite, { easing: easeOut });
       sprite.applyStyles({
-        'z-index': 2
+        'z-index': 3
       });
     });
-
-    // receivedSprites.forEach(sprite => {
-    //   move(sprite, { easing: easeOut });
-    //   resize(sprite, { easing: easeOut });
-    //   adjustCSS('opacity', sprite, { easing: easeOut });
-    //   sprite.applyStyles({
-    //     'z-index': 2
-    //   });
-    // });
   }
 }
