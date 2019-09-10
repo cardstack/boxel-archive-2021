@@ -1,20 +1,30 @@
-<div class="edit-demo-page">
-  <AnimatedContainer class="card-container">
-    <div class="demo-card {{if this.editing "edit" "view"}} card-{{model.id}}">
-      <header class="demo-card-header">
-        <button class="btn-edit-toggle" {{action "toggleEdit"}}>{{if this.editing "View" "Edit"}}</button>
-      </header>
-      <div class="demo-card-content">
-        <div class="demo-card-field demo-card-text-field">
-          <EditableField @value={{model.title}} @fieldName="title" @label="Title" @editing={{this.editing}}/>
+<AnimatedContainer class="card-container">
+  {{#animated-value model watch="mode" use=this.trayTransition}}
+    <div class="edit-demo-page {{model.mode}}">
+      {{#animated-value model watch="mode" use=this.cardTransition}}
+        <div class="demo-card {{model.mode}} card-{{model.id}}">
+          {{#animated-value model watch="mode" use=this.headerTransition}}
+            <header class="demo-card-header">
+              <button class="btn-edit-toggle" {{action "setMode" (if (eq model.mode "view") "edit" "view")}}>{{if (eq model.mode "view") "Edit" "View"}}</button>
+            </header>
+          {{/animated-value}}
+          {{#animated-value model watch="mode" use=this.bodyTransition}}
+          <div class="demo-card-content {{model.mode}}">
+            <div class="demo-card-field demo-card-text-field">
+              <EditableField @value={{model.title}} @fieldName="title" @label="Title" @mode={{model.mode}} />
+            </div>
+            <div class="demo-card-field demo-card-text-field">
+              <EditableField @value={{model.description}} @fieldName="description" @label="Description"
+                @mode={{model.mode}} />
+            </div>
+            <div class="demo-card-field demo-card-text-area">
+              <EditableField @value={{model.body}} @fieldName="body" @label="Body" @mode={{model.mode}}
+                @componentName="text-area" />
+            </div>
+          </div>
+          {{/animated-value}}
         </div>
-        <div class="demo-card-field demo-card-text-field">
-          <EditableField @value={{model.description}} @fieldName="description" @label="Description" @editing={{this.editing}}/>
-        </div>
-        <div class="demo-card-field demo-card-text-area">
-          <EditableField @value={{model.body}} @fieldName="body" @label="Body" @editing={{this.editing}} @componentName="text-area" />
-        </div>
-      </div>
+      {{/animated-value}}
     </div>
-  </AnimatedContainer>
-</div>
+  {{/animated-value}}
+</AnimatedContainer>

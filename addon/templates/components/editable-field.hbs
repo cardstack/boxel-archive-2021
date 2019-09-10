@@ -1,4 +1,4 @@
-{{#animated-if @editing group="field-{{@fieldName}}" use=fade}}
+{{#animated-if (eq @mode "edit") group="field-{{@fieldName}}" use=fade}}
   {{#if @componentName}}
     {{component componentName value=value label=label required=true }}
   {{else}}
