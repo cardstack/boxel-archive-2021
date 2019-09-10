@@ -46,7 +46,7 @@ export default class EditDemoController extends Controller {
       adjustCSS('border-bottom-left-radius', sprite, { easing: easeOut });
       adjustCSS('border-bottom-right-radius', sprite, { easing: easeOut });
       adjustColor('background-color', sprite, { easing: easeOut });
-      // resize(sprite, { easing: easeOut });
+      resize(sprite, { easing: easeOut });
     });
   }
 }
