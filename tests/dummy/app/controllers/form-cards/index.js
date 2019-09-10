@@ -5,6 +5,9 @@ import { filterBy } from '@ember/object/computed';
 
 import { printSprites } from 'ember-animated';
 import move from 'ember-animated/motions/move';
+import opacity from 'ember-animated/motions/opacity';
+import scale from '../../motions/scale';
+import keep from '../../motions/keep';
 import resize from 'ember-animated/motions/resize';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import { easeOut } from 'ember-animated/easings/cosine';
@@ -28,13 +31,53 @@ export default class FormCardsIndexController extends Controller {
     }
   }
 
-  * transition ({ keptSprites, sentSprites, receivedSprites }) {
-    printSprites(arguments[0]);
-    keptSprites.forEach(sprite => {
-      move(sprite, { easing: easeOut });
-      resize(sprite, { easing: easeOut });
-      adjustCSS('opacity', sprite, { easing: easeOut });
+  * wait ({ removedSprites }) {
+    printSprites(arguments[0], 'index wait');
+
+    removedSprites.forEach(sprite => {
+      keep(sprite);
     });
+  }
+
+  * layerAway ({ removedSprites, insertedSprites }) {
+    printSprites(arguments[0], 'index layerAway');
+
+    let factor = 0.8;
+    removedSprites.forEach(sprite => {
+      sprite.endAtPixel({
+        x: sprite.initialBounds.left + ((1 - factor) / 2 * sprite.initialBounds.width),
+        y: sprite.initialBounds.top + ((1 - factor) / 2 * sprite.initialBounds.height)
+      });
+      opacity(sprite, { easing: easeOut, to: 0 });
+      scale(sprite, { by: factor });
+      move(sprite);
+      sprite.applyStyles({
+        'z-index': 1
+      });
+    });
+
+    insertedSprites.forEach(sprite => {
+      sprite.startAtPixel({
+        x: sprite.finalBounds.left + ((1 - factor) / 2 * sprite.finalBounds.width),
+        y: sprite.finalBounds.top + ((1 - factor) / 2 * sprite.finalBounds.height)
+      });
+      sprite.scale(factor, factor);
+      opacity(sprite, { easing: easeOut, from: 0 });
+      scale(sprite, { by: 1 / factor });
+      move(sprite);
+      sprite.applyStyles({
+        'z-index': 1
+      });
+    });
+  }
+
+  * transition ({ keptSprites, sentSprites, receivedSprites }) {
+    printSprites(arguments[0], 'index transition');
+    // keptSprites.forEach(sprite => {
+    //   move(sprite, { easing: easeOut });
+    //   resize(sprite, { easing: easeOut });
+    //   adjustCSS('opacity', sprite, { easing: easeOut });
+    // });
 
     sentSprites.forEach(sprite => {
       move(sprite, { easing: easeOut });
@@ -45,13 +88,13 @@ export default class FormCardsIndexController extends Controller {
       });
     });
 
-    receivedSprites.forEach(sprite => {
-      move(sprite, { easing: easeOut });
-      resize(sprite, { easing: easeOut });
-      adjustCSS('opacity', sprite, { easing: easeOut });
-      sprite.applyStyles({
-        'z-index': 2
-      });
-    });
+    // receivedSprites.forEach(sprite => {
+    //   move(sprite, { easing: easeOut });
+    //   resize(sprite, { easing: easeOut });
+    //   adjustCSS('opacity', sprite, { easing: easeOut });
+    //   sprite.applyStyles({
+    //     'z-index': 2
+    //   });
+    // });
   }
 }
