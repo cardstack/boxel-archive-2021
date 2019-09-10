@@ -1,4 +1,4 @@
-{{#animated-value @content group=@name use=transition duration=this.duration}}
+{{!-- {{#animated-value @content group=@name use=transition duration=this.duration}}
   {{#if (eq @format "thumbnail")}}
     <div class="boxel boxel-thumbnail" data-test-boxel>
       <div class="boxel-thumbnail--image">
@@ -26,4 +26,8 @@
       {{/if}}
     </div>
   {{/if}}
-{{/animated-value}}
+{{/animated-value}} --}}
+
+<div data-test-boxel ...attributes>
+  {{yield}}
+</div>
