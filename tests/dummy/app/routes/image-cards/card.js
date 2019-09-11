@@ -5,7 +5,7 @@ export default class ImageCardsCardRoute extends BoxelizedRoute {
 
   model({ id }) {
     if (id === "2") {
-      return { id, title: 'Haunted Mansion', image: '/images/haunted-castle.jpg', imageCredit: 'Naitian Wang' };
+      return { id, title: 'Haunted Mansion', image: '/images/haunted-castle.jpg', imageCredit: 'Naitian Wang', expanded: true };
     }
     return { id, title: `Card ${id}` };
   }

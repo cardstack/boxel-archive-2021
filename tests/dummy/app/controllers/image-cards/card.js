@@ -14,7 +14,7 @@ export default class ImageCardsCardController extends Controller {
   }
 
   * transition ({ sentSprites }) {
-    printSprites(arguments[0], "card transition: ");
+    printSprites(arguments[0], "card transition:");
 
     sentSprites.forEach(sprite => {
       move(sprite, { easing: easeOut, duration });
