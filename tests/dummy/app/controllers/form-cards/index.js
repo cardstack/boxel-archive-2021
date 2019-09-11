@@ -3,14 +3,16 @@ import { action, set } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { filterBy } from '@ember/object/computed';
 
-import { printSprites } from 'ember-animated';
+// import { printSprites } from 'ember-animated';
 import move from 'ember-animated/motions/move';
 import opacity from 'ember-animated/motions/opacity';
 import scale from '../../motions/scale';
 import keep from '../../motions/keep';
 import resize from 'ember-animated/motions/resize';
 import adjustCSS from 'ember-animated/motions/adjust-css';
-import { easeOut } from 'ember-animated/easings/cosine';
+import { easeInAndOut } from 'ember-animated/easings/cosine';
+
+export let duration = 1000;
 
 export default class FormCardsIndexController extends Controller {
   @service boxel;
@@ -32,7 +34,7 @@ export default class FormCardsIndexController extends Controller {
   }
 
   * wait ({ removedSprites }) {
-    printSprites(arguments[0], 'index wait');
+    // printSprites(arguments[0], 'index wait');
 
     removedSprites.forEach(sprite => {
       keep(sprite);
@@ -40,20 +42,19 @@ export default class FormCardsIndexController extends Controller {
   }
 
   * backgroundTransition({ removedSprites, insertedSprites }) {
-    printSprites(arguments[0], 'index layerAway');
+    // printSprites(arguments[0], 'index layerAway');
 
     let factor = 0.8;
+
     removedSprites.forEach(sprite => {
       sprite.endAtPixel({
         x: sprite.initialBounds.left + ((1 - factor) / 2 * sprite.initialBounds.width),
         y: sprite.initialBounds.top + ((1 - factor) / 2 * sprite.initialBounds.height)
       });
-      opacity(sprite, { easing: easeOut, to: 0 });
-      scale(sprite, { by: factor });
-      move(sprite);
-      sprite.applyStyles({
-        'z-index': 1
-      });
+      opacity(sprite, { to: 0, easing: easeInAndOut, duration });
+      scale(sprite, { by: factor, easing: easeInAndOut, duration });
+      move(sprite, { easing: easeInAndOut, duration });
+      sprite.applyStyles({ 'z-index': 1 });
     });
 
     insertedSprites.forEach(sprite => {
@@ -62,24 +63,21 @@ export default class FormCardsIndexController extends Controller {
         y: sprite.finalBounds.top + ((1 - factor) / 2 * sprite.finalBounds.height)
       });
       sprite.scale(factor, factor);
-      opacity(sprite, { easing: easeOut, from: 0 });
-      scale(sprite, { by: 1 / factor });
-      move(sprite);
-      sprite.applyStyles({
-        'z-index': 1
-      });
+      opacity(sprite, { from: 0, easing: easeInAndOut, duration });
+      scale(sprite, { by: 1 / factor, easing: easeInAndOut, duration });
+      move(sprite, { easing: easeInAndOut, duration });
+      sprite.applyStyles({ 'z-index': 1 });
     });
   }
 
   * boxTransition({ sentSprites }) {
-    printSprites(arguments[0], 'index transition');
+    // printSprites(arguments[0], 'index transition');
+
     sentSprites.forEach(sprite => {
-      move(sprite, { easing: easeOut });
-      resize(sprite, { easing: easeOut });
-      adjustCSS('opacity', sprite, { easing: easeOut });
-      sprite.applyStyles({
-        'z-index': 3
-      });
+      move(sprite, { easing: easeInAndOut, duration });
+      resize(sprite, { easing: easeInAndOut, duration });
+      adjustCSS('opacity', sprite, { easing: easeInAndOut, duration });
+      sprite.applyStyles({ 'z-index': 3 });
     });
   }
 }
