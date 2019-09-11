@@ -8,7 +8,7 @@ import { layout, tagName } from '@ember-decorators/component';
 import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
 import scale from 'ember-animated/motions/scale';
-import { parallel, printSprites, wait } from 'ember-animated';
+import { parallel, wait } from 'ember-animated';
 
 
 @layout(template)
