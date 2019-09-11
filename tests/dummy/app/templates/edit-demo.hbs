@@ -8,9 +8,9 @@
               {{#animated-value model watch="mode" use=this.headerTransition}}
                 <header class="demo-card-header {{model.mode}}">
                   {{#animated-if (eq model.mode "view") group="header-name" use=fade}}
-                    <span class="header-title">View Card</span>
+                    <div class="header-title">View Card</div>
                   {{else}}
-                    <span class="header-title">Edit Card</span>
+                    <div class="header-title">Edit Card</div>
                   {{/animated-if}}
                   <button class="btn-edit-toggle" {{action "setMode" (if (eq model.mode "view") "edit" "view")}}>{{if (eq model.mode "view") "Edit" "View"}}</button>
                 </header>
