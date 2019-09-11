@@ -11,22 +11,12 @@
   background-color: var(--catalog-dark-purple);
 }
 
-.card-container {
-  /* display: flex;
-  justify-content: center; */
-}
-
-.relative-container {
-  position: relative;
-}
-
 .demo-card {
   box-sizing: border-box;
   width: 400px;
   padding: 0;
   border-radius: 10px;
   border: solid 2px var(--catalog-dark-purple);
-  background-color: white;
   color: black;
   text-align: left;
   margin: auto;
@@ -44,6 +34,8 @@
   box-sizing: border-box;
   padding: 20px;
   background-color: var(--catalog-darker-purple);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .header-title {
@@ -55,13 +47,15 @@
 .demo-card-header.edit {
   background-color: var(--catalog-light-purple);
   height: 100px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .demo-card-content {
   padding: 20px;
   background-color: var(--catalog-light-gray);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .demo-card-content.edit {

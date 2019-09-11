@@ -4,7 +4,7 @@ import resize from 'ember-animated/motions/resize';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import adjustColor from 'ember-animated/motions/adjust-color';
 import { printSprites } from 'ember-animated';
-import { easeOut } from 'ember-animated/easings/cosine';
+import { easeInAndOut } from 'ember-animated/easings/cosine';
 import fade from 'ember-animated/transitions/fade';
 
 export default class EditDemoController extends Controller {
@@ -19,16 +19,16 @@ export default class EditDemoController extends Controller {
   * trayTransition ({ keptSprites }) {
     printSprites(arguments[0], 'trayTransition');
     keptSprites.forEach(sprite => {
-      adjustColor('background-color', sprite, { easing: easeOut });
+      adjustColor('background-color', sprite, { easing: easeInAndOut });
     });
   }
 
   * cardTransition ({ keptSprites }) {
     printSprites(arguments[0], 'cardTransition');
     keptSprites.forEach(sprite => {
-      adjustColor('border-color', sprite, { easing: easeOut });
-      adjustCSS('border-radius', sprite, { easing: easeOut });
-      resize(sprite, { easing: easeOut });
+      resize(sprite, { easing: easeInAndOut });
+      adjustColor('border-color', sprite, { easing: easeInAndOut });
+      adjustCSS('border-radius', sprite, { easing: easeInAndOut });
     });
   }
 
@@ -36,17 +36,19 @@ export default class EditDemoController extends Controller {
     printSprites(arguments[0], 'headerTransition');
 
     keptSprites.forEach(sprite => {
-      resize(sprite, { easing: easeOut });
-      adjustColor('background-color', sprite, { easing: easeOut });
+      resize(sprite, { easing: easeInAndOut });
+      adjustColor('background-color', sprite, { easing: easeInAndOut });
+      adjustCSS('border-top-left-radius', sprite, { easing: easeInAndOut });
+      adjustCSS('border-top-right-radius', sprite, { easing: easeInAndOut });
     });
   }
   * bodyTransition ({ keptSprites }) {
     printSprites(arguments[0], 'bodyTransition');
     keptSprites.forEach(sprite => {
-      adjustCSS('border-bottom-left-radius', sprite, { easing: easeOut });
-      adjustCSS('border-bottom-right-radius', sprite, { easing: easeOut });
-      adjustColor('background-color', sprite, { easing: easeOut });
-      resize(sprite, { easing: easeOut });
+      resize(sprite, { easing: easeInAndOut });
+      adjustColor('background-color', sprite, { easing: easeInAndOut });
+      adjustCSS('border-bottom-left-radius', sprite, { easing: easeInAndOut });
+      adjustCSS('border-bottom-right-radius', sprite, { easing: easeInAndOut });
     });
   }
 }
