@@ -14,8 +14,8 @@ export default class FormCardsEditController extends Controller {
 
   @action backToList() {
     set(this.model, 'expanded', false);
+    set(this.model, 'selected', false);
     this.boxel.moveBoxelToPlane(`boxel-${this.model.id}`, 'space');
-
     this.transitionToRoute('form-cards');
   }
 
