@@ -7,6 +7,7 @@ import opacity from 'ember-animated/motions/opacity';
 import resize from 'ember-animated/motions/resize';
 import { easeInAndOut } from 'ember-animated/easings/cosine';
 
+import keep from '../../motions/keep';
 import scale from '../../motions/scale';
 
 export let duration = 1000;
@@ -21,6 +22,11 @@ export default class FormCardsIndexController extends Controller {
         set(elt, 'expanded', false);
       }
     }
+  }
+
+  * wait({ removedSprites, receivedSprites }) {
+    printSprites(arguments[0], 'index outer transition');
+    removedSprites.concat(receivedSprites).forEach(keep);
   }
 
   * backgroundTransition({ removedSprites, insertedSprites, sentSprites, receivedSprites }) {
@@ -52,20 +58,28 @@ export default class FormCardsIndexController extends Controller {
     });
   }
 
-  * boxTransition({ sentSprites }) {
-    printSprites(arguments[0], 'index box transition');
+  // * boxTransition({ sentSprites, receivedSprites }) {
+  //   printSprites(arguments[0], 'index box transition');
 
-    sentSprites.forEach(sprite => {
-      move(sprite, { easing: easeInAndOut, duration });
-      resize(sprite, { easing: easeInAndOut, duration });
-      sprite.applyStyles({
-        'z-index': 3
-      });
-    });
-  }
+  //   sentSprites.forEach(sprite => {
+  //     move(sprite, { easing: easeInAndOut, duration });
+  //     resize(sprite, { easing: easeInAndOut, duration });
+  //     sprite.applyStyles({
+  //       'z-index': 3
+  //     });
+  //   });
+
+  //   receivedSprites.forEach(sprite => {
+  //     move(sprite, { easing: easeInAndOut, duration });
+  //     resize(sprite, { easing: easeInAndOut, duration });
+  //     sprite.applyStyles({
+  //       'z-index': 3
+  //     });
+  //   });
+  // }
 
   * shadowTransition({ sentSprites }) {
-    printSprites(arguments[0], 'index shadow transition');
+    // printSprites(arguments[0], 'index shadow transition');
 
     sentSprites.forEach(sprite => {
       move(sprite, { easing: easeInAndOut, duration });

@@ -19,23 +19,31 @@ export default class FormCardsEditController extends Controller {
   * backgroundTransition ({ insertedSprites, removedSprites, sentSprites, receivedSprites }) {
     printSprites(arguments[0], 'edit background transition');
 
-    insertedSprites.concat(receivedSprites).forEach(function(sprite) {
+    insertedSprites.concat(receivedSprites).forEach(sprite => {
       sprite.startAtPixel({ y: -1.5 * window.innerHeight });
       move(sprite, { easing: easeInAndOut, duration });
       sprite.applyStyles({ 'z-index': 2 });
     });
 
     removedSprites.concat(sentSprites).forEach(sprite => {
-      sprite.endAtPixel({ y: -1.5 * window.innerHeight })
+      sprite.endAtPixel({ y: -1.5 * window.innerHeight });
       move(sprite, { easing: easeInAndOut, duration });
       sprite.applyStyles({ 'z-index': 2 });
     });
   }
 
-  * boxTransition({ sentSprites, removedSprites }) {
+  * boxTransition({ sentSprites, removedSprites, receivedSprites }) {
     printSprites(arguments[0], 'edit box transition');
 
     sentSprites.forEach(sprite => {
+      move(sprite, { easing: easeInAndOut, duration });
+      resize(sprite, { easing: easeInAndOut, duration });
+      sprite.applyStyles({
+        'z-index': 3
+      });
+    });
+
+    receivedSprites.forEach(sprite => {
       move(sprite, { easing: easeInAndOut, duration });
       resize(sprite, { easing: easeInAndOut, duration });
       sprite.applyStyles({
@@ -59,7 +67,7 @@ export default class FormCardsEditController extends Controller {
   }
 
   * shadowTransition({ sentSprites, removedSprites }) {
-    printSprites(arguments[0], 'edit shadow transition');
+    // printSprites(arguments[0], 'edit shadow transition');
 
     sentSprites.forEach(sprite => {
       move(sprite, { easing: easeInAndOut, duration });

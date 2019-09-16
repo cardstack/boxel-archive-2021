@@ -4,13 +4,13 @@
   height: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 100px 20px;
-  /* background-color: #352250; */
+  background-color: #352250;
 }
 
 .form-cards-list {
   display: flex;
   justify-content: center;
+  padding: 100px 20px;
 }
 
 .form-card {
@@ -53,7 +53,7 @@
 }
 
 /* Note: using pseudo element doesn't create the tweening effect */
-/* .form-card--shadow::after {
+/* .form-card::after {
   display: block;
   content: ' ';
   border-radius: inherit;
@@ -62,7 +62,7 @@
   opacity: 0;
 }
 
-.form-card--shadow.expanded::after {
+.form-card.expanded::after {
   opacity: 1;
 } */
 
