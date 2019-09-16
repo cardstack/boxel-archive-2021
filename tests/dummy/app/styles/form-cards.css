@@ -5,7 +5,7 @@
   min-height: 100vh;
   margin: 0 auto;
   padding: 100px 20px;
-  background-color: #352250;
+  /* background-color: #352250; */
 }
 
 .form-cards-list {
@@ -15,26 +15,16 @@
 
 .form-card {
   box-sizing: border-box;
+  position: relative;
   width: 270px;
   height: 306px;
+  margin: 15px;
   border: none;
   border-radius: 30px;
   background-color: #65e7ff;
   color: black;
   text-align: center;
-  margin: 15px;
-  box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0);
-  opacity: 0.99;
-}
-
-.form-card.focused {
-  width: 396px;
-  height: 596px;
-  margin: 15px 70px;
-}
-
-.form-card.expanded {
-  opacity: 0.22;
+  cursor: pointer;
 }
 
 .form-card-2 {
@@ -46,24 +36,45 @@
 }
 
 
-/* edit page */
+/* Shadow cards */
+.form-card--shadow {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: inherit;
+  box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+}
+
+.form-card--shadow.expanded {
+  opacity: 1;
+}
+
+/* Note: using pseudo element doesn't create the tweening effect */
+/* .form-card--shadow::after {
+  display: block;
+  content: ' ';
+  border-radius: inherit;
+  height: 100%;
+  box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+}
+
+.form-card--shadow.expanded::after {
+  opacity: 1;
+} */
+
+
+/* Edit page */
 .form-cards-page.edit {
   position: absolute;
   top: 0;
   background-color: #eeeeee;
 }
 
-.form-card.isolated {
+.form-card.expanded {
   width: 556px;
   height: 838px;
-  box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.3);
-  opacity: 0.99;
-}
-
-#boxel-plane-space {
-  z-index: 0;
-}
-
-#boxel-plane-tools {
-  z-index: 1;
 }
