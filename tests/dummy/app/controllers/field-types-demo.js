@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import resize from 'ember-animated/motions/resize';
+import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import adjustColor from 'ember-animated/motions/adjust-color';
 import { printSprites } from 'ember-animated';
@@ -42,6 +43,21 @@ export default class EditDemoController extends Controller {
       adjustCSS('border-top-right-radius', sprite, { easing: easeInAndOut });
     });
   }
+
+  * fieldTransition ({ insertedSprites }) {
+    printSprites(arguments[0], 'fieldTransition');
+
+    insertedSprites.forEach(sprite => {
+      sprite.measureInitialBounds();
+      let { y: y1 } = sprite._offsetSprite.initialBounds;
+      let { y: y2 } = sprite._offsetSprite.finalBounds;
+      sprite.startTranslatedBy(0, Math.sign(y2 - y1) * 20);
+      move(sprite);
+      adjustCSS('border-top-left-radius', sprite, { easing: easeInAndOut });
+      adjustCSS('border-top-right-radius', sprite, { easing: easeInAndOut });
+    });
+  }
+
   * bodyTransition ({ keptSprites }) {
     printSprites(arguments[0], 'bodyTransition');
     keptSprites.forEach(sprite => {

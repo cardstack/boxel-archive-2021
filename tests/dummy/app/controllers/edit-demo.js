@@ -42,6 +42,7 @@ export default class EditDemoController extends Controller {
       adjustCSS('border-top-right-radius', sprite, { easing: easeInAndOut });
     });
   }
+
   * bodyTransition ({ keptSprites }) {
     printSprites(arguments[0], 'bodyTransition');
     keptSprites.forEach(sprite => {

@@ -1,9 +1,14 @@
-{{#animated-value this.mode initialInsertion=true finalRemoval=true use=this.defaultTransition as |mode|}}
-  {{component
-      (concat "field-modes/" mode)
-      componentName=componentName
-      fieldName=fieldName
-      value=value
-      label=label
-  }}
-{{/animated-value}}
+<AnimatedContainer class="editable-field-container {{model.mode}}">
+  {{#if (eq model.mode "schema")}}
+    <div class="field-type">Text Field</div>
+  {{/if}}
+  {{#animated-value @model watch="mode" group=(concat "field-" fieldName) initialInsertion=true finalRemoval=true use=this.defaultTransition as |model|}}
+    {{component
+        (concat "field-modes/" model.mode)
+        componentName=componentName
+        fieldName=fieldName
+        value=value
+        label=label
+    }}
+  {{/animated-value}}
+</AnimatedContainer>

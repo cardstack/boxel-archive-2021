@@ -7,7 +7,7 @@
   background-color: var(--catalog-light-gray);
 }
 
-.field-types-demo-page.edit {
+.field-types-demo-page.schema {
   background-color: var(--catalog-dark-purple);
 }
 
@@ -23,7 +23,7 @@
   position: relative;
 }
 
-.field-types-demo-card.edit {
+.field-types-demo-card.schema {
   border-color: var(--catalog-light-gray);
   border-radius: 0px;
 }
@@ -44,7 +44,7 @@
   color: white;
 }
 
-.field-types-demo-card-header.edit {
+.field-types-demo-card-header.schema {
   background-color: var(--catalog-light-purple);
   height: 100px;
   border-top-left-radius: 0;
@@ -58,7 +58,7 @@
   border-bottom-right-radius: 8px;
 }
 
-.field-types-demo-card-content.edit {
+.field-types-demo-card-content.schema {
   background-color: var(--catalog-dark-gray);
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -94,4 +94,36 @@
   top: 10px;
   right: 20px;
   width: 80px;
+}
+
+.field-type {
+  background-color: #6F6883;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+.editable-field-container .cs-component-text-field {
+  padding-top: 0;
+}
+
+.editable-field-container .cs-component-text-field--label.active > .label,
+.editable-field-container .cs-component-text-field--input:focus + .cs-component-text-field--label > .label {
+  top: 0.5rem;
+}
+
+.editable-field-container .cs-component-text-field--label > .label {
+  top: 2.0rem;
+}
+
+.editable-field-container .cs-component-text-field--input {
+  border-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.editable-field-container.schema .cs-component-text-field--input {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
