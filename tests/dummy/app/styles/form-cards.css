@@ -36,7 +36,15 @@
 }
 
 
-/* Shadow cards */
+/* Div for box-shadow tweening effect */
+/*
+  TODO: ideally use pseudo-element for box-shadow however then ember-animated doesn't tween
+*/
+.form-shadow-container {
+  height: 100%;
+  border-radius: inherit;
+}
+
 .form-card--shadow {
   box-sizing: border-box;
   position: absolute;
@@ -44,27 +52,12 @@
   height: 100%;
   border: none;
   border-radius: inherit;
-  box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px 20px rgba(0, 0, 0, 0.4);
   opacity: 0;
 }
-
 .form-card--shadow.expanded {
   opacity: 1;
 }
-
-/* Note: using pseudo element doesn't create the tweening effect */
-/* .form-card::after {
-  display: block;
-  content: ' ';
-  border-radius: inherit;
-  height: 100%;
-  box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-}
-
-.form-card.expanded::after {
-  opacity: 1;
-} */
 
 
 /* Edit page */

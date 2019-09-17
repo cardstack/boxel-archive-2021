@@ -1,8 +1,6 @@
 import Route from '@ember/routing/route';
 
 export default class FormCardsRoute extends Route {
-  boxelPlane = 'space';
-
   model() {
     return [
       { id : "1", title: 'Card 1' },

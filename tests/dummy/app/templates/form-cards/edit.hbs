@@ -1,8 +1,14 @@
+{{!-- This container slides down to become the background --}}
 <AnimatedContainer>
-  {{#animated-value "form-cards-edit-route" initialInsertion=true finalRemoval=true use=this.backgroundTransition}}
-    <div class="form-cards-page edit">
-    </div>
-  {{/animated-value}}
+  {{#if this.model.expanded}}
+    {{#animated-value "form-cards-edit-route" initialInsertion=true finalRemoval=true use=this.backgroundTransition}}
+      <div class="form-cards-page edit"></div>
+    {{/animated-value}}
+  {{else}}
+    {{#animated-value "form-cards-edit-route" finalRemoval=true use=this.backgroundTransition}}
+      <div class="form-cards-page edit"></div>
+    {{/animated-value}}
+  {{/if}}
 </AnimatedContainer>
 
 <AnimatedContainer class="form-cards-list">

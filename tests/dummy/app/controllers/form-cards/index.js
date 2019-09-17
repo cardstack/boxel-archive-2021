@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 import { action, set } from '@ember/object';
 
-import { printSprites } from 'ember-animated';
+// import { printSprites } from 'ember-animated';
 import move from 'ember-animated/motions/move';
 import opacity from 'ember-animated/motions/opacity';
 import resize from 'ember-animated/motions/resize';
@@ -10,7 +10,7 @@ import { easeInAndOut } from 'ember-animated/easings/cosine';
 import keep from '../../motions/keep';
 import scale from '../../motions/scale';
 
-export let duration = 1000;
+export let duration = 600;
 
 export default class FormCardsIndexController extends Controller {
   @action edit(card) {
@@ -25,16 +25,16 @@ export default class FormCardsIndexController extends Controller {
   }
 
   * wait({ removedSprites, receivedSprites }) {
-    printSprites(arguments[0], 'index outer transition');
+    // printSprites(arguments[0], 'index outer transition');
     removedSprites.concat(receivedSprites).forEach(keep);
   }
 
-  * backgroundTransition({ removedSprites, insertedSprites, sentSprites, receivedSprites }) {
-    printSprites(arguments[0], 'index background transition');
+  * backgroundTransition({ removedSprites, insertedSprites, receivedSprites }) {
+    // printSprites(arguments[0], 'index background transition');
 
     let factor = 0.8;
 
-    removedSprites.concat(sentSprites).forEach(sprite => {
+    removedSprites.forEach(sprite => {
       sprite.endAtPixel({
         x: sprite.initialBounds.left + ((1 - factor) / 2 * sprite.initialBounds.width),
         y: sprite.initialBounds.top + ((1 - factor) / 2 * sprite.initialBounds.height)
@@ -58,26 +58,10 @@ export default class FormCardsIndexController extends Controller {
     });
   }
 
-  // * boxTransition({ sentSprites, receivedSprites }) {
-  //   printSprites(arguments[0], 'index box transition');
-
-  //   sentSprites.forEach(sprite => {
-  //     move(sprite, { easing: easeInAndOut, duration });
-  //     resize(sprite, { easing: easeInAndOut, duration });
-  //     sprite.applyStyles({
-  //       'z-index': 3
-  //     });
-  //   });
-
-  //   receivedSprites.forEach(sprite => {
-  //     move(sprite, { easing: easeInAndOut, duration });
-  //     resize(sprite, { easing: easeInAndOut, duration });
-  //     sprite.applyStyles({
-  //       'z-index': 3
-  //     });
-  //   });
-  // }
-
+  /*
+    TODO: unlike the box transition animation, the animation for the div that supplies box-shadow
+    doesn't work as expected when moved to `receivedSprites` in `edit.js`
+  */
   * shadowTransition({ sentSprites }) {
     // printSprites(arguments[0], 'index shadow transition');
 
