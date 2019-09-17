@@ -104,8 +104,23 @@
   padding: 5px 10px;
 }
 
+.editable-field-container .cs-component-text-area--container {
+  border: none;
+  border-radius: 15px;
+}
+
 .editable-field-container .cs-component-text-field {
   padding-top: 0;
+  border: 1px solid var(--cs-text-field-border-color);
+  border-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: white;
+}
+
+.editable-field-container.schema .cs-component-text-field {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .editable-field-container .cs-component-text-field--label.active > .label,
@@ -118,9 +133,9 @@
 }
 
 .editable-field-container .cs-component-text-field--input {
-  border-radius: 15px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  /* border-radius: 15px; */
+  background-color: transparent;
+  border: none;
 }
 
 .editable-field-container.schema .cs-component-text-field--input {

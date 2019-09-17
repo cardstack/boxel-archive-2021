@@ -19,19 +19,17 @@
             <AnimatedContainer class="body-container">
               {{#animated-value model watch="mode" use=this.bodyTransition}}
                 <div class="field-types-demo-card-content {{model.mode}}">
-                  <AnimatedContainer class="body-container">
                     <div class="field-types-demo-card-field demo-card-text-field">
-                      <EditableField @value={{model.title}} @fieldName="title" @label="Title" @model={{model}} @transition={{this.fieldTransition}}/>
+                      <EditableField @value={{model.title}} @fieldName="title" @label="Title" @model={{model}} @mode={{model.mode}} @transition={{this.fieldTransition}}/>
                     </div>
                     <div class="field-types-demo-card-field demo-card-text-field">
                       <EditableField @value={{model.description}} @fieldName="description" @label="Description"
-                        @model={{model}} @transition={{this.fieldTransition}}/>
+                        @model={{model}} @mode={{model.mode}} @transition={{this.fieldTransition}}/>
                     </div>
                     <div class="field-types-demo-card-field demo-card-text-area">
                       <EditableField @value={{model.body}} @fieldName="body" @label="Body" @model={{model}}
-                        @componentName="text-area" @transition={{this.fieldTransition}}/>
+                        @mode={{model.mode}} @componentName="text-area" @transition={{this.fieldTransition}}/>
                     </div>
-                  </AnimatedContainer>
                 </div>
               {{/animated-value}}
             </AnimatedContainer>

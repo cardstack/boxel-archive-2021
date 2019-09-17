@@ -1,8 +1,8 @@
 <AnimatedContainer class="editable-field-container {{model.mode}}">
-  {{#if (eq model.mode "schema")}}
+  {{#animated-if (eq model.mode "schema") use=fade}}
     <div class="field-type">Text Field</div>
-  {{/if}}
-  {{#animated-value @model watch="mode" group=(concat "field-" fieldName) initialInsertion=true finalRemoval=true use=this.defaultTransition as |model|}}
+  {{/animated-if}}
+  {{#animated-value @model watch="mode" group=(concat "field-" @fieldName) use=this.defaultTransition as |model|}}
     {{component
         (concat "field-modes/" model.mode)
         componentName=componentName
