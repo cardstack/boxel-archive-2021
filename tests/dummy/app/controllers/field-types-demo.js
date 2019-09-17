@@ -44,7 +44,7 @@ export default class EditDemoController extends Controller {
     });
   }
 
-  * fieldTransition ({ insertedSprites }) {
+  * fieldTransition ({ insertedSprites, sentSprites, receivedSprites }) {
     printSprites(arguments[0], 'fieldTransition');
 
     insertedSprites.forEach(sprite => {
@@ -52,6 +52,17 @@ export default class EditDemoController extends Controller {
       let { y: y1 } = sprite._offsetSprite.initialBounds;
       let { y: y2 } = sprite._offsetSprite.finalBounds;
       sprite.startTranslatedBy(0, Math.sign(y2 - y1) * 20);
+      move(sprite);
+      adjustCSS('border-top-left-radius', sprite, { easing: easeInAndOut });
+      adjustCSS('border-top-right-radius', sprite, { easing: easeInAndOut });
+    });
+
+    receivedSprites.forEach(sprite => {
+      move(sprite);
+      adjustCSS('border-top-left-radius', sprite, { easing: easeInAndOut });
+      adjustCSS('border-top-right-radius', sprite, { easing: easeInAndOut });
+    });
+    sentSprites.forEach(sprite => {
       move(sprite);
       adjustCSS('border-top-left-radius', sprite, { easing: easeInAndOut });
       adjustCSS('border-top-right-radius', sprite, { easing: easeInAndOut });
