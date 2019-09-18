@@ -4,11 +4,11 @@
   {{/animated-if}}
 </AnimatedContainer>
 {{component
-    (concat "field-modes/" model.mode)
+    (concat "field-modes/" this.mode)
     componentName=componentName
     fieldName=fieldName
     value=value
     label=label
-    mode=model.mode
+    mode=this.mode
     defaultTransition=this.defaultTransition
 }}

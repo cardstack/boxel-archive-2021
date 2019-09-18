@@ -21,11 +21,22 @@ export default class EditableFieldComponent extends Component {
     return this.fade;
   }
 
-  rules({ newItems }) {
-    if (newItems[0]) {
-      return toUp;
-    } else {
-      return toDown;
+  @computed('model.mode')
+  get mode() {
+    if (this.model) {
+      return this.model.mode;
     }
+
+    if (this._mode) {
+      return this._mode;
+    }
+
+    return 'view';
+  }
+
+  set mode(mode) {
+    this.set('_mode', mode);
+
+    return mode;
   }
 }
