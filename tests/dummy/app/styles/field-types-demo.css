@@ -138,7 +138,6 @@
 }
 
 .cs-component-text-field .cs-component-text-field--input {
-  /* border-radius: 15px; */
   background-color: transparent;
   border: none;
 }
@@ -146,4 +145,8 @@
 .cs-component-text-field.schema .cs-component-text-field--input {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.cs-component-text-area .cs-component-text-field--input {
+  background-image: none;
 }
