@@ -29,7 +29,7 @@ Router.map(function() {
   this.route('animate-input');
   this.route('cards');
   this.route('image-cards', function() {
-    this.route('card', { path: '/:id' });
+    this.route('image-card', { path: '/:id' });
   });
 });
 
