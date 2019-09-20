@@ -1,10 +1,30 @@
-<div class="drag-drop-animation-page">
-  <AnimatedContainer class="cards-list triplet">
-    {{#animated-each sortedMascots use=transition duration=200 watch="dragState" as |mascot|}}
-      <div class="mascot-card" tabindex="-1" onkeydown={{action handleKey mascot}} onmousedown={{action beginDragging mascot }}>
-        <img class="mascot-card-image" draggable="false" src={{mascot.imageURL}} />
-        <h3>{{mascot.title}}</h3>
+<div class="drag-drop-page">
+  <div class="tray-container">
+    <AnimatedContainer class="draggable-card-container">
+      <div class="tray tray-1">
+        {{#animated-value draggableCard use=transition duration=200 watch="dragState" as |card|}}
+          <div class="draggable-card" role="button" onmousedown={{action beginDragging card}}>
+            <div class="draggable-card-contents">
+              <div class="draggable-card-title">
+                {{card.title}}
+              </div>
+            </div>
+          </div>
+        {{/animated-value}}
       </div>
-    {{/animated-each}}
-  </AnimatedContainer>
+    </AnimatedContainer>
+    <AnimatedContainer class="dragged-card-container">
+      <div class="tray tray-1">
+        {{#animated-value this.draggedCard use=transition duration=200 watch="dragState" as |card|}}
+          <div class="draggable-card" role="button" onmousedown={{action beginDragging card}}>
+            <div class="draggable-card-contents">
+              <div class="draggable-card-title">
+                {{card.title}}
+              </div>
+            </div>
+          </div>
+        {{/animated-value}}
+      </div>
+    </AnimatedContainer>
+  </div>
 </div>
