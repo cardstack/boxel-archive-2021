@@ -9,6 +9,6 @@ export default class DragDropAnimationRoute extends BoxelizedRoute {
 
   setupController(controller, model) {
     controller.set('model', model);
-    controller.set('draggableCard', model);
+    controller.set('draggableCards', [model]);
   }
 }

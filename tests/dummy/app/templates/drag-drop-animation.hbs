@@ -2,28 +2,28 @@
   <div class="tray-container">
     <AnimatedContainer class="draggable-card-container">
       <div class="tray tray-1">
-        {{#animated-value draggableCard use=transition duration=200 watch="dragState" as |card|}}
-          <div class="draggable-card" role="button" onmousedown={{action beginDragging card}}>
+        {{#animated-each draggableCards use=dragTransition duration=200 watch="dragState" as |card|}}
+          <div class="draggable-card zone-1" role="button" onmousedown={{action beginDragging card}}>
             <div class="draggable-card-contents">
               <div class="draggable-card-title">
                 {{card.title}}
               </div>
             </div>
           </div>
-        {{/animated-value}}
+        {{/animated-each}}
       </div>
     </AnimatedContainer>
     <AnimatedContainer class="dragged-card-container">
       <div class="tray tray-1">
-        {{#animated-value this.draggedCard use=transition duration=200 watch="dragState" as |card|}}
-          <div class="draggable-card" role="button" onmousedown={{action beginDragging card}}>
+        {{#animated-each draggedCards use=dragTransition duration=200 as |card|}}
+          <div class="draggable-card zone-2" role="button" onmousedown={{action beginDragging card}}>
             <div class="draggable-card-contents">
               <div class="draggable-card-title">
                 {{card.title}}
               </div>
             </div>
           </div>
-        {{/animated-value}}
+        {{/animated-each}}
       </div>
     </AnimatedContainer>
   </div>

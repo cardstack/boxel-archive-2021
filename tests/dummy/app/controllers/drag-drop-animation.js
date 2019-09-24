@@ -5,12 +5,15 @@ import drag from '../motions/drag';
 import { printSprites } from 'ember-animated';
 
 export default class DragDropController extends Controller {
-  draggedCard = {};
+  draggedCards = [];
 
   @action beginDragging(card, event) {
     let dragState;
+    let self = this;
 
     function stopMouse() {
+      self.set('draggableCards', []);
+      self.set('draggedCards', [card]);
       card.set('dragState', null);
       window.removeEventListener('mouseup', stopMouse);
       window.removeEventListener('mousemove', updateMouse);
@@ -34,22 +37,13 @@ export default class DragDropController extends Controller {
     card.set('dragState', dragState);
   }
 
-  * transition ({ keptSprites }) {
+  * dragTransition ({ keptSprites, receivedSprites }) {
     printSprites(arguments[0], 'transition');
-    let activeSprite = keptSprites.find(sprite => sprite.owner.value.dragState);
-    let others = keptSprites.filter(sprite => sprite !== activeSprite);
-    if (activeSprite) {
-      drag(activeSprite, {
-        others,
-        onCollision(otherSprite) {
-          let myModel = activeSprite.owner.value;
-          let otherModel = otherSprite.owner.value;
-          let myPriority = myModel.sortPriorityWithDefault;
-          myModel.set('sortPriority', otherModel.sortPriorityWithDefault);
-          otherModel.set('sortPriority', myPriority);
-        }
-      });
-    }
-    others.forEach(move);
+
+    keptSprites.forEach(sprite => {
+      drag(sprite, { others: [] });
+    });
+
+    receivedSprites.forEach(move);
   }
 }

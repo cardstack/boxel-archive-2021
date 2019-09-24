@@ -119,7 +119,7 @@ class Drag extends Motion {
           return distance < ownDistance;
         });
 
-        if (closerTarget) {
+        if (closerTarget && this.opts.onCollision) {
           this.opts.onCollision(closerTarget.payload);
         }
       }
