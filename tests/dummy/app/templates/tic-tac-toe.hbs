@@ -1,9 +1,20 @@
 <div class="tic-tac-toe-page">
-  <div class="tic-tac-toe-container">
-    <AnimatedContainer class="draggable-card-container">
-      <div class="tic-tac-toe-cell">
-        {{#animated-each leftWell use=dragTransition duration=200 watch="dragState" as |card|}}
-          <div class="draggable-card zone-1" role="button" onmousedown={{action beginDragging card "right"}}>
+  <div class="tic-tac-toe-pieces">
+    <AnimatedContainer class="pieces-container">
+      <div class="tray">
+        {{#animated-value pieceX use=dragTransition duration=200 watch="dragState" as |piece|}}
+          <div class="draggable-card zone-2" role="button" onmousedown={{action beginDragging piece}}>
+            {{piece.symbol}}
+          </div>
+        {{/animated-value}}
+      </div>
+    </AnimatedContainer>
+  </div>
+  <div class="tic-tac-toe-board">
+    {{#each ticTacToeCells as |cell|}}
+      <AnimatedContainer class="tic-tac-toe-cell">
+        {{#animated-each cell use=dragTransition duration=200 as |card|}}
+          <div class="draggable-card zone-1">
             <div class="draggable-card-contents">
               <div class="draggable-card-title">
                 {{card.title}}
@@ -11,20 +22,7 @@
             </div>
           </div>
         {{/animated-each}}
-      </div>
-    </AnimatedContainer>
-    <AnimatedContainer class="dragged-card-container">
-      <div class="tray tray-2">
-        {{#animated-each rightWell use=dragTransition duration=200 watch="dragState" as |card|}}
-          <div class="draggable-card zone-2" role="button" onmousedown={{action beginDragging card "left"}}>
-            <div class="draggable-card-contents">
-              <div class="draggable-card-title">
-                {{card.title}}
-              </div>
-            </div>
-          </div>
-        {{/animated-each}}
-      </div>
-    </AnimatedContainer>
+      </AnimatedContainer>
+    {{/each}}
   </div>
 </div>

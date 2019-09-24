@@ -5,7 +5,22 @@ import drag from '../motions/drag';
 import { printSprites } from 'ember-animated';
 
 export default class TicTacToeController extends Controller {
-  rightWell = [];
+  topLeft = [];
+  topCenter = [];
+  topRight = [];
+  middleLeft = [];
+  middleCenter = [];
+  middleRight = [];
+  bottomLeft = [];
+  bottomCenter = [];
+  bottomRight = [];
+  ticTacToeCells = [
+    this.topLeft,    this.topCenter,    this.topRight,
+    this.middleLeft, this.middleCenter, this.middleRight,
+    this.bottomLeft, this.bottomCenter, this.bottomRight
+  ];
+
+  pieceX = { symbol: '❌' };
 
   @action beginDragging(card, direction, event) {
     let dragState;

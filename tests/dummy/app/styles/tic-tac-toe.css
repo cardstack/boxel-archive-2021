@@ -7,9 +7,13 @@
   background-color: var(--catalog-light-purple);
 }
 
-.tic-tac-toe-container {
+.tic-tac-toe-pieces {
+  display: inline-block;
+}
+
+.tic-tac-toe-board {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   justify-items: center;
   align-items: center;
