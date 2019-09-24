@@ -2,9 +2,10 @@
   box-sizing: border-box;
   height: 100%;
   min-height: 100vh;
-  margin: 0 auto;
   padding: 100px 20px;
-  background-color: var(--catalog-light-purple);
+  background-color: var(--catalog-darker-purple);
+  display: grid;
+  grid-template-columns: 300px 1fr;
 }
 
 .tic-tac-toe-pieces {
@@ -13,7 +14,10 @@
 
 .tic-tac-toe-board {
   display: grid;
+  width: 700px;
+  height: 700px;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 10px;
   justify-items: center;
   align-items: center;
@@ -29,18 +33,20 @@
   text-align: center;
 }
 
-.draggable-card {
+.tic-tac-toe-piece {
   box-sizing: border-box;
   width: 180px;
   height: 180px;
   margin: 0;
-  padding-top: 20px;
+  padding-top: 40px;
   border: none;
   border-radius: 20px;
-  background-color: mediumpurple;
+  /* background-color: mediumpurple; */
   color: black;
   text-align: center;
+  font-size: 96px;
 }
+
 .dragging .draggable-card {
   opacity: 0.3;
 }

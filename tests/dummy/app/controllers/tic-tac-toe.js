@@ -1,48 +1,40 @@
 import Controller from '@ember/controller';
-import { action } from '@ember/object';
+import { action, set } from '@ember/object';
 import move from 'ember-animated/motions/move';
 import drag from '../motions/drag';
 import { printSprites } from 'ember-animated';
 
 export default class TicTacToeController extends Controller {
-  topLeft = [];
-  topCenter = [];
-  topRight = [];
-  middleLeft = [];
-  middleCenter = [];
-  middleRight = [];
-  bottomLeft = [];
-  bottomCenter = [];
-  bottomRight = [];
-  ticTacToeCells = [
-    this.topLeft,    this.topCenter,    this.topRight,
-    this.middleLeft, this.middleCenter, this.middleRight,
-    this.bottomLeft, this.bottomCenter, this.bottomRight
-  ];
+  ticTacToeCells = {
+    topLeft: [],
+    topCenter: [],
+    topRight: [],
+    middleLeft: [],
+    middleCenter: [],
+    middleRight: [],
+    bottomLeft: [],
+    bottomCenter: [],
+    bottomRight: [],
+  };
 
   pieceX = { symbol: '❌' };
+  pieceO = { symbol: '⭕' };
 
-  @action beginDragging(card, direction, event) {
+  @action beginDragging(piece, event) {
     let dragState;
     let self = this;
 
-    function stopMouse() {
-      if (direction === 'right') {
-        self.set('leftWell', []);
-        self.set('rightWell', [card]);
-      } else {
-        self.set('rightWell', []);
-        self.set('leftWell', [card]);
+    function finishDrag(event) {
+      // copy piece to the active cell
+      if (self.activeCell) {
+        let { clientX: x, clientY: y } = event;
+        set(piece, 'dropCoords', { x, y });
+        self.set(`ticTacToeCells.${self.activeCell}`, [piece]);
+        self.set('activeCell', null);
       }
 
-      card.set('dragState', null);
-      window.removeEventListener('mouseup', stopMouse);
-      window.removeEventListener('mousemove', updateMouse);
-    }
-
-    function updateMouse(event) {
-      dragState.latestPointerX = event.x;
-      dragState.latestPointerY = event.y;
+      set(piece, 'dragState', null);
+      window.removeEventListener('dragend', finishDrag);
     }
 
     dragState = {
@@ -52,19 +44,30 @@ export default class TicTacToeController extends Controller {
       latestPointerX: event.x,
       latestPointerY: event.y
     };
-    window.addEventListener('mouseup', stopMouse);
-    window.addEventListener('mousemove', updateMouse);
+    window.addEventListener('dragend', finishDrag);
 
-    card.set('dragState', dragState);
+    set(piece, 'dragState', dragState);
   }
 
-  * dragTransition ({ keptSprites, receivedSprites }) {
+  @action setActiveCell(cell) {
+    this.set('activeCell', cell);
+  }
+
+  @action foo(event) {
+    event.preventDefault();
+  }
+
+  * dragTransition ({ insertedSprites, keptSprites }) {
     printSprites(arguments[0], 'transition');
 
     keptSprites.forEach(sprite => {
       drag(sprite, { others: [] });
     });
 
-    receivedSprites.forEach(move);
+    insertedSprites.forEach(sprite => {
+      let dropCoords = sprite.owner.value.dropCoords;
+      sprite.startAtPixel(dropCoords);
+      move(sprite);
+    })
   }
 }

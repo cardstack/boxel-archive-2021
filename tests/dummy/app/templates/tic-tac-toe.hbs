@@ -1,28 +1,31 @@
 <div class="tic-tac-toe-page">
   <div class="tic-tac-toe-pieces">
     <AnimatedContainer class="pieces-container">
-      <div class="tray">
-        {{#animated-value pieceX use=dragTransition duration=200 watch="dragState" as |piece|}}
-          <div class="draggable-card zone-2" role="button" onmousedown={{action beginDragging piece}}>
-            {{piece.symbol}}
-          </div>
-        {{/animated-value}}
-      </div>
+      {{#animated-value pieceX use=dragTransition duration=200 watch="dragState" as |piece|}}
+        <div class="tic-tac-toe-piece" role="button" draggable="true" onmousedown={{action beginDragging piece}}>
+          {{piece.symbol}}
+        </div>
+      {{/animated-value}}
+    </AnimatedContainer>
+    <AnimatedContainer class="pieces-container">
+      {{#animated-value pieceO use=dragTransition duration=200 watch="dragState" as |piece|}}
+        <div class="tic-tac-toe-piece" role="button" draggable="true" onmousedown={{action beginDragging piece}}>
+          {{piece.symbol}}
+        </div>
+      {{/animated-value}}
     </AnimatedContainer>
   </div>
   <div class="tic-tac-toe-board">
-    {{#each ticTacToeCells as |cell|}}
-      <AnimatedContainer class="tic-tac-toe-cell">
-        {{#animated-each cell use=dragTransition duration=200 as |card|}}
-          <div class="draggable-card zone-1">
-            <div class="draggable-card-contents">
-              <div class="draggable-card-title">
-                {{card.title}}
-              </div>
+    {{#each-in ticTacToeCells as |cellName cellValue index|}}
+      <div class="tray" role="button" ondragover={{action foo}} ondragenter={{action setActiveCell cellName}} ondragleave={{action setActiveCell null}}>
+        <AnimatedContainer class="tic-tac-toe-cell {{concat "cell-" index}}">
+          {{#animated-each cellValue use=dragTransition duration=200 as |piece|}}
+            <div class="tic-tac-toe-piece">
+              {{piece.symbol}}
             </div>
-          </div>
-        {{/animated-each}}
-      </AnimatedContainer>
-    {{/each}}
+          {{/animated-each}}
+        </AnimatedContainer>
+      </div>
+    {{/each-in}}
   </div>
 </div>
