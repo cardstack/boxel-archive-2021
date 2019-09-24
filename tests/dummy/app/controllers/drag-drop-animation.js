@@ -5,15 +5,21 @@ import drag from '../motions/drag';
 import { printSprites } from 'ember-animated';
 
 export default class DragDropController extends Controller {
-  draggedCards = [];
+  rightWell = [];
 
-  @action beginDragging(card, event) {
+  @action beginDragging(card, direction, event) {
     let dragState;
     let self = this;
 
     function stopMouse() {
-      self.set('draggableCards', []);
-      self.set('draggedCards', [card]);
+      if (direction === 'right') {
+        self.set('leftWell', []);
+        self.set('rightWell', [card]);
+      } else {
+        self.set('rightWell', []);
+        self.set('leftWell', [card]);
+      }
+
       card.set('dragState', null);
       window.removeEventListener('mouseup', stopMouse);
       window.removeEventListener('mousemove', updateMouse);
