@@ -47,34 +47,3 @@
   font-size: 96px;
 }
 
-.dragging .draggable-card {
-  opacity: 0.3;
-}
-.dragging .accepts-drag .draggable-card {
-  opacity: 0.6;
-}
-
-.draggable-card-contents {
-  position: relative;
-}
-
-.draggable-card-title {
-  font-size: 18px;
-  white-space: nowrap;
-}
-
-.draggable-object-target {
-  width: 180px;
-  height: 180px;
-  text-align: center;
-  border-radius: 20px;
-}
-.dragging .draggable-object-target {
-  background-color: var(--catalog-darker-purple);
-}
-
-.drop-zone-text {
-  font-size: 24px;
-  color: white;
-  padding-top: 70px;
-}
