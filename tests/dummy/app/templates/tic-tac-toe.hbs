@@ -17,7 +17,7 @@
   </div>
   <div class="tic-tac-toe-board">
     {{#each-in ticTacToeCells as |cellName cellValue|}}
-      <div class="tray" role="button" ondragover={{action foo}} ondragenter={{action setActiveCell cellName}} ondragleave={{action setActiveCell null}}>
+      <div class="tray" role="button" ondrop={{action dropPiece}} ondragover={{action foo}} ondragenter={{action setActiveCell cellName}} ondragleave={{action setActiveCell null}}>
         <AnimatedContainer class="tic-tac-toe-cell {{concat "cell-" cellName}} {{if (eq this.activeCell cellName) "active"}}">
           {{#animated-each cellValue use=dragTransition duration=200 as |piece|}}
             <div class="tic-tac-toe-piece">

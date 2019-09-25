@@ -20,31 +20,29 @@ export default class TicTacToeController extends Controller {
   pieceX = { symbol: '❌' };
   pieceO = { symbol: '⭕' };
 
-  @action beginDragging(piece, event) {
+  @action beginDragging(piece, dragEvent) {
     let dragState;
     let self = this;
 
-    function finishDrag(event) {
-      // copy piece to the active cell
+    this.set('finishDrag', (dropEvent) => {
       if (self.activeCell) {
-        let { clientX: x, clientY: y } = event;
-        set(piece, 'dropCoords', { x, y });
+        let { x, y } = dropEvent;
+        let { offsetX, offsetY } = dragEvent;
+        set(piece, 'dropCoords', { x: x - offsetX, y: y - offsetY });
         self.set(`ticTacToeCells.${self.activeCell}`, [piece]);
         self.set('activeCell', null);
       }
 
       set(piece, 'dragState', null);
-      window.removeEventListener('dragend', finishDrag);
-    }
+    });
 
     dragState = {
       usingKeyboard: false,
-      initialPointerX: event.x,
-      initialPointerY: event.y,
-      latestPointerX: event.x,
-      latestPointerY: event.y
+      initialPointerX: dragEvent.x,
+      initialPointerY: dragEvent.y,
+      latestPointerX: dragEvent.x,
+      latestPointerY: dragEvent.y
     };
-    window.addEventListener('dragend', finishDrag);
 
     set(piece, 'dragState', dragState);
   }
@@ -55,6 +53,10 @@ export default class TicTacToeController extends Controller {
 
   @action foo(event) {
     event.preventDefault();
+  }
+
+  @action dropPiece(event) {
+    this.finishDrag(event);
   }
 
   * dragTransition ({ insertedSprites, keptSprites }) {
