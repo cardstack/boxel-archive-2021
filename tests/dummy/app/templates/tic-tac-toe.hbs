@@ -15,10 +15,10 @@
       {{/animated-value}}
     </AnimatedContainer>
   </div>
-  <div class="tic-tac-toe-board">
+  <div class="tic-tac-toe-board {{if isDragging "dragging"}}">
     {{#each-in ticTacToeCells as |cellName cellValue|}}
-      <div class="tray" role="button" ondrop={{action dropPiece}} ondragover={{action foo}} ondragenter={{action setActiveCell cellName}} ondragleave={{action setActiveCell null}}>
-        <AnimatedContainer class="tic-tac-toe-cell {{concat "cell-" cellName}} {{if (eq this.activeCell cellName) "active"}}">
+      <div class="cell-tray {{if cellValue.length "" "draggable"}} {{if (eq this.activeCell cellName) "active"}}" role="button" ondrop={{action dropPiece}} ondragover={{action foo}} ondragenter={{action setActiveCell cellName}} ondragleave={{action setActiveCell null}}>
+        <AnimatedContainer class="tic-tac-toe-cell {{concat "cell-" cellName}}">
           {{#animated-each cellValue use=dragTransition duration=200 as |piece|}}
             <div class="tic-tac-toe-piece">
               {{piece.symbol}}

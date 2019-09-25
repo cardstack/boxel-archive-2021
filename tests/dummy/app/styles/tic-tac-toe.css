@@ -23,14 +23,22 @@
   align-items: center;
 }
 
-.tray {
+.cell-tray {
   box-sizing: border-box;
   width: 200px;
   height: 200px;
-  padding: 10px;
   border-radius: 30px;
+  border: solid 10px var(--catalog-darker-gray);
   background-color: var(--catalog-darker-gray);
   text-align: center;
+}
+
+.tic-tac-toe-board.dragging .cell-tray.draggable {
+  background-color: var(--catalog-light-purple);
+}
+
+.tic-tac-toe-board.dragging .cell-tray.draggable.active {
+  background-color: mediumpurple;
 }
 
 .tic-tac-toe-piece {

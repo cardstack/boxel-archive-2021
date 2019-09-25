@@ -22,17 +22,17 @@ export default class TicTacToeController extends Controller {
 
   @action beginDragging(piece, dragEvent) {
     let dragState;
-    let self = this;
 
     this.set('finishDrag', (dropEvent) => {
-      if (self.activeCell) {
+      if (this.activeCell) {
         let { x, y } = dropEvent;
         let { offsetX, offsetY } = dragEvent;
         set(piece, 'dropCoords', { x: x - offsetX, y: y - offsetY });
-        self.set(`ticTacToeCells.${self.activeCell}`, [piece]);
-        self.set('activeCell', null);
+        this.set(`ticTacToeCells.${this.activeCell}`, [piece]);
+        this.set('activeCell', null);
       }
 
+      this.set('isDragging', false);
       set(piece, 'dragState', null);
     });
 
@@ -44,6 +44,8 @@ export default class TicTacToeController extends Controller {
       latestPointerY: dragEvent.y
     };
 
+    window.addEventListener('dragend', () => this.set('isDragging', false));
+    this.set('isDragging', true)
     set(piece, 'dragState', dragState);
   }
 
