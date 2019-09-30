@@ -9,7 +9,7 @@ import { printSprites, wait } from 'ember-animated';
 export let animationDelay = 350;
 export let highlightDuration = 150;
 
-export default class CatalogEventsController extends Controller {
+export default class CatalogEventsIndexController extends Controller {
   @action
   select(id) {
     for (let card of this.model) {
@@ -38,6 +38,7 @@ export default class CatalogEventsController extends Controller {
 
   @action
   viewEditPage(card) {
+    set(card, 'selected', false);
     this.transitionToRoute('catalog.events.edit', card);
   }
 
