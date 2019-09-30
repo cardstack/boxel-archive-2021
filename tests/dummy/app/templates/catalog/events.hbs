@@ -6,15 +6,16 @@
     {{#each this.model as |card|}}
       <AnimatedContainer>
         {{#animated-value card watch="selected" use=this.trayAnimation key="id" group="tray" as |card|}}
-          <div class="event-card-container {{if card.selected "selected"}}" role="button" onMouseEnter={{action "select" card.id}} onMouseLeave={{action "unselect" card.id}} {{action "viewDetailPage" card}}>
+          <div class="event-card-container {{if card.selected "selected"}}" role="button" onMouseEnter={{action "select" card.id}} onMouseLeave={{action "unselect" card.id}}>
             <div class="event-card-container--content">
               <div>{{card.constructor.modelName}} Card</div>
               {{! template-lint-configure no-nested-interactive false}}
-              <button {{action "viewDetailPage" card}}>Edit</button>
+              <button {{action "viewEditPage" card}}>Edit</button>
             </div>
 
             {{#animated-value card watch="selected" key="id" group="content" use=this.holdContent as |card|}}
-              <div class="event-card-wrapper {{if card.selected "selected"}}">
+              {{! template-lint-configure no-nested-interactive false}}
+              <div class="event-card-wrapper {{if card.selected "selected"}}" role="button" {{action "viewDetailPage" card}}>
                 {{#animated-value card key="id" group=(concat "card-" card.id) as |card|}}
                   {{!-- Card content --}}
                   <div class="event-card event-card-{{card.id}}">
@@ -53,3 +54,5 @@
     {{/each}}
   </div>
 </section>
+
+{{outlet}}

@@ -36,6 +36,11 @@ export default class CatalogEventsController extends Controller {
     this.transitionToRoute('events.view', card);
   }
 
+  @action
+  viewEditPage(card) {
+    this.transitionToRoute('catalog.events.edit', card);
+  }
+
   * trayAnimation({ keptSprites, receivedSprites }) {
     printSprites(arguments[0], 'events tray animation');
 
