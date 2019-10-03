@@ -5,7 +5,21 @@
         <div class="event-edit--container-content">
           <div><span>Editing:</span> {{this.model.constructor.modelName}} Card</div>
           {{! template-lint-configure no-nested-interactive false}}
-          <button {{action "viewGridPage"}}>Done</button>
+          <div class="event-edit--container-content--nav">
+            <button class="btn-done" {{action "viewGridPage"}}>Done</button>
+            <button class="btn-more" {{action "toggleModeMenu"}}></button>
+            {{#if showModeMenu}}
+              <div class="mode-menu">
+                <nav>
+                  <ul>
+                    <li><LinkTo @route="catalog.events.view" @model={{model}}>View as Layout</LinkTo></li>
+                    <li><LinkTo @route="catalog.events.edit" @model={{model}}>View as Form</LinkTo></li>
+                    <li><LinkTo @route="catalog.events.schema" @model={{model}}>View as Schema</LinkTo></li>
+                  </ul>
+                </nav>
+              </div>
+            {{/if}}
+          </div>
         </div>
 
         {{#animated-value this.model use=this.trayAnimation key="id" group="tray" as |card|}}
@@ -25,7 +39,7 @@
                       {{#animated-value card key="id" group=(concat "header-" card.id) use=this.headerTransition}}
                         <div>
                           <div class="event-edit-details--header">
-                            <div class="event-edit-date">{{card.date}}</div>
+                            <div class="event-edit-date">{{moment-format card.datetime "ddd, MMM Do ha"}}</div>
                             <AnimatedContainer>
                               {{#animated-value card group="title" use=this.tweenTitle}}
                                 <div class="event-edit-title">{{card.title}}</div>
@@ -41,18 +55,21 @@
                     </AnimatedContainer>
                     <AnimatedContainer>
                       {{#animated-value card group=(concat "body-" card.id) use=this.bodyTransition}}
-                        <div class="event-edit--main">
-                          <div class="event-edit--info-group">
-                            <div class="label">Date & Time</div>
-                            <div>{{card.datetime}}</div>
+                        <div class="event-view--main">
+                          <div class="event-view--info-group">
+                            <TextField @label="Title" @value={{card.title}} @required={{true}} />
                           </div>
-                          <div class="event-edit--info-group">
-                            <div class="label">Location</div>
-                            <div>{{card.address}}</div>
+                          <div class="event-view--info-group">
+                            <DatePicker @label="Date & Time" @selected={{card.datetime}} @required={{true}} />
                           </div>
-                          <div class="event-edit--info-group">
-                            <div class="label">Description</div>
-                            <div>{{card.description}}</div>
+                          <div class="event-view--info-group">
+                            <TextField @label="Location" @value={{card.location}} @required={{true}} />
+                          </div>
+                          <div class="event-view--info-group">
+                            <TextField @label="Description" @value={{card.description}} @required={{true}} />
+                          </div>
+                          <div class="event-view--info-group">
+                            <TextArea @label="Body" @value={{card.body}} @required={{true}} />
                           </div>
                         </div>
                       {{/animated-value}}
@@ -64,6 +81,7 @@
             </div>
           </div>
         {{/animated-value}}
+
       </div>
     </AnimatedContainer>
 

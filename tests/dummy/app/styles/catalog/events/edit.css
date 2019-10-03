@@ -27,12 +27,70 @@
   text-transform: capitalize;
 }
 
-.event-edit--container-content button {
+.event-edit--container-content .event-edit--container-content--nav {
+  position: relative;
+}
+
+.event-edit--container-content .btn-done {
   padding: 6px 12px;
   border-radius: 5px;
   background-color: white;
   color: black;
   font-weight: bold;
+}
+
+.event-edit--container-content .btn-more {
+  border: none;
+  outline: none;
+  padding: 3px;
+  width: 24px;
+  height: 16px;
+  background-image: url(/images/icon-more.svg);
+  background-position: center;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  opacity: .5;
+}
+.event-edit--container-content .btn-more:focus,
+.event-edit--container-content .btn-more:hover {
+  background-color: transparent;
+  opacity: 1;
+}
+
+.event-edit--container-content .mode-menu {
+  position: absolute;
+  width: 130px;
+  border: solid 1px var(--boxel-darker-gray);
+  border-radius: 5px;
+  background-color: white;
+  font-size: 14px;
+  top: -10px;
+  left: 75px;
+  padding: 10px 20px;
+  z-index: 5;
+}
+
+.event-edit--container-content .mode-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.event-edit--container-content .mode-menu ul li {
+  padding: 5px 0;
+}
+
+.event-edit--container-content .mode-menu ul li a {
+  color: var(--boxel-darker-light-gray);
+}
+
+.event-edit--container-content .mode-menu ul li a.active {
+  font-weight: bold;
+  color: black;
+}
+
+.event-edit--container-content .mode-menu ul li a:hover {
+  color: black;
 }
 
 .event-edit--container-content span {
@@ -63,7 +121,6 @@
 .event-edit--tray.selected {
   padding: 50px 15px 15px;
 }
-
 
 /* Right Edge */
 .right-edge--container {

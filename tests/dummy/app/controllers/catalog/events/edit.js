@@ -7,10 +7,17 @@ import { default as opacity } from 'ember-animated/motions/opacity';
 // import { printSprites } from 'ember-animated';
 
 export default class CatalogEventsEditController extends Controller {
+  showModeMenu = false;
+
   @action
   viewGridPage() {
     set(this.model, 'selected', true);
     this.transitionToRoute('catalog.events');
+  }
+
+  @action
+  toggleModeMenu() {
+    set(this, 'showModeMenu', !this.showModeMenu);
   }
 
   * trayAnimation({ receivedSprites }) {
