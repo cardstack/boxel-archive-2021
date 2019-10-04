@@ -43,7 +43,8 @@
                       {{#animated-value card group=(concat "body-" card.id) use=this.bodyTransition}}
                         <div class="event-view--main">
                           <div class="event-view--info-group">
-                            <TextField @label="Title" @value={{card.title}} @required={{true}} />
+                            {{!-- <TextField @label="Title" @value={{card.title}} @required={{true}} /> --}}
+                            <BoxelField @value={{card.title}} @fieldName="title" @label="Title" @model={{card}} @mode="edit" @transition={{this.fieldTransition}}/>
                           </div>
                           <div class="event-view--info-group">
                             <DatePicker @label="Date & Time" @selected={{card.datetime}} @required={{true}} />

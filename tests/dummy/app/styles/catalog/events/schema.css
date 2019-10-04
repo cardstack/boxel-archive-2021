@@ -122,6 +122,33 @@
   padding: 50px 15px 15px;
 }
 
+.event--schema--field-type {
+  height: 20px;
+  background-color: var(--boxel-dark-purple);
+  border-radius: 3px 3px 0 0;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+}
+
+.boxel-field-schema-container ~ .boxel-field-container .cs-component-text-field--label > .label {
+  top: 1.5rem;
+}
+
+.boxel-field-schema-container ~ .boxel-field-container .cs-component-text-field--label.active > .label {
+  top: 0.5rem;
+}
+
+.boxel-field-schema-container ~ .boxel-field-container .cs-component-text-field {
+  padding-top: 0;
+}
+
+.boxel-field-schema-container ~ .boxel-field-container .cs-component-text-field--input {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 /* Right Edge */
 .right-edge--container {
   position: fixed;
