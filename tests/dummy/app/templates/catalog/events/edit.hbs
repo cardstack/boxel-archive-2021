@@ -5,7 +5,7 @@
         <div class="event-edit--container-content">
           <div><span>Editing:</span> {{this.model.constructor.modelName}} Card</div>
           {{! template-lint-configure no-nested-interactive false}}
-          <ViewModeNav @model={{model}} />
+          <ViewModeNav @model={{model}} @viewGridPage={{action this.viewGridPage}}/>
         </div>
 
         {{#animated-value this.model use=this.trayAnimation key="id" group="tray" as |card|}}
@@ -46,17 +46,17 @@
                             {{!-- <TextField @label="Title" @value={{card.title}} @required={{true}} /> --}}
                             <BoxelField @value={{card.title}} @fieldName="title" @label="Title" @model={{card}} @mode="edit" @transition={{this.fieldTransition}}/>
                           </div>
-                          <div class="event-view--info-group">
+                          {{!-- <div class="event-view--info-group">
                             <DatePicker @label="Date & Time" @selected={{card.datetime}} @required={{true}} />
+                          </div> --}}
+                          <div class="event-view--info-group">
+                            <BoxelField @value={{card.location}} @fieldName="location" @label="Location" @model={{card}} @mode="edit" @transition={{this.fieldTransition}}/>
                           </div>
                           <div class="event-view--info-group">
-                            <TextField @label="Location" @value={{card.location}} @required={{true}} />
+                            <BoxelField @value={{card.description}} @fieldName="description" @label="Description" @model={{card}} @mode="edit" @transition={{this.fieldTransition}}/>
                           </div>
                           <div class="event-view--info-group">
-                            <TextField @label="Description" @value={{card.description}} @required={{true}} />
-                          </div>
-                          <div class="event-view--info-group">
-                            <TextArea @label="Body" @value={{card.body}} @required={{true}} />
+                            <BoxelField @value={{card.body}} @componentName="text-area" @fieldName="body" @label="Body" @model={{card}} @mode="edit" @transition={{this.fieldTransition}}/>
                           </div>
                         </div>
                       {{/animated-value}}
@@ -71,28 +71,5 @@
 
       </div>
     </AnimatedContainer>
-
-    <div class="right-edge--container">
-      <div class="right-edge">
-        <div class="right-edge--title">
-          {{this.model.constructor.modelName}} Card
-        </div>
-        <div class="right-edge--properties">
-          <div>Properties:</div>
-          <div>
-            <label>Configure</label>
-            <input type="text">
-          </div>
-          <div>
-            <label>Configure</label>
-            <input type="text">
-          </div>
-          <div>
-            <label>Configure</label>
-            <input type="text">
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>

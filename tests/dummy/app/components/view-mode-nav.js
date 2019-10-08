@@ -7,14 +7,7 @@ export default class ViewModeNavComponent extends Component {
   showModeMenu = false;
 
   @action
-  viewGridPage() {
-    set(this.model, 'selected', true);
-    this.transitionToRoute('catalog.events');
-  }
-
-  @action
   toggleModeMenu() {
     set(this, 'showModeMenu', !this.showModeMenu);
   }
-
 }
