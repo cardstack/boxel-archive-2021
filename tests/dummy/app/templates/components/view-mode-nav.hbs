@@ -1,5 +1,5 @@
 <div class="event--container-content--nav">
-  <button class="btn-done" {{action viewGridPage}}>Done</button>
+  <LinkTo @route="events.view" @model={{model}} class="btn-done">Done</LinkTo>
   <button class="btn-more" {{action "toggleModeMenu"}}></button>
   {{#if this.showModeMenu}}
     <div class="mode-menu">
