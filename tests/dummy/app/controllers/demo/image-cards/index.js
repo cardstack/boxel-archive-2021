@@ -6,7 +6,8 @@ import move from 'ember-animated/motions/move';
 import resize from 'ember-animated/motions/resize';
 import opacity from 'ember-animated/motions/opacity';
 import adjustCSS from 'ember-animated/motions/adjust-css';
-import { easeOut } from 'ember-animated/easings/cosine';
+import adjustColor from 'ember-animated/motions/adjust-color';
+import { easeOut, easeInAndOut } from 'ember-animated/easings/cosine';
 
 export let duration = 700;
 
@@ -14,6 +15,12 @@ export default class DemoImageCardsIndexController extends Controller {
 
   @action toggle(card) {
     this.transitionToRoute('demo.image-cards.image-card', card);
+  }
+
+  * backgroundTransition({ receivedSprites }) {
+    receivedSprites.forEach(sprite => {
+      adjustColor('background-color', sprite, { easing: easeInAndOut });
+    });
   }
 
   * transition({ sentSprites }) {

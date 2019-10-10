@@ -6,6 +6,9 @@
   padding: 100px 20px;
   background-color: var(--boxel-light-purple);
 }
+.image-cards-page.preview {
+  background-color: var(--boxel-dark-purple);
+}
 
 .image-cards-list {
   display: flex;
