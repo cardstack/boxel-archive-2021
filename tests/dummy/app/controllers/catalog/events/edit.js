@@ -3,6 +3,7 @@ import { action, set } from '@ember/object';
 import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
+import adjustColor from 'ember-animated/motions/adjust-color';
 import { default as opacity } from 'ember-animated/motions/opacity';
 import { printSprites } from 'ember-animated';
 import { easeInAndOut } from 'ember-animated/easings/cosine';
@@ -19,6 +20,12 @@ export default class CatalogEventsEditController extends Controller {
   @action
   toggleModeMenu() {
     set(this, 'showModeMenu', !this.showModeMenu);
+  }
+
+  * backgroundTransition({ receivedSprites }) {
+    receivedSprites.forEach(sprite => {
+      adjustColor('background-color', sprite, { easing: easeInAndOut });
+    });
   }
 
   * trayAnimation({ receivedSprites }) {
