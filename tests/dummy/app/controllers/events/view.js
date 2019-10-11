@@ -26,6 +26,11 @@ export default class EventsViewController extends Controller {
     this.transitionToRoute('catalog.events');
   }
 
+  @action
+  viewEditPage() {
+    this.transitionToRoute('catalog.events.edit', this.model);
+  }
+
   * trayAnimation({ keptSprites, receivedSprites }) {
     // printSprites(arguments[0], 'view tray animation');
 
