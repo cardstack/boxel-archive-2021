@@ -1,3 +1,18 @@
+.event-bg--container {
+  position: unset;
+}
+
+.event-bg--view {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: white;
+}
+
 .event-view {
   --width: 860px;
   --height: 1065px;

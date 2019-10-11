@@ -3,8 +3,10 @@ import { action, set } from '@ember/object';
 import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
+import adjustColor from 'ember-animated/motions/adjust-color';
 import { default as opacity } from 'ember-animated/motions/opacity';
 import { printSprites, wait } from 'ember-animated';
+import { easeInAndOut } from 'ember-animated/easings/cosine';
 
 import { animationDelay } from '../catalog/events';
 import { highlightDuration } from '../catalog/events';
@@ -29,6 +31,12 @@ export default class EventsViewController extends Controller {
   @action
   viewEditPage() {
     this.transitionToRoute('catalog.events.edit', this.model);
+  }
+
+  * backgroundTransition({ receivedSprites }) {
+    receivedSprites.forEach(sprite => {
+      adjustColor('background-color', sprite, { easing: easeInAndOut });
+    });
   }
 
   * trayAnimation({ keptSprites, receivedSprites }) {
