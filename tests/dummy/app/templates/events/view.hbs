@@ -6,8 +6,7 @@
           <div class="event-card-container--content">
             <div>{{card.constructor.modelName}} Card</div>
             {{! template-lint-configure no-nested-interactive false}}
-            <button {{action "viewGridPage"}}>Done</button>
-            <LinkTo @route="catalog.events.edit" @model={{model}}><button>Edit</button></LinkTo>
+            <button {{action "viewEditPage"}}>Edit</button>
           </div>
 
           {{#animated-value this.model watch="selected" key="id" group="content" use=this.holdContent as |card|}}
