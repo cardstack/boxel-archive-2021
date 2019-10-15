@@ -25,6 +25,37 @@
     </div>
   </div>
 
+  {{#if seeDetailView}}
+    <div class="detail-view-overlay">
+      <div class="catalog-field-preview">
+        <div class="catalog-field-preview--boxel-container">
+          <div class="create-new--left-edge--catalog-field">
+            <div class="field-icon" style={{css-url "background-image" field.icon}}></div>
+            <div class="field-content">
+              <div class="field-content--title">{{field.title}}</div>
+              <div class="field-content--description">{{field.description}}</div>
+            </div>
+          </div>
+        </div>
+        <section class="catalog-field-preview--info-panel">
+          <button class="catalog-field-preview--close-button">x</button>
+          <header>
+            <h2 class="catalog-field-preview--info-panel-title">TK Field</h2>
+          </header>
+
+          <div class="catalog-field-preview--info-panel-data">
+            <p>Copy TK...</p>
+          </div>
+
+          <footer class="catalog-field-preview--footer">
+            <button>Start Editing</button>
+            <button>Save to Library</button>
+          </footer>
+        </section>
+      </div>
+    </div>
+  {{/if}}
+
   {{#let this.model.sampleEvent as |card|}}
     {{!-- Stage --}}
     <div class="create-new--main">

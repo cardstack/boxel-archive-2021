@@ -34,7 +34,7 @@
   flex-flow: row nowrap;
   width: 390px;
   height: 100vh;
-  z-index: 2;
+  z-index: 4;
   opacity: 0.96;
 }
 
@@ -310,4 +310,102 @@
   font-family: 'Open Sans';
   font-size: 13px;
   outline: 0;
+}
+
+
+/* Detail view overlay */
+.detail-view-overlay {
+  box-sizing: border-box;
+  width: calc(100vw - 390px);
+  height: 100vh;
+  background-color: rgba(32, 31, 39, 0.9);
+  position: absolute;
+  z-index: 3;
+  margin-left: 390px;
+}
+
+.catalog-field-preview {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  width: 100%;
+  height: 100%;
+  max-width: 650px;
+  max-height: 70vh;
+  margin-top: 15vh; /* center it vertically */
+  margin-left: 30px;
+  background-color: transparent;
+}
+
+.catalog-field-preview--boxel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background-color: var(--boxel-light-purple);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.catalog-field-preview--info-panel {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 30px;
+  background-color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.catalog-field-preview--close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  background: none;
+  color: black;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.catalog-field-preview--close-button:hover,
+.catalog-field-preview--close-button:focus {
+  background: none;
+}
+
+.catalog-field-preview--footer {
+  margin-top: auto;
+}
+
+.catalog-field-preview--info-panel-title {
+  padding-bottom: 5px;
+  font-size: 26px;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+
+.catalog-field-preview--info-panel-data {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--boxel-darker-gray);
+}
+
+.catalog-field-preview--footer > button {
+  width: 100%;
+  height: 40px;
+  padding: 10px 30px;
+  background-color: var(--boxel-bright-purple);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Open Sans';
+  font-size: 16px;
+}
+
+.catalog-field-preview--footer > button + button {
+  margin-top: 10px;
 }
