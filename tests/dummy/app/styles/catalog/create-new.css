@@ -97,6 +97,7 @@
 .create-new--left-edge--catalog-field {
   position: relative;
   display: flex;
+  width: 100%;
   border: 1px solid #ddd;
   border-radius: 10px;
   background-color: white;
@@ -358,6 +359,7 @@
 }
 
 .catalog-field-preview--close-button {
+  box-sizing: border-box;
   position: absolute;
   top: 10px;
   right: 10px;
