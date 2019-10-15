@@ -7,11 +7,15 @@
   <div class="event-edit--container">
     <AnimatedContainer>
       <div class="event-edit--outer {{if this.model.selected "selected"}}">
-        <div class="event-edit--container-content">
-          <div><span>Editing:</span> {{this.model.constructor.modelName}} Card</div>
-          {{! template-lint-configure no-nested-interactive false}}
-          <ViewModeNav @model={{model}} @viewGridPage={{action this.viewGridPage}}/>
-        </div>
+        <AnimatedContainer>
+          {{#animated-value "topbar" initialInsertion=true finalRemoval=true use=this.topbarTransition duration=200}}
+            <div class="event-edit--container-content">
+              <div><span>Editing:</span> {{this.model.constructor.modelName}} Card</div>
+              {{! template-lint-configure no-nested-interactive false}}
+              <ViewModeNav @model={{model}} @viewGridPage={{action this.viewGridPage}}/>
+            </div>
+          {{/animated-value}}
+        </AnimatedContainer>
 
         {{#animated-value this.model use=this.trayAnimation key="id" group="tray" as |card|}}
           <div class="event-edit--tray {{if card.selected "selected"}}">
