@@ -12,53 +12,54 @@
     <div class="create-new--left-edge--catalog">
       <div class="title">Card Catalog</div>
 
-      {{#each this.model.fieldTypes as |field|}}
-        <div class="create-new--left-edge--catalog-field">
-          <div class="field-icon" style={{css-url "background-image" field.icon}}></div>
-          <div class="field-content">
-            <div class="field-content--title">{{field.title}}</div>
-            <div class="field-content--description">{{field.description}}</div>
-            <button {{action "showDetailView" field}} class="field-content--info-icon"></button>
+      {{#animated-beacon name="field"}}
+        {{#each this.model.fieldTypes as |field|}}
+          <div class="create-new--left-edge--catalog-field">
+            <div class="field-icon" style={{css-url "background-image" field.icon}}></div>
+            <div class="field-content">
+              <div class="field-content--title">{{field.title}}</div>
+              <div class="field-content--description">{{field.description}}</div>
+              <button {{action "showDetailView" field}} class="field-content--info-icon"></button>
+            </div>
           </div>
-        </div>
-      {{/each}}
+        {{/each}}
+      {{/animated-beacon}}
     </div>
   </div>
 
-  {{#if this.displayDetailView}}
-    <div class="detail-view-overlay">
-      <div class="catalog-field-preview">
-        <div class="catalog-field-preview--boxel-container">
-          <div class="create-new--left-edge--catalog-field">
-            <div class="field-icon" style={{css-url "background-image" this.selectedField.icon}}></div>
-            <div class="field-content">
-              <div class="field-content--title">{{this.selectedField.title}}</div>
-              <div class="field-content--description">{{this.selectedField.description}}</div>
-            </div>
-          </div>
-        </div>
-        <div class="catalog-field-preview--info-panel">
-          <button {{action "hideDetailView"}} class="catalog-field-preview--close-button">x</button>
-          <div>
-            <div class="catalog-field-preview--info-panel-title">{{this.selectedField.title}}</div>
-          </div>
-
-          <div class="catalog-field-preview--info-panel-data">
-            <div>This is a {{this.selectedField.title}}...</div>
-          </div>
-
-          <div class="catalog-field-preview--footer">
-            <button>Start Editing</button>
-            <button>Save to Library</button>
+  {{!-- Field detail view --}}
+  {{#animated-if this.displayDetailView group="field" use=this.transition}}
+    <div class="catalog-field-preview">
+      <div class="catalog-field-preview--boxel-container">
+        <div class="create-new--left-edge--catalog-field">
+          <div class="field-icon" style={{css-url "background-image" this.selectedField.icon}}></div>
+          <div class="field-content">
+            <div class="field-content--title">{{this.selectedField.title}}</div>
+            <div class="field-content--description">{{this.selectedField.description}}</div>
           </div>
         </div>
       </div>
+      <div class="catalog-field-preview--info-panel">
+        <button {{action "hideDetailView"}} class="catalog-field-preview--close-button">x</button>
+        <div>
+          <div class="catalog-field-preview--info-panel-title">{{this.selectedField.title}}</div>
+        </div>
+
+        <div class="catalog-field-preview--info-panel-data">
+          <div>This is a {{this.selectedField.title}}...</div>
+        </div>
+
+        <div class="catalog-field-preview--footer">
+          <button>Start Editing</button>
+          <button>Save to Library</button>
+        </div>
+      </div>
     </div>
-  {{/if}}
+  {{/animated-if}}
 
   {{#let this.model.sampleEvent as |card|}}
     {{!-- Stage --}}
-    <div class="create-new--main">
+    <div class="create-new--main {{if this.displayDetailView "faded"}}">
       {{!-- Card --}}
       <div class="create-new--card">
         <div class="create-new--card-header">
