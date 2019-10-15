@@ -5,8 +5,9 @@ import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import adjustColor from 'ember-animated/motions/adjust-color';
 import { default as opacity } from 'ember-animated/motions/opacity';
-import { printSprites } from 'ember-animated';
+import { printSprites, wait } from 'ember-animated';
 import { easeInAndOut } from 'ember-animated/easings/cosine';
+import { animationDelay } from '../../catalog/events';
 
 export default class CatalogEventsEditController extends Controller {
   showModeMenu = false;
@@ -27,6 +28,25 @@ export default class CatalogEventsEditController extends Controller {
       adjustColor('background-color', sprite, { easing: easeInAndOut });
     });
   }
+
+  * topbarTransition({ insertedSprites, removedSprites }) {
+    if (insertedSprites.length) { //wait for tray animation to finish
+      yield wait(500);
+    }
+
+    insertedSprites.forEach(sprite => {
+      sprite.startAtPixel({ y: 150 });
+      sprite.applyStyles({ 'z-index': 0 });
+      move(sprite, { easing: easeInAndOut });
+    });
+
+    removedSprites.forEach(sprite => {
+      sprite.endAtPixel({ y: sprite._initialBounds.bottom });
+      sprite.applyStyles({ 'z-index': 1 });
+      move(sprite, { easing: easeInAndOut, duration: 200 });
+    });
+  }
+
 
   * trayAnimation({ receivedSprites }) {
     receivedSprites.forEach(sprite => {
