@@ -17,22 +17,16 @@ export default class BoxelFieldComponent extends Component {
     return this.fade;
   }
 
-  @computed('args.model.mode')
+  @computed('args.mode', 'args.model.mode')
   get mode() {
-    if (this.args.model) {
+    if (this.args.mode) {
+      return this.args.mode;
+    }
+
+    if (this.args.model && this.args.model.mode) {
       return this.args.model.mode;
     }
 
-    if (this._mode) {
-      return this._mode;
-    }
-
     return 'view';
-  }
-
-  set mode(mode) {
-    this.set('_mode', mode);
-
-    return mode;
   }
 }
