@@ -7,7 +7,6 @@ import adjustColor from 'ember-animated/motions/adjust-color';
 import { default as opacity } from 'ember-animated/motions/opacity';
 import { printSprites, wait } from 'ember-animated';
 import { easeInAndOut } from 'ember-animated/easings/cosine';
-import { animationDelay } from '../../catalog/events';
 
 export default class CatalogEventsEditController extends Controller {
   showModeMenu = false;
