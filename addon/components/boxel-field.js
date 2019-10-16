@@ -10,17 +10,17 @@ export default class BoxelFieldComponent extends Component {
 
   @computed('transition')
   get defaultTransition() {
-    if (this.transition) {
-      return this.transition;
+    if (this.args.transition) {
+      return this.args.transition;
     }
 
     return this.fade;
   }
 
-  @computed('model.mode')
+  @computed('args.model.mode')
   get mode() {
-    if (this.model) {
-      return this.model.mode;
+    if (this.args.model) {
+      return this.args.model.mode;
     }
 
     if (this._mode) {

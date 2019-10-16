@@ -20,15 +20,15 @@
               {{#animated-value this.model watch="mode" use=this.bodyTransition}}
                 <div class="field-types-demo-card-content {{this.model.mode}}">
                   <div class="field-types-demo-card-field demo-card-text-field">
-                    <BoxelField @value={{this.model.title}} @fieldName="title" @label="Title" @model={{this.model}} @mode={{this.model.mode}} @transition={{this.fieldTransition}}/>
+                    <BoxelField @value={{this.model.title}} @fieldName="title" @label="Title" @model={{this.model}} @transition={{this.fieldTransition}}/>
                   </div>
                   <div class="field-types-demo-card-field demo-card-text-field">
                     <BoxelField @value={{this.model.description}} @fieldName="description" @label="Description"
-                      @model={{this.model}} @mode={{this.model.mode}} @transition={{this.fieldTransition}}/>
+                      @model={{this.model}} @transition={{this.fieldTransition}}/>
                   </div>
                   <div class="field-types-demo-card-field demo-card-text-area">
                     <BoxelField @value={{this.model.body}} @fieldName="body" @label="Body" @model={{this.model}}
-                      @mode={{this.model.mode}} @componentName="text-area" @transition={{this.fieldTransition}}/>
+                      @componentName="text-area" @transition={{this.fieldTransition}}/>
                   </div>
                 </div>
               {{/animated-value}}

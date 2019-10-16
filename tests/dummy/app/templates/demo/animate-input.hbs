@@ -15,7 +15,7 @@
         <div class="animate-input-card-content {{this.model.mode}}">
           <AnimatedContainer class="body-container">
             <div class="animate-input-card-field animate-input-card-text-field">
-              <BoxelField @value={{this.model.title}} @fieldName="title" @label="Title" @mode={{this.model.mode}} @transition={{this.transition}}/>
+              <BoxelField @value={{this.model.title}} @fieldName="title" @label="Title" @model={{this.model}} @transition={{this.transition}}/>
             </div>
             {{!-- <div class="animate-input-card-field animate-input-card-text-field">
               <BoxelField @value={{this.model.description}} @fieldName="description" @label="Description"
