@@ -1,5 +1,5 @@
 {{#unless @formCards}}
-  {{#animated-value @content group=@name use=transition duration=this.duration}}
+  {{#animated-value @content group=@name use=this.transition duration=this.duration}}
     {{#if (eq @format "thumbnail")}}
       <div class="boxel boxel-thumbnail" data-test-boxel>
         <div class="boxel-thumbnail--image">

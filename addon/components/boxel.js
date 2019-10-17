@@ -18,15 +18,11 @@ export default class BoxelComponent extends Component {
     super(...arguments);
 
     this.plane = this.boxel.currentPlane;
-    // this.boxel.registerBoxel(this);
+    this.boxel.registerBoxel(this);
   }
 
-  // didInsertElement() {
-  //   this._super(...arguments);
-
-  // }
-
   @tracked content;
+
   get contentType() {
     if (this.args.content) {
       return this.args.content.constructor.modelName;
@@ -36,15 +32,11 @@ export default class BoxelComponent extends Component {
   }
 
   get name() {
-    if (this._name) {
-      return this._name;
+    if (this.args.name) {
+      return this.args.name;
     }
 
     return `boxel-${this.elementId}`;
-  }
-
-  set name(name) {
-    this._name = name;
   }
 
   clickAction() {}
