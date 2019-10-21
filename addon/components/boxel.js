@@ -36,7 +36,7 @@ export default class BoxelComponent extends Component {
       return this.args.name;
     }
 
-    return `boxel-${this.elementId}`;
+    return 'boxel-default';
   }
 
   clickAction() {}
@@ -87,6 +87,6 @@ export default class BoxelComponent extends Component {
 
   @action
   moveToPlane(planeId) {
-    this.set('plane', planeId);
+    this.plane = planeId;
   }
 }
