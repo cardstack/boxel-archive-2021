@@ -4,7 +4,7 @@ import { filterBy } from '@ember/object/computed';
 import move from 'ember-animated/motions/move';
 import resize from 'ember-animated/motions/resize';
 import adjustCSS from 'ember-animated/motions/adjust-css';
-import { printSprites } from 'ember-animated';
+// import { printSprites } from 'ember-animated';
 import { easeOut } from 'ember-animated/easings/cosine';
 import { default as opacity } from 'ember-animated/motions/opacity';
 
@@ -22,7 +22,7 @@ export default class CardsController extends Controller {
   }
 
   * cardTransition ({ keptSprites }) {
-    printSprites(arguments[0], 'cardTransition');
+    // printSprites(arguments[0], 'cardTransition');
 
     keptSprites.forEach(sprite => {
       move(sprite, { easing: easeOut });
@@ -34,7 +34,7 @@ export default class CardsController extends Controller {
   }
 
   * titleTransition ({ keptSprites }) {
-    printSprites(arguments[0], 'titleTransition');
+    // printSprites(arguments[0], 'titleTransition');
 
     keptSprites.forEach(sprite => {
       move(sprite, { easing: easeOut });

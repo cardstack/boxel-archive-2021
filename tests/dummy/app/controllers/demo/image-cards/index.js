@@ -35,7 +35,7 @@ export default class DemoImageCardsIndexController extends Controller {
       adjustCSS('border-top-right-radius', sprite, { easing: easeOut, duration });
       adjustCSS('border-bottom-left-radius', sprite, { easing: easeOut, duration: duration * 0.4 });
       adjustCSS('border-bottom-right-radius', sprite, { easing: easeOut, duration: duration * 0.4 });
-      sprite.applyStyles({ 'z-index': 1 });
+      sprite.applyStyles({ 'z-index': '1' });
     });
   }
 
@@ -46,7 +46,7 @@ export default class DemoImageCardsIndexController extends Controller {
       move(sprite, { easing: easeOut, duration });
       resize(sprite, { easing: easeOut, duration });
       opacity(sprite, { from: 0, easing: easeOut, duration });
-      sprite.applyStyles({ 'z-index': 1 });
+      sprite.applyStyles({ 'z-index': '1' });
     });
   }
 }

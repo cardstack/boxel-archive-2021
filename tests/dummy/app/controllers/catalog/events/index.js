@@ -43,7 +43,7 @@ export default class CatalogEventsIndexController extends Controller {
   }
 
   * trayAnimation({ keptSprites, receivedSprites }) {
-    printSprites(arguments[0], 'events tray animation');
+    // printSprites(arguments[0], 'events tray animation');
 
     if (keptSprites.length) {
       yield wait(animationDelay);
@@ -52,13 +52,13 @@ export default class CatalogEventsIndexController extends Controller {
     keptSprites.forEach(sprite => {
       move(sprite, { duration: highlightDuration });
       resize(sprite, { duration: highlightDuration });
-      sprite.applyStyles({ 'z-index': 1 }); // in case it's overlapping other content
+      sprite.applyStyles({ 'z-index': '1' }); // in case it's overlapping other content
     });
 
     receivedSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 1 });
+      sprite.applyStyles({ 'z-index': '1' });
     });
   }
 
@@ -71,7 +71,7 @@ export default class CatalogEventsIndexController extends Controller {
 
     keptSprites.forEach(sprite => {
       move(sprite, { duration: highlightDuration });
-      sprite.applyStyles({ 'z-index': 1 });
+      sprite.applyStyles({ 'z-index': '1' });
     });
   }
 
@@ -81,14 +81,14 @@ export default class CatalogEventsIndexController extends Controller {
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 
   * headerTransition({ sentSprites }) {
     sentSprites.forEach(sprite => {
       move(sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 
@@ -97,7 +97,7 @@ export default class CatalogEventsIndexController extends Controller {
       move(sprite);
       resize(sprite);
       adjustCSS('font-size', sprite);
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     });
   }
 }

@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 
-import { printSprites } from 'ember-animated';
+// import { printSprites } from 'ember-animated';
 import move from 'ember-animated/motions/move';
 import resize from 'ember-animated/motions/resize';
 import { easeInAndOut } from 'ember-animated/easings/cosine';
@@ -15,24 +15,24 @@ export default class DemoFormCardsEditController extends Controller {
   }
 
   * backgroundTransition ({ insertedSprites, removedSprites, receivedSprites }) {
-    printSprites(arguments[0], 'edit background transition');
+    // printSprites(arguments[0], 'edit background transition');
 
     insertedSprites.forEach(sprite => {
       sprite.startAtPixel({ y: -1.5 * window.innerHeight });
       move(sprite, { easing: easeInAndOut, duration });
-      sprite.applyStyles({ 'z-index': 2 });
+      sprite.applyStyles({ 'z-index': '2' });
     });
 
     receivedSprites.forEach(sprite => {
       move(sprite, { easing: easeInAndOut, duration });
-      sprite.applyStyles({ 'z-index': 2 });
+      sprite.applyStyles({ 'z-index': '2' });
     });
 
 
     removedSprites.forEach(sprite => {
       sprite.endAtPixel({ y: -1.5 * window.innerHeight });
       move(sprite, { easing: easeInAndOut, duration });
-      sprite.applyStyles({ 'z-index': 2 });
+      sprite.applyStyles({ 'z-index': '2' });
     });
   }
 
@@ -44,7 +44,7 @@ export default class DemoFormCardsEditController extends Controller {
       resize(sprite, { easing: easeInAndOut, duration });
       boxShadow(sprite);
       sprite.applyStyles({
-        'z-index': 3
+        'z-index': '3'
       });
     });
 
@@ -53,7 +53,7 @@ export default class DemoFormCardsEditController extends Controller {
       resize(sprite, { easing: easeInAndOut, duration });
       boxShadow(sprite);
       sprite.applyStyles({
-        'z-index': 3
+        'z-index': '3'
       });
     });
 
@@ -64,7 +64,7 @@ export default class DemoFormCardsEditController extends Controller {
       });
       move(sprite, { easing: easeInAndOut, duration });
       sprite.applyStyles({
-        'z-index': 1
+        'z-index': '1'
       });
     });
   }

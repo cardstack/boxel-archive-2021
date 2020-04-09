@@ -4,7 +4,7 @@ import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import { default as opacity } from 'ember-animated/motions/opacity';
-import { printSprites } from 'ember-animated';
+// import { printSprites } from 'ember-animated';
 import { easeInAndOut } from 'ember-animated/easings/cosine';
 
 export default class CatalogEventsSchemaController extends Controller {
@@ -26,7 +26,7 @@ export default class CatalogEventsSchemaController extends Controller {
   //   receivedSprites.forEach(sprite => {
   //     move(sprite);
   //     resize(sprite);
-  //     sprite.applyStyles({ 'z-index': 1 });
+  //     sprite.applyStyles({ 'z-index': '1' });
   //   });
   // }
 
@@ -34,13 +34,13 @@ export default class CatalogEventsSchemaController extends Controller {
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 2 });
+      sprite.applyStyles({ 'z-index': '2' });
     });
 
     receivedSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 2 });
+      sprite.applyStyles({ 'z-index': '2' });
     });
   }
 
@@ -49,14 +49,14 @@ export default class CatalogEventsSchemaController extends Controller {
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 
   * headerTransition({ sentSprites }) {
     sentSprites.forEach(sprite => {
       move(sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 
@@ -65,14 +65,14 @@ export default class CatalogEventsSchemaController extends Controller {
       move(sprite);
       resize(sprite);
       opacity(sprite, { to: 0,  duration: duration / 3 });
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     });
 
     receivedSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
       opacity(sprite, { from: 0 });
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     });
   }
 
@@ -81,12 +81,12 @@ export default class CatalogEventsSchemaController extends Controller {
       move(sprite);
       resize(sprite);
       adjustCSS('font-size', sprite);
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     })
   }
 
   * fieldTransition ({ receivedSprites }) {
-    printSprites(arguments[0], 'fieldTransition');
+    // printSprites(arguments[0], 'fieldTransition');
 
     receivedSprites.forEach(sprite => {
       // let { y: y1 } = sprite._offsetSprite.initialBounds;

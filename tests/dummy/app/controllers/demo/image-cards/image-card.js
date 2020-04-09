@@ -21,7 +21,7 @@ export default class DemoImageCardsImageCardController extends Controller {
       move(sprite, { easing: easeOut, duration });
       resize(sprite, { easing: easeOut, duration });
       adjustCSS('border-radius', sprite, { easing: easeOut, duration: duration * 0.6 });
-      sprite.applyStyles({ 'z-index': 2, 'background-color': 'white' });
+      sprite.applyStyles({ 'z-index': '2', 'background-color': 'white' });
     });
   }
 
@@ -33,7 +33,7 @@ export default class DemoImageCardsImageCardController extends Controller {
       adjustCSS('border-top-right-radius', sprite, { easing: easeIn, duration });
       adjustCSS('border-bottom-left-radius', sprite, { easing: easeIn, duration });
       adjustCSS('border-bottom-right-radius', sprite, { easing: easeIn, duration });
-      sprite.applyStyles({ 'z-index': 3});
+      sprite.applyStyles({ 'z-index': '3'});
     });
   }
 
@@ -44,7 +44,7 @@ export default class DemoImageCardsImageCardController extends Controller {
       move(sprite, { easing: easeOut, duration });
       resize(sprite, { easing: easeOut, duration });
       opacity(sprite, { to: 0, easing: easeOut, duration });
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 }

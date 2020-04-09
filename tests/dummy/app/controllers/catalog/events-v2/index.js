@@ -42,7 +42,7 @@ export default class CatalogEventsV2IndexController extends Controller {
   }
 
   * trayAnimation({ keptSprites, receivedSprites, sentSprites }) {
-    printSprites(arguments[0], 'tray animation');
+    // printSprites(arguments[0], 'tray animation');
 
     if (keptSprites.length) {
       yield wait(animationDelay);
@@ -56,22 +56,22 @@ export default class CatalogEventsV2IndexController extends Controller {
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 1 });
+      sprite.applyStyles({ 'z-index': '1' });
     });
 
     receivedSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 1 });
+      sprite.applyStyles({ 'z-index': '1' });
     });
   }
 
   * cardTransition({ receivedSprites }) {
-    printSprites(arguments[0], 'card animation');
+    // printSprites(arguments[0], 'card animation');
 
     receivedSprites.forEach(sprite => {
       sprite.moveToFinalPosition();
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 
@@ -81,24 +81,24 @@ export default class CatalogEventsV2IndexController extends Controller {
       resize(sprite);
       adjustCSS('border-top-right-radius', sprite);
       adjustCSS('border-top-left-radius', sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
 
     receivedSprites.forEach(sprite => {
       sprite.moveToFinalPosition();
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     });
   }
 
   * headerTransition({ sentSprites, receivedSprites }) {
     sentSprites.forEach(sprite => {
       move(sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
 
     receivedSprites.forEach(sprite => {
       sprite.moveToFinalPosition();
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     });
   }
 
@@ -107,12 +107,12 @@ export default class CatalogEventsV2IndexController extends Controller {
       move(sprite);
       resize(sprite);
       adjustCSS('font-size', sprite);
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     });
 
     receivedSprites.forEach(sprite => {
       sprite.moveToFinalPosition();
-      sprite.applyStyles({ 'z-index': 5 });
+      sprite.applyStyles({ 'z-index': '5' });
     });
   }
 }

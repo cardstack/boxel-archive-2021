@@ -47,7 +47,7 @@ export default class BoxelComponent extends Component {
 
       receivedSprites.concat(sentSprites).forEach(sprite => {
         sprite.applyStyles({
-          'z-index': 1
+          'z-index': '1'
         });
       });
 

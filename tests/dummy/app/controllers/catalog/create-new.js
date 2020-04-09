@@ -25,23 +25,23 @@ export default class CatalogCreateNewController extends Controller {
   }
 
   * transition ({ insertedSprites, removedSprites, beacons }) {
-    printSprites(arguments[0]);
+    // printSprites(arguments[0]);
 
     insertedSprites.forEach(sprite => {
       sprite.startAtSprite(beacons.field);
       parallel(move(sprite, scale(sprite)));
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
 
     removedSprites.forEach(sprite => {
       sprite.endAtSprite(beacons.field);
       parallel(move(sprite, scale(sprite)));
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 
   * backgroundTransition ({ insertedSprites, removedSprites }) {
-    printSprites(arguments[0]);
+    // printSprites(arguments[0]);
 
     insertedSprites.forEach(sprite => {
       opacity(sprite, { from: 0.1 });

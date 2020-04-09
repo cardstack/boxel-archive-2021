@@ -1,7 +1,5 @@
-import DS from 'ember-data';
+import Model, { attr } from '@ember-data/model';
 import { tracked } from '@glimmer/tracking';
-
-const { Model, attr } = DS;
 
 export default class Person extends Model {
   @attr() firstName;

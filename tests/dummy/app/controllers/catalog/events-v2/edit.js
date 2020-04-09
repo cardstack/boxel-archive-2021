@@ -21,7 +21,7 @@ export default class CatalogEventsV2EditController extends Controller {
       resize(sprite);
       adjustCSS('padding', sprite);
       adjustCSS('border-radius', sprite);
-      sprite.applyStyles({ 'z-index': 2 });
+      sprite.applyStyles({ 'z-index': '2' });
     });
 
     receivedSprites.forEach(sprite => {
@@ -29,7 +29,7 @@ export default class CatalogEventsV2EditController extends Controller {
       resize(sprite);
       adjustCSS('padding', sprite);
       adjustCSS('border-radius', sprite);
-      sprite.applyStyles({ 'z-index': 2 });
+      sprite.applyStyles({ 'z-index': '2' });
     });
   }
 
@@ -41,14 +41,14 @@ export default class CatalogEventsV2EditController extends Controller {
       resize(sprite);
       adjustCSS('border-top-right-radius', sprite);
       adjustCSS('border-top-left-radius', sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 
   * headerTransition({ sentSprites }) {
     sentSprites.forEach(sprite => {
       move(sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 
@@ -57,7 +57,7 @@ export default class CatalogEventsV2EditController extends Controller {
       move(sprite);
       resize(sprite);
       adjustCSS('font-size', sprite);
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     })
   }
 
@@ -68,7 +68,7 @@ export default class CatalogEventsV2EditController extends Controller {
       move(sprite);
       resize(sprite);
       opacity(sprite, { to: 0,  duration: duration / 2 });
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
 
     receivedSprites.forEach(sprite => {
@@ -76,7 +76,7 @@ export default class CatalogEventsV2EditController extends Controller {
       // move(sprite);
       resize(sprite);
       opacity(sprite, { from: 0 });
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 }

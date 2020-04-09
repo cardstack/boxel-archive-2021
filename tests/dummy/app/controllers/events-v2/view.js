@@ -19,13 +19,13 @@ export default class EventsV2ViewController extends Controller {
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 2 });
+      sprite.applyStyles({ 'z-index': '2' });
     });
 
     receivedSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 2 });
+      sprite.applyStyles({ 'z-index': '2' });
     });
 
     removedSprites.forEach(sprite => {
@@ -39,7 +39,7 @@ export default class EventsV2ViewController extends Controller {
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
 
     removedSprites.forEach(sprite => {
@@ -50,7 +50,7 @@ export default class EventsV2ViewController extends Controller {
   * headerTransition({ sentSprites, removedSprites }) {
     sentSprites.forEach(sprite => {
       move(sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
 
     removedSprites.forEach(sprite => {
@@ -63,7 +63,7 @@ export default class EventsV2ViewController extends Controller {
       move(sprite);
       resize(sprite);
       adjustCSS('font-size', sprite);
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     });
 
     removedSprites.forEach(sprite => {
@@ -78,7 +78,7 @@ export default class EventsV2ViewController extends Controller {
       move(sprite);
       resize(sprite);
       opacity(sprite, { to: 0,  duration: duration / 2 });
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
 
     receivedSprites.forEach(sprite => {
@@ -86,7 +86,7 @@ export default class EventsV2ViewController extends Controller {
       // move(sprite);
       resize(sprite);
       opacity(sprite, { from: 0 });
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
 
     removedSprites.forEach(sprite => {

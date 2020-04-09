@@ -24,7 +24,7 @@ Router.map(function() {
     this.route('preview', { path: '/:model/:id/preview' });
   });
   this.route('articles', { path: '/articles/:id' }, function() {
-    this.route('edit', { path: '/edit' });
+    this.route('edit');
   });
   this.route('events', function() {
     this.route('view', { path: '/:id' });

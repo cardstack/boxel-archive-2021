@@ -2,7 +2,7 @@ import Controller from '@ember/controller';
 import { action, set } from '@ember/object';
 import move from 'ember-animated/motions/move';
 import drag from '../../motions/drag';
-import { printSprites } from 'ember-animated';
+// import { printSprites } from 'ember-animated';
 
 export default class DemoTicTacToeController extends Controller {
   ticTacToeCells = {
@@ -62,7 +62,7 @@ export default class DemoTicTacToeController extends Controller {
   }
 
   * dragTransition ({ insertedSprites, keptSprites }) {
-    printSprites(arguments[0], 'transition');
+    // printSprites(arguments[0], 'transition');
 
     keptSprites.forEach(sprite => {
       drag(sprite, { others: [] });

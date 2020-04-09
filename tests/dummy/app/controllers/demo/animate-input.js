@@ -2,7 +2,7 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import resize from 'ember-animated/motions/resize';
 import adjustCSS from 'ember-animated/motions/adjust-css';
-import { printSprites } from 'ember-animated';
+// import { printSprites } from 'ember-animated';
 import { easeInAndOut } from 'ember-animated/easings/cosine';
 import fade from 'ember-animated/transitions/fade';
 import { fadeIn, fadeOut } from 'ember-animated/motions/opacity';
@@ -17,7 +17,7 @@ export default class DemoAnimateInputController extends Controller {
   }
 
   * headerTransition ({ keptSprites }) {
-    printSprites(arguments[0], 'headerTransition');
+    // printSprites(arguments[0], 'headerTransition');
 
     keptSprites.forEach(sprite => {
       resize(sprite, { easing: easeInAndOut });

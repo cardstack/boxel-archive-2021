@@ -36,14 +36,14 @@ export default class EventsViewController extends Controller {
     keptSprites.forEach(sprite => {
       move(sprite, { duration: highlightDuration });
       resize(sprite, { duration: highlightDuration });
-      sprite.applyStyles({ 'z-index': 1 }); // in case it's overlapping other content
+      sprite.applyStyles({ 'z-index': '1' }); // in case it's overlapping other content
     });
 
     // This element moves the card
     receivedSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 1 });
+      sprite.applyStyles({ 'z-index': '1' });
     });
   }
 
@@ -56,14 +56,14 @@ export default class EventsViewController extends Controller {
 
     keptSprites.forEach(sprite => {
       move(sprite, { duration: highlightDuration });
-      sprite.applyStyles({ 'z-index': 1 });
+      sprite.applyStyles({ 'z-index': '1' });
     });
 
     // Need `moveToFinalPosition` to adjust for overshooting
     receivedSprites.forEach(sprite => {
       sprite.moveToFinalPosition();
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 1 });
+      sprite.applyStyles({ 'z-index': '1' });
     });
   }
 
@@ -73,13 +73,13 @@ export default class EventsViewController extends Controller {
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 2 });
+      sprite.applyStyles({ 'z-index': '2' });
     });
 
     receivedSprites.forEach(sprite => {
       sprite.moveToFinalPosition();
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 2 });
+      sprite.applyStyles({ 'z-index': '2' });
     });
   }
 
@@ -89,14 +89,14 @@ export default class EventsViewController extends Controller {
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 
   * headerTransition({ sentSprites }) {
     sentSprites.forEach(sprite => {
       move(sprite);
-      sprite.applyStyles({ 'z-index': 3 });
+      sprite.applyStyles({ 'z-index': '3' });
     });
   }
 
@@ -107,14 +107,14 @@ export default class EventsViewController extends Controller {
       move(sprite);
       resize(sprite);
       opacity(sprite, { to: 0,  duration: duration / 2 });
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     });
 
     receivedSprites.forEach(sprite => {
       sprite.moveToFinalPosition();
       resize(sprite);
       opacity(sprite, { from: 0 });
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     });
   }
 
@@ -123,7 +123,7 @@ export default class EventsViewController extends Controller {
       move(sprite);
       resize(sprite);
       adjustCSS('font-size', sprite);
-      sprite.applyStyles({ 'z-index': 4 });
+      sprite.applyStyles({ 'z-index': '4' });
     })
   }
 }
