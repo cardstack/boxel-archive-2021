@@ -3,25 +3,34 @@
     <div class="edit-field__title">{{humanize (dasherize @fieldName)}}</div>
     <div class="edit-field__value">
       {{#if (eq @field.type "textarea")}}
-        <Textarea @type={{@field.type}} @rows="4" @class="cs-input" @value={{@field.value}} />
+        <Textarea @type={{@field.type}} @rows="4" @class="cs-input {{@class}}" @value={{@field.value}} />
       {{else if (eq @field.type "time")}}
         <div class="field-group">
-          <Input @class="cs-input" @value={{@field.hours}} /> hours
-          <Input @class="cs-input" @value={{@field.minutes}} /> minutes
+          <Input @class="cs-input {{@class}}" @value={{@field.hours}} /> hours
+          <Input @class="cs-input {{@class}}" @value={{@field.minutes}} /> minutes
+        </div>
+      {{else if (eq @field.type "image")}}
+        <div class="image-editor">
+          <div class="image-editor__item">
+            <img src="/assets/images/{{@field.value}}" alt="{{@field.altText}}" width="{{@field.width}}" height="{{@field.height}}">
+            <div class="image-editor__title">{{@field.title}}</div>
+            <div class="image-editor__created">Created {{@field.created}}</div>
+          </div>
+          <button class="image-editor__remove-btn" aria-label="remove">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
         </div>
       {{else if (eq @field.type "dropdown")}}
         <Dropdown @options={{@field.options}} @selected={{@field}} @searchField="value" />
       {{else if (eq @field.type 'collection')}}
         <div class="collection-editor collection-editor--{{@field.collectionType}}">
           {{#each @field.value as |item|}}
-            <div class="collection-editor--item collection-editor--{{@field.collectionType}}-item">
-              <div>{{item}}</div>
-              <button class="collection-editor--remove-btn" aria-label="remove">{{svg-jar "close" width="8px" height="8px"}}</button>
+            <div class="collection-editor__item collection-editor--{{@field.collectionType}}-item">
+              <div class="collection-editor__text">{{item}}</div>
+              <button class="collection-editor__remove-btn" aria-label="remove">{{svg-jar "close" width="8px" height="8px"}}</button>
             </div>
           {{/each}}
         </div>
       {{else}}
-        <Input @type={{@field.type}} @class="cs-input {{if @field.type (concat "cs-input--" @field.type)}}" @value={{@field.value}} />
+        <Input @type={{@field.type}} @class="cs-input {{@class}} {{if @field.type (concat "cs-input--" @field.type)}}" @value={{@field.value}} />
       {{/if}}
     </div>
   </label>

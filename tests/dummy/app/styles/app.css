@@ -36,3 +36,21 @@ a {
 .animated-tools {
   z-index: 100;
 }
+
+
+/* overriding ui-components styles */
+:root {
+  --cs-font-family: Helvetica, Arial, sans-serif;
+  --cs-font: 400 16px/26px var(--cs-font-family);
+  --cs-field-hover: white;
+  --cs-field-height: 50px;
+  --cs-letter-spacing: 0.025em;
+}
+.cs-input-group {
+  display: contents;
+}
+.cs-input-group--label,
+.cs-input-group--helper-text {
+  display: none;
+}
+/*  */
