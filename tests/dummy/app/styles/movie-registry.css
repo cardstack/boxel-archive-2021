@@ -9,34 +9,6 @@
   overflow: hidden;
 }
 
-.movie-registry button {
-  display: inline-block;
-  color: currentColor;
-  font: inherit;
-}
-
-.movie-registry svg {
-  --icon-color: currentColor;
-  display: inline-block;
-}
-
-.movie-registry h1,
-.movie-registry h2,
-.movie-registry h3 {
-  margin: 0;
-  font-weight: bold;
-}
-
-.movie-registry ul {
-  list-style-type: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.movie-registry a {
-  display: inline-block;
-}
-
 .movie-registry-sidebar {
   padding-left: 30px;
   color: white;

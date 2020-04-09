@@ -180,6 +180,7 @@
 /* collection */
 .collection-editor {
   display: grid;
+  grid-template-columns: 1fr 40px;
   gap: 10px;
   padding: 10px;
   background-color: #F0F0F0;
@@ -188,23 +189,22 @@
   line-height: 1;
 }
 
-.collection-editor--list {
-  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
-}
-
-.collection-editor__item {
+.collection-editor__list {
   display: grid;
-  background-color: white;
-  border-radius: inherit;
-  border: 1px solid #D1D1D1;
-  font-size: 13px;
-  color: #393642;
+  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
+  gap: 10px;
 }
 
-.collection-editor--list-item {
+.collection-editor__list-item {
+  display: grid;
   grid-auto-flow: column;
   width: auto;
   min-width: 90px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #D1D1D1;
+  font-size: 13px;
+  color: #393642;
 }
 
 .collection-editor__text {
@@ -212,7 +212,7 @@
   padding: 9px 15px 8px;
 }
 
-.collection-editor__remove-btn {
+.collection-editor__btn {
   display: block;
   width: 40px;
   height: 40px;
@@ -223,6 +223,12 @@
   outline: 0;
 }
 
+.collection-editor__btn.add-btn {
+  --icon-bg: var(--cs-highlight);
+  --icon-border: var(--cs-highlight);
+}
+
+.collection-editor__btn.add-btn:focus,
 .collection-editor__item:focus-within {
   border-color: #00EBE5;
   outline: 2px solid #00EBE5;

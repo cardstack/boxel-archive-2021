@@ -21,13 +21,16 @@
       {{else if (eq @field.type "dropdown")}}
         <Dropdown @options={{@field.options}} @selected={{@field}} @searchField="value" />
       {{else if (eq @field.type 'collection')}}
-        <div class="collection-editor collection-editor--{{@field.collectionType}}">
-          {{#each @field.value as |item|}}
-            <div class="collection-editor__item collection-editor--{{@field.collectionType}}-item">
-              <div class="collection-editor__text">{{item}}</div>
-              <button class="collection-editor__remove-btn" aria-label="remove">{{svg-jar "close" width="8px" height="8px"}}</button>
-            </div>
-          {{/each}}
+        <div class="collection-editor">
+          <ul class="collection-editor__list">
+            {{#each @field.value as |item|}}
+              <li class="collection-editor__list-item">
+                <span class="collection-editor__text">{{item}}</span>
+                <button class="collection-editor__btn remove-btn" aria-label="remove">{{svg-jar "close" width="8px" height="8px"}}</button>
+              </li>
+            {{/each}}
+          </ul>
+          <button class="collection-editor__btn add-btn" aria-label="add">{{svg-jar "icon-plus-circle" width="16px" height="16px"}}</button>
         </div>
       {{else}}
         <Input @type={{@field.type}} @class="cs-input {{@class}} {{if @field.type (concat "cs-input--" @field.type)}}" @value={{@field.value}} />

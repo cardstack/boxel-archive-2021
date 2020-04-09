@@ -24,7 +24,36 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  display: inline-block;
 }
+
+svg {
+  --icon-color: currentColor;
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: bold;
+}
+
+button {
+  display: inline-block;
+  color: currentColor;
+  font: inherit;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
 
 /* for ember animated */
 .boxel-animated-orphans {
