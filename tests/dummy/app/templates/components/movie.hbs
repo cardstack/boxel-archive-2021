@@ -1,0 +1,28 @@
+<div class="movie">
+  {{#if (eq @mode "edit")}}
+    <div class="button-overlay">
+      <LinkTo
+        @route="movie-registry.view"
+        @model={{@model}}
+        @class={{concat "mode-indicator mode-indicator--" @mode}}
+      >
+        {{@mode}} mode
+      </LinkTo>
+    </div>
+  {{else}}
+    <div class="button-overlay button-overlay--view">
+      <LinkTo @route="movie-registry.edit" @model={{@model}} @class="button-overlay__edit-btn--view">Edit</LinkTo>
+      <LinkTo @route="movie-registry.edit" @model={{@model}} @class="button-overlay__gear-btn--view" aria-label="Configure" />
+    </div>
+  {{/if}}
+
+  <div class="{{@mode}}-card {{@mode}}-card--{{@model.id}}">
+    {{#each-in @model.data as |fieldName field|}}
+      <Field
+        @mode={{@mode}}
+        @class="movie-input"
+        @field={{field}}
+        @fieldName={{fieldName}} />
+    {{/each-in}}
+  </div>
+</div>

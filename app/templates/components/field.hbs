@@ -1,0 +1,49 @@
+{{#if (eq @mode "edit")}}
+  <label class="edit-field edit-field--{{dasherize @fieldName}}-field">
+    <span class="edit-field__title">{{humanize (dasherize @fieldName)}}</span>
+    {{#if (eq @field.type "textarea")}}
+      <Textarea @type={{@field.type}} @rows="4" @class="cs-input {{@class}}" @value={{@field.value}} />
+    {{else if (eq @field.type "time")}}
+      <div class="field-group">
+        <Input @class="cs-input {{@class}}" @value={{@field.hours}} /> hours
+        <Input @class="cs-input {{@class}}" @value={{@field.minutes}} /> minutes
+      </div>
+    {{!-- {{else if (eq @field.type "dropdown")}}
+      <Dropdown @class="cs-input cs-input--{{@field.type}} {{@class}}" @value={{@field.value}} /> --}}
+    {{else if (eq @field.type 'collection')}}
+      <div class="collection-editor collection-editor--{{@field.collectionType}}">
+        {{#each @field.value as |item|}}
+          <div class="collection-editor--item collection-editor--{{@field.collectionType}}-item">
+            <div>{{item}}</div>
+            <button class="collection-editor--remove-btn" aria-label="remove">{{svg-jar "close" width="8px" height="8px"}}</button>
+          </div>
+        {{/each}}
+      </div>
+    {{else}}
+      <Input @type={{@field.type}} @class="cs-input cs-input--{{@field.type}} {{@class}}" @value={{@field.value}} />
+    {{/if}}
+  </label>
+{{else}}
+  <div class="view-field view-field--{{dasherize @fieldName}}-field {{if @field.hideLabel "view-field--no-title"}}">
+    {{#unless @field.hideLabel}}
+      <div class="view-field__title">{{humanize (dasherize @fieldName)}}</div>
+    {{/unless}}
+    <div class="view-field__value">
+      {{#if (eq @field.type "date")}}
+        {{moment-format @field.value "MMMM DD, YYYY" "YYYY-MM-DD"}}
+      {{else if (eq @field.type "time")}}
+        {{@field.hours}}h {{@field.minutes}}m
+      {{else if (eq @field.type "collection")}}
+        {{#each @field.value as |item i|}}
+          {{#if (eq i (sub @field.value.length 1))}}
+            {{item}}
+          {{else}}
+            {{concat item ", "}}
+          {{/if}}
+        {{/each}}
+      {{else}}
+        {{@field.value}}
+      {{/if}}
+    </div>
+  </div>
+{{/if}}

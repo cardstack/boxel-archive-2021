@@ -1,0 +1,147 @@
+/* View field (default) */
+.view-field {
+  display: grid;
+  grid-template-columns: minmax(130px, 20%) 1fr;
+  gap: 0 29px;
+}
+
+.view-field--no-title {
+  grid-template-columns: 1fr;
+}
+
+.view-field__title {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: calc(24/13);
+  text-transform: uppercase;
+}
+
+.view-field__value {
+  color: #393642;
+}
+
+.view-field--title-field {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.015em;
+  line-height: calc(34/24);
+}
+
+
+/* Edit field */
+.edit-field {
+  display: grid;
+  grid-template-columns: minmax(16%, 130px) minmax(225px, 450px);
+  gap: 0 29px;
+}
+
+.edit-field__title {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: calc(24/13);
+  text-transform: uppercase;
+}
+
+.edit-field__value {
+  color: #393642;
+}
+
+.edit-field--title-field {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.015em;
+  line-height: calc(34/24);
+}
+
+.cs-input.movie-input {
+  height: auto;
+  min-height: 50px;
+  width: 450px;
+  max-width: 100%;
+  padding: 19px 20px 15px;
+  font: inherit;
+  letter-spacing: inherit;
+  transition: none;
+}
+
+.cs-input.movie-input:focus {
+  background-color: initial;
+  border-color: #00EBE5;
+  outline: 2px solid #00EBE5;
+  outline-offset: -3px;
+}
+
+.cs-input.movie-input:hover:not(:focus) {
+  background-color: initial;
+  border-color: #272330;
+  border-width: 1px;
+}
+
+
+.field-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  gap: 0 15px;
+  align-items: center;
+  color: #393642;
+}
+
+.cs-input--date.movie-input {
+  width: 225px;
+  background: url('/assets/images/icons/calendar.svg') center right 17px/14.4px 16px no-repeat;
+}
+
+.cs-input--number.movie-input,
+.cs-input--numeric.movie-input {
+  width: 100px;
+}
+
+.cs-input--dropdown.movie-input {
+  width: 225px;
+}
+
+
+/* collection */
+.collection-editor {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  background-color: #F0F0F0;
+  border: none;
+  border-radius: 5px;
+}
+
+.collection-editor--list {
+  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
+}
+
+.collection-editor--item {
+  display: grid;
+  gap: 10px;
+  padding: 9px 0 8px 15px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #D1D1D1;
+  font-size: 13px;
+  color: #393642;
+}
+
+.collection-editor--list-item {
+  grid-auto-flow: column;
+  justify-items: space-between;
+  width: auto;
+  min-width: 90px;
+}
+
+.collection-editor--remove-btn {
+  display: block;
+  padding: 0 10px;
+  border: none;
+  color: inherit;
+  font: inherit;
+  background-color: transparent;
+}
