@@ -33,6 +33,8 @@
         {{moment-format @field.value "MMMM DD, YYYY" "YYYY-MM-DD"}}
       {{else if (eq @field.type "time")}}
         {{@field.hours}}h {{@field.minutes}}m
+      {{else if (eq @field.type "image")}}
+        <img src="/assets/images/posters/{{@field.value}}" alt="{{@field.altText}}" width="{{@field.width}}" height="{{@field.height}}">
       {{else if (eq @field.type "collection")}}
         {{#each @field.value as |item i|}}
           {{#if (eq i (sub @field.value.length 1))}}

@@ -5,6 +5,7 @@ export default class Movie extends Model {
   @attr() year;
   @attr() type;
   @attr() avgUserRating;
+  @attr() poster;
   @attr() mpaaRating;
   @attr() runTime;
   @attr() genres;

@@ -4,22 +4,26 @@ export default [
     title: { value: 'Star Trek: Picard' },
     type: { value: 'TV Series' },
     year: { value: 2020 },
+    poster: { type: 'image', value: 'star-trek-picard@2x.png' },
   },
   {
     id: 'star-trek-tng',
     title: { value: 'Star Trek: TNG'},
     type: { value: 'TV Series' },
     year: { value: 1987 },
+    poster: { type: 'image', value: 'star-trek@2x.png' },
   },
   {
     id: 'star-wars-the-clone-wars',
     title: { value: 'Star Wars: The Clone Wars' },
     type: { value: 'TV Series' },
     year: { value: 2008 },
+    poster: { type: 'image', value: 'star-wars-clone@2x.png' },
   },
   {
     id: 'star-wars-the-rise-of-skywalker',
     title: { value: 'Star Wars: The Rise of Skywalker' },
+    poster: { type: 'image', value: 'star-wars-poster-main@2x.png', width: 230, height: 340, altText: 'Star Wars: The Rise of Skywalker poster' },
     avgUserRating: { type: 'numeric', value: 6.8 },
     mpaaRating: { type: 'dropdown', value: 'PG-13' },
     runTime: { type: 'time', hours: 2, minutes: 22 },
@@ -32,20 +36,24 @@ export default [
     id: 'stargate',
     title: { value: 'Stargate' },
     year: { value: 1994 },
+    poster: { type: 'image', value: 'stargate@2x.png' },
   },
   {
     id: 'starship-troopers',
     title: { value: 'Starship Troopers' },
     year: { value: 1997 },
+    poster: { type: 'image', value: 'starship-troopers@2x.png' },
   },
   {
     id: 'starman',
     title: { value: 'Starman' },
     year: { value: 1984 },
+    poster: { type: 'image', value: 'starman@2x.png' },
   },
   {
     id: 'dark-star',
     title: { value: 'Dark Star' },
     year: { value: 1974 },
+    poster: { type: 'image', value: 'dark-star@2x.png' },
   }
 ]
