@@ -9,6 +9,6 @@ export default class CatalogPreviewController extends Controller {
   editModel() {
     this.boxel.set('currentPlane', 'tools');
 
-    this.transitionToRoute('tools.edit', this.model.constructor.modelName, this.model.id);
+    this.transitionToRoute('catalog.tools.edit', this.model.constructor.modelName, this.model.id);
   }
 }

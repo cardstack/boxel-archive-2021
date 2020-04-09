@@ -17,6 +17,8 @@ export default class BoxelComponent extends Component {
   constructor() {
     super(...arguments);
 
+    this.tag = this.args.tag || 'div';
+
     this.plane = this.boxel.currentPlane;
     this.boxel.registerBoxel(this);
   }

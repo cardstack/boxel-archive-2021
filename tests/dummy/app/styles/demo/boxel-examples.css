@@ -1,0 +1,28 @@
+.boxel-examples {
+  padding: 30px;
+}
+
+.sample-boxel-grid {
+  display: grid;
+  width: 300px;
+  background: black;
+  grid-template:
+    'h h h' 40px
+    's s a' 60px /
+    1fr;
+}
+.sample-boxel-grid > header {
+  grid-area: h;
+  background: pink;
+  padding: 10px;
+}
+.sample-boxel-grid > section {
+  grid-area: s;
+  background: purple;
+  padding: 10px;
+}
+.sample-boxel-grid > aside {
+  grid-area: a;
+  background: white;
+  padding: 10px;
+}

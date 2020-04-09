@@ -3,7 +3,7 @@ import { action, set } from '@ember/object';
 import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
-import { printSprites, wait } from 'ember-animated';
+import { /*printSprites,*/ wait } from 'ember-animated';
 
 export let animationDelay = 350;
 export let highlightDuration = 150;
@@ -33,7 +33,7 @@ export default class CatalogEventsV2IndexController extends Controller {
 
   @action
   viewDetailPage(card) {
-    this.transitionToRoute('events-v2.view', card);
+    this.transitionToRoute('catalog.events-v2.view', card);
   }
 
   @action

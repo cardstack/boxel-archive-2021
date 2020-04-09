@@ -7,9 +7,7 @@
       <Tray>
         <article class="catalog-item" role="button" {{action "preview" item.constructor.modelName}}>
           <div class="catalog-item--boxel-container">
-            <AnimatedContainer>
-              <Boxel @name="{{item.constructor.modelName}}-{{item.id}}" @content={{item}} @format="thumbnail" />
-            </AnimatedContainer>
+            <Article @name="{{item.constructor.modelName}}-{{item.id}}" @content={{item}} @format="thumbnail" />
           </div>
           <section class="catalog-item--info-panel">
             <h3 class="catalog-item--title">{{item.constructor.modelName}} template</h3>

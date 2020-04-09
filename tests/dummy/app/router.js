@@ -11,31 +11,25 @@ Router.map(function() {
     this.route('create-new');
     this.route('preview', { path: '/:model/preview' });
     this.route('events', function() {
-      this.route('view', { path: '/:id/view' });
+      this.route('view', { path: '/:id' });
       this.route('edit', { path: '/:id/edit' });
       this.route('schema', { path: '/:id/schema' });
     });
     this.route('events-v2', function() {
       this.route('edit', { path: '/:id/edit' });
+      this.route('view', { path: '/:id' });
     });
-  });
-  this.route('tools', function() {
-    this.route('edit', { path: '/:model/:id/edit' });
-    this.route('preview', { path: '/:model/:id/preview' });
+    this.route('tools', function() {
+      this.route('edit', { path: '/:model/:id/edit' });
+      this.route('preview', { path: '/:model/:id/preview' });
+    });
   });
   this.route('articles', { path: '/articles/:id' }, function() {
     this.route('edit');
   });
-  this.route('events', function() {
-    this.route('view', { path: '/:id' });
-  });
-  this.route('events-v2', function() {
-    this.route('view', { path: '/:id' });
-  });
-  this.route('cards', function() {
-    this.route('card', { path: '/:id' });
-  });
   this.route('demo', function() {
+    this.route('boxel-examples');
+    this.route('cards');
     this.route('form-cards', function() {
       this.route('edit', { path: '/:id/edit' });
     });

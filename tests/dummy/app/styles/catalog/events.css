@@ -1,5 +1,6 @@
-@import "./events/edit.css";
-@import "./events/schema.css";
+@import "events/edit.css";
+@import "events/schema.css";
+@import "events/view.css";
 
 /* Container */
 

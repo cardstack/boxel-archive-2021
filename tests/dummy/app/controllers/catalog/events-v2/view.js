@@ -6,7 +6,7 @@ import adjustCSS from 'ember-animated/motions/adjust-css';
 import { default as opacity } from 'ember-animated/motions/opacity';
 // import { printSprites } from 'ember-animated';
 
-export default class EventsV2ViewController extends Controller {
+export default class CatalogEventsV2ViewController extends Controller {
   @action
   viewGridPage() {
     set(this.model, 'selected', true);

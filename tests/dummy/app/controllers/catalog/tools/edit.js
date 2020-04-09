@@ -3,7 +3,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { htmlSafe } from '@ember/template';
 
-export default class ToolsEditController extends Controller {
+export default class CatalogToolsEditController extends Controller {
   @tracked model;
 
   get backgroundImageUrl() {
@@ -14,7 +14,7 @@ export default class ToolsEditController extends Controller {
   async preview() {
     await this.model.save();
 
-    return await this.transitionToRoute('tools.preview', this.model.constructor.modelName, this.model.id);
+    return await this.transitionToRoute('catalog.tools.preview', this.model.constructor.modelName, this.model.id);
   }
 
   @action

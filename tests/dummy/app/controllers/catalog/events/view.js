@@ -9,7 +9,7 @@ import { printSprites, wait } from 'ember-animated';
 import { animationDelay } from '../catalog/events';
 import { highlightDuration } from '../catalog/events';
 
-export default class EventsViewController extends Controller {
+export default class CatalogEventsViewController extends Controller {
   @action
   select() {
     set(this.model, 'selected', true);
