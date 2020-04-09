@@ -8,8 +8,8 @@
         <Input @class="cs-input {{@class}}" @value={{@field.hours}} /> hours
         <Input @class="cs-input {{@class}}" @value={{@field.minutes}} /> minutes
       </div>
-    {{!-- {{else if (eq @field.type "dropdown")}}
-      <Dropdown @class="cs-input cs-input--{{@field.type}} {{@class}}" @value={{@field.value}} /> --}}
+    {{else if (eq @field.type "dropdown")}}
+      <Dropdown @class="cs-input cs-input--{{@field.type}} {{@class}}" @options={{@field.options}} @selected={{@field}} @searchField="value" />
     {{else if (eq @field.type 'collection')}}
       <div class="collection-editor collection-editor--{{@field.collectionType}}">
         {{#each @field.value as |item|}}
@@ -34,7 +34,7 @@
       {{else if (eq @field.type "time")}}
         {{@field.hours}}h {{@field.minutes}}m
       {{else if (eq @field.type "image")}}
-        <img src="/assets/images/posters/{{@field.value}}" alt="{{@field.altText}}" width="{{@field.width}}" height="{{@field.height}}">
+        <img src="/assets/images/{{@field.value}}" alt="{{@field.altText}}" width="{{@field.width}}" height="{{@field.height}}">
       {{else if (eq @field.type "collection")}}
         {{#each @field.value as |item i|}}
           {{#if (eq i (sub @field.value.length 1))}}

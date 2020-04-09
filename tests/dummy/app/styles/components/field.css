@@ -63,6 +63,7 @@
   width: 450px;
   max-width: 100%;
   padding: 19px 20px 15px;
+  color: #393642;
   font: inherit;
   letter-spacing: inherit;
   transition: none;
@@ -98,10 +99,6 @@
 .cs-input--number.movie-input,
 .cs-input--numeric.movie-input {
   width: 100px;
-}
-
-.cs-input--dropdown.movie-input {
-  width: 225px;
 }
 
 
@@ -144,4 +141,27 @@
   color: inherit;
   font: inherit;
   background-color: transparent;
+}
+
+
+/* Dropdown */
+.cs-dropdown .ember-power-select-trigger {
+  width: 225px;
+  padding: 18px 15px 16px;
+  border-color: #AFAFB7;
+
+}
+
+.cs-dropdown .ember-power-select-selected-item {
+  color: #393642;
+  letter-spacing: 0.025em;
+}
+
+.cs-dropdown .ember-power-select-option {
+  color: #393642;
+  letter-spacing: 0.025em;
+}
+
+.cs-dropdown .ember-power-select-status-icon {
+  background: url('/assets/images/icons/dropdown.svg') center/contain no-repeat;
 }

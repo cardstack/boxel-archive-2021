@@ -25,7 +25,7 @@ export default [
     title: { value: 'Star Wars: The Rise of Skywalker' },
     poster: { type: 'image', value: 'star-wars-poster-main@2x.png', width: 230, height: 340, altText: 'Star Wars: The Rise of Skywalker poster' },
     avgUserRating: { type: 'numeric', value: 6.8 },
-    mpaaRating: { type: 'dropdown', value: 'PG-13' },
+    mpaaRating: { type: 'dropdown', value: 'PG-13', options: [ { value: 'G' }, { value: 'PG' }, { value: 'PG-13' }, { value: 'R' }, { value: 'NC-17' } ] },
     runTime: { type: 'time', hours: 2, minutes: 22 },
     releaseDate: { type: 'date', value: 20191220 },
     year: { type: 'numeric', value: 2019 },
