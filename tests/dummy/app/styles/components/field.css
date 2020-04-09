@@ -29,6 +29,12 @@
   line-height: calc(34/24);
 }
 
+.view-field--avg-user-rating-field .view-field__value::before {
+  content: url(/assets/images/icons/star-filled.svg);
+  display: inline-block;
+  margin-right: 10px;
+}
+
 
 /* Edit field */
 .edit-field {
@@ -57,7 +63,8 @@
   line-height: calc(34/24);
 }
 
-.cs-input.movie-input {
+.cs-input {
+  display: inline-block;
   height: auto;
   min-height: 50px;
   width: 450px;
@@ -68,15 +75,13 @@
   letter-spacing: inherit;
   transition: none;
 }
-
-.cs-input.movie-input:focus {
+.cs-input:focus {
   background-color: initial;
   border-color: #00EBE5;
   outline: 2px solid #00EBE5;
   outline-offset: -3px;
 }
-
-.cs-input.movie-input:hover:not(:focus) {
+.cs-input:hover:not(:focus) {
   background-color: initial;
   border-color: #272330;
   border-width: 1px;
@@ -86,19 +91,29 @@
 .field-group {
   display: grid;
   grid-template-columns: repeat(auto-fill, 100px);
-  gap: 0 15px;
+  gap: 10px 15px;
   align-items: center;
   color: #393642;
 }
 
-.cs-input--date.movie-input {
+.cs-input--date {
   width: 225px;
   background: url('/assets/images/icons/calendar.svg') center right 17px/14.4px 16px no-repeat;
 }
 
-.cs-input--number.movie-input,
-.cs-input--numeric.movie-input {
+.cs-input--number,
+.cs-input--numeric {
   width: 100px;
+}
+
+.edit-field--avg-user-rating-field .cs-input {
+  background: url('/assets/images/icons/star-filled.svg') left 17px center/18px 16px no-repeat;
+  padding-left: 49px;
+}
+.edit-field--avg-user-rating-field .edit-field__value::after {
+  content: 'out of 10 stars';
+  display: inline-block;
+  margin-left: 10px;
 }
 
 
