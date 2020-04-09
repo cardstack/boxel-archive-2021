@@ -1,12 +1,10 @@
-import Model, { attr, hasMany } from '@ember-data/model';
+import Model, { attr } from '@ember-data/model';
 import { tracked } from '@glimmer/tracking';
 
 export default class Person extends Model {
   @attr() firstName;
   @attr() lastName;
-  @attr('boolean') isActor;
   @attr() role;
-  @hasMany('movie') movies;
 
   @tracked firstName;
   @tracked lastName;

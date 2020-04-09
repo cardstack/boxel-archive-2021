@@ -1,4 +1,4 @@
-import Model, { attr } from '@ember-data/model';
+import Model, { attr, hasMany } from '@ember-data/model';
 
 export default class Movie extends Model {
   @attr() title;
@@ -8,9 +8,9 @@ export default class Movie extends Model {
   @attr() poster;
   @attr() mpaaRating;
   @attr() runTime;
-  @attr() genres;
+  @hasMany('genre') genres;
   @attr() releaseDate;
   @attr() description;
-  @attr() cast;
-  @attr() photos;
+  @hasMany('person') cast;
+  @hasMany('photo') photos;
 }

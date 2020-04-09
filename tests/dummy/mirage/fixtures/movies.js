@@ -30,7 +30,9 @@ export default [
     releaseDate: { type: 'date', value: 20191220 },
     year: { type: 'numeric', value: 2019 },
     description: { type: 'textarea', value: 'The surviving members of the resistance face the First Order once again, and the legendary conflict between the Jedi and the Sith reaches its peak bringing the Skywalker saga to its end.'},
-    genres: { type: 'collection', collectionType: 'list', value: [ 'Action', 'Adventure', 'Fantasy' ]},
+    genreIds: [ 'action', 'adventure', 'fantasy' ],
+    castIds: [ 'carrie-fisher', 'mark-hamill', 'daisy-ridley', 'adam-driver' ],
+    photoIds: [ 'sw1', 'sw2', 'sw3', 'sw4' ],
   },
   {
     id: 'stargate',

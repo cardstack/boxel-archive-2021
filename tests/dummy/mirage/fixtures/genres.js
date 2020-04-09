@@ -1,14 +1,14 @@
 export default [
   {
     id: 'action',
-    genre: 'Action'
+    title: 'Action'
   },
   {
     id: 'adventure',
-    genre: 'Adventure'
+    title: 'Adventure'
   },
   {
     id: 'fantasy',
-    genre: 'Fantasy'
+    title: 'Fantasy'
   },
 ];
