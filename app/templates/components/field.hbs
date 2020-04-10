@@ -20,18 +20,6 @@
         </div>
       {{else if (eq @field.type "dropdown")}}
         <Dropdown @options={{@field.options}} @selected={{@field}} @searchField="value" />
-      {{else if (eq @field.type 'collection')}}
-        <div class="collection-editor">
-          <ul class="collection-editor__list">
-            {{#each @field.value as |item|}}
-              <li class="collection-editor__list-item">
-                <span class="collection-editor__text">{{item}}</span>
-                <button class="collection-editor__btn remove-btn" aria-label="remove">{{svg-jar "close" width="8px" height="8px"}}</button>
-              </li>
-            {{/each}}
-          </ul>
-          <button class="collection-editor__btn add-btn" aria-label="add">{{svg-jar "icon-plus-circle" width="16px" height="16px"}}</button>
-        </div>
       {{else}}
         <Input @type={{@field.type}} @class="cs-input {{@class}} {{if @field.type (concat "cs-input--" @field.type)}}" @value={{@field.value}} />
       {{/if}}
@@ -49,14 +37,6 @@
         {{@field.hours}}h {{@field.minutes}}m
       {{else if (eq @field.type "image")}}
         <img src="/assets/images/{{@field.value}}" alt="{{@field.altText}}" width="{{@field.width}}" height="{{@field.height}}">
-      {{else if (eq @field.type "collection")}}
-        {{#each @field.value as |item i|}}
-          {{#if (eq i (sub @field.value.length 1))}}
-            {{item}}
-          {{else}}
-            {{concat item ", "}}
-          {{/if}}
-        {{/each}}
       {{else}}
         {{@field.value}}
       {{/if}}

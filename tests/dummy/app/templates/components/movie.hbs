@@ -24,5 +24,35 @@
         @field={{field}}
         @fieldName={{fieldName}} />
     {{/each-in}}
+
+    {{#if (and @model.genres (eq @mode "edit"))}}
+      <label class="edit-field edit-field--genres-field">
+        <div class="edit-field__title">Genres</div>
+        <div class="collection-editor">
+          <ul class="collection-editor__list">
+            {{#each @model.genres as |item|}}
+              <li class="collection-editor__list-item">
+                <span class="collection-editor__text">{{item.title}}</span>
+                <button class="collection-editor__btn remove-btn" aria-label="remove">{{svg-jar "close" width="8px" height="8px"}}</button>
+              </li>
+            {{/each}}
+          </ul>
+          <button class="collection-editor__btn add-btn" aria-label="add">{{svg-jar "icon-plus-circle" width="16px" height="16px"}}</button>
+        </div>
+      </label>
+    {{else if @model.genres}}
+      <div class="view-field view-field--genres-field">
+        <div class="view-field__title">Genres</div>
+        <div class="view-field__value">
+          {{#each @model.genres as |genre i|}}
+            {{#if (eq i (sub @model.genres.length 1))}}
+              {{genre.title}}
+            {{else}}
+              {{genre.title}},
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    {{/if}}
   </div>
 </div>
