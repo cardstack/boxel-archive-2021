@@ -40,7 +40,7 @@
 .edit-field {
   display: grid;
   grid-template-columns: minmax(16%, 130px) minmax(225px, 450px);
-  gap: 0 29px;
+  gap: 0 28px;
 }
 
 .edit-field__title {
@@ -65,15 +65,20 @@
 
 .cs-input.movie-input {
   display: inline-block;
-  height: auto;
-  min-height: 50px;
   width: 450px;
+  height: 50px;
   max-width: 100%;
-  padding: 19px 20px 15px;
+  padding: 18px 15px 15px;
   color: #393642;
   font: inherit;
+  line-height: 1;
   letter-spacing: inherit;
   transition: none;
+}
+
+.cs-input.movie-input.cs-textarea {
+  height: 126px;
+  line-height: inherit;
 }
 
 .cs-input.movie-input:focus {
@@ -177,22 +182,76 @@
 }
 
 
-/* Collections */
-.cast {
+/* Collection List */
+.collection-list {
   display: grid;
   grid-gap: 10px;
 }
 
+/* Collection List Editor */
+.collection-list-editor {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  background-color: #F0F0F0;
+  border: none;
+  border-radius: 5px;
+  line-height: 1;
+}
+
+.collection-list-editor > h4 {
+  color: black;
+  line-height: calc(22/16);
+  padding: 9px 5px;
+}
+
+.collection-list-editor__item {
+  height: 80px;
+  border-radius: 5px;
+  border: 1px solid #AFAFB7;
+  overflow: hidden;
+}
+
+.collection-list-editor__view-all-btn {
+  padding: 11px 0;
+  background: none;
+  color: black;
+  font-family: 'Open Sans';
+  font-size: 13px;
+  line-height: calc(16/13);
+  border: 1px solid #AFAFB7;
+  border-radius: inherit;
+  text-align: center;
+}
+
+.collection-list-editor__add-btn {
+  --icon-bg: var(--cs-highlight);
+  --icon-border: var(--cs-highlight);
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.collection-list-editor button:focus {
+  border-color: #00EBE5;
+  outline: 2px solid #00EBE5;
+  outline-offset: -3px;
+}
+
+/* Actor */
 .actor {
   display: grid;
   grid-template:
-    "img ." auto
     "img name" auto
-    "img role" auto
-    "img ." auto/
+    "img role" auto /
     60px auto;
   gap: 5px 20px;
   padding: 10px 12px;
+  background-color: white;
   line-height: 1;
 }
 
@@ -200,17 +259,20 @@
   grid-area: img;
 }
 .actor__name {
+  align-self: end;
   grid-area: name;
-  font-weight: bold;
   color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
 .actor__role {
   grid-area: role;
+  color: #6B6A80;
   font-size: 13px;
 }
 
 
-/* collection */
+/* genres collection */
 .collection-editor {
   display: grid;
   grid-template-columns: 1fr 40px;

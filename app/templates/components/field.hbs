@@ -3,7 +3,7 @@
     <div class="edit-field__title">{{humanize (dasherize @fieldName)}}</div>
     <div class="edit-field__value">
       {{#if (eq @field.type "textarea")}}
-        <Textarea @type={{@field.type}} @rows="4" @class="cs-input {{@class}}" @value={{@field.value}} />
+        <Textarea @type={{@field.type}} @rows="4" @class="cs-input cs-textarea {{@class}}" @value={{@field.value}} />
       {{else if (eq @field.type "time")}}
         <div class="field-group">
           <Input @class="cs-input {{@class}}" @value={{@field.hours}} /> hours
@@ -22,6 +22,20 @@
         <Dropdown @options={{@field.options}} @selected={{@field}} @searchField="value" />
       {{else if @field.isCollection}}
         {{#if (eq @field.type "actors")}}
+          <div class="collection-list-editor">
+            <h4>Actor Profiles ({{@field.value.length}})</h4>
+            {{#each @field.value as |actor|}}
+              <div class="collection-list-editor__item">
+                <div class="actor">
+                  <img class="actor__img" src="/assets/images/{{actor.profile}}" alt="{{actor.fullName}} profile" width="60px" height="60px">
+                  <div class="actor__name">{{actor.firstName}} {{actor.lastName}}</div>
+                  <div class="actor__role">{{actor.role}}</div>
+                </div>
+              </div>
+            {{/each}}
+            <button class="collection-list-editor__view-all-btn">View All ({{@field.value.length}})</button>
+            <button class="collection-list-editor__add-btn">{{svg-jar "icon-plus-circle" width="16px" height="16px"}}</button>
+          </div>
         {{else if (eq @field.type "photos")}}
         {{else}}
           <div class="collection-editor">
@@ -33,7 +47,7 @@
                 </li>
               {{/each}}
             </ul>
-            <button class="collection-editor__btn add-btn" aria-label="add">{{svg-jar "icon-plus-circle" width="16px" height="16px"}}</button>
+            <button class="collection-editor__btn add-btn" aria-label="add">{{svg-jar "icon-plus-circle" width="18px" height="18px"}}</button>
           </div>
         {{/if}}
       {{else}}
@@ -55,7 +69,7 @@
         <img src="/assets/images/{{@field.value}}" alt="{{@field.altText}}" width="{{@field.width}}" height="{{@field.height}}">
       {{else if @field.isCollection}}
         {{#if (eq @field.type "actors")}}
-          <div class="cast">
+          <div class="collection-list">
             {{#each @field.value as |actor|}}
               <div class="actor">
                 <img class="actor__img" src="/assets/images/{{actor.profile}}" alt="{{actor.fullName}} profile" width="60px" height="60px">
