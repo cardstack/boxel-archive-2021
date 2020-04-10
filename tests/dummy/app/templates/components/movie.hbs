@@ -54,5 +54,24 @@
         </div>
       </div>
     {{/if}}
+
+    {{#if (and @model.cast (eq @mode "edit"))}}
+
+    {{else}}
+      <div class="view-field view-field--cast-field">
+        <div class="view-field__title">Cast</div>
+        <div class="view-field__value">
+          <div class="cast">
+            {{#each @model.cast as |actor|}}
+              <div class="actor">
+                <img class="actor__img" src="/assets/images/{{actor.profile}}" alt="{{actor.fullName}} profile" width="60px" height="60px">
+                <div class="actor__name">{{actor.fullName}}</div>
+                <div class="actor__role">{{actor.role}}</div>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    {{/if}}
   </div>
 </div>
