@@ -20,6 +20,22 @@
         </div>
       {{else if (eq @field.type "dropdown")}}
         <Dropdown @options={{@field.options}} @selected={{@field}} @searchField="value" />
+      {{else if @field.isCollection}}
+        {{#if (eq @field.type "actors")}}
+        {{else if (eq @field.type "photos")}}
+        {{else}}
+          <div class="collection-editor">
+            <ul class="collection-editor__list">
+              {{#each @field.value as |item|}}
+                <li class="collection-editor__list-item">
+                  <span class="collection-editor__text">{{item.title}}</span>
+                  <button class="collection-editor__btn remove-btn" aria-label="remove">{{svg-jar "close" width="8px" height="8px"}}</button>
+                </li>
+              {{/each}}
+            </ul>
+            <button class="collection-editor__btn add-btn" aria-label="add">{{svg-jar "icon-plus-circle" width="16px" height="16px"}}</button>
+          </div>
+        {{/if}}
       {{else}}
         <Input @type={{@field.type}} @class="cs-input {{@class}} {{if @field.type (concat "cs-input--" @field.type)}}" @value={{@field.value}} />
       {{/if}}
@@ -37,6 +53,34 @@
         {{@field.hours}}h {{@field.minutes}}m
       {{else if (eq @field.type "image")}}
         <img src="/assets/images/{{@field.value}}" alt="{{@field.altText}}" width="{{@field.width}}" height="{{@field.height}}">
+      {{else if @field.isCollection}}
+        {{#if (eq @field.type "actors")}}
+          <div class="cast">
+            {{#each @field.value as |actor|}}
+              <div class="actor">
+                <img class="actor__img" src="/assets/images/{{actor.profile}}" alt="{{actor.fullName}} profile" width="60px" height="60px">
+                <div class="actor__name">{{actor.firstName}} {{actor.lastName}}</div>
+                <div class="actor__role">{{actor.role}}</div>
+              </div>
+            {{/each}}
+          </div>
+        {{else if (eq @field.type "photos")}}
+          <div class="collection-grid">
+            {{#each @field.value as |item|}}
+              <div class="collection-grid__item">
+                <img src="/assets/images/{{item.src}}" alt={{item.altText}}>
+              </div>
+            {{/each}}
+          </div>
+        {{else}}
+          {{#each @field.value as |genre i|}}
+            {{#if (eq i (sub @field.value.length 1))}}
+              {{genre.title}}
+            {{else}}
+              {{genre.title}},
+            {{/if}}
+          {{/each}}
+        {{/if}}
       {{else}}
         {{@field.value}}
       {{/if}}

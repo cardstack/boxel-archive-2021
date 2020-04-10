@@ -69,37 +69,3 @@
   display: grid;
   gap: 60px 0;
 }
-
-
-
-/* Collections */
-.cast {
-  display: grid;
-  grid-gap: 10px;
-}
-
-.actor {
-  display: grid;
-  grid-template:
-    "img ." auto
-    "img name" auto
-    "img role" auto
-    "img ." auto/
-    60px auto;
-  gap: 5px 20px;
-  padding: 10px 12px;
-  line-height: 1;
-}
-
-.actor__img {
-  grid-area: img;
-}
-.actor__name {
-  grid-area: name;
-  font-weight: bold;
-  color: black;
-}
-.actor__role {
-  grid-area: role;
-  font-size: 13px;
-}

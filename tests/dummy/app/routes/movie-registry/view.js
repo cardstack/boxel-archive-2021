@@ -1,7 +1,4 @@
-import Route from '@ember/routing/route';
+import MovieRoute from './movie-route';
 
-export default class MovieRegistryViewRoute extends Route {
-  model({ id }) {
-    return this.store.peekRecord('movie', id);
-  }
+export default class MovieRegistryViewRoute extends MovieRoute {
 }
