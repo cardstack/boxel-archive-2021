@@ -83,6 +83,7 @@
 
 .movie-registry-grid__link {
   height: 100%;
+  background-color: white;
 }
 
 .movie-item {

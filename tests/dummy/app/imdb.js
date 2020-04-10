@@ -135,9 +135,9 @@ export default {
     },
   ],
   photos: [
-    { type: "image", id: "sw1", src: "sw1.png" },
-    { type: "image", id: "sw2", src: "sw2.png" },
-    { type: "image", id: "sw3", src: "sw3.png" },
-    { type: "image", id: "sw4", src: "sw4.png" },
+    { type: "image", id: "sw1", src: "sw1.png", title: "Photo 001", altText: "Photo 001", created: "May 5, 2019", },
+    { type: "image", id: "sw2", src: "sw2.png", title: "Photo 002", altText: "Photo 002", created: "May 5, 2019", },
+    { type: "image", id: "sw3", src: "sw3.png", title: "Photo 003", altText: "Photo 003", created: "May 5, 2019", },
+    { type: "image", id: "sw4", src: "sw4.png", title: "Photo 004", altText: "Photo 004", created: "May 5, 2019", },
   ],
 };
