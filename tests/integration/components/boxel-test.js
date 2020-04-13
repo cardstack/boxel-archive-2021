@@ -23,6 +23,6 @@ module('Integration | Component | boxel', function(hooks) {
     `);
     assert.dom('[data-test-boxel]').hasText('hello boxel');
     assert.dom('[data-test-boxel]').hasTagName('header');
-    assert.dom('[data-test-boxel]').hasClass('boxel custom-class');
+    assert.dom('[data-test-boxel].boxel.custom-class').exists();
   });
 });

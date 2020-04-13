@@ -1,7 +1,5 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-
-// import { printSprites } from 'ember-animated';
 import move from 'ember-animated/motions/move';
 import resize from 'ember-animated/motions/resize';
 import { easeInAndOut } from 'ember-animated/easings/cosine';
@@ -15,8 +13,6 @@ export default class DemoFormCardsEditController extends Controller {
   }
 
   * backgroundTransition ({ insertedSprites, removedSprites, receivedSprites }) {
-    // printSprites(arguments[0], 'edit background transition');
-
     insertedSprites.forEach(sprite => {
       sprite.startAtPixel({ y: -1.5 * window.innerHeight });
       move(sprite, { easing: easeInAndOut, duration });
@@ -37,8 +33,6 @@ export default class DemoFormCardsEditController extends Controller {
   }
 
   * boxTransition({ sentSprites, removedSprites, receivedSprites }) {
-    // printSprites(arguments[0], 'edit box transition');
-
     sentSprites.forEach(sprite => {
       move(sprite, { easing: easeInAndOut, duration });
       resize(sprite, { easing: easeInAndOut, duration });

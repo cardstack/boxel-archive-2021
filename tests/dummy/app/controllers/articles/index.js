@@ -11,11 +11,11 @@ export default class ArticlesController extends Controller {
 
   @action
   edit() {
-    this.transitionToRoute('catalog.tools.edit', this.modelName, this.model.id);
+    this.transitionToRoute('tools.edit', this.modelName, this.model.id);
   }
 
   @action
   preview() {
-    this.transitionToRoute('catalog.tools.preview', this.modelName, this.model.id);
+    this.transitionToRoute('tools.preview', this.modelName, this.model.id);
   }
 }

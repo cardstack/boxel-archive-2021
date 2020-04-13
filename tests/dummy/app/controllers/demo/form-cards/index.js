@@ -1,7 +1,5 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-
-// import { printSprites } from 'ember-animated';
 import move from 'ember-animated/motions/move';
 import opacity from 'ember-animated/motions/opacity';
 import scale from 'ember-animated/motions/scale';
@@ -18,13 +16,10 @@ export default class DemoFormCardsIndexController extends Controller {
   }
 
   * wait({ removedSprites, receivedSprites }) {
-    // printSprites(arguments[0], 'index outer transition');
     removedSprites.concat(receivedSprites).forEach(keep);
   }
 
   * backgroundTransition({ removedSprites, insertedSprites, sentSprites }) {
-    // printSprites(arguments[0], 'index background transition');
-
     let factor = 0.8;
 
     removedSprites.forEach(sprite => {
@@ -55,6 +50,5 @@ export default class DemoFormCardsIndexController extends Controller {
       scale(sprite, { easing: easeInAndOut, duration });
       move(sprite, { disableMomentum: true, easing: easeInAndOut, duration });
     });
-
   }
 }

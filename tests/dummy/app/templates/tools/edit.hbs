@@ -10,9 +10,9 @@
       <div class="tools-edit--image" style={{this.backgroundImageUrl}} />
     </div>
     <div class="tools-edit--fields-container">
-      <BoxelField @component="text-field" @value={{this.model.title}} @label="Title" />
-      <BoxelField @component="text-field" @value={{this.model.description}} @label="Description" />
-      <BoxelField @component="text-area" @value={{this.model.body}} @label="Body" />
+      <BoxelField @value={{this.model.title}} @fieldName="title" @label="Title" @model={{this.model}} @mode="edit" />
+      <BoxelField @value={{this.model.description}} @fieldName="description" @label="Description" @model={{this.model}} @mode="edit" />
+      <BoxelField @value={{this.model.body}} @fieldName="body" @label="Body" @model={{this.model}} @mode="edit" />
     </div>
   </Article>
 </div>

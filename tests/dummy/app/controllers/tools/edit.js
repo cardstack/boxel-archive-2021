@@ -3,7 +3,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { htmlSafe } from '@ember/template';
 
-export default class CatalogToolsEditController extends Controller {
+export default class ToolsEditController extends Controller {
   @tracked model;
 
   get backgroundImageUrl() {
@@ -14,13 +14,16 @@ export default class CatalogToolsEditController extends Controller {
   async preview() {
     await this.model.save();
 
-    return await this.transitionToRoute('catalog.tools.preview', this.model.constructor.modelName, this.model.id);
+    return await this.transitionToRoute('tools.preview', this.model.constructor.modelName, this.model.id);
   }
 
   @action
   async save() {
     await this.model.save();
-
-    this.transitionToRoute('articles', this.model);
+    if (this.model.constructor.modelName === 'event') {
+      this.transitionToRoute('events.view', this.model);
+    } else {
+      this.transitionToRoute('articles', this.model);
+    }
   }
 }

@@ -1,7 +1,5 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-
-// import { printSprites } from 'ember-animated';
 import move from 'ember-animated/motions/move';
 import resize from 'ember-animated/motions/resize';
 import opacity from 'ember-animated/motions/opacity';
@@ -15,8 +13,6 @@ export default class DemoImageCardsImageCardController extends Controller {
   }
 
   * transition ({ sentSprites }) {
-    // printSprites(arguments[0], "card transition:");
-
     sentSprites.forEach(sprite => {
       move(sprite, { easing: easeOut, duration });
       resize(sprite, { easing: easeOut, duration });
@@ -38,8 +34,6 @@ export default class DemoImageCardsImageCardController extends Controller {
   }
 
   * headerTransition({ sentSprites }) {
-    // printSprites(arguments[0], "card header info");
-
     sentSprites.forEach(sprite => {
       move(sprite, { easing: easeOut, duration });
       resize(sprite, { easing: easeOut, duration });

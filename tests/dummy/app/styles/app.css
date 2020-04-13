@@ -1,10 +1,12 @@
+@import 'demo/index.css';
+@import 'catalog/index.css';
+@import 'events/view.css';
+@import 'tools.css';
+
 @import 'movie-registry.css';
 @import 'movie-registry/view.css';
 @import 'components/field.css';
 @import 'components/movie.css';
-
-@import 'demo/index.css';
-@import 'catalog/index.css';
 
 html, body {
   height: 100%;

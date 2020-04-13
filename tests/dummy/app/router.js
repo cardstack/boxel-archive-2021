@@ -12,10 +12,8 @@ Router.map(function() {
     this.route('edit', { path: '/:id/edit' });
   });
   this.route('catalog', function() {
-    this.route('create-new');
     this.route('preview', { path: '/:model/preview' });
     this.route('events', function() {
-      this.route('view', { path: '/:id' });
       this.route('edit', { path: '/:id/edit' });
       this.route('schema', { path: '/:id/schema' });
     });
@@ -23,13 +21,16 @@ Router.map(function() {
       this.route('edit', { path: '/:id/edit' });
       this.route('view', { path: '/:id' });
     });
-    this.route('tools', function() {
-      this.route('edit', { path: '/:model/:id/edit' });
-      this.route('preview', { path: '/:model/:id/preview' });
-    });
+  });
+  this.route('tools', function() {
+    this.route('edit', { path: '/:model/:id/edit' });
+    this.route('preview', { path: '/:model/:id/preview' });
   });
   this.route('articles', { path: '/articles/:id' }, function() {
     this.route('edit');
+  });
+  this.route('events', function() {
+    this.route('view', { path: '/:id' });
   });
   this.route('demo', function() {
     this.route('boxel-examples');

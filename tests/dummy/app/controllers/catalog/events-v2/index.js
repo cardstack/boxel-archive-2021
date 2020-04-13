@@ -3,7 +3,7 @@ import { action, set } from '@ember/object';
 import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
-import { /*printSprites,*/ wait } from 'ember-animated';
+import { wait } from 'ember-animated';
 
 export let animationDelay = 350;
 export let highlightDuration = 150;
@@ -12,7 +12,7 @@ export default class CatalogEventsV2IndexController extends Controller {
   // TODO: Do not do select/unselect actions while other animation is running
   @action
   select(id) {
-    for (let card of this.model) {
+    for (let card of this.model.content) {
       if (card.id === id) {
         set(card, 'selected', true);
       }
@@ -24,7 +24,7 @@ export default class CatalogEventsV2IndexController extends Controller {
 
   @action
   unselect(id) {
-    for (let card of this.model) {
+    for (let card of this.model.content) {
       if (card.id === id) {
         set(card, 'selected', false);
       }
@@ -42,8 +42,6 @@ export default class CatalogEventsV2IndexController extends Controller {
   }
 
   * trayAnimation({ keptSprites, receivedSprites, sentSprites }) {
-    // printSprites(arguments[0], 'tray animation');
-
     if (keptSprites.length) {
       yield wait(animationDelay);
     }
@@ -67,8 +65,6 @@ export default class CatalogEventsV2IndexController extends Controller {
   }
 
   * cardTransition({ receivedSprites }) {
-    // printSprites(arguments[0], 'card animation');
-
     receivedSprites.forEach(sprite => {
       sprite.moveToFinalPosition();
       sprite.applyStyles({ 'z-index': '3' });

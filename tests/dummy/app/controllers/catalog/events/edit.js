@@ -4,7 +4,6 @@ import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import { default as opacity } from 'ember-animated/motions/opacity';
-// import { printSprites } from 'ember-animated';
 import { easeInAndOut } from 'ember-animated/easings/cosine';
 
 export default class CatalogEventsEditController extends Controller {
@@ -44,7 +43,6 @@ export default class CatalogEventsEditController extends Controller {
   }
 
   * imageTransition({ sentSprites }) {
-    // printSprites(arguments[0], 'image transition');
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
@@ -85,12 +83,7 @@ export default class CatalogEventsEditController extends Controller {
   }
 
   * fieldTransition ({ receivedSprites }) {
-    // printSprites(arguments[0], 'fieldTransition');
-
     receivedSprites.forEach(sprite => {
-      // let { y: y1 } = sprite._offsetSprite.initialBounds;
-      // let { y: y2 } = sprite._offsetSprite.finalBounds;
-      // sprite.startTranslatedBy(0, y2 - y1);
       move(sprite);
       adjustCSS('border-top-left-radius', sprite, { easing: easeInAndOut });
       adjustCSS('border-top-right-radius', sprite, { easing: easeInAndOut });

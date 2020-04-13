@@ -4,7 +4,7 @@ import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import { default as opacity } from 'ember-animated/motions/opacity';
-import { printSprites, wait } from 'ember-animated';
+import { wait } from 'ember-animated';
 
 import { animationDelay } from '../catalog/events';
 import { highlightDuration } from '../catalog/events';
@@ -27,8 +27,6 @@ export default class CatalogEventsViewController extends Controller {
   }
 
   * trayAnimation({ keptSprites, receivedSprites }) {
-    // printSprites(arguments[0], 'view tray animation');
-
     if (keptSprites.length) {
       yield wait(animationDelay);
     }
@@ -48,8 +46,6 @@ export default class CatalogEventsViewController extends Controller {
   }
 
   * holdContent({ keptSprites, receivedSprites }) {
-    // printSprites(arguments[0], 'view content');
-
     if (keptSprites.length) {
       yield wait(animationDelay);
     }
@@ -68,8 +64,6 @@ export default class CatalogEventsViewController extends Controller {
   }
 
   * cardTransition({ sentSprites, receivedSprites }) {
-    // printSprites(arguments[0], 'view - card transition');
-
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
@@ -84,8 +78,6 @@ export default class CatalogEventsViewController extends Controller {
   }
 
   * imageTransition({ sentSprites }) {
-    // printSprites(arguments[0], 'view image transition');
-
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
@@ -101,8 +93,6 @@ export default class CatalogEventsViewController extends Controller {
   }
 
   * bodyTransition({ sentSprites, receivedSprites, duration }) {
-    printSprites(arguments[0], 'view body transition');
-
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);

@@ -4,7 +4,6 @@ import resize from 'ember-animated/motions/resize';
 import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import { default as opacity } from 'ember-animated/motions/opacity';
-// import { printSprites } from 'ember-animated';
 
 export default class CatalogEventsV2ViewController extends Controller {
   @action
@@ -14,8 +13,6 @@ export default class CatalogEventsV2ViewController extends Controller {
   }
 
   * cardTransition({ sentSprites, receivedSprites, removedSprites }) {
-    // printSprites(arguments[0], 'view - card transition');
-
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
@@ -34,8 +31,6 @@ export default class CatalogEventsV2ViewController extends Controller {
   }
 
   * imageTransition({ sentSprites, removedSprites }) {
-    // printSprites(arguments[0], 'view image transition');
-
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
@@ -72,8 +67,6 @@ export default class CatalogEventsV2ViewController extends Controller {
   }
 
   * bodyTransition({ sentSprites, receivedSprites, removedSprites, duration }) {
-    // printSprites(arguments[0], 'view body transition');
-
     sentSprites.forEach(sprite => {
       move(sprite);
       resize(sprite);
@@ -83,7 +76,6 @@ export default class CatalogEventsV2ViewController extends Controller {
 
     receivedSprites.forEach(sprite => {
       sprite.moveToFinalPosition();
-      // move(sprite);
       resize(sprite);
       opacity(sprite, { from: 0 });
       sprite.applyStyles({ 'z-index': '3' });

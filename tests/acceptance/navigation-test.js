@@ -14,7 +14,7 @@ module('Acceptance | navigation', function (hooks) {
   });
 
   test('index route works', async function (assert) {
-    await visit(`/`);
+    await visit(`/movie-registry`);
     assert.equal(currentURL(), `/movie-registry`);
     assert.dom('[data-test-movie-registry-nav]').exists();
     assert.dom('[data-test-movie-registry-main]').exists();
@@ -22,7 +22,7 @@ module('Acceptance | navigation', function (hooks) {
   });
 
   test('view route works', async function (assert) {
-    await visit(`/${movieId}`);
+    await visit(`/movie-registry/${movieId}`);
     assert.equal(currentURL(), `/movie-registry/${movieId}`);
     assert.dom('[data-test-movie="view-mode"]').exists();
     assert.dom('[data-test-view-field]').exists();
@@ -31,7 +31,7 @@ module('Acceptance | navigation', function (hooks) {
   });
 
   test('edit route works', async function (assert) {
-    await visit(`/${movieId}/edit`);
+    await visit(`/movie-registry/${movieId}/edit`);
     assert.equal(currentURL(), `/movie-registry/${movieId}/edit`);
     assert.dom('[data-test-movie="edit-mode"]').exists();
     assert.dom('[data-test-edit-field="collection-editors"]').exists();
@@ -39,13 +39,13 @@ module('Acceptance | navigation', function (hooks) {
   });
 
   test('can navigate to view route from index', async function (assert) {
-    await visit(`/`);
+    await visit(`/movie-registry`);
     await click(`[data-test-movie-registry-movie=${movieId}]`);
     assert.equal(currentURL(), `/movie-registry/${movieId}`);
   });
 
   test('can navigate between view and edit routes', async function (assert) {
-    await visit(`/${movieId}`);
+    await visit(`/movie-registry/${movieId}`);
     await click(`[data-test-movie-edit-btn]`);
     assert.equal(currentURL(), `/movie-registry/${movieId}/edit`);
     assert.dom('[data-test-movie-mode="edit-mode"]').exists();

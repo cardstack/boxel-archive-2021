@@ -46,7 +46,7 @@
     </div>
     <div class="movie-registry-grid">
       {{#each @model.movies as |movie|}}
-        <LinkTo @route="movie-registry.view" @model={{movie.id}} class="movie-registry-grid__link" data-test-movie-registry-movie="{{@model.id}}">
+        <LinkTo @route="movie-registry.view" @model={{movie.id}} @class="movie-registry-grid__link" data-test-movie-registry-movie={{movie.id}}>
           <div class="movie-item">
             <div class="movie-item__image-container">
               <img class="movie-item__poster" src="/assets/images/{{movie.poster.value}}" alt="{{movie.title.value}} movie poster" width="150px" height="219px">
