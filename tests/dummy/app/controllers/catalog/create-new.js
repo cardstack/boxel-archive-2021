@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import scale from 'ember-animated/motions/scale';
 import move from 'ember-animated/motions/move';
 import { default as opacity } from 'ember-animated/motions/opacity';
-import { printSprites, parallel } from 'ember-animated';
+import { /*printSprites,*/ parallel } from 'ember-animated';
 
 export default class CatalogCreateNewController extends Controller {
   @action
