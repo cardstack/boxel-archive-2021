@@ -51,7 +51,11 @@ export default {
       genres: {
         isCollection: true,
         type: "genres",
-        relationshipIds: ["action", "adventure", "fantasy"],
+        value: [
+          { id: "action", title: "Action" },
+          { id: "adventure", title: "Adventure" },
+          { id: "fantasy", title: "Fantasy" },
+        ]
       },
       description: {
         type: "textarea",
@@ -61,17 +65,46 @@ export default {
       cast: {
         isCollection: true,
         type: "actors",
-        relationshipIds: [
-          "carrie-fisher",
-          "mark-hamill",
-          "daisy-ridley",
-          "adam-driver",
+        value: [
+          {
+            id: "carrie-fisher",
+            firstName: "Carrie",
+            lastName: "Fisher",
+            role: "Leia Organa",
+            profile: "leia.png",
+          },
+          {
+            id: "mark-hamill",
+            firstName: "Mark",
+            lastName: "Hamill",
+            role: "Luke Skywalker",
+            profile: "luke.png",
+          },
+          {
+            id: "daisy-ridley",
+            firstName: "Daisy",
+            lastName: "Ridley",
+            role: "Rey",
+            profile: "rey.png",
+          },
+          {
+            id: "adam-driver",
+            firstName: "Adam",
+            lastName: "Driver",
+            role: "Kylo Ren",
+            profile: "kylo-ren.png",
+          },
         ],
       },
       photos: {
         isCollection: true,
         type: "photos",
-        relationshipIds: ["sw1", "sw2", "sw3", "sw4"],
+        value: [
+          { type: "image", id: "sw1", src: "sw1.png", title: "Photo 001", altText: "Photo 001", created: "May 5, 2019", },
+          { type: "image", id: "sw2", src: "sw2.png", title: "Photo 002", altText: "Photo 002", created: "May 5, 2019", },
+          { type: "image", id: "sw3", src: "sw3.png", title: "Photo 003", altText: "Photo 003", created: "May 5, 2019", },
+          { type: "image", id: "sw4", src: "sw4.png", title: "Photo 004", altText: "Photo 004", created: "May 5, 2019", },
+        ],
       },
     },
     {
@@ -98,46 +131,5 @@ export default {
       year: { value: 1974 },
       poster: { type: "image", value: "dark-star@2x.png" },
     },
-  ],
-  genres: [
-    { id: "action", title: "Action" },
-    { id: "adventure", title: "Adventure" },
-    { id: "fantasy", title: "Fantasy" },
-  ],
-  actors: [
-    {
-      id: "carrie-fisher",
-      firstName: "Carrie",
-      lastName: "Fisher",
-      role: "Leia Organa",
-      profile: "leia.png",
-    },
-    {
-      id: "mark-hamill",
-      firstName: "Mark",
-      lastName: "Hamill",
-      role: "Luke Skywalker",
-      profile: "luke.png",
-    },
-    {
-      id: "daisy-ridley",
-      firstName: "Daisy",
-      lastName: "Ridley",
-      role: "Rey",
-      profile: "rey.png",
-    },
-    {
-      id: "adam-driver",
-      firstName: "Adam",
-      lastName: "Driver",
-      role: "Kylo Ren",
-      profile: "kylo-ren.png",
-    },
-  ],
-  photos: [
-    { type: "image", id: "sw1", src: "sw1.png", title: "Photo 001", altText: "Photo 001", created: "May 5, 2019", },
-    { type: "image", id: "sw2", src: "sw2.png", title: "Photo 002", altText: "Photo 002", created: "May 5, 2019", },
-    { type: "image", id: "sw3", src: "sw3.png", title: "Photo 003", altText: "Photo 003", created: "May 5, 2019", },
-    { type: "image", id: "sw4", src: "sw4.png", title: "Photo 004", altText: "Photo 004", created: "May 5, 2019", },
   ],
 };
