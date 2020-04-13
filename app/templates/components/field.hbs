@@ -1,6 +1,6 @@
 {{#if (eq @mode "edit")}}
   {{#if @field.isCollection}}
-  <div class="edit-field edit-field--{{dasherize @fieldName}}-field">
+  <div class="edit-field edit-field--{{dasherize @fieldName}}-field" data-test-edit-field="collection-editors">
     <div class="edit-field__title">{{humanize (dasherize @fieldName)}}</div>
     <div class="edit-field__value">
       {{#if (eq @field.type "genres")}}
@@ -55,7 +55,7 @@
       </div>
     </div>
   {{else}}
-    <label class="edit-field edit-field--{{dasherize @fieldName}}-field">
+    <label class="edit-field edit-field--{{dasherize @fieldName}}-field" data-test-edit-field="form-editors">
       <div class="edit-field__title">{{humanize (dasherize @fieldName)}}</div>
       <div class="edit-field__value">
         {{#if (eq @field.type "textarea")}}
@@ -83,7 +83,7 @@
     </label>
   {{/if}}
 {{else}}
-  <div class="view-field view-field--{{dasherize @fieldName}}-field {{if @field.hideLabel "view-field--no-title"}}">
+  <div class="view-field view-field--{{dasherize @fieldName}}-field {{if @field.hideLabel "view-field--no-title"}}" data-test-view-field>
     {{#unless @field.hideLabel}}
       <div class="view-field__title">{{humanize (dasherize @fieldName)}}</div>
     {{/unless}}
@@ -96,7 +96,7 @@
         <img src="/assets/images/{{@field.value}}" alt="{{@field.altText}}" width="{{@field.width}}" height="{{@field.height}}">
       {{else if @field.isCollection}}
         {{#if (eq @field.type "actors")}}
-          <div class="collection-list">
+          <div class="collection-list" data-test-view-field="collection-list">
             {{#each @field.value as |actor|}}
               <div class="actor">
                 <img class="actor__img" src="/assets/images/{{actor.profile}}" alt="{{actor.fullName}} profile" width="60px" height="60px">
@@ -106,7 +106,7 @@
             {{/each}}
           </div>
         {{else if (eq @field.type "photos")}}
-          <div class="collection-grid">
+          <div class="collection-grid" data-test-view-field="collection-grid">
             {{#each @field.value as |item|}}
               <div class="collection-grid__item">
                 <img src="/assets/images/{{item.src}}" alt={{item.altText}}>

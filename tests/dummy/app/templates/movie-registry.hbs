@@ -3,7 +3,7 @@
     <div class="movie-registry-sidebar--close-container">
       <div class="movie-registry-sidebar--close-btn">{{svg-jar "close" width="12px" height="12px"}}</div>
     </div>
-    <nav class="movie-registry-nav">
+    <nav class="movie-registry-nav" data-test-movie-registry-nav>
       <ul class="movie-registry-nav__group">
         <li>Movies
           <ul class="movie-registry-nav__group-sub">
@@ -35,7 +35,7 @@
       </ul>
     </nav>
   </aside>
-  <main class="movie-registry-main">
+  <main class="movie-registry-main" data-test-movie-registry-main>
     <header class="movie-registry-main__header">
       <img src="/assets/images/imdb-logo.png" alt="imdb" width="107px" height="52px">
       {{!-- SEARCH BAR --}}
@@ -46,18 +46,16 @@
     </div>
     <div class="movie-registry-grid">
       {{#each @model.movies as |movie|}}
-        <LinkTo @route="movie-registry.view" @model={{movie.id}} class="movie-registry-grid__link">
-          <Boxel>
-            <div class="movie-item">
-              <div class="movie-item__image-container">
-                <img class="movie-item__poster" src="/assets/images/{{movie.poster.value}}" alt="{{movie.title.value}} movie poster" width="150px" height="219px">
-              </div>
-              <div class="movie-item__details-container">
-                <div class="movie-item__title">{{movie.title.value}}</div>
-                <div class="movie-item__details">{{movie.year.value}}{{#if movie.type}}, {{movie.type.value}}{{/if}}</div>
-              </div>
+        <LinkTo @route="movie-registry.view" @model={{movie.id}} class="movie-registry-grid__link" data-test-movie-registry-movie="{{@model.id}}">
+          <div class="movie-item">
+            <div class="movie-item__image-container">
+              <img class="movie-item__poster" src="/assets/images/{{movie.poster.value}}" alt="{{movie.title.value}} movie poster" width="150px" height="219px">
             </div>
-          </Boxel>
+            <div class="movie-item__details-container">
+              <div class="movie-item__title">{{movie.title.value}}</div>
+              <div class="movie-item__details">{{movie.year.value}}{{#if movie.type}}, {{movie.type.value}}{{/if}}</div>
+            </div>
+          </div>
         </LinkTo>
       {{/each}}
     </div>
