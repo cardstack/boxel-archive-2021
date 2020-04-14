@@ -4,9 +4,11 @@ import { action, set } from '@ember/object';
 
 export default class CollectionComponent extends Component {
   @tracked listSelected = false;
+  @tracked displayItemActions = false;
 
   @action
-  listSelect() {
+  listSelect(list) {
+    this.itemUnselect(list);
     this.listSelected = true;
   }
 
@@ -16,13 +18,33 @@ export default class CollectionComponent extends Component {
   }
 
   @action
-  itemSelect(item) {
-    set(item, "selected", true);
-    this.listSelected = false;
+  itemSelect(id, list) {
+    for (let item of list) {
+      if (item.id === id) {
+        set(item, "selected", true);
+      }
+      else {
+        set(item, "selected", false);
+      }
+    }
+    this.listUnselect();
   }
 
   @action
-  itemUnselect(item) {
-    set(item, "selected", false);
+  itemUnselect(list) {
+    for (let item of list) {
+      set(item, "selected", false);
+    }
+  }
+
+  @action
+  openItemActionsMenu() {
+    this.displayItemActions = true;
+    // TODO
+  }
+
+  @action
+  expand() {
+    // TODO
   }
 }
