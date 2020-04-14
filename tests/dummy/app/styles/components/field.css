@@ -317,6 +317,10 @@
   padding: 9px 5px;
 }
 
+.collection-editor__item {
+  position: relative;
+}
+
 .collection-editor__view-all-btn {
   width: 100%;
   grid-column: 1 / -1;
@@ -387,6 +391,36 @@
   background: none;
   border: 2px solid transparent;
   border-radius: 5px;
+}
+
+.highlight-btn-group {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  grid-auto-flow: column;
+  background-color: #00EBE5;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: none;
+}
+
+.highlight-btn {
+  border: none;
+  width: 35px;
+  height: 30px;
+  padding: 7px 9px;
+  background-color: transparent;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+}
+.highlight-btn--more-actions {
+  background-image: url('/assets/images/icons/more-actions.svg');
+}
+.highlight-btn--expand {
+  background-image: url('/assets/images/icons/expand.svg');
 }
 
 .collection-list-editor__item {

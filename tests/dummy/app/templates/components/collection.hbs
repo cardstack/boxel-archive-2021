@@ -37,16 +37,30 @@
         </div>
       {{else if (eq @format "list")}}
         <div class="collection-editor collection-editor--vertical-list-view">
-          <button class="collection-editor__collection-btn"></button>
+          {{#if this.listSelected}}
+            <div class="highlight-btn-group">
+              <button class="highlight-btn highlight-btn--more-actions" aria-label="more actions" />
+              <button class="highlight-btn highlight-btn--expand" aria-label="expand" />
+            </div>
+          {{/if}}
+          <button class="collection-editor__collection-btn" {{on "focus" this.listSelect}} {{on "blur" this.listUnselect}} />
           <h4>Actor Profiles ({{@field.value.length}})</h4>
           {{#each @field.value as |actor|}}
-            <button class="collection-list-editor__item">
-              <div class="actor">
-                <img class="actor__img" src="/assets/images/{{actor.profile}}" alt="{{actor.fullName}} profile" width="60px" height="60px">
-                <div class="actor__name">{{actor.firstName}} {{actor.lastName}}</div>
-                <div class="actor__role">{{actor.role}}</div>
-              </div>
-            </button>
+            <div class="collection-editor__item">
+              {{#if actor.selected}}
+                <div class="highlight-btn-group">
+                  <button class="highlight-btn highlight-btn--more-actions" aria-label="more actions" />
+                  <button class="highlight-btn highlight-btn--expand" aria-label="expand" />
+                </div>
+              {{/if}}
+              <button class="collection-list-editor__item" {{on "focus" (fn this.itemSelect actor.id @field.value)}} {{on "blur" (fn this.itemUnselect actor.id @field.value)}}>
+                <div class="actor">
+                  <img class="actor__img" src="/assets/images/{{actor.profile}}" alt="{{actor.fullName}} profile" width="60px" height="60px">
+                  <div class="actor__name">{{actor.firstName}} {{actor.lastName}}</div>
+                  <div class="actor__role">{{actor.role}}</div>
+                </div>
+              </button>
+            </div>
           {{/each}}
           <button class="collection-editor__view-all-btn">View all ({{@field.value.length}})</button>
           <button class="collection-editor__add-btn">{{svg-jar "icon-plus-circle" width="18px" height="18px"}}</button>
