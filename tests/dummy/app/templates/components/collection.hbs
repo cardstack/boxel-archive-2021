@@ -46,7 +46,9 @@
             </div>
             <div class="collection-list-editor__select">
               <button {{on "click" this.toggleSelectAll}} class="collection-editor__select-btn collection-list-editor__select-btn" aria-label="Select all">
-                {{#if this.pickedItems}}
+                {{#if this.selectedAll}}
+                  {{svg-jar "icon-circle-selected" width="16px" height="16px"}}
+                {{else if this.pickedItems}}
                   {{svg-jar "icon-select-partial" width="16px" height="16px"}}
                 {{else}}
                   {{svg-jar "icon-circle" width="16px" height="16px"}}
