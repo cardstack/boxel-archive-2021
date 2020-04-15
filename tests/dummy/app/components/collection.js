@@ -3,13 +3,15 @@ import { tracked } from '@glimmer/tracking';
 import { action, set } from '@ember/object';
 
 export default class CollectionComponent extends Component {
+  @tracked list = this.args?.field?.value;
   @tracked listSelected = false;
   @tracked displayItemActions = false;
   @tracked pickedItems;
+  @tracked selectedAll;
 
   @action
-  listSelect(list) {
-    this.itemUnselect(list);
+  listSelect() {
+    this.itemUnselect();
     this.listSelected = true;
   }
 
@@ -19,8 +21,8 @@ export default class CollectionComponent extends Component {
   }
 
   @action
-  itemSelect(id, list) {
-    for (let item of list) {
+  itemSelect(id) {
+    for (let item of this.list) {
       if (item.id === id) {
         set(item, "selected", true);
       }
@@ -32,8 +34,8 @@ export default class CollectionComponent extends Component {
   }
 
   @action
-  itemUnselect(list) {
-    for (let item of list) {
+  itemUnselect() {
+    for (let item of this.list) {
       set(item, "selected", false);
     }
   }
@@ -50,12 +52,29 @@ export default class CollectionComponent extends Component {
   }
 
   @action
-  togglePick(id, list) {
-    for (let item of list) {
+  togglePick(id) {
+    for (let item of this.list) {
       if (item.id === id) {
         set(item, "picked", !item.picked);
       }
     }
-    this.pickedItems = list.filter(item => item.picked).length;
+    this.pickedItems = this.list.filter(item => item.picked).length;
+  }
+
+  @action
+  toggleSelectAll() {
+    if (this.selectedAll) {
+      for (let item of this.list) {
+        set(item, "picked", false);
+      }
+      this.selectedAll = false;
+      this.pickedItems = 0;
+    } else {
+      for (let item of this.list) {
+        set(item, "picked", true);
+      }
+      this.selectedAll = true;
+      this.pickedItems = this.list.length;
+    }
   }
 }
