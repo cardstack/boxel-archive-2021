@@ -3,16 +3,16 @@
     <div class="edit-field__title">{{humanize (dasherize @fieldName)}}</div>
     <div class="edit-field__value">
       {{#if (eq @format "tagList")}}
-        <div class="collection-editor collection-editor--horizontal-list-view">
-          <ul class="collection-editor__list">
+        <div class="collection-editor collection-taglist-editor">
+          <ul class="collection-taglist-editor__list">
             {{#each @field.value as |item|}}
-              <li class="collection-editor__list-item">
-                <span class="collection-editor__text">{{item.title}}</span>
-                <button class="collection-editor__btn remove-btn" aria-label="remove">{{svg-jar "close" width="8px" height="8px"}}</button>
+              <li class="collection-taglist-editor__list-item">
+                <span class="collection-taglist-editor__text">{{item.title}}</span>
+                <button class="collection-taglist-editor__btn remove-btn" aria-label="remove">{{svg-jar "close" width="8px" height="8px"}}</button>
               </li>
             {{/each}}
           </ul>
-          <button class="collection-editor__btn add-btn" aria-label="add">{{svg-jar "icon-plus-circle" width="16px" height="16px"}}</button>
+          <button class="collection-taglist-editor__btn add-btn" aria-label="add">{{svg-jar "icon-plus-circle" width="16px" height="16px"}}</button>
         </div>
       {{else if (eq @format "grid")}}
         <div class="collection-editor collection-editor--grid-view">
@@ -36,17 +36,26 @@
           <button class="collection-editor__add-btn">{{svg-jar "icon-plus-circle" width="18px" height="18px"}}</button>
         </div>
       {{else if (eq @format "list")}}
-        <div class="collection-editor collection-editor--vertical-list-view">
+        <div class="collection-editor">
+          <button class="collection-editor__collection-btn {{if this.listSelected "selected"}}" {{on "click" (fn this.listSelect @field.value)}} />
+          <h4>Actor Profiles ({{@field.value.length}})</h4>
           {{#if this.listSelected}}
             <div class="highlight-btn-group">
               <button class="highlight-btn highlight-btn--more-actions" aria-label="more actions" />
               <button class="highlight-btn highlight-btn--expand" aria-label="expand" />
             </div>
+            <div class="collection-list-editor__select">
+              <button class="collection-editor__select-btn collection-list-editor__select-btn">{{svg-jar "icon-circle" width="16px" height="16px"}}</button>
+              <div class="collection-editor__select-all">
+                Select all
+              </div>
+            </div>
           {{/if}}
-          <button class="collection-editor__collection-btn {{if this.listSelected "selected"}}" {{on "click" (fn this.listSelect @field.value)}} />
-          <h4>Actor Profiles ({{@field.value.length}})</h4>
           {{#each @field.value as |actor|}}
-            <div class="collection-list-editor__item-container">
+            <div class="collection-list-editor__item-container {{if this.listSelected "collection-list-editor__select"}}">
+              {{#if this.listSelected}}
+                <button class="collection-editor__select-btn collection-list-editor__select-btn">{{svg-jar "icon-circle" width="16px" height="16px"}}</button>
+              {{/if}}
               {{#if actor.selected}}
                 <div class="highlight-btn-group">
                   <button class="highlight-btn highlight-btn--more-actions" aria-label="more actions" {{on "click" this.openItemActionsMenu}} />
@@ -60,6 +69,9 @@
                   <div class="actor__role">{{actor.role}}</div>
                 </div>
               </button>
+              {{#if this.listSelected}}
+                <button class="collection-editor__select-btn collection-list-editor__select-btn">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
+              {{/if}}
             </div>
           {{/each}}
           <button class="collection-editor__view-all-btn">View all ({{@field.value.length}})</button>
