@@ -47,4 +47,13 @@ export default class CollectionComponent extends Component {
   expand() {
     // TODO
   }
+
+  @action
+  togglePick(id, list) {
+    for (let item of list) {
+      if (item.id === id) {
+        set(item, "picked", !item.picked);
+      }
+    }
+  }
 }

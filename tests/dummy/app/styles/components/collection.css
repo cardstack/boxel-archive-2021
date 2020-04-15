@@ -90,9 +90,10 @@
   padding: 4px 4px 16px;
 }
 
-.collection-editor button:focus,
-.collection-list-editor__item.selected,
-.collection-editor__collection-btn.selected {
+.collection-editor button:focus {
+  outline: 0;
+}
+.collection-editor button:focus-visible {
   border: 2px solid #00EBE5;
   outline: 0;
 }
@@ -120,18 +121,17 @@
   background-position: center;
   z-index: 2;
 }
+
 .highlight-btn--more-actions {
   background-image: url('/assets/images/icons/more-actions.svg');
 }
+
 .highlight-btn--expand {
   background-image: url('/assets/images/icons/expand.svg');
 }
-.collection-editor .highlight-btn:focus {
-  border-color: transparent;
-}
-.collection-editor .highlight-btn:focus-visible {
-  border: 1px solid black;
-  outline: 0;
+
+.highlight-btn:focus-visible {
+  border-color: black;
 }
 
 .collection-editor__select-all {
@@ -160,7 +160,12 @@
   height: 30px;
 }
 
-.collection-editor__collection-btn {
+.collection-list-editor__select-btn:focus-visible {
+  border: 2px solid #00EBE5;
+  outline: 0;
+}
+
+.collection-list-editor__collection-btn {
   position: absolute;
   width: 100%;
   top: 0;
@@ -176,7 +181,7 @@
   position: relative;
 }
 
-.collection-list-editor__item {
+.collection-list-editor__item-btn {
   width: 100%;
   height: 80px;
   padding: 0;
@@ -186,6 +191,11 @@
   overflow: hidden;
   text-align: left;
   z-index: 1;
+}
+
+.collection-list-editor__collection-btn.selected,
+.collection-list-editor__item-btn.selected {
+  border: 2px solid #00EBE5;
 }
 
 
