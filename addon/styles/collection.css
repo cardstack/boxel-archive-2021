@@ -49,9 +49,7 @@
   padding: 11px 0;
   background: none;
   color: black;
-  font-family: 'Open Sans';
-  font-size: 13px;
-  line-height: calc(16/13);
+  font: var(--boxel-font-sm);
   border: 1px solid #AFAFB7;
   border-radius: inherit;
   text-align: center;
@@ -59,8 +57,8 @@
 }
 
 .collection-editor__add-btn {
-  --icon-bg: var(--cs-highlight);
-  --icon-border: var(--cs-highlight);
+  --icon-bg: var(--boxel-highlight);
+  --icon-border: var(--boxel-highlight);
   grid-column: 1 / -1;
   width: 40px;
   height: 40px;
@@ -95,7 +93,7 @@
   outline: 0;
 }
 .collection-editor button:focus-visible {
-  border: 2px solid #00EBE5;
+  border: 2px solid var(--boxel-highlight);
   outline: 0;
 }
 
@@ -105,7 +103,7 @@
   right: 0;
   display: grid;
   grid-auto-flow: column;
-  background-color: #00EBE5;
+  background-color: var(--boxel-highlight);
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border: none;
@@ -140,10 +138,9 @@
   background: url('/assets/images/icons/check-mark.svg') center left 15px no-repeat;
   border: 1px solid #AFAFB7;
   border-radius: 5px;
-  font-family: 'Open Sans';
+  color: black;
+  font: var(--boxel-font-sm);
   font-weight: bold;
-  font-size: 13px;
-  line-height: calc(18/13);
   letter-spacing: 0.025em;
 }
 
@@ -162,7 +159,7 @@
 }
 
 .collection-list-editor__select-btn:focus-visible {
-  border: 2px solid #00EBE5;
+  border: 2px solid var(--boxel-highlight);
   outline: 0;
 }
 
@@ -196,7 +193,7 @@
 
 .collection-list-editor__collection-btn.selected,
 .collection-list-editor__item-btn.selected {
-  border: 2px solid #00EBE5;
+  border: 2px solid var(--boxel-highlight);
 }
 
 
@@ -246,13 +243,13 @@
 }
 
 .collection-taglist-editor__btn.add-btn {
-  --icon-bg: var(--cs-highlight);
-  --icon-border: var(--cs-highlight);
+  --icon-bg: var(--boxel-highlight);
+  --icon-border: var(--boxel-highlight);
 }
 
 .collection-taglist-editor__btn.add-btn:focus,
 .collection-taglist-editor__item:focus-within {
-  border-color: #00EBE5;
-  outline: 2px solid #00EBE5;
+  border-color: var(--boxel-highlight);
+  outline: 2px solid var(--boxel-highlight);
   outline-offset: -3px;
 }

@@ -37,9 +37,9 @@
         </div>
       {{else if (eq @format "list")}}
         <div class="collection-editor">
-          <button class="collection-list-editor__collection-btn {{if this.listSelected "selected"}}" {{on "click" this.listSelect}} />
-          <h4>Actor Profiles ({{this.list.length}})</h4>
-          {{#if this.listSelected}}
+          <button class="collection-list-editor__collection-btn {{if this.collectionSelected "selected"}}" {{on "click" this.collectionSelect}} />
+          <h4>{{@title}} ({{this.collection.length}})</h4>
+          {{#if this.collectionSelected}}
             <div class="highlight-btn-group">
               <button class="highlight-btn highlight-btn--more-actions" aria-label="more actions" />
               <button class="highlight-btn highlight-btn--expand" aria-label="expand" />
@@ -63,38 +63,34 @@
               </div>
             </div>
           {{/if}}
-          {{#each @field.value as |actor|}}
-            <div class="collection-list-editor__item-container {{if this.listSelected "collection-list-editor__select"}}">
-              {{#if this.listSelected}}
+          {{#each this.collection as |item|}}
+            <div class="collection-list-editor__item-container {{if this.collectionSelected "collection-list-editor__select"}}">
+              {{#if this.collectionSelected}}
                 <button
-                  {{on "click" (fn this.togglePick actor.id)}}
+                  {{on "click" (fn this.togglePick item.id)}}
                   class="collection-editor__select-btn collection-list-editor__select-btn">
-                    {{#if actor.picked}}
+                    {{#if item.picked}}
                       {{svg-jar "icon-circle-selected" width="16px" height="16px"}}
                     {{else}}
                       {{svg-jar "icon-circle" width="16px" height="16px"}}
                     {{/if}}
                 </button>
               {{/if}}
-              {{#if actor.selected}}
+              {{#if item.selected}}
                 <div class="highlight-btn-group">
                   <button class="highlight-btn highlight-btn--more-actions" aria-label="more actions" {{on "click" this.openItemActionsMenu}} />
                   <button class="highlight-btn highlight-btn--expand" aria-label="expand" {{on "click" this.expand}} />
                 </div>
               {{/if}}
-              <button class="collection-list-editor__item-btn {{if actor.selected "selected"}}" {{on "click" (fn this.itemSelect actor.id)}}>
-                <div class="actor">
-                  <img class="actor__img" src="/assets/images/{{actor.profile}}" alt="{{actor.fullName}} profile" width="60px" height="60px">
-                  <div class="actor__name">{{actor.firstName}} {{actor.lastName}}</div>
-                  <div class="actor__role">{{actor.role}}</div>
-                </div>
+              <button class="collection-list-editor__item-btn {{if item.selected "selected"}}" {{on "click" (fn this.itemSelect item.id)}}>
+                <Actor @actor={{item}} />
               </button>
-              {{#if this.listSelected}}
+              {{#if this.collectionSelected}}
                 <button class="collection-editor__select-btn collection-list-editor__select-btn">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
               {{/if}}
             </div>
           {{/each}}
-          <button class="collection-editor__view-all-btn">View all ({{this.list.length}})</button>
+          <button class="collection-editor__view-all-btn">View all ({{this.collection.length}})</button>
           <button class="collection-editor__add-btn">{{svg-jar "icon-plus-circle" width="18px" height="18px"}}</button>
         </div>
       {{/if}}
@@ -119,12 +115,8 @@
     </div>
   {{else if (eq @format "list")}}
     <div class="collection-list" data-test-view-field="collection-list">
-      {{#each @field.value as |actor|}}
-        <div class="actor">
-          <img class="actor__img" src="/assets/images/{{actor.profile}}" alt="{{actor.fullName}} profile" width="60px" height="60px">
-          <div class="actor__name">{{actor.firstName}} {{actor.lastName}}</div>
-          <div class="actor__role">{{actor.role}}</div>
-        </div>
+      {{#each this.collection as |item|}}
+        <Actor @actor={{item}} />
       {{/each}}
     </div>
   {{/if}}

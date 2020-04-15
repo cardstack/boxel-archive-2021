@@ -3,26 +3,26 @@ import { tracked } from '@glimmer/tracking';
 import { action, set } from '@ember/object';
 
 export default class CollectionComponent extends Component {
-  @tracked list = this.args?.field?.value;
-  @tracked listSelected = false;
+  @tracked collection = this.args?.field?.value;
+  @tracked collectionSelected = false;
   @tracked displayItemActions = false;
   @tracked pickedItems;
   @tracked selectedAll;
 
   @action
-  listSelect() {
+  collectionSelect() {
     this.itemUnselect();
-    this.listSelected = true;
+    this.collectionSelected = true;
   }
 
   @action
-  listUnselect() {
-    this.listSelected = false;
+  collectionUnselect() {
+    this.collectionSelected = false;
   }
 
   @action
   itemSelect(id) {
-    for (let item of this.list) {
+    for (let item of this.collection) {
       if (item.id === id) {
         set(item, "selected", true);
       }
@@ -30,12 +30,12 @@ export default class CollectionComponent extends Component {
         set(item, "selected", false);
       }
     }
-    this.listUnselect();
+    this.collectionUnselect();
   }
 
   @action
   itemUnselect() {
-    for (let item of this.list) {
+    for (let item of this.collection) {
       set(item, "selected", false);
     }
   }
@@ -53,28 +53,28 @@ export default class CollectionComponent extends Component {
 
   @action
   togglePick(id) {
-    for (let item of this.list) {
+    for (let item of this.collection) {
       if (item.id === id) {
         set(item, "picked", !item.picked);
       }
     }
-    this.pickedItems = this.list.filter(item => item.picked).length;
+    this.pickedItems = this.collection.filter(item => item.picked).length;
   }
 
   @action
   toggleSelectAll() {
     if (this.selectedAll) {
-      for (let item of this.list) {
+      for (let item of this.collection) {
         set(item, "picked", false);
       }
       this.selectedAll = false;
       this.pickedItems = 0;
     } else {
-      for (let item of this.list) {
+      for (let item of this.collection) {
         set(item, "picked", true);
       }
       this.selectedAll = true;
-      this.pickedItems = this.list.length;
+      this.pickedItems = this.collection.length;
     }
   }
 }

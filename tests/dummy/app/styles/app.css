@@ -7,7 +7,7 @@
 @import 'movie-registry/view.css';
 @import 'components/movie.css';
 @import 'components/field.css';
-@import 'components/collection.css';
+@import 'components/actor.css';
 
 html, body {
   height: 100%;
