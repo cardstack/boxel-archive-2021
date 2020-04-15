@@ -4,13 +4,7 @@
   min-height: 283px;
   padding: 10px 10px 30px;
   background-color: white;
-  border-radius: 5px;
-  border: 1px solid #AFAFB7;
   line-height: 1;
-}
-
-.photo--selected {
-  border-color: var(--boxel-highlight);
 }
 
 .photo__img-container {

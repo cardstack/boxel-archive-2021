@@ -171,27 +171,22 @@
   border-radius: 5px;
 }
 
-.collection-editor__collection-btn.selected {
-  border: 2px solid var(--boxel-highlight);
-  border-radius: 5px;
-}
-
 .collection-editor__item-btn {
   width: 100%;
   padding: 0;
   background: none;
   border-radius: 5px;
-  border: 1px solid transparent;
+  border: 1px solid #AFAFB7;
   overflow: hidden;
   text-align: left;
   z-index: 1;
 }
 
+.collection-editor__collection-btn.selected,
 .collection-editor__item-btn.selected {
-  border: 1px solid var(--boxel-highlight);
-  border-radius: 6px;
+  border: 2px solid var(--boxel-highlight);
+  border-radius: 5px;
 }
-
 
 
 /* Collection editor -- format: taglist */

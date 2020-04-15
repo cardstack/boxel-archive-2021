@@ -107,7 +107,7 @@
   {{else if (eq @format "list")}}
     <div class="collection-list" data-test-view-field="collection-list">
       {{#each this.collection as |item|}}
-        <Actor @actor={{item}} />
+        <Actor @content={{item}} />
       {{/each}}
     </div>
   {{/if}}
