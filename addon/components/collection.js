@@ -4,8 +4,8 @@ import { action, set } from '@ember/object';
 
 export default class CollectionComponent extends Component {
   @tracked collection = this.args?.field?.value;
-  @tracked collectionSelected = false;
-  @tracked displayItemActions = false;
+  @tracked collectionSelected;
+  @tracked displayItemActions;
   @tracked pickedItems;
   @tracked selectedAll;
 
@@ -76,5 +76,10 @@ export default class CollectionComponent extends Component {
       this.selectedAll = true;
       this.pickedItems = this.collection.length;
     }
+  }
+
+  @action
+  removeItem(id) {
+    this.collection = this.collection.filter(item => item.id !== id);
   }
 }

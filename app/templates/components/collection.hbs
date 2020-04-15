@@ -86,7 +86,7 @@
                 <Actor @actor={{item}} />
               </button>
               {{#if this.collectionSelected}}
-                <button class="collection-editor__select-btn collection-list-editor__select-btn">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
+                <button {{on "click" (fn this.removeItem item.id)}} class="collection-editor__select-btn collection-list-editor__select-btn">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
               {{/if}}
             </div>
           {{/each}}
