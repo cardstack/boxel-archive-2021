@@ -31,6 +31,7 @@ export default class CollectionComponent extends Component {
       }
     }
     this.collectionUnselect();
+    this.unselectAll();
   }
 
   @action
@@ -64,11 +65,7 @@ export default class CollectionComponent extends Component {
   @action
   toggleSelectAll() {
     if (this.selectedAll) {
-      for (let item of this.collection) {
-        set(item, "picked", false);
-      }
-      this.selectedAll = false;
-      this.pickedItems = 0;
+      this.unselectAll();
     } else {
       for (let item of this.collection) {
         set(item, "picked", true);
@@ -76,6 +73,15 @@ export default class CollectionComponent extends Component {
       this.selectedAll = true;
       this.pickedItems = this.collection.length;
     }
+  }
+
+  @action
+  unselectAll() {
+    for (let item of this.collection) {
+      set(item, "picked", false);
+    }
+    this.selectedAll = false;
+    this.pickedItems = 0;
   }
 
   @action
