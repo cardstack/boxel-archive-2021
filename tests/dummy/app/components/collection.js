@@ -5,6 +5,7 @@ import { action, set } from '@ember/object';
 export default class CollectionComponent extends Component {
   @tracked listSelected = false;
   @tracked displayItemActions = false;
+  @tracked pickedItems;
 
   @action
   listSelect(list) {
@@ -55,5 +56,6 @@ export default class CollectionComponent extends Component {
         set(item, "picked", !item.picked);
       }
     }
+    this.pickedItems = list.filter(item => item.picked).length;
   }
 }

@@ -47,7 +47,11 @@
             <div class="collection-list-editor__select">
               <button class="collection-editor__select-btn collection-list-editor__select-btn">{{svg-jar "icon-circle" width="16px" height="16px"}}</button>
               <div class="collection-editor__select-all">
-                Select all
+                {{#if this.pickedItems}}
+                  {{this.pickedItems}} selected
+                {{else}}
+                  Select all
+                {{/if}}
               </div>
             </div>
           {{/if}}
