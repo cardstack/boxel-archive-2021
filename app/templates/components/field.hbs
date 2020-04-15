@@ -3,9 +3,9 @@
     {{#if (eq @field.type "genres")}}
       <Collection @mode={{@mode}} @format="tagList" @field={{@field}} @fieldName={{@fieldName}} />
     {{else if (eq @field.type "photos")}}
-      <Collection @mode={{@mode}} @format="grid" @field={{@field}} @fieldName={{@fieldName}} />
+      <Collection @mode={{@mode}} @format="grid" @title="Photos" @component="photo" @field={{@field}} @fieldName={{@fieldName}} />
     {{else if (eq @field.type "actors")}}
-      <Collection @mode={{@mode}} @format="list" @title="Actor Profiles" @field={{@field}} @fieldName={{@fieldName}} />
+      <Collection @mode={{@mode}} @format="list" @title="Actor Profiles" @component="actor" @field={{@field}} @fieldName={{@fieldName}} />
     {{/if}}
   {{else}}
     <label class="edit-field edit-field--{{dasherize @fieldName}}-field" data-test-edit-field="form-editors">

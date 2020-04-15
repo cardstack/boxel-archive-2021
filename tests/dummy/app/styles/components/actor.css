@@ -5,8 +5,16 @@
     "img role" auto /
     60px auto;
   gap: 5px 20px;
+  height: 80px;
   padding: 10px 12px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #AFAFB7;
   line-height: 1;
+}
+
+.actor--selected {
+  border-color: var(--boxel-highlight);
 }
 
 .actor__img {
