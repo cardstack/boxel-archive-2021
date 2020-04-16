@@ -15,57 +15,34 @@
           <button class="collection-taglist-editor__btn add-btn" aria-label="add">{{svg-jar "icon-plus-circle" width="16px" height="16px"}}</button>
         </div>
       {{else}}
-        <div class="collection-editor collection-editor--{{@format}}">
-          <button class="collection-editor__collection-btn {{if this.collectionSelected "selected"}}" {{on "click" this.collectionSelect}} />
-          <h4>{{@title}} ({{this.collection.length}})</h4>
-          {{#if this.collectionSelected}}
-            <div class="highlight-btn-group">
-              <button class="highlight-btn highlight-btn--more-actions" aria-label="more actions" />
-              <button class="highlight-btn highlight-btn--expand" aria-label="expand" />
-            </div>
-            <div class="collection-editor__select">
-              <button {{on "click" this.toggleSelectAll}} class="collection-editor__select-btn" aria-label="Select all">
-                {{#if this.selectedAll}}
-                  {{svg-jar "icon-circle-selected" width="16px" height="16px"}}
-                {{else if this.pickedItems}}
-                  {{svg-jar "icon-select-partial" width="16px" height="16px"}}
-                {{else}}
-                  {{svg-jar "icon-circle" width="16px" height="16px"}}
-                {{/if}}
-              </button>
-              <div class="collection-editor__select-all">
-                {{#if this.pickedItems}}
-                  {{this.pickedItems}} selected
-                {{else}}
-                  Select all
-                {{/if}}
-              </div>
-            </div>
-          {{/if}}
-          {{#each this.collection as |item|}}
-            <div class="collection-editor__item {{if (and this.collectionSelected (eq @format "list")) "collection-editor__select"}}">
-              {{#if (and this.collectionSelected (eq @format "list"))}}
-                <button {{on "click" (fn this.togglePick item.id)}} class="collection-editor__select-btn" aria-label="select">
-                  {{#if item.picked}}
+        <Boxel>
+          <BoxelHighlight @on={{this.collectionSelected}} {{on "click" this.collectionSelect}} />
+          <BoxelActions @displayHighlightActions={{this.collectionSelected}} />
+          <div class="collection-editor collection-editor--{{@format}}">
+            <h4>{{@title}} ({{this.collection.length}})</h4>
+            {{#if this.collectionSelected}}
+              <div class="collection-editor__select">
+                <button {{on "click" this.toggleSelectAll}} class="collection-editor__select-btn" aria-label="Select all">
+                  {{#if this.selectedAll}}
                     {{svg-jar "icon-circle-selected" width="16px" height="16px"}}
+                  {{else if this.pickedItems}}
+                    {{svg-jar "icon-select-partial" width="16px" height="16px"}}
                   {{else}}
                     {{svg-jar "icon-circle" width="16px" height="16px"}}
                   {{/if}}
                 </button>
-              {{/if}}
-              {{#if item.selected}}
-                <div class="highlight-btn-group">
-                  <button class="highlight-btn highlight-btn--more-actions" aria-label="more actions" {{on "click" this.openItemActionsMenu}} />
-                  <button class="highlight-btn highlight-btn--expand" aria-label="expand" {{on "click" this.expand}} />
+                <div class="collection-editor__select-all">
+                  {{#if this.pickedItems}}
+                    {{this.pickedItems}} selected
+                  {{else}}
+                    Select all
+                  {{/if}}
                 </div>
-              {{/if}}
-              <button class="collection-editor__item-btn {{if (or item.selected item.picked) "selected"}}" {{on "click" (fn this.itemSelect item.id)}}>
-                {{#let @component as |Component|}}
-                  <Component @content={{item}} @selected={{or item.selected item.picked}} />
-                {{/let}}
-              </button>
-              {{#if (and this.collectionSelected (eq @format "grid"))}}
-                <div class="collection-editor__btn-group">
+              </div>
+            {{/if}}
+            {{#each this.collection as |item|}}
+              <div class="collection-editor__item {{if (and this.collectionSelected (eq @format "list")) "collection-editor__select"}}">
+                {{#if (and this.collectionSelected (eq @format "list"))}}
                   <button {{on "click" (fn this.togglePick item.id)}} class="collection-editor__select-btn" aria-label="select">
                     {{#if item.picked}}
                       {{svg-jar "icon-circle-selected" width="16px" height="16px"}}
@@ -73,17 +50,35 @@
                       {{svg-jar "icon-circle" width="16px" height="16px"}}
                     {{/if}}
                   </button>
+                {{/if}}
+                <Boxel>
+                  <BoxelHighlight @on={{or item.selected item.picked}} {{on "click" (fn this.itemSelect item.id)}} />
+                  <BoxelActions @displayHighlightActions={{item.selected}} />
+                  {{#let @component as |Component|}}
+                    <Component @content={{item}} />
+                  {{/let}}
+                </Boxel>
+                {{#if (and this.collectionSelected (eq @format "grid"))}}
+                  <div class="collection-editor__btn-group">
+                    <button {{on "click" (fn this.togglePick item.id)}} class="collection-editor__select-btn" aria-label="select">
+                      {{#if item.picked}}
+                        {{svg-jar "icon-circle-selected" width="16px" height="16px"}}
+                      {{else}}
+                        {{svg-jar "icon-circle" width="16px" height="16px"}}
+                      {{/if}}
+                    </button>
+                    <button {{on "click" (fn this.removeItem item.id)}} class="collection-editor__select-btn" aria-label="remove">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
+                  </div>
+                {{/if}}
+                {{#if (and this.collectionSelected (eq @format "list"))}}
                   <button {{on "click" (fn this.removeItem item.id)}} class="collection-editor__select-btn" aria-label="remove">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
-                </div>
-              {{/if}}
-              {{#if (and this.collectionSelected (eq @format "list"))}}
-                <button {{on "click" (fn this.removeItem item.id)}} class="collection-editor__select-btn" aria-label="remove">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
-              {{/if}}
-            </div>
-          {{/each}}
-          <button class="collection-editor__view-all-btn">View all ({{this.collection.length}})</button>
-          <button class="collection-editor__add-btn">{{svg-jar "icon-plus-circle" width="18px" height="18px"}}</button>
-        </div>
+                {{/if}}
+              </div>
+            {{/each}}
+            <button class="collection-editor__view-all-btn">View all ({{this.collection.length}})</button>
+            <button class="collection-editor__add-btn">{{svg-jar "icon-plus-circle" width="18px" height="18px"}}</button>
+          </div>
+        </Boxel>
       {{/if}}
     </div>
   </div>
