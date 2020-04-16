@@ -87,10 +87,7 @@
 
 .collection-editor button:focus {
   outline: 0;
-}
-.collection-editor button:focus-visible {
   border: 2px solid var(--boxel-highlight);
-  outline: 0;
 }
 
 .collection-editor__select {
@@ -110,6 +107,15 @@
   border: none;
   background: none;
   z-index: 1;
+}
+
+.collection-editor__select--selected {
+  --icon-bg: var(--boxel-highlight);
+  --icon-border: var(--boxel-highlight);
+}
+
+.collection-editor__select--partial {
+  --icon-bg: var(--boxel-highlight);
 }
 
 .collection-editor__select-all {
@@ -166,11 +172,4 @@
 .collection-taglist-editor__btn.add-btn {
   --icon-bg: var(--boxel-highlight);
   --icon-border: var(--boxel-highlight);
-}
-
-.collection-taglist-editor__btn.add-btn:focus,
-.collection-taglist-editor__item:focus-within {
-  border-color: var(--boxel-highlight);
-  outline: 2px solid var(--boxel-highlight);
-  outline-offset: -3px;
 }

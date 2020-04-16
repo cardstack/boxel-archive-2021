@@ -10,10 +10,8 @@
   z-index: 1;
 }
 
-.boxel-highlight:focus {
-  outline: 0;
-}
-
+.boxel-highlight:focus,
 .boxel-highlight--on {
+  outline: 0;
   border-color: var(--boxel-highlight);
 }

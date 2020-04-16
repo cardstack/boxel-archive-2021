@@ -25,6 +25,7 @@
 
 .boxel-actions__btn:focus {
   outline: 0;
+  background-color: var(--boxel-highlight-hover);
 }
 
 .boxel-actions__btn--more-actions {
