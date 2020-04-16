@@ -8,9 +8,13 @@
   height: 80px;
   padding: 10px 12px;
   background-color: white;
-  border: 1px solid #AFAFB7;
+  border: 1px solid transparent;
   border-radius: 5px;
   line-height: 1;
+}
+
+.actor--edit-mode {
+  border-color: #AFAFB7;
 }
 
 .actor__img {
