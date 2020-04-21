@@ -1,0 +1,27 @@
+<table class="collection-table">
+  <thead class="collection-table__header">
+    <tr class="collection-table__header-row">
+      {{#each-in this.fields as |title|}}
+        <th scope="col" class="collection-table__th">{{title}}</th>
+      {{/each-in}}
+    </tr>
+  </thead>
+  <tbody class="collection-table__body">
+    {{#each @collection as |item|}}
+      <tr class="collection-table__row">
+        {{#if @collection.subgroups.length}}
+          {{#each @collection.subgroups as |group|}}
+            <th scope="row">{{group.title}}</th>
+            {{#each-in group as |title val|}}
+              <td class="collection-table__td">{{val}}</td>
+            {{/each-in}}
+          {{/each}}
+        {{else}}
+          {{#each-in item as |title val|}}
+            <td class="collection-table__td"><span>{{val}}</span></td>
+          {{/each-in}}
+        {{/if}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
