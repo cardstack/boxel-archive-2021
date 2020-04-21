@@ -4,6 +4,7 @@ import { action, set } from '@ember/object';
 
 export default class CollectionComponent extends Component {
   @tracked collection = this.args?.field?.value || this.args?.model?.value;
+  @tracked tableCols = this.args?.field?.columns || this.args?.model?.columns;
   @tracked displayItemActions;
 
   constructor(...args) {

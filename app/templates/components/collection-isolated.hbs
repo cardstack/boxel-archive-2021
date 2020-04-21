@@ -39,7 +39,7 @@
         </div>
       </div>
       {{#if (eq this.format "table")}}
-        <CollectionTable @collection={{collection}} />
+        <CollectionTable @collection={{collection}} @columns={{this.tableCols}} />
       {{else}}
         <div class="collection-isolated-grid">
           {{#each collection as |item i|}}
