@@ -18,9 +18,9 @@
 
 .collection-item--grid {
   grid-template-areas:
-  "img"
-  "title"
-  "detail";
+    "img"
+    "title"
+    "detail";
   gap: 8px 0;
   min-height: 283px;
   padding: 10px 6px 30px;
