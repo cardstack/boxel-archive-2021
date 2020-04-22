@@ -1,5 +1,5 @@
 .collection-table > table {
-  width: 100%;
+  width: 931px;
   margin: 0 auto;
   padding: 20px 20px 40px;
   font-family: var(--boxel-font-family);
@@ -23,10 +23,13 @@
 }
 
 .collection-table__header th {
-  color: black;
-  opacity: 0.75;
   font-weight: normal;
   text-align: left;
+}
+
+.collection-table__header th:first-of-type {
+  padding-left: 54px;
+  background-color: #F0F0F0;
 }
 
 .collection-table__body tr {
@@ -41,4 +44,5 @@
 
 .collection-table__body td:first-of-type {
   padding-left: 20px;
+  background-color: white;
 }

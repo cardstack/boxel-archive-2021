@@ -55,7 +55,7 @@
 .collection-isolated-section__actions-row {
   display: grid;
   grid-template-columns: 1fr auto auto;
-  padding: 20px;
+  padding: 20px 20px 20px 13px;
   align-items: center;
 }
 
@@ -113,19 +113,22 @@
   grid-template-columns: repeat(auto-fill, minmax(206px, auto));
   gap: 20px;
   justify-items: center;
-  padding: 20px 20px 40px;
+  padding: 20px 13px 40px;
 }
 
 
-/* move these */
-.collection-editor__select--isolated {
+.collection-isolated-section__actions-row > .collection-editor__select--isolated {
   grid-column: 1 / 2;
+}
+
+/* move these */
+.collection-editor__select.collection-editor__select--isolated {
+  gap: 0 11px;
 }
 
 .collection-editor__select-all--isolated {
   max-width: 355px;
 }
-
 
 .collection-editor__btn-group--isolated {
   padding: 10px;

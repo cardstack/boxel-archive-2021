@@ -43,7 +43,7 @@
       {{else}}
         <div class="collection-isolated-grid">
           {{#each collection as |item i|}}
-            <div class="collection-isolated-grid__item {{if (eq this.format "list") "collection-editor__select collection-editor__select--full-width"}}">
+            <div class="collection-isolated-grid__item {{if (eq this.format "list") "collection-editor__select collection-editor__select--full-width collection-editor__select--isolated"}}">
               {{#if (eq this.format "list")}}
                 <button {{on "click" (fn this.togglePick item.id)}} class="collection-editor__select-btn collection-editor__select-btn--isolated" aria-label="select" data-test-collection-select-item={{i}}>
                   {{#if item.picked}}

@@ -72,6 +72,8 @@ export default {
             title: "Carrie Fisher",
             detail: "Leia Organa",
             src: "carrie-fisher.png",
+            firstName: "Carrie",
+            lastName: "Fisher"
           },
           {
             id: "mark-hamill",
@@ -119,7 +121,8 @@ export default {
         columns: [
           {
             name: 'Name',
-            valuePath: 'title'
+            valuePath: 'title',
+            isFixed: 'left'
           },
           {
             name: 'Id',
@@ -128,6 +131,14 @@ export default {
           {
             name: 'Role',
             valuePath: 'detail'
+          },
+          {
+            name: 'First name',
+            valuePath: 'firstName',
+          },
+          {
+            name: 'Last name',
+            valuePath: 'lastName',
           },
           {
             name: 'Image file',
