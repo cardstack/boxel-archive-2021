@@ -1,4 +1,27 @@
 <EmberTable @class="collection-table" as |t|>
-  <t.head @class="collection-table__header" @columns={{@columns}} />
-  <t.body @class="collection-table__body" @rows={{@collection}} />
+  <t.head
+    @columns={{@columns}}
+    @widthConstraint="gte-container"
+    @sorts={{this.sorts}}
+    @onUpdateSorts={{action (mut this.sorts)}}
+    @class="collection-table__header"
+  />
+  {{!-- TODO: make sorting available only
+        when user clicks on sort button --}}
+
+  <t.body
+    @rows={{@collection}}
+    @rowSelectionMode={{this.rowSelectionMode}}
+    @checkboxSelectionMode={{this.checkboxSelectionMode}}
+    @onSelect={{action (mut this.selection)}}
+    @selection={{this.selection}}
+    @bufferSize={{2}}
+    @estimateRowHeight={{60}}
+    @class="collection-table__body" as |b|>
+    <b.row as |r|>
+      <r.cell as |value|>
+        {{value}}
+      </r.cell>
+    </b.row>
+  </t.body>
 </EmberTable>

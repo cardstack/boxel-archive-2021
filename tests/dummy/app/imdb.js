@@ -122,7 +122,8 @@ export default {
           {
             name: 'Name',
             valuePath: 'title',
-            isFixed: 'left'
+            isFixed: 'left',
+            width: 165
           },
           {
             name: 'Id',
@@ -160,7 +161,9 @@ export default {
         columns: [
           {
             name: 'Title',
-            valuePath: 'title'
+            valuePath: 'title',
+            isFixed: 'left',
+            width: 165
           },
           {
             name: 'Id',
