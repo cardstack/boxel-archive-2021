@@ -30,12 +30,13 @@
 .collection-table__header th:first-of-type {
   padding-left: 54px;
   background-color: #F0F0F0;
+  padding-right: 90px;
 }
 
 .collection-table__body tr {
   height: 60px;
   background-color: white;
-  border: 1px solid #AFAFB7;
+  border-bottom: 1px solid #AFAFB7;
 }
 
 .collection-table__body td {
@@ -45,4 +46,22 @@
 .collection-table__body td:first-of-type {
   padding-left: 20px;
   background-color: white;
+}
+
+.collection-table__body td:first-of-type::before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 61px;
+  width: 50px;
+  background-color: #F0F0F0;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  border-right: 1px solid #AFAFB7;
+}
+
+.collection-table__body td:first-of-type .et-cell-container {
+  padding-left: 40px;
+  white-space: nowrap;
 }
