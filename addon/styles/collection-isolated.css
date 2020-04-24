@@ -109,6 +109,7 @@
 }
 
 .collection-isolated-grid {
+  position: relative;
   display: grid;
   gap: 10px 20px;
   justify-items: center;

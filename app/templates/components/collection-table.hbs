@@ -17,11 +17,16 @@
     @selection={{this.selection}}
     @bufferSize={{2}}
     @estimateRowHeight={{60}}
-    @class="collection-table__body" as |b|>
+    @class="collection-table__body" as |b|
+  >
     <b.row as |r|>
-      <r.cell as |value|>
-        {{value}}
+      <r.cell as |cell|>
+        {{cell}}
       </r.cell>
     </b.row>
+    <BoxelRow>
+      <BoxelHighlight />
+      <BoxelActions @displayHighlightActions={{true}} />
+    </BoxelRow>
   </t.body>
 </EmberTable>

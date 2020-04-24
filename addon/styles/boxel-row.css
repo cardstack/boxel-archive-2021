@@ -1,0 +1,14 @@
+.boxel-row {
+  position: fixed;
+  width: 85vw;
+  height: 60px;
+  margin-top: -60px;
+  left: 72px;
+  right: 50px;
+}
+
+
+.boxel-row .boxel-highlight {
+  border-color: var(--boxel-highlight);
+  background-color: white;
+}

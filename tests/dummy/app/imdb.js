@@ -120,10 +120,15 @@ export default {
         ],
         columns: [
           {
+            valuePath: 'select',
+            isFixed: 'left',
+            width: 50
+          },
+          {
             name: 'Name',
             valuePath: 'title',
             isFixed: 'left',
-            width: 165
+            width: 100
           },
           {
             name: 'Id',
@@ -144,6 +149,11 @@ export default {
           {
             name: 'Image file',
             valuePath: 'src'
+          },
+          {
+            valuePath: 'delete',
+            isFixed: 'right',
+            width: 50
           }
         ]
       },
