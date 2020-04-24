@@ -40,7 +40,7 @@
       </div>
       <div class="collection-isolated-grid collection-isolated-grid--{{this.format}}">
         {{#if (eq this.format "table")}}
-          <CollectionTable @collection={{collection}} @columns={{this.tableCols}} />
+          <CollectionTable @title={{@model.embeddedTitle}} @collection={{collection}} @columns={{this.tableCols}} />
         {{else}}
           {{#each collection as |item i|}}
             <div class="collection-isolated-grid__item {{if (eq this.format "list") "collection-editor__select collection-editor__select--isolated"}}">

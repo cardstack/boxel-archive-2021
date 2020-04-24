@@ -5,7 +5,8 @@
     @onUpdateSorts={{action (mut this.sorts)}}
     @class="collection-table__header"
   />
-  <h2 class="collection-table__title">Actor Profile Data</h2>
+  {{!-- TODO: Make this a group by row --}}
+  <h2 class="collection-table__title">{{@title}}</h2>
   <t.body
     @rows={{@collection}}
     @rowSelectionMode={{this.rowSelectionMode}}
