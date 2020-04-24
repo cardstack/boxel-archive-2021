@@ -134,7 +134,7 @@ export default {
           },
           {
             name: 'Image file',
-            valuePath: 'src'
+            valuePath: 'src',
           },
         ]
       },
