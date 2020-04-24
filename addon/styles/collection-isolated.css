@@ -120,3 +120,7 @@
   grid-template-columns: repeat(auto-fill, minmax(206px, auto));
   padding: 20px;
 }
+
+.collection-isolated-grid--table {
+  padding: 20px 0 40px;
+}
