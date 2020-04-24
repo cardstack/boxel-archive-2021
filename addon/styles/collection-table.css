@@ -71,19 +71,13 @@
   align-items: center;
 }
 
-.collection-table__body .et-toggle-select {
-  z-index: 2;
+.et-toggle-select {
   width: 45px;
   height: 60px;
-  /* background: url('/assets/images/icons/icon-circle.svg') center/16px 16px no-repeat; */
   background-color: #F0F0F0;
 }
 
-.collection-table__body tr.is-group-selected .et-toggle-select {
-  /* background-image: url('/assets/images/icons/icon-circle-selected-highlighted.svg'); */
-}
-
-.collection-table__body .et-toggle-select input {
+.et-toggle-select input {
   width: 45px;
   height: 60px;
   margin: 0;
@@ -151,7 +145,6 @@ tr.is-selected + tr:not(.is-selected) {
 
 
 /* Highlighter */
-
 .collection-table__highlight {
   --border-color: transparent;
   --border: 2px solid var(--border-color);
