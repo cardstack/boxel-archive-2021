@@ -63,16 +63,24 @@
   align-items: center;
 }
 
+.et-cell-content {
+  display: grid;
+  margin-left: -45px;
+  z-index: 3;
+  grid-template-columns: 45px auto;
+  align-items: center;
+}
+
 .collection-table__body .et-toggle-select {
   z-index: 2;
   width: 45px;
   height: 60px;
-  background: url('/assets/images/icons/icon-circle.svg') center/16px 16px no-repeat;
+  /* background: url('/assets/images/icons/icon-circle.svg') center/16px 16px no-repeat; */
   background-color: #F0F0F0;
 }
 
 .collection-table__body tr.is-group-selected .et-toggle-select {
-  background-image: url('/assets/images/icons/icon-circle-selected-highlighted.svg');
+  /* background-image: url('/assets/images/icons/icon-circle-selected-highlighted.svg'); */
 }
 
 .collection-table__body .et-toggle-select input {

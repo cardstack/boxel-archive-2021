@@ -9,19 +9,27 @@
   <t.body
     @rows={{@collection}}
     @rowSelectionMode={{this.rowSelectionMode}}
-    @checkboxSelectionMode={{this.checkboxSelectionMode}}
     @onSelect={{action (mut this.selection)}}
     @selection={{this.selection}}
     @estimateRowHeight={{60}}
     @class="collection-table__body" as |b|
   >
-    <b.row as |r|>
+    <b.row class={{if b.rowValue.picked "is-selected"}} as |r|>
       <r.cell as |cell column row cellMeta columnMeta rowMeta|>
-        <BoxelHighlight @on={{rowMeta.isSelected}} {{on "click" (fn this.itemSelect row.id)}} @class="collection-table__highlight" />
-        {{#if (eq (add columnMeta.index 1) b.cells.length columnMeta.index)}}
-          <BoxelActions @displayHighlightActions={{and rowMeta.isSelected (not rowMeta.isGroupSelected)}} />
+        {{#if (eq columnMeta.index 0)}}
+          <button {{on "click" (fn this.togglePick row.id)}} class="collection-editor__select-btn collection-editor__select-btn--isolated" aria-label="select">
+            {{#if row.picked}}
+              {{svg-jar "icon-circle-selected" class="collection-editor__select--selected" width="16px" height="16px"}}
+            {{else}}
+              {{svg-jar "icon-circle" width="16px" height="16px"}}
+            {{/if}}
+          </button>
         {{/if}}
-        <div class="collection-table__cell {{if rowMeta.isGroupSelected "row-group-selected"}} {{if rowMeta.isSelected "row-selected"}}">
+        <BoxelHighlight @on={{or row.picked rowMeta.isSelected}} @class="collection-table__highlight" />
+        {{#if (eq (add columnMeta.index 1) b.cells.length columnMeta.index)}}
+          <BoxelActions @displayHighlightActions={{and rowMeta.isSelected (not row.picked)}} />
+        {{/if}}
+        <div class="collection-table__cell {{if row.picked "row-group-selected"}} {{if rowMeta.isSelected "row-selected"}}">
           <div class="collection-table__cell-value">
             {{cell}}
           </div>
