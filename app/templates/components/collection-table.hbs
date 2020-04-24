@@ -17,6 +17,9 @@
     <b.row as |r|>
       <r.cell as |cell column row cellMeta columnMeta rowMeta|>
         <BoxelHighlight @on={{or row.selected row.picked}} {{on "click" (fn this.itemSelect row.id)}} @class="collection-table__cell {{if rowMeta.isGroupSelected "row-group-selected"}} {{if rowMeta.isSelected "row-selected"}}" />
+        {{#if (eq (add columnMeta.index 1) b.cells.length columnMeta.index)}}
+          <BoxelActions @displayHighlightActions={{row.selected}} />
+        {{/if}}
         {{cell}}
       </r.cell>
     </b.row>
