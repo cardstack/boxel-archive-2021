@@ -120,41 +120,22 @@ export default {
         ],
         columns: [
           {
-            valuePath: 'select',
-            isFixed: 'left',
-            width: 50
-          },
-          {
             name: 'Name',
             valuePath: 'title',
             isFixed: 'left',
-            width: 100
           },
           {
             name: 'Id',
-            valuePath: 'id'
+            valuePath: 'id',
           },
           {
             name: 'Role',
             valuePath: 'detail'
           },
           {
-            name: 'First name',
-            valuePath: 'firstName',
-          },
-          {
-            name: 'Last name',
-            valuePath: 'lastName',
-          },
-          {
             name: 'Image file',
             valuePath: 'src'
           },
-          {
-            valuePath: 'delete',
-            isFixed: 'right',
-            width: 50
-          }
         ]
       },
       photos: {

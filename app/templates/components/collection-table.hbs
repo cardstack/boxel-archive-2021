@@ -1,32 +1,24 @@
 <EmberTable @class="collection-table" as |t|>
   <t.head
     @columns={{@columns}}
-    @widthConstraint="gte-container"
     @sorts={{this.sorts}}
     @onUpdateSorts={{action (mut this.sorts)}}
     @class="collection-table__header"
   />
-  {{!-- TODO: make sorting available only
-        when user clicks on sort button --}}
-
   <t.body
     @rows={{@collection}}
     @rowSelectionMode={{this.rowSelectionMode}}
     @checkboxSelectionMode={{this.checkboxSelectionMode}}
     @onSelect={{action (mut this.selection)}}
     @selection={{this.selection}}
-    @bufferSize={{2}}
     @estimateRowHeight={{60}}
     @class="collection-table__body" as |b|
   >
     <b.row as |r|>
-      <r.cell as |cell|>
+      <r.cell as |cell column row cellMeta columnMeta rowMeta|>
+        <BoxelHighlight @on={{or row.selected row.picked}} {{on "click" (fn this.itemSelect row.id)}} @class="collection-table__cell {{if rowMeta.isGroupSelected "row-group-selected"}} {{if rowMeta.isSelected "row-selected"}}" />
         {{cell}}
       </r.cell>
     </b.row>
-    <BoxelRow>
-      <BoxelHighlight />
-      <BoxelActions @displayHighlightActions={{true}} />
-    </BoxelRow>
   </t.body>
 </EmberTable>

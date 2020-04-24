@@ -9,6 +9,6 @@
 
 
 .boxel-row .boxel-highlight {
-  border-color: var(--boxel-highlight);
-  background-color: white;
+  /* border-color: var(--boxel-highlight);
+  background-color: white; */
 }
