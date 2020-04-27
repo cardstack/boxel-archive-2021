@@ -947,7 +947,7 @@
     ember-place-autocomplete "^2.0.1"
     ember-power-calendar "^0.14.5"
     ember-power-calendar-moment "^0.1.7"
-    ember-power-datepicker "git+https://github.com/bagby/ember-power-datepicker#9eaf27d921056b47b7d620b42e303b45c7a40e67"
+    ember-power-datepicker alexspeller/ember-power-datepicker#b60b60d
     ember-power-select "^4.0.0"
     ember-radio-button "^2.0.1"
     ember-truth-helpers "^2.1.0"
@@ -3355,7 +3355,7 @@ broccoli-funnel-reducer@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/broccoli-funnel-reducer/-/broccoli-funnel-reducer-1.0.0.tgz#11365b2a785aec9b17972a36df87eef24c5cc0ea"
 
-broccoli-funnel@^1.0.1:
+broccoli-funnel@^1.0.0, broccoli-funnel@^1.0.1, broccoli-funnel@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/broccoli-funnel/-/broccoli-funnel-1.2.0.tgz#cddc3afc5ff1685a8023488fff74ce6fb5a51296"
   dependencies:
@@ -6385,6 +6385,14 @@ ember-named-arguments-polyfill@^1.0.0:
     ember-cli-babel "^6.6.0"
     ember-cli-version-checker "^2.1.2"
 
+ember-native-dom-helpers@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/ember-native-dom-helpers/-/ember-native-dom-helpers-0.6.3.tgz#31c88b6eb8e1bb99ee594d19de8f0270d1d5eb35"
+  integrity sha512-eQTHSV4OBS5YmGLvjgCcit79akG98YVRrcNq/rOVntPX1oq0LQqlPiXtDvDcqSdDur8GyUz6jY1Jy8Y6DLFiSw==
+  dependencies:
+    broccoli-funnel "^1.1.0"
+    ember-cli-babel "^6.6.0"
+
 ember-phone-input@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/ember-phone-input/-/ember-phone-input-5.0.0.tgz#3c5cd0ae1ef32dfc4cdcc385ba86924f8c1c6f7b"
@@ -6692,6 +6700,18 @@ ember-try@^1.4.0:
     rimraf "^2.6.3"
     rsvp "^4.7.0"
     walk-sync "^1.1.3"
+
+ember-useragent@^0.6.0:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/ember-useragent/-/ember-useragent-0.6.1.tgz#0854b3c11acf0fdd98a165fba9bf5dc76eace804"
+  integrity sha512-J+itj4FVtE0aM+Wx4pInjI2nuSmrQKJhubVJ8twPmmSTLpjatA+DFhiStGc76cZBAyeQQhXezVQyvzzH3RIEoQ==
+  dependencies:
+    broccoli-debug "^0.6.3"
+    broccoli-funnel "^2.0.1"
+    broccoli-merge-trees "^3.0.0"
+    ember-cli-babel "^6.6.0"
+    fastboot-transform "^0.1.2"
+    ua-parser-js "^0.7.14"
 
 emit-function@0.0.2:
   version "0.0.2"
