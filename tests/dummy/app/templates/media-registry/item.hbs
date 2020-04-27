@@ -1,0 +1,15 @@
+<section>
+  <header>
+    {{!-- album art --}}
+    <h2>{{@model.title}}</h2>
+    {{!-- isrc --}}
+  </header>
+
+  <div>
+    {{#each-in @model.attributes as |field val|}}
+      <div>
+        {{field}}: {{val}}
+      </div>
+    {{/each-in}}
+  </div>
+</section>

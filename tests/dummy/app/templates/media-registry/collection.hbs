@@ -1,0 +1,11 @@
+{{!-- Breadcrumbs --}}
+
+<MediaCollection @model={{@model}} as |item|>
+  <LinkTo @route="media-registry.item" @model={{item.itemId}}>
+    <div>
+      {{!-- album art --}}
+      <h3>{{item.title}}</h3>
+      <div>{{item.artist}}</div>
+    </div>
+  </LinkTo>
+</MediaCollection>
