@@ -1,0 +1,94 @@
+/************************************************************************************************/
+/* Table default style */
+/************************************************************************************************/
+$table-header-background-color: #f8f8f8;
+$table-border-color: #dcdcdc;
+$table-hover-color: #e5edf8;
+
+.ember-table {
+  border: solid 1px #dddddd;
+
+  th,
+  td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 4px 10px;
+  }
+
+  tbody {
+    td {
+      border-top: none;
+      border-left: none;
+      border-bottom: $table-border-color 1px dotted;
+      border-right: $table-border-color 1px solid;
+      background-color: #ffffff;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &.is-fixed-right {
+        border-left: solid 1px $table-border-color;
+      }
+    }
+  }
+
+  th,
+  tfoot td {
+    padding: 5px 0 3px;
+    background-color: $table-header-background-color;
+    font-family: 'Univers LT W01 65 Bold';
+    line-height: 1.4;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  tfoot td {
+    border-top: 1px solid $table-border-color;
+    border-right: solid 1px $table-border-color;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  thead th {
+    border-bottom: 1px solid $table-border-color;
+    border-right: solid 1px $table-border-color;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &.is-fixed-right {
+      border-left: solid 1px $table-border-color;
+
+      .et-header-resize-area {
+        left: 0;
+      }
+    }
+  }
+
+  tr:hover {
+    th {
+      cursor: pointer;
+    }
+
+    td {
+      background-color: $table-hover-color;
+    }
+  }
+
+  tr.is-selected {
+    td,
+    th {
+      background-color: #227ecb;
+    }
+  }
+}
