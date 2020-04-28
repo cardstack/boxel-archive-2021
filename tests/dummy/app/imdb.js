@@ -202,45 +202,45 @@ export default {
       id: "star-wars-the-rise-of-skywalker",
       versions: [
         {
-          version: '0.0.1',
+          id: '0.0.1',
           published: 'Dec 9, 3:00 PM, 2019',
         },
         {
-          version: '0.0.2',
+          id: '0.0.2',
           published: 'Dec 10, 3:00 PM, 2019',
         },
         {
-          version: '0.0.3',
+          id: '0.0.3',
           published: 'Dec 16, 1:15 PM, 2019',
         },
         {
-          version: '0.0.4',
+          id: '0.0.4',
           published: 'Apr 1, 3:00 PM',
         },
         {
-          version: '0.0.5',
+          id: '0.0.5',
           published: 'Apr 2, 8:32 PM',
         },
         {
-          version: '0.0.6',
+          id: '0.0.6',
           published: 'Apr 3, 6:15 PM',
           description: 'Revised description',
         },
         {
-          version: '0.0.7',
+          id: '0.0.7',
           published: 'Apr 5, 10:22 AM',
         },
         {
-          version: '0.0.8',
+          id: '0.0.8',
           published: 'Apr 5, 1:04 PM',
         },
         {
-          version: '0.0.9',
+          id: '0.0.9',
           published: 'Apr 6, 11:36 AM',
           description: 'Added 3 cast members'
         },
         {
-          version: '0.0.10',
+          id: '0.0.10',
           published: 'Apr 7, 2:30 PM',
         },
       ]

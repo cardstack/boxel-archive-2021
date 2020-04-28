@@ -11,10 +11,12 @@
       </LinkTo>
     </div>
   {{else}}
-    <div class="button-overlay button-overlay--view">
-      <LinkTo @route="movie-registry.edit" @model={{@model}} @class="button-overlay__edit-btn--view" data-test-movie-edit-btn>Edit</LinkTo>
-      <LinkTo @route="movie-registry.versions" @model={{@model.id}} @class="button-overlay__gear-btn--view" aria-label="view version history" />
-    </div>
+    {{#unless @hideButtons}}
+      <div class="button-overlay button-overlay--view">
+        <LinkTo @route="movie-registry.edit" @model={{@model}} @class="button-overlay__edit-btn--view" data-test-movie-edit-btn>Edit</LinkTo>
+        <LinkTo @route="movie-registry.versions" @model={{@model.id}} @class="button-overlay__gear-btn--view" aria-label="view version history" />
+      </div>
+    {{/unless}}
   {{/if}}
 
   <div class="{{@mode}}-card {{@mode}}-card--{{@model.id}}" data-test-movie="{{@mode}}-mode">
