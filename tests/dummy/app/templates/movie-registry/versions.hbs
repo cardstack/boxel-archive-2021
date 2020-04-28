@@ -30,8 +30,8 @@
           {{v.description}}
           {{if (eq v.id this.latest) "Current"}}
         </div>
-        {{#if (eq v.id this.base)}}
-          <Movie @model={{@model.movie}} @mode="view" @hideButtons={{true}} />
+        {{#if (eq v.id this.selected)}}
+          <Movie @model={{v.savedData}} @mode="view" @hideButtons={{true}} />
         {{/if}}
       </div>
     {{/each}}
