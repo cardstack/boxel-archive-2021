@@ -6,15 +6,25 @@ export default class MovieRegistryVersionsController extends Controller {
   @tracked versions = this.model.versions;
   @tracked latest = this.versions[this.versions.length - 1].id;
   @tracked selected = this.latest;
+  @tracked baseCard;
+  @tracked comparisonCard;
   @tracked addedFields;
   @tracked changedFields;
   @tracked removedFields;
 
   @action
+  reset() {
+    this.baseCard = null;
+    this.comparisonCard = null;
+    this.addedFields = [];
+    this.changedFields = [];
+    this.removedFields = [];
+  }
+
+  @action
   displayVersion(id) {
     if (this.baseCard && this.baseCard === id) {
-      this.baseCard = null;
-      this.comparisonCard = null;
+      this.reset();
       this.selected = id;
     } else if (this.baseCard) {
       this.comparisonCard = id;
@@ -27,8 +37,7 @@ export default class MovieRegistryVersionsController extends Controller {
   @action
   setComparison(id) {
     if (this.baseCard && this.baseCard === id) {
-      this.baseCard = null;
-      this.comparisonCard = null;
+      this.reset();
     } else if (this.baseCard) {
       this.comparisonCard = id;
       this.compareCards();
