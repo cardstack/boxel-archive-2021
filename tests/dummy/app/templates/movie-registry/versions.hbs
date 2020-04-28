@@ -1,18 +1,33 @@
 <section>
   <header>
-    <h1>Movie Detail - {{@model.title.value}}</h1>
+    <h1>Movie Detail - {{@model.movie.title.value}}</h1>
     <LinkTo
       @route="movie-registry.view"
-      @model={{@model}}
+      @model={{@model.movie.id}}
       @class="mode-indicator mode-indicator--revision"
     >
       Revision Mode
     </LinkTo>
   </header>
   <aside>
-    {{!-- versions nav --}}
+    <ul>
+      {{#each @model.versions as |v|}}
+        <li>
+          <div>
+            <div>{{v.published}}</div>
+            <div>{{v.description}}</div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
   </aside>
   <div>
-    {{!-- versions --}}
+    {{#each @model.versions as |v|}}
+      <div>
+        {{v.published}}
+        {{v.description}}
+        {{if (eq v.version @model.movie.version) "Current"}}
+      </div>
+    {{/each}}
   </div>
 </section>
