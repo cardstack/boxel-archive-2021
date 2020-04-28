@@ -40,7 +40,7 @@ export default {
   version2: {
     id: "star-wars-the-rise-of-skywalker",
     title: { value: "Star Wars: The Rise of Skywalker" },
-    year: { type: "numeric", value: 2019 },
+    runTime: { type: "time", hours: 2, minutes: 22 },
     releaseDate: { type: "date", value: 20191220 },
   },
   version3: {
@@ -164,33 +164,11 @@ export default {
       created: "May 5, 2019",
     },
     avgUserRating: { type: "numeric", value: 6.8 },
-    mpaaRating: {
-      type: "dropdown",
-      value: "PG-13",
-      options: [
-        { value: "G" },
-        { value: "PG" },
-        { value: "PG-13" },
-        { value: "R" },
-        { value: "NC-17" },
-      ],
-    },
+    mpaaRating,
     runTime: { type: "time", hours: 2, minutes: 22 },
     releaseDate: { type: "date", value: 20191220 },
-    genres: {
-      id: 'genres',
-      title: 'Genres',
-      value: [
-        { id: "action", title: "Action" },
-        { id: "adventure", title: "Adventure" },
-        { id: "fantasy", title: "Fantasy" },
-      ]
-    },
-    description: {
-      type: "textarea",
-      value:
-        "The surviving members of the resistance face the First Order once again, and the legendary conflict between the Jedi and the Sith reaches its peak bringing the Skywalker saga to its end.",
-    },
+    genres,
+    description: { type: "textarea", value: "The surviving members of the resistance face the First Order once again, and the legendary conflict between the Jedi and the Sith reaches its peak bringing the Skywalker saga to its end." },
     cast: {
       id: 'cast',
       title: 'Cast',

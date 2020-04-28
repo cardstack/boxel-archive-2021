@@ -15,6 +15,7 @@ export default class MovieRegistryVersionsController extends Controller {
       this.selected = id;
     } else if (this.baseCard) {
       this.comparisonCard = id;
+      this.compareCards();
     } else {
       this.selected = id;
     }
@@ -27,9 +28,58 @@ export default class MovieRegistryVersionsController extends Controller {
       this.comparisonCard = null;
     } else if (this.baseCard) {
       this.comparisonCard = id;
+      this.compareCards();
     } else {
       this.baseCard = id;
       this.selected = id;
     }
+  }
+
+  @action
+  compareCards() {
+    let baseCard = this.versions.filter(v => v.id === this.baseCard)[0];
+    let comparisonCard = this.versions.filter(v => v.id === this.comparisonCard)[0];
+
+    let card1, card2;
+    if (baseCard.id < comparisonCard.id) {
+      card1 = baseCard.savedData;
+      card2 = comparisonCard.savedData;
+    } else {
+      card1 = comparisonCard.savedData;
+      card2 = baseCard.savedData;
+    }
+
+    let [ json1, json2 ] = [ card1, card2 ].map(data => JSON.stringify(data));
+
+    if (json1 === json2) {
+      console.log('no change');
+      return;
+    }
+
+    let addedFields = [],
+        removedFields = [],
+        changedFields = [];
+
+    for (let field in card1) {
+      if (card2[field] === undefined) {
+        removedFields.push(field);
+      }
+
+      for (let f in card2) {
+        if (field === f) {
+          if (card1[field].value !== card2[f].value) {
+            changedFields.push(field);
+          }
+        }
+      }
+    }
+
+    for (let field in card2) {
+      if (card1[field] === undefined) {
+        addedFields.push(field);
+      }
+    }
+
+    console.log({ changedFields, addedFields, removedFields });
   }
 }
