@@ -35,3 +35,16 @@
 .boxel-actions__btn--expand {
   background-image: url('/assets/images/icons/expand.svg');
 }
+
+.boxel-actions--revision-mode {
+  top: -10px;
+  right: -10px;
+  background-color: #37EB77;
+}
+
+.boxel-actions__btn--revision-mode {
+  width: 30px;
+  height: 30px;
+  background-image: url('/assets/images/icons/plus.svg');
+  background-size: 9px 9px;
+}

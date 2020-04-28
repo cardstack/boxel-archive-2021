@@ -6,6 +6,9 @@ export default class MovieRegistryVersionsController extends Controller {
   @tracked versions = this.model.versions;
   @tracked latest = this.versions[this.versions.length - 1].id;
   @tracked selected = this.latest;
+  @tracked addedFields;
+  @tracked changedFields;
+  @tracked removedFields;
 
   @action
   displayVersion(id) {
@@ -37,6 +40,10 @@ export default class MovieRegistryVersionsController extends Controller {
 
   @action
   compareCards() {
+    this.addedFields = [];
+    this.changedFields = [];
+    this.removedFields = [];
+
     let baseCard = this.versions.filter(v => v.id === this.baseCard)[0];
     let comparisonCard = this.versions.filter(v => v.id === this.comparisonCard)[0];
 
@@ -56,19 +63,15 @@ export default class MovieRegistryVersionsController extends Controller {
       return;
     }
 
-    let addedFields = [],
-        removedFields = [],
-        changedFields = [];
-
     for (let field in card1) {
       if (card2[field] === undefined) {
-        removedFields.push(field);
+        this.removedFields.push(field);
       }
 
       for (let f in card2) {
         if (field === f) {
           if (card1[field].value !== card2[f].value) {
-            changedFields.push(field);
+            this.changedFields.push(field);
           }
         }
       }
@@ -76,10 +79,8 @@ export default class MovieRegistryVersionsController extends Controller {
 
     for (let field in card2) {
       if (card1[field] === undefined) {
-        addedFields.push(field);
+        this.addedFields.push(field);
       }
     }
-
-    console.log({ changedFields, addedFields, removedFields });
   }
 }
