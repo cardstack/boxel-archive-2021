@@ -13,6 +13,7 @@
     <ul>
       {{#each this.versions as |v|}}
         <li>
+          <button {{on "click" (fn this.setComparison v.id)}}>Select</button>
           <button {{on "click" (fn this.displayVersion v.id)}}>
             <div>{{v.published}}</div>
             <div>{{v.description}}</div>

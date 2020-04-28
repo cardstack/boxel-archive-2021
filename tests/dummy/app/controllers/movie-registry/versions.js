@@ -9,6 +9,27 @@ export default class MovieRegistryVersionsController extends Controller {
 
   @action
   displayVersion(id) {
-    this.selected = id;
+    if (this.baseCard && this.baseCard === id) {
+      this.baseCard = null;
+      this.comparisonCard = null;
+      this.selected = id;
+    } else if (this.baseCard) {
+      this.comparisonCard = id;
+    } else {
+      this.selected = id;
+    }
+  }
+
+  @action
+  setComparison(id) {
+    if (this.baseCard && this.baseCard === id) {
+      this.baseCard = null;
+      this.comparisonCard = null;
+    } else if (this.baseCard) {
+      this.comparisonCard = id;
+    } else {
+      this.baseCard = id;
+      this.selected = id;
+    }
   }
 }
