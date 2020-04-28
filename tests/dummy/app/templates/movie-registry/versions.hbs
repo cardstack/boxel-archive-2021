@@ -1,0 +1,18 @@
+<section>
+  <header>
+    <h1>Movie Detail - {{@model.title.value}}</h1>
+    <LinkTo
+      @route="movie-registry.view"
+      @model={{@model}}
+      @class="mode-indicator mode-indicator--revision"
+    >
+      Revision Mode
+    </LinkTo>
+  </header>
+  <aside>
+    {{!-- versions nav --}}
+  </aside>
+  <div>
+    {{!-- versions --}}
+  </div>
+</section>
