@@ -1,16 +1,23 @@
 import Controller from '@ember/controller';
-import { action } from '@ember/object';
+import { action, set } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 export default class MovieRegistryVersionsController extends Controller {
   @tracked versions = this.model.versions;
-  @tracked latest = this.versions[this.versions.length - 1].id;
-  @tracked selected = this.latest;
+  @tracked latest = this.versions[this.versions.length - 1];
+  @tracked selected = this.latest.id;
   @tracked baseCard;
   @tracked comparisonCard;
   @tracked addedFields;
   @tracked changedFields;
   @tracked removedFields;
+
+  @action
+  setPositions() {
+    for (let v of this.versions) {
+      set(v, 'position', `p${this.selected - v.id}`)
+    }
+  }
 
   @action
   reset() {
@@ -31,6 +38,7 @@ export default class MovieRegistryVersionsController extends Controller {
       this.compareCards();
     } else {
       this.selected = id;
+      this.setPositions();
     }
   }
 

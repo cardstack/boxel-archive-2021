@@ -13,34 +13,38 @@
       {{#each this.versions as |v|}}
         <li class="versions-nav-item {{if (eq v.id this.selected) "versions-nav-item--selected"}}">
           <button {{on "click" (fn this.displayVersion v.id)}} class="versions-nav-item__btn versions-nav-item__selection-btn">
-            <div class="versions-nav-item__description">{{v.description}}</div>
-            <div class="versions-nav-item__title">{{v.published}}</div>
+            <div class="version__description">{{v.description}}</div>
+            <div class="version__title">{{v.published}}</div>
+            <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
           </button>
           <button {{on "click" (fn this.setComparison v.id)}} class="versions-nav-item__btn versions-nav-item__selection-checkbox">{{svg-jar "icon-circle" width="16px" height="16px"}}</button>
         </li>
       {{/each}}
     </ul>
   </aside>
-  <div class="versions__cards">
-    {{#each this.versions as |v|}}
-      <div>
-        <div>
-          {{v.published}}
-          {{v.description}}
-          {{if (eq v.id this.latest) "Current"}}
+  <div class="versions__cards" {{did-insert this.setPositions}}>
+    {{#each this.versions as |v i|}}
+      <div class="version-card version-card--{{v.position}}">
+        <header role="button" {{on "click" (fn this.displayVersion v.id)}} class="version-card__header">
+          <div class="version__title">{{v.published}}</div>
+          <div class="version__description">{{v.description}}</div>
+          <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
+        </header>
+        <div class="version-card__content">
+          {{#if (eq v.id this.selected)}}
+            <Movie
+              @model={{v.savedData}}
+              @revisionMode={{true}}
+              @addedFields={{this.addedFields}}
+              @changedFields={{this.changedFields}}
+              @removedFields={{this.removedFields}}
+              @mode="view"
+              @hideButtons={{true}}
+            />
+          {{/if}}
         </div>
-        {{#if (eq v.id this.selected)}}
-          <Movie
-            @model={{v.savedData}}
-            @revisionMode={{true}}
-            @addedFields={{this.addedFields}}
-            @changedFields={{this.changedFields}}
-            @removedFields={{this.removedFields}}
-            @mode="view"
-            @hideButtons={{true}}
-          />
-        {{/if}}
       </div>
     {{/each}}
+  <div class="funnel"></div>
   </div>
 </section>
