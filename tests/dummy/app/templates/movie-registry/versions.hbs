@@ -30,8 +30,8 @@
           <div class="version__description">{{v.description}}</div>
           <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
         </header>
-        <div class="version-card__content">
-          {{#if (eq v.id this.selected)}}
+        {{#if (eq v.id this.selected)}}
+          <div class="version-card__content">
             <Movie
               @model={{v.savedData}}
               @revisionMode={{true}}
@@ -41,8 +41,8 @@
               @mode="view"
               @hideButtons={{true}}
             />
-          {{/if}}
-        </div>
+          </div>
+        {{/if}}
       </div>
     {{/each}}
   <div class="funnel"></div>

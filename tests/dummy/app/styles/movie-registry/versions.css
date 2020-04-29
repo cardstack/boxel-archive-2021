@@ -155,12 +155,6 @@
   text-align: right;
 }
 
-.version-card__content {
-  overflow: auto;
-  max-height: calc(100vh - 80px);
-  margin-top: -2px;
-}
-
 .versions-nav-item__btn .version__description {
   padding-bottom: 3px;
 }
@@ -175,6 +169,7 @@
 .versions__cards {
   grid-area: cards;
   display: grid;
+  grid-auto-rows: max-content;
   position: relative;
   height: calc(100vh - 80px);
   overflow: hidden;
@@ -237,4 +232,14 @@
   width: 85%;
   position: relative;
   opacity: 1;
+}
+
+.version-card__content {
+  overflow: auto;
+  max-height: calc(100vh - 280px);
+  margin-top: -2px;
+}
+
+.version-card .movie {
+  min-height: 600px;
 }
