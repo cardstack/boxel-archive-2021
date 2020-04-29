@@ -1,4 +1,4 @@
-{{#unless (eq this.target.currentRouteName "movie-registry.versions")}}
+{{#if (not-eq this.target.currentRouteName "movie-registry.versions")}}
   <div class="movie-registry">
     <aside class="movie-registry-sidebar movie-registry-sidebar--expanded">
       <div class="movie-registry-sidebar--close-container">
@@ -62,6 +62,6 @@
       </div>
     </main>
   </div>
-{{/unless}}
+{{/if}}
 
 {{outlet}}

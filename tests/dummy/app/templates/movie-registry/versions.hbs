@@ -1,29 +1,27 @@
-<section>
-  <header>
-    <h1>Movie Detail - {{@model.movie.title.value}}</h1>
-    <LinkTo
-      @route="movie-registry.view"
-      @model={{@model.movie.id}}
-      @class="mode-indicator mode-indicator--revision"
-    >
+<section class="versions">
+  <header class="versions__header">
+    <h1 class="versions__title">Movie Detail - {{@model.movie.title.value}}</h1>
+  </header>
+  <div class="versions__mode">
+    <LinkTo @route="movie-registry.view" @model={{@model.movie.id}} @class="mode-indicator mode-indicator--revision">
       Revision Mode
     </LinkTo>
-  </header>
-  <aside>
+  </div>
+  <aside class="versions__nav">
+    <div class="versions__nav--shadow" />
     <ul>
       {{#each this.versions as |v|}}
-        <li>
-          <button {{on "click" (fn this.setComparison v.id)}}>Select</button>
-          <button {{on "click" (fn this.displayVersion v.id)}}>
-            <div>{{v.published}}</div>
-            <div>{{v.description}}</div>
+        <li class="versions-nav-item {{if (eq v.id this.selected) "versions-nav-item--selected"}}">
+          <button {{on "click" (fn this.displayVersion v.id)}} class="versions-nav-item__btn versions-nav-item__selection-btn">
+            <div class="versions-nav-item__description">{{v.description}}</div>
+            <div class="versions-nav-item__title">{{v.published}}</div>
           </button>
+          <button {{on "click" (fn this.setComparison v.id)}} class="versions-nav-item__btn versions-nav-item__selection-checkbox">{{svg-jar "icon-circle" width="16px" height="16px"}}</button>
         </li>
       {{/each}}
     </ul>
-    <hr>
   </aside>
-  <div>
+  <div class="versions__cards">
     {{#each this.versions as |v|}}
       <div>
         <div>

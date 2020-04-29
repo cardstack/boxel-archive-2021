@@ -1,0 +1,127 @@
+.versions {
+  --boxel-revision-medium-purple: #5D5C6F;
+  --boxel-revision-dark-purple: #393642;
+  --boxel-revision-light-purple: #84829B;
+  --boxel-revision-lightest-purple: #AFAFB7;
+  --boxel-revision-hover-purple: #4f4a5d;
+
+  display: grid;
+  grid-template:
+    "head  mode" auto
+    "cards nav"  auto /
+     1fr   340px;
+  gap: 0 20px;
+  padding-left: 20px;
+  background-color: var(--boxel-revision-medium-purple);
+}
+
+.versions__header {
+  grid-area: head;
+}
+
+.versions__title {
+  padding: 28px 20px 28px 35px;
+  background: url('/assets/images/icons/collection-highlighted.svg') center left/21px no-repeat;
+  color: white;
+  font: var(--boxel-font);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+.versions__mode {
+  grid-area: mode;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  background-color: var(--boxel-revision-medium-purple);
+}
+
+.versions__mode > a {
+  width: 300px;
+}
+
+.versions__nav--shadow {
+  height: 20px;
+  margin-top: -20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+.versions__nav {
+  grid-area: nav;
+  padding: 0 20px 20px;
+}
+
+.versions__cards {
+  grid-area: cards;
+}
+
+.versions-nav-item {
+  position: relative;
+  display: grid;
+}
+
+.versions-nav-item__description {
+  padding-bottom: 3px;
+  color: var(--boxel-revision-lightest-purple);
+  font-weight: normal;
+}
+
+.versions-nav-item__btn {
+  background: none;
+  border: none;
+  color: white;
+  font: var(--boxel-font-sm);
+  font-weight: bold;
+  letter-spacing: var(--boxel-lsp);
+  text-align: left;
+  outline: none;
+}
+.versions-nav-item__btn:hover {
+  cursor: pointer;
+  color: var(--boxel-highlight);
+}
+
+.versions-nav-item__selection-btn {
+  padding: 13px 10px 16px 40px;
+  box-shadow: 0 1px 0 0 var(--boxel-revision-light-purple);
+}
+
+.versions-nav-item__selection-btn:hover {
+  background-color: var(--boxel-revision-hover-purple);
+  border-bottom-color: transparent;
+  border-radius: 5px;
+  box-shadow: 0 -1px 0 1px var(--boxel-revision-hover-purple);
+}
+
+.versions-nav-item--selected .versions-nav-item__selection-btn {
+  background-color: var(--boxel-revision-dark-purple);
+  border-bottom-color: transparent;
+  border-radius: 5px;
+  box-shadow: 0 -1px 0 1px var(--boxel-revision-dark-purple);
+  overflow: hidden;
+}
+
+.versions-nav-item__selection-checkbox {
+  --icon-border: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  padding: 0;
+  z-index: 1;
+}
+.versions-nav-item__selection-checkbox > svg {
+  display: block;
+  margin: auto;
+}
+
+.versions-nav-item__selection-btn:hover + .versions-nav-item__selection-checkbox,
+.versions-nav-item__selection-checkbox:hover {
+  --icon-border: currentColor;
+}
+
+.versions-nav-item--selected .versions-nav-item__selection-checkbox {
+  --icon-border: currentColor;
+}
+
