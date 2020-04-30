@@ -67,7 +67,6 @@
 }
 .versions-nav-item__btn:hover {
   cursor: pointer;
-  color: var(--boxel-highlight);
 }
 
 .versions-nav-item__selection-btn {
@@ -80,6 +79,7 @@
   border-bottom-color: transparent;
   border-radius: 5px;
   box-shadow: 0 -1px 0 1px var(--boxel-revision-hover-purple);
+  color: var(--boxel-highlight);
 }
 
 .versions-nav-item--selected .versions-nav-item__selection-btn {
@@ -143,6 +143,11 @@
   color: var(--boxel-revision-lightest-purple);
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
+}
+
+.versions-nav-item__selection-btn:hover .version__title,
+.versions-nav-item__selection-btn:hover .version__description {
+  color: var(--boxel-highlight);
 }
 
 .version__label {
