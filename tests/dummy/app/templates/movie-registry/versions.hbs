@@ -24,12 +24,13 @@
       </ul>
     </aside>
     <div class="versions__cards" {{did-insert this.setPositions}}>
-      {{#each this.versions as |v i|}}
+      {{#each this.versions as |v|}}
         <div class="version-card version-card--{{v.position}} {{if (eq v.id this.latest.id) "current"}}">
-          <header role="button" {{on "click" (fn this.displayVersion v.id)}} class="version-card__header">
+          <header class="version-card__header">
             <div class="version__title">{{v.published}}</div>
             <div class="version__description">{{v.description}}</div>
             <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
+            <button {{on "click" (fn this.displayVersion v.id)}} class="version-card__btn-overlay" />
           </header>
           {{#if (eq v.id this.selected)}}
             <div class="version-card__content">

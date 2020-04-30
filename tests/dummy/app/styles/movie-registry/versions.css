@@ -193,55 +193,62 @@
   width: 100%;
   justify-self: center;
   position: absolute;
-  transition: all 0.2s;
+  transition: all 2s;
+  max-width: 546px;
+  z-index: 0;
+  height: 0;
 }
 
-.version-card,
 .version-card--p4 {
-  transform: translateY(-250px) translateZ(-120px);
-  /* opacity: 0.2; */
+  transform: translateY(0px);
+  max-width: 546px;
 }
 
 .version-card--p3 {
-  transform: translateY(-165px) translateZ(-100px);
-  /* opacity: 0.4; */
+  transform: translateY(50px);
+  max-width: 606px;
 }
 
 .version-card--p2 {
-  transform: translateY(-85px) translateZ(-80px);
-  /* opacity: 0.6; */
+  transform: translateY(100px);
+  max-width: 670px;
 }
 
 .version-card--p1 {
-  transform: translateY(-10px) translateZ(-60px);
-  /* opacity: 0.8; */
+  transform: translateY(150px);
+  max-width: 734px;
 }
 
 .version-card--p0 {
-  transform: translateY(60px) translateZ(-40px);
+  transform: translateY(200px);
+  max-width: 800px;
 }
 
 .version-card--p0 ~ .version-card {
   bottom: 0;
-  transform: translateY(12px) translateZ(-12px);
+  transform: translateY(12px);
   z-index: 5;
+  transition: none;
+  height: auto;
 }
 
 .version-card--p0 ~ .version-card--p-2 {
-  transform: translateY(12px) translateZ(-12px);
+  transform: translateY(-12px);
   z-index: 8;
-  transition: none;
+  max-width: 95%;
 }
 
 .version-card--p0 ~ .version-card--p-1 {
-  transform: translateY(6px) translateZ(-6px);
+  transform: translateY(-6px);
   z-index: 9;
-  transition: none;
+  max-width: 97%;
 }
 
 .version-card--p0 ~ .current {
-  transform: translateY(0) translateZ(0);
+  transform: translateY(0);
   z-index: 10;
+  width: 1080px;
+  max-width: 100%;
 }
 
 .version-card--p0 ~ .version-card--p-2 .version-card__header,
@@ -258,4 +265,50 @@
 
 .version-card .movie {
   min-height: 600px;
+  user-select: none;
+}
+
+
+.version-card__header {
+  position: relative;
+}
+
+.version-card__btn-overlay {
+  background: var(--boxel-revision-medium-purple);
+  border: none;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  outline: 0;
+  opacity: 1;
+}
+
+.version-card--p4 .version-card__btn-overlay {
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.version-card--p3 .version-card__btn-overlay {
+  opacity: 0.8;
+}
+
+.version-card--p2 .version-card__btn-overlay {
+  opacity: 0.6;
+}
+
+.version-card--p1 .version-card__btn-overlay {
+  opacity: 0.4;
+}
+
+.version-card--p0 .version-card__btn-overlay {
+  opacity: 0.2;
+}
+
+.version-card--p0 ~ .version-card .version-card__btn-overlay {
+  opacity: 0.1;
 }
