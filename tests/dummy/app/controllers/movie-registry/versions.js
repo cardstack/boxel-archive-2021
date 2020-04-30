@@ -1,6 +1,10 @@
 import Controller from '@ember/controller';
 import { action, set } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import resize from 'ember-animated/motions/resize';
+import move from 'ember-animated/motions/move';
+import adjustCSS from 'ember-animated/motions/adjust-css';
+import { printSprites } from 'ember-animated';
 
 export default class MovieRegistryVersionsController extends Controller {
   @tracked versions = this.model.versions;
@@ -98,6 +102,15 @@ export default class MovieRegistryVersionsController extends Controller {
       if (card1[field] === undefined) {
         this.addedFields.push(field);
       }
+    }
+  }
+
+  @action
+  * transition({ keptSprites }) {
+    printSprites(arguments[0]);
+    for (let sprite of keptSprites) {
+      move(sprite);
+      resize(sprite);
     }
   }
 }

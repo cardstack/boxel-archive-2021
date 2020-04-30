@@ -23,30 +23,28 @@
         {{/each}}
       </ul>
     </aside>
-    <div class="versions__cards" {{did-insert this.setPositions}}>
-      {{#each this.versions as |v|}}
-        <div class="version-card version-card--{{v.position}} {{if (eq v.id this.latest.id) "current"}}">
+    <AnimatedContainer class="versions__cards" {{did-insert this.setPositions}}>
+      {{#animated-each this.versions watch="position" key="id" use=this.transition as |v|}}
+        <div class="version-card version-card--{{v.position}} {{if (eq v.id this.latest.id) "current"}} {{if (eq v.id (sub this.latest.id 1)) "current-1"}} {{if (eq v.id (sub this.latest.id 2)) "current-2"}}">
           <header class="version-card__header">
             <div class="version__title">{{v.published}}</div>
             <div class="version__description">{{v.description}}</div>
             <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
             <button {{on "click" (fn this.displayVersion v.id)}} class="version-card__btn-overlay" />
           </header>
-          {{#if (eq v.id this.selected)}}
-            <div class="version-card__content">
-              <Movie
-                @model={{v.savedData}}
-                @revisionMode={{true}}
-                @addedFields={{this.addedFields}}
-                @changedFields={{this.changedFields}}
-                @removedFields={{this.removedFields}}
-                @mode="view"
-                @hideButtons={{true}}
-              />
-            </div>
-          {{/if}}
+          <div class="version-card__content">
+            <Movie
+              @model={{v.savedData}}
+              @revisionMode={{true}}
+              @addedFields={{this.addedFields}}
+              @changedFields={{this.changedFields}}
+              @removedFields={{this.removedFields}}
+              @mode="view"
+              @hideButtons={{true}}
+            />
+          </div>
         </div>
-      {{/each}}
-    </div>
+      {{/animated-each}}
+    </AnimatedContainer>
   </div>
 </section>
