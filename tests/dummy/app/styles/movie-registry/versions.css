@@ -96,6 +96,7 @@
   border-radius: 5px;
   box-shadow: 0 -1px 0 1px var(--boxel-revision-hover-purple);
 }
+.versions-nav-item.is-comp-card .versions-nav-item__selection-btn,
 .versions-nav-item--selected .versions-nav-item__selection-btn {
   background-color: var(--boxel-revision-dark-purple);
   border-bottom-color: transparent;
@@ -129,6 +130,7 @@
 .versions-nav-item__hover-btn {
   z-index: -1;
 }
+.versions-nav-item.is-comp-card .versions-nav-item__hover-btn,
 .versions-nav-item--selected .versions-nav-item__hover-btn,
 .versions-nav-item:hover .versions-nav-item__hover-btn {
   z-index: 1;
@@ -136,11 +138,15 @@
 
 .versions-nav-item.is-base-card,
 .versions-nav-item.is-base-card .version__description,
+.versions-nav-item.is-base-card .version__label,
 .versions-nav-item.is-base-card .versions-nav-item__hover-btn {
   --icon-border: black;
   --icon-color: black;
   --icon-bg: black;
   color: black;
+}
+.versions-nav-item.is-base-card .version__label {
+  background-image: url('/assets/images/icons/clock.svg');
 }
 
 .versions-nav-item.is-base-card .versions-nav-item__hover-btn.checkbox {
@@ -153,6 +159,12 @@
 
 .versions-nav-item.is-base-card:hover {
   color: black;
+}
+
+.versions-nav-item.is-comp-card .versions-nav-item__hover-btn.checkbox {
+  --icon-color: black;
+  --icon-bg: var(--boxel-highlight);
+  --icon-border: var(--boxel-highlight);
 }
 
 

@@ -12,7 +12,7 @@
       <div class="versions__nav--shadow" />
       <ul>
         {{#each this.versions as |v|}}
-          <li class="versions-nav-item {{if (eq v.id this.selected) "versions-nav-item--selected"}} {{if (eq this.baseCard v.id) "is-base-card"}}">
+          <li class="versions-nav-item {{if (eq v.id this.selected) "versions-nav-item--selected"}} {{if (eq this.baseCard v.id) "is-base-card"}} {{if (eq this.comparisonCard v.id) "is-comp-card"}}">
             <button {{on "click" (fn this.displayVersion v.id)}} class="versions-nav-item__btn versions-nav-item__selection-btn">
               <div class="version__description">{{v.description}}</div>
               <div class="version__title">{{v.published}}</div>
