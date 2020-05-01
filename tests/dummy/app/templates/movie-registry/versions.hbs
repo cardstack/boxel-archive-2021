@@ -30,7 +30,7 @@
     </aside>
     <AnimatedContainer class="versions__cards {{if (and this.baseCard this.comparisonCard) "comp-view"}}" {{did-insert this.setPositions}}>
       {{#if (and this.baseCard this.comparisonCard)}}
-        {{log this.baseCard this.comparisonCard}}
+        <button class="comp-view__swap-btn" {{on "click" this.switchComp}} aria-label="Swap comparison" />
         {{#let this.compCardContent as |c|}}
           <div class="version-card version-card--comp-card {{if (eq c.id this.latest.id) "current"}}">
             <header class="version-card__header">

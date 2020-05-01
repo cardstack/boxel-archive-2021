@@ -70,6 +70,13 @@ export default class MovieRegistryVersionsController extends Controller {
   }
 
   @action
+  switchComp() {
+    let comp = this.comparisonCard;
+    this.comparisonCard = this.baseCard;
+    this.baseCard = comp;
+  }
+
+  @action
   compareCards() {
     this.addedFields = [];
     this.changedFields = [];

@@ -130,6 +130,7 @@
 .versions-nav-item__hover-btn {
   z-index: -1;
 }
+.versions-nav-item.is-base-card .versions-nav-item__hover-btn,
 .versions-nav-item.is-comp-card .versions-nav-item__hover-btn,
 .versions-nav-item--selected .versions-nav-item__hover-btn,
 .versions-nav-item:hover .versions-nav-item__hover-btn {
@@ -155,6 +156,7 @@
 
 .versions-nav-item.is-base-card .versions-nav-item__selection-btn {
   background-color: var(--boxel-highlight);
+  border-radius: 5px;
 }
 
 .versions-nav-item.is-base-card:hover {
@@ -349,15 +351,17 @@
 
 
 /* Diff view */
+.versions__cards {
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+}
+
 .version-card--base-card,
 .version-card--comp-card {
+  grid-column-start: 2;
   top: 80px;
   position: relative;
   width: 100%;
-}
-
-.version-card--comp-card + .version-card--base-card {
-  margin-top: 12px;
 }
 
 .version-card--base-card .version-card__btn-overlay,
@@ -378,4 +382,16 @@
 .version-card--base-card .version__label {
   color: black;
   background-image: url('/assets/images/icons/clock.svg');
+}
+
+.comp-view__swap-btn {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 130px;
+  background: url('/assets/images/icons/swap.svg') center/18px 17px no-repeat;
+  z-index: 10;
+  outline: 0;
 }
