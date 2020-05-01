@@ -6,9 +6,14 @@
   --boxel-revision-hover-purple: #4f4a5d;
 
   background-color: var(--boxel-revision-medium-purple);
+  height: 100%;
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .versions-grid {
+  height: 100%;
   max-width: 1440px;
   margin: 0 auto;
   display: grid;
@@ -22,6 +27,7 @@
 
 .versions__header {
   grid-area: head;
+  z-index: 1;
 }
 
 .versions__title {
@@ -69,6 +75,7 @@
   border: none;
   text-align: left;
   outline: none;
+  transition: all 0.2s ease;
 }
 .versions-nav-item__btn:hover {
   cursor: pointer;
@@ -78,15 +85,13 @@
   padding: 13px 10px 16px 40px;
   box-shadow: 0 1px 0 0 var(--boxel-revision-light-purple);
 }
-
-.versions-nav-item__selection-btn:hover {
+.versions-nav-item:hover .versions-nav-item__selection-btn {
   background-color: var(--boxel-revision-hover-purple);
   border-bottom-color: transparent;
   border-radius: 5px;
   box-shadow: 0 -1px 0 1px var(--boxel-revision-hover-purple);
   color: var(--boxel-highlight);
 }
-
 .versions-nav-item--selected .versions-nav-item__selection-btn {
   background-color: var(--boxel-revision-dark-purple);
   border-bottom-color: transparent;
@@ -95,29 +100,35 @@
   overflow: hidden;
 }
 
-.versions-nav-item__selection-checkbox {
-  --icon-border: transparent;
+.versions-nav-item__hover-btn {
+  --icon-border: currentColor;
+  --icon-color: currentColor;
   position: absolute;
   top: 0;
-  left: 0;
   width: 30px;
   height: 100%;
   padding: 0;
-  z-index: 1;
+  color: white;
 }
-.versions-nav-item__selection-checkbox > svg {
+.versions-nav-item__hover-btn.checkbox {
+  left: 0;
+}
+.versions-nav-item__hover-btn.more {
+  right: 0;
+}
+
+.versions-nav-item__hover-btn > svg {
   display: block;
   margin: auto;
 }
-
-.versions-nav-item__selection-btn:hover + .versions-nav-item__selection-checkbox,
-.versions-nav-item__selection-checkbox:hover {
-  --icon-border: currentColor;
+.versions-nav-item__hover-btn {
+  z-index: -1;
+}
+.versions-nav-item--selected .versions-nav-item__hover-btn,
+.versions-nav-item:hover .versions-nav-item__hover-btn {
+  z-index: 1;
 }
 
-.versions-nav-item--selected .versions-nav-item__selection-checkbox {
-  --icon-border: currentColor;
-}
 
 .version-card__header {
   position: relative;
@@ -156,7 +167,6 @@
 }
 
 .version__label {
-  --icon-color: var(--boxel-highlight);
   background: url('/assets/images/icons/clock-highlighted.svg') right center/16px 16px no-repeat;
   padding-right: 21px;
   color: var(--boxel-highlight);
@@ -174,7 +184,7 @@
 
 .versions-nav-item__btn .version__label {
   position: absolute;
-  right: 20px;
+  right: 72px;
   top: 16px;
 }
 
@@ -184,40 +194,39 @@
   display: grid;
   grid-auto-rows: max-content;
   position: relative;
-  height: calc(100vh - 80px);
+  height: 100vh;
   max-width: 1080px;
+  margin-top: -80px;
   overflow: hidden;
 }
 
 .version-card {
+  --translate-start: 35px;
+  --translate-unit: 45px;
   justify-self: center;
   position: absolute;
-  width: 50%;
+  transform: translateY(var(--translate-start));
+  width: 56%;
   z-index: 0;
 }
 
-.version-card--p4 {
-  transform: translateY(0);
-  width: 50%;
-}
-
 .version-card--p3 {
-  transform: translateY(45px);
+  transform: translateY(var(--translate-start));
   width: 56%;
 }
 
 .version-card--p2 {
-  transform: translateY(90px);
+  transform: translateY(calc(var(--translate-start) + var(--translate-unit)));
   width: 62%;
 }
 
 .version-card--p1 {
-  transform: translateY(135px);
+  transform: translateY(calc(var(--translate-start) + var(--translate-unit) * 2));
   width: 68%;
 }
 
 .version-card--p0 {
-  transform: translateY(175px);
+  transform: translateY(calc(var(--translate-start) + var(--translate-unit) * 3));
   width: 75%;
 }
 
@@ -283,28 +292,23 @@
   height: 100%;
   width: 100%;
   outline: 0;
-  opacity: 0.88;
-}
-
-.version-card--p4 .version-card__btn-overlay {
-  opacity: 0.88;
-  z-index: 1;
+  opacity: 0.95;
 }
 
 .version-card--p3 .version-card__btn-overlay {
-  opacity: 0.66;
+  opacity: 0.95;
 }
 
 .version-card--p2 .version-card__btn-overlay {
-  opacity: 0.44;
+  opacity: 0.75;
 }
 
 .version-card--p1 .version-card__btn-overlay {
-  opacity: 0.22;
+  opacity: 0.55;
 }
 
 .version-card--p0 .version-card__btn-overlay {
-  opacity: 0.11;
+  opacity: 0.25
 }
 
 .version-card--p0 ~ .version-card .version-card__btn-overlay {

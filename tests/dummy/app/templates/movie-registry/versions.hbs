@@ -18,7 +18,8 @@
               <div class="version__title">{{v.published}}</div>
               <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
             </button>
-            <button {{on "click" (fn this.setComparison v.id)}} class="versions-nav-item__btn versions-nav-item__selection-checkbox">{{svg-jar "icon-circle" width="16px" height="16px"}}</button>
+            <button {{on "click" (fn this.setComparison v.id)}} class="versions-nav-item__btn versions-nav-item__hover-btn checkbox">{{svg-jar "icon-circle" width="16px" height="16px"}}</button>
+            <button class="versions-nav-item__btn versions-nav-item__hover-btn more">{{svg-jar "more-vertical" width="16px" height="16px"}}</button>
           </li>
         {{/each}}
       </ul>
