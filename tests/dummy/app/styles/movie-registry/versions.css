@@ -346,3 +346,36 @@
 .version-card--p0 ~ .version-card .version-card__btn-overlay {
   opacity: 0.11;
 }
+
+
+/* Diff view */
+.version-card--base-card,
+.version-card--comp-card {
+  top: 80px;
+  position: relative;
+  width: 100%;
+}
+
+.version-card--comp-card + .version-card--base-card {
+  margin-top: 12px;
+}
+
+.version-card--base-card .version-card__btn-overlay,
+.version-card--comp-card .version-card__btn-overlay {
+  opacity: 0.11;
+}
+
+.version-card--comp-card .version-card__header,
+.version-card--comp-card .version-card__btn-overlay {
+  border-radius: 10px;
+}
+
+.version-card--base-card .version-card__header {
+  background-color: var(--boxel-highlight);
+  color: black;
+}
+
+.version-card--base-card .version__label {
+  color: black;
+  background-image: url('/assets/images/icons/clock.svg');
+}

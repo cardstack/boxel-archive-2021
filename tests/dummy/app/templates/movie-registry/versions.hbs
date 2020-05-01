@@ -28,30 +28,67 @@
         {{/each}}
       </ul>
     </aside>
-    <AnimatedContainer class="versions__cards" {{did-insert this.setPositions}}>
-      {{#animated-each this.versions watch="position" key="id" use=this.transition as |v|}}
-        <div class="version-card version-card--{{v.position}} {{if (eq v.id this.latest.id) "current"}} {{if (eq v.id (sub this.latest.id 1)) "current-1"}} {{if (eq v.id (sub this.latest.id 2)) "current-2"}}">
-          <header class="version-card__header">
-            <div class="version__title">{{v.published}}</div>
-            <div class="version__description">{{v.description}}</div>
-            <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
-            {{#animated-value v watch="position" key="id" use=this.adjustOpacity as |value|}}
-              <button {{on "click" (fn this.displayVersion value.id)}} class="version-card__btn-overlay" />
-            {{/animated-value}}
-          </header>
-          <div class="version-card__content">
-            <Movie
-              @model={{v.savedData}}
-              @revisionMode={{true}}
-              @addedFields={{this.addedFields}}
-              @changedFields={{this.changedFields}}
-              @removedFields={{this.removedFields}}
-              @mode="view"
-              @hideButtons={{true}}
-            />
+    <AnimatedContainer class="versions__cards {{if (and this.baseCard this.comparisonCard) "comp-view"}}" {{did-insert this.setPositions}}>
+      {{#if (and this.baseCard this.comparisonCard)}}
+        {{log this.baseCard this.comparisonCard}}
+        {{#let this.compCardContent as |c|}}
+          <div class="version-card version-card--comp-card {{if (eq c.id this.latest.id) "current"}}">
+            <header class="version-card__header">
+              <div class="version__title">{{c.published}}</div>
+              <div class="version__description">{{c.description}}</div>
+              <div class="version__label">{{if (eq c.id this.latest.id) "Current"}}</div>
+              <button {{on "click" (fn this.displayVersion c.id)}} class="version-card__btn-overlay" />
+            </header>
           </div>
-        </div>
-      {{/animated-each}}
+        {{/let}}
+        {{#let this.baseCardContent as |v|}}
+          <div class="version-card version-card--base-card {{if (eq v.id this.latest.id) "current"}}">
+            <header class="version-card__header">
+              <div class="version__title">{{v.published}}</div>
+              <div class="version__description">{{v.description}}</div>
+              <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
+              {{#animated-value v watch="position" key="id" use=this.adjustOpacity as |value|}}
+                <button {{on "click" (fn this.displayVersion value.id)}} class="version-card__btn-overlay" />
+              {{/animated-value}}
+            </header>
+            <div class="version-card__content">
+              <Movie
+                @model={{v.savedData}}
+                @revisionMode={{true}}
+                @addedFields={{this.addedFields}}
+                @changedFields={{this.changedFields}}
+                @removedFields={{this.removedFields}}
+                @mode="view"
+                @hideButtons={{true}}
+              />
+            </div>
+          </div>
+        {{/let}}
+      {{else}}
+        {{#animated-each this.versions watch="position" key="id" use=this.transition as |v|}}
+          <div class="version-card version-card--{{v.position}} {{if (eq v.id this.latest.id) "current"}} {{if (eq v.id (sub this.latest.id 1)) "current-1"}} {{if (eq v.id (sub this.latest.id 2)) "current-2"}}">
+            <header class="version-card__header">
+              <div class="version__title">{{v.published}}</div>
+              <div class="version__description">{{v.description}}</div>
+              <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
+              {{#animated-value v watch="position" key="id" use=this.adjustOpacity as |value|}}
+                <button {{on "click" (fn this.displayVersion value.id)}} class="version-card__btn-overlay" />
+              {{/animated-value}}
+            </header>
+            <div class="version-card__content">
+              <Movie
+                @model={{v.savedData}}
+                @revisionMode={{true}}
+                @addedFields={{this.addedFields}}
+                @changedFields={{this.changedFields}}
+                @removedFields={{this.removedFields}}
+                @mode="view"
+                @hideButtons={{true}}
+              />
+            </div>
+          </div>
+        {{/animated-each}}
+      {{/if}}
     </AnimatedContainer>
   </div>
 </section>
