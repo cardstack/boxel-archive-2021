@@ -5,7 +5,6 @@ import resize from 'ember-animated/motions/resize';
 import scale from 'ember-animated/motions/scale';
 import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
-import { printSprites } from 'ember-animated';
 
 export default class MovieRegistryVersionsController extends Controller {
   @tracked versions = this.model.versions;
@@ -81,7 +80,6 @@ export default class MovieRegistryVersionsController extends Controller {
     let [ json1, json2 ] = [ card1, card2 ].map(data => JSON.stringify(data));
 
     if (json1 === json2) {
-      console.log('no change');
       return;
     }
 
@@ -108,7 +106,6 @@ export default class MovieRegistryVersionsController extends Controller {
 
   @action
   * transition({ keptSprites }) {
-    // printSprites(arguments[0]);
     for (let sprite of keptSprites) {
       move(sprite);
       resize(sprite);
@@ -117,7 +114,6 @@ export default class MovieRegistryVersionsController extends Controller {
 
   @action
   * adjustOpacity({ keptSprites }) {
-    printSprites(arguments[0]);
     for (let sprite of keptSprites) {
       adjustCSS('opacity', sprite);
       move(sprite);

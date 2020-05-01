@@ -156,9 +156,12 @@
 }
 
 .version__label {
+  --icon-color: var(--boxel-highlight);
+  background: url('/assets/images/icons/clock-highlighted.svg') right center/16px 16px no-repeat;
+  padding-right: 21px;
   color: var(--boxel-highlight);
   font-size: 10px;
-  line-height: calc(14/10);
+  line-height: calc(16/10);
   font-weight: bold;
   letter-spacing: 0.1em;
   text-transform: uppercase;
