@@ -36,7 +36,6 @@ a:focus {
 }
 
 svg {
-  --icon-color: currentColor;
   display: inline-block;
 }
 
