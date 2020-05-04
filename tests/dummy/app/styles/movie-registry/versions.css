@@ -34,6 +34,9 @@
   font: var(--boxel-font);
   font-weight: 600;
   letter-spacing: var(--boxel-lsp-sm);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .versions__view {
@@ -356,13 +359,12 @@
 /* Diff view */
 .versions__cards {
   grid-template-columns: 30px 1fr;
-  gap: 12px;
+  gap: 5px 15px;
 }
 
 .version-card--base-card,
 .version-card--comp-card {
   grid-column-start: 2;
-  top: 80px;
   position: relative;
   width: 100%;
 }
@@ -396,7 +398,7 @@
   background-color: transparent;
   border: none;
   position: absolute;
-  top: 130px;
+  top: 45px;
   background: url('/assets/images/icons/swap.svg') center/18px 17px no-repeat;
   z-index: 10;
   outline: 0;

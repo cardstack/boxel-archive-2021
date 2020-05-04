@@ -3,8 +3,8 @@
     <header class="versions__header">
       <h1 class="versions__title">Movie Detail - {{@model.movie.title.value}}</h1>
     </header>
-    <div class="versions__view">
-      {{#if this.isCompView}}
+    {{#if this.isCompView}}
+      <div class="versions__view">
         <div class="view-selector">
           <div class="view-selector--mode-link {{if (eq this.view "show-all") "active"}}">
             Show all
@@ -13,8 +13,8 @@
             Changes only
           </div>
         </div>
-      {{/if}}
-    </div>
+      </div>
+    {{/if}}
     <div class="versions__mode">
       <LinkTo @route="movie-registry.view" @model={{@model.movie.id}} @class="mode-indicator mode-indicator--revision">
         Revision Mode
@@ -42,8 +42,8 @@
       </ul>
     </aside>
 
-    <AnimatedContainer class="versions__cards {{if (and this.baseCard this.comparisonCard) "comp-view"}}" {{did-insert this.setPositions}}>
-      {{#if (and this.baseCard this.comparisonCard)}}
+    <AnimatedContainer class="versions__cards {{if this.isCompView "comp-view"}}" {{did-insert this.setPositions}}>
+      {{#if this.isCompView}}
         <button class="comp-view__swap-btn" {{on "click" this.swap}} aria-label="Swap comparison" />
         {{#let this.compCardContent as |c|}}
           <div class="version-card version-card--comp-card {{if (eq c.id this.latest.id) "current"}}">
