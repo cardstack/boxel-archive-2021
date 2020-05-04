@@ -309,14 +309,53 @@
 
 .version-card__content {
   overflow: auto;
-  max-height: calc(100vh - 80px);
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
   margin-top: -2px;
+  background-color: white;
 }
 
-.version-card .movie {
-  min-height: 600px;
+.version-card__inner-wrapper {
   user-select: none;
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  scale: 0.56;
+
+  transform-origin: top center;
+  transition: all 500ms ease-in;
 }
+
+.version-card__content .movie {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 600px;
+}
+
+.version-card__inner-wrapper--p3 {
+  scale: 0.56;
+}
+
+.version-card__inner-wrapper--p2 {
+  scale: 0.62;
+}
+
+.version-card__inner-wrapper--p1 {
+  scale: 0.68;
+}
+
+.version-card__inner-wrapper--p0 {
+  scale: 0.75;
+}
+
+.version-card__inner-wrapper--p-1,
+.version-card__inner-wrapper--p-2 {
+  scale: 0.92;
+}
+
 
 .version-card__btn-overlay {
   background: var(--boxel-revision-medium-purple);

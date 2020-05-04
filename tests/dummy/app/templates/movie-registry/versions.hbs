@@ -87,15 +87,17 @@
               {{/animated-value}}
             </header>
             <div class="version-card__content">
-              <Movie
-                @model={{v.savedData}}
-                @revisionMode={{true}}
-                @addedFields={{this.addedFields}}
-                @changedFields={{this.changedFields}}
-                @removedFields={{this.removedFields}}
-                @mode="view"
-                @hideButtons={{true}}
-              />
+              <div class="version-card__inner-wrapper version-card__inner-wrapper--{{v.position}}">
+                <Movie
+                  @model={{v.savedData}}
+                  @revisionMode={{true}}
+                  @addedFields={{this.addedFields}}
+                  @changedFields={{this.changedFields}}
+                  @removedFields={{this.removedFields}}
+                  @mode="view"
+                  @hideButtons={{true}}
+                />
+              </div>
             </div>
           </div>
         {{/animated-each}}

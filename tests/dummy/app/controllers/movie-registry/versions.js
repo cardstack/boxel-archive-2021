@@ -4,6 +4,7 @@ import { tracked } from '@glimmer/tracking';
 import resize from 'ember-animated/motions/resize';
 import scale from 'ember-animated/motions/scale';
 import move from 'ember-animated/motions/move';
+import compensateForScale from 'ember-animated/motions/compensate-for-scale';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import { easeIn } from 'ember-animated/easings/cosine';
 import { parallel } from 'ember-animated';
