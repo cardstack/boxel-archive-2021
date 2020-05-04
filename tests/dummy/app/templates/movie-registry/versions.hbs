@@ -12,7 +12,7 @@
       <div class="versions__nav--shadow" />
       <ul>
         {{#each this.versions as |v|}}
-          <li class="versions-nav-item {{if (eq v.id this.selected) "versions-nav-item--selected"}} {{if (eq this.baseCard v.id) "is-base-card"}} {{if (eq this.comparisonCard v.id) "is-comp-card"}}">
+          <li class="versions-nav-item {{if (eq v.id this.selected) "versions-nav-item--selected"}} {{if (eq this.baseCard v.id) "is-base-card"}} {{if (eq this.comparisonCard v.id) "is-comp-card"}} {{if (and this.baseCard this.comparisonCard) "versions-nav-item--comp-view"}}">
             <button {{on "click" (fn this.displayVersion v.id)}} class="versions-nav-item__btn versions-nav-item__selection-btn">
               <div class="version__description">{{v.description}}</div>
               <div class="version__title">{{v.published}}</div>
@@ -30,15 +30,15 @@
     </aside>
     <AnimatedContainer class="versions__cards {{if (and this.baseCard this.comparisonCard) "comp-view"}}" {{did-insert this.setPositions}}>
       {{#if (and this.baseCard this.comparisonCard)}}
-        <button class="comp-view__swap-btn" {{on "click" this.switchComp}} aria-label="Swap comparison" />
+        <button class="comp-view__swap-btn" {{on "click" this.swap}} aria-label="Swap comparison" />
         {{#let this.compCardContent as |c|}}
           <div class="version-card version-card--comp-card {{if (eq c.id this.latest.id) "current"}}">
             <header class="version-card__header">
               <div class="version__title">{{c.published}}</div>
               <div class="version__description">{{c.description}}</div>
               <div class="version__label">{{if (eq c.id this.latest.id) "Current"}}</div>
-              <button {{on "click" (fn this.displayVersion c.id)}} class="version-card__btn-overlay" />
             </header>
+            <div class="version-card--comp-card__arrow" aria-hidden="true" />
           </div>
         {{/let}}
         {{#let this.baseCardContent as |v|}}
@@ -47,9 +47,6 @@
               <div class="version__title">{{v.published}}</div>
               <div class="version__description">{{v.description}}</div>
               <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
-              {{#animated-value v watch="position" key="id" use=this.adjustOpacity as |value|}}
-                <button {{on "click" (fn this.displayVersion value.id)}} class="version-card__btn-overlay" />
-              {{/animated-value}}
             </header>
             <div class="version-card__content">
               <Movie

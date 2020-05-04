@@ -70,7 +70,7 @@ export default class MovieRegistryVersionsController extends Controller {
   }
 
   @action
-  switchComp() {
+  swap() {
     let comp = this.comparisonCard;
     this.comparisonCard = this.baseCard;
     this.baseCard = comp;

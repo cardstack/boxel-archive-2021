@@ -96,8 +96,9 @@
   border-radius: 5px;
   box-shadow: 0 -1px 0 1px var(--boxel-revision-hover-purple);
 }
-.versions-nav-item.is-comp-card .versions-nav-item__selection-btn,
-.versions-nav-item--selected .versions-nav-item__selection-btn {
+
+.versions-nav-item--selected:not(.versions-nav-item--comp-view) .versions-nav-item__selection-btn,
+.versions-nav-item.is-comp-card .versions-nav-item__selection-btn {
   background-color: var(--boxel-revision-dark-purple);
   border-bottom-color: transparent;
   border-radius: 5px;
@@ -364,18 +365,21 @@
   width: 100%;
 }
 
-.version-card--base-card .version-card__btn-overlay,
-.version-card--comp-card .version-card__btn-overlay {
-  opacity: 0.11;
+.version-card--comp-card .version-card__header {
+  border-radius: 10px;
 }
 
-.version-card--comp-card .version-card__header,
-.version-card--comp-card .version-card__btn-overlay {
-  border-radius: 10px;
+.version-card--comp-card__arrow {
+  background: url('/assets/images/icons/connect.svg') center -7px/14px 14px no-repeat;
+  height: 7px;
 }
 
 .version-card--base-card .version-card__header {
   background-color: var(--boxel-highlight);
+  color: black;
+}
+
+.version-card--base-card .version__description {
   color: black;
 }
 
@@ -394,4 +398,9 @@
   background: url('/assets/images/icons/swap.svg') center/18px 17px no-repeat;
   z-index: 10;
   outline: 0;
+}
+
+.comp-view__swap-btn:hover {
+  background-image: url('/assets/images/icons/swap-white.svg');
+  cursor: pointer;
 }
