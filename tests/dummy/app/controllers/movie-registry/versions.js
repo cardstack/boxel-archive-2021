@@ -17,6 +17,11 @@ export default class MovieRegistryVersionsController extends Controller {
   @tracked addedFields;
   @tracked changedFields;
   @tracked removedFields;
+  @tracked view = 'show-all';
+
+  get isCompView() {
+    return this.comparisonCard && this.baseCard;
+  }
 
   get baseCardContent() {
     return this.versions.filter(item => item.id === this.baseCard)[0];
