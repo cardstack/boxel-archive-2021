@@ -5,7 +5,7 @@ import resize from 'ember-animated/motions/resize';
 import scale from 'ember-animated/motions/scale';
 import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
-import { easeInAndOut } from 'ember-animated/easings/cosine';
+import { easeIn } from 'ember-animated/easings/cosine';
 import { parallel } from 'ember-animated';
 
 export default class MovieRegistryVersionsController extends Controller {
@@ -124,14 +124,14 @@ export default class MovieRegistryVersionsController extends Controller {
   @action
   * transition({ keptSprites }) {
     for (let sprite of keptSprites) {
-      parallel(move(sprite, { easing: easeInAndOut }), resize(sprite, { easing: easeInAndOut }));
+      parallel(move(sprite, { easing: easeIn }), resize(sprite, { easing: easeIn }));
     }
   }
 
   @action
   * adjustOpacity({ keptSprites }) {
     for (let sprite of keptSprites) {
-      parallel(adjustCSS('opacity', sprite, { easing: easeInAndOut }), move(sprite, { easing: easeInAndOut }), scale(sprite, { easing: easeInAndOut }));
+      parallel(move(sprite, { easing: easeIn }), scale(sprite, { easing: easeIn }), adjustCSS('opacity', sprite));
     }
   }
 }

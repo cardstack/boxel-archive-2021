@@ -72,7 +72,7 @@
               <div class="version__description">{{v.description}}</div>
               <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
               {{#animated-value v watch="position" key="id" use=this.adjustOpacity as |value|}}
-                <button {{on "click" (fn this.displayVersion value.id)}} class="version-card__btn-overlay" />
+                <button {{on "click" (fn this.displayVersion value.id)}} class="version-card__btn-overlay overlay--{{value.position}}" />
               {{/animated-value}}
             </header>
             <div class="version-card__content">
