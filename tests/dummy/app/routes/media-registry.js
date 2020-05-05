@@ -1,27 +1,14 @@
 import Route from '@ember/routing/route';
+import fetch from 'fetch';
 
 export default class MediaRegistryRoute extends Route {
-  model() {
+  async model() {
+    const res = await fetch('/data/full_catalog_bunny_records_table_1_sub_catalogs.json');
+    const collection = await res.json();
+
     return {
-      id: 'master-recordings',
       title: 'Master Recordings',
-      items: [
-        {
-          collectionId: 'bunny-classics',
-          title: 'Bunny Classics',
-          description: 'Short description of collection',
-        },
-        {
-          collectionId: 'bunny-classics-2',
-          title: 'Bunny Classics',
-          description: 'Short description of collection',
-        },
-        {
-          collectionId: 'bunny-classic-3',
-          title: 'Bunny Classics',
-          description: 'Short description of collection',
-        }
-      ]
+      collection
     };
   }
 }

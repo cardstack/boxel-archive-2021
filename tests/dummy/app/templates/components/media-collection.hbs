@@ -1,6 +1,6 @@
 <section class="collection">
   <header>
-    <h2>{{@model.title}}</h2>
+    <h2>{{humanize @model.title}}</h2>
     <div>
       {{!-- bulk select indicator --}}
       {{!-- filters --}}
@@ -9,7 +9,7 @@
   </header>
 
   <ul class="collection-items">
-    {{#each @model.items as |item|}}
+    {{#each @model.collection as |item|}}
       <li>
         {{yield item}}
       </li>

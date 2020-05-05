@@ -1,22 +1,20 @@
 import Route from '@ember/routing/route';
+import fetch from 'fetch';
+import { dasherize } from '@ember/string';
 
 export default class MediaRegistryCollectionRoute extends Route {
-  model({ collectionId }) {
+  async model({ collectionId }) {
+    const data = await fetch('/data/full_catalog_bunny_records_table_1.json');
+    const records = await data.json();
+    const collection = records.filter(item => {
+      if (item.catalog) {
+        let catalogs = item.catalog.split(',');
+        return catalogs.map(catalog => dasherize(catalog) === collectionId);
+      }
+    });
     return {
-      collectionId,
-      title: 'Bunny Classics',
-      items: [
-        {
-          itemId: 'a-day-to-sing',
-          title: 'A day to sing',
-          artist: 'Pia Midina',
-        },
-        {
-          itemId: 'a-day-to-sing-2',
-          title: 'A day to sing',
-          artist: 'Pia Midina',
-        }
-      ]
+      title: collectionId,
+      collection
     };
   }
 }
