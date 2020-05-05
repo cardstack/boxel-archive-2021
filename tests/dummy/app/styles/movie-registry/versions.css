@@ -308,54 +308,67 @@
 }
 
 .version-card__content {
+  background-color: white;
   overflow: auto;
   position: relative;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 320px);
   margin-top: -2px;
-  background-color: white;
+}
+
+.current .version-card__content {
+  height: calc(100vh - 250px);
+}
+
+.current-1 .version-card__content {
+  height: calc(100vh - 300px);
+}
+
+.current-2 .version-card__content {
+  height: calc(100vh - 310px);
 }
 
 .version-card__inner-wrapper {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  transform-origin: top left;
+  transform: scale(0.6);
   user-select: none;
-  display: grid;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  scale: 0.56;
-
-  transform-origin: top center;
-  transition: all 500ms ease-in;
+  left: 0;
 }
 
-.version-card__content .movie {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 600px;
+
+.version-card__inner-wrapper--p-1,
+.version-card__inner-wrapper--p-2,
+.wrapper--current,
+.wrapper--current-1,
+.wrapper--current-2 {
+  transform: scale(1.2);
 }
 
 .version-card__inner-wrapper--p3 {
-  scale: 0.56;
+  transform: scale(0.7);
 }
 
 .version-card__inner-wrapper--p2 {
-  scale: 0.62;
+  transform: scale(0.8);
 }
 
 .version-card__inner-wrapper--p1 {
-  scale: 0.68;
+  transform: scale(0.9);
 }
 
 .version-card__inner-wrapper--p0 {
-  scale: 0.75;
+  transform: scale(1);
 }
 
-.version-card__inner-wrapper--p-1,
-.version-card__inner-wrapper--p-2 {
-  scale: 0.92;
-}
 
+.version-card__movie.movie {
+  transform-origin: top;
+  transform: scale(0.8);
+  padding: 50px 0;
+}
 
 .version-card__btn-overlay {
   background: var(--boxel-revision-medium-purple);
@@ -374,6 +387,12 @@
   opacity: 0.99;
 }
 
+.overlay--current,
+.overlay--current-1,
+.overlay--current-2 {
+  opacity: 0.11;
+}
+
 .overlay--p3 {
   opacity: 0.99;
 }
@@ -387,11 +406,7 @@
 }
 
 .overlay--p0 {
-  opacity: 0.25
-}
-
-.version-card--p0 ~ .version-card .version-card__btn-overlay {
-  opacity: 0.11;
+  opacity: 0.25;
 }
 
 
@@ -447,7 +462,6 @@
   background-image: url('/assets/images/icons/swap-white.svg');
   cursor: pointer;
 }
-
 
 
 .view-selector {

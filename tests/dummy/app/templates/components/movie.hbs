@@ -1,4 +1,4 @@
-<div class="movie" data-test-movie="{{@model.id}}" data-test-movie-mode="{{@mode}}-mode">
+<div class="movie {{@class}}" data-test-movie="{{@model.id}}" data-test-movie-mode="{{@mode}}-mode">
   {{#if (eq @mode "edit")}}
     <div class="button-overlay">
       <LinkTo

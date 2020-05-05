@@ -4,10 +4,11 @@ import { tracked } from '@glimmer/tracking';
 import resize from 'ember-animated/motions/resize';
 import scale from 'ember-animated/motions/scale';
 import move from 'ember-animated/motions/move';
-import compensateForScale from 'ember-animated/motions/compensate-for-scale';
 import adjustCSS from 'ember-animated/motions/adjust-css';
 import { easeIn } from 'ember-animated/easings/cosine';
 import { parallel } from 'ember-animated';
+import compensateForScale from 'ember-animated/motions/compensate-for-scale';
+
 
 export default class MovieRegistryVersionsController extends Controller {
   @tracked versions = this.model.versions;
@@ -138,6 +139,13 @@ export default class MovieRegistryVersionsController extends Controller {
   * adjustOpacity({ keptSprites }) {
     for (let sprite of keptSprites) {
       parallel(move(sprite, { easing: easeIn }), scale(sprite, { easing: easeIn }), adjustCSS('opacity', sprite));
+    }
+  }
+
+  @action
+  * adjustContent({ keptSprites }) {
+    for (let sprite of keptSprites) {
+      parallel(move(sprite, { easing: easeIn }), scale(sprite, { easing: easeIn }), compensateForScale(sprite, { easing: easeIn }));
     }
   }
 }

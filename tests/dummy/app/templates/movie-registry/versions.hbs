@@ -83,21 +83,24 @@
               <div class="version__description">{{v.description}}</div>
               <div class="version__label">{{if (eq v.id this.latest.id) "Current"}}</div>
               {{#animated-value v watch="position" key="id" use=this.adjustOpacity as |value|}}
-                <button {{on "click" (fn this.displayVersion value.id)}} class="version-card__btn-overlay overlay--{{value.position}}" />
+                <button {{on "click" (fn this.displayVersion value.id)}} class="version-card__btn-overlay overlay--{{value.position}} {{if (eq value.id this.latest.id) "overlay--current"}} {{if (eq value.id (sub this.latest.id 1)) "overlay--current-1"}} {{if (eq value.id (sub this.latest.id 2)) "overlay--current-2"}}" />
               {{/animated-value}}
             </header>
-            <div class="version-card__content">
-              <div class="version-card__inner-wrapper version-card__inner-wrapper--{{v.position}}">
-                <Movie
-                  @model={{v.savedData}}
-                  @revisionMode={{true}}
-                  @addedFields={{this.addedFields}}
-                  @changedFields={{this.changedFields}}
-                  @removedFields={{this.removedFields}}
-                  @mode="view"
-                  @hideButtons={{true}}
-                />
-              </div>
+            <div class="version-card__content version-card__content--{{v.position}}">
+              {{#animated-value v watch="position" use=this.adjustContent as |value|}}
+                <div class="version-card__inner-wrapper version-card__inner-wrapper--{{value.position}} {{if (eq value.id this.latest.id) "wrapper--current"}} {{if (eq value.id (sub this.latest.id 1)) "wrapper--current-1"}} {{if (eq value.id (sub this.latest.id 2)) "wrapper--current-2"}}">
+                  <Movie
+                    @class="version-card__movie"
+                    @model={{value.savedData}}
+                    @revisionMode={{true}}
+                    @addedFields={{this.addedFields}}
+                    @changedFields={{this.changedFields}}
+                    @removedFields={{this.removedFields}}
+                    @mode="view"
+                    @hideButtons={{true}}
+                  />
+                </div>
+              {{/animated-value}}
             </div>
           </div>
         {{/animated-each}}
