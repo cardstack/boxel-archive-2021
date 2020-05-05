@@ -446,6 +446,10 @@
   background-image: url('/assets/images/icons/clock.svg');
 }
 
+.version-card--base-card .version-card__content {
+  height: calc(100vh - 180px);
+}
+
 .comp-view__swap-btn {
   width: 30px;
   height: 30px;
