@@ -14,6 +14,7 @@ export default class MediaRegistryCollectionRoute extends Route {
     });
     return {
       title: collectionId,
+      type: 'collection',
       collection
     };
   }

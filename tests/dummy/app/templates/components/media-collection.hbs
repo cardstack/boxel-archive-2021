@@ -46,7 +46,7 @@
     {{/let}}
   </header>
 
-  <ul class="media-collection-items">
+  <ul class="media-collection__grid media-collection__grid--{{@model.type}}-grid">
     {{#each @model.collection as |item|}}
       <li>
         {{yield item}}

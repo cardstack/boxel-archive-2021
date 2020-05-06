@@ -8,6 +8,7 @@ export default class MediaRegistryRoute extends Route {
 
     return {
       title: 'Master Recordings',
+      type: 'master-collection',
       collection
     };
   }

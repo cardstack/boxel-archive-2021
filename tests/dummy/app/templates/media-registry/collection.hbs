@@ -1,7 +1,7 @@
 {{!-- Breadcrumbs --}}
 
 <MediaCollection @model={{@model}} as |item|>
-  <LinkTo @route="media-registry.item" @model={{dasherize item.song_title}}>
+  <LinkTo class="collection" @route="media-registry.item" @model={{dasherize item.song_title}}>
     <div>
       <img src="/images/covers/{{item.cover_art}}" alt="{{item.album}} cover" width="182px" height="182px" />
       <h3>{{item.song_title}}</h3>
