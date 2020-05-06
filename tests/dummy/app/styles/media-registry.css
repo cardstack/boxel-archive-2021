@@ -116,4 +116,5 @@
   overflow: auto;
   min-height: calc(100vh - 250px);
   max-height: calc(100vh - 132px);
+  padding: 30px;
 }

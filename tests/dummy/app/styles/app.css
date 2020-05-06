@@ -12,6 +12,8 @@
 
 @import 'components/movie.css';
 @import 'components/field.css';
+@import 'components/media-collection.css';
+
 
 html, body {
   height: 100%;
