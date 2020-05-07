@@ -1,28 +1,28 @@
-<Boxel class="media-collection">
-  <BoxelActions
-    @class="media-collection__btn-overlay"
-    @displayHighlightActions={{true}}
-    @btnLeft="mode-btn"
-    @btnLeftContent="Edit"
-    @btnRight="version-history"
-  />
-  <header class="media-collection__header">
-    <h2 class="media-collection__title">{{humanize @model.title}}</h2>
-    <div class="media-collection__count"><span>{{@model.collection.length}}</span> Collections</div>
+{{#let @model.collection as |collection|}}
+  <Boxel class="media-collection">
+    <BoxelActions
+      @class="media-collection__btn-overlay"
+      @displayHighlightActions={{true}}
+      @btnLeft="mode-btn"
+      @btnLeftContent="Edit"
+      @btnRight="version-history"
+    />
+    <header class="media-collection__header">
+      <h2 class="media-collection__title">{{humanize @model.title}}</h2>
+      <div class="media-collection__count">
+        <span>{{@model.collection.length}}</span> {{if (eq @model.type "collection") "Songs" "Collections"}}
+      </div>
 
-    {{#let @model.collection as |collection|}}
       <div class="media-collection__actions-row">
         <div class="media-collection__select">
-          <button {{on "click" this.toggleSelectAll}} class="media-collection__select-btn" aria-label="Select all" data-test-collection-select-all>
-            {{#if collection.selectedAll}}
-              {{svg-jar "icon-circle-selected" class="media-collection__select--selected" width="16px" height="16px"}}
-            {{else}}
-              {{svg-jar "icon-circle" class=(if collection.pickedItems "media-collection__select--partial") width="16px" height="16px"}}
-            {{/if}}
+          <button {{on "click" this.toggleSelectAll}} class="media-collection__select-btn {{if collection.selectedItemCount "media-collection__select-btn--partial"}} {{if collection.selectedAll "media-collection__select-btn--selected"}}" aria-label="Select all">
+            {{svg-jar "icon-circle-selected" width="16px" height="16px"}}
           </button>
-          <div class="media-collection__select-all media-collection__select-all--isolated" data-test-collection-selected-count>
-            {{#if collection.pickedItems}}
-              {{collection.pickedItems}} selected
+          <div class="media-collection__select-all {{if collection.selectedItemCount "media-collection__select-all--selected-items"}}">
+            {{#if collection.selectedItemCount}}
+              {{svg-jar "check-mark" width="9px" height="7px"}}
+              {{collection.selectedItemCount}} selected
+              <button class="media-collection__more-actions">{{svg-jar "more-actions" width="16px" height="16px"}}</button>
             {{else}}
               Select all
             {{/if}}
@@ -43,16 +43,16 @@
           </div>
         </div>
       </div>
-    {{/let}}
-  </header>
+    </header>
 
-  <ul class="media-collection__grid media-collection__grid--{{@model.type}}-grid">
-    {{#each @model.collection as |item|}}
-      <li>
-        {{yield item}}
-      </li>
-    {{/each}}
+    <ul class="media-collection__grid media-collection__grid--{{@model.type}}-grid">
+      {{#each @model.collection as |item|}}
+        <li>
+          {{yield item}}
+        </li>
+      {{/each}}
 
-    {{!-- Add new --}}
-  </ul>
-</Boxel>
+      {{!-- Add new --}}
+    </ul>
+  </Boxel>
+{{/let}}
