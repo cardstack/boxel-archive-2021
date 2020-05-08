@@ -1,16 +1,18 @@
-<MediaCollection @model={{@model}} as |item|>
-  <Boxel>
-    <BoxelHighlight {{on "click" (fn this.selectOrTransition item)}} @class="master-collection__highlighter" @on={{item.selected}} />
-    <button {{on "click" (fn this.togglePin item)}} class="master-collection__pin-btn {{if item.pinned "pinned"}}" aria-label="pin">{{svg-jar "pin" width="22px" height="22px"}}</button>
-    <button {{on "click" (fn this.toggleSelect item)}} class="master-collection__select-btn {{if item.selected "master-collection__select-btn--selected"}}" aria-label="select">{{svg-jar "icon-circle-selected" width="16px" height="16px"}}</button>
-    <div class="master-collection">
-      <h3 class="master-collection__title">{{item.catalog_title}}</h3>
-      <div class="master-collection__desc">{{item.catalog_description}}</div>
-      <div class="master-collection__covers" />
-      <div class="master-collection__count">
-        <div class="master-collection__num">{{item.number_of_songs}}</div>
-        <div>Songs</div>
+<div class="master-collection__wrapper">
+  <MediaCollection @model={{@model}} as |item|>
+    <Boxel>
+      <BoxelHighlight {{on "click" (fn this.selectOrTransition item)}} @class="master-collection__highlighter" @on={{item.selected}} />
+      <button {{on "click" (fn this.togglePin item)}} class="master-collection__pin-btn {{if item.pinned "pinned"}}" aria-label="pin">{{svg-jar "pin" width="22px" height="22px"}}</button>
+      <button {{on "click" (fn this.toggleSelect item)}} class="master-collection__select-btn {{if item.selected "master-collection__select-btn--selected"}}" aria-label="select">{{svg-jar "icon-circle-selected" width="16px" height="16px"}}</button>
+      <div class="master-collection">
+        <h3 class="master-collection__title">{{item.catalog_title}}</h3>
+        <div class="master-collection__desc">{{item.catalog_description}}</div>
+        <div class="master-collection__covers" />
+        <div class="master-collection__count">
+          <div class="master-collection__num">{{item.number_of_songs}}</div>
+          <div>Songs</div>
+        </div>
       </div>
-    </div>
-  </Boxel>
-</MediaCollection>
+    </Boxel>
+  </MediaCollection>
+</div>
