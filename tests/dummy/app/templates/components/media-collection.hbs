@@ -14,29 +14,33 @@
       </div>
 
       <div class="media-collection__actions-row">
-        <div class="media-collection__select">
-          <button {{on "click" this.toggleSelectAll}} class="media-collection__select-btn {{if collection.selectedItemCount "media-collection__select-btn--partial"}} {{if collection.selectedAll "media-collection__select-btn--selected"}}" aria-label="Select all">
-            {{svg-jar "icon-circle-selected" width="16px" height="16px"}}
-          </button>
-          <div class="media-collection__select-all {{if collection.selectedItemCount "media-collection__select-all--selected-items"}}">
-            {{#if collection.selectedItemCount}}
-              {{svg-jar "check-mark" width="9px" height="7px"}}
-              {{collection.selectedItemCount}} selected
-              <button class="media-collection__more-actions">{{svg-jar "more-actions" width="16px" height="16px"}}</button>
-            {{else}}
-              Select all
-            {{/if}}
-          </div>
+        <SelectButton
+          {{on "click" this.toggleSelectAll}}
+          @class="media-collection__select-btn"
+          @isPartial={{collection.selectedItemCount}}
+          @isSelected={{collection.selectedAll}}
+        />
+        <div class="media-collection__pill media-collection__select-all {{if collection.selectedItemCount "media-collection__select-all--selected-items"}}">
+          {{#if collection.selectedItemCount}}
+            {{svg-jar "check-mark" width="9px" height="7px"}}
+            {{collection.selectedItemCount}} selected
+            <button class="media-collection__more-actions">{{svg-jar "more-actions" width="16px" height="16px"}}</button>
+          {{else}}
+            Select all
+          {{/if}}
         </div>
-        <div class="media-collection__filters">
-          <div class="media-collection__btn-trio">
+        {{#if (and (eq @model.type "collection") collection.selectedItemCount)}}
+          <button class="media-collection__pill media-collection__pill--dropdown">
+            Add to Collection
+          </button>
+        {{/if}}
+        <div class="media_collection__btn-group">
+          <div class="media-collection__btn-trio media-collection__filters">
             <button class="collection-isolated__btn sort" aria-label="sort"></button>
             <button class="collection-isolated__btn filter" aria-label="filter"></button>
             <button class="collection-isolated__btn search" aria-label="search"></button>
           </div>
-        </div>
-        <div class="media-collection__view-formats">
-          <div class="media-collection__btn-trio view-selector">
+          <div class="media-collection__btn-trio media-collection__view-selectors">
             <button {{on "click" (fn this.changeFormat "list")}} class="collection-isolated__btn list {{if (eq this.format "list") "selected" "unselected"}}" aria-label="view as list"></button>
             <button {{on "click" (fn this.changeFormat "grid")}} class="collection-isolated__btn grid {{if (eq this.format "grid") "selected" "unselected"}}" aria-label="view as grid"></button>
             <button {{on "click" (fn this.changeFormat "table")}} class="collection-isolated__btn table {{if (eq this.format "table") "selected" "unselected"}}" aria-label="view as table"></button>
