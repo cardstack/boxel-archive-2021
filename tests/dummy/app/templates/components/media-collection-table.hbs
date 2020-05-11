@@ -1,0 +1,29 @@
+<EmberTable @class="media-collection-table" as |t|>
+  <t.head
+    @columns={{@columns}}
+    @class="media-collection-table__header"
+  />
+  <t.body
+    @rows={{@collection}}
+    @estimateRowHeight={{60}}
+    @class="media-collection-table__body" as |b|
+  >
+    <b.row class={{if b.rowValue.selected "is-selected"}} as |r|>
+      <r.cell as |cell column row cellMeta columnMeta|>
+        <Boxel>
+          <BoxelHighlight @on={{row.selected}} @class="media-collection-table__highlight" />
+          <div class="media-collection-table__cell {{if (eq columnMeta.index 0) "media-collection-table__cell--first-col"}} {{if row.selected "row-group-selected"}}">
+            {{#if (eq columnMeta.index 0)}}
+              <SelectButton
+                @isSelected={{row.selected}}
+              />
+            {{/if}}
+            <div class="media-collection-table__cell-value {{if (eq columnMeta.index 0) "media-collection-table__cell-value--first-col"}}">
+              {{cell}}
+            </div>
+          </div>
+        </Boxel>
+      </r.cell>
+    </b.row>
+  </t.body>
+</EmberTable>

@@ -11,6 +11,10 @@
   height: calc(100% - 80px);
 }
 
+.media-collection--table {
+  overflow: hidden;
+}
+
 .media-collection button:hover {
   cursor: pointer;
 }

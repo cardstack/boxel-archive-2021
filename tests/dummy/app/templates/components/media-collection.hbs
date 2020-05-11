@@ -1,5 +1,5 @@
 {{#let @model.collection as |collection|}}
-  <Boxel class="media-collection media-collection--{{@model.type}}">
+  <Boxel class="media-collection media-collection--{{@model.type}} media-collection--{{collection.format}}">
     <header class="media-collection__header">
       <BoxelActions
         @class="media-collection__btn-overlay"
@@ -50,7 +50,7 @@
     </header>
 
     {{#if (eq collection.format "table")}}
-      <CollectionTable @collection={{collection}} @columns={{@model.columns}} />
+      <MediaCollectionTable @collection={{collection}} @columns={{@model.columns}} />
     {{else}}
       <ul class="media-collection__grid media-collection__grid--{{@model.type}}-{{collection.format}}">
         {{#each @model.collection as |item|}}
