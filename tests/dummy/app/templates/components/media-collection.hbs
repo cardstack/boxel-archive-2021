@@ -50,7 +50,7 @@
     </header>
 
     {{#if (eq collection.format "table")}}
-      {{!-- Table here --}}
+      <CollectionTable @collection={{collection}} @columns={{@model.columns}} />
     {{else}}
       <ul class="media-collection__grid media-collection__grid--{{@model.type}}-{{collection.format}}">
         {{#each @model.collection as |item|}}

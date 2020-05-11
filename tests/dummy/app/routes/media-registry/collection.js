@@ -19,7 +19,42 @@ export default class MediaRegistryCollectionRoute extends Route {
     return {
       title: collectionId,
       type: 'collection',
-      collection: tracks
+      collection: tracks,
+      columns: [
+        {
+          name: 'Song Title',
+          valuePath: 'song_title',
+          isFixed: 'left',
+        },
+        {
+          name: 'Artist',
+          valuePath: 'artist',
+        },
+        {
+          name: 'Album',
+          valuePath: 'album'
+        },
+        {
+          name: 'Artwork',
+          valuePath: 'cover_art',
+        },
+        {
+          name: 'Type of Album',
+          valuePath: 'type_of_album',
+        },
+        {
+          name: 'Genre',
+          valuePath: 'genre',
+        },
+        {
+          name: 'Length',
+          valuePath: 'length',
+        },
+        {
+          name: 'Catalogs',
+          valuePath: 'catalog',
+        },
+      ],
     };
   }
 }

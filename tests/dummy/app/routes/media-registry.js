@@ -13,7 +13,30 @@ export default class MediaRegistryRoute extends Route {
       type: 'master-collection',
       logoURL: '/media-registry/bunny-logo.svg',
       company: 'Bunny Records',
-      collection
+      collection,
+      columns: [
+        {
+          name: 'Name',
+          valuePath: 'catalog_title',
+          isFixed: 'left',
+        },
+        {
+          name: 'Description',
+          valuePath: 'catalog_description',
+        },
+        {
+          name: 'Songs',
+          valuePath: 'number_of_songs'
+        },
+        {
+          name: 'Top Artists',
+          valuePath: 'top_artists',
+        },
+        {
+          name: 'Date Created',
+          valuePath: 'date_created',
+        },
+      ],
     };
   }
 }
