@@ -11,12 +11,15 @@
     <b.row class={{if b.rowValue.selected "is-selected"}} as |r|>
       <r.cell as |cell column row cellMeta columnMeta|>
         <Boxel>
-          <BoxelHighlight @on={{row.selected}} @class="media-collection-table__highlight" />
+          <BoxelHighlight {{on "click" (fn this.toggleSelect row)}} @on={{row.selected}} @class="media-collection-table__highlight" />
           <div class="media-collection-table__cell {{if (eq columnMeta.index 0) "media-collection-table__cell--first-col"}} {{if row.selected "row-group-selected"}}">
             {{#if (eq columnMeta.index 0)}}
               <SelectButton
+                {{on "click" (fn this.toggleSelect row)}}
                 @isSelected={{row.selected}}
+                @class="media-collection-table__select-btn {{if row.selected "media-collection-table__select-btn--selected"}}"
               />
+              <button class="media-collection-table__play-btn">{{svg-jar "play-btn-black" width="30px" height="30px"}}</button>
             {{/if}}
             <div class="media-collection-table__cell-value {{if (eq columnMeta.index 0) "media-collection-table__cell-value--first-col"}}">
               {{cell}}
