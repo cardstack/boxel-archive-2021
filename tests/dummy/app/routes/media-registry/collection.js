@@ -58,9 +58,8 @@ export default class MediaRegistryCollectionRoute extends Route {
           width: 250,
         },
         {
-          name: 'Catalogs',
-          valuePath: 'catalog',
-          width: 250,
+          width: 50,
+          isFixed: 'right'
         },
       ],
     };
