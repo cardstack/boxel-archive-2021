@@ -1,16 +1,14 @@
 import Controller from '@ember/controller';
+import { dasherize } from '@ember/string';
 
 export default class MediaRegistryItemController extends Controller {
-  musicalWork = [
-    {
-      title: 'musical work',
-      value: null
-    }
-  ];
+  set cardId(field) {
+    return String(dasherize(field.trim()));
+  }
 
   registrations = [
     {
-      title: 'verify registry',
+      title: 'verifi registry',
       value: null
     },
     {
@@ -99,23 +97,6 @@ export default class MediaRegistryItemController extends Controller {
     },
   ];
 
-  get writer() {
-    return {
-      title: this.model.artist,
-      imgURL: '/media-registry/profiles/pia-midina-round.svg',
-      fields: [
-        {
-          title: 'url',
-          value: 'www.piamidina.com'
-        },
-        {
-          title: 'no. of recordings',
-          value: 13
-        }
-      ]
-    };
-  }
-
   get headerDetailFields() {
     return [
       {
@@ -123,7 +104,7 @@ export default class MediaRegistryItemController extends Controller {
         value: 'BRN-19230-1239049'
       },
       {
-        title: 'verify id',
+        title: 'verifi id',
         value: '0x9b21…ca26'
       },
       {
@@ -210,5 +191,53 @@ export default class MediaRegistryItemController extends Controller {
         content: this.credits
       },
     ];
+  }
+
+  get writer() {
+    return {
+      id: this.cardId = this.model.artist,
+      type: 'profile',
+      title: this.model.artist,
+      imgURL: `/media-registry/profiles/${dasherize(this.model.artist)}.jpg`,
+      fields: [
+        {
+          title: 'url',
+          value: 'www.piamidina.com'
+        },
+        {
+          title: 'no. of recordings',
+          value: 13
+        }
+      ]
+    };
+  }
+
+  get musicalWork() {
+    return [
+      {
+        title: 'musical work',
+        value: {
+          id: this.cardId = this.model.song_title,
+          type: 'musical-work',
+          imgURL: '/media-registry/card-types/musical-work.svg',
+          title: this.model.song_title,
+          description: `by ${this.model.artist}, Miles Ponia`,
+          fields: [
+            {
+              title: 'writers',
+              value: `${this.model.artist} (1 more)`
+            },
+            {
+              title: 'iswc',
+              value: 'T-030248890-1'
+            },
+            {
+              title: 'verifi id',
+              value: '0x8a45...ab18'
+            }
+          ]
+        }
+      }
+    ]
   }
 }

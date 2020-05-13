@@ -33,8 +33,8 @@
           {{#each s.content as |field|}}
             <div class="item__field">
               <h4 class="item__field-title">{{humanize field.title}}</h4>
-              {{#if (eq field.type "card")}}
-                <Card @type="small" @model={{field.value}} />
+              {{#if field.value.id}}
+                <Card @variant="small" @model={{field.value}} />
               {{else if (is-array field.value)}}
                 <div class="item__field-value">
                   {{#each field.value as |val|}}

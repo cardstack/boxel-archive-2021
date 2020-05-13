@@ -158,3 +158,12 @@
 .item__field-value-title ~ .item__field-value-title {
   margin-top: 30px;
 }
+
+
+.boxel-card--musical-work .boxel-card__bg-img {
+  background-size: contain;
+}
+
+.boxel-card--profile .boxel-card__bg-img {
+  border-radius: 100px;
+}

@@ -9,6 +9,13 @@
   color: black;
   font: var(--boxel-font);
   letter-spacing: var(--boxel-lsp);
+  overflow: hidden;
+}
+
+.boxel-card ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 .boxel-card--small {
