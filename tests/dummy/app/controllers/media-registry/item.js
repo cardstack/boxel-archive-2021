@@ -1,30 +1,20 @@
 import Controller from '@ember/controller';
 
 export default class MediaRegistryItemController extends Controller {
-  recordingFieldNames = [
-    "song_title",
-    "writer",
-    "album",
-    "type_of_album",
-    "genre",
-    "length",
-    "owner",
-  ];
-
   musicalWork = [
     {
-      title: 'Musical Work',
+      title: 'musical work',
       value: null
     }
   ];
 
   registrations = [
     {
-      title: 'Verify Registry',
+      title: 'verify registry',
       value: null
     },
     {
-      title: 'Library of Congress',
+      title: 'library of congress',
       value: null
     }
   ];
@@ -113,27 +103,59 @@ export default class MediaRegistryItemController extends Controller {
   get headerDetailFields() {
     return [
       {
-        title: 'Catalog No.',
+        title: 'catalog no.',
         value: 'BRN-19230-1239049'
       },
       {
-        title: 'Verify Id',
+        title: 'verify id',
         value: '0x9b21…ca26'
       },
       {
-        title: 'Label',
+        title: 'label',
         value: this.model.owner
       },
-    ]
+    ];
   }
 
   get recordingDetails() {
-    return this.recordingFieldNames.map(field => {
-      return {
-        title: field,
-        value: this.model[field] || null
+    return [
+      {
+        title: 'title',
+        value: this.model.song_title
+      },
+      {
+        title: 'writer',
+        value: null
+      },
+      {
+        title: 'label',
+        value: this.model.owner
+      },
+      {
+        title: 'genre, sub genre',
+        value: this.model.genre
+      },
+      {
+        title: 'duration',
+        value: this.model.length
+      },
+      {
+        title: 'language performance',
+        value: 'English (en_US)'
+      },
+      {
+        title: 'recording year',
+        value: 2020
+      },
+      {
+        title: 'parental advisory',
+        value: 'No'
+      },
+      {
+        title: 'copyright notice',
+        value: `℗ 2020 ${this.model.owner}`
       }
-    });
+    ];
   }
 
   get detailSections() {
@@ -170,6 +192,6 @@ export default class MediaRegistryItemController extends Controller {
         title: "Credits",
         content: this.credits
       },
-    ]
+    ];
   }
 }
