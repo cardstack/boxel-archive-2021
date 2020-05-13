@@ -17,31 +17,42 @@
           <h1 class="item__title">{{@model.song_title}}</h1>
           <h2 class="item__artist">{{@model.artist}}</h2>
           <ul class="item__header-details">
-            <li>
-              <div class="item__header-field-title">Catalog No.</div>
-              <div class="item__header-field-value">BRN-19230-1239049</div>
-            </li>
-            <li>
-              <div class="item__header-field-title">Verify Id</div>
-              <div class="item__header-field-value">0x9b21…ca26</div>
-            </li>
-            <li>
-              <div class="item__header-field-title">Label</div>
-              <div class="item__header-field-value">{{@model.owner}}</div>
-            </li>
+            {{#each this.headerDetailFields as |field|}}
+              <li>
+                <div class="item__header-field-title">{{field.title}}</div>
+                <div class="item__header-field-value">{{field.value}}</div>
+              </li>
+            {{/each}}
           </ul>
         </div>
       </header>
 
-      <section class="item__section">
-        <h3 class="item__section-title">Recording Details</h3>
-        {{#each this.recordingFields as |field|}}
-          <div class="item__field">
-            <h4 class="item__field-title">{{humanize field.title}}</h4>
-            <div class="item__field-value">{{field.value}}</div>
-          </div>
-        {{/each}}
-      </section>
+      {{#each this.detailSections as |s|}}
+        <section class="item__section">
+          <h3 class="item__section-title">{{s.title}}</h3>
+          {{#each s.content as |field|}}
+            <div class="item__field">
+              <h4 class="item__field-title">{{humanize field.title}}</h4>
+              {{#if (is-array field.value)}}
+                <div class="item__field-value">
+                  {{#each field.value as |val|}}
+                    <div class="item__field-value-title">{{val.title}}</div>
+                    {{#if (is-array val.value)}}
+                      {{#each val.value as |vv|}}
+                        <div class="item__field-value-val">{{vv}}</div>
+                      {{/each}}
+                    {{else}}
+                      <div class="item__field-value">{{val.value}}</div>
+                    {{/if}}
+                  {{/each}}
+                </div>
+              {{else}}
+                <div class="item__field-value">{{field.value}}</div>
+              {{/if}}
+            </div>
+          {{/each}}
+        </section>
+      {{/each}}
     </section>
 
     <aside class="item__sidebar">
