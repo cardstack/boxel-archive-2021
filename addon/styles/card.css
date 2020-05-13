@@ -80,3 +80,7 @@
 .boxel-card__field-value {
   font: var(--boxel-font-sm);
 }
+
+.boxel-card__field-title + .boxel-card__field-value {
+  margin-top: 3px;
+}

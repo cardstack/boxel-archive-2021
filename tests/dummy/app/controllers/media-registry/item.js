@@ -99,6 +99,22 @@ export default class MediaRegistryItemController extends Controller {
     },
   ];
 
+  get writer() {
+    return {
+      title: this.model.artist,
+      imgURL: '/media-registry/profiles/pia-midina-round.svg',
+      fields: [
+        {
+          title: 'url',
+          value: 'www.piamidina.com'
+        },
+        {
+          title: 'no. of recordings',
+          value: 13
+        }
+      ]
+    };
+  }
 
   get headerDetailFields() {
     return [
@@ -125,7 +141,8 @@ export default class MediaRegistryItemController extends Controller {
       },
       {
         title: 'writer',
-        value: null
+        value: this.writer,
+        type: 'card',
       },
       {
         title: 'label',

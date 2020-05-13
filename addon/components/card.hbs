@@ -1,15 +1,15 @@
 {{!-- View Mode --}}
-<div class="boxel-card boxel-card--{{@type}} {{if @imgURL "boxel-card--with-img-left"}}">
-  {{#if @imgURL}}
-    <div class="boxel-card__bg-img" style={{css-url "background-image" @imgURL}} />
+<div class="boxel-card boxel-card--{{@type}} {{if @model.imgURL "boxel-card--with-img-left"}}">
+  {{#if @model.imgURL}}
+    <div class="boxel-card__bg-img" style={{css-url "background-image" @model.imgURL}} />
   {{/if}}
-  <h3 class="boxel-card__title">{{@title}}</h3>
-  {{#if @description}}
-    <p class="boxel-card__description">{{@description}}</p>
+  <h3 class="boxel-card__title">{{@model.title}}</h3>
+  {{#if @model.description}}
+    <p class="boxel-card__description">{{@model.description}}</p>
   {{/if}}
-  {{#if (and @fields (is-array @fields))}}
+  {{#if (and @model.fields (is-array @model.fields))}}
     <ul class="boxel-card__fields boxel-card__fields--collapsed">
-      {{#each @fields as |f|}}
+      {{#each @model.fields as |f|}}
         <li>
           <div class="boxel-card__field-title">{{f.title}}</div>
           <div class="boxel-card__field-value">{{f.value}}</div>
