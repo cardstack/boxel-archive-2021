@@ -1,37 +1,62 @@
-<section>
-  <header>
-    <img src="/media-registry/covers/{{@model.cover_art}}" alt="{{@model.album}} cover" width="258px" height="258px" />
-    <h2>{{@model.song_title}}</h2>
-    {{!-- isrc --}}
-  </header>
-  <div>
-    <div>
-      <h3>Album</h3>
-      <div>{{@model.album}}</div>
-    </div>
-    <div>
-      <h3>Album type</h3>
-      <div>{{@model.type_of_album}}</div>
-    </div>
-    <div>
-      <h3>Genre</h3>
-      <div>{{@model.genre}}</div>
-    </div>
-    <div>
-      <h3>Length</h3>
-      <div>{{@model.length}}</div>
-    </div>
+<div class="item__wrapper">
+  <div class="breadcrumbs">
+    <LinkTo @route="media-registry" @class="breadcrumbs__pill">Master Recordings</LinkTo>
+    <span class="breadcrumbs__carot" />
+    <span class="breadcrumbs__pill">Catalog</span>
+    <span class="breadcrumbs__carot" />
+    <span class="breadcrumbs__pill breadcrumbs__pill--current">Music Detail</span>
   </div>
-  <aside>
-    <h3>In these catalogs</h3>
-    <div>
-      {{#each @model.catalog as |catalog|}}
-        <div>
-          <LinkTo @route="media-registry.collection" @model={{dasherize (trim catalog)}}>
-            {{catalog}}
-          </LinkTo>
+
+  <section class="item__main">
+    <section class="item">
+      <header class="item__header">
+        <div class="item__header-content">
+          <div class="item__img" style={{css-url "background-image" (concat "/media-registry/covers/" @model.cover_art)}}>
+            <button class="item__play-btn">{{svg-jar "play-btn" width="60px" height="60px"}}</button>
+          </div>
+          <div class="item__title-info">
+            <h1 class="item__title">{{@model.song_title}}</h1>
+            <h2 class="item__artist">{{@model.artist}}</h2>
+          </div>
+          <ul class="item__header-details">
+            <li>
+              <div class="item__header-field-title">Catalog No.</div>
+              <div class="item__header-field-value">BRN-19230-1239049</div>
+            </li>
+            <li>
+              <div class="item__header-field-title">Verify Id</div>
+              <div class="item__header-field-value">0x9b21…ca26</div>
+            </li>
+            <li>
+              <div class="item__header-field-title">Label</div>
+              <div class="item__header-field-value">{{@model.owner}}</div>
+            </li>
+          </ul>
         </div>
-      {{/each}}
-    </div>
-  </aside>
-</section>
+      </header>
+
+      <section class="item__section">
+        <h3 class="item__section-title">Recording Details</h3>
+        {{#each-in @model as |title field|}}
+          <div class="item__field">
+            <h4 class="item__field-title">{{humanize title}}</h4>
+            <div class="item__field-value">{{field}}</div>
+          </div>
+        {{/each-in}}
+      </section>
+    </section>
+
+    <aside class="item__sidebar">
+      <h3 class="item__sidebar-title">In these catalogs</h3>
+      <div>
+        {{#each @model.catalog as |catalog|}}
+          <div>
+            <LinkTo @route="media-registry.collection" @model={{dasherize (trim catalog)}}>
+              {{catalog}}
+            </LinkTo>
+          </div>
+        {{/each}}
+      </div>
+    </aside>
+  </section>
+</div>
