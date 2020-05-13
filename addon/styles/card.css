@@ -2,13 +2,17 @@
   display: grid;
   align-items: center;
   gap: 3px 15px;
-  padding: 15px;
+  padding: 15px 30px 15px 15px;
   background-color: white;
   border: 1px solid #D1D1D1;
   border-radius: 5px;
   color: black;
   font: var(--boxel-font);
   letter-spacing: var(--boxel-lsp);
+}
+
+.boxel-card--small {
+  max-width: 450px;
 }
 
 .boxel-card__title {
@@ -21,5 +25,58 @@
 .boxel-card__description {
   margin: 0;
   color: #6B6A80;
+  font: var(--boxel-font-sm);
+}
+
+.boxel-card--with-img-left {
+  grid-template:
+  "img ."     auto
+  "img ."     auto
+  "img title" auto
+  "img desc"  auto
+  "img ."     auto
+  "img ."     auto / auto 1fr;
+}
+
+.boxel-card--with-img-left .boxel-card__title {
+  grid-area: title;
+  align-self: end;
+}
+
+.boxel-card--with-img-left .boxel-card__description {
+  grid-area: desc;
+  align-self: start;
+}
+
+.boxel-card__bg-img {
+  grid-column: 1;
+  grid-area: img;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.boxel-card__fields {
+  padding-top: 25px;
+  grid-column: 1 / -1;
+  display: grid;
+}
+
+.boxel-card__fields--collapsed {
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 40px;
+}
+
+.boxel-card__field-title {
+  color: #AFAFB7;
+  font: var(--boxel-font-xs);
+  font-weight: bold;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+}
+
+.boxel-card__field-value {
   font: var(--boxel-font-sm);
 }
