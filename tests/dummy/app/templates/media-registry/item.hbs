@@ -9,7 +9,7 @@
 
   <section class="item__main">
     <section class="item">
-      <header class="item__header">
+      <header class="item__header" {{blurhash-decoder @model.blur_img 945 370 1 bg=true}}>
         <div class="item__header-content">
           <div class="item__img" style={{css-url "background-image" (concat "/media-registry/covers/" @model.cover_art)}}>
             <button class="item__play-btn">{{svg-jar "play-btn" width="60px" height="60px"}}</button>
@@ -35,12 +35,12 @@
 
       <section class="item__section">
         <h3 class="item__section-title">Recording Details</h3>
-        {{#each-in @model as |title field|}}
+        {{#each this.recordingFields as |field|}}
           <div class="item__field">
-            <h4 class="item__field-title">{{humanize title}}</h4>
-            <div class="item__field-value">{{field}}</div>
+            <h4 class="item__field-title">{{humanize field.title}}</h4>
+            <div class="item__field-value">{{field.value}}</div>
           </div>
-        {{/each-in}}
+        {{/each}}
       </section>
     </section>
 

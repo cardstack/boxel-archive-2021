@@ -13,16 +13,16 @@
 }
 
 .item__header {
-  display: grid;
-  align-items: center;
-  justify-content: center;
   max-width: 945px;
+  max-height: 370px;
   padding: 60px 50px 50px;
-  background: gray;
+  background-image: var(--blurhash-image);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .item__header-content {
-  max-height: 370px;
+  max-height: 100%;
   display: grid;
   grid-template:
     "img title"   2fr
@@ -116,4 +116,13 @@
   grid-template-columns: 1fr 2fr;
   gap: 30px;
   padding: 20px 20px 30px;
+}
+
+
+.b-picture {
+  background-image: var(--blurhash-image);
+  min-width: 640px;
+  min-height: 480px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
