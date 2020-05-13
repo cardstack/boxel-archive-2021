@@ -1,0 +1,25 @@
+.boxel-card {
+  display: grid;
+  align-items: center;
+  gap: 3px 15px;
+  padding: 15px;
+  background-color: white;
+  border: 1px solid #D1D1D1;
+  border-radius: 5px;
+  color: black;
+  font: var(--boxel-font);
+  letter-spacing: var(--boxel-lsp);
+}
+
+.boxel-card__title {
+  margin: 0;
+  font: inherit;
+  font-weight: bold;
+  letter-spacing: inherit;
+}
+
+.boxel-card__description {
+  margin: 0;
+  color: #6B6A80;
+  font: var(--boxel-font-sm);
+}
