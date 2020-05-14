@@ -126,7 +126,6 @@
 .item__field {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  align-items: baseline;
   gap: 30px;
   padding: 20px 20px 30px;
 }
@@ -140,6 +139,8 @@
 }
 
 .item__field-value {
+  display: grid;
+  gap: 10px;
   font: var(--boxel-font);
   letter-spacing: var(--boxel-lsp-sm);
 }
@@ -149,10 +150,6 @@
   font: var(--boxel-font-sm);
   font-weight: 600;
   letter-spacing: 0.01em;
-}
-
-.item__field-value-val + .item__field-value-val {
-  margin-top: 10px;
 }
 
 .item__field-value-title ~ .item__field-value-title {
@@ -166,4 +163,10 @@
 
 .boxel-card--profile .boxel-card__bg-img {
   border-radius: 100px;
+}
+
+.boxel-card--file .boxel-card__bg-img {
+  height: 34px;
+  background-size: 27px 34px;
+  background-position: top center;
 }

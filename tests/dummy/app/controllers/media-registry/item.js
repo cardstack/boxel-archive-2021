@@ -6,17 +6,6 @@ export default class MediaRegistryItemController extends Controller {
     return String(dasherize(field.trim()));
   }
 
-  registrations = [
-    {
-      title: 'verifi registry',
-      value: null
-    },
-    {
-      title: 'library of congress',
-      value: null
-    }
-  ];
-
   keyDates = [
     {
       title: 'recording session date',
@@ -26,28 +15,6 @@ export default class MediaRegistryItemController extends Controller {
       title: 'original release date',
       value: 'Feb 17, 2020'
     }
-  ];
-
-  files = [
-    {
-      title: 'cover art',
-      value: null
-    },
-    {
-      title: 'booklet',
-      value: null
-    },
-    {
-      title: 'files',
-      value: null
-    },
-  ];
-
-  agreements = [
-    {
-      title: 'active',
-      value: null
-    },
   ];
 
   codes = [
@@ -70,32 +37,45 @@ export default class MediaRegistryItemController extends Controller {
     },
   ];
 
-  credits = [
-    {
-      title: 'main artist',
-      value: null
-    },
-    {
-      title: 'producer',
-      value: null
-    },
-    {
-      title: 'mastering engineer',
-      value: 'Joel Kaplan'
-    },
-    {
-      title: 'mixing engineer',
-      value: 'Mariah Solis'
-    },
-    {
-      title: 'recording engineer',
-      value: 'Ian Adams'
-    },
-    {
-      title: 'background singer',
-      value: 'Jenny Sparks'
-    },
-  ];
+  get artistCard() {
+    let artist = this.model.artist;
+    return {
+      id: this.cardId = artist,
+      type: 'profile',
+      title: artist,
+      imgURL: `/media-registry/profiles/${dasherize(artist)}.jpg`,
+      fields: [
+        {
+          title: 'url',
+          value: `www.piamidina.com`
+        },
+        {
+          title: 'no. of recordings',
+          value: 13
+        }
+      ]
+    };
+  }
+
+  get producerCard() {
+    let artist = 'Francesco Midina';
+    return {
+      id: this.cardId = artist,
+      type: 'profile',
+      title: artist,
+      imgURL: `/media-registry/profiles/${dasherize(artist)}.svg`,
+      fields: [
+        {
+          title: 'url',
+          value: `www.${dasherize(artist)}.com`
+        },
+        {
+          title: 'no. of recordings',
+          value: 2
+        }
+      ]
+    };
+  }
 
   get headerDetailFields() {
     return [
@@ -122,8 +102,7 @@ export default class MediaRegistryItemController extends Controller {
       },
       {
         title: 'writer',
-        value: this.writer,
-        type: 'card',
+        value: this.artistCard
       },
       {
         title: 'label',
@@ -193,25 +172,6 @@ export default class MediaRegistryItemController extends Controller {
     ];
   }
 
-  get writer() {
-    return {
-      id: this.cardId = this.model.artist,
-      type: 'profile',
-      title: this.model.artist,
-      imgURL: `/media-registry/profiles/${dasherize(this.model.artist)}.jpg`,
-      fields: [
-        {
-          title: 'url',
-          value: 'www.piamidina.com'
-        },
-        {
-          title: 'no. of recordings',
-          value: 13
-        }
-      ]
-    };
-  }
-
   get musicalWork() {
     return [
       {
@@ -219,7 +179,7 @@ export default class MediaRegistryItemController extends Controller {
         value: {
           id: this.cardId = this.model.song_title,
           type: 'musical-work',
-          imgURL: '/media-registry/card-types/musical-work.svg',
+          imgURL: '/media-registry/musical-work.svg',
           title: this.model.song_title,
           description: `by ${this.model.artist}, Miles Ponia`,
           fields: [
@@ -239,5 +199,162 @@ export default class MediaRegistryItemController extends Controller {
         }
       }
     ]
+  }
+
+  get registrations() {
+    return [
+      {
+        title: 'verifi registry',
+        value: {
+          id: 'verifi-registry',
+          type: 'registration',
+          imgURL: '/media-registry/verifi-logo.svg',
+          title: 'Verifi Registry',
+          fields: [
+            {
+              title: 'verifi id',
+              value: '0x9b21...ca26'
+            },
+            {
+              title: 'asset-type',
+              value: 'Master Recording'
+            },
+            {
+              title: 'created',
+              value: 'Feb 17, 2020'
+            },
+          ]
+        }
+      },
+      {
+        title: 'library of congress',
+        value: {
+          id: 'library-of-congress',
+          type: 'registration',
+          imgURL: '/media-registry/library-congress-logo.svg',
+          title: this.model.song_title,
+          fields: [
+            {
+              title: 'type of work',
+              value: 'Sound Recording (Form SR)'
+            },
+            {
+              title: 'registration no.',
+              value: 'SR0000320716'
+            },
+          ]
+        }
+      }
+    ];
+  }
+
+  get files() {
+    return [
+      {
+        title: 'cover art',
+        value: {
+          id: this.cardId = this.model.album,
+          type: 'cover-art',
+          imgURL: `/media-registry/covers/${this.model.cover_art}`,
+          title: this.model.album,
+          description: 'Created May 5, 2019',
+        }
+      },
+      {
+        title: 'booklet',
+        value: [
+          {
+            id: 'booklet-the-leaves-are-changing-color',
+            type: 'file',
+            imgURL: `/media-registry/file.svg`,
+            title: 'booklet-the-leaves-are-changing-color.pdf',
+            description: 'Created May 5, 2019',
+          },
+          {
+            id: 'booklet-the-leaves-are-changing-color-translated',
+            type: 'file',
+            imgURL: `/media-registry/file.svg`,
+            title: 'booklet-the-leaves-are-changing-color-translated.pdf',
+            description: 'Created May 5, 2019',
+          }
+        ]
+      },
+      {
+        title: 'files',
+        value: [
+          {
+            id: 'the-leaves-are-changing-color',
+            type: 'file',
+            imgURL: `/media-registry/file.svg`,
+            title: 'the-leaves-are-changing-color.aiff',
+            description: 'Created May 5, 2019',
+          },
+          {
+            id: 'booklet-the-leaves-are-changing-color-watermarked',
+            type: 'file',
+            imgURL: `/media-registry/file.svg`,
+            title: 'the-leaves-are-changing-color-watermarked.aiff',
+            description: 'Created May 5, 2019',
+          }
+        ]
+      },
+    ];
+  }
+
+  get agreements() {
+    return [
+      {
+        title: 'active',
+        value: {
+          id: 'exclusive-recording-agreement',
+          type: 'agreement',
+          imgURL: '/media-registry/bunny-records-logo.svg',
+          title: 'Exclusive Recording Agreement',
+          fields: [
+            {
+              title: 'assigner',
+              value: `${this.model.artist} (Ref)`
+            },
+            {
+              title: 'assignee',
+              value: `${this.model.owner} (Ref)`
+            },
+            {
+              title: 'active through',
+              value: 'Dec 2023'
+            }
+          ]
+        }
+      },
+    ];
+  }
+
+  get credits() {
+    return [
+      {
+        title: 'main artist',
+        value: this.artistCard
+      },
+      {
+        title: 'producer',
+        value: this.producerCard
+      },
+      {
+        title: 'mastering engineer',
+        value: 'Joel Kaplan'
+      },
+      {
+        title: 'mixing engineer',
+        value: 'Mariah Solis'
+      },
+      {
+        title: 'recording engineer',
+        value: 'Ian Adams'
+      },
+      {
+        title: 'background singer',
+        value: 'Jenny Sparks'
+      },
+    ];
   }
 }

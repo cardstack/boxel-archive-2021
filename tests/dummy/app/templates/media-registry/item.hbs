@@ -38,13 +38,17 @@
               {{else if (is-array field.value)}}
                 <div class="item__field-value">
                   {{#each field.value as |val|}}
-                    <div class="item__field-value-title">{{val.title}}</div>
-                    {{#if (is-array val.value)}}
+                    {{#if val.id}}
+                      <Card @variant="small" @model={{val}} />
+                    {{else if (is-array val.value)}}
+                      {{#if val.title}}
+                        <div class="item__field-value-title">{{val.title}}</div>
+                      {{/if}}
                       {{#each val.value as |vv|}}
                         <div class="item__field-value-val">{{vv}}</div>
                       {{/each}}
                     {{else}}
-                      <div class="item__field-value">{{val.value}}</div>
+                      <div class="item__field-value">{{val}}</div>
                     {{/if}}
                   {{/each}}
                 </div>
