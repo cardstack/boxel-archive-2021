@@ -1,0 +1,88 @@
+.item__section {
+  padding: 25px 50px;
+}
+
+.item__section + .item__section {
+  border-top: 1px solid #D1D1D1;
+}
+
+.item__section-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: calc(24/18);
+  letter-spacing: 0;
+  padding-bottom: 25px;
+}
+
+.item__field {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  padding: 20px 20px 30px;
+}
+
+.item__field-title {
+  font: var(--boxel-font-sm);
+  font-weight: bold;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.item__field-value {
+  display: grid;
+  gap: 10px;
+  font: var(--boxel-font);
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+.item__field-value-title {
+  padding-bottom: 10px;
+  font: var(--boxel-font-sm);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.item__field-value-title ~ .item__field-value-title {
+  margin-top: 30px;
+}
+
+
+/* Card field */
+.boxel-card--musical-work .boxel-card__bg-img {
+  background-size: contain;
+}
+
+.boxel-card--profile .boxel-card__bg-img {
+  border-radius: 100px;
+}
+
+.boxel-card--file .boxel-card__bg-img {
+  height: 34px;
+  background-size: 27px 34px;
+  background-position: top center;
+}
+
+
+/* Fields */
+.media-input-field {
+  max-width: 450px;
+  height: 50px;
+  padding: 15px;
+  background-color: white;
+  color: black;
+  border: 1px solid #D1D1D1;
+  border-radius: 5px;
+  font: var(--boxel-font);
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+.media-input-field:focus {
+  border-color: var(--boxel-highlight);
+  outline: 2px solid var(--boxel-highlight);
+  outline-offset: -3px;
+}
+
+.media-input-field:hover:not(:focus) {
+  border-color: #272330;
+}

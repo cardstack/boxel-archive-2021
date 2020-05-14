@@ -16,15 +16,19 @@
                   <div class="item__field-value-title">{{val.title}}</div>
                 {{/if}}
                 {{#each val.value as |vv|}}
-                  <div class="item__field-value-val">{{vv}}</div>
+                  <div>{{vv}}</div>
                 {{/each}}
               {{else}}
-                <div class="item__field-value">{{val}}</div>
+                <div>{{val}}</div>
               {{/if}}
             {{/each}}
           </div>
         {{else}}
-          <div class="item__field-value">{{field.value}}</div>
+          {{#if (eq @mode "edit")}}
+            <Input @class="media-input-field" @value={{field.value}} />
+          {{else}}
+            <div class="item__field-value">{{field.value}}</div>
+          {{/if}}
         {{/if}}
       </div>
     {{/each}}

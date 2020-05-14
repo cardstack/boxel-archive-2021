@@ -161,7 +161,7 @@ export default class MediaDetailComponent extends Component {
       },
       {
         title: 'copyright notice',
-        value: `â„— 2020 ${this.model.owner}`
+        value: `℗ 2020 ${this.model.owner}`
       }
     ];
   }
