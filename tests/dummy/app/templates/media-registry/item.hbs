@@ -8,7 +8,15 @@
   </div>
 
   <section class="item__main">
-    <section class="item">
+    <Boxel @tag="section" @class="item">
+      <BoxelActions
+        @class="media-collection__btn-overlay"
+        @displayHighlightActions={{true}}
+        @btnLeft="mode-btn"
+        @btnLeftContent="Edit"
+        @btnLeftAction={{this.transitionToEdit}}
+        @btnRight="version-history"
+      />
       <header class="item__header" {{blurhash-decoder @model.blur_img 945 370}}>
         <div class="item__header-content">
           <div class="item__img" style={{css-url "background-image" (concat "/media-registry/covers/" @model.cover_art)}}>
@@ -27,39 +35,8 @@
         </div>
       </header>
 
-      {{#each this.detailSections as |s|}}
-        <section class="item__section">
-          <h3 class="item__section-title">{{s.title}}</h3>
-          {{#each s.content as |field|}}
-            <div class="item__field">
-              <h4 class="item__field-title">{{humanize field.title}}</h4>
-              {{#if field.value.id}}
-                <Card @variant="small" @model={{field.value}} />
-              {{else if (is-array field.value)}}
-                <div class="item__field-value">
-                  {{#each field.value as |val|}}
-                    {{#if val.id}}
-                      <Card @variant="small" @model={{val}} />
-                    {{else if (is-array val.value)}}
-                      {{#if val.title}}
-                        <div class="item__field-value-title">{{val.title}}</div>
-                      {{/if}}
-                      {{#each val.value as |vv|}}
-                        <div class="item__field-value-val">{{vv}}</div>
-                      {{/each}}
-                    {{else}}
-                      <div class="item__field-value">{{val}}</div>
-                    {{/if}}
-                  {{/each}}
-                </div>
-              {{else}}
-                <div class="item__field-value">{{field.value}}</div>
-              {{/if}}
-            </div>
-          {{/each}}
-        </section>
-      {{/each}}
-    </section>
+      <MediaDetail @model={{@model}} />
+    </Boxel>
 
     <aside class="item__sidebar">
       <h3 class="item__sidebar-title">In these catalogs</h3>
