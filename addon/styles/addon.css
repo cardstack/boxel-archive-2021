@@ -2,6 +2,7 @@
   --boxel-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 
   --boxel-font-lg: 32px/calc(43/32) var(--boxel-font-family);
+  --boxel-font-med: 22px/calc(30/22) var(--boxel-font-family);
   --boxel-font: 16px/calc(22/16) var(--boxel-font-family);
   --boxel-font-sm: 13px/calc(18/13) var(--boxel-font-family);
   --boxel-font-xs: 11px/calc(15/11) var(--boxel-font-family);
