@@ -24,8 +24,6 @@
 
 /* Header */
 .item__header {
-  max-width: 945px;
-  max-height: 370px;
   padding: 60px 50px 50px;
   background-image: var(--blurhash-image);
   background-size: cover;
@@ -34,7 +32,8 @@
 }
 
 .item__header-content {
-  max-height: 100%;
+  max-width: 945px;
+  max-height: 370px;
   display: grid;
   grid-template:
     "img title"   2fr

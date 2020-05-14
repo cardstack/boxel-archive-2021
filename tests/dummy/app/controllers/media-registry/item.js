@@ -39,42 +39,50 @@ export default class MediaRegistryItemController extends Controller {
 
   get artistCard() {
     let artist = this.model.artist;
-    return {
-      id: this.cardId = artist,
-      type: 'profile',
-      title: artist,
-      imgURL: `/media-registry/profiles/${dasherize(artist)}.jpg`,
-      fields: [
-        {
-          title: 'url',
-          value: `www.piamidina.com`
-        },
-        {
-          title: 'no. of recordings',
-          value: 13
-        }
-      ]
-    };
+    if (artist === 'Pia Midina') {
+      return {
+        id: this.cardId = artist,
+        type: 'profile',
+        title: artist,
+        imgURL: `/media-registry/profiles/${dasherize(artist)}.jpg`,
+        fields: [
+          {
+            title: 'url',
+            value: `www.piamidina.com`
+          },
+          {
+            title: 'no. of recordings',
+            value: 13
+          }
+        ]
+      };
+    } else {
+      return artist;
+    }
   }
 
   get producerCard() {
     let artist = 'Francesco Midina';
-    return {
-      id: this.cardId = artist,
-      type: 'profile',
-      title: artist,
-      imgURL: `/media-registry/profiles/${dasherize(artist)}.svg`,
-      fields: [
-        {
-          title: 'url',
-          value: `www.${dasherize(artist)}.com`
-        },
-        {
-          title: 'no. of recordings',
-          value: 2
-        }
-      ]
-    };
+    if (this.model.artist === 'Pia Midina') {
+      return {
+        id: this.cardId = artist,
+        type: 'profile',
+        title: artist,
+        imgURL: `/media-registry/profiles/${dasherize(artist)}.svg`,
+        fields: [
+          {
+            title: 'url',
+            value: `www.${dasherize(artist)}.com`
+          },
+          {
+            title: 'no. of recordings',
+            value: 13
+          }
+        ]
+      };
+    } else {
+      return this.model.artist;
+    }
   }
 
   get headerDetailFields() {
