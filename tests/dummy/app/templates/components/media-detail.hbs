@@ -7,24 +7,52 @@
         {{#if field.value.id}}
           <Card @variant="small" @model={{field.value}} />
         {{else if (is-array field.value)}}
-          <div class="item__field-value">
-            {{#each field.value as |val|}}
-              {{#if val.id}}
-                <Card @variant="small" @model={{val}} />
-              {{else if (is-array val.value)}}
-                {{#if val.title}}
+          <div class="item__field-value {{if this.isEditMode "item__editor-platter"}}">
+            {{#let (filter-by "id" field.value) (filter-by "title" field.value) as |cardsArr verticalArr|}}
+              {{#if cardsArr.length}}
+                {{#each field.value as |val|}}
+                  <Card @variant="small" @model={{val}} />
+                {{/each}}
+              {{else if verticalArr.length}}
+                {{#each field.value as |val|}}
                   <div class="item__field-value-title">{{val.title}}</div>
-                {{/if}}
-                {{#each val.value as |vv|}}
-                  <div>{{vv}}</div>
+                  {{#if this.isEditMode}}
+                    <div class="item__editor-platter--taglist">
+                      {{#each val.value as |vv|}}
+                        <div class="item__pill">
+                          <span class="item__field-value">{{vv}}</span>
+                          <button class="item__remove-btn" aria-label="remove" />
+                        </div>
+                      {{/each}}
+                      <button class="item__add-btn" aria-label="add" />
+                    </div>
+                  {{else}}
+                    {{#each val.value as |vv|}}
+                      <div>{{vv}}</div>
+                    {{/each}}
+                  {{/if}}
                 {{/each}}
               {{else}}
-                <div>{{val}}</div>
+                {{#if this.isEditMode}}
+                  <div class="item__editor-platter--taglist">
+                    {{#each field.value as |val|}}
+                      <div class="item__pill">
+                        <span class="item__field-value">{{val}}</span>
+                        <button {{!--on "click" (fn this.removeItem item.id)--}} class="item__remove-btn" aria-label="remove" />
+                      </div>
+                    {{/each}}
+                    <button class="item__add-btn" aria-label="add" />
+                  </div>
+                {{else}}
+                  {{#each field.value as |val|}}
+                    {{val}}{{#if (has-next val field.value)}}, {{/if}}
+                  {{/each}}
+                {{/if}}
               {{/if}}
-            {{/each}}
+            {{/let}}
           </div>
         {{else}}
-          {{#if (eq @mode "edit")}}
+          {{#if this.isEditMode}}
             <Input @class="media-input-field" @value={{field.value}} />
           {{else}}
             <div class="item__field-value">{{field.value}}</div>

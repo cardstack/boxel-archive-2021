@@ -4,6 +4,7 @@ import { dasherize } from '@ember/string';
 
 export default class MediaDetailComponent extends Component {
   @tracked model = this.args.model;
+  @tracked isEditMode = this.args?.mode === 'edit';
 
   set cardId(field) {
     return String(dasherize(field.trim()));
@@ -137,11 +138,11 @@ export default class MediaDetailComponent extends Component {
       },
       {
         title: 'label',
-        value: this.model.owner
+        value: [ this.model.owner ]
       },
       {
         title: 'genre, sub genre',
-        value: this.model.genre
+        value: [ this.model.genre, 'Dream Pop' ]
       },
       {
         title: 'duration',

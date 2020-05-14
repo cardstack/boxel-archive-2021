@@ -13,6 +13,8 @@
   --boxel-lsp: 0.025em;
   --boxel-lsp-sm: 0.015em;
 
+  --boxel-border-color: #d1d1d1;
+  --boxel-border: 1px solid var(--boxel-border-color);
   --boxel-highlight: #00ebe5;
   --boxel-highlight-hover: #00b0ad;
 
