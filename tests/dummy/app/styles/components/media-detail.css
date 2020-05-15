@@ -127,8 +127,9 @@
   border: none;
   background: url('/assets/images/icons/icon-minus-circle.svg') center/16px 16px no-repeat;
 }
+
 .item__add-btn {
-  background-image: url('/assets/images/icons/icon-plus-circle.svg');
+  background-image: url('/assets/images/icons/icon-plus-circle-highlight-bg.svg');
   position: absolute;
   top: 5px;
   right: -12px;
