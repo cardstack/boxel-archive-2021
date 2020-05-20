@@ -2,68 +2,56 @@
   {{#if (eq @mode "edit")}}
     {{!-- Edit Mode --}}
     {{#if (or @field.value.id (is-array @field.value))}}
-      {{!-- Collection or tagList --}}
       <div class="field-renderer {{@class}}">
-        <div class="field-renderer__title">{{humanize @field.title}}</div>
+        <h4 class="field-renderer__title">{{humanize @field.title}}</h4>
         {{#if @field.value.id}}
-          {{!-- Single-card-only collection (BelongsTo field) --}}
-          {{!-- Card format can be grid or list view --}}
-          <div class="item__editor-card-platter">
-            <div class="item__inner-platter item__inner-platter--{{@field.value.format}}">
-              <Card @variant="small" @model={{@field.value}} @mode="view" />
-              <button {{!--on "click" (fn this.removeItem item.id)--}} class="item__remove-btn" aria-label="remove" />
-            </div>
-          </div>
+          <CollectionField
+            @belongsToField={{true}}
+            @collection={{@field.value}}
+            @format={{@field.format}}
+            @mode="edit"
+          />
         {{else}}
           {{#let (filter-by "id" @field.value) (filter-by "title" @field.value) as |collection multiTagList|}}
             {{#if collection.length}}
-              {{!-- Collections --}}
-              {{!-- Format can be grid or list --}}
-              <div class="item__editor-card-platter">
-                <div>{{@field.title}}</div>
-                <div class="collection--{{or @field.format "list"}}">
-                  {{#each @field.value as |val|}}
-                    <div class="item__inner-platter item__inner-platter--{{val.format}}">
-                      <Card @variant="small" @model={{val}} @mode="view" @format={{val.format}} />
-                      <button class="item__remove-btn" aria-label="remove" />
-                    </div>
-                  {{/each}}
-                </div>
-                <button aria-label="add">Add</button>
-              </div>
+              <CollectionField
+                @collection={{collection}}
+                @format={{@field.format}}
+                @title={{@field.title}}
+                @mode="edit"
+              />
             {{else if multiTagList.length}}
               {{!-- Taglist with multiple sections --}}
-              <div>
+              <div class="field-renderer__group">
                 {{#each @field.value as |val|}}
-                  <div class="item__field-value-title item__field-value-title--edit">{{val.title}}</div>
-                  <div class="item__editor-platter item__editor-platter--taglist">
+                  <div class="field-renderer__taglist-title">{{val.title}}</div>
+                  <ul class="field-renderer__taglist-editor field-renderer__taglist-editor--vertical">
                     {{#each val.value as |vv|}}
-                      <div class="item__pill">
+                      <li class="item__pill">
                         <span>{{vv}}</span>
                         <button class="item__remove-btn" aria-label="remove" />
-                      </div>
+                      </li>
                     {{/each}}
                     <button class="item__add-btn" aria-label="add" />
-                  </div>
+                  </ul>
                 {{/each}}
               </div>
             {{else}}
               {{!-- Horizontal tagList --}}
-              <div class="item__editor-platter item__editor-platter--taglist">
+              <ul class="field-renderer__taglist-editor">
                 {{#each @field.value as |val|}}
-                  <div class="item__pill">
+                  <li class="item__pill">
                     <span>{{val}}</span>
                     <button class="item__remove-btn" aria-label="remove" />
-                  </div>
+                  </li>
                 {{/each}}
                 <button class="item__add-btn" aria-label="add" />
-              </div>
+              </ul>
             {{/if}}
           {{/let}}
         {{/if}}
       </div>
     {{else}}
-      {{!-- Input field --}}
       <label class="field-renderer">
         <div class="field-renderer__title">{{humanize @field.title}}</div>
         <div class="field-renderer__value">
@@ -78,7 +66,7 @@
       </label>
     {{/if}}
   {{else}}
-    {{!-- Default: View Mode --}}
+    {{!-- View Mode --}}
     <div class="field-renderer {{@class}}">
       <div class="field-renderer__title">{{humanize @field.title}}</div>
       <Boxel @class="field-renderer__value">
@@ -101,7 +89,7 @@
                 {{/each}}
               {{else if multiTagList.length}}
                 {{#each @field.value as |val|}}
-                  <div class="item__field-value-title">{{val.title}}</div>
+                  <div class="field-renderer__taglist-title">{{val.title}}</div>
                   {{#each val.value as |vv|}}
                     <div>{{vv}}</div>
                   {{/each}}
