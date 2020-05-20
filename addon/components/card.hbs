@@ -1,5 +1,4 @@
-{{!-- View Mode --}}
-<div class="boxel-card boxel-card--{{@variant}} boxel-card--{{@mode}} boxel-card--{{@model.type}} boxel-card--{{or @model.format "list"}} {{if @model.imgURL "boxel-card--with-img-left"}}">
+<div class="boxel-card boxel-card--{{@variant}} boxel-card--{{@mode}} boxel-card--{{@model.type}} boxel-card--{{or @format "list"}} {{if @model.imgURL "boxel-card--with-img"}}">
   {{#if @model.imgURL}}
     <div class="boxel-card__bg-img" style={{css-url "background-image" @model.imgURL}} />
   {{/if}}

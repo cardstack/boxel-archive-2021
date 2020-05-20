@@ -1,9 +1,9 @@
 <Boxel>
   <div class="collection-field">
     {{#if @belongsToField}}
-      <div class="collection-field__item collection-field__item--belongs-to">
+      <div class="collection-field__item collection-field__item--{{or @format "list"}} collection-field__item--belongs-to">
         <Card @variant="small" @model={{@collection}} @mode="view" @format={{@format}} />
-        <button class="item__remove-btn" aria-label="remove" />
+        <IconButton @icon="icon-minus-circle" @class="collection-field__remove-btn" @aria-label="remove" />
       </div>
     {{else}}
       {{#if (gt @collection.length 1)}}
@@ -30,7 +30,7 @@
       {{/if}}
       <div class="collection-field__items collection-field__items--{{or @format "list"}}">
         {{#each @collection as |item|}}
-          <div class="collection-field__item {{if (gt @collection.length 1) "collection-field__item--multiple" "collection-field__item--single"}}">
+          <div class="collection-field__item collection-field__item--{{or @format "list"}} {{if (gt @collection.length 1) "collection-field__item--multiple" "collection-field__item--single"}}">
             {{#if (gt @collection.length 1)}}
               <SelectButton
                 {{!-- {{on "click" (fn this.toggleSelect item)}} --}}
@@ -39,8 +39,8 @@
                 @mode="edit"
               />
             {{/if}}
-            <Card @variant="small" @model={{item}} @mode="view" @format={{item.format}} />
-            <button class="item__remove-btn" aria-label="remove" />
+            <Card @class="collection-field__card" @variant="small" @model={{item}} @mode="view" @format={{@format}} />
+            <IconButton @icon="icon-minus-circle" @class="collection-field__remove-btn" @aria-label="remove" />
           </div>
         {{/each}}
       </div>
