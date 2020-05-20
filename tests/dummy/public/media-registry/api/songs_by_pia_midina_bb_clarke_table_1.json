@@ -52,11 +52,17 @@
       },
       {
         "title": "a-day-to-sing.aiff",
-        "date": "2019-04-23"
+        "date": "2019-04-23",
+        "bitrate": "24-bit / 96 kHz",
+        "duration": "3:11",
+        "img": "media-registry/waveforms/a-day-to-sing-waveform.png"
       },
       {
         "title": "a-day-to-sing-watermarked.aiff",
-        "date": "2019-04-23"
+        "date": "2019-04-23",
+        "bitrate": "24-bit / 96 kHz",
+        "duration": "3:11",
+        "img": "media-registry/waveforms/a-day-to-sing-waveform.png"
       }
     ],
     "isrc": [

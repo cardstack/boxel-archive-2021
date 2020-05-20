@@ -203,11 +203,26 @@ export default class MediaDetailComponent extends Component {
     if (files && files.length) {
       filesArr = files.map(file => {
         let type = file.title.toLowerCase().trim().split('.')[1] || 'file';
+        if (type === 'aiff') {
+          return {
+            id: file.title,
+            title: file.title,
+            type,
+            imgURL: '/media-registry/file.svg',
+            fields: [
+              {
+                title: 'bitrate',
+                value: file.bitrate
+              }
+            ]
+          }
+        }
+
         return {
           id: file.title,
           title: file.title,
           type,
-          imgURL: type === 'pdf' ? this.model.cover_art : '/media-registry/file.svg',
+          imgURL: this.model.cover_art || '/media-registry/file.svg',
           description: 'Created',
           descriptionDate: file.date
         }
