@@ -3,15 +3,21 @@ import { action } from '@ember/object';
 import { dasherize } from '@ember/string';
 
 export default class MediaRegistryItemController extends Controller {
+  truncatedVerifiId = function(id) {
+    if (id) {
+      return `${id.slice(0, 6)}...${id.slice(-4)}`;
+    }
+  };
+
   get headerDetailFields() {
     return [
       {
         title: 'catalog no.',
-        value: 'BRN-19230-1239049'
+        value: this.model?.details?.catalog_no
       },
       {
         title: 'verifi id',
-        value: '0x9b21…ca26'
+        value: this.truncatedVerifiId(this.model?.details?.verifi_id)
       },
       {
         title: 'label',

@@ -16,7 +16,7 @@
 
 /* Header + sections */
 .item {
-  padding-bottom: 145px;
+  padding-bottom: 65px;
   background-color: white;
   border-radius: 10px;
 }
@@ -90,7 +90,17 @@
   letter-spacing: var(--boxel-lsp);
 }
 
-.item__header-field-title {
+
+/* Sent to field renderer */
+.item-header-field.field-renderer {
+  grid-template-columns: auto;
+  gap: 3px;
+  padding: 0;
+  justify-items: start;
+  white-space: nowrap;
+}
+
+.item-header-field .field-renderer__title {
   color: white;
   font: var(--boxel-font-xs);
   font-weight: bold;
@@ -98,7 +108,7 @@
   text-transform: uppercase;
 }
 
-.item__header-field-value {
+.item-header-field .field-renderer__value {
   color: white;
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);

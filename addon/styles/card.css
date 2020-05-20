@@ -19,6 +19,7 @@
 }
 
 .boxel-card--small {
+  width: 100%;
   max-width: 450px;
 }
 
@@ -76,7 +77,20 @@
   gap: 40px;
 }
 
-.boxel-card__field-title {
+.boxel-card--edit .boxel-card__fields--collapsed {
+  gap: 30px;
+}
+
+
+/* Sent to Field Renderer */
+.boxel-card-field.field-renderer {
+  grid-template-columns: auto;
+  gap: 3px;
+  padding: 0;
+  justify-items: start;
+}
+
+.boxel-card-field .field-renderer__title {
   color: #AFAFB7;
   font: var(--boxel-font-xs);
   font-weight: bold;
@@ -84,10 +98,6 @@
   text-transform: uppercase;
 }
 
-.boxel-card__field-value {
+.boxel-card-field .field-renderer__value {
   font: var(--boxel-font-sm);
-}
-
-.boxel-card__field-title + .boxel-card__field-value {
-  margin-top: 3px;
 }

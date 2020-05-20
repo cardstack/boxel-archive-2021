@@ -1,50 +1,25 @@
-.item__section {
-  padding: 25px 50px;
+.media-detail-section {
+  display: grid;
+  gap: 10px;
+  padding: 25px 50px 60px;
 }
 
-.item__section + .item__section {
+.media-detail-section + .media-detail-section {
   border-top: var(--boxel-border);
 }
 
-.item__section-title {
+.media-detail-section__title {
   font-size: 18px;
   font-weight: 600;
   line-height: calc(24/18);
   letter-spacing: 0;
-  padding-bottom: 25px;
-}
-
-.item__field {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 30px;
-  padding: 20px 20px 30px;
-}
-
-.item__field-title {
-  font: var(--boxel-font-sm);
-  font-weight: bold;
-  letter-spacing: var(--boxel-lsp-xl);
-  text-transform: uppercase;
-  text-align: right;
-}
-
-.item__field-value {
-  display: grid;
-  gap: 10px;
-  font: var(--boxel-font);
-  letter-spacing: var(--boxel-lsp-sm);
+  padding-bottom: 5px;
 }
 
 .item__field-value-title {
-  padding-bottom: 10px;
   font: var(--boxel-font-sm);
   font-weight: 600;
   letter-spacing: 0.01em;
-}
-
-.item__field-value-title ~ .item__field-value-title {
-  margin-top: 30px;
 }
 
 
@@ -57,37 +32,13 @@
   border-radius: 100px;
 }
 
+.boxel-card--aiff .boxel-card__bg-img,
 .boxel-card--file .boxel-card__bg-img {
   height: 34px;
   background-size: 27px 34px;
   background-position: top center;
 }
 
-
-/* Edit Mode */
-
-/* Fields */
-.media-input-field {
-  max-width: 450px;
-  height: 50px;
-  padding: 15px;
-  background-color: white;
-  color: black;
-  border: var(--boxel-border);
-  border-radius: 5px;
-  font: var(--boxel-font);
-  letter-spacing: var(--boxel-lsp-sm);
-}
-
-.media-input-field:focus {
-  border-color: var(--boxel-highlight);
-  outline: 2px solid var(--boxel-highlight);
-  outline-offset: -3px;
-}
-
-.media-input-field:hover:not(:focus) {
-  border-color: #272330;
-}
 
 /* Array list */
 .item__editor-platter {
@@ -100,12 +51,68 @@
   text-align: left;
 }
 
+/* remove btn on the right */
+.item__editor-card-platter {
+  max-width: 450px;
+  min-height: 50px;
+  background-color: #F0F0F0;
+  border: none;
+  border-radius: 5px;
+}
+
+.collection--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 210px);
+  gap: 10px;
+}
+
+.item__inner-platter {
+  display: grid;
+  grid-template-columns: 1fr 45px;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: 10px 0 10px 10px;
+}
+
+/* remove btn at the bottom */
+.item__inner-platter--grid {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 45px;
+  padding: 10px 10px 0;
+}
+
+.boxel-card--edit.boxel-card--grid {
+  grid-template: "img" "title" "desc";
+  padding: 10px;
+  justify-items: center;
+  width: 210px;
+  min-height: 285px;
+}
+
+.boxel-card--edit.boxel-card--grid .boxel-card__bg-img {
+  width: 188px;
+  height: 188px;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
 .item__editor-platter--taglist {
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(40%, max-content));
   gap: 5px;
   padding-right: 30px;
+}
+
+.item__field-value-title--edit {
+  padding-bottom: 10px;
+}
+
+.item__field-value-title--edit ~ .item__field-value-title--edit {
+  margin-top: 10px;
 }
 
 .item__pill {
@@ -131,6 +138,6 @@
 .item__add-btn {
   background-image: url('/assets/images/icons/icon-plus-circle-highlight-bg.svg');
   position: absolute;
-  top: 5px;
-  right: -12px;
+  top: 15px;
+  right: 0;
 }

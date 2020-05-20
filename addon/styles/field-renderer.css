@@ -1,0 +1,83 @@
+.field-renderer {
+  display: grid;
+  grid-template-columns: minmax(auto, 200px) minmax(auto, 450px);
+  gap: 30px;
+  padding: 10px;
+}
+
+.field-renderer__title {
+  font: var(--boxel-font-sm);
+  font-weight: bold;
+  letter-spacing: var(--boxel-lsp-xl);
+  line-height: 22px;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.field-renderer__value {
+  display: grid;
+  gap: 10px 0;
+  width: 100%;
+  font: var(--boxel-font);
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+
+/* Edit Mode */
+.field-renderer__input {
+  width: 100%;
+  height: 50px;
+  padding: 15px;
+  background-color: white;
+  color: black;
+  border: var(--boxel-border);
+  border-radius: 5px;
+  font: var(--boxel-font);
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+.field-renderer__input:focus {
+  border-color: var(--boxel-highlight);
+  outline: 2px solid var(--boxel-highlight);
+  outline-offset: -3px;
+}
+
+.field-renderer__input:hover:not(:focus) {
+  border-color: #272330;
+}
+
+.field-renderer__input.field-renderer__textarea {
+  height: 126px;
+}
+
+/* Dropdown */
+.field-renderer__dropdown .cs-dropdown {
+  --cs-font-family: var(--boxel-font-family);
+  --cs-font: var(--boxel-font);
+}
+.field-renderer__dropdown .cs-dropdown .ember-power-select-trigger {
+  width: 100%;
+  padding: 15px;
+  border: var(--boxel-border);
+  transition: none;
+}
+.field-renderer__dropdown .cs-dropdown .ember-power-select-trigger:hover {
+  --cs-field-border: #272330;
+  border-color: #272330;
+}
+.field-renderer__dropdown .cs-dropdown:focus-within .ember-power-select-trigger {
+  border-color: var(--boxel-highlight);
+  outline: 2px solid var(--boxel-highlight);
+  outline-offset: -3px;
+}
+.field-renderer__dropdown .cs-dropdown .ember-power-select-selected-item {
+  color: #393642;
+  letter-spacing: var(--boxel-lsp);
+}
+.field-renderer__dropdown .cs-dropdown .ember-power-select-option {
+  color: #393642;
+  letter-spacing: var(--boxel-lsp);
+}
+.field-renderer__dropdown .cs-dropdown .ember-power-select-status-icon {
+  background: url('/assets/images/icons/dropdown-arrows.svg') center/contain no-repeat;
+}

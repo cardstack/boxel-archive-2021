@@ -1,18 +1,21 @@
 {{!-- View Mode --}}
-<div class="boxel-card boxel-card--{{@variant}} boxel-card--{{@model.type}} {{if @model.imgURL "boxel-card--with-img-left"}}">
+<div class="boxel-card boxel-card--{{@variant}} boxel-card--{{@mode}} boxel-card--{{@model.type}} boxel-card--{{or @model.format "list"}} {{if @model.imgURL "boxel-card--with-img-left"}}">
   {{#if @model.imgURL}}
     <div class="boxel-card__bg-img" style={{css-url "background-image" @model.imgURL}} />
   {{/if}}
   <h3 class="boxel-card__title">{{@model.title}}</h3>
   {{#if @model.description}}
-    <p class="boxel-card__description">{{@model.description}}</p>
+    <p class="boxel-card__description">{{@model.description}} {{#if @model.descriptionDate}}{{moment-format @model.descriptionDate "MMM DD, YYYY" "YYYY-MM-DD"}}{{/if}}</p>
   {{/if}}
   {{#if (and @model.fields (is-array @model.fields))}}
     <ul class="boxel-card__fields boxel-card__fields--collapsed">
-      {{#each @model.fields as |f|}}
+      {{#each @model.fields as |field|}}
         <li>
-          <div class="boxel-card__field-title">{{f.title}}</div>
-          <div class="boxel-card__field-value">{{f.value}}</div>
+          <FieldRenderer
+            @class="boxel-card-field"
+            @mode={{@mode}}
+            @field={{field}}
+          />
         </li>
       {{/each}}
     </ul>

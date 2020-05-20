@@ -27,15 +27,18 @@
           <ul class="item__header-details">
             {{#each this.headerDetailFields as |field|}}
               <li>
-                <div class="item__header-field-title">{{field.title}}</div>
-                <div class="item__header-field-value">{{field.value}}</div>
+                <FieldRenderer
+                  @class="item-header-field"
+                  @mode="view"
+                  @field={{field}}
+                />
               </li>
             {{/each}}
           </ul>
         </div>
       </header>
 
-      <MediaDetail @model={{@model}} />
+      <MediaDetail @model={{@model}} @mode="view" />
     </Boxel>
 
     <aside class="item__sidebar">
