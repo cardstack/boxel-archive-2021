@@ -3,7 +3,7 @@ import { dasherize } from '@ember/string';
 import { fetchCollection } from 'dummy/media';
 
 export default class MediaRegistryItemRoute extends Route {
-  async model({ itemId }) {
+  async model({ itemId }, transition) {
     const records = await fetchCollection('bunny_records_tracks');
     const recordDetails = await fetchCollection('songs_by_pia_midina_bb_clarke_table_1');
     const profiles = await fetchCollection('profiles');
@@ -33,6 +33,10 @@ export default class MediaRegistryItemRoute extends Route {
 
       record.producer = producer;
       record.details = recordDetail;
+    }
+
+    if (transition && transition?.from?.parent?.params?.collectionId) {
+      record.fromCollectionId = transition.from.parent.params.collectionId;
     }
 
     return record;

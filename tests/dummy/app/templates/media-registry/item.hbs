@@ -1,8 +1,12 @@
 <div class="item__wrapper">
   <div class="breadcrumbs">
     <LinkTo @route="media-registry" @class="breadcrumbs__pill">Master Recordings</LinkTo>
-    <span class="breadcrumbs__carot" />
-    <span class="breadcrumbs__pill">Catalog</span>
+    {{#if @model.fromCollectionId}}
+      <span class="breadcrumbs__carot" />
+      <LinkTo @route="media-registry.collection" @model={{@model.fromCollectionId}} @class="breadcrumbs__pill">
+        {{titleize (humanize @model.fromCollectionId)}}
+      </LinkTo>
+    {{/if}}
     <span class="breadcrumbs__carot" />
     <span class="breadcrumbs__pill breadcrumbs__pill--current">Music Detail</span>
   </div>
