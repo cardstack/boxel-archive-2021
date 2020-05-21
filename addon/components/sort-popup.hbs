@@ -1,0 +1,10 @@
+{{#if @sortColumns.length}}
+  <MediaCollection::Button @button="sort">
+    <ul>
+      {{#each @sortColumns as |column|}}
+        <SortPopup::Item @sort={{@sort}} @column={{column}} @direction="asc" @sortColumn={{@sortColumn}} @sortDirection={{@sortDirection}}/>
+        <SortPopup::Item @sort={{@sort}} @column={{column}} @direction="desc" @sortColumn={{@sortColumn}} @sortDirection={{@sortDirection}}/>
+      {{/each}}
+    </ul>
+  </MediaCollection::Button>
+{{/if}}
