@@ -41,7 +41,7 @@
     },
     "recording_date": "2019-01-10",
     "original_release_date": "2019-04-03",
-    "files": [
+    "booklets" : [
       {
         "title": "booklet-a-day-to-sing.pdf",
         "date": "2019-02-19"
@@ -49,7 +49,9 @@
       {
         "title": "booklet-a-day-to-sing-translated.pdf",
         "date": "2019-02-19"
-      },
+      }
+    ],
+    "audio_files" : [
       {
         "title": "a-day-to-sing.aiff",
         "date": "2019-04-23",

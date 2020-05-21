@@ -197,66 +197,68 @@ export default class MediaDetailComponent extends Component {
     ];
   }
 
-  get formattedFiles() {
-    let filesArr = [];
-    let files = this.model?.details?.files;
-    if (files && files.length) {
-      filesArr = files.map(file => {
-        let type = file.title.toLowerCase().trim().split('.')[1] || 'file';
-        if (type === 'aiff') {
-          return {
-            id: file.title,
-            title: file.title,
-            type,
-            imgURL: '/media-registry/file.svg',
-            fields: [
-              {
-                title: 'bitrate',
-                value: file.bitrate
-              }
-            ]
-          }
-        }
+  coverArtCard = {
+    id: this.cardId(this.model.album),
+    name: 'cover-art',
+    fields: {
+      title: this.model.album,
+      imgURL: this.model.cover_art,
+      date: '2019-02-19'
+    },
+  }
 
-        return {
-          id: file.title,
+  get bookletCards() {
+    let booklets = this.model?.details?.booklets;
+    if (!booklets) { return null; }
+    return booklets.map(file => {
+      return {
+        id: this.cardId(file.title),
+        name: 'booklet',
+        fields: {
           title: file.title,
-          type,
-          imgURL: this.model.cover_art || '/media-registry/file.svg',
-          description: 'Created',
-          descriptionDate: file.date
+          imgURL: this.model.cover_art,
+          date: file.date
         }
-      });
-    }
-    return filesArr;
+      }
+    });
+  }
+
+  get audioFileCards() {
+    let audioFiles = this.model?.details?.audio_files;
+    if (!audioFiles) { return null; }
+    return audioFiles.map(file => {
+      return {
+        id: this.cardId(file.title),
+        name: 'audio-file',
+        fields: {
+          title: file.title,
+          imgURL: '/media-registry/file.svg',
+          bitrate: file.bitrate,
+          date: file.date
+        }
+      }
+    })
   }
 
   get files() {
-    let pdfFiles = this?.formattedFiles.filter(file => file.type === 'pdf');
-    let audioFiles = this?.formattedFiles.filter(file => file.type === 'aiff');
-
     return [
       {
         title: 'cover art',
         format: 'grid',
-        value: {
-          id: this.cardId(this.model.album),
-          type: 'cover-art',
-          imgURL: this.model.cover_art,
-          title: this.model.album,
-          description: 'Created',
-          descriptionDate: '2019-02-19'
-        }
+        type: 'card',
+        value: this.coverArtCard
       },
       {
         title: 'booklet',
         format: 'grid',
-        value: pdfFiles
+        type: 'collection',
+        value: this.bookletCards
       },
       {
         title: 'files',
-        value: audioFiles
-      },
+        type: 'collection',
+        value: this.audioFileCards
+      }
     ];
   }
 

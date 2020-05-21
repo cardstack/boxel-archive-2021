@@ -10,6 +10,11 @@
   font: var(--boxel-font);
   letter-spacing: var(--boxel-lsp);
   overflow: hidden;
+  transition: box-shadow var(--boxel-transition);
+}
+
+.boxel-card:hover {
+  box-shadow: var(--boxel-box-shadow);
 }
 
 .boxel-card ul {
@@ -92,8 +97,7 @@
   border-radius: 100px;
 }
 
-.boxel-card--aiff .boxel-card__bg-img,
-.boxel-card--file .boxel-card__bg-img {
+.boxel-card--audio-file .boxel-card__bg-img {
   height: 34px;
   background-size: 27px 34px;
   background-position: top center;
