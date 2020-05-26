@@ -1,0 +1,34 @@
+[
+  {
+    "id": "pia-midina",
+    "type": "profile",
+    "title": "Pia Midina",
+    "imgURL": "/boxel/media-registry/profiles/Pia-Midina-d0666ed3d57f7e3dd19484eeb17068f0.jpg",
+    "fields": [
+      {
+        "title": "website",
+        "value": "www.piamidina.com"
+      },
+      {
+        "title": "no. of recordings",
+        "value": 17
+      }
+    ]
+  },
+  {
+    "id": "francesco-midina",
+    "type": "profile",
+    "title": "Francesco Midina",
+    "imgURL": "/boxel/media-registry/profiles/francesco-midina-1bf52ed4c5a43427511f5502a3f11cb2.jpg",
+    "fields": [
+      {
+        "title": "website",
+        "value": "www.fmidina.com"
+      },
+      {
+        "title": "no. of recordings",
+        "value": 20
+      }
+    ]
+  }
+]
