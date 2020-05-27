@@ -1,10 +1,10 @@
 .media-collection-table {
   --table-border-color: #dedede;
   --cell-height: 60px;
-
+  height: calc(100% - 150px);
+  padding-bottom: 70px;
+  background-color: white;
   z-index: 1;
-  height: calc(100% - 180px);
-  padding-bottom: 30px;
 }
 
 .media-collection-table > table {
@@ -181,10 +181,9 @@ tr.is-selected + tr.is-selected .media-collection-table__highlight.boxel-highlig
 .media-collection-table--edit {
   padding-left: 50px;
   padding-right: 50px;
-}
-
-.media-collection-table--edit > table {
-  margin-bottom: 50px;
+  padding-bottom: 30px;
+  height: calc(100% - 200px);
+  background-color: #f0f0f0;
 }
 
 .media-collection-table__select-btn--edit {
@@ -229,7 +228,8 @@ tr.is-selected + tr.is-selected .media-collection-table__highlight.boxel-highlig
 
 
 /* hack */
-.media-collection-table__header th:last-of-type .media-collection-table__header-cell {
+.media-collection-table__header th:last-of-type .media-collection-table__header-cell,
+.media-collection-table__body td:last-of-type .media-collection-table__cell-value {
   padding: 0;
 }
 
