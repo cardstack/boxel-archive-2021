@@ -135,32 +135,126 @@ export default class MediaDetailComponent extends Component {
     }
   }
 
-  get bookletCards() {
-    let booklets = this.model?.details?.booklets;
-    if (!booklets) { return null; }
-    return booklets.map(file => {
-      return {
-        id: this.cardId(file.title),
-        type: 'booklet',
-        title: file.title,
-        imgURL: this.model.cover_art,
-        date: file.date
-      }
-    });
+  keyDates = [
+    {
+      title: 'recording session date',
+      value: this.model?.details?.recording_date,
+      type: 'date'
+    },
+    {
+      title: 'original release date',
+      value: this.model?.details?.original_release_date,
+      type: 'date'
+    }
+  ];
+
+  codes = [
+    {
+      title: 'isrc',
+      value: [
+        {
+          title: 'Primary',
+          value: this.model?.details?.isrc
+        },
+        {
+          title: 'Secondary'
+        }
+      ]
+    },
+    {
+      title: 'catalog number',
+      value: this.model?.details?.catalog_no
+    },
+  ];
+
+  credits = [
+    {
+      title: 'main artist',
+      value: [ this.model.artist_info || this.model.artist ]
+    },
+    {
+      title: 'producer',
+      value: this.model?.producer,
+      type: 'card'
+    },
+    {
+      title: 'mastering engineer',
+      value: this.model?.details?.mastering_engineer
+    },
+    {
+      title: 'mixing engineer',
+      value: this.model?.details?.mixing_engineer
+    },
+    {
+      title: 'recording engineer',
+      value: this.model?.details?.recording_engineer
+    },
+    {
+      title: 'background singer',
+      value: this.model?.details?.background_singer
+    },
+  ];
+
+
+
+  // Hardcoded sections
+
+  coverArtCard = {
+    id: this.cardId(this.model.album),
+    type: 'file',
+    category: 'cover-art',
+    fields: {
+      title: this.model.album,
+      imgURL: this.model.cover_art,
+      date: '2019-02-19'
+    },
   }
 
-  get audioFileCards() {
-    let audioFiles = this.model?.details?.audio_files;
-    if (!audioFiles) { return null; }
-    return audioFiles.map(file => {
-      return {
-        id: this.cardId(file.title),
-        type: 'audio-file',
-        title: file.title,
-        imgURL: '/media-registry/file.svg'
+  bookletCards = [
+    {
+      id: `${this.cardId(this.model.song_title)}.pdf`,
+      type: 'file',
+      category: 'booklet',
+      fields: {
+        title: `${this.cardId(this.model.song_title)}.pdf`,
+        imgURL: this.model.cover_art,
+        date: '2019-02-19'
       }
-    })
-  }
+    },
+    {
+      id: `${this.cardId(this.model.song_title)}-translated.pdf`,
+      type: 'file',
+      category: 'booklet',
+      fields: {
+        title: `${this.cardId(this.model.song_title)}-translated.pdf`,
+        imgURL: this.model.cover_art,
+        date: '2019-02-19'
+      }
+    }
+  ]
+
+  audioFileCards = [
+    {
+      id: `${this.cardId(this.model.song_title)}.aiff`,
+      type: 'file',
+      category: 'audio-file',
+      fields: {
+        title: `${this.cardId(this.model.song_title)}.aiff`,
+        imgURL: '/media-registry/file.svg',
+        date: '2019-04-23'
+      }
+    },
+    {
+      id: `${this.cardId(this.model.song_title)}-watermarked.aiff`,
+      type: 'file',
+      category: 'audio-file',
+      fields: {
+        title: `${this.cardId(this.model.song_title)}-watermarked.aiff`,
+        imgURL: '/media-registry/file.svg',
+        date: '2019-04-23'
+      }
+    }
+  ]
 
   get files() {
     return [
@@ -168,16 +262,7 @@ export default class MediaDetailComponent extends Component {
         title: 'cover art',
         format: 'grid',
         type: 'card',
-        component: 'cards/cover-art',
-        value: {
-          id: this.cardId(this.model.album),
-          type: 'cover-art',
-          fields: {
-            title: this.model.album,
-            imgURL: this.model.cover_art,
-            date: '2019-02-19'
-          },
-        }
+        value: this.coverArtCard
       },
       {
         title: 'booklet',
@@ -245,64 +330,4 @@ export default class MediaDetailComponent extends Component {
       },
     ];
   }
-
-  keyDates = [
-    {
-      title: 'recording session date',
-      value: this.model?.details?.recording_date,
-      type: 'date'
-    },
-    {
-      title: 'original release date',
-      value: this.model?.details?.original_release_date,
-      type: 'date'
-    }
-  ];
-
-  codes = [
-    {
-      title: 'isrc',
-      value: [
-        {
-          title: 'Primary',
-          value: this.model?.details?.isrc
-        },
-        {
-          title: 'Secondary'
-        }
-      ]
-    },
-    {
-      title: 'catalog number',
-      value: this.model?.details?.catalog_no
-    },
-  ];
-
-  credits = [
-    {
-      title: 'main artist',
-      value: [ this.model.artist_info || this.model.artist ]
-    },
-    {
-      title: 'producer',
-      value: this.model?.producer,
-      type: 'card'
-    },
-    {
-      title: 'mastering engineer',
-      value: this.model?.details?.mastering_engineer
-    },
-    {
-      title: 'mixing engineer',
-      value: this.model?.details?.mixing_engineer
-    },
-    {
-      title: 'recording engineer',
-      value: this.model?.details?.recording_engineer
-    },
-    {
-      title: 'background singer',
-      value: this.model?.details?.background_singer
-    },
-  ];
 }
