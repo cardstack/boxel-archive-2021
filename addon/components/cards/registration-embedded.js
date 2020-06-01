@@ -44,6 +44,6 @@ export default class RegistrationEmbedded extends Component {
       }
     }
 
-    return 'N/A';
+    return null;
   }
 }

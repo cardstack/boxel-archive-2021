@@ -26,12 +26,21 @@
               {{#each @field.value as |val|}}
                 <div class="field-renderer__taglist-title">{{val.title}}</div>
                 <ul class="field-renderer__taglist-editor field-renderer__taglist-editor--vertical">
-                  {{#each val.value as |vv|}}
-                    <li class="item__pill">
-                      <span>{{vv}}</span>
-                      <button class="item__remove-btn" aria-label="remove" />
-                    </li>
-                  {{/each}}
+                  {{#if (is-array val.value)}}
+                    {{#each val.value as |vv|}}
+                      <li class="item__pill">
+                        <span>{{vv}}</span>
+                        <button class="item__remove-btn" aria-label="remove" />
+                      </li>
+                    {{/each}}
+                  {{else}}
+                    {{#if val.value}}
+                      <li class="item__pill">
+                        <span>{{val.value}}</span>
+                        <button class="item__remove-btn" aria-label="remove" />
+                      </li>
+                    {{/if}}
+                  {{/if}}
                   <button class="item__add-btn" aria-label="add" />
                 </ul>
               {{/each}}

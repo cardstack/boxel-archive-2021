@@ -157,7 +157,8 @@ export default class MediaDetailComponent extends Component {
           value: this.model?.details?.isrc
         },
         {
-          title: 'Secondary'
+          title: 'Secondary',
+          value: []
         }
       ]
     },
