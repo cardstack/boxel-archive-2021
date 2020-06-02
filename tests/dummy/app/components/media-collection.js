@@ -6,14 +6,13 @@ import { inject as service } from '@ember/service';
 export default class MediaCollectionComponent extends Component {
   @tracked format = this.args.format || 'grid';
   @service router;
-  @tracked collection = this.args.model.collection;
   @tracked tableCols = this.args?.field?.columns || this.args?.model?.columns;
   @tracked sortColumn = this.sortColumns ? this.sortColumns[0] : null;
   @tracked sortDirection = 'asc';
 
   constructor(...args) {
     super(...args);
-    let collection = this.collection;
+    let collection = this.args.collection;
     set(collection, 'selectedItemCount', collection.filter(item => item.selected).length);
     set(collection, 'selectedAll', collection.length === collection.selectedItemCount);
   }
@@ -28,7 +27,7 @@ export default class MediaCollectionComponent extends Component {
 
   @action
   toggleSelectAll() {
-    let collection = this.collection;
+    let collection = this.args.collection;
     if (collection.selectedItemCount) {
       set(collection, 'selectedAll', false);
     } else {

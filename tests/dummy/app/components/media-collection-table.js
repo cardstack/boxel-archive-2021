@@ -1,11 +1,7 @@
-import Component from '@glimmer/component';
+import MediaCollectionComponent from './media-collection';
 import { action, set } from '@ember/object';
-import { inject as service } from '@ember/service';
 
-export default class MediaCollectionTableComponent extends Component {
-  @service router;
-
-
+export default class MediaCollectionTableComponent extends MediaCollectionComponent {
   @action
   toggleSelect(item) {
     let collection = this.args.collection;
@@ -16,7 +12,8 @@ export default class MediaCollectionTableComponent extends Component {
 
   @action
   selectOrTransition(item) {
-    if (this.args.collection.selectedItemCount > 0) {
+    let collection = this.args.collection;
+    if (collection.selectedItemCount > 0) {
       this.toggleSelect(item);
     } else {
       this.args.transition(item);
