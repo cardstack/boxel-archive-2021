@@ -7,7 +7,6 @@ export default class MediaCollectionComponent extends Component {
   @tracked format = this.args.format || 'grid';
   @service router;
   @tracked collection;
-  @tracked sortedCollection;
   @tracked tableCols = this.args?.field?.columns || this.args?.model?.columns;
   @tracked sortColumn = this.sortColumns ? this.sortColumns[0] : null;
   @tracked sortDirection = 'asc';
