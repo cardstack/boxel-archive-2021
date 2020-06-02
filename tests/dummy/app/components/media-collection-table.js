@@ -1,7 +1,7 @@
-import MediaCollectionComponent from './media-collection';
+import Component from '@glimmer/component';
 import { action, set } from '@ember/object';
 
-export default class MediaCollectionTableComponent extends MediaCollectionComponent {
+export default class MediaCollectionTableComponent extends Component {
   @action
   toggleSelect(item) {
     let collection = this.args.collection;
@@ -12,11 +12,6 @@ export default class MediaCollectionTableComponent extends MediaCollectionCompon
 
   @action
   selectOrTransition(item) {
-    let collection = this.args.collection;
-    if (collection.selectedItemCount > 0) {
-      this.toggleSelect(item);
-    } else {
-      this.args.transition(item);
-    }
+    this.args.transition(item);
   }
 }

@@ -1,4 +1,4 @@
-<Boxel class="media-collection media-collection--{{@model.type}} media-collection--{{@mode}}">
+<Boxel class="media-collection media-collection--{{@model.type}} media-collection--{{@mode}}" {{did-update this.updateCollections @model}}>
   <header class="media-collection__sticky-header">
     <div class="media-collection__title-row media-collection__title-row--{{@mode}}">
       {{#if (eq @mode "edit")}}
@@ -15,7 +15,7 @@
         />
         <h2 class="media-collection__title">{{humanize @model.title}}</h2>
         <div class="media-collection__count">
-          <span>{{@collection.length}}</span> {{if (eq @model.type "collection") "Songs" "Collections"}}
+          <span>{{this.collection.length}}</span> {{if (eq @model.type "collection") "Songs" "Collections"}}
         </div>
       {{/if}}
     </div>
@@ -25,19 +25,19 @@
         {{on "click" this.toggleSelectAll}}
         @class="media-collection__select-btn"
         @mode={{@mode}}
-        @isPartial={{@collection.selectedItemCount}}
-        @isSelected={{@collection.selectedAll}}
+        @isPartial={{this.collection.selectedItemCount}}
+        @isSelected={{this.collection.selectedAll}}
       />
-      <div class="media-collection__pill media-collection__select-all {{if @collection.selectedItemCount "media-collection__select-all--selected-items"}}">
-        {{#if @collection.selectedItemCount}}
+      <div class="media-collection__pill media-collection__select-all {{if this.collection.selectedItemCount "media-collection__select-all--selected-items"}}">
+        {{#if this.collection.selectedItemCount}}
           {{svg-jar "check-mark" width="9px" height="7px"}}
-          {{@collection.selectedItemCount}} selected
+          {{this.collection.selectedItemCount}} selected
           <button class="media-collection__more-actions">{{svg-jar "more-actions" width="16px" height="16px"}}</button>
         {{else}}
           Select all
         {{/if}}
       </div>
-      {{#if (and (eq @model.type "collection") @collection.selectedItemCount)}}
+      {{#if (and (eq @model.type "collection") this.collection.selectedItemCount)}}
         <button class="media-collection__pill media-collection__pill--dropdown">
           Add to Collection
         </button>
@@ -65,12 +65,12 @@
     </div>
   </header>
   {{#if (eq this.format "table")}}
-    <MediaCollectionTable @mode={{@mode}} @type={{@model.type}} @collection={{@collection}} @columns={{@model.columns}} @removeItem={{this.removeItem}} @transition={{@transition}} @sortColumn={{this.sortColumn}} @sortDirection={{this.sortDirection}} @onUpdateSorts={{this.tableSort}}/>
+    <MediaCollectionTable @mode={{@mode}} @type={{@model.type}} @model={{@model}} @collection={{this.collection}} @columns={{@model.columns}} @removeItem={{this.removeItem}} @transition={{@transition}} @sortColumn={{this.sortColumn}} @sortDirection={{this.sortDirection}} @onUpdateSorts={{this.tableSort}}/>
   {{else}}
     <div class="media-collection__scroll-container">
       <div class="media-collection__inner-container">
         <ul class="media-collection__grid media-collection__grid--{{@model.type}}-{{this.format}}">
-          {{#each @collection as |item|}}
+          {{#each this.collection as |item|}}
             <li>
               {{yield item}}
             </li>
