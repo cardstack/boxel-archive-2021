@@ -11,7 +11,7 @@
     {{#each @orgs as |org|}}
       <li>
         <button {{on "click" (fn this.transitionToCatalog org.id)}}
-          class="left-edge-nav__btn left-edge-nav__btn--full"
+          class="left-edge-nav__btn left-edge-nav__btn--full {{if (eq @current org.id) "selected"}}"
           style={{css-url "background-image" org.iconURL}}
           aria-label="View catalog for {{org.company}}"
         />
