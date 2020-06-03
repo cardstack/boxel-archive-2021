@@ -1,0 +1,26 @@
+<div class="sidebar-related-card">
+  <div class="sidebar-related-card__header">
+    {{@type}}
+  </div>
+
+  <div class="sidebar-related-card__inner">
+    <div class="sidebar-related-card__left">
+      <div class="sidebar-related-card__thumb-{{@type}}"></div>
+    </div>
+    <div class="sidebar-related-card__right">
+      <LinkTo @route={{@route}} @model={{@routeModel}}>
+        {{@title}}
+      </LinkTo>
+      <div class="sidebar-related-card__subtitle">
+        {{@subtitle}}
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-related-card__count">
+    <span class="sidebar-related-card__count__number">
+      {{@count}}
+    </span> items
+  </div>
+
+</div>
