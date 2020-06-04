@@ -11,7 +11,7 @@
   <aside class="item__sidebar">
     <h3 class="item__sidebar-title">In these collections</h3>
     <div>
-      {{#each @model.catalog as |catalog i|}}
+      {{#each (array "Film Music" "Batch F") as |catalog i|}}
         <SidebarRelatedCard
           @type="catalog"
           @title={{catalog}}
