@@ -1,3 +1,7 @@
+.item__sidebar {
+  min-width: 320px;
+}
+
 .sidebar-related-card {
   border: 1px solid #dcdcdc;
   border-radius: 10px;
@@ -26,10 +30,10 @@
 }
 
 .sidebar-related-card__thumb-catalog {
-  width: 80px;
+  width: 100px;
   height: 80px;
-  margin-right: 10px; 
-  background: url('/media-registry/master-covers.svg') top/contain no-repeat;
+  margin-right: 10px;
+  background: url('/media-registry/master-covers.svg') center left/cover no-repeat;
 }
 
 
