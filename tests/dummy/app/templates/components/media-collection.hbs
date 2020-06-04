@@ -11,7 +11,7 @@
           @btnLeft="mode-btn"
           @btnLeftContent="Edit"
           @btnLeftAction={{this.transitionToEdit}}
-          @btnRight="version-history"
+          @isolatedCard={{true}}
         />
         <h2 class="media-collection__title">{{humanize @model.title}}</h2>
         <div class="media-collection__count">
