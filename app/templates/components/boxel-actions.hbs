@@ -5,7 +5,7 @@
       <div class="boxel-actions__btn boxel-actions__btn--revision-mode {{if @addedItems "boxel-actions__btn--add"}}">
         {{yield}}
       </div>
-    {{else if @isolatedCard}}
+    {{else if (eq @btnRight "version-history")}}
       <button class="boxel-actions__btn {{or @btnLeft "boxel-actions__btn--more-actions"}}" {{on "click" (or @btnLeftAction this.moreActions)}} aria-label="{{or @btnLeft "more actions"}}">{{@btnLeftContent}}</button>
       <MediaCollection::Button @class="boxel-actions__btn" @button="gear" @icon="gear">
         <ActionsMenu />
