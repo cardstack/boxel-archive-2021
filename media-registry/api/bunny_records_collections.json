@@ -4,78 +4,90 @@
     "catalog_description": "All recordings by GG",
     "number_of_songs": 42,
     "top_artists": ["Golden Girl"],
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/golden-girl-08a69a56259e29d239ae335cf9460b40.svg"
   },
   {
     "catalog_title": "Extra Long",
     "catalog_description": "Tracks over 4 min",
     "number_of_songs": 102,
     "top_artists": ["Princess May", "Fly me to the moon", "The edge of nowhere"],
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/extra-long-2e8d21a77c16f75de382eabf5d3b9ee0.svg"
   },
   {
     "catalog_title": "Film Music",
     "catalog_description": "Themes & soundtracks",
     "number_of_songs": 156,
     "top_artists": ["Pia Midina", "BB Clarke"],
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/film-music-4b5f03d5a5bf6dc1d9a2b6bba8ea906d.svg"
   },
   {
     "catalog_title": "Super Successful",
     "catalog_description": "Popular records across genres & artists",
     "number_of_songs": 89,
     "top_artists": ["Love Monkeys", "Nancy Jay", "Boyband"],
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/super-successful-61b2d07901af1c633c6c62c9e43fa9d5.svg"
   },
   {
     "catalog_title": "Batch A ",
     "catalog_description": "Sold to Maxime Records",
     "number_of_songs": 23,
     "top_artists": ["The Francines"],
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/batch-a-3bf3009dcdc41c4471b919171a73338d.svg"
   },
   {
     "catalog_title": "Batch B ",
     "catalog_description": "Sold to Philanthropic Music Group",
     "number_of_songs": 120,
     "top_artists": ["Mouthwash", "Patrick Moles", "Sun and Moon"],
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/batch-b-3c02ec71dfaed466261d699222362864.svg"
   },
   {
     "catalog_title": "Batch C",
     "catalog_description": "Prepared for transfer to CL Records",
     "number_of_songs": 211,
     "top_artists": ["The Francines"],
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/extra-long-2e8d21a77c16f75de382eabf5d3b9ee0.svg"
   },
   {
     "catalog_title": "Batch D",
     "catalog_description": "In progress",
     "number_of_songs": 7,
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/golden-girl-08a69a56259e29d239ae335cf9460b40.svg"
   },
   {
     "catalog_title": "Batch E",
     "catalog_description": "In progress",
     "number_of_songs": 12,
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/super-successful-61b2d07901af1c633c6c62c9e43fa9d5.svg"
   },
   {
     "catalog_title": "Batch F",
     "catalog_description": "Transfer to CRD Records",
     "number_of_songs": 16,
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/batch-f-a13480cd5dd3c3cecc7c50fe44210ba8.svg"
   },
   {
     "catalog_title": "Bunny Hop 1",
     "catalog_description": "—",
     "number_of_songs": 22,
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/batch-b-3c02ec71dfaed466261d699222362864.svg"
   },
   {
     "catalog_title": "Bunny Hop 2",
     "catalog_description": "—",
     "number_of_songs": 22,
-    "date_created": "Jan 14, 2020"
+    "date_created": "Jan 14, 2020",
+    "catalog_covers": "/boxel/media-registry/batch-a-3bf3009dcdc41c4471b919171a73338d.svg"
   }
 ]
