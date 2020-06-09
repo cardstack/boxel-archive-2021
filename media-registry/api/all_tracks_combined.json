@@ -25,9 +25,9 @@
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-the-Love-6602157d511448c4a0a16378ec786005.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-the-Love-bff25ca6f1de5c6766c51c046b5f2a7d.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Love-the-Love-408060cbb73bfc828987f097a4939dad.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-the-Love-df0cbae4837448f41fcc0a94d025b3ca.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-the-Love-1659b3acd26d7635edde239340cd3aeb.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Love-the-Love-42750a4af92b76425c7e94b259ffd4db.jpg"
   },
   {
     "song_title": "A day to sing",
@@ -38,16 +38,19 @@
     "type_of_album": "EP",
     "genre": "Alternative",
     "length": "3:11",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Sunlight-992b2b3c273eb680080e6d46f6d2321d.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Sunlight-ac3cf03059b1bb7cc440ff801054ae19.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Sunlight-d7905ac49c72cdd517664d57dec1b921.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Sunlight-8a9bf8f867e964b9410e55ec85d8714b.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Sunlight-26966f0055adff13c228daa5cd9c2787.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Sunlight-b30ed3f8cdd0b8b2036cdc63f8531d5c.jpg"
   },
   {
     "song_title": "A future like this",
@@ -66,9 +69,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Moments-c48c687c0f21efc4d5d0de6c26d4b9dd.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Moments-7b9f6f8f2a44bc256820c13a7f9f4bec.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Moments-fcddf557e94992ff25e9d0d4f5bb99c7.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Moments-7e0d35fb6d65638429cb16589dbb842d.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Moments-793c54e8e86fa2ade37c294eea671f8f.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Moments-8e61e5a113d1e6e9b01242b294fdf23d.jpg"
   },
   {
     "song_title": "Addictions",
@@ -87,9 +90,9 @@
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Escape-07553a1ca751b69801fbd9350116da45.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Escape-dff92b42f38a34f4500c65e7b317c9f5.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Escape-94a9e20c8baa8c90d750095b9e2a38c9.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Escape-4c83e91f454c860a02e4e493d46439c6.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Escape-94ccb5be2e3ede099e679f1ba2c4ef90.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Escape-9c8adbcac545d1b75cfaadfeb5652a9c.jpg"
   },
   {
     "song_title": "Airplanes go south",
@@ -108,9 +111,9 @@
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Just-Like-Birds-f5a8bff213ec0c07d3fd91dff154ee03.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Just-Like-Birds-311e2339e8b36b95b609f844ac8ebc22.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Just-Like-Birds-d214762ea4838a87e7b80ac46f398f64.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Just-Like-Birds-606af991c1a826bbf854894539c893fc.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Just-Like-Birds-8e3f11acb324b3f4cf75693469e47502.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Just-Like-Birds-f730f6c131b8f1445f806baca5c720d3.jpg"
   },
   {
     "song_title": "Always in love",
@@ -129,9 +132,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Always-In-Love-a056ee67fa52df2086fb3bf7722d9151.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Always-In-Love-8b0a95ada0cb14c4ea209a9b2160f120.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Always-In-Love-19fe3287d4c2b2a02454b4f861cc80da.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Always-In-Love-0fe419a867c1ad68b9bdcb67c0a45982.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Always-In-Love-d6687065efd3ba76facd633fdcb9ce5e.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Always-In-Love-a5306203ed514d5d991c960610bf2e44.jpg"
   },
   {
     "song_title": "Angry",
@@ -151,9 +154,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-the-Love-6602157d511448c4a0a16378ec786005.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-the-Love-bff25ca6f1de5c6766c51c046b5f2a7d.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Love-the-Love-408060cbb73bfc828987f097a4939dad.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-the-Love-df0cbae4837448f41fcc0a94d025b3ca.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-the-Love-1659b3acd26d7635edde239340cd3aeb.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Love-the-Love-42750a4af92b76425c7e94b259ffd4db.jpg"
   },
   {
     "song_title": "Baby boy",
@@ -172,9 +175,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": "X",
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-8ec5d10ac20769e6c2b8c9b8d4d52bf8.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-6210898179f5f967a75bb5c95d458104.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Animals-452d224c4fee8e0ea2a54daceeb20139.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-c648b6ce05964ecee200e817fedf74e5.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-4caf1dff67ebc192b4a194b551bc8274.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Animals-0cd698c9c380701dae567dbda7e25ccb.jpg"
   },
   {
     "song_title": "Booby trap",
@@ -193,9 +196,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Have-Fun-2d90820da2cb6046a7e29cc964cc94f2.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Have-Fun-c1a3ea95ff9498b351c7d5d8e4dbd3d5.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Have-Fun-228d2f8837d854561c077caf4148e88e.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Have-Fun-b0d36e5e6c1329c5c533f5d4c3330ea4.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Have-Fun-9fed8e8b26a6c65e6e4009e82e9b1505.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Have-Fun-96c664e09084b4704fe6b56e0a3ecc25.jpg"
   },
   {
     "song_title": "Car troubles",
@@ -214,9 +217,9 @@
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Accidents-e311494b85aa9dd1ca5ced4ccb377901.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Accidents-a1f5986e597322b9aef21700379a6381.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Accidents-03d19cd2044fb56fb04ec3c0a10f0937.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Accidents-b7a2ac4f54756ae69602e0691df158a7.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Accidents-f3311069ead255b23e4d7144b1c1cc8b.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Accidents-d771dc04d8aface50e1442a2bd4f1fb5.jpg"
   },
   {
     "song_title": "Care for him",
@@ -235,9 +238,9 @@
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Seven-Sins-0967e009d17786ebf2439cdf1ed4bc9d.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Seven-Sins-68842a82ecc062d330e60e8eb2e0c568.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Seven-Sins-e0a996b15554a93bc52ce05d2c12398f.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Seven-Sins-66e250eae4e0e2fe5650474bedd32fbd.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Seven-Sins-9f78929967690e068d04a37d67c2be7a.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Seven-Sins-dd2f371115f35acadef08ae6c0057602.jpg"
   },
   {
     "song_title": "Change is good",
@@ -248,16 +251,19 @@
     "type_of_album": "Single",
     "genre": "Pop",
     "length": "2:45",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Change-Is-Good-a2b75f3ebf4068d442c9b367005da1af.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Change-Is-Good-7d7dabe9330c085ab6437f7c8a987d44.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Change-Is-Good-4019cd50948e5f9b1a1fa467af82273b.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Change-Is-Good-1026df6851c172548980fabf8406c14b.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Change-Is-Good-b32a650ec69e3bc24f117bdd7d3d346b.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Change-Is-Good-33038a93288aea101cf2c2deb5a7dd62.jpg"
   },
   {
     "song_title": "Come closer",
@@ -276,9 +282,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Around-the-World-24cae4907e3b406516890a3bb1421a89.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Around-the-World-c1e91bcca4d6cb3a08bd0635e6375129.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Around-the-World-ae06fb4a2580c3b3f695753e3a41f5fa.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Around-the-World-596641f238b9fd3c785e0a977a797676.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Around-the-World-2b10922f5c70372caaf086e5b80680fe.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Around-the-World-195ec20deb83bbef6c788870d661a537.jpg"
   },
   {
     "song_title": "Dawn to dusk",
@@ -297,9 +303,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": "X",
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-8ec5d10ac20769e6c2b8c9b8d4d52bf8.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-6210898179f5f967a75bb5c95d458104.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Animals-452d224c4fee8e0ea2a54daceeb20139.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-c648b6ce05964ecee200e817fedf74e5.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-4caf1dff67ebc192b4a194b551bc8274.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Animals-0cd698c9c380701dae567dbda7e25ccb.jpg"
   },
   {
     "song_title": "Everyone matters",
@@ -318,9 +324,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Save-Humankind-5d1c5de0aedcb449dd075c2e985da607.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Save-Humankind-0034464e05b9d86c693f5770b00d2d79.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Save-Humankind-cabd1e709cd0cb925b4094fe970f7d44.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Save-Humankind-0262ab3a5295a27652ae36c6ba8b8152.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Save-Humankind-5ececf5b674c343347f2f665a77387bb.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Save-Humankind-d022bd587ff60c251d26c58fd0fae4ee.jpg"
   },
   {
     "song_title": "Every step you take",
@@ -339,9 +345,9 @@
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/The-Future-Is-Ours-a4c77263f16ff20681236bc9281c0566.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/The-Future-Is-Ours-516e1401e3ea793e8e32fff1c093cd8d.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/The-Future-Is-Ours-6717fffa1496066cf24d704d6a32d4db.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/The-Future-Is-Ours-45e11565293a0a6a63c25e16b855f5d6.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/The-Future-Is-Ours-f8d7f9b3a01614bc922a47257683ff51.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/The-Future-Is-Ours-cd8357cbf806382bd0f5947cc9329f3c.jpg"
   },
   {
     "song_title": "Forty miles an hour",
@@ -360,9 +366,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Drive-Me-Crazy-7522727367986037e837ce9b62f2ae6a.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Drive-Me-Crazy-73f6d37a9a5cdbb126c32f4b9b44ed1a.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Drive-Me-Crazy-1963ff46a07b32dd4bc4d885b4bb0314.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Drive-Me-Crazy-7df954a64f14551ec3426ad82613b4cb.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Drive-Me-Crazy-412d5e6d79fff2fbb1dbbdfbd407b2ca.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Drive-Me-Crazy-1c399e4acb9d4d0c63560c6caab55806.jpg"
   },
   {
     "song_title": "Full moon",
@@ -373,16 +379,19 @@
     "type_of_album": "Single",
     "genre": "Pop",
     "length": "3:55",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Full-Moon-02e32dc317384b90364933729098b002.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Full-Moon-40c00a9aa7900339ad6e35dba60324c0.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Full-Moon-28f6ad07bf3032134645588c3b3fffef.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Full-Moon-df1c07f87979dec7b3ea3fce7bcaec74.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Full-Moon-2903bbbab52de58af853c0fa38eefae8.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Full-Moon-fbc555a206909e0e1ed9d389ebcaa1c6.jpg"
   },
   {
     "song_title": "Hell hell hell",
@@ -401,9 +410,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/All-About-Heaven-659db0e2ed928a712d7cca238d1e0a47.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/All-About-Heaven-13be15629c4c41cebf11c5edab2aed18.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/All-About-Heaven-92ddfe2596bc15d48bfb316834e577e3.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/All-About-Heaven-069c6d8a49b40e8b301c39c224fae38f.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/All-About-Heaven-02346e8f8c7ddb9b710666f282fad922.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/All-About-Heaven-d9af8fd7b83c2d61d915c5ac24ff5502.jpg"
   },
   {
     "song_title": "Home isn't sweet",
@@ -422,9 +431,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Home-Isnt-Sweet-762f632ab7fbf9ab7a660737fb762de9.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Home-Isnt-Sweet-6ca659cbc4f7854970cb63f39b0a59ef.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Home-Isnt-Sweet-5bcec50dbfa69223a3cbd2cdd97deb2e.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Home-Isnt-Sweet-7db533203e90322189bda582bbbdad0a.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Home-Isnt-Sweet-1b29d91a99a3ab9210dbb80b1ae3dae8.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Home-Isnt-Sweet-f26b5a2fd5d2f4f9eb87e26ebf1fb6b1.jpg"
   },
   {
     "song_title": "Infatuated",
@@ -436,16 +445,17 @@
     "genre": "Rock",
     "length": "2:44",
     "catalog": [
-      "Super Successful"
+      "Super Successful",
+      "Bunny Hop 1"
     ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Infatuated-dac98fcda6064f7876c4244bfd813c03.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Infatuated-ff00a5c389dce7e710716f7921070c73.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Infatuated-0a43b7298d6c90b2fd824e68e70cbbcb.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Infatuated-46a2913ca5e99871617db7099ec3ff22.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Infatuated-688595905e14384288b93f16386e597b.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Infatuated-c9dac4dbe7156f76524e0b143c1b9d8a.jpg"
   },
   {
     "song_title": "Keep hope alive",
@@ -456,16 +466,19 @@
     "type_of_album": "EP",
     "genre": "Pop",
     "length": "3:17",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-Never-Dies-d4f80728fc1aded37de1789163fb05d5.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-Never-Dies-e28e1d626620287e16de4273256434de.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Love-Never-Dies-629f881ec764a928d1917fa0a81d453d.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-Never-Dies-8e230ef0d503b03840a4bc21751cb1ea.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-Never-Dies-87008c2454b21301fb45085ad8e89d13.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Love-Never-Dies-f45a555fb881f596d94ce354c9fc8faa.jpg"
   },
   {
     "song_title": "Kill the spider",
@@ -476,16 +489,19 @@
     "type_of_album": "Album",
     "genre": "Rock",
     "length": "3:07",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": "X",
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-8ec5d10ac20769e6c2b8c9b8d4d52bf8.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-6210898179f5f967a75bb5c95d458104.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Animals-452d224c4fee8e0ea2a54daceeb20139.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-c648b6ce05964ecee200e817fedf74e5.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-4caf1dff67ebc192b4a194b551bc8274.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Animals-0cd698c9c380701dae567dbda7e25ccb.jpg"
   },
   {
     "song_title": "Leave the door open",
@@ -496,16 +512,19 @@
     "type_of_album": "Single",
     "genre": "Pop",
     "length": "3:55",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Leave-the-Door-Open-7e8564fa9d5e54a3ed74e688fa0cb78e.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Leave-the-Door-Open-df6d522a804c6bed1b7258bcac74283e.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Leave-the-Door-Open-52e1fd70f40aef114b82dd48fe4c48bc.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Leave-the-Door-Open-1db5a7e4f99165c6f14e3be341142166.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Leave-the-Door-Open-3e0a88dcf9c7405da0904873557cbcf4.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Leave-the-Door-Open-1c84abf41d757210da86b8050f9cd51a.jpg"
   },
   {
     "song_title": "Light at the end of the tunnel",
@@ -517,31 +536,37 @@
     "genre": "Country",
     "length": "3:17",
     "catalog": [
-      "Super Successful"
+      "Super Successful",
+      "Bunny Hop 1"
     ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Sailing-8a15e9b8e88ac7c14b618e02c0a4b54c.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Sailing-0bd55149d30f563362654d95afe0e425.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Sailing-c04662b26f2f37376e03598a64f6874d.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Sailing-9c03c4b6cb8b0625605c86a16fd202a3.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Sailing-4664a5e4f78faa068134fd765bf44f4b.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Sailing-964b7f9ec13d9dba7f428680f8f2be17.jpg"
   },
   {
     "song_title": "Like a washing machine",
     "artist": "Things",
     "album": "Gotta Be Silly",
-    "cover_art": null,
-    "type_of_album": null,
+    "cover_art": "/boxel/media-registry/covers/Gotta-Be-Silly-00c7ef30c35f5b37e0900195943abdbd.jpg",
+    "type_of_album": "Album",
     "genre": "Pop",
     "length": "3:35",
-    "catalog": null,
+    "catalog": [
+      "Batch C"
+    ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
-    "search_for_artist_bb_clarke": null
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Gotta-Be-Silly-ce720bd892ead9a0f3e80229cd4585bc.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Gotta-Be-Silly-3ec4a5f9875c41321caf7905a4e7baf2.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Gotta-Be-Silly-a7405ab0b2984c301ab4a90ab746a94f.jpg"
   },
   {
     "song_title": "Living like the royals",
@@ -553,16 +578,17 @@
     "genre": "Alternative",
     "length": "4:01",
     "catalog": [
-      "Extra Long"
+      "Extra Long",
+      "Bunny Hop 2"
     ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/All-About-the-Quality-of-Life-da302e7e536cdda8910c6dcbc2b75f45.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/All-About-the-Quality-of-Life-e499449b7a4c2f6c39402194ee8d10fb.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/All-About-the-Quality-of-Life-ebe6df245dfa103773918a93abae0593.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/All-About-the-Quality-of-Life-6aea16c68268651c69652080c2748137.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/All-About-the-Quality-of-Life-7174624b499fa5d0e663cfa5775c0008.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/All-About-the-Quality-of-Life-ebcc94492d84adc64b69f084a2d6147e.jpg"
   },
   {
     "song_title": "Looks like heaven, feels like hell",
@@ -574,31 +600,97 @@
     "genre": "Pop",
     "length": "3:50",
     "catalog": [
-      "Super Successful"
+      "Super Successful",
+      "Bunny Hop 1"
     ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Superficial-b966e4c9945d3c4e60f2e464788fc15f.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Superficial-09696ddf3a2aeaffe4c74057591a062e.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Superficial-7263d57cbc48b06fb3e66a78bdb2b43d.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Superficial-bf354f8286aba46d7524c106bd4d31a3.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Superficial-90a3d96c07d7fecfff38ae2aebbddaeb.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Superficial-4f15b5841ec3b450c1f509b8bad26a73.jpg"
   },
   {
     "song_title": "Madness",
     "artist": "UNIF",
     "album": "Call Me Crazy",
-    "cover_art": null,
-    "type_of_album": null,
+    "cover_art": "/boxel/media-registry/covers/Call-Me-Crazy-fb7a0221b2e1dfc9c9eec40430500657.jpg",
+    "type_of_album": "EP",
     "genre": "Rock",
     "length": "3:01",
-    "catalog": null,
+    "catalog": [
+      "Batch C"
+    ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
-    "search_for_artist_bb_clarke": null
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Call-Me-Crazy-587c9443265522073220f274b587ba37.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Call-Me-Crazy-b7d521e41a22525b348e29fa176a9bfa.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Call-Me-Crazy-5b43cf9b287f39bf74f99af7eb9d094e.jpg"
+  },
+  {
+    "song_title": "Main Street",
+    "artist": "Fingernails",
+    "album": "Hands On",
+    "cover_art": "/boxel/media-registry/covers/Hands-On-68b4b4bb4d13c1e88165e878c2e43131.jpg",
+    "type_of_album": "Album",
+    "genre": "Pop",
+    "length": "3:18",
+    "catalog": [
+      "Film Music"
+    ],
+    "owner": "Bunny Records",
+    "filtered_by_genre_pop": "X",
+    "filtered_by_length_less_than_3_min": null,
+    "search_for_artist_pia_midina": null,
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Hands-On-46de4404c51fa0bf434e1fba1c8a6f14.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Hands-On-8d4112e2576b48278b0762a64e7f5281.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Hands-On-486cf919ec3867f6b256192c3899587e.jpg"
+  },
+  {
+    "song_title": "Max",
+    "artist": "UNIF",
+    "album": "Liars",
+    "cover_art": "/boxel/media-registry/covers/Liars-e4abe76c8b0fb28f8049e32367546c66.jpg",
+    "type_of_album": "EP",
+    "genre": "Rock",
+    "length": "3:03",
+    "catalog": [
+      "Batch C"
+    ],
+    "owner": "Bunny Records",
+    "filtered_by_genre_pop": null,
+    "filtered_by_length_less_than_3_min": null,
+    "search_for_artist_pia_midina": null,
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Liars-d48f6788c1611e675b98c6a4c9f3fe88.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Liars-10d90fc5d01ca84fed44a1ddab2c9181.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Liars-ddfbc6fdb5da916c38f040d2eabbdf1a.jpg"
+  },
+  {
+    "song_title": "Mighty Moon",
+    "artist": "Melodrama",
+    "album": "Mighty Moon",
+    "cover_art": "/boxel/media-registry/covers/Mighty-Moon-352907ac601b2f91ae1d66b9f7b42a3c.jpg",
+    "type_of_album": "Single",
+    "genre": "Rock",
+    "length": "3:05",
+    "catalog": [
+      "Batch C"
+    ],
+    "owner": "Bunny Records",
+    "filtered_by_genre_pop": null,
+    "filtered_by_length_less_than_3_min": null,
+    "search_for_artist_pia_midina": null,
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Mighty-Moon-bfca398f11196c81db3cfa95b82477dd.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Mighty-Moon-d00e5d24150c096ac54ad6237f69c8c6.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Mighty-Moon-3a5fb3e157605482b964d806dbd2d3d2.jpg"
   },
   {
     "song_title": "Morning star",
@@ -617,9 +709,9 @@
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-Conquers-All-e50c0e43a5d185ab9614dceffda983e4.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-Conquers-All-c91ffc37b4de0b632f2b580f9b011503.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Love-Conquers-All-9e70a0308672fa0acf17ee9712b4216d.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-Conquers-All-2ca88e7d2cd46c54c79c224885f4d054.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-Conquers-All-a0556c1a445d4c895479e055d98b34b0.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Love-Conquers-All-a80f83ba0e67ede98eed6a09c94eb979.jpg"
   },
   {
     "song_title": "Mutiny",
@@ -636,9 +728,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": "X",
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-8ec5d10ac20769e6c2b8c9b8d4d52bf8.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-6210898179f5f967a75bb5c95d458104.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Animals-452d224c4fee8e0ea2a54daceeb20139.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-c648b6ce05964ecee200e817fedf74e5.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-4caf1dff67ebc192b4a194b551bc8274.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Animals-0cd698c9c380701dae567dbda7e25ccb.jpg"
   },
   {
     "song_title": "My heart beats for you",
@@ -649,16 +741,19 @@
     "type_of_album": "EP",
     "genre": "Pop",
     "length": "2:33",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-Never-Dies-d4f80728fc1aded37de1789163fb05d5.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-Never-Dies-e28e1d626620287e16de4273256434de.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Love-Never-Dies-629f881ec764a928d1917fa0a81d453d.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-Never-Dies-8e230ef0d503b03840a4bc21751cb1ea.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-Never-Dies-87008c2454b21301fb45085ad8e89d13.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Love-Never-Dies-f45a555fb881f596d94ce354c9fc8faa.jpg"
   },
   {
     "song_title": "Natural disaster",
@@ -677,9 +772,9 @@
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Beauty-vs-Reality-646ebc185a06d4de24f1bbc9ec4977cd.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Beauty-vs-Reality-cd7745a851120f4035de61420ea7ab55.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Beauty-vs-Reality-30ac1ec09606f9477145b66207c79777.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Beauty-vs-Reality-adccb7e1ae7dc99e35c8b0ecfec4bd14.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Beauty-vs-Reality-8bfc20cb45a2d76f214d463d8b49a0dd.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Beauty-vs-Reality-9604c2a62240678950abbda95360f008.jpg"
   },
   {
     "song_title": "Never lonely",
@@ -691,16 +786,17 @@
     "genre": "Pop",
     "length": "3:21",
     "catalog": [
-      "Golden Girl"
+      "Golden Girl",
+      "Bunny Hop 2"
     ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Never-Lonely-03ee1158572e8fd26d5ef44e2aef47b7.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Never-Lonely-ae636a43f281cff555638bcb83be2478.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Never-Lonely-c1fd7efb98655cfb66c62324493155e4.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Never-Lonely-16682007e12dbc6ef1ada9c2bc4e69f1.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Never-Lonely-132142c82a23e5b16200f24629210036.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Never-Lonely-2d1e133bb4a9a5e93f2314da64ef4e8b.jpg"
   },
   {
     "song_title": "Nobody",
@@ -719,9 +815,9 @@
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Little-Lies-a4aa96fe71a8c68c7a8043d9f485abfd.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Little-Lies-ab8b7a617d38a3e912721c733390d386.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Little-Lies-01d3f1a2a586c116fef817b46fd7e291.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Little-Lies-150b87e74e7d780632c2e74afb211625.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Little-Lies-f6aab1821130a66c4c9d942bcb12101d.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Little-Lies-aa18201e69f4c833368419641287dc7b.jpg"
   },
   {
     "song_title": "Nothing to worry about",
@@ -733,16 +829,17 @@
     "genre": "Alternative",
     "length": "4:15",
     "catalog": [
-      "Extra Long"
+      "Extra Long",
+      "Bunny Hop 2"
     ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Make-Magic-5f287b3670118284bbb637387d390bad.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Make-Magic-fc14abb4bce01296ec6252d1b08fa761.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Make-Magic-eebfb9098783590d99759193f746796a.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Make-Magic-9804577be992ea22d1149017f41ed2a8.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Make-Magic-8fc9a3530ef4e889bc8e0ad03fb9df38.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Make-Magic-ddba13708e882c205d2c50ef07226225.jpg"
   },
   {
     "song_title": "On the brink of happiness",
@@ -754,16 +851,37 @@
     "genre": "Pop",
     "length": "3:40",
     "catalog": [
-      "Golden Girl"
+      "Golden Girl",
+      "Bunny Hop 2"
     ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/On-the-Brink-of-Happiness-e806bf50b27196d68493fe7075ab57f8.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/On-the-Brink-of-Happiness-0fa420cc6e2251c334186785c7a76cd7.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/On-the-Brink-of-Happiness-e51c27bfcaf6ff6dbfb7bd2d28b7e473.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/On-the-Brink-of-Happiness-00637f8a7dfdd5a7da7adc2e6606be17.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/On-the-Brink-of-Happiness-3f7dec6e885ab0142ea0b67260a55dfa.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/On-the-Brink-of-Happiness-1ab899b128617aea49db254e9a0f2d21.jpg"
+  },
+  {
+    "song_title": "On the day you were born",
+    "artist": "Super nova",
+    "album": "On the Day You Were Born",
+    "cover_art": "/boxel/media-registry/covers/On-the-Day-You-Were-Born-e6eeb8974c1c0d5b08d814533b3c84cd.jpg",
+    "type_of_album": "Single",
+    "genre": "Rock",
+    "length": "3:18",
+    "catalog": [
+      "Batch D"
+    ],
+    "owner": "Bunny Records",
+    "filtered_by_genre_pop": null,
+    "filtered_by_length_less_than_3_min": null,
+    "search_for_artist_pia_midina": null,
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/On-the-Day-You-Were-Born-62047768e7600a3d4ceb270b9c171271.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/On-the-Day-You-Were-Born-e6cde4d4d44edfd5ad31ff0e744923d7.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/On-the-Day-You-Were-Born-4232721feba0b6b83c666a25d31a8192.jpg"
   },
   {
     "song_title": "Over you",
@@ -782,9 +900,29 @@
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-the-Love-6602157d511448c4a0a16378ec786005.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-the-Love-bff25ca6f1de5c6766c51c046b5f2a7d.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Love-the-Love-408060cbb73bfc828987f097a4939dad.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-the-Love-df0cbae4837448f41fcc0a94d025b3ca.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-the-Love-1659b3acd26d7635edde239340cd3aeb.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Love-the-Love-42750a4af92b76425c7e94b259ffd4db.jpg"
+  },
+  {
+    "song_title": "Penny",
+    "artist": "Australians",
+    "album": "Magna Cum Love",
+    "cover_art": "/boxel/media-registry/covers/Magna-Cum-Love-2e98de511a8d298c62f125066d92636b.jpg",
+    "type_of_album": "EP",
+    "genre": "Alternative",
+    "length": "3:33",
+    "catalog": [
+      "Batch D"
+    ],
+    "owner": "Bunny Records",
+    "filtered_by_genre_pop": null,
+    "filtered_by_length_less_than_3_min": null,
+    "search_for_artist_pia_midina": null,
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Magna-Cum-Love-9622000927ec2ecf4aefe86b82744236.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Magna-Cum-Love-052ec084d71777f539ef284e2d2323a6.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Magna-Cum-Love-6b29d7e5ba6e70c6c072a88a7fb357b6.jpg"
   },
   {
     "song_title": "Powder snow",
@@ -796,31 +934,37 @@
     "genre": "Pop",
     "length": "2:41",
     "catalog": [
-      "Super Successful"
+      "Super Successful",
+      "Bunny Hop 1"
     ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Seven-Seasons-822c5082d4268265ed874012da5eea9a.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Seven-Seasons-4c2085db8b48d0731a75ebff9ddc91af.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Seven-Seasons-e9492c87e39354054d84d7c7229813a3.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Seven-Seasons-746ce0882d3650e8e346926b30f41cf7.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Seven-Seasons-38678ea25fd65c0f3e87d84f62e694b7.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Seven-Seasons-b8eae482b5667bcae2d0ce825dbfcb16.jpg"
   },
   {
     "song_title": "Pristine condition",
     "artist": "Melodrama",
     "album": "Drama Queen",
-    "cover_art": null,
-    "type_of_album": null,
+    "cover_art": "/boxel/media-registry/covers/Drama-Queen-7b05b1e1c60fb22f61c726e28dbb04d2.jpg",
+    "type_of_album": "EP",
     "genre": "Alternative",
     "length": "1:59",
-    "catalog": null,
+    "catalog": [
+      "Batch C"
+    ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
-    "search_for_artist_bb_clarke": null
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Drama-Queen-b499f27098b6eb98d251fcebe57b6f5a.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Drama-Queen-17778b10d101558c3f745cec9d87b66f.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Drama-Queen-9ef4a0a3bef2fcb056ceaf5671465544.jpg"
   },
   {
     "song_title": "Roller coaster of emotions",
@@ -832,16 +976,17 @@
     "genre": "Techno",
     "length": "3:10",
     "catalog": [
-      "Super Successful"
+      "Super Successful",
+      "Bunny Hop 1"
     ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Rollercoaster-of-Emotions-b3bc84bb4b7b1af7406fdc27976f3f1a.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Rollercoaster-of-Emotions-1db89436b221b708fe7e27f455aeeb15.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Rollercoaster-of-Emotions-0df2597b80e0533adfae3fcd2223e8ef.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Rollercoaster-of-Emotions-d8599ffc2bbe50beb1cdad2da7fdd1ac.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Rollercoaster-of-Emotions-d6cba9a8f7b15f5dd07d2e22e2fb88d7.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Rollercoaster-of-Emotions-d5ed6f8bbb65cd8eef59c35148a40ad8.jpg"
   },
   {
     "song_title": "Ruby's world",
@@ -858,9 +1003,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": "X",
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-8ec5d10ac20769e6c2b8c9b8d4d52bf8.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-6210898179f5f967a75bb5c95d458104.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Animals-452d224c4fee8e0ea2a54daceeb20139.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-c648b6ce05964ecee200e817fedf74e5.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-4caf1dff67ebc192b4a194b551bc8274.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Animals-0cd698c9c380701dae567dbda7e25ccb.jpg"
   },
   {
     "song_title": "Shrink the cakes",
@@ -879,9 +1024,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Maximum-Mildness-cf35fe225ba8f88635ba56a479a3c99a.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Maximum-Mildness-0792fa8e653c2afb32b021a045cef221.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Maximum-Mildness-b6328463a46d09e475ca42edd66eebb7.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Maximum-Mildness-f17a6d44926d863f0cdb6d6e9ad94ca3.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Maximum-Mildness-b14d41d7696b0b534205014c84635c65.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Maximum-Mildness-d3b0b40ad01908d3248904971da15948.jpg"
   },
   {
     "song_title": "Silicone",
@@ -892,12 +1037,17 @@
     "type_of_album": "Album",
     "genre": "Pop",
     "length": "3:24",
-    "catalog": null,
+    "catalog": [
+      "Bunny Hop 2"
+    ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
-    "search_for_artist_bb_clarke": null
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Beauty-vs-Reality-adccb7e1ae7dc99e35c8b0ecfec4bd14.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Beauty-vs-Reality-8bfc20cb45a2d76f214d463d8b49a0dd.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Beauty-vs-Reality-9604c2a62240678950abbda95360f008.jpg"
   },
   {
     "song_title": "Silver linings",
@@ -916,9 +1066,49 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Happy-Ever-After-d19a89217853bf24ed2e9ee320717da9.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Happy-Ever-After-afa5340e7283dda306b6b8571493614b.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Happy-Ever-After-cbcc32080b94223e343d4566962d901b.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Happy-Ever-After-5b9417c1d296a17cb98acd6cea5ea023.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Happy-Ever-After-f28f3a6c910dc438ab80a28d70da9724.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Happy-Ever-After-079e3d427c405cdfc6681d2d493d0067.jpg"
+  },
+  {
+    "song_title": "Sold out",
+    "artist": "Gross guest",
+    "album": "Sold out",
+    "cover_art": "/boxel/media-registry/covers/Sold-Out-fc7211acc512218d52649bbcb4b0e984.jpg",
+    "type_of_album": "Single",
+    "genre": "Rock",
+    "length": "3:22",
+    "catalog": [
+      "Batch E"
+    ],
+    "owner": "Bunny Records",
+    "filtered_by_genre_pop": null,
+    "filtered_by_length_less_than_3_min": null,
+    "search_for_artist_pia_midina": null,
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Sold-Out-cf2903d0c872405d7e89317cec849b73.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Sold-Out-30023c0e05dbc63d2280b86e293f73b3.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Sold-Out-62b06805d6e93832b56b889458da79d3.jpg"
+  },
+  {
+    "song_title": "Sunny side up",
+    "artist": "Jason the boss",
+    "album": "Sunny side up",
+    "cover_art": "/boxel/media-registry/covers/Sunny-Side-Up-c508c4248b246bacc0189395727193d8.jpg",
+    "type_of_album": "Single",
+    "genre": "Rock",
+    "length": "3:20",
+    "catalog": [
+      "Batch E"
+    ],
+    "owner": "Bunny Records",
+    "filtered_by_genre_pop": null,
+    "filtered_by_length_less_than_3_min": null,
+    "search_for_artist_pia_midina": null,
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Sunny-Side-Up-be2acb93289f6bb548323b170b46c4bb.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Sunny-Side-Up-de21b5a2a91deadc7eff68ea92b2b4df.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Sunny-Side-Up-24d7b7002399ddc47464435b769a561d.jpg"
   },
   {
     "song_title": "Sunshine and moonlight",
@@ -929,16 +1119,19 @@
     "type_of_album": "EP",
     "genre": "Alternative",
     "length": "1:57",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Sunlight-992b2b3c273eb680080e6d46f6d2321d.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Sunlight-ac3cf03059b1bb7cc440ff801054ae19.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Sunlight-d7905ac49c72cdd517664d57dec1b921.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Sunlight-8a9bf8f867e964b9410e55ec85d8714b.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Sunlight-26966f0055adff13c228daa5cd9c2787.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Sunlight-b30ed3f8cdd0b8b2036cdc63f8531d5c.jpg"
   },
   {
     "song_title": "The air is thin",
@@ -957,24 +1150,29 @@
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/All-About-the-Man-ec237e5380515015e5959ea7ab88db63.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/All-About-the-Man-c2b6106c25b7d76b9f3e16d4f7d6e116.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/All-About-the-Man-64fa8941cf2bf771b6384c6d5e11768b.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/All-About-the-Man-84cbc81bb8707c2af079faf59a7f986f.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/All-About-the-Man-42eae74b8669ac413baa8de081dbf93e.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/All-About-the-Man-9f39c8d19914c43aa07e2a8341e9723c.jpg"
   },
   {
     "song_title": "The breadcrumbs in the forest",
     "artist": "Australians",
     "album": "Fairy Tales",
-    "cover_art": null,
-    "type_of_album": null,
+    "cover_art": "/boxel/media-registry/covers/Fairy-Tales-3bf50242ac350415295bf568384f1ddd.jpg",
+    "type_of_album": "Album",
     "genre": "Alternative",
     "length": "2:11",
-    "catalog": null,
+    "catalog": [
+      "Batch D"
+    ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
-    "search_for_artist_bb_clarke": null
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Fairy-Tales-9e0207462f77a45b1ffbf589b135346c.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Fairy-Tales-293c777e4e49494997b7dd4ce244bbcc.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Fairy-Tales-ef10f4d7c52e65a544778f0b75b6da97.jpg"
   },
   {
     "song_title": "The holy mess",
@@ -993,9 +1191,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Magnitude-f1139c546654d9fc9fe63216c43d5588.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Magnitude-d7cfb083c8573151fafb8bc54e5168d0.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Magnitude-c1f73a6d5cf3ef6558c4f8e3149e44b9.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Magnitude-0a1e9aae111c3bcc763923c26da4c583.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Magnitude-35be03807f3f3783dea17b3063abeaa3.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Magnitude-ba886f127e82ffdba829a1bd1a39eddc.jpg"
   },
   {
     "song_title": "The leaves are changing color",
@@ -1006,16 +1204,19 @@
     "type_of_album": "EP",
     "genre": "Alternative",
     "length": "3:23",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Autumn-Leaves-72af1a0c113d68ead006f276c96b07a0.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Autumn-Leaves-127a5b8872a08d6b2fea238aff94e7d6.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Autumn-Leaves-3c06e1e8eecf962ab2299a62a3ca81be.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Autumn-Leaves-c1a11b8da3182caf91719b2afbe8138a.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Autumn-Leaves-609809715b3077a40277ba64eb37d81a.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Autumn-Leaves-e3ad2485cea96e279a2614157685cf6e.jpg"
   },
   {
     "song_title": "The leaves are changing color (dance remix)",
@@ -1026,16 +1227,19 @@
     "type_of_album": "EP",
     "genre": "Dance",
     "length": "3:02",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Autumn-Leaves-72af1a0c113d68ead006f276c96b07a0.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Autumn-Leaves-127a5b8872a08d6b2fea238aff94e7d6.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Autumn-Leaves-3c06e1e8eecf962ab2299a62a3ca81be.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Autumn-Leaves-c1a11b8da3182caf91719b2afbe8138a.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Autumn-Leaves-609809715b3077a40277ba64eb37d81a.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Autumn-Leaves-e3ad2485cea96e279a2614157685cf6e.jpg"
   },
   {
     "song_title": "The prom dress",
@@ -1046,16 +1250,19 @@
     "type_of_album": "EP",
     "genre": "Alternative",
     "length": "3:09",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Graduation-Day-2dd298c25495473784f738eaf13b075c.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Graduation-Day-7677c126556a0ede38e2b84af5877914.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Graduation-Day-cf014c906b9db47205fb2db5865d3d69.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Graduation-Day-d158f6077c51347ce734dd7d8abadc87.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Graduation-Day-1a9ff0255356702b43462820c86ce6f1.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Graduation-Day-fe87d97edbe444ea4570d603018baa04.jpg"
   },
   {
     "song_title": "The ridiculous nature of people",
@@ -1066,16 +1273,19 @@
     "type_of_album": "Album",
     "genre": "Rock",
     "length": "2:58",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": "X",
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-8ec5d10ac20769e6c2b8c9b8d4d52bf8.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-6210898179f5f967a75bb5c95d458104.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Animals-452d224c4fee8e0ea2a54daceeb20139.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-c648b6ce05964ecee200e817fedf74e5.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-4caf1dff67ebc192b4a194b551bc8274.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Animals-0cd698c9c380701dae567dbda7e25ccb.jpg"
   },
   {
     "song_title": "The sophomores",
@@ -1094,9 +1304,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Good-Times-539e6e069dce2985bc812a6574023eb1.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Good-Times-25f377395dff8ea8347f6b7a11786890.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Good-Times-d3d22040ceb9a7cefe03027365fdf941.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Good-Times-0299fde8bef73fb6c2cb43afe3767861.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Good-Times-fc6655164b49cf24801bcfc7f1c8cc67.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Good-Times-8e7e860bd4b26cff836ae28c30488c86.jpg"
   },
   {
     "song_title": "Three wishes",
@@ -1107,16 +1317,19 @@
     "type_of_album": "EP",
     "genre": "Alternative",
     "length": "3:40",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Graduation-Day-2dd298c25495473784f738eaf13b075c.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Graduation-Day-7677c126556a0ede38e2b84af5877914.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Graduation-Day-cf014c906b9db47205fb2db5865d3d69.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Graduation-Day-d158f6077c51347ce734dd7d8abadc87.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Graduation-Day-1a9ff0255356702b43462820c86ce6f1.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Graduation-Day-fe87d97edbe444ea4570d603018baa04.jpg"
   },
   {
     "song_title": "We used to be good",
@@ -1135,24 +1348,109 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/More-Than-We-Know-32629013ab04535072c5f3c0a51e2a33.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/More-Than-We-Know-f7fee4bdf813b972f099d50c29f138e0.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/More-Than-We-Know-70b0c863772d24bb94cf96ad0f41b1a9.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/More-Than-We-Know-fce4cd590553ddb8fe5a100b7bb85f82.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/More-Than-We-Know-02a2cc996ff8ac595924ed4ecec01c20.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/More-Than-We-Know-7debe4f057c479e341efe669233b7698.jpg"
+  },
+  {
+    "song_title": "What the hell",
+    "artist": "Super nova",
+    "album": "Drunk",
+    "cover_art": "/boxel/media-registry/covers/Drunk-25e7e718e003b8caeb0c743090afafd3.jpg",
+    "type_of_album": "Album",
+    "genre": "Rock",
+    "length": "2:58",
+    "catalog": [
+      "Batch D"
+    ],
+    "owner": "Bunny Records",
+    "filtered_by_genre_pop": null,
+    "filtered_by_length_less_than_3_min": "X",
+    "search_for_artist_pia_midina": null,
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Drunk-d6ae90643d8a48299bb8a3e446f17302.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Drunk-41d287ef4937adf82d5a083d9a7f9042.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Drunk-240f08811289f1346373b84a1b930234.jpg"
   },
   {
     "song_title": "When we were younger",
     "artist": "Love monkeys",
     "album": "Friends with Benefits",
-    "cover_art": null,
-    "type_of_album": null,
+    "cover_art": "/boxel/media-registry/covers/Friends-with-Benefits-f3626b7d09e0a6bf5f531f732d7753b7.jpg",
+    "type_of_album": "EP",
     "genre": "Rock",
     "length": "2:50",
-    "catalog": null,
+    "catalog": [
+      "Batch E"
+    ],
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": null,
-    "search_for_artist_bb_clarke": null
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Friends-with-Benefits-9ac09161c4ef958630214efc5ee98643.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Friends-with-Benefits-34cee2960705df3bb922cf666094d7cb.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Friends-with-Benefits-6596d634508f0e58f438dba8e7751a04.jpg"
+  },
+  {
+    "song_title": "When you hit me",
+    "artist": "Gross guest",
+    "album": "When you hit me",
+    "cover_art": "/boxel/media-registry/covers/When-You-Hit-Me-912f52f12a3db5834d3b48bca800895b.jpg",
+    "type_of_album": "Single",
+    "genre": "Rock",
+    "length": "2:45",
+    "catalog": [
+      "Batch E"
+    ],
+    "owner": "Bunny Records",
+    "filtered_by_genre_pop": null,
+    "filtered_by_length_less_than_3_min": "X",
+    "search_for_artist_pia_midina": null,
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/When-You-Hit-Me-46b55d7d3636811b85a388cf51a7aafa.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/When-You-Hit-Me-a55d7490a779529f7874c32b95db7da0.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/When-You-Hit-Me-003f2e543690d1d6c14d0a99c0546027.jpg"
+  },
+  {
+    "song_title": "Why do you like me?",
+    "artist": "Picture perfect",
+    "album": "Why do you like me?",
+    "cover_art": "/boxel/media-registry/covers/Why-Do-You-Like-Me-37f8d22697bd705706cc15455f641337.jpg",
+    "type_of_album": "Single",
+    "genre": "Rock",
+    "length": "2:16",
+    "catalog": [
+      "Batch D"
+    ],
+    "owner": "Bunny Records",
+    "filtered_by_genre_pop": null,
+    "filtered_by_length_less_than_3_min": "X",
+    "search_for_artist_pia_midina": null,
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Why-Do-You-Like-Me-2fe1ab569893ac7aed7993433b9fd379.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Why-Do-You-Like-Me-dbed900f16cfec8c999f4fe50bcb25fe.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Why-Do-You-Like-Me-e76fa71efa3a125936ac18e1e5a800d7.jpg"
+  },
+  {
+    "song_title": "Why not",
+    "artist": "Jason the boss",
+    "album": "Why not",
+    "cover_art": "/boxel/media-registry/covers/Why-Not-142db8b3895fb95b84dde7e4352a8541.jpg",
+    "type_of_album": "Single",
+    "genre": "Rock",
+    "length": "2:57",
+    "catalog": [
+      "Batch E"
+    ],
+    "owner": "Bunny Records",
+    "filtered_by_genre_pop": null,
+    "filtered_by_length_less_than_3_min": "X",
+    "search_for_artist_pia_midina": null,
+    "search_for_artist_bb_clarke": null,
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Why-Not-1302863aa6cdce8b578683eab8f98725.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Why-Not-d0179d11d507dbd9915e91459d80e530.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Why-Not-25043a6314a922450d4764ffafc26542.jpg"
   },
   {
     "song_title": "Yesterday was my favorite day",
@@ -1163,16 +1461,19 @@
     "type_of_album": "EP",
     "genre": "Alternative",
     "length": "2:46",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": "X",
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Sunlight-992b2b3c273eb680080e6d46f6d2321d.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Sunlight-ac3cf03059b1bb7cc440ff801054ae19.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Sunlight-d7905ac49c72cdd517664d57dec1b921.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Sunlight-8a9bf8f867e964b9410e55ec85d8714b.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Sunlight-26966f0055adff13c228daa5cd9c2787.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Sunlight-b30ed3f8cdd0b8b2036cdc63f8531d5c.jpg"
   },
   {
     "song_title": "You are the one",
@@ -1183,16 +1484,19 @@
     "type_of_album": "EP",
     "genre": "Pop",
     "length": "3:24",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": "X",
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": "X",
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-Never-Dies-d4f80728fc1aded37de1789163fb05d5.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-Never-Dies-e28e1d626620287e16de4273256434de.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Love-Never-Dies-629f881ec764a928d1917fa0a81d453d.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Love-Never-Dies-8e230ef0d503b03840a4bc21751cb1ea.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Love-Never-Dies-87008c2454b21301fb45085ad8e89d13.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Love-Never-Dies-f45a555fb881f596d94ce354c9fc8faa.jpg"
   },
   {
     "song_title": "Zig and zag",
@@ -1211,9 +1515,9 @@
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": null,
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Zig-and-Zag-72c5cd985c1873e066b8348747e51c11.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Zig-and-Zag-ce0e2d7c8d899e644903dc75d44e56e2.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Zig-and-Zag-99578f75da91fcab806e7c750a1775f1.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Zig-and-Zag-9ca19a1f0b42538deb117cd1312278f5.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Zig-and-Zag-a277f710edf6f8c76970068837c3b529.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Zig-and-Zag-071b31cf59f8a2b0b70c2505ac56d153.jpg"
   },
   {
     "song_title": "Zodiac lies",
@@ -1224,258 +1528,635 @@
     "type_of_album": "Album",
     "genre": "Rock",
     "length": "3:33",
-    "catalog": [ "Film Music", "Batch F" ],
+    "catalog": [
+      "Film Music",
+      "Batch F"
+    ],
     "later_batch_f": true,
     "owner": "Bunny Records",
     "filtered_by_genre_pop": null,
     "filtered_by_length_less_than_3_min": null,
     "search_for_artist_pia_midina": null,
     "search_for_artist_bb_clarke": "X",
-    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-8ec5d10ac20769e6c2b8c9b8d4d52bf8.jpg",
-    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-6210898179f5f967a75bb5c95d458104.jpg",
-    "cover_art_large": "/boxel/media-registry/covers/large/Animals-452d224c4fee8e0ea2a54daceeb20139.jpg"
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Animals-c648b6ce05964ecee200e817fedf74e5.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Animals-4caf1dff67ebc192b4a194b551bc8274.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Animals-0cd698c9c380701dae567dbda7e25ccb.jpg"
   },
   {
     "song_title": "A very very old world",
     "artist": "The Sunshine Band",
     "album": "Cast me",
+    "type_of_album": "Album",
     "genre": "Musical",
     "length": "3:01",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Radio-friendly",
+      "Soundtracks"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Cast-Me-eed79e6aac39da970d66019c4d5e9f91.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Cast-Me-f17caba6168d8125d37d782c1b6280ef.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Cast-Me-283f58416e673b44e0ea33190eb0c7aa.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Cast-Me-101228da29f0c2019640482c72a63624.jpg"
   },
   {
     "song_title": "Alike or not alike",
     "artist": "Gary and the Whales",
     "album": "Freedom",
+    "type_of_album": "Album",
     "genre": "Alternative",
     "length": "2:49",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Gary and the Whales",
+      "Love songs"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Freedom-c5096283fb69fe036fa5939bdf5ee725.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Freedom-2790d45474801c5fec95319d4e70cb21.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Freedom-4784f30935bc565b3f1fe10e182a111e.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Freedom-37b61712638a1226af164e65ae030614.jpg"
   },
   {
     "song_title": "Aloof",
     "artist": "Light & Shadow",
     "album": "The Vamps of the World",
+    "type_of_album": "Album",
     "genre": "Metal",
     "length": "4:00",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Radio-friendly"
+    ],
+    "cover_art": "/boxel/media-registry/covers/The-Vamps-of-the-World-2eee01318020a849a060047c2683d6aa.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/The-Vamps-of-the-World-50c4682a6a477681ce5c5d4491673de6.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/The-Vamps-of-the-World-47b23f3431a85503ffa2566f2f8678bc.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/The-Vamps-of-the-World-79ceb402897f25b10ab0d1edc81bc31c.jpg"
+  },
+  {
+    "song_title": "Another time",
+    "artist": "No Lyrics",
+    "album": "What Musical Instruments Can Do",
+    "type_of_album": "Album",
+    "genre": "Instrumental",
+    "length": "3:10",
+    "owner": "CRD Records",
+    "catalog": [
+      "Instrumental"
+    ],
+    "cover_art": "/boxel/media-registry/covers/What-Musical-Instruments-Can-Do-25f0821df581427a1ffd580efacc3f48.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/What-Musical-Instruments-Can-Do-69e2bb44dcf2efa8423d13b7e1373a1d.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/What-Musical-Instruments-Can-Do-27261f01fedadb1b9321d99dada94835.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/What-Musical-Instruments-Can-Do-17f35ff1ac7a92b769563cb0eb2fe737.jpg"
   },
   {
     "song_title": "Beauty versus strength",
     "artist": "Bambi Attack",
     "album": "Innocent Kittens",
+    "type_of_album": "Album",
     "genre": "Pop",
     "length": "2:33",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Hit Songs"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Innocent-Kittens-a7bffc9970e17ff6852519cffe89889e.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Innocent-Kittens-c25afc68eb3ed514552a9b1c9a89f5ed.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Innocent-Kittens-d7a7ab8d32b59a21fdd869d616324d9f.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Innocent-Kittens-c3d15fa5144a7bd632f2c97ed7e03cab.jpg"
+  },
+  {
+    "song_title": "Been there done that",
+    "artist": "Gary and the Whales",
+    "album": "Been There Done That",
+    "type_of_album": "Single",
+    "genre": "Alternative",
+    "length": "2:49",
+    "owner": "CRD Records",
+    "catalog": [
+      "Gary and the Whales",
+      "Hit Songs"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Been-There-Done-That-08cbf420ffec36f441e05f0ffcb161aa.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Been-There-Done-That-116308553e7b5771408343a3b4203e84.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Been-There-Done-That-81113b1f6b45beaba6e2918715958186.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Been-There-Done-That-50415085c30c38d9e29ccf6af8c224d7.jpg"
   },
   {
     "song_title": "Drive-thru",
     "artist": "Mad Max",
     "album": "Roller Coaster",
+    "type_of_album": "Album",
     "genre": "Rock",
     "length": "3:15",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Hit Songs"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Roller-Coaster-e0079fe4fd3c57562a8157031d7ccb2d.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Roller-Coaster-ccb410102ec5946e03d27901d67ceef4.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Roller-Coaster-3ee034e7ca44a975ceab7148eb633423.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Roller-Coaster-b3553f0a2d8ffc5258493210fc954ec2.jpg"
+  },
+  {
+    "song_title": "Driving",
+    "artist": "No Lyrics",
+    "album": "Just Listen",
+    "type_of_album": "EP",
+    "genre": "Instrumental",
+    "length": "3:20",
+    "owner": "CRD Records",
+    "catalog": [
+      "Instrumental"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Just-Listen-125b363645a1639bca791c2f1afafdbe.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Just-Listen-53de82f82285c3653afd35ed56c572e0.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Just-Listen-61d24b763dde87e535ce88be7ecf0149.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Just-Listen-8f7a15df5f3e21a9f5088c2d47ccbdae.jpg"
   },
   {
     "song_title": "English breakfast",
     "artist": "The Sunshine Band",
     "album": "Cast me",
+    "type_of_album": "Album",
     "genre": "Musical",
     "length": "3:11",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Soundtracks"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Cast-Me-eed79e6aac39da970d66019c4d5e9f91.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Cast-Me-f17caba6168d8125d37d782c1b6280ef.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Cast-Me-283f58416e673b44e0ea33190eb0c7aa.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Cast-Me-101228da29f0c2019640482c72a63624.jpg"
   },
   {
     "song_title": "Francis the shark",
     "artist": "Gary and the Whales",
     "album": "Freedom",
+    "type_of_album": "Album",
     "genre": "Alternative",
     "length": "3:35",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Gary and the Whales"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Freedom-c5096283fb69fe036fa5939bdf5ee725.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Freedom-2790d45474801c5fec95319d4e70cb21.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Freedom-4784f30935bc565b3f1fe10e182a111e.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Freedom-37b61712638a1226af164e65ae030614.jpg"
+  },
+  {
+    "song_title": "Fried pork",
+    "artist": "Ears Open",
+    "album": "Fried pork",
+    "type_of_album": "Single",
+    "genre": "Instrumental",
+    "length": "4:01",
+    "owner": "CRD Records",
+    "catalog": [
+      "Instrumental"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Fried-Pork-987ffdb908b9d55d42d014c1d55d1718.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Fried-Pork-3326351313128584b8bf3f0926338036.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Fried-Pork-4a0130a58c814c7e884e2fb8090c0172.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Fried-Pork-c04ea63b82c2483bd323f87e7e2077aa.jpg"
   },
   {
     "song_title": "Gray zone",
     "artist": "Light & Shadow",
     "album": "The Vamps of the World",
+    "type_of_album": "Album",
     "genre": "Metal",
     "length": "2:57",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Unplugged"
+    ],
+    "cover_art": "/boxel/media-registry/covers/The-Vamps-of-the-World-2eee01318020a849a060047c2683d6aa.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/The-Vamps-of-the-World-50c4682a6a477681ce5c5d4491673de6.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/The-Vamps-of-the-World-47b23f3431a85503ffa2566f2f8678bc.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/The-Vamps-of-the-World-79ceb402897f25b10ab0d1edc81bc31c.jpg"
   },
   {
     "song_title": "Home schooling",
     "artist": "Bambi Attack",
     "album": "Innocent Kittens",
+    "type_of_album": "Album",
     "genre": "Pop",
     "length": "2:48",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Radio-friendly"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Innocent-Kittens-a7bffc9970e17ff6852519cffe89889e.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Innocent-Kittens-c25afc68eb3ed514552a9b1c9a89f5ed.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Innocent-Kittens-d7a7ab8d32b59a21fdd869d616324d9f.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Innocent-Kittens-c3d15fa5144a7bd632f2c97ed7e03cab.jpg"
+  },
+  {
+    "song_title": "Home sweet home",
+    "artist": "Gary and the Whales",
+    "album": "Home Sweet Home",
+    "type_of_album": "Single",
+    "genre": "Alternative",
+    "length": "3:01",
+    "owner": "CRD Records",
+    "catalog": [
+      "Gary and the Whales"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Home-Sweet-Home-013784e4b9eb67276ac0884438ea4bf0.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Home-Sweet-Home-7ddd4b79496441cb0e8483a479689f7f.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Home-Sweet-Home-756817a112cfbed5ddfe8ef98c21255f.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Home-Sweet-Home-0c0cc63cd731d56ea72666e12e4aae35.jpg"
   },
   {
     "song_title": "Joking, just keep joking",
     "artist": "Mad Max",
     "album": "Roller Coaster",
+    "type_of_album": "Album",
     "genre": "Rock",
     "length": "3:29",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Radio-friendly"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Roller-Coaster-e0079fe4fd3c57562a8157031d7ccb2d.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Roller-Coaster-ccb410102ec5946e03d27901d67ceef4.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Roller-Coaster-3ee034e7ca44a975ceab7148eb633423.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Roller-Coaster-b3553f0a2d8ffc5258493210fc954ec2.jpg"
   },
   {
     "song_title": "Lagoon",
     "artist": "Gary and the Whales",
     "album": "Freedom",
+    "type_of_album": "Album",
     "genre": "Alternative",
     "length": "2:49",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Gary and the Whales",
+      "Hit Songs"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Freedom-c5096283fb69fe036fa5939bdf5ee725.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Freedom-2790d45474801c5fec95319d4e70cb21.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Freedom-4784f30935bc565b3f1fe10e182a111e.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Freedom-37b61712638a1226af164e65ae030614.jpg"
+  },
+  {
+    "song_title": "Longing",
+    "artist": "Ears Open",
+    "album": "Longing",
+    "type_of_album": "Single",
+    "genre": "Instrumental",
+    "length": "4:20",
+    "owner": "CRD Records",
+    "catalog": [
+      "Instrumental"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Longing-30397bbba9ca02778df52d160b47b139.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Longing-17b3fc0558be0c18a232bbf2dc7e81da.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Longing-75911de61e44da474d436e03b4aad3fc.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Longing-db1c961616f1ccfa2d078e854cd2e322.jpg"
   },
   {
     "song_title": "Lucifer's lair",
     "artist": "Light & Shadow",
     "album": "The Vamps of the World",
+    "type_of_album": "Album",
     "genre": "Metal",
     "length": "3:23",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Hit Songs"
+    ],
+    "cover_art": "/boxel/media-registry/covers/The-Vamps-of-the-World-2eee01318020a849a060047c2683d6aa.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/The-Vamps-of-the-World-50c4682a6a477681ce5c5d4491673de6.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/The-Vamps-of-the-World-47b23f3431a85503ffa2566f2f8678bc.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/The-Vamps-of-the-World-79ceb402897f25b10ab0d1edc81bc31c.jpg"
   },
   {
     "song_title": "Mixed signals",
     "artist": "The Sunshine Band",
     "album": "Cast me",
+    "type_of_album": "Album",
     "genre": "Musical",
     "length": "1:43",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Soundtracks"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Cast-Me-eed79e6aac39da970d66019c4d5e9f91.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Cast-Me-f17caba6168d8125d37d782c1b6280ef.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Cast-Me-283f58416e673b44e0ea33190eb0c7aa.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Cast-Me-101228da29f0c2019640482c72a63624.jpg"
   },
   {
     "song_title": "Never ever again",
     "artist": "Bambi Attack",
     "album": "Innocent Kittens",
+    "type_of_album": "Album",
     "genre": "Pop",
     "length": "2:23",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Love songs"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Innocent-Kittens-a7bffc9970e17ff6852519cffe89889e.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Innocent-Kittens-c25afc68eb3ed514552a9b1c9a89f5ed.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Innocent-Kittens-d7a7ab8d32b59a21fdd869d616324d9f.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Innocent-Kittens-c3d15fa5144a7bd632f2c97ed7e03cab.jpg"
+  },
+  {
+    "song_title": "Nobody's claims",
+    "artist": "The Musicians",
+    "album": "Nobody's claims",
+    "type_of_album": "Single",
+    "genre": "Instrumental",
+    "length": "3:50",
+    "owner": "CRD Records",
+    "catalog": [
+      "Instrumental"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Nobodys-Claims-a1e4dcb312d9c8153c1625fbb2c15a1a.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Nobodys-Claims-6b87a959623775951aef5c782d087347.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Nobodys-Claims-4d81fabccbf3b913c85a823e912d1efc.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Nobodys-Claims-ac24284d669efc62f5b0854fd06410e4.jpg"
   },
   {
     "song_title": "On and on again",
     "artist": "Mad Max",
     "album": "Roller Coaster",
+    "type_of_album": "Album",
     "genre": "Rock",
     "length": "2:38",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Love songs"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Roller-Coaster-e0079fe4fd3c57562a8157031d7ccb2d.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Roller-Coaster-ccb410102ec5946e03d27901d67ceef4.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Roller-Coaster-3ee034e7ca44a975ceab7148eb633423.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Roller-Coaster-b3553f0a2d8ffc5258493210fc954ec2.jpg"
   },
   {
     "song_title": "Over you",
     "artist": "The Sunshine Band",
     "album": "Cast me",
+    "type_of_album": "Album",
     "genre": "Musical",
     "length": "1:49",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Love songs",
+      "Soundtracks"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Cast-Me-eed79e6aac39da970d66019c4d5e9f91.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Cast-Me-f17caba6168d8125d37d782c1b6280ef.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Cast-Me-283f58416e673b44e0ea33190eb0c7aa.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Cast-Me-101228da29f0c2019640482c72a63624.jpg"
+  },
+  {
+    "song_title": "Pinnacles",
+    "artist": "Gary and the Whales",
+    "album": "Pinnacles",
+    "type_of_album": "Single",
+    "genre": "Alternative",
+    "length": "3:22",
+    "owner": "CRD Records",
+    "catalog": [
+      "Gary and the Whales"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Pinnacles-b0bc6e9dc40b78366ae392064d7dff55.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Pinnacles-436877bcada32a81c96b8c6dcdfff6bd.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Pinnacles-7c4366eafdd72991de197bc261865b25.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Pinnacles-3e3110a4d014cdf756430de3703b9ee8.jpg"
   },
   {
     "song_title": "Powerful",
     "artist": "Light & Shadow",
     "album": "The Vamps of the World",
+    "type_of_album": "Album",
     "genre": "Metal",
     "length": "4:01",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Soundtracks"
+    ],
+    "cover_art": "/boxel/media-registry/covers/The-Vamps-of-the-World-2eee01318020a849a060047c2683d6aa.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/The-Vamps-of-the-World-50c4682a6a477681ce5c5d4491673de6.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/The-Vamps-of-the-World-47b23f3431a85503ffa2566f2f8678bc.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/The-Vamps-of-the-World-79ceb402897f25b10ab0d1edc81bc31c.jpg"
   },
   {
     "song_title": "Silence",
     "artist": "Gary and the Whales",
     "album": "Freedom",
+    "type_of_album": "Album",
     "genre": "Alternative",
     "length": "1:59",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Gary and the Whales"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Freedom-c5096283fb69fe036fa5939bdf5ee725.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Freedom-2790d45474801c5fec95319d4e70cb21.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Freedom-4784f30935bc565b3f1fe10e182a111e.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Freedom-37b61712638a1226af164e65ae030614.jpg"
   },
   {
     "song_title": "Skills are all you need",
     "artist": "Bambi Attack",
     "album": "Innocent Kittens",
+    "type_of_album": "Album",
     "genre": "Pop",
     "length": "2:19",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Radio-friendly"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Innocent-Kittens-a7bffc9970e17ff6852519cffe89889e.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Innocent-Kittens-c25afc68eb3ed514552a9b1c9a89f5ed.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Innocent-Kittens-d7a7ab8d32b59a21fdd869d616324d9f.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Innocent-Kittens-c3d15fa5144a7bd632f2c97ed7e03cab.jpg"
+  },
+  {
+    "song_title": "Sulking maids",
+    "artist": "Gary and the Whales",
+    "album": "Sulking Maids",
+    "type_of_album": "Single",
+    "genre": "Alternative",
+    "length": "3:18",
+    "owner": "CRD Records",
+    "catalog": [
+      "Gary and the Whales"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Sulking-Maids-774da09234f84b522666a94dfedf82de.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Sulking-Maids-970afbd1613d4cfa46117fac1e412cdd.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Sulking-Maids-02fb30a47c28025d0fcd7c161763a70a.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Sulking-Maids-b8f3c87b734839d19610198418d13672.jpg"
   },
   {
     "song_title": "Terrible traffic",
     "artist": "Mad Max",
     "album": "Roller Coaster",
+    "type_of_album": "Album",
     "genre": "Rock",
     "length": "3:18",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Unplugged"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Roller-Coaster-e0079fe4fd3c57562a8157031d7ccb2d.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Roller-Coaster-ccb410102ec5946e03d27901d67ceef4.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Roller-Coaster-3ee034e7ca44a975ceab7148eb633423.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Roller-Coaster-b3553f0a2d8ffc5258493210fc954ec2.jpg"
   },
   {
     "song_title": "The greatest bathroom ever",
     "artist": "The Sunshine Band",
+    "type_of_album": "Album",
     "album": "Cast me",
     "genre": "Musical",
     "length": "5:09",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Soundtracks"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Cast-Me-eed79e6aac39da970d66019c4d5e9f91.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Cast-Me-f17caba6168d8125d37d782c1b6280ef.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Cast-Me-283f58416e673b44e0ea33190eb0c7aa.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Cast-Me-101228da29f0c2019640482c72a63624.jpg"
   },
   {
     "song_title": "The mass-market effect",
     "artist": "Gary and the Whales",
     "album": "Freedom",
+    "type_of_album": "Album",
     "genre": "Alternative",
     "length": "3:07",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Gary and the Whales",
+      "Radio-friendly"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Freedom-c5096283fb69fe036fa5939bdf5ee725.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Freedom-2790d45474801c5fec95319d4e70cb21.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Freedom-4784f30935bc565b3f1fe10e182a111e.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Freedom-37b61712638a1226af164e65ae030614.jpg"
   },
   {
     "song_title": "This is the end",
     "artist": "Light & Shadow",
     "album": "The Vamps of the World",
+    "type_of_album": "Album",
     "genre": "Metal",
     "length": "2:22",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Hit Songs",
+      "Love songs"
+    ],
+    "cover_art": "/boxel/media-registry/covers/The-Vamps-of-the-World-2eee01318020a849a060047c2683d6aa.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/The-Vamps-of-the-World-50c4682a6a477681ce5c5d4491673de6.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/The-Vamps-of-the-World-47b23f3431a85503ffa2566f2f8678bc.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/The-Vamps-of-the-World-79ceb402897f25b10ab0d1edc81bc31c.jpg"
   },
   {
     "song_title": "Trust yourself",
     "artist": "Bambi Attack",
     "album": "Innocent Kittens",
+    "type_of_album": "Album",
     "genre": "Pop",
     "length": "3:35",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Unplugged"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Innocent-Kittens-a7bffc9970e17ff6852519cffe89889e.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Innocent-Kittens-c25afc68eb3ed514552a9b1c9a89f5ed.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Innocent-Kittens-d7a7ab8d32b59a21fdd869d616324d9f.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Innocent-Kittens-c3d15fa5144a7bd632f2c97ed7e03cab.jpg"
   },
   {
     "song_title": "Under the living tree",
     "artist": "Mad Max",
     "album": "Roller Coaster",
+    "type_of_album": "Album",
     "genre": "Rock",
     "length": "2:50",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Soundtracks"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Roller-Coaster-e0079fe4fd3c57562a8157031d7ccb2d.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Roller-Coaster-ccb410102ec5946e03d27901d67ceef4.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Roller-Coaster-3ee034e7ca44a975ceab7148eb633423.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Roller-Coaster-b3553f0a2d8ffc5258493210fc954ec2.jpg"
   },
   {
     "song_title": "Veil or tiara",
     "artist": "Bambi Attack",
     "album": "Innocent Kittens",
+    "type_of_album": "Album",
     "genre": "Pop",
     "length": "2:30",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Soundtracks"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Innocent-Kittens-a7bffc9970e17ff6852519cffe89889e.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Innocent-Kittens-c25afc68eb3ed514552a9b1c9a89f5ed.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Innocent-Kittens-d7a7ab8d32b59a21fdd869d616324d9f.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Innocent-Kittens-c3d15fa5144a7bd632f2c97ed7e03cab.jpg"
   },
   {
     "song_title": "Zombie Apocalypse",
     "artist": "Gary and the Whales",
     "album": "Freedom",
+    "type_of_album": "Album",
     "genre": "Alternative",
     "length": "3:15",
     "owner": "CRD Records",
-    "catalog": [ "Hit Songs" ]
+    "catalog": [
+      "Gary and the Whales",
+      "Unplugged"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Freedom-c5096283fb69fe036fa5939bdf5ee725.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Freedom-2790d45474801c5fec95319d4e70cb21.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Freedom-4784f30935bc565b3f1fe10e182a111e.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Freedom-37b61712638a1226af164e65ae030614.jpg"
+  },
+  {
+    "song_title": "Zombies all over",
+    "artist": "The Punk Band",
+    "album": "Zombies",
+    "type_of_album": "Album",
+    "genre": "Rock",
+    "length": "3:35",
+    "owner": "CRD Records",
+    "catalog": [
+      "Soundtracks"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Zombies-44b3998199a55559eba8881abd40b6ac.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Zombies-afe98eae931b3191aad65b70307e0d46.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Zombies-78b692bb374f5725dda2b9beab4c1eab.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Zombies-075d26935c83beff282ea59cfce61e78.jpg"
+  },
+  {
+    "song_title": "Zombies never die",
+    "artist": "The Punk Band",
+    "album": "Zombies",
+    "type_of_album": "Album",
+    "genre": "Rock",
+    "length": "3:33",
+    "owner": "CRD Records",
+    "catalog": [
+      "Soundtracks",
+      "Unplugged"
+    ],
+    "cover_art": "/boxel/media-registry/covers/Zombies-44b3998199a55559eba8881abd40b6ac.jpg",
+    "cover_art_thumb": "/boxel/media-registry/covers/thumb/Zombies-afe98eae931b3191aad65b70307e0d46.jpg",
+    "cover_art_medium": "/boxel/media-registry/covers/medium/Zombies-78b692bb374f5725dda2b9beab4c1eab.jpg",
+    "cover_art_large": "/boxel/media-registry/covers/large/Zombies-075d26935c83beff282ea59cfce61e78.jpg"
   }
 ]

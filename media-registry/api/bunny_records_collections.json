@@ -4,90 +4,166 @@
     "catalog_description": "All recordings by GG",
     "number_of_songs": 42,
     "top_artists": ["Golden Girl"],
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/golden-girl-08a69a56259e29d239ae335cf9460b40.svg"
+    "date_created": "2019-02-13",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Love-the-Love-df0cbae4837448f41fcc0a94d025b3ca.jpg",
+      "/boxel/media-registry/covers/thumb/Home-Isnt-Sweet-7db533203e90322189bda582bbbdad0a.jpg",
+      "/boxel/media-registry/covers/thumb/Never-Lonely-16682007e12dbc6ef1ada9c2bc4e69f1.jpg",
+      "/boxel/media-registry/covers/thumb/On-the-Brink-of-Happiness-00637f8a7dfdd5a7da7adc2e6606be17.jpg",
+      "/boxel/media-registry/covers/thumb/Zig-and-Zag-9ca19a1f0b42538deb117cd1312278f5.jpg"
+    ]
   },
   {
     "catalog_title": "Extra Long",
     "catalog_description": "Tracks over 4 min",
     "number_of_songs": 102,
-    "top_artists": ["Princess May", "Fly me to the moon", "The edge of nowhere"],
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/extra-long-2e8d21a77c16f75de382eabf5d3b9ee0.svg"
+    "top_artists": ["Fly Me To The Moon", "Charlotte's Cats", "The Mash"],
+    "date_created": "2019-08-14",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/All-About-the-Quality-of-Life-6aea16c68268651c69652080c2748137.jpg",
+      "/boxel/media-registry/covers/thumb/Love-Conquers-All-2ca88e7d2cd46c54c79c224885f4d054.jpg",
+      "/boxel/media-registry/covers/thumb/Make-Magic-9804577be992ea22d1149017f41ed2a8.jpg",
+      "/boxel/media-registry/covers/thumb/Good-Times-0299fde8bef73fb6c2cb43afe3767861.jpg",
+      "/boxel/media-registry/covers/thumb/More-Than-We-Know-fce4cd590553ddb8fe5a100b7bb85f82.jpg"
+    ]
   },
   {
     "catalog_title": "Film Music",
     "catalog_description": "Themes & soundtracks",
     "number_of_songs": 156,
-    "top_artists": ["Pia Midina", "BB Clarke"],
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/film-music-4b5f03d5a5bf6dc1d9a2b6bba8ea906d.svg"
+    "top_artists": ["Pia Midina", "BB Clarke", "Marcy Blues"],
+    "date_created": "2019-11-27",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Love-the-Love-df0cbae4837448f41fcc0a94d025b3ca.jpg",
+      "/boxel/media-registry/covers/thumb/Sunlight-8a9bf8f867e964b9410e55ec85d8714b.jpg",
+      "/boxel/media-registry/covers/thumb/Moments-7e0d35fb6d65638429cb16589dbb842d.jpg",
+      "/boxel/media-registry/covers/thumb/Escape-4c83e91f454c860a02e4e493d46439c6.jpg",
+      "/boxel/media-registry/covers/thumb/Just-Like-Birds-606af991c1a826bbf854894539c893fc.jpg"
+    ]
   },
   {
     "catalog_title": "Super Successful",
     "catalog_description": "Popular records across genres & artists",
     "number_of_songs": 89,
-    "top_artists": ["Love Monkeys", "Nancy Jay", "Boyband"],
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/super-successful-61b2d07901af1c633c6c62c9e43fa9d5.svg"
+    "top_artists": ["Make Me", "Nancy Jay", "Boyband"],
+    "date_created": "2020-01-21",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Infatuated-46a2913ca5e99871617db7099ec3ff22.jpg",
+      "/boxel/media-registry/covers/thumb/Sailing-9c03c4b6cb8b0625605c86a16fd202a3.jpg",
+      "/boxel/media-registry/covers/thumb/Superficial-bf354f8286aba46d7524c106bd4d31a3.jpg",
+      "/boxel/media-registry/covers/thumb/Seven-Seasons-746ce0882d3650e8e346926b30f41cf7.jpg",
+      "/boxel/media-registry/covers/thumb/Rollercoaster-of-Emotions-d8599ffc2bbe50beb1cdad2da7fdd1ac.jpg"
+    ]
   },
   {
     "catalog_title": "Batch A ",
     "catalog_description": "Sold to Maxime Records",
     "number_of_songs": 23,
-    "top_artists": ["The Francines"],
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/batch-a-3bf3009dcdc41c4471b919171a73338d.svg"
+    "top_artists": ["The Clue", "Paula Sin", "The Francines"],
+    "date_created": "2020-07-14",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Save-Humankind-0262ab3a5295a27652ae36c6ba8b8152.jpg",
+      "/boxel/media-registry/covers/thumb/All-About-Heaven-069c6d8a49b40e8b301c39c224fae38f.jpg",
+      "/boxel/media-registry/covers/thumb/Little-Lies-150b87e74e7d780632c2e74afb211625.jpg",
+      "/boxel/media-registry/covers/thumb/Maximum-Mildness-f17a6d44926d863f0cdb6d6e9ad94ca3.jpg",
+      "/boxel/media-registry/covers/thumb/Magnitude-0a1e9aae111c3bcc763923c26da4c583.jpg"
+    ]
   },
   {
     "catalog_title": "Batch B ",
     "catalog_description": "Sold to Philanthropic Music Group",
     "number_of_songs": 120,
     "top_artists": ["Mouthwash", "Patrick Moles", "Sun and Moon"],
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/batch-b-3c02ec71dfaed466261d699222362864.svg"
+    "date_created": "2020-07-29",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/The-Future-Is-Ours-45e11565293a0a6a63c25e16b855f5d6.jpg",
+      "/boxel/media-registry/covers/thumb/Drive-Me-Crazy-7df954a64f14551ec3426ad82613b4cb.jpg",
+      "/boxel/media-registry/covers/thumb/Beauty-vs-Reality-adccb7e1ae7dc99e35c8b0ecfec4bd14.jpg",
+      "/boxel/media-registry/covers/thumb/Happy-Ever-After-5b9417c1d296a17cb98acd6cea5ea023.jpg",
+      "/boxel/media-registry/covers/thumb/All-About-the-Man-84cbc81bb8707c2af079faf59a7f986f.jpg"
+    ]
   },
   {
     "catalog_title": "Batch C",
-    "catalog_description": "Prepared for transfer to CL Records",
+    "catalog_description": "Prepared for transfer to Candle Lights Records",
     "number_of_songs": 211,
-    "top_artists": ["The Francines"],
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/extra-long-2e8d21a77c16f75de382eabf5d3b9ee0.svg"
+    "top_artists": ["Things", "UNIF", "Melodrama"],
+    "date_created": "2020-08-05",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Gotta-Be-Silly-ce720bd892ead9a0f3e80229cd4585bc.jpg",
+      "/boxel/media-registry/covers/thumb/Call-Me-Crazy-587c9443265522073220f274b587ba37.jpg",
+      "/boxel/media-registry/covers/thumb/Liars-d48f6788c1611e675b98c6a4c9f3fe88.jpg",
+      "/boxel/media-registry/covers/thumb/Mighty-Moon-bfca398f11196c81db3cfa95b82477dd.jpg",
+      "/boxel/media-registry/covers/thumb/Drama-Queen-b499f27098b6eb98d251fcebe57b6f5a.jpg"
+    ]
   },
   {
     "catalog_title": "Batch D",
     "catalog_description": "In progress",
     "number_of_songs": 7,
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/golden-girl-08a69a56259e29d239ae335cf9460b40.svg"
+    "top_artists": ["Australians", "Super Nova", "Picture Perfect"],
+    "date_created": "2020-08-11",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/On-the-Day-You-Were-Born-62047768e7600a3d4ceb270b9c171271.jpg",
+      "/boxel/media-registry/covers/thumb/Magna-Cum-Love-9622000927ec2ecf4aefe86b82744236.jpg",
+      "/boxel/media-registry/covers/thumb/Fairy-Tales-9e0207462f77a45b1ffbf589b135346c.jpg",
+      "/boxel/media-registry/covers/thumb/Drunk-d6ae90643d8a48299bb8a3e446f17302.jpg",
+      "/boxel/media-registry/covers/thumb/Why-Do-You-Like-Me-2fe1ab569893ac7aed7993433b9fd379.jpg"
+    ]
   },
   {
     "catalog_title": "Batch E",
     "catalog_description": "In progress",
     "number_of_songs": 12,
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/super-successful-61b2d07901af1c633c6c62c9e43fa9d5.svg"
+    "top_artists": ["Love Monkeys", "Gross Guest", "Jason The Boss"],
+    "date_created": "2020-08-13",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Sold-Out-cf2903d0c872405d7e89317cec849b73.jpg",
+      "/boxel/media-registry/covers/thumb/Sunny-Side-Up-be2acb93289f6bb548323b170b46c4bb.jpg",
+      "/boxel/media-registry/covers/thumb/Friends-with-Benefits-9ac09161c4ef958630214efc5ee98643.jpg",
+      "/boxel/media-registry/covers/thumb/When-You-Hit-Me-46b55d7d3636811b85a388cf51a7aafa.jpg",
+      "/boxel/media-registry/covers/thumb/Why-Not-1302863aa6cdce8b578683eab8f98725.jpg"
+    ]
   },
   {
     "catalog_title": "Batch F",
     "catalog_description": "Transfer to CRD Records",
     "number_of_songs": 16,
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/batch-f-a13480cd5dd3c3cecc7c50fe44210ba8.svg"
+    "date_created": "2020-01-14",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Sunlight-8a9bf8f867e964b9410e55ec85d8714b.jpg",
+      "/boxel/media-registry/covers/thumb/Change-Is-Good-1026df6851c172548980fabf8406c14b.jpg",
+      "/boxel/media-registry/covers/thumb/Full-Moon-df1c07f87979dec7b3ea3fce7bcaec74.jpg",
+      "/boxel/media-registry/covers/thumb/Love-Never-Dies-8e230ef0d503b03840a4bc21751cb1ea.jpg",
+      "/boxel/media-registry/covers/thumb/Animals-c648b6ce05964ecee200e817fedf74e5.jpg"
+    ]
   },
   {
     "catalog_title": "Bunny Hop 1",
     "catalog_description": "—",
     "number_of_songs": 22,
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/batch-b-3c02ec71dfaed466261d699222362864.svg"
+    "top_artists": ["Ping Pong", "Boyband", "Nancy Jay"],
+    "date_created": "2018-05-04",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Infatuated-46a2913ca5e99871617db7099ec3ff22.jpg",
+      "/boxel/media-registry/covers/thumb/Sailing-9c03c4b6cb8b0625605c86a16fd202a3.jpg",
+      "/boxel/media-registry/covers/thumb/Superficial-bf354f8286aba46d7524c106bd4d31a3.jpg",
+      "/boxel/media-registry/covers/thumb/Seven-Seasons-746ce0882d3650e8e346926b30f41cf7.jpg",
+      "/boxel/media-registry/covers/thumb/Rollercoaster-of-Emotions-d8599ffc2bbe50beb1cdad2da7fdd1ac.jpg"
+    ]
   },
   {
     "catalog_title": "Bunny Hop 2",
     "catalog_description": "—",
     "number_of_songs": 22,
-    "date_created": "Jan 14, 2020",
-    "catalog_covers": "/boxel/media-registry/batch-a-3bf3009dcdc41c4471b919171a73338d.svg"
+    "top_artists": ["Golden Girl", "The Edge Of Nowhere", "Princess May"],
+    "date_created": "2019-05-02",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/All-About-the-Quality-of-Life-6aea16c68268651c69652080c2748137.jpg",
+      "/boxel/media-registry/covers/thumb/Never-Lonely-16682007e12dbc6ef1ada9c2bc4e69f1.jpg",
+      "/boxel/media-registry/covers/thumb/Make-Magic-9804577be992ea22d1149017f41ed2a8.jpg",
+      "/boxel/media-registry/covers/thumb/Good-Times-0299fde8bef73fb6c2cb43afe3767861.jpg",
+      "/boxel/media-registry/covers/thumb/Beauty-vs-Reality-adccb7e1ae7dc99e35c8b0ecfec4bd14.jpg"
+    ]
   }
 ]

@@ -52,14 +52,14 @@
         "date": "2019-04-23",
         "bitrate": "24-bit / 96 kHz",
         "duration": "3:11",
-        "img": "/boxel/media-registry/waveforms/a-day-to-sing-waveform-26d905f0cbbf5af90eb7429d3b798767.png"
+        "img": "media-registry/waveforms/a-day-to-sing-waveform.png"
       },
       {
         "title": "a-day-to-sing-watermarked.aiff",
         "date": "2019-04-23",
         "bitrate": "24-bit / 96 kHz",
         "duration": "3:11",
-        "img": "/boxel/media-registry/waveforms/a-day-to-sing-waveform-26d905f0cbbf5af90eb7429d3b798767.png"
+        "img": "media-registry/waveforms/a-day-to-sing-waveform.png"
       }
     ],
     "mastering_engineer": "Joel Kaplan",
