@@ -5,10 +5,7 @@ import resize from 'ember-animated/motions/resize';
 import scale from 'ember-animated/motions/scale';
 import move from 'ember-animated/motions/move';
 import adjustCSS from 'ember-animated/motions/adjust-css';
-import { easeIn } from 'ember-animated/easings/cosine';
 import { parallel } from 'ember-animated';
-import compensateForScale from 'ember-animated/motions/compensate-for-scale';
-
 
 export default class MediaRegistryItemVersionsController extends Controller {
   @tracked versions = this.model.versions;
@@ -36,7 +33,12 @@ export default class MediaRegistryItemVersionsController extends Controller {
   @action
   setPositions() {
     for (let v of this.versions) {
-      set(v, 'position', `p${this.selected - v.id}`)
+      set(v, 'position', `p${this.selected - v.id}`);
+      if ((this.selected - v.id) < 0 ) {
+        set(v, 'stackedFront', true);
+      } else {
+        set(v, 'stackedFront', false);
+      }
     }
   }
 
@@ -50,29 +52,29 @@ export default class MediaRegistryItemVersionsController extends Controller {
   }
 
   @action
-  displayVersion(id) {
-    if (this.baseCard && this.baseCard === id) {
+  displayVersion(v) {
+    if (this.baseCard && this.baseCard === v) {
       this.reset();
-      this.selected = id;
+      this.selected = v;
     } else if (this.baseCard) {
-      this.comparisonCard = id;
+      this.comparisonCard = v;
       this.compareCards();
     } else {
-      this.selected = id;
+      this.selected = v;
       this.setPositions();
     }
   }
 
   @action
-  setComparison(id) {
-    if (this.baseCard && this.baseCard === id) {
+  setComparison(v) {
+    if (this.baseCard && this.baseCard === v) {
       this.reset();
     } else if (this.baseCard) {
-      this.comparisonCard = id;
+      this.comparisonCard = v;
       this.compareCards();
     } else {
-      this.baseCard = id;
-      this.selected = id;
+      this.baseCard = v;
+      this.selected = v;
     }
   }
 
@@ -131,21 +133,28 @@ export default class MediaRegistryItemVersionsController extends Controller {
   @action
   * transition({ keptSprites }) {
     for (let sprite of keptSprites) {
-      parallel(move(sprite, { easing: easeIn }), resize(sprite, { easing: easeIn }));
+      parallel(move(sprite), resize(sprite));
     }
   }
 
   @action
   * adjustOpacity({ keptSprites }) {
     for (let sprite of keptSprites) {
-      parallel(move(sprite, { easing: easeIn }), scale(sprite, { easing: easeIn }), adjustCSS('opacity', sprite));
+      parallel(move(sprite), scale(sprite), adjustCSS('opacity', sprite));
     }
   }
 
   @action
-  * adjustContent({ keptSprites }) {
+  * outerContent({ keptSprites }) {
     for (let sprite of keptSprites) {
-      parallel(move(sprite, { easing: easeIn }), scale(sprite, { easing: easeIn }), compensateForScale(sprite, { easing: easeIn }));
+      parallel(move(sprite), resize(sprite), adjustCSS('font-size', sprite));
+    }
+  }
+
+  @action
+  * innerContent({ keptSprites }) {
+    for (let sprite of keptSprites) {
+      parallel(move(sprite), scale(sprite));
     }
   }
 }

@@ -29,7 +29,7 @@ export default class MediaRegistryItemRoute extends Route {
     }
 
     if (versionHistory) {
-      record.versions = versionHistory[0];
+      record.versions = versionHistory;
     }
 
     if (recordDetail) {

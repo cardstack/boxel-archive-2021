@@ -42,9 +42,13 @@
     {{else}}
       {{!-- Detail Card Layout --}}
       <section class="detail-card__layout">
-
-        {{!-- Detail Card --}}
-        <Boxel @tag="section" @class="detail-card">
+        <MusicDetailCard
+          @mode="view"
+          @model={{this.model}}
+          @itemId={{this.itemId}}
+          @displayFullHeader={{true}}
+          @expandAction={{this.transitionToMusicalWork}}
+        >
           <BoxelActions
             @class="media-collection__btn-overlay"
             @displayHighlightActions={{true}}
@@ -54,32 +58,7 @@
             @btnRight="version-history"
             @routeModel={{@model}}
           />
-
-          {{!-- Detail Card Special Header --}}
-          <header class="item__header" {{blurhash-decoder @model.blur_img 945 370}}>
-            <div class="item__header-content">
-              <div class="item__img" style={{css-url "background-image" @model.cover_art_medium}}>
-                <button class="item__play-btn">{{svg-jar "play-btn" width="60px" height="60px"}}</button>
-              </div>
-              <h1 class="item__title">{{@model.song_title}}</h1>
-              <h2 class="item__artist">{{@model.artist}}</h2>
-              <ul class="item__header-details">
-                {{#each this.headerDetailFields as |field|}}
-                  <li>
-                    <FieldRenderer
-                      @class="item-header-field"
-                      @mode="view"
-                      @field={{field}}
-                    />
-                  </li>
-                {{/each}}
-              </ul>
-            </div>
-          </header>
-
-          {{!-- Detail Card Section --}}
-          <MediaDetail @model={{@model}} @mode="view" @expandAction={{this.transitionToMusicalWork}} />
-        </Boxel>
+        </MusicDetailCard>
 
         {{!-- Related Cards Sidebar --}}
         <aside class="item__sidebar">
