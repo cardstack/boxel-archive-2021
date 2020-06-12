@@ -8,7 +8,7 @@
     {{else if (eq @btnRight "version-history")}}
       <button class="boxel-actions__btn {{or @btnLeft "boxel-actions__btn--more-actions"}}" {{on "click" (or @btnLeftAction this.moreActions)}} aria-label="{{or @btnLeft "more actions"}}">{{@btnLeftContent}}</button>
       <MediaCollection::Button @class="boxel-actions__more-actions" @button="gear" @icon="gear">
-        <ActionsMenu @class="boxel-actions__more-actions-menu" />
+        <ActionsMenu @class="boxel-actions__more-actions-menu" @routeModel={{@routeModel}} />
       </MediaCollection::Button>
     {{else}}
       {{#if @btnLeft}}
