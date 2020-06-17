@@ -11,59 +11,59 @@ export default class MusicDetailCardComponent extends Component {
     return [
       {
         title: 'isrc',
-        value: this.model?.details?.isrc
+        value: this.model?.details?.isrc || this.model?.fields?.isrc
       },
       {
         title: 'verifi id',
-        value: truncateVerifiId(this.model?.details?.verifi_id)
+        value: truncateVerifiId(this.model?.details?.verifi_id || this.model?.verifi_id)
       },
       {
         title: 'label',
-        value: this.model.owner
+        value: this.model.owner || this.model?.fields?.label
       },
     ];
   }
 
   get detailSections() {
     if (this.args.noTemplate) {
-      if (!this.args.fields) { return; }
+      if (!this.args.fields) { return []; }
       return [{ content: this.args.fields }];
-    } else {
-      return [
-        {
-          title: "Master Details",
-          content: this.recordingDetails
-        },
-        {
-          title: "Musical Work",
-          content: [ this.musicalWork ]
-        },
-        {
-          title: "Registrations",
-          content: [ this.verifiRegistration ]
-        },
-        {
-          title: "Files",
-          content: this.files
-        },
-        {
-          title: "Agreements",
-          content: this.agreements
-        },
-        {
-          title: "Codes",
-          content: this.codes
-        },
-        {
-          title: "Credits",
-          content: this.credits
-        },
-      ];
     }
+
+    return [
+      {
+        title: "Master Details",
+        content: this.recordingDetails
+      },
+      {
+        title: "Musical Work",
+        content: [ this.musicalWork ]
+      },
+      {
+        title: "Registrations",
+        content: [ this.verifiRegistration ]
+      },
+      {
+        title: "Files",
+        content: this.files
+      },
+      {
+        title: "Agreements",
+        content: this.agreements
+      },
+      {
+        title: "Codes",
+        content: this.codes
+      },
+      {
+        title: "Credits",
+        content: this.credits
+      },
+    ];
   }
 
   get recordingDetails() {
-    if (!this.model) { return null; }
+    if (!this.model || this.args.fields) { return null; }
     return [
       {
         title: 'title',
@@ -126,6 +126,7 @@ export default class MusicDetailCardComponent extends Component {
   }
 
   get musicalWork() {
+    if (!this.model || this.args.fields) { return null; }
     return {
       id: this.model?.details?.iswc_id,
       type: 'card',
@@ -136,6 +137,7 @@ export default class MusicDetailCardComponent extends Component {
   }
 
   get verifiRegistration() {
+    if (!this.model || this.args.fields) { return null; }
     let title = 'Verifi Registry';
     let verifi_id = this.model?.details?.verifi_id;
     if (!verifi_id) { return { title, type: 'card' }; }
@@ -149,6 +151,7 @@ export default class MusicDetailCardComponent extends Component {
   }
 
   get codes() {
+    if (!this.model || this.args.fields) { return null; }
     return [
       {
         title: 'isrc',
@@ -171,7 +174,7 @@ export default class MusicDetailCardComponent extends Component {
   }
 
   get credits() {
-    if (!this.model) { return null; }
+    if (!this.model || this.args.fields) { return null; }
     return [
       {
         title: 'main artist',
@@ -205,7 +208,7 @@ export default class MusicDetailCardComponent extends Component {
   // Hardcoded sections (file names, dates, agreements section)
 
   get coverArtCard() {
-    if (!this.model || !this.model.album) { return null; }
+    if (!this.model || !this.model.album || this.args.fields) { return null; }
     return {
       id: String(dasherize(this.model.album.trim())),
       type: 'file',
@@ -219,7 +222,7 @@ export default class MusicDetailCardComponent extends Component {
   }
 
   get audioFileCards() {
-    if (!this.model) { return null; }
+    if (!this.model || this.args.fields) { return null; }
     return [
       {
         id: `${this.itemId}.aiff`,
@@ -245,6 +248,7 @@ export default class MusicDetailCardComponent extends Component {
   }
 
   get files() {
+    if (!this.model || this.args.fields) { return null; }
     return [
       {
         title: 'cover art',
@@ -261,7 +265,7 @@ export default class MusicDetailCardComponent extends Component {
   }
 
   get agreements() {
-    if (!this.model) { return null; }
+    if (!this.model || this.args.fields) { return null; }
     let searchResults = [{
       id: 'exclusive-recording-agreement-2',
       type: 'agreement',
