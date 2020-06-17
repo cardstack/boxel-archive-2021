@@ -68,6 +68,19 @@
                 @mode="view"
                 @model={{v.card_model}}
                 @itemId={{v.record_id}}
+                @noTemplate={{not-eq v.id this.latest.id}}
+                @fields={{v.card_model.fields}}
+                @displayFullHeader={{true}}
+                @comparisonMode={{true}}
+                @addedFields={{this.addedFields}}
+                @addedValues={{this.addedValues}}
+                @changedFields={{this.changedFields}}
+                @removedFields={{this.removedFields}}
+                @removedValues={{this.removedValues}}
+                @addedCards={{this.addedCards}}
+                @removedCards={{this.removedCards}}
+                @changedCards={{this.changedCards}}
+                @modifiedCard={{this.modifiedCard}}
               />
             </div>
           </div>
@@ -89,6 +102,8 @@
                 @mode="view"
                 @model={{v.card_model}}
                 @itemId={{v.record_id}}
+                @noTemplate={{not-eq v.id this.latest.id}}
+                @fields={{v.card_model.fields}}
               >
                 <AnimatedContainer class="version-card--item__header" style={{css-url "background-image" v.card_model.cover_art_large}} {{!--blurhash-decoder v.blur_img 800 370--}}>
                   {{#animated-value v watch="position" use=this.outerContent as |value|}}

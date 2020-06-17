@@ -25,36 +25,41 @@ export default class MusicDetailCardComponent extends Component {
   }
 
   get detailSections() {
-    return [
-      {
-        title: "Master Details",
-        content: this.recordingDetails
-      },
-      {
-        title: "Musical Work",
-        content: [ this.musicalWork ]
-      },
-      {
-        title: "Registrations",
-        content: [ this.verifiRegistration ]
-      },
-      {
-        title: "Files",
-        content: this.files
-      },
-      {
-        title: "Agreements",
-        content: this.agreements
-      },
-      {
-        title: "Codes",
-        content: this.codes
-      },
-      {
-        title: "Credits",
-        content: this.credits
-      },
-    ];
+    if (this.args.noTemplate) {
+      if (!this.args.fields) { return; }
+      return [{ content: this.args.fields }];
+    } else {
+      return [
+        {
+          title: "Master Details",
+          content: this.recordingDetails
+        },
+        {
+          title: "Musical Work",
+          content: [ this.musicalWork ]
+        },
+        {
+          title: "Registrations",
+          content: [ this.verifiRegistration ]
+        },
+        {
+          title: "Files",
+          content: this.files
+        },
+        {
+          title: "Agreements",
+          content: this.agreements
+        },
+        {
+          title: "Codes",
+          content: this.codes
+        },
+        {
+          title: "Credits",
+          content: this.credits
+        },
+      ];
+    }
   }
 
   get recordingDetails() {

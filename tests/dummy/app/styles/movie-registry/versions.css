@@ -324,6 +324,10 @@
   user-select: none;
 }
 
+.version-card__detail-card .item__header-content {
+  border-radius: 0;
+}
+
 
 /* Header */
 .version-card--item__header {

@@ -32,6 +32,29 @@
   border-radius: 5px;
 }
 
+.field-renderer__value--img-field {
+  max-width: max-content;
+}
+
+.field-renderer ins {
+  text-decoration: none;
+}
+
+.field-renderer--removed {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.field-renderer--deleted {
+  opacity: 0.5;
+  display: block;
+  padding-top: 10px;
+}
+
+.field-renderer--deleted-no-offset {
+  padding: 10px;
+}
+
 .cover-art-field img {
   object-fit: cover;
   object-position: center;
