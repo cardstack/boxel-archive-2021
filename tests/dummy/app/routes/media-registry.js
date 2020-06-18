@@ -8,13 +8,44 @@ const ORGS = [
     id: 'bunny_records',
     company: 'Bunny Records',
     iconURL: "/media-registry/button-bunny-records.svg",
-    logoURL: '/media-registry/bunny-logo.svg'
+    logoURL: '/media-registry/bunny-logo.svg',
+    user: {
+      name: "Lisa Track",
+      title: "Administrator",
+      queueCards: [
+        {
+          status: "open",
+          title: "Catalog transfer",
+          datetime: "2020-08-31T14:49",
+          projectTitle: "Rights transfer | CRD Records",
+          progress: "proposal"
+        },
+        {
+          status: "needs-response",
+          title: "Interesting band | Jelly Club",
+          datetime: "2020-08-31T13:26",
+          projectTitle: "Potential artist | Hard rock",
+          progress: "under-review"
+        },
+        {
+          status: "recent",
+          title: "Agreements | BB Clarke",
+          datetime: "2020-08-20T15:11",
+          projectTitle: "Rights transfer | CRD Records",
+          progress: "under-review"
+        }
+      ]
+    }
   },
   {
     id: 'crd_records',
     company: 'CRD Records',
     iconURL: "/media-registry/button-crd-records.svg",
-    logoURL: '/media-registry/crd_records_logo.svg'
+    logoURL: '/media-registry/crd_records_logo.svg',
+    user: {
+      name: "Steve Rights",
+      title: "Catalog Manager"
+    }
   }
 ];
 
@@ -33,7 +64,9 @@ export default class MediaRegistryRoute extends Route {
       type: 'master-collection',
       id: masterData.id,
       logoURL: masterData.logoURL,
+      alternateLogoURL: masterData.iconURL,
       company: masterData.company,
+      user: masterData.user,
       collection,
       orgs: this.orgs,
       columns: [
