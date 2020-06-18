@@ -1,7 +1,16 @@
-<div>
-  <div>{{@card.title}}</div>
-  <div>{{@card.projectTitle}}</div>
-  <div>{{moment-format @card.datetime "MMM DD, hh:mm A"}}</div>
-  <div>{{titleize (humanize @card.progress)}}</div>
+<div class="queue-card queue-card--{{@card.status}}">
+  <header class="queue-card__header">
+    <div class="queue-card__title">{{@card.title}}</div>
+    {{#if (not-eq @card.status "recent")}}
+      <div class="queue-card__notification">1</div>
+    {{/if}}
+  </header>
+  <div class="queue-card__project-title">{{@card.projectTitle}}</div>
+  <footer class="queue-card__footer">
+    <div>{{moment-format @card.datetime "MMM DD, h:mm A"}}</div>
+    <div>
+      {{titleize (humanize @card.progress)}}
+      {{svg-jar "progress-circle" class="queue-card__progress-pie" width="24px" height="24px"}}
+    </div>
+  </footer>
 </div>
-<hr>
