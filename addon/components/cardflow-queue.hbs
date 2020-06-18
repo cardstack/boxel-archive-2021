@@ -1,44 +1,49 @@
-<aside class="cardflow-queue">
-  <header class="cardflow-queue__header">
-    <div class="cardflow-queue__company {{if @model.alternateLogoURL "cardflow-queue__company--with-logo"}}" style={{css-url "background-image" @model.alternateLogoURL}}>
+<aside class="queue">
+  <header class="queue__header">
+    <div class="queue__company">
+      {{#if @model.alternateLogoURL}}
+        <span class="queue__company-logo" style={{css-url "background-image" @model.alternateLogoURL}} />
+      {{/if}}
       {{@model.company}}
     </div>
-    <hr>
-    <div class="cardflow-queue__user">
-      <div>{{@model.user.name}}</div>
-      <div>{{@model.user.title}}</div>
+    <div class="queue__user queue__user--active">
+      <div class="queue__user-name">{{@model.user.name}}</div>
+      <div class="queue__user-title">{{@model.user.title}}</div>
     </div>
-    <hr>
-    <div>
-      Filter Notifications
-    </div>
+    <Input @placeholder="Filter Notifications" @class="queue__filter">
+    </Input>
   </header>
-  <hr>
 
-  <section class="cardflow-queue__section">
-    <header>Open</header>
-    {{#let (filter-by "status" "open" @model.user.queueCards) as |cards|}}
-      {{#each cards as |card|}}
-        <QueueCard @card={{card}} />
-      {{/each}}
-    {{/let}}
+  <section class="queue__section">
+    <header class="queue__section-header">Open</header>
+    <div class="queue__section-content">
+      {{#let (filter-by "status" "open" @model.user.queueCards) as |cards|}}
+        {{#each cards as |card|}}
+          <QueueCard @card={{card}} />
+        {{/each}}
+      {{/let}}
+    </div>
   </section>
 
-  <section class="cardflow-queue__section">
-    <header>Needs Response</header>
-    {{#let (filter-by "status" "needs-response" @model.user.queueCards) as |cards|}}
-      {{#each cards as |card|}}
-        <QueueCard @card={{card}} />
-      {{/each}}
-    {{/let}}
+  <section class="queue__section">
+    <header class="queue__section-header">Needs Response</header>
+    <div class="queue__section-content">
+      {{#let (filter-by "status" "needs-response" @model.user.queueCards) as |cards|}}
+        {{#each cards as |card|}}
+          <QueueCard @card={{card}} />
+        {{/each}}
+      {{/let}}
+    </div>
   </section>
 
-  <section class="cardflow-queue__section">
-    <header>Recent</header>
-    {{#let (filter-by "status" "recent" @model.user.queueCards) as |cards|}}
-      {{#each cards as |card|}}
-        <QueueCard @card={{card}} />
-      {{/each}}
-    {{/let}}
+  <section class="queue__section">
+    <header class="queue__section-header">Recent</header>
+    <div class="queue__section-content">
+      {{#let (filter-by "status" "recent" @model.user.queueCards) as |cards|}}
+        {{#each cards as |card|}}
+          <QueueCard @card={{card}} />
+        {{/each}}
+      {{/let}}
+    </div>
   </section>
 </aside>
