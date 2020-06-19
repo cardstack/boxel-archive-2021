@@ -15,8 +15,7 @@ export default [
             title: "Catalog transfer",
             datetime: "2020-08-31T14:49",
             projectTitle: "Rights transfer, CRD Records",
-            progress: "proposal",
-            description: "Catalog transfer from Bunny Records to CRD Records for 16 masters"
+            progress: "proposal"
           },
           {
             id: "2",
