@@ -41,11 +41,12 @@
   grid-auto-rows: max-content;
   gap: 20px;
   height: 100%;
-  padding: 20px 30px;
+  padding: 20px 30px 50px;
   overflow-y: auto;
 }
 
 .cardflow__message {
+  min-height: 50px;
   color: black;
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
@@ -96,6 +97,80 @@
   text-align: center;
 }
 
+/* Agreement card */
+.flow-agreement-card {
+  position: relative;
+  padding: 40px;
+}
+.flow-agreement-card__title {
+  color: #393642;
+  font-size: 26px;
+  line-height: calc(36/26);
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+.flow-agreement-card .master-collection__count {
+  display: none;
+}
+
+.field-renderer__title.agreement-card__field-title {
+  text-align: left;
+}
+
+.media-collection__pill.flow-agreement-card__btn {
+  position: absolute;
+  width: 130px;
+  padding: 5px 12px;
+  height: 30px;
+  bottom: 100px;
+  right: 50px;
+}
+
+.flow-agreement-card__people {
+  display: flex;
+}
+
+.flow-agreement-card__people > div {
+  width: 50%;
+}
+
+.flow-agreement-card__participant {
+  text-align: center;
+}
+
+.next-steps {
+  padding: 30px;
+  background: #41404D;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font: var(--boxel-font-sm);
+  font-weight: 600;
+}
+
+.next-steps__title {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.next-steps__text {
+  font-weight: normal;
+}
+
+
+.flow-agreement-card > * + *,
+.cardflow__message-content > * + * {
+  margin-top: 20px;
+}
+
+.flow-agreement-card footer {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+
 
 /* Right Sidebar */
 .cardflow__sidebar {
@@ -120,6 +195,7 @@
 }
 
 .cardflow__progress {
+  position: relative;
   text-align: center;
 }
 
@@ -127,6 +203,24 @@
   padding-top: 10px;
   padding-bottom: 5px;
   color: #666;
+}
+
+.cardflow__progress-icon {
+  margin: 0 auto;
+  background-image: url('/media-registry/progress-20pct-lg.svg');
+  width: 124px;
+  height: 124px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cardflow__progress-pct {
+  position: absolute;
+  top: 45px;
+  left: 40%;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .cardflow__checklist {

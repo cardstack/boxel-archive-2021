@@ -11,11 +11,12 @@ export default [
         queueCards: [
           {
             id: "1",
-            status: "needs-response",
+            status: "open",
             title: "Catalog transfer",
             datetime: "2020-08-31T14:49",
             projectTitle: "Rights transfer, CRD Records",
-            progress: "proposal"
+            progress: "proposal",
+            progressIcon: "/media-registry/progress-20pct.svg"
           },
           {
             id: "2",
@@ -23,7 +24,8 @@ export default [
             title: "Interesting band | Jelly Club",
             datetime: "2020-08-31T13:26",
             projectTitle: "Potential artist, Hard rock",
-            progress: "under-review"
+            progress: "under-review",
+            progressIcon: "/media-registry/progress-40pct-off.svg"
           },
           {
             id: "3",
@@ -31,7 +33,8 @@ export default [
             title: "Cover art | GG Greatest Hits",
             datetime: "2020-08-25T17:02",
             projectTitle: "New album, Golden Girl",
-            progress: "under-review"
+            progress: "under-review",
+            progressIcon: "/media-registry/progress-40pct-off.svg"
           },
           {
             id: "4",
@@ -39,7 +42,8 @@ export default [
             title: "Agreements | BB Clarke",
             datetime: "2020-08-20T15:11",
             projectTitle: "Rights transfer, CRD Records",
-            progress: "under-review"
+            progress: "under-review",
+            progressIcon: "/media-registry/progress-40pct-off.svg"
           },
           {
             id: "5",
@@ -47,7 +51,8 @@ export default [
             title: "Agreements | Pia Midina",
             datetime: "2020-07-31T11:40",
             projectTitle: "Rights transfer, CRD Records",
-            progress: "under-review"
+            progress: "under-review",
+            progressIcon: "/media-registry/progress-40pct-off.svg"
           },
           {
             id: "6",
@@ -55,7 +60,8 @@ export default [
             title: "Registration | GG Greatest Hits",
             datetime: "2020-07-30T09:22",
             projectTitle: " New album, Golden Girl",
-            progress: "under-review"
+            progress: "under-review",
+            progressIcon: "/media-registry/progress-40pct-off.svg"
           },
           {
             id: "7",
@@ -63,7 +69,8 @@ export default [
             title: "Request | Pia Midina",
             datetime: "2020-07-16T13:38",
             projectTitle: "Rights transfer, CRD Records",
-            progress: "under-review"
+            progress: "under-review",
+            progressIcon: "/media-registry/progress-40pct-off.svg"
           },
           {
             id: "8",
@@ -71,7 +78,8 @@ export default [
             title: "Tracks | GG Greatest Hits",
             datetime: "2020-07-15T12:21",
             projectTitle: " New album, Golden Girl",
-            progress: "under-review"
+            progress: "under-review",
+            progressIcon: "/media-registry/progress-40pct-off.svg"
           }
         ]
       }
@@ -88,11 +96,12 @@ export default [
         queueCards: [
           {
             id: "1",
-            status: "needs-response",
+            status: "open",
             title: "Catalog transfer",
             datetime: "2020-08-31T14:49",
             projectTitle: "Rights transfer, Bunny Records",
-            progress: "proposal"
+            progress: "redeliver",
+            progressIcon: "/media-registry/progress-80pct.svg"
           },
           {
             id: "2",
@@ -100,7 +109,8 @@ export default [
             title: "Radio interview | FM8",
             datetime: "2020-08-25T11:00",
             projectTitle: "Interviews, CEO",
-            progress: "under-review"
+            progress: "under-review",
+            progressIcon: "/media-registry/progress-40pct-off.svg"
           },
           {
             id: "3",
@@ -108,7 +118,8 @@ export default [
             title: "To Dos",
             datetime: "2020-08-13T10:10",
             projectTitle: "Rights transfer, Bunny Records",
-            progress: "under-review"
+            progress: "under-review",
+            progressIcon: "/media-registry/progress-40pct-off.svg"
           },
           {
             id: "4",
@@ -116,7 +127,8 @@ export default [
             title: "TV interview | ZBZ",
             datetime: "2020-08-12T16:38",
             projectTitle: "Interviews, CEO",
-            progress: "under-review"
+            progress: "under-review",
+            progressIcon: "/media-registry/progress-40pct-off.svg"
           },
           {
             id: "5",
@@ -124,7 +136,8 @@ export default [
             title: "Newspaper interview | New Times",
             datetime: "2020-07-29T17:01",
             projectTitle: "Interviews, CEO",
-            progress: "under-review"
+            progress: "under-review",
+            progressIcon: "/media-registry/progress-40pct-off.svg"
           }
         ]
       }

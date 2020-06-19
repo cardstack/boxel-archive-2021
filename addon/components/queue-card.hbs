@@ -10,7 +10,8 @@
     <div>{{moment-format @card.datetime "MMM DD, h:mm A"}}</div>
     <div>
       {{titleize (humanize @card.progress)}}
-      {{svg-jar "progress-circle" class="queue-card__progress-pie" width="24px" height="24px"}}
+      <span class="queue-card__progress-icon queue-card__progress-pie" style={{css-url "background-image" @card.progressIcon}} />
+      {{!-- {{svg-jar @card.progressIcon class="queue-card__progress-pie" width="24px" height="24px"}} --}}
     </div>
   </footer>
 </div>

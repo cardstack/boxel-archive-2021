@@ -10,39 +10,6 @@
   </header>
 
   <div class="cardflow__thread">
-
-    <div class="cardflow__message">
-      <div class="cardflow__message-row">
-        <div class="cardflow__message-icon" style={{css-url "background-image" "/media-registry/profiles/Lisa-Track.jpg"}}></div>
-        <div class="cardflow__message-sender">
-          <span class="cardflow__message-sender-name">Lisa Track</span> <time>2:19 PM</time>
-          <div>Administrator</div>
-        </div>
-      </div>
-      <div class="cardflow__message-row">
-        <div></div>
-        <div class="cardflow__message-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed scelerisque ex, sed elementum lorem. Phasellus sit amet ipsum in tellus vestibulum tincidunt. Etiam rhoncus, orci quis elementum pulvinar, leo lectus feugiat ligula, vel tincidunt massa elit eu augue. Nulla eget tortor non est ullamcorper egestas eu sit amet justo. Cras consectetur tempor dui, eget finibus orci vestibulum vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec faucibus mi sed turpis posuere euismod. Sed leo erat, ultricies non ligula eu, ornare consectetur justo. Nam a aliquam metus. Ut congue volutpat turpis lobortis facilisis.
-        </div>
-      </div>
-    </div>
-
-    <div class="cardflow__message">
-      <div class="cardflow__message-row">
-        <div class="cardflow__message-icon" style={{css-url "background-image" "/media-registry/profiles/Steve-Rights.jpg"}}></div>
-        <div class="cardflow__message-sender">
-          <span class="cardflow__message-sender-name">Steve Rights</span> <time>2:26 PM</time>
-          <div>Catalog Manager</div>
-        </div>
-      </div>
-      <div class="cardflow__message-row">
-        <div></div>
-        <div class="cardflow__message-content">
-          Donec non orci tellus. Aenean ac nibh imperdiet, sollicitudin risus eu, malesuada ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam commodo sed lorem posuere lobortis. Nam a condimentum nulla, nec tempor dolor.
-        </div>
-      </div>
-    </div>
-
     <div class="cardflow__message-divider">
       <div class="cardflow__message-divider-border" />
       <div class="cardflow__message-divider-date">August 31, 2020</div>
@@ -59,25 +26,70 @@
       <div class="cardflow__message-row">
         <div></div>
         <div class="cardflow__message-content">
-          Hi Steve,
-          As discussed, we are transferring the rights to 13 of Pia Midina’s and 3 of BB Clarke’s recordings to CRD Records.<br>
-          Best regards,
-          Lisa
+          <div>
+            Hi Steve,
+            As discussed, we are transferring the rights to 13 of Pia Midina’s and 3 of BB Clarke’s recordings to CRD Records.
+            Best regards,
+            Lisa
+          </div>
+          <CardPlatter @class="flow-agreement-card">
+            <header>
+              <div class="flow-agreement-card__title">Transfer Proposal</div>
+              {{!-- <div>Aug 31, 2020</div> --}}
+            </header>
+            <div class="flow-agreement-card__people">
+              <div>
+                <div class="field-renderer__title agreement-card__field-title">From</div>
+                <div class="flow-agreement-card__participant">
+                  {{svg-jar "button-bunny-records" width="40px" height="40px"}}
+                  <div class="cardflow__participant-company">Bunny Records</div>
+                </div>
+              </div>
+              <div>
+                <div class="field-renderer__title agreement-card__field-title">To</div>
+                <div class="flow-agreement-card__participant">
+                  {{svg-jar "button-crd-records" width="40px" height="40px"}}
+                  <div>CRD Records</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="field-renderer__title agreement-card__field-title">Catalog</div>
+              {{component (or this.catalog.component "card") model=this.catalog.value mode="view" variant="small"}}
+              <div class="media-collection__pill flow-agreement-card__btn">Inspect Catalog</div>
+            </div>
+            <footer>
+              Effective Date: <strong>September 1, 2020</strong>
+            </footer>
+          </CardPlatter>
         </div>
       </div>
     </div>
 
+    <div class="cardflow__message">
+      <div class="cardflow__message-row">
+        <div />
+        <CardPlatter @class="next-steps">
+          <div>
+            <div class="next-steps__title">Next Steps</div>
+            <div class="next-steps__text">Visible only to you</div>
+          </div>
 
+          <div class="breadcrumbs__pill breadcrumbs__pill--current">Send Email Reminder</div>
+        </CardPlatter>
+      </div>
+    </div>
 
-
-
+    <div class="cardflow__message"></div>
   </div>
 
   <aside class="cardflow__sidebar">
     <section class="cardflow__sidebar-section">
       <h3 class="cardflow__sidebar-title">Progress</h3>
       <div class="cardflow__progress">
-        {{svg-jar "progress-circle" width="125px" height="125px"}}
+        {{!-- {{svg-jar "progress-20pct-lg" width="125px" height="125px"}} --}}
+        <div class="cardflow__progress-icon" />
+        <span class="cardflow__progress-pct">20%</span>
         <div class="cardflow__progress-status">Proposal Submitted</div>
       </div>
     </section>
