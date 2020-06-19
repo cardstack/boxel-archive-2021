@@ -8,8 +8,35 @@
 
 .cardflow__header {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto;
   height: 80px;
+  padding: 15px 20px 20px 30px;
   background-color: white;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.16);
+}
+
+.cardflow__project-title {
+  border-radius: 10px 0 5px 0;
+  color: rgba(0, 0, 0, 0.7);
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+}
+
+.cardflow__title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: calc(27/20);
+  letter-spacing: 0.005em;
+}
+
+.cardflow__sidebar {
+  width: 100%;
+  height: 100vh;
+  min-height: 100%;
+  max-width: 290px;
+  padding: 20px 30px;
+  border-left: 1px solid #D6D6D6;
 }
 
 .cardflow__sidebar-title {
@@ -19,4 +46,105 @@
   font-weight: bold;
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
+}
+
+.cardflow__progress {
+  text-align: center;
+}
+
+.cardflow__progress-status {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: #666;
+}
+
+.cardflow__checklist {
+  --icon-color: #D6D6D6;
+
+  margin: 0;
+  padding: 30px 15px;
+  color: #666;
+}
+
+.cardflow__checklist-item > svg {
+  margin-right: 18px;
+  vertical-align: top;
+}
+
+.cardflow__checklist-item + .cardflow__checklist-item::before {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 15px;
+  margin: 2px 0 3px 6.5px;
+  background-color: #D6D6D6;
+}
+
+.cardflow__checklist-item.current {
+  color: black;
+  --icon-color: #FFD800;
+}
+
+.cardflow__checklist-item.completed {
+  color: black;
+  font-weight: 600;
+  --icon-color: #1CFF25;
+}
+
+.cardflow__checklist-time {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  color: #666;
+  font: var(--boxel-font-xs);
+}
+
+.cardflow__participants {
+  padding: 20px;
+}
+
+.cardflow__participants + .cardflow__participants {
+  border-top: 1px solid #EFEFEF;
+}
+
+.cardflow__participant {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 20px 10px;
+  align-items: center;
+  font: var(--boxel-font-sm);
+  font-weight: 600;
+  color: black;
+}
+
+.cardflow__participant + .cardflow__participant {
+  margin-top: 20px;
+}
+
+.cardflow__participant-company-img {
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cardflow__participant-company {
+  font-size: 14px;
+}
+
+.cardflow__participant-user-img {
+  justify-self: center;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 100px;
+}
+
+.cardflow__participant-user > span {
+  font: var(--boxel-font-xs);
+  color: #666;
+  font-weight: normal;
 }

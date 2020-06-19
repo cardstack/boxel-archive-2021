@@ -17,11 +17,9 @@
   <section class="queue__section">
     <header class="queue__section-header">Open</header>
     <div class="queue__section-content">
-      {{#let (filter-by "status" "open" @model.user.queueCards) as |cards|}}
-        {{#each cards as |card|}}
-          <QueueCard @card={{card}} />
-        {{/each}}
-      {{/let}}
+      {{#with (find-by "status" "open" (reverse @model.user.queueCards)) as |card|}}
+        <QueueCard @card={{card}} @openCards={{@model.user.queueCards}} />
+      {{/with}}
     </div>
   </section>
 

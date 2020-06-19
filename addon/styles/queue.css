@@ -15,7 +15,7 @@
 .queue__header {
   position: sticky;
   top: 0;
-  padding: 20px 25px 20px 20px;
+  padding: 20px;
   background-color: inherit;
   border-bottom: 1px solid #2E2B38;
 }

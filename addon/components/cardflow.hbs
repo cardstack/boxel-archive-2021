@@ -1,6 +1,12 @@
 <div class="cardflow">
   <header class="cardflow__header">
-    {{!-- Thread header --}}
+    <div>
+      <div class="cardflow__project-title">{{@model.user.queueCards.0.projectTitle}}</div>
+      <div class="cardflow__title">{{@model.user.queueCards.0.description}}</div>
+    </div>
+    <LinkTo @route="media-registry" @model={{@model.id}} @class="mode-indicator mode-indicator--workflow">
+      Workflow mode
+    </LinkTo>
   </header>
 
   <div class="cardflow__thread">
@@ -9,19 +15,39 @@
 
   <aside class="cardflow__sidebar">
     <h3 class="cardflow__sidebar-title">Progress</h3>
-
+    <div class="cardflow__progress">
+      {{svg-jar "progress-circle" width="125px" height="125px"}}
+      <div class="cardflow__progress-status">Proposal Submitted</div>
+    </div>
     <h3 class="cardflow__sidebar-title">Checklist</h3>
     <CardPlatter>
-      <ul>
-        <li>Propose</li>
-        <li>Review</li>
-        <li>Accept</li>
-        <li>Amend</li>
-        <li>Redeliver</li>
+      <div class="cardflow__checklist-time">2h ago</div>
+      <ul class="cardflow__checklist">
+        <li class="cardflow__checklist-item completed">{{svg-jar "checkmark-lg" width="16px" height="16px"}} Propose</li>
+        <li class="cardflow__checklist-item current">{{svg-jar "progress-circle" width="16px" height="16px"}} Review</li>
+        <li class="cardflow__checklist-item">{{svg-jar "progress-circle" width="16px" height="16px"}} Accept</li>
+        <li class="cardflow__checklist-item">{{svg-jar "progress-circle" width="16px" height="16px"}} Amend</li>
+        <li class="cardflow__checklist-item">{{svg-jar "progress-circle" width="16px" height="16px"}} Redeliver</li>
       </ul>
     </CardPlatter>
 
     <h3 class="cardflow__sidebar-title">Participants</h3>
-    <CardPlatter></CardPlatter>
+    <CardPlatter>
+      {{#each @model.orgs as |participant|}}
+        <div class="cardflow__participants">
+          <div class="cardflow__participant">
+            <div class="cardflow__participant-company-img" style={{css-url "background-image" participant.iconURL}} />
+            <div class="cardflow__participant-company">{{participant.company}}</div>
+          </div>
+          <div class="cardflow__participant">
+            <div class="cardflow__participant-user-img" style={{css-url "background-image" participant.user.imgURL}} />
+            <div class="cardflow__participant-user">
+              {{participant.user.name}}<br>
+              <span>{{participant.user.title}}</span>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </CardPlatter>
   </aside>
 </div>
