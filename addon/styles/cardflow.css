@@ -12,7 +12,9 @@
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: 1fr auto;
-  height: 80px;
+  gap: 20px;
+  min-height: 80px;
+  height: auto;
   padding: 15px 20px 20px 30px;
   background-color: white;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.16);
@@ -75,6 +77,24 @@
   font-weight: 600;
 }
 
+.cardflow__message-divider {
+  position: relative;
+  padding: 15px 0;
+}
+
+.cardflow__message-divider-border {
+  border-top: 1px solid #D6D6D6;
+}
+
+.cardflow__message-divider-date {
+  position: absolute;
+  top: 0;
+  left: 40%;
+  padding: 5px 10px;
+  background-color: #F6F6F6;
+  font-weight: bold;
+  text-align: center;
+}
 
 
 /* Right Sidebar */
