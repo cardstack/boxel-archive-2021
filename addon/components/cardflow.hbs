@@ -1,5 +1,27 @@
-<CardflowQueue
-  @title="Bunny Records"
-  @user={{hash name="Lisa Track" title="Administrator"}}
-  @model={{@model}}
-/>
+<div class="cardflow">
+  <header class="cardflow__header">
+    {{!-- Thread header --}}
+  </header>
+
+  <div class="cardflow__thread">
+    {{!-- Thread --}}
+  </div>
+
+  <aside class="cardflow__sidebar">
+    <h3>Progress</h3>
+
+    <h3>Checklist</h3>
+    <CardPlatter>
+      <ul>
+        <li>Propose</li>
+        <li>Review</li>
+        <li>Accept</li>
+        <li>Amend</li>
+        <li>Redeliver</li>
+      </ul>
+    </CardPlatter>
+
+    <h3>Participants</h3>
+    <CardPlatter></CardPlatter>
+  </aside>
+</div>

@@ -1,0 +1,12 @@
+.cardflow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  font: var(--boxel-font-sm);
+  letter-spacing: var(--boxel-lsp);
+}
+
+.cardflow__header {
+  grid-column: 1 / -1;
+  min-height: 80px;
+  background-color: white;
+}

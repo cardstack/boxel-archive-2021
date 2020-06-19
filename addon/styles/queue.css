@@ -1,17 +1,23 @@
 .queue {
-  max-width: 330px;
+  position: fixed;
+  width: 330px;
+  height: 100%;
+  left: 80px;
+  top: 0;
+  bottom: 0;
   background-color: #413E4E;
   color: white;
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
-}
-
-.queue > * + * {
-  border-top: 1px solid #2E2B38;
+  overflow-y: auto;
 }
 
 .queue__header {
+  position: sticky;
+  top: 0;
   padding: 20px 25px 20px 20px;
+  background-color: inherit;
+  border-bottom: 1px solid #2E2B38;
 }
 
 .queue__header > * + * {
@@ -74,6 +80,10 @@
 
 .queue__section {
   padding: 10px 25px 20px 20px;
+}
+
+.queue__section + .queue__section {
+  border-top: 1px solid #2E2B38;
 }
 
 .queue__section-header {
