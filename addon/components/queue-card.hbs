@@ -1,11 +1,11 @@
 <LinkTo @route="media-registry.cardflow" @class="queue-card queue-card--{{@card.status}}">
   <header class="queue-card__header">
-    <div class="queue-card__title">{{@card.title}}</div>
+    <div class="queue-card__title">{{@card.projectTitle}}</div>
     {{#if (not-eq @card.status "recent")}}
       <div class="queue-card__notification">1</div>
     {{/if}}
   </header>
-  <div class="queue-card__project-title">{{@card.projectTitle}}</div>
+  <div class="queue-card__project-title">{{@card.title}}</div>
   <footer class="queue-card__footer">
     <div>{{moment-format @card.datetime "MMM DD, h:mm A"}}</div>
     <div>
