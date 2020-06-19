@@ -1,4 +1,4 @@
-<div class="queue-card queue-card--{{@card.status}}">
+<LinkTo @route="media-registry.cardflow" @class="queue-card queue-card--{{@card.status}}">
   <header class="queue-card__header">
     <div class="queue-card__title">{{@card.title}}</div>
     {{#if (not-eq @card.status "recent")}}
@@ -13,4 +13,4 @@
       {{svg-jar "progress-circle" class="queue-card__progress-pie" width="24px" height="24px"}}
     </div>
   </footer>
-</div>
+</LinkTo>

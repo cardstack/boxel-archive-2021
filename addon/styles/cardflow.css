@@ -1,12 +1,22 @@
 .cardflow {
   display: grid;
   grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
 }
 
 .cardflow__header {
   grid-column: 1 / -1;
-  min-height: 80px;
+  height: 80px;
   background-color: white;
+}
+
+.cardflow__sidebar-title {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  font: var(--boxel-font-sm);
+  font-weight: bold;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
 }

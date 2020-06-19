@@ -2,7 +2,7 @@
   {{outlet}}
 {{else}}
   <section class="media-registry media-registry--{{@model.id}}">
-    <aside class="media-registry__left-edge {{if this.isQueueFixed "with-queue"}}">
+    <aside class="media-registry__left-edge {{if (or this.isQueueFixed (eq this.target.currentRouteName "media-registry.cardflow")) "with-queue"}}">
       <LeftEdgeNav @orgs={{@model.orgs}} @current={{@model.id}} @currentRouteName={{this.target.currentRouteName}} />
       {{#if (not-eq this.target.currentRouteName "media-registry.cardflow")}}
         <div class="media-registry__hover-zone media-registry__hover-zone--{{@model.id}}" />
@@ -11,7 +11,7 @@
         {{#if (not-eq this.target.currentRouteName "media-registry.cardflow")}}
           <IconButton @icon={{if this.isQueueFixed "arrow-left" "sidebar"}} @class="media-registry__queue-btn" {{on "click" (action (mut this.isQueueFixed) (not this.isQueueFixed))}} @aria-label="Toggle fix cardflow queue" />
         {{/if}}
-        <CardflowQueue @class="media-registry__queue {{unless this.isQueueFixed "with-box-shadow"}}" @model={{@model}} />
+        <CardflowQueue @class="media-registry__queue {{if (and (not this.isQueueFixed) (not-eq this.target.currentRouteName "media-registry.cardflow")) "with-box-shadow"}}" @model={{@model}} />
       </div>
     </aside>
     {{#if (not-eq this.target.currentRouteName "media-registry.cardflow")}}
