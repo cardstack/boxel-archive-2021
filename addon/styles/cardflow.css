@@ -46,16 +46,16 @@
 }
 
 .cardflow__message {
-  min-height: 50px;
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 5px 20px;
   color: black;
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
 }
 
-.cardflow__message-row {
-  display: grid;
-  grid-template-columns: 70px 1fr;
-  gap: 20px;
+.cardflow__message:last-child {
+  margin-bottom: 50px;
 }
 
 
@@ -67,16 +67,22 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.cardflow__message-icon--profile {
   border-radius: 100px;
 }
 
-.cardflow__message-sender > time,
-.cardflow__message-sender > div {
+.cardflow__message-info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0 10px;
   color: #666;
 }
 
-.cardflow__message-sender-name {
-  margin-right: 10px;
+.cardflow__message-info-title {
+  color: black;
   font-weight: 600;
 }
 
