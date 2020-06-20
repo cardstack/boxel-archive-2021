@@ -206,19 +206,18 @@
 }
 
 .cardflow__progress-icon {
-  margin: 0 auto;
-  background-image: url('/media-registry/progress-20pct-lg.svg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 124px;
   height: 124px;
+  margin: 0 auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .cardflow__progress-pct {
-  position: absolute;
-  top: 45px;
-  left: 40%;
   font-size: 25px;
   font-weight: bold;
 }
@@ -229,6 +228,10 @@
   margin: 0;
   padding: 30px 15px;
   color: #666;
+}
+
+.cardflow__checklist-item {
+  position: relative;
 }
 
 .cardflow__checklist-item > svg {
@@ -258,8 +261,7 @@
 
 .cardflow__checklist-time {
   position: absolute;
-  top: 30px;
-  right: 20px;
+  right: 0;
   color: #666;
   font: var(--boxel-font-xs);
 }

@@ -1,21 +1,25 @@
 <div class="cardflow">
   <header class="cardflow__header">
     <div>
-      <div class="cardflow__project-title">{{@model.user.queueCards.0.projectTitle}}</div>
-      <div class="cardflow__title">Catalog transfer from Bunny Records to CRD Records for 16 masters</div>
+      <div class="cardflow__project-title">{{this.project.projectTitle}}</div>
+      <div class="cardflow__title">{{or this.project.description this.project.title}}</div>
     </div>
     <LinkTo @route="media-registry" @model={{@model.id}} @class="mode-indicator mode-indicator--workflow">
       Workflow mode
     </LinkTo>
   </header>
 
+  {{!-- Main Thread --}}
   <div class="cardflow__thread">
+    {{!-- Date line --}}
     <div class="cardflow__message-divider">
       <div class="cardflow__message-divider-border" />
       <div class="cardflow__message-divider-date">August 31, 2020</div>
     </div>
 
+    {{!-- Message --}}
     <div class="cardflow__message">
+      {{!-- Sender --}}
       <div class="cardflow__message-row">
         <div class="cardflow__message-icon" style={{css-url "background-image" "/media-registry/profiles/Lisa-Track.jpg"}}></div>
         <div class="cardflow__message-sender">
@@ -23,6 +27,7 @@
           <div>Administrator</div>
         </div>
       </div>
+      {{!-- Content --}}
       <div class="cardflow__message-row">
         <div></div>
         <div class="cardflow__message-content">
@@ -32,6 +37,7 @@
             Best regards,
             Lisa
           </div>
+          {{!-- Proposal Card --}}
           <CardPlatter @class="flow-agreement-card">
             <header>
               <div class="flow-agreement-card__title">Transfer Proposal</div>
@@ -66,48 +72,78 @@
       </div>
     </div>
 
-    <div class="cardflow__message">
-      <div class="cardflow__message-row">
-        <div />
-        <CardPlatter @class="next-steps">
-          <div>
-            <div class="next-steps__title">Next Steps</div>
-            <div class="next-steps__text">Visible only to you</div>
-          </div>
+    {{#if (eq @model.id "bunny_records")}}
+      {{!-- Next Steps for Lisa --}}
+      <div class="cardflow__message">
+        <div class="cardflow__message-row">
+          <div />
+          <CardPlatter @class="next-steps">
+            <div>
+              <div class="next-steps__title">Next Steps</div>
+              <div class="next-steps__text">Visible only to you</div>
+            </div>
 
-          <div class="breadcrumbs__pill breadcrumbs__pill--current">Send Email Reminder</div>
-        </CardPlatter>
+            <div class="breadcrumbs__pill breadcrumbs__pill--current">Send Email Reminder</div>
+          </CardPlatter>
+        </div>
       </div>
-    </div>
+      <div class="cardflow__message"></div>
+    {{/if}}
 
-    <div class="cardflow__message"></div>
+    {{#if (eq @model.id "crd_records")}}
+      <div class="cardflow__message-divider">
+        <div class="cardflow__message-divider-border" />
+        <div class="cardflow__message-divider-date">September 1, 2020</div>
+      </div>
+
+    {{/if}}
   </div>
 
+{{!-- Right Sidebar --}}
   <aside class="cardflow__sidebar">
+    {{!-- Progress Pie --}}
     <section class="cardflow__sidebar-section">
       <h3 class="cardflow__sidebar-title">Progress</h3>
       <div class="cardflow__progress">
-        {{!-- {{svg-jar "progress-20pct-lg" width="125px" height="125px"}} --}}
-        <div class="cardflow__progress-icon" />
-        <span class="cardflow__progress-pct">20%</span>
-        <div class="cardflow__progress-status">Proposal Submitted</div>
+        <div class="cardflow__progress-icon" style={{css-url "background-image" this.progress.iconLg}}>
+          <span class="cardflow__progress-pct">{{this.progress.pct}}%</span>
+        </div>
+        <div class="cardflow__progress-status">{{this.progress.desc}}</div>
       </div>
     </section>
 
+    {{!-- Checklist --}}
     <section class="cardflow__sidebar-section">
       <h3 class="cardflow__sidebar-title">Checklist</h3>
       <CardPlatter>
-        <div class="cardflow__checklist-time">2h ago</div>
-        <ul class="cardflow__checklist">
-          <li class="cardflow__checklist-item completed">{{svg-jar "checkmark-lg" width="16px" height="16px"}} Propose</li>
-          <li class="cardflow__checklist-item current">{{svg-jar "progress-circle" width="16px" height="16px"}} Review</li>
-          <li class="cardflow__checklist-item">{{svg-jar "progress-circle" width="16px" height="16px"}} Accept</li>
-          <li class="cardflow__checklist-item">{{svg-jar "progress-circle" width="16px" height="16px"}} Amend</li>
-          <li class="cardflow__checklist-item">{{svg-jar "progress-circle" width="16px" height="16px"}} Redeliver</li>
-        </ul>
+        {{#let this.progress.pct as |progress|}}
+          <ul class="cardflow__checklist">
+            <li class="cardflow__checklist-item {{if (gt progress 0) "completed" (if (eq progress 0) "current")}}">
+                {{svg-jar (if (gt progress 0) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Propose
+                {{#if (gt progress 0)}}<span class="cardflow__checklist-time">1d ago</span>{{/if}}
+            </li>
+            <li class="cardflow__checklist-item {{if (gt progress 20) "completed" (if (eq progress 20) "current")}}">
+              {{svg-jar (if (gt progress 20) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Review
+              {{#if (gt progress 20)}}<span class="cardflow__checklist-time">1d ago</span>{{/if}}
+            </li>
+            <li class="cardflow__checklist-item {{if (gt progress 40) "completed" (if (eq progress 40) "current")}}">
+              {{svg-jar (if (gt progress 40) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Accept
+              {{#if (gt progress 40)}}<span class="cardflow__checklist-time">10m ago</span>{{/if}}
+            </li>
+            <li class="cardflow__checklist-item {{if (gt progress 60) "completed" (if (eq progress 60) "current")}}">
+              {{svg-jar (if (gt progress 60) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Amend
+              {{#if (gt progress 60)}}<span class="cardflow__checklist-time">5m ago</span>{{/if}}
+            </li>
+            <li class="cardflow__checklist-item {{if (gt progress 80) "completed" (if (eq progress 80) "current")}}">
+              {{svg-jar (if (gt progress 80) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Redeliver
+              {{#if (gt progress 80)}}<span class="cardflow__checklist-time">1m ago</span>{{/if}}
+            </li>
+          </ul>
+        {{/let}}
       </CardPlatter>
     </section>
 
+    {{!-- Participants Box --}}
     <section class="cardflow__sidebar-section">
       <h3 class="cardflow__sidebar-title">Participants</h3>
       <CardPlatter>
