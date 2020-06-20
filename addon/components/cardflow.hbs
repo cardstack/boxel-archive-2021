@@ -29,15 +29,10 @@
       </div>
       {{!-- Content --}}
       <div class="cardflow__message-row">
-        <div></div>
+        <div />
         <div class="cardflow__message-content">
-          <div>
-            Hi Steve,
-            As discussed, we are transferring the rights to 13 of Pia Midina’s and 3 of BB Clarke’s recordings to CRD Records.
-            Best regards,
-            Lisa
-          </div>
-          {{!-- Proposal Card --}}
+          <div>Hi Steve, As discussed, we are transferring the rights to 13 of Pia Midina’s and 3 of BB Clarke’s recordings to CRD Records. Best regards, Lisa</div>
+          {{!-- TODO: 1- Transfer Proposal CARD --}}
           <CardPlatter @class="flow-agreement-card">
             <header>
               <div class="flow-agreement-card__title">Transfer Proposal</div>
@@ -67,13 +62,22 @@
             <footer>
               Effective Date: <strong>September 1, 2020</strong>
             </footer>
+
+            {{#if (eq @model.id "crd_records")}}
+              {{!-- TODO:
+              Transfer Accepted
+              September 1, 8:11 AM 2020
+              --}}
+            {{/if}}
           </CardPlatter>
         </div>
       </div>
     </div>
 
     {{#if (eq @model.id "bunny_records")}}
-      {{!-- Next Steps for Lisa --}}
+      {{!-- TODO: 2- Reply to Steve --}}
+
+      {{!-- TODO: 3- Next Steps for Lisa --}}
       <div class="cardflow__message">
         <div class="cardflow__message-row">
           <div />
@@ -91,11 +95,26 @@
     {{/if}}
 
     {{#if (eq @model.id "crd_records")}}
+      {{!-- TODO: Steve Rights joined the thread  2:56 PM --}}
+
       <div class="cardflow__message-divider">
         <div class="cardflow__message-divider-border" />
         <div class="cardflow__message-divider-date">September 1, 2020</div>
       </div>
 
+      {{!-- TODO: Steve Rights accepted the transfer  8:11 AM  Jump --}}
+
+      {{!-- TODO: 4- Amended Metadata CARD --}}
+
+      {{!-- TODO: Added to CRD Records Catalog 8:13 AM --}}
+      {{!-- TODO: 5- CARD --}}
+
+      {{!-- TODO: Published to Verifi Public Registry 8:18 AM --}}
+      {{!-- TODO: 6- CARD --}}
+
+      {{!-- TODO: 2- Reply to Lisa --}}
+
+      {{!-- TODO: 3- Next Steps --}}
     {{/if}}
   </div>
 

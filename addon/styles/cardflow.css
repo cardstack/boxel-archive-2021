@@ -35,7 +35,7 @@
 }
 
 
-/* Thread */
+/* Main Thread */
 .cardflow__thread {
   display: grid;
   grid-auto-rows: max-content;
@@ -58,6 +58,8 @@
   gap: 20px;
 }
 
+
+/* Sender */
 .cardflow__message-icon {
   justify-self: end;
   width: 40px;
@@ -78,6 +80,8 @@
   font-weight: 600;
 }
 
+
+/* Divider date line */
 .cardflow__message-divider {
   position: relative;
   padding: 15px 0;
@@ -96,80 +100,6 @@
   font-weight: bold;
   text-align: center;
 }
-
-/* Agreement card */
-.flow-agreement-card {
-  position: relative;
-  padding: 40px;
-}
-.flow-agreement-card__title {
-  color: #393642;
-  font-size: 26px;
-  line-height: calc(36/26);
-  font-weight: bold;
-  letter-spacing: 0;
-}
-
-.flow-agreement-card .master-collection__count {
-  display: none;
-}
-
-.field-renderer__title.agreement-card__field-title {
-  text-align: left;
-}
-
-.media-collection__pill.flow-agreement-card__btn {
-  position: absolute;
-  width: 130px;
-  padding: 5px 12px;
-  height: 30px;
-  bottom: 100px;
-  right: 50px;
-}
-
-.flow-agreement-card__people {
-  display: flex;
-}
-
-.flow-agreement-card__people > div {
-  width: 50%;
-}
-
-.flow-agreement-card__participant {
-  text-align: center;
-}
-
-.next-steps {
-  padding: 30px;
-  background: #41404D;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  font: var(--boxel-font-sm);
-  font-weight: 600;
-}
-
-.next-steps__title {
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.next-steps__text {
-  font-weight: normal;
-}
-
-
-.flow-agreement-card > * + *,
-.cardflow__message-content > * + * {
-  margin-top: 20px;
-}
-
-.flow-agreement-card footer {
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: var(--boxel-lsp-sm);
-}
-
 
 
 /* Right Sidebar */
@@ -194,6 +124,8 @@
   text-transform: uppercase;
 }
 
+
+/* Progress Pie */
 .cardflow__progress {
   position: relative;
   text-align: center;
@@ -222,6 +154,8 @@
   font-weight: bold;
 }
 
+
+/* Checklist */
 .cardflow__checklist {
   --icon-color: #D6D6D6;
 
@@ -266,6 +200,8 @@
   font: var(--boxel-font-xs);
 }
 
+
+/* Participants Box */
 .cardflow__participants {
   padding: 20px;
 }
@@ -314,4 +250,83 @@
   font: var(--boxel-font-xs);
   color: #666;
   font-weight: normal;
+}
+
+
+/* TODO: 1- Transfer Proposal CARD */
+.flow-agreement-card {
+  position: relative;
+  padding: 40px;
+}
+.flow-agreement-card__title {
+  color: #393642;
+  font-size: 26px;
+  line-height: calc(36/26);
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+.flow-agreement-card .master-collection__count {
+  display: none;
+}
+
+.field-renderer__title.agreement-card__field-title {
+  text-align: left;
+}
+
+.media-collection__pill.flow-agreement-card__btn {
+  position: absolute;
+  width: 130px;
+  padding: 5px 12px;
+  height: 30px;
+  bottom: 100px;
+  right: 50px;
+}
+
+.flow-agreement-card__people {
+  display: flex;
+}
+
+.flow-agreement-card__people > div {
+  width: 50%;
+}
+
+.flow-agreement-card__participant {
+  text-align: center;
+}
+
+
+/* TODO: 2- Reply to Card */
+
+
+/* TODO: 3- Next Steps */
+.next-steps {
+  padding: 30px;
+  background: #41404D;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font: var(--boxel-font-sm);
+  font-weight: 600;
+}
+
+.next-steps__title {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.next-steps__text {
+  font-weight: normal;
+}
+
+
+.flow-agreement-card > * + *,
+.cardflow__message-content > * + * {
+  margin-top: 20px;
+}
+
+.flow-agreement-card footer {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: var(--boxel-lsp-sm);
 }
