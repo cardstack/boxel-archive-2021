@@ -30,32 +30,33 @@
         <CardPlatter @class="cardflow-card cardflow-proposal-card">
           <header class="cardflow-card__header">
             <div class="cardflow-card__title">Transfer Proposal</div>
-            <div class="cardflow-proposal-card__date">Aug 31, 2020</div>
+            <div class="cardflow-card__date">Aug 31, 2020</div>
           </header>
-          <div class="flow-agreement-card__people">
+          <section class="cardflow-card__section cardflow-proposal-card__participants">
             <div>
-              <div class="field-renderer__title agreement-card__field-title">From</div>
-              <div class="flow-agreement-card__participant">
+              <div class="field-renderer__title">From</div>
+              <div class="cardflow-proposal-card__participant">
                 {{svg-jar "button-bunny-records" width="40px" height="40px"}}
                 <div class="cardflow__participant-company">Bunny Records</div>
               </div>
             </div>
+            {{svg-jar "arrow-right-lg" width="15px" height="15px"}}
             <div>
-              <div class="field-renderer__title agreement-card__field-title">To</div>
-              <div class="flow-agreement-card__participant">
+              <div class="field-renderer__title">To</div>
+              <div class="cardflow-proposal-card__participant">
                 {{svg-jar "button-crd-records" width="40px" height="40px"}}
                 <div>CRD Records</div>
               </div>
             </div>
-          </div>
-          <div>
-            <div class="field-renderer__title agreement-card__field-title">Catalog</div>
+          </section>
+          <section class="cardflow-card__section">
+            <div class="field-renderer__title">Catalog</div>
             {{component (or this.catalog.component "card") model=this.catalog.value mode="view" variant="small"}}
-            <div class="media-collection__pill flow-agreement-card__btn">Inspect Catalog</div>
-          </div>
-          <div class="cardflow-proposal-card__effective-date">
-            Effective Date: <strong>September 1, 2020</strong>
-          </div>
+            <div class="media-collection__pill">Inspect Catalog</div>
+          </section>
+          <section class="cardflow-card__section cardflow-proposal-card__effective-date">
+              Effective Date: <strong>September 1, 2020</strong>
+          </section>
 
           {{#if (eq @model.id "crd_records")}}
             {{!-- TODO:

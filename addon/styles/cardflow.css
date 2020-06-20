@@ -259,13 +259,20 @@
 }
 
 
-
 /* Cardflow Card */
 .cardflow-card__header {
   position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
+  padding: 40px 35px;
+}
+
+.cardflow-card__date {
+  color: #6B6A80;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: var(--boxel-lsp-sm);
 }
 
 .cardflow-card__label {
@@ -293,22 +300,58 @@
   letter-spacing: 0;
 }
 
-
-
-
-/* Transfer Proposal CARD */
-.cardflow-proposal-card {
-  padding: 40px 35px;
+.cardflow-card__section {
+  position: relative;
+  padding: 20px 35px;
 }
 
-.cardflow-proposal-card__date {
-  color: #6B6A80;
-  font-size: 18px;
-  line-height: 1.3;
-  letter-spacing: var(--boxel-lsp-sm);
+
+/* Transfer Proposal Card */
+.cardflow-proposal-card__participants {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.cardflow-proposal-card__participants > div {
+  width: 100%;
+}
+
+.cardflow-proposal-card__participant {
+  width: 100%;
+  padding: 30px;
+  border: var(--boxel-border);
+  border-radius: 5px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.cardflow-proposal-card__participant > svg + div {
+  margin-top: 10px;
+}
+
+.cardflow-proposal-card .master-collection__count {
+  display: none;
+}
+
+.cardflow-proposal-card .field-renderer__title {
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.cardflow-proposal-card .media-collection__pill {
+  position: absolute;
+  width: 130px;
+  padding: 5px 12px;
+  height: 30px;
+  right: 55px;
+  bottom: 40px;
 }
 
 .cardflow-proposal-card__effective-date {
+  padding-top: 15px;
+  padding-bottom: 40px;
   color: black;
   font-size: 18px;
   line-height: 1.3;
@@ -317,16 +360,12 @@
 
 
 /* Action Card */
-.cardflow-action-card .cardflow-card__header {
-  padding: 40px 30px 40px 35px;
-}
-
 .cardflow-action-card__list-item {
   display: grid;
   grid-template-columns: 30px 1fr auto;
   align-items: center;
   gap: 0 20px;
-  padding: 25px 30px 25px 35px;
+  padding: 25px 35px;
   border-top: var(--boxel-border);
   color: #666;
 }
@@ -355,37 +394,6 @@
   background-image: url('/assets/images/icons/checkbox-primary-checked.svg');
 }
 
-
-
-
-.flow-agreement-card .master-collection__count {
-  display: none;
-}
-
-.field-renderer__title.agreement-card__field-title {
-  text-align: left;
-}
-
-.media-collection__pill.flow-agreement-card__btn {
-  position: absolute;
-  width: 130px;
-  padding: 5px 12px;
-  height: 30px;
-  bottom: 100px;
-  right: 50px;
-}
-
-.flow-agreement-card__people {
-  display: flex;
-}
-
-.flow-agreement-card__people > div {
-  width: 50%;
-}
-
-.flow-agreement-card__participant {
-  text-align: center;
-}
 
 /* TODO: 2- Reply to Card */
 
