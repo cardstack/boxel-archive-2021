@@ -259,18 +259,104 @@
 }
 
 
-/* TODO: 1- Transfer Proposal CARD */
-.flow-agreement-card {
+
+/* Cardflow Card */
+.cardflow-card__header {
   position: relative;
-  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
 }
-.flow-agreement-card__title {
-  color: #393642;
+
+.cardflow-card__label {
+  position: absolute;
+  top: 0;
+  left: 35px;
+  padding: 5px 15px;
+  border-radius: 0 0 5px 5px;
+  color: black;
+  font: var(--boxel-font-xs);
+  font-weight: bold;
+  letter-spacing: var(--boxel-lsp-lg);
+  text-transform: uppercase;
+}
+
+.cardflow-card__label--completed {
+  background-color: #37EB77;
+}
+
+.cardflow-card__title {
+  color: black;
   font-size: 26px;
   line-height: calc(36/26);
   font-weight: bold;
   letter-spacing: 0;
 }
+
+
+
+
+/* Transfer Proposal CARD */
+.cardflow-proposal-card {
+  padding: 40px 35px;
+}
+
+.cardflow-proposal-card__date {
+  color: #6B6A80;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+.cardflow-proposal-card__effective-date {
+  color: black;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+
+/* Action Card */
+.cardflow-action-card .cardflow-card__header {
+  padding: 40px 30px 40px 35px;
+}
+
+.cardflow-action-card__list-item {
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  align-items: center;
+  gap: 0 20px;
+  padding: 25px 30px 25px 35px;
+  border-top: var(--boxel-border);
+  color: #666;
+}
+
+.cardflow-action-card__list-item--checkbox {
+  width: 30px;
+  height: 30px;
+  background-image: url('/assets/images/icons/checkbox-primary.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cardflow-action-card__list-item--title {
+  padding-bottom: 5px;
+  font: var(--boxel-font);
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.cardflow-action-card__list-item.completed .cardflow-action-card__list-item--title {
+  color: black;
+}
+
+.cardflow-action-card__list-item.completed .cardflow-action-card__list-item--checkbox {
+  background-image: url('/assets/images/icons/checkbox-primary-checked.svg');
+}
+
+
+
 
 .flow-agreement-card .master-collection__count {
   display: none;
@@ -300,7 +386,6 @@
 .flow-agreement-card__participant {
   text-align: center;
 }
-
 
 /* TODO: 2- Reply to Card */
 

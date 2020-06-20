@@ -26,11 +26,11 @@
       <div />
       <div class="cardflow__message-content">
         <div>Hi Steve, As discussed, we are transferring the rights to 13 of Pia Midina’s and 3 of BB Clarke’s recordings to CRD Records. Best regards, Lisa</div>
-        {{!-- TODO: 1- Transfer Proposal CARD --}}
-        <CardPlatter @class="flow-agreement-card">
-          <header>
-            <div class="flow-agreement-card__title">Transfer Proposal</div>
-            {{!-- <div>Aug 31, 2020</div> --}}
+        {{!-- Transfer Proposal CARD --}}
+        <CardPlatter @class="cardflow-card cardflow-proposal-card">
+          <header class="cardflow-card__header">
+            <div class="cardflow-card__title">Transfer Proposal</div>
+            <div class="cardflow-proposal-card__date">Aug 31, 2020</div>
           </header>
           <div class="flow-agreement-card__people">
             <div>
@@ -53,9 +53,9 @@
             {{component (or this.catalog.component "card") model=this.catalog.value mode="view" variant="small"}}
             <div class="media-collection__pill flow-agreement-card__btn">Inspect Catalog</div>
           </div>
-          <footer>
+          <div class="cardflow-proposal-card__effective-date">
             Effective Date: <strong>September 1, 2020</strong>
-          </footer>
+          </div>
 
           {{#if (eq @model.id "crd_records")}}
             {{!-- TODO:
@@ -106,7 +106,42 @@
         </div>
       </div>
 
-      {{!-- TODO: 4- Amended Metadata CARD --}}
+      <div class="cardflow__message">
+        <div />
+        {{!-- Amended Metadata CARD --}}
+        <CardPlatter @class="cardflow-card cardflow-action-card">
+          <header class="cardflow-card__header">
+            <div class="cardflow-card__label cardflow-card__label--completed">Completed</div>
+            <div class="cardflow-card__title">Amended Metadata</div>
+          </header>
+          <ul class="cardflow-action-card__list">
+            <li class="cardflow-action-card__list-item completed">
+              <div class="cardflow-action-card__list-item--checkbox" />
+              <div>
+                <div class="cardflow-action-card__list-item--title">Update ownership information</div>
+                <div>16 items updated, 32 fields changed</div>
+              </div>
+              <div>Sep 1, 8:11 AM</div>
+            </li>
+            <li class="cardflow-action-card__list-item completed">
+              <div class="cardflow-action-card__list-item--checkbox" />
+              <div>
+                <div class="cardflow-action-card__list-item--title">Add transfer details to Verifi registry</div>
+                <div>Anchored on Ethereum blockchain at block 5289291238</div>
+              </div>
+              <div>Sep 1, 8:34 AM</div>
+            </li>
+            <li class="cardflow-action-card__list-item completed">
+              <div class="cardflow-action-card__list-item--checkbox" />
+              <div>
+                <div class="cardflow-action-card__list-item--title">Retrieve and store media assets </div>
+                <div>Move from Bunny Amazon S3 to CRD MediaNet account</div>
+              </div>
+              <div>Sep 1, 9:46 AM</div>
+            </li>
+          </ul>
+        </CardPlatter>
+      </div>
 
       <div class="cardflow__message">
         <div class="cardflow__message-icon" style={{css-url "background-image" "/media-registry/button-crd-records.svg"}}></div>
@@ -116,7 +151,7 @@
         </div>
         <div />
         {{!-- TODO: 5- CARD --}}
-        <CardPlatter></CardPlatter>
+        <CardPlatter @class="cardflow-card"></CardPlatter>
       </div>
 
 
@@ -128,7 +163,7 @@
         </div>
         <div />
         {{!-- TODO: 6- CARD --}}
-        <CardPlatter></CardPlatter>
+        <CardPlatter @class="cardflow-card"></CardPlatter>
       </div>
 
       {{!-- TODO: 2- Reply to Lisa --}}
