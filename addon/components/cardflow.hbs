@@ -71,16 +71,9 @@
     {{#if (eq @model.id "bunny_records")}}
       {{!-- TODO: 2- Reply to Steve --}}
 
-      {{!-- TODO: 3- Next Steps for Lisa --}}
       <div class="cardflow__message">
         <div />
-        <CardPlatter @class="next-steps">
-          <div>
-            <div class="next-steps__title">Next Steps</div>
-            <div class="next-steps__text">Visible only to you</div>
-          </div>
-          <div class="breadcrumbs__pill breadcrumbs__pill--current">Send Email Reminder</div>
-        </CardPlatter>
+        <NextSteps @inlineBtnGroup={{true}} />
       </div>
     {{/if}}
 
@@ -163,7 +156,6 @@
           <time>8:18 AM</time>
         </div>
         <div />
-        {{!-- TODO: 6- CARD --}}
         <CardPlatter @class="cardflow-card cardflow-proposal-card cardflow-proposal-announcement-card">
           <header class="cardflow-card__header">
             <div class="cardflow-card__title">Catalog Transfer Announcement</div>
@@ -190,7 +182,10 @@
 
       {{!-- TODO: 2- Reply to Lisa --}}
 
-      {{!-- TODO: 3- Next Steps --}}
+      <div class="cardflow__message">
+        <div />
+        <NextSteps @steps={{array "Redeliver to DSP" "Make Changes to Catalog"}} />
+      </div>
     {{/if}}
   </div>
 

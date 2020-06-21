@@ -421,24 +421,3 @@
 
 
 /* TODO: 2- Reply to Card */
-
-
-/* TODO: 3- Next Steps */
-.next-steps {
-  padding: 30px;
-  background: #41404D;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  font: var(--boxel-font-sm);
-  font-weight: 600;
-}
-
-.next-steps__title {
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.next-steps__text {
-  font-weight: normal;
-}
