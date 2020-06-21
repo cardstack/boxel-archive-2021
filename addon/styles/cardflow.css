@@ -449,4 +449,10 @@
 }
 
 
-/* TODO: 2- Reply to Card */
+.cardflow__reply-to.field-renderer__input {
+  padding-right: 80px;
+  background-image: url("/assets/images/icons/plus.svg"), url("/assets/images/icons/emoji.svg");
+  background-position: right 55px center, right 15px center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 15px 15px, 20px 20px;
+}

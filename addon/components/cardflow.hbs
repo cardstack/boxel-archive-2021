@@ -69,7 +69,10 @@
     </div>
 
     {{#if (eq @model.id "bunny_records")}}
-      {{!-- TODO: 2- Reply to Steve --}}
+      <div class="cardflow__message">
+        <div class="cardflow__message-icon cardflow__message-icon--profile" style={{css-url "background-image" "/media-registry/profiles/Lisa-Track.jpg"}}></div>
+        <Input @class="cardflow__reply-to field-renderer__input" @placeholder="Reply to Steve"></Input>
+      </div>
 
       <div class="cardflow__message">
         <div />
@@ -187,7 +190,10 @@
         </CardPlatter>
       </div>
 
-      {{!-- TODO: 2- Reply to Lisa --}}
+      <div class="cardflow__message">
+        <div class="cardflow__message-icon cardflow__message-icon--profile" style={{css-url "background-image" "/media-registry/profiles/Steve-Rights.jpg"}}></div>
+        <Input @class="cardflow__reply-to field-renderer__input" @placeholder="Reply to Lisa"></Input>
+      </div>
 
       <div class="cardflow__message">
         <div />
