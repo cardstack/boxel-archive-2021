@@ -17,7 +17,7 @@
     </div>
 
     <div class="cardflow__message">
-      <div class="cardflow__message-icon cardflow__message-icon--profile" style={{css-url "background-image" "/media-registry/profiles/Lisa-Track.jpg"}}></div>
+      <div class="cardflow__message-icon__profile cardflow__message-icon__profile--bunny" />
       <div class="cardflow__message-info">
         <div class="cardflow__message-info-title">Lisa Track</div>
         <time>2:49 PM</time>
@@ -70,7 +70,7 @@
 
     {{#if (eq @model.id "bunny_records")}}
       <div class="cardflow__message">
-        <div class="cardflow__message-icon cardflow__message-icon--profile" style={{css-url "background-image" "/media-registry/profiles/Lisa-Track.jpg"}}></div>
+        <div class="cardflow__message-icon__profile cardflow__message-icon__profile--bunny" />
         <Input @class="cardflow__reply-to field-renderer__input" @placeholder="Reply to Steve"></Input>
       </div>
 
@@ -82,7 +82,7 @@
 
     {{#if (eq @model.id "crd_records")}}
       <div class="cardflow__message">
-        <div class="cardflow__message-icon cardflow__message-icon--profile" style={{css-url "background-image" "/media-registry/profiles/Steve-Rights.jpg"}}></div>
+        <div class="cardflow__message-icon__profile cardflow__message-icon__profile--crd" />
         <div class="cardflow__message-info">
           <div class="cardflow__message-info-title">Steve Rights joined the thread</div>
           <time>2:56 PM</time>
@@ -96,7 +96,7 @@
 
       {{!-- TODO: Jump to card --}}
       <div class="cardflow__message">
-        <div class="cardflow__message-icon cardflow__message-icon--profile" style={{css-url "background-image" "/media-registry/profiles/Steve-Rights.jpg"}}></div>
+        <div class="cardflow__message-icon__profile cardflow__message-icon__profile--crd" />
         <div class="cardflow__message-info">
           <div class="cardflow__message-info-title">Steve Rights accepted the transfer</div>
           <time>8:11 AM</time>
@@ -191,7 +191,7 @@
       </div>
 
       <div class="cardflow__message">
-        <div class="cardflow__message-icon cardflow__message-icon--profile" style={{css-url "background-image" "/media-registry/profiles/Steve-Rights.jpg"}}></div>
+        <div class="cardflow__message-icon__profile cardflow__message-icon__profile--crd" />
         <Input @class="cardflow__reply-to field-renderer__input" @placeholder="Reply to Lisa"></Input>
       </div>
 

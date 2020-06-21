@@ -10,6 +10,8 @@
 /* Header */
 .cardflow__header {
   grid-column: 1 / -1;
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 20px;
@@ -47,7 +49,7 @@
 
 .cardflow__message {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 60px 1fr;
   gap: 5px 20px;
   color: black;
   font: var(--boxel-font-sm);
@@ -73,8 +75,20 @@
   background-size: contain;
 }
 
-.cardflow__message-icon--profile {
-  border-radius: 100px;
+.cardflow__message-icon__profile {
+  width: 60px;
+  height: 40px;
+  background-position: left top, left 20px center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 15px 15px, contain;
+}
+
+.cardflow__message-icon__profile--crd {
+  background-image: url("/media-registry/button-crd-records.svg"), url("/media-registry/crd-user.svg");
+}
+
+.cardflow__message-icon__profile--bunny {
+  background-image: url("/media-registry/button-bunny-records.svg"), url("/media-registry/bunny-user.svg");
 }
 
 .cardflow__message-info {
