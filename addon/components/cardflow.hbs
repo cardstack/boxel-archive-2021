@@ -164,7 +164,28 @@
         </div>
         <div />
         {{!-- TODO: 6- CARD --}}
-        <CardPlatter @class="cardflow-card"></CardPlatter>
+        <CardPlatter @class="cardflow-card cardflow-proposal-card cardflow-proposal-announcement-card">
+          <header class="cardflow-card__header">
+            <div class="cardflow-card__title">Catalog Transfer Announcement</div>
+          </header>
+          <section class="cardflow-card__section cardflow-proposal-card__participants">
+            <div>
+              <div class="field-renderer__title">From</div>
+              <div class="cardflow-proposal-card__participant">
+                {{svg-jar "button-bunny-records" width="40px" height="40px"}}
+                <div class="cardflow__participant-company">Bunny Records</div>
+              </div>
+            </div>
+            {{svg-jar "arrow-right-lg" width="15px" height="15px"}}
+            <div>
+              <div class="field-renderer__title">To</div>
+              <div class="cardflow-proposal-card__participant">
+                {{svg-jar "button-crd-records" width="40px" height="40px"}}
+                <div>CRD Records</div>
+              </div>
+            </div>
+          </section>
+        </CardPlatter>
       </div>
 
       {{!-- TODO: 2- Reply to Lisa --}}
