@@ -194,7 +194,7 @@
           <ul class="cardflow__checklist">
             <li class="cardflow__checklist-item {{if (gt progress 0) "completed" (if (eq progress 0) "current")}}">
                 {{svg-jar (if (gt progress 0) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Propose
-                {{#if (gt progress 0)}}<span class="cardflow__checklist-time">1d ago</span>{{/if}}
+                {{#if (gt progress 0)}}<span class="cardflow__checklist-time">{{if (eq @model.id "crd_records") "1d ago" "2h ago"}}</span>{{/if}}
             </li>
             <li class="cardflow__checklist-item {{if (gt progress 20) "completed" (if (eq progress 20) "current")}}">
               {{svg-jar (if (gt progress 20) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Review

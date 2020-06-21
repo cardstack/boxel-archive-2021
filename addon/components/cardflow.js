@@ -9,47 +9,36 @@ export default class CardflowComponent extends Component {
       case (20):
         return {
           pct: this.project.progressPct,
-          status: 'proposal',
-          icon: '/media-registry/progress-pie/progress-20pct.svg',
           iconLg: '/media-registry/progress-pie/progress-20pct-lg.svg',
           desc: 'Proposal Submitted'
         }
       case (40):
         return {
           pct: this.project.progressPct,
-          status: 'under-review',
-          icon: '/media-registry/progress-pie/progress-40pct-dark.svg',
           iconLg: '/media-registry/progress-pie/progress-40pct-lg.svg',
           desc: 'Reviewing Proposal'
         }
       case (60):
         return {
           pct: this.project.progressPct,
-          status: 'under-review',
           iconLg: '/media-registry/progress-pie/progress-60pct-lg.svg',
           desc: 'Transfer Accepted'
         }
       case (80):
         return {
           pct: this.project.progressPct,
-          status: 'redeliver',
-          icon: '/media-registry/progress-pie/progress-80pct.svg',
           iconLg: '/media-registry/progress-pie/progress-80pct-lg.svg',
           desc: 'Metadata Amended'
         }
         case (100):
           return {
             pct: this.project.progressPct,
-            status: 'complete',
-            icon: '/media-registry/progress-pie/progress-80pct.svg',
             iconLg: '/media-registry/progress-pie/progress-100pct-lg.svg',
             desc: 'Transfer Completed'
           }
       default:
         return {
           pct: 0,
-          status: 'not started',
-          icon: '/assets/images/icons/progress-circle.svg',
           iconLg: '/assets/images/icons/progress-circle-lg.svg',
           desc: 'Not Started'
         }
