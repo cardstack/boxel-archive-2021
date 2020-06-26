@@ -1,6 +1,6 @@
 {
   "assets": {
-    "/boxel/assets/assetMap-bab90527358e5795c685fe3f003107b4.json": "assets/assetMap-b98af8e64d615a7e4af7bf0a359ada8e.json",
+    "/boxel/assets/assetMap-101fc22b594091385e9f55f63555b1ba.json": "assets/assetMap-f6bb2513447d8a3021494972170156f6.json",
     "/boxel/assets/auto-import-fastboot-24003a01ba4f9ed6e4245c0ccaafb0b2.js": "assets/auto-import-fastboot-24003a01ba4f9ed6e4245c0ccaafb0b2.js",
     "/boxel/assets/catalog/articles-5327c34f3cc61912fda8aa358886a086.css": "assets/catalog/articles-5327c34f3cc61912fda8aa358886a086.css",
     "/boxel/assets/catalog/catalog-preview-f56a433692975567b3ec957db074244f.css": "assets/catalog/catalog-preview-f56a433692975567b3ec957db074244f.css",
@@ -31,7 +31,7 @@
     "/boxel/assets/demo/tic-tac-toe-enhanced-c8c352d58bf6f837a40e963ac8d10396.css": "assets/demo/tic-tac-toe-enhanced-c8c352d58bf6f837a40e963ac8d10396.css",
     "/boxel/assets/demo/tic-tac-toe-1f807f131cdffd08077848d7dcbdc8ec.css": "assets/demo/tic-tac-toe-1f807f131cdffd08077848d7dcbdc8ec.css",
     "/boxel/assets/dummy-40f3f2c0961ef24965e3c33463df581c.css": "assets/dummy-40f3f2c0961ef24965e3c33463df581c.css",
-    "/boxel/assets/dummy-0bc1db11914ac5168f0feb03ca398836.js": "assets/dummy-0bc1db11914ac5168f0feb03ca398836.js",
+    "/boxel/assets/dummy-016cfb4ae13800875c0e60b4a71bbfb7.js": "assets/dummy-016cfb4ae13800875c0e60b4a71bbfb7.js",
     "/boxel/assets/ember-phone-input/images/flags-416250f60d785a2e02f17e054d2e4e44.png": "assets/ember-phone-input/images/flags-416250f60d785a2e02f17e054d2e4e44.png",
     "/boxel/assets/ember-phone-input/images/flags@2x-d429a5777afaf2fc349652e812e9bb11.png": "assets/ember-phone-input/images/flags@2x-d429a5777afaf2fc349652e812e9bb11.png",
     "/boxel/assets/events/view-1e0a4cc328d07fe964c7cc6b8c827325.css": "assets/events/view-1e0a4cc328d07fe964c7cc6b8c827325.css",
@@ -140,8 +140,8 @@
     "/boxel/assets/tools-467bc4bb90735698ee2c87847053021c.css": "assets/tools-467bc4bb90735698ee2c87847053021c.css",
     "/boxel/assets/tools/tools-edit-d7568111e14aab3e3fa91af2a6d30fbd.css": "assets/tools/tools-edit-d7568111e14aab3e3fa91af2a6d30fbd.css",
     "/boxel/assets/tools/tools-preview-07c5d2087b3f52ba4b5b4d960989fb77.css": "assets/tools/tools-preview-07c5d2087b3f52ba4b5b4d960989fb77.css",
-    "/boxel/assets/vendor-1f39f8d14934856c13bd5ef2740e6876.css": "assets/vendor-1f39f8d14934856c13bd5ef2740e6876.css",
-    "/boxel/assets/vendor-9d24a13efe9a1a606c9398b5c53d2e7a.js": "assets/vendor-9d24a13efe9a1a606c9398b5c53d2e7a.js",
+    "/boxel/assets/vendor-1145056b17c32bf56856884afc694333.css": "assets/vendor-1145056b17c32bf56856884afc694333.css",
+    "/boxel/assets/vendor-0ad8c2a766d17a325cce14aaf72333f3.js": "assets/vendor-0ad8c2a766d17a325cce14aaf72333f3.js",
     "/boxel/images/community-1-d661064930a415fde07bee6e6f06e88b.png": "images/community-1-d661064930a415fde07bee6e6f06e88b.png",
     "/boxel/images/community-2-309ba808c146331d80fad2d89c7c371d.png": "images/community-2-309ba808c146331d80fad2d89c7c371d.png",
     "/boxel/images/community-3-906c23fef168c79b5563d9423e7576cc.png": "images/community-3-906c23fef168c79b5563d9423e7576cc.png",
@@ -515,6 +515,7 @@
     "/boxel/media-registry/profiles/Steve-Rights-ad91f3565f1bfeca27c23da6da83793f.jpg": "media-registry/profiles/Steve-Rights-ad91f3565f1bfeca27c23da6da83793f.jpg",
     "/boxel/media-registry/profiles/francesco-midina-59cd18c164876b32098ace0d199437f0.jpg": "media-registry/profiles/francesco-midina-59cd18c164876b32098ace0d199437f0.jpg",
     "/boxel/media-registry/progress-pie/progress-100pct-lg-c3665cbfefe09dc08c0bce7e6d78d70e.svg": "media-registry/progress-pie/progress-100pct-lg-c3665cbfefe09dc08c0bce7e6d78d70e.svg",
+    "/boxel/media-registry/progress-pie/progress-100pct-8c78cbf4360fef1c42ab440af1ac2ccd.svg": "media-registry/progress-pie/progress-100pct-8c78cbf4360fef1c42ab440af1ac2ccd.svg",
     "/boxel/media-registry/progress-pie/progress-20pct-dark-866dae7e870b36d201982bb9af5ae806.svg": "media-registry/progress-pie/progress-20pct-dark-866dae7e870b36d201982bb9af5ae806.svg",
     "/boxel/media-registry/progress-pie/progress-20pct-lg-e1cf4d3a8b7356593de4d86d6b0ed903.svg": "media-registry/progress-pie/progress-20pct-lg-e1cf4d3a8b7356593de4d86d6b0ed903.svg",
     "/boxel/media-registry/progress-pie/progress-20pct-472f8a5832407e0a613a6a52619fb698.svg": "media-registry/progress-pie/progress-20pct-472f8a5832407e0a613a6a52619fb698.svg",
@@ -525,6 +526,7 @@
     "/boxel/media-registry/progress-pie/progress-80pct-dark-5af812df236eb56811173c1605bbdd23.svg": "media-registry/progress-pie/progress-80pct-dark-5af812df236eb56811173c1605bbdd23.svg",
     "/boxel/media-registry/progress-pie/progress-80pct-lg-4312ec2e8671164a2c91d300fe4c6c7b.svg": "media-registry/progress-pie/progress-80pct-lg-4312ec2e8671164a2c91d300fe4c6c7b.svg",
     "/boxel/media-registry/progress-pie/progress-80pct-02a165fe39a040489fd1dced6094e39a.svg": "media-registry/progress-pie/progress-80pct-02a165fe39a040489fd1dced6094e39a.svg",
+    "/boxel/media-registry/progress-pie/progress-circle-dark-0d926b31f5f24bae3b48701a5300750e.svg": "media-registry/progress-pie/progress-circle-dark-0d926b31f5f24bae3b48701a5300750e.svg",
     "/boxel/media-registry/verifi-logo-dark-outline-c3f2c1cbed838829e2c36e086e3ca31b.svg": "media-registry/verifi-logo-dark-outline-c3f2c1cbed838829e2c36e086e3ca31b.svg",
     "/boxel/media-registry/verifi-logo-54023165244519eda6145e0b7e6d0533.svg": "media-registry/verifi-logo-54023165244519eda6145e0b7e6d0533.svg"
   },
