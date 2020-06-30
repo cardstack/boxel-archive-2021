@@ -2,6 +2,10 @@ import Route from '@ember/routing/route';
 import { fetchCollection } from 'dummy/media';
 
 export default class MediaRegistryItemRoute extends Route {
+  titleToken(model) {
+    return model.song_title;
+  }
+
   async model({ itemId }, transition) {
     const records = await fetchCollection('all_tracks_combined');
     const profiles = await fetchCollection('profiles');
