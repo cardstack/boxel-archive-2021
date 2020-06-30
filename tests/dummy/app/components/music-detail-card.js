@@ -183,13 +183,15 @@ export default class MusicDetailCardComponent extends Component {
         title: 'main artist',
         value: [ this.model.artist_info || this.model.artist ],
         type: this.model.artist_info ? 'collection' : 'text',
-        component: this.model.artist_info ? 'cards/artist' : null
+        component: this.model.artist_info ? 'cards/artist' : null,
+        search: (q) => (this.model.selectableArtists || []).filter(a => a.title.toLowerCase().includes(q.toLowerCase()))
       },
       {
         title: 'producer',
         value: [ this.model?.producer || 'N/A' ],
         type: this.model.producer ? 'collection' : 'text',
-        component: this.model.producer ? 'cards/artist' : null
+        component: this.model.producer ? 'cards/artist' : null,
+        search: (q) => (this.model.selectableArtists || []).filter(a => a.title.toLowerCase().includes(q.toLowerCase()))
       },
       {
         title: 'mastering engineer',

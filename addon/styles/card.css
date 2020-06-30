@@ -133,6 +133,7 @@
 
 .boxel-card--profile .boxel-card__bg-img {
   border-radius: 100px;
+  background-image: url('/media-registry/placeholders/profile.svg');
 }
 
 .boxel-card--profile__fields {
