@@ -26,7 +26,6 @@
 
 .boxel-card {
   width: 100%;
-  max-width: 450px;
   background-color: white;
   border-radius: 5px;
   border: var(--boxel-border);
@@ -34,15 +33,17 @@
 }
 
 .boxel-card__expand-btn:hover ~ .boxel-card,
-.boxel-card:hover {
+.boxel-card__expand-overlay:hover {
   box-shadow: var(--boxel-box-shadow);
   cursor: pointer;
+  outline: 0;
 }
 
 .boxel-card--default {
   display: grid;
   align-items: center;
   gap: 3px 15px;
+  max-width: 450px;
   padding: 15px 45px 15px 15px;
   color: black;
   font: var(--boxel-font);
