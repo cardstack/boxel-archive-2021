@@ -1,11 +1,9 @@
 <Boxel class="boxel-card__container">
+  <div class="card__gradient" />
   {{#if @status}}
     <BoxelHighlight @status={{@status}} />
     <BoxelActions @status={{@status}} />
   {{/if}}
-  {{!-- {{#if @model.fields}}
-    <div class="card__gradient" />
-  {{/if}} --}}
   {{#if @expandAction}}
     <BoxelHighlight {{on "click" @expandAction}} @class="boxel-card__expand-overlay" />
     <IconButton {{on "click" @expandAction}} @icon="expand" @class="boxel-card__expand-btn" />
