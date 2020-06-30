@@ -134,7 +134,7 @@
   border-radius: 100px;
 }
 
-.boxel-card--artist__fields {
+.boxel-card--profile__fields {
   grid-auto-flow: row;
   grid-template-columns: auto auto auto;
   align-items: end;

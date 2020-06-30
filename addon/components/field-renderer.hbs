@@ -122,8 +122,8 @@
             {{#if multiTagList.length}}
               {{#each @field.value as |val|}}
                 <div class="field-renderer__taglist-title">{{val.title}}</div>
-                {{#if val.value.id}}
-                  <Card @model={{val.value}} @mode="view"}} />
+                {{#if (eq val.type "card")}}
+                  {{component (or val.component "card") model=val.value mode="view"}}
                 {{else}}
                   {{#each val.value as |vv|}}
                     <div>{{vv}}</div>
