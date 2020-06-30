@@ -418,6 +418,10 @@
   grid-template-columns: auto 450px;
 }
 
+.version-card__content .media-detail-section__contents > .field-renderer:last-child {
+  margin-bottom: 30px;
+}
+
 
 .version-card__btn-overlay {
   background: var(--boxel-revision-medium-purple);

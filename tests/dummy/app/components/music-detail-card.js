@@ -71,7 +71,9 @@ export default class MusicDetailCardComponent extends Component {
       },
       {
         title: 'main artist',
-        value: [ this.model.artist_info || this.model.artist ]
+        value: [ this.model.artist_info || this.model.artist ],
+        type: this.model.artist_info ? 'collection' : 'text',
+        component: this.model.artist_info ? 'cards/artist' : null
       },
       {
         title: 'label',
@@ -178,12 +180,15 @@ export default class MusicDetailCardComponent extends Component {
     return [
       {
         title: 'main artist',
-        value: [ this.model.artist_info || this.model.artist ]
+        value: [ this.model.artist_info || this.model.artist ],
+        type: this.model.artist_info ? 'collection' : 'text',
+        component: this.model.artist_info ? 'cards/artist' : null
       },
       {
         title: 'producer',
-        value: this.model?.producer,
-        type: 'card'
+        value: [ this.model?.producer || 'N/A' ],
+        type: this.model.producer ? 'collection' : 'text',
+        component: this.model.producer ? 'cards/artist' : null
       },
       {
         title: 'mastering engineer',
@@ -291,6 +296,7 @@ export default class MusicDetailCardComponent extends Component {
         search: async function() {
           return searchResults;
         },
+        type: 'collection',
         value: [ this.model.agreementCard || {
           id: 'exclusive-recording-agreement',
           type: 'agreement',
