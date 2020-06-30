@@ -209,48 +209,6 @@ export default class MusicDetailCardComponent extends Component {
     ];
   }
 
-  get coverArtCard() {
-    if (!this.model || !this.model.album || this.args.fields) { return null; }
-    return {
-      id: String(dasherize(this.model.album.trim())),
-      type: 'file',
-      category: 'cover-art',
-      fields: {
-        title: this.model.album,
-        imgURL: this.model.cover_art_thumb,
-        date: this.model.cover_art_date
-      },
-    }
-  }
-
-
-  // Hardcoded sections (file names, dates, agreements section)
-  get audioFileCards() {
-    if (!this.model || this.args.fields) { return null; }
-    return [
-      {
-        id: `${this.itemId}.aiff`,
-        type: 'file',
-        category: 'audio-file',
-        fields: {
-          title: this.model?.details?.audio_files[0].title || `${this.itemId}.aiff`,
-          imgURL: '/media-registry/file.svg',
-          date: this.model?.details?.audio_files[0]?.date
-        }
-      },
-      {
-        id: `${this.itemId}-watermarked.aiff`,
-        type: 'file',
-        category: 'audio-file',
-        fields: {
-          title: this.model?.details?.audio_files[1].title || `${this.itemId}-watermarked.aiff`,
-          imgURL: '/media-registry/file.svg',
-          date: this.model?.details?.audio_files[1]?.date
-        }
-      }
-    ];
-  }
-
   get files() {
     if (!this.model || this.args.fields) { return null; }
     return [
@@ -258,12 +216,35 @@ export default class MusicDetailCardComponent extends Component {
         title: 'cover art',
         format: 'grid',
         type: 'card',
-        value: this.coverArtCard
+        component: 'cards/file',
+        value: {
+          id: String(dasherize(this.model.album.trim())),
+          type: 'cover-art',
+          title: this.model.album,
+          imgURL: this.model.cover_art_thumb,
+          date: this.model.cover_art_date
+        }
       },
       {
         title: 'audio',
         type: 'collection',
-        value: this.audioFileCards
+        component: 'cards/file',
+        value: [
+          {
+            id: `${this.itemId}.aiff`,
+            type: 'audio-file',
+            imgURL: '/media-registry/file.svg',
+            title: this.model?.details?.audio_files ? this.model?.details?.audio_files[0].title : `${this.itemId}.aiff`,
+            date: this.model?.details?.audio_files ? this.model?.details?.audio_files[0]?.date : null
+          },
+          {
+            id: `${this.itemId}-watermarked.aiff`,
+            type: 'audio-file',
+            imgURL: '/media-registry/file.svg',
+            title: this.model?.details?.audio_files ? this.model?.details?.audio_files[1].title : `${this.itemId}-watermarked.aiff`,
+            date: this.model?.details?.audio_files ? this.model?.details?.audio_files[1]?.date : null
+          }
+        ]
       }
     ];
   }
