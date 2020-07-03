@@ -1,12 +1,10 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action, set } from '@ember/object';
-import { inject as service } from '@ember/service';
 
-export default class MediaCollectionComponent extends Component {
+export default class IsolatedCollection extends Component {
   @tracked format = this.args.format || 'grid';
-  @service router;
-  @tracked collection;
+  @tracked collection = this.args.model.collection || [];
   @tracked tableCols = this.args?.field?.columns || this.args?.model?.columns;
   @tracked sortColumn = this.sortColumns ? this.sortColumns[0] : null;
   @tracked sortDirection = 'asc';
@@ -14,13 +12,17 @@ export default class MediaCollectionComponent extends Component {
   constructor(...args) {
     super(...args);
     this.collection = this.args.model.collection;
-    set(this.collection, 'selectedItemCount', this.collection.filter(item => item.selected).length);
-    set(this.collection, 'selectedAll', this.collection.length === this.collection.selectedItemCount);
+    this.updateSelectionCount();
   }
 
   @action
   updateCollections() {
     this.collection = this.args.model.collection;
+    this.updateSelectionCount();
+  }
+
+  @action
+  updateSelectionCount() {
     set(this.collection, 'selectedItemCount', this.collection.filter(item => item.selected).length);
     set(this.collection, 'selectedAll', this.collection.length === this.collection.selectedItemCount);
   }
@@ -31,8 +33,13 @@ export default class MediaCollectionComponent extends Component {
       this.args.changeFormat(val);
     }
     this.format = val;
-    this.updateCollections();
+    this.updateSelectionCount();
   }
+
+  // @action
+  // togglePin(item) {
+  //   set(item, 'pinned', !item.pinned);
+  // }
 
   @action
   toggleSelectAll() {
@@ -53,28 +60,17 @@ export default class MediaCollectionComponent extends Component {
   }
 
   @action
-  transitionToEdit() {
-    if (this.args.model.type === 'collection') {
-      this.router.transitionTo('media-registry.collection.edit', this.args.model.title);
-    } else {
-      this.router.transitionTo('media-registry.edit');
-    }
-  }
-
-  @action
-  transitionToView() {
-    if (this.args.model.type === 'collection') {
-      this.router.transitionTo('media-registry.collection', this.args.model.title);
-    } else {
-      this.router.transitionTo('media-registry');
-    }
+  toggleSelect(item) {
+    set(item, 'selected', !item.selected);
+    this.updateSelectionCount();
   }
 
   get sortColumns() {
     return this.tableCols.filter(c => c.isSortable !== false && c.name);
   }
 
-  @action async sort(column, direction=null) {
+  @action
+  async sort(column, direction=null) {
     if (direction) {
       this.sortDirection = direction
     } else if (column == this.sortColumn) {
@@ -86,16 +82,12 @@ export default class MediaCollectionComponent extends Component {
 
     this.collection = (await this.args.sort(this.sortColumn, this.sortDirection)).slice();
 
-    if (this.format === 'table') {
-      return set(this.collection, 'selectedItemCount', this.collection.filter(item => item.selected).length);
-    }
-
-    this.updateCollections();
+    this.updateSelectionCount();
   }
 
   @action async search(event) {
     this.collection = (await this.args.search(event.target.value)).slice();
-    this.updateCollections();
+    this.updateSelectionCount();
   }
 
   @action async tableSort(sorts) {
@@ -105,5 +97,6 @@ export default class MediaCollectionComponent extends Component {
 
   @action async removeItem(item) {
     this.collection = (await this.args.removeItem(item)).slice();
+    this.updateSelectionCount();
   }
 }

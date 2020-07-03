@@ -6,9 +6,9 @@
 
     <h.row as |r|>
       <r.cell as |column|>
-        <span class="media-collection-table__header-cell {{if (eq @sortColumn column) "is-sorting"}}">
+        <span class="media-collection-table__header-cell {{if (eq @sortColumn.valuePath column.valuePath) "is-sorting"}}">
           {{column.name}}
-          {{#if (eq @sortColumn column)}}
+          {{#if (eq @sortColumn.valuePath column.valuePath)}}
             <div class="media-collection-table__sort-arrow {{if (eq @sortDirection "asc") "ascending"}}">
               {{svg-jar "arrow-down" width="10px" height="10px"}}
             </div>
