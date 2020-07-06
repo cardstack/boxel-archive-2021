@@ -18,6 +18,7 @@
 .master-collection__highlighter:hover,
 .master-collection__highlighter:focus {
   box-shadow: var(--boxel-box-shadow);
+  cursor: pointer;
   outline: 0;
 }
 
