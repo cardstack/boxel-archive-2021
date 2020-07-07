@@ -44,7 +44,7 @@
           Add to Collection
         </button>
       {{/if}}
-      <div class="media_collection__btn-group">
+      <div class="media-collection__btn-group">
         <div class="media-collection__btn-trio media-collection__filters">
           <SortPopup @class="media-collection__sort" @sortColumns={{this.sortColumns}} @sortColumn={{this.sortColumn}} @sortDirection={{this.sortDirection}} @sort={{this.sort}}/>
           <MediaCollection::Button @class="media-collection__filter" @button="filter" @icon="filter">
@@ -68,7 +68,7 @@
   </header>
 
   {{#if (eq this.format "table")}}
-    <MediaCollectionTable @mode={{@mode}} @type={{@model.type}} @collection={{this.collection}} @columns={{@model.columns}} @removeItem={{this.removeItem}} @transition={{@transition}} @sortColumn={{this.sortColumn}} @sortDirection={{this.sortDirection}} @onUpdateSorts={{this.tableSort}}/>
+    <IsolatedCollectionTable @mode={{@mode}} @type={{@model.type}} @collection={{this.collection}} @columns={{@model.columns}} @removeItem={{this.removeItem}} @transition={{@transition}} @sortColumn={{this.sortColumn}} @sortDirection={{this.sortDirection}} @onUpdateSorts={{this.tableSort}}/>
   {{else}}
     <div class="media-collection__scroll-container">
       <div class="media-collection__inner-container">
@@ -81,16 +81,16 @@
                 {{yield item}}
               {{/if}}
 
-              <div class="collection-editor__btn-group {{if (eq @mode "view") "master-collection__select-btn"}} {{if item.selected "master-collection__select-btn--selected"}}">
-                <button {{on "click" (fn this.toggleSelect item)}} class="collection-editor__select-btn" aria-label="select">
+              <div class="media-collection__grid-item-btn-group {{if (eq @mode "view") "master-collection__select-btn"}} {{if item.selected "master-collection__select-btn--selected"}}">
+                <button {{on "click" (fn this.toggleSelect item)}} class="media-collection__grid-item-select-btn" aria-label="select">
                   {{#if item.selected}}
-                    {{svg-jar "icon-circle-selected" class="collection-editor__select--selected" width="16px" height="16px"}}
+                    {{svg-jar "icon-circle-selected" class="media-collection__grid-item-select--selected" width="16px" height="16px"}}
                   {{else}}
                     {{svg-jar "icon-circle" width="16px" height="16px"}}
                   {{/if}}
                 </button>
                 {{#if (eq @mode "edit")}}
-                  <button {{on "click" (fn this.removeItem item)}} class="collection-editor__select-btn" aria-label="remove">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
+                  <button {{on "click" (fn this.removeItem item)}} class="media-collection__grid-item-select-btn" aria-label="remove">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
                 {{/if}}
               </div>
             </li>
