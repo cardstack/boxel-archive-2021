@@ -109,16 +109,20 @@
             {{#if (and (eq this.project.progressPct 40) (eq @model.id "crd_records"))}}
               <NextSteps
                 @title="Available Actions"
-                @steps={{array "Accept Transfer" "Deny Transfer"}}
+                @steps={{array (hash title="Accept Transfer" action=(fn this.setProgress 60)) "Deny Transfer"}}
                 @moreActions={{true}}
               />
             {{/if}}
 
-            {{#if (eq this.project.progressPct 60)}}
-              {{!-- TODO:
-              Transfer Accepted
-              September 1, 8:11 AM 2020
-              --}}
+            {{#if (gte this.project.progressPct 60)}}
+              <div class="cardflow-action-card__list-item completed">
+                <div class="cardflow-action-card__list-item--checkbox" />
+                <div>
+                  <div class="cardflow-action-card__list-item--title">Transfer Accepted</div>
+                  <div>September 1, 8:11 AM 2020</div>
+                </div>
+                <IconButton @class="cardflow-action-card__icon-btn" @icon="more-actions" @aria-label="Other actions" />
+              </div>
             {{/if}}
           </CardPlatter>
         </div>
@@ -165,10 +169,10 @@
       {{#if (gte this.project.progressPct 60)}}
         <div class="cardflow__message">
           <div />
-          {{!-- Amended Metadata CARD --}}
+          {{!-- Metadata CARD --}}
           <CardPlatter @class="cardflow-card cardflow-action-card">
             <header class="cardflow-card__header">
-              <div class="cardflow-card__label cardflow-card__label--completed">{{#if (eq this.project.progressPct 60)}}In Progress{{else}}Completed{{/if}}</div>
+              <div class="cardflow-card__label cardflow-card__label--{{if (eq this.project.progressPct 60) "in-progress" "completed"}}">{{#if (eq this.project.progressPct 60)}}In Progress{{else}}Completed{{/if}}</div>
               <div class="cardflow-card__title">{{#if (eq this.project.progressPct 60)}}Amending{{else}}Amended{{/if}} Metadata</div>
             </header>
             <ul class="cardflow-action-card__list">
@@ -180,11 +184,13 @@
                 </div>
                 <div>Sep 1, 8:11 AM</div>
               </li>
-              <li class="cardflow-action-card__list-item {{if (gte this.project.progressPct 80) "completed"}}">
+              <li class="cardflow-action-card__list-item {{if (eq this.project.progressPct 60) "current" "completed"}}">
                 <div class="cardflow-action-card__list-item--checkbox" />
                 <div>
                   <div class="cardflow-action-card__list-item--title">Add transfer details to Verifi registry</div>
-                  <div>Anchored on Ethereum blockchain at block 5289291238</div>
+                  {{#if (gte this.project.progressPct 80)}}
+                    <div>Anchored on Ethereum blockchain at block 5289291238</div>
+                  {{/if}}
                 </div>
                 {{#if (gte this.project.progressPct 80)}}
                   <div>Sep 1, 8:34 AM</div>

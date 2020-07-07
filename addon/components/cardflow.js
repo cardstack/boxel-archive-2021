@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { action, get } from '@ember/object';
+import { action, get, set } from '@ember/object';
 import { compare, isBlank } from '@ember/utils';
 
 export default class CardflowComponent extends Component {
@@ -49,6 +49,15 @@ export default class CardflowComponent extends Component {
           desc: 'Not Started'
         }
     }
+  }
+
+  set progress(val) {
+    return val;
+  }
+
+  @action setProgress(val) {
+    set(this.project, 'progressPct', val);
+    set(this, 'progress', val);
   }
 
   @action

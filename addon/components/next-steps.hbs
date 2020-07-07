@@ -6,7 +6,7 @@
   <div class="next-steps__btn-group">
     {{#if @steps.length}}
       {{#each @steps as |step|}}
-        <PillButton @variant="primary" @class="next-steps__pill-btn">{{step}}</PillButton>
+        <PillButton @variant="primary" {{on "click" (optional step.action)}} @class="next-steps__pill-btn">{{or step.title step}}</PillButton>
       {{/each}}
     {{else}}
       <PillButton @variant="primary" @class="next-steps__pill-btn">Send Email Reminder</PillButton>

@@ -300,14 +300,18 @@
 .cardflow-card__label {
   position: absolute;
   top: 0;
-  left: 35px;
+  left: 0;
   padding: 5px 15px;
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px 0 5px 0;
   color: black;
   font: var(--boxel-font-xs);
   font-weight: bold;
   letter-spacing: var(--boxel-lsp-lg);
   text-transform: uppercase;
+}
+
+.cardflow-card__label--in-progress {
+  background-color: #FFD800;
 }
 
 .cardflow-card__label--completed {
@@ -401,12 +405,20 @@
   letter-spacing: 0.02em;
 }
 
+.cardflow-action-card__list-item.current .cardflow-action-card__list-item--title,
 .cardflow-action-card__list-item.completed .cardflow-action-card__list-item--title {
   color: black;
 }
 
 .cardflow-action-card__list-item.completed .cardflow-action-card__list-item--checkbox {
   background-image: url('/assets/images/icons/checkbox-primary-checked.svg');
+}
+
+.cardflow-action-card__icon-btn.icon-btn {
+  --icon-btn-width: 30px;
+  --icon-btn-height: 30px;
+  border: 1px solid #B3B1B8;
+  border-radius: 100px;
 }
 
 
