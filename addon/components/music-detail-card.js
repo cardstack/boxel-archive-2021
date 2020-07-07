@@ -1,56 +1,11 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
 import { dasherize } from '@ember/string';
 import { truncateVerifiId } from '@cardstack/boxel/utils/truncate-verifi-id';
-import { fetchCollection } from 'dummy/media';
 
 export default class MusicDetailCardComponent extends Component {
   @tracked model = this.args.model;
   @tracked itemId = this.args.itemId;
-
-  constructor(...args) {
-    super(...args);
-    if (!this.args.model) {
-      this.getRecord();
-    }
-  }
-
-  @action async getRecord() {
-    const records = await fetchCollection('all_tracks_combined');
-    const recordDetails = await fetchCollection('songs_by_pia_midina_bb_clarke_table_1');
-    const profiles = await fetchCollection('profiles');
-    const musicalWorks = await fetchCollection('musical-works');
-    let itemId = this.itemId;
-
-    const record = records.filter(item => {
-      if (item.catalog) {
-        return dasherize(item.song_title.trim()) === itemId;
-      }
-    })[0];
-
-    const recordDetail = recordDetails.filter(item => {
-      return dasherize(item.song_title.trim()) === itemId;
-    })[0];
-
-    const artist = profiles.filter(profile => {
-      return profile.id === dasherize(record.artist.trim());
-    })[0];
-
-    if (artist) {
-      record.artist_info = artist;
-    }
-
-    if (recordDetail) {
-      const producer = profiles.filter(profile => (profile.id === recordDetail.producer_id))[0];
-      const musicalWork = musicalWorks.filter(item => item.iswc === recordDetail.iswc_id)[0];
-      record.producer = producer;
-      record.details = recordDetail;
-      record.musicalWork = musicalWork;
-    }
-
-    this.model = record;
-  }
 
   get headerDetailFields() {
     if (!this.model) { return null; }

@@ -1,14 +1,12 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action, get } from '@ember/object';
-import { dasherize } from '@ember/string';
 import { compare, isBlank } from '@ember/utils';
 
 export default class CardflowComponent extends Component {
   @tracked project = this.args.model?.user?.queueCards[0];
   @tracked isolatedCatalog = this.args.isolatedCatalog;
   @tracked catalogId = null;
-  @tracked itemId = null;
 
   removed = [];
 
@@ -59,20 +57,14 @@ export default class CardflowComponent extends Component {
   }
 
   @action
-  displayCatalogItem(item) {
-    let itemId = dasherize(item.song_title.trim());
-    this.itemId = itemId;
-  }
-
-  @action
-  closeCatalogItem() {
-    this.itemId = null;
+  closeItem() {
+    this.args.setItemId();
   }
 
   @action
   closeModal() {
     this.catalogId = null;
-    this.itemId = null;
+    this.closeItem();
   }
 
   @action

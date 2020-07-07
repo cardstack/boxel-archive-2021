@@ -1,12 +1,12 @@
 <div class="cardflow">
-  {{#if this.itemId}}
+  {{#if @item}}
     <BoxelModal @overlayClass="cardflow-overlay" @class="cardflow__modal">
       <header class="cardflow__modal-header">Workflow Thread - {{or this.project.description this.project.title}}</header>
       <IconButton @icon="close" @class="cardflow__modal-close-btn" {{on "click" this.closeModal}} />
       <CardPlatter @class="cardflow__nested-card">
         <header class="cardflow__nested-card-header">
           <div class="cardflow__nested-card-title">{{this.catalog.value.title}}</div>
-          <PillButton {{on "click" this.closeCatalogItem}}>Back to catalog</PillButton>
+          <PillButton {{on "click" this.closeItem}}>Back to catalog</PillButton>
         </header>
       </CardPlatter>
       <Boxel @class="cardflow__scroll-box">
@@ -14,13 +14,14 @@
           <MusicDetailCard
             @class="cardflow__isolated-detail-card"
             @mode="view"
-            @itemId={{this.itemId}}
+            @model={{@item}}
+            @itemId={{@itemId}}
             @displayFullHeader={{true}}
           />
         </div>
       </Boxel>
     </BoxelModal>
-  {{else if this.catalogId}}
+  {{else if (and this.catalogId @isolatedCatalog)}}
     <BoxelModal @overlayClass="cardflow-overlay" @class="cardflow__modal">
       <header class="cardflow__modal-header">Workflow Thread - {{or this.project.description this.project.title}}</header>
       <IconButton @icon="close" @class="cardflow__modal-close-btn" {{on "click" this.closeModal}} />
@@ -34,7 +35,7 @@
         @format="table"
         @class="cardflow__isolated-collection"
         @model={{@isolatedCatalog}}
-        @transition={{this.displayCatalogItem}}
+        @transition={{action @setItemId}}
         @sort={{this.sort}}
         @search={{this.search}}
         @removeItem={{this.removeItem}}
