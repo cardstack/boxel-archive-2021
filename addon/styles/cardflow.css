@@ -41,7 +41,7 @@
 .cardflow__thread {
   display: grid;
   grid-auto-rows: max-content;
-  gap: 20px;
+  gap: 30px;
   height: 100%;
   padding: 20px 30px 50px;
   overflow-y: auto;
@@ -57,7 +57,7 @@
 }
 
 .cardflow__message:last-child > *:last-child {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .cardflow__message-content > * + * {

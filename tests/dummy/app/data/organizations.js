@@ -94,7 +94,7 @@ export default [
             description: "Catalog transfer from Bunny Records to CRD Records for 16 masters",
             datetime: "2020-09-01T09:46",
             projectTitle: "Rights transfer, Bunny Records",
-            progressPct: 80
+            progressPct: 40
           },
           {
             id: "2",
