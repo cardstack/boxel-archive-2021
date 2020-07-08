@@ -45,7 +45,7 @@
   {{else}}
     <header class="cardflow__header">
       <div>
-        <div class="cardflow__project-title">{{this.project.projectTitle}}</div>
+        <div class="cardflow__project-title">{{@projectTitle}}</div>
         <div class="cardflow__title">{{or this.project.description this.project.title}}</div>
       </div>
       <LinkTo @route="media-registry" @model={{@model.id}} @class="mode-indicator mode-indicator--workflow">

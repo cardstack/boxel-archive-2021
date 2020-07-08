@@ -31,7 +31,7 @@ export default class MediaRegistryCardflowController extends Controller {
   @tracked org = this.model;
   @tracked actionSteps = METADATASTEPS;
   @tracked progressPct = this.model.user.queueCards[0].progressPct;
-  @tracked lastUpdated = this.model.user.queueCards[0].timestamp;
+  @tracked lastUpdated = this.model.user.queueCards[0].datetime;
 
   catalog = {
     id: 'batch-f',
@@ -47,6 +47,10 @@ export default class MediaRegistryCardflowController extends Controller {
       "media-registry/covers/thumb/Love-Never-Dies.jpg",
       "media-registry/covers/thumb/Animals.jpg"
     ]
+  }
+
+  get projectTitle() {
+    return this.model.user.queueCards[0].projectTitle;
   }
 
   @action
