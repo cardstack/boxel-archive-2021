@@ -5,6 +5,7 @@
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
   overflow: hidden;
+  height: 100%;
 }
 
 /* Header */

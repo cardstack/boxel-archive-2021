@@ -48,6 +48,6 @@ export default class QueueCardComponent extends Component {
 
   @action
   openThread() {
-    this.router.transitionTo('media-registry.cardflow');
+    this.router.transitionTo('media-registry.cardflow', this.args.orgId);
   }
 }
