@@ -106,7 +106,7 @@
                 Effective Date: <strong>September 1, 2020</strong>
             </section>
 
-            {{#if (and (eq this.project.progressPct 40) (eq @model.id "crd_records"))}}
+            {{#if (and (eq this.progressPct 40) (eq @model.id "crd_records"))}}
               <NextSteps
                 @title="Available Actions"
                 @steps={{array (hash title="Accept Transfer" action=(fn this.setProgress 60)) "Deny Transfer"}}
@@ -114,12 +114,12 @@
               />
             {{/if}}
 
-            {{#if (gte this.project.progressPct 60)}}
+            {{#if (gte this.progressPct 60)}}
               <div class="cardflow-action-card__list-item completed">
                 <div class="cardflow-action-card__list-item--checkbox" />
                 <div>
-                  <div class="cardflow-action-card__list-item--title">Transfer Accepted</div>
-                  <div>September 1, 8:11 AM 2020</div>
+                  <div class="cardflow-action-card__list-item--title">{{this.actionSteps.0.summary}}</div>
+                  <div>{{moment-format this.actionSteps.0.timestamp "MMMM D, h:mm A"}}</div>
                 </div>
                 <IconButton @class="cardflow-action-card__icon-btn" @icon="more-actions" @aria-label="Other actions" />
               </div>
@@ -128,19 +128,7 @@
         </div>
       </div>
 
-      {{#if (and (lt this.project.progressPct 60) (eq @model.id "bunny_records"))}}
-        <div class="cardflow__message">
-          <div class="cardflow__message-icon__profile cardflow__message-icon__profile--bunny" />
-          <Input @class="cardflow__reply-to field-renderer__input" @placeholder="Reply to Steve"></Input>
-        </div>
-
-        <div class="cardflow__message">
-          <div />
-          <NextSteps @inlineBtnGroup={{true}} @moreActions={{true}} />
-        </div>
-      {{/if}}
-
-      {{#if (gte this.project.progressPct 40)}}
+      {{#if (gte this.progressPct 40)}}
         <div class="cardflow__message">
           <div class="cardflow__message-icon__profile cardflow__message-icon__profile--crd" />
           <div class="cardflow__message-info">
@@ -150,10 +138,10 @@
         </div>
       {{/if}}
 
-      {{#if (gte this.project.progressPct 60)}}
+      {{#if (gte this.progressPct 60)}}
         <div class="cardflow__message-divider">
           <div class="cardflow__message-divider-border" />
-          <div class="cardflow__message-divider-date">September 1, 2020</div>
+          <div class="cardflow__message-divider-date">{{moment-format this.actionSteps.0.timestamp "MMMM D"}}</div>
         </div>
 
         {{!-- TODO: Jump to card --}}
@@ -161,19 +149,19 @@
           <div class="cardflow__message-icon__profile cardflow__message-icon__profile--crd" />
           <div class="cardflow__message-info">
             <div class="cardflow__message-info-title">Steve Rights accepted the transfer</div>
-            <time>8:11 AM</time>
+            <time>{{moment-format this.actionSteps.0.timestamp "h:mm A"}}</time>
           </div>
         </div>
       {{/if}}
 
-      {{#if (gte this.project.progressPct 60)}}
+      {{#if (gte this.progressPct 60)}}
         <div class="cardflow__message">
           <div />
           {{!-- Metadata CARD --}}
           <CardPlatter @class="cardflow-card cardflow-action-card">
             <header class="cardflow-card__header">
-              <div class="cardflow-card__label cardflow-card__label--{{if (eq this.project.progressPct 60) "in-progress" "completed"}}">{{#if (eq this.project.progressPct 60)}}In Progress{{else}}Completed{{/if}}</div>
-              <div class="cardflow-card__title">{{#if (eq this.project.progressPct 60)}}Amending{{else}}Amended{{/if}} Metadata</div>
+              <div class="cardflow-card__label cardflow-card__label--{{if (eq this.progressPct 60) "in-progress" "completed"}}">{{#if (eq this.progressPct 60)}}In Progress{{else}}Completed{{/if}}</div>
+              <div class="cardflow-card__title">{{#if (eq this.progressPct 60)}}Amending{{else}}Amended{{/if}} Metadata</div>
             </header>
             <ul class="cardflow-action-card__list">
               {{#each this.actionSteps as |step i|}}
@@ -181,7 +169,8 @@
                   @model={{step}}
                   @i={{i}}
                   @actionSteps={{this.actionSteps}}
-                  @updateProgress={{this.setProgress}}
+                  @setProgress={{this.setProgress}}
+                  @setTimestamp={{this.setTimestamp}}
                 />
               {{/each}}
             </ul>
@@ -241,14 +230,20 @@
         {{/if}}
       {{/if}}
 
-      {{#if (eq @model.id "crd_records")}}
+      {{!-- Reply to message box --}}
+      <div class="cardflow__message">
+        <div class="cardflow__message-icon__profile cardflow__message-icon__profile--{{if (eq @model.id "crd_records") "crd" "bunny"}}" />
+        <Input @class="cardflow__reply-to field-renderer__input" @placeholder="Reply to {{if (eq @model.id "crd_records") "Lisa" "Steve"}}"></Input>
+      </div>
+
+      {{!-- Next steps --}}
+      {{#if (and (lt this.progressPct 80) (eq @model.id "bunny_records"))}}
         <div class="cardflow__message">
-          <div class="cardflow__message-icon__profile cardflow__message-icon__profile--crd" />
-          <Input @class="cardflow__reply-to field-renderer__input" @placeholder="Reply to Lisa"></Input>
+          <div />
+          <NextSteps @inlineBtnGroup={{true}} @moreActions={{true}} />
         </div>
       {{/if}}
-
-      {{#if (gte this.project.progressPct 80)}}
+      {{#if (and (gte this.progressPct 80) (eq @model.id "crd_records"))}}
         <div class="cardflow__message">
           <div />
           <NextSteps @steps={{array "Redeliver to DSP" "Make Changes to Catalog"}} />

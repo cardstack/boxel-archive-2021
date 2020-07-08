@@ -4,10 +4,34 @@ import { action } from '@ember/object';
 import { dasherize } from '@ember/string';
 import { fetchCollection } from 'dummy/media';
 
+const METADATASTEPS = [
+  {
+    title: 'Update ownership information',
+    description: '16 items updated, 32 fields changed',
+    timestamp: '2020-09-01T08:11',
+    summary: 'Transfer Accepted',
+    completed: true
+  },
+  {
+    title: 'Add transfer details to Verifi registry',
+    description: 'Anchored on Ethereum blockchain at block 5289291238',
+    timestamp: '2020-09-01T08:34'
+  },
+  {
+    title: 'Retrieve and store media assets',
+    description: 'Move from Bunny Amazon S3 to CRD MediaNet account',
+    timestamp: '2020-09-01T09:46'
+  }
+];
+
 export default class MediaRegistryCardflowController extends Controller {
   @tracked isolatedCollection = this.getIsolatedCollection(this.catalog.id);
   @tracked itemId = null;
   @tracked record = null;
+  @tracked org = this.model;
+  @tracked actionSteps = METADATASTEPS;
+  @tracked progressPct = this.model.user.queueCards[0].progressPct;
+  @tracked lastUpdated = this.model.user.queueCards[0].timestamp;
 
   catalog = {
     id: 'batch-f',
@@ -23,6 +47,35 @@ export default class MediaRegistryCardflowController extends Controller {
       "media-registry/covers/thumb/Love-Never-Dies.jpg",
       "media-registry/covers/thumb/Animals.jpg"
     ]
+  }
+
+  @action
+  updateProgress(val) {
+    this.progressPct = val;
+  }
+
+  @action
+  updateTimestamp(val) {
+    this.lastUpdated = val;
+  }
+
+  @action
+  setOrg(val) {
+    if (this.org.id === val.id) { return; }
+    this.org = val;
+  }
+
+  @action
+  transition(id) {
+    let { currentRouteName } = this.target;
+
+    if (this.model.id !== id) {
+      if (currentRouteName === 'media-registry.agreements' || currentRouteName === 'media-registry.cardflow') {
+        return this.transitionToRoute(currentRouteName, id);
+      }
+    }
+
+    this.transitionToRoute('media-registry', id);
   }
 
   @action

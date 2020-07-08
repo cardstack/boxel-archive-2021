@@ -3,62 +3,47 @@ import { tracked } from '@glimmer/tracking';
 import { action, get, set } from '@ember/object';
 import { compare, isBlank } from '@ember/utils';
 
-const METADATASTEPS = [
-  {
-    title: 'Update ownership information',
-    description: '16 items updated, 32 fields changed',
-    timestamp: '2020-09-01T08:11',
-    completed: true
-  },
-  {
-    title: 'Add transfer details to Verifi registry',
-    description: 'Anchored on Ethereum blockchain at block 5289291238',
-    timestamp: '2020-09-01T08:34'
-  },
-  {
-    title: 'Retrieve and store media assets',
-    description: 'Move from Bunny Amazon S3 to CRD MediaNet account',
-    timestamp: '2020-09-01T09:46'
-  }
-];
-
 export default class CardflowComponent extends Component {
-  @tracked actionSteps = METADATASTEPS;
-  @tracked project = this.args.model?.user?.queueCards[0];
+  project = this.args.model?.user?.queueCards[0];
+  @tracked actionSteps = this.args.actionSteps;
+  @tracked progressPct = this.args.progressPct;
+  @tracked lastUpdated = this.args.lastUpdated;
   @tracked isolatedCatalog = this.args.isolatedCatalog;
   @tracked catalogId = null;
 
   removed = [];
 
   get progress() {
-    switch(this.project.progressPct) {
+    switch(this.progressPct) {
       case (20):
         return {
-          pct: this.project.progressPct,
+          pct: this.progressPct,
           iconLg: '/media-registry/progress-pie/progress-20pct-lg.svg',
           desc: 'Proposal Submitted'
         }
       case (40):
         return {
-          pct: this.project.progressPct,
+          pct: this.progressPct,
           iconLg: '/media-registry/progress-pie/progress-40pct-lg.svg',
           desc: 'Reviewing Proposal'
         }
       case (60):
         return {
-          pct: this.project.progressPct,
+          pct: this.progressPct,
           iconLg: '/media-registry/progress-pie/progress-60pct-lg.svg',
-          desc: 'Transfer Accepted'
+          desc: 'Transfer Accepted',
+          timestamp: this.actionSteps[0].timestamp
         }
       case (80):
         return {
-          pct: this.project.progressPct,
+          pct: this.progressPct,
           iconLg: '/media-registry/progress-pie/progress-80pct-lg.svg',
-          desc: 'Metadata Amended'
+          desc: 'Metadata Amended',
+          timestamp: this.actionSteps[2].timestamp
         }
         case (100):
           return {
-            pct: this.project.progressPct,
+            pct: this.progressPct,
             iconLg: '/media-registry/progress-pie/progress-100pct-lg.svg',
             desc: 'Transfer Completed'
           }
@@ -77,8 +62,17 @@ export default class CardflowComponent extends Component {
 
   @action
   setProgress(val) {
-    set(this.project, 'progressPct', val);
+    this.progressPct = val;
+    if (val === 60) {
+      this.args.updateTimestamp(this.actionSteps[0].timestamp);
+    }
+    this.args.updateProgress(val);
     set(this, 'progress', val);
+  }
+
+  @action
+  setTimestamp(val) {
+    this.args.updateTimestamp(val);
   }
 
   @action

@@ -6,7 +6,7 @@ export default class QueueCardComponent extends Component {
   @service router;
 
   get progress() {
-    switch(this.args.card.progressPct) {
+    switch(this.args.progressPct || this.args.card.progressPct) {
       case (20):
         return {
           status: 'proposal',
@@ -21,9 +21,9 @@ export default class QueueCardComponent extends Component {
         }
       case (60):
         return {
-          status: 'under-review',
-          icon: '/media-registry/progress-pie/progress-40pct-dark.svg',
-          iconOpen: '/media-registry/progress-pie/progress-40pct.svg'
+          status: 'transfer-accepted',
+          icon: '/media-registry/progress-pie/progress-60pct-dark.svg',
+          iconOpen: '/media-registry/progress-pie/progress-60pct.svg'
         }
       case (80):
         return {

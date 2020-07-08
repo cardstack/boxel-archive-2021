@@ -18,7 +18,12 @@
     <header class="queue__section-header">Open</header>
     <div class="queue__section-content">
       {{#with (find-by "status" "open" (reverse @model.user.queueCards)) as |card|}}
-        <QueueCard @card={{card}} @openCards={{@model.user.queueCards}} @orgId={{@model.id}} />
+        <QueueCard
+          @card={{card}}
+          @progressPct={{@progressPct}}
+          @lastUpdated={{@lastUpdated}}
+          @orgId={{@model.id}}
+        />
       {{/with}}
     </div>
   </section>
