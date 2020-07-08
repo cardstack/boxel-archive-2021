@@ -389,7 +389,8 @@
   color: #666;
 }
 
-.cardflow-action-card__list-item--checkbox {
+.cardflow-action-card__list-item--checkbox,
+.cardflow-action-card__list-item--checkbox.icon-btn {
   width: 30px;
   height: 30px;
   background-image: url('/assets/images/icons/checkbox-primary.svg');

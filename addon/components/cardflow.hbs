@@ -176,46 +176,24 @@
               <div class="cardflow-card__title">{{#if (eq this.project.progressPct 60)}}Amending{{else}}Amended{{/if}} Metadata</div>
             </header>
             <ul class="cardflow-action-card__list">
-              <li class="cardflow-action-card__list-item completed">
-                <div class="cardflow-action-card__list-item--checkbox" />
-                <div>
-                  <div class="cardflow-action-card__list-item--title">Update ownership information</div>
-                  <div>16 items updated, 32 fields changed</div>
-                </div>
-                <div>Sep 1, 8:11 AM</div>
-              </li>
-              <li class="cardflow-action-card__list-item {{if (eq this.project.progressPct 60) "current" "completed"}}">
-                <div class="cardflow-action-card__list-item--checkbox" />
-                <div>
-                  <div class="cardflow-action-card__list-item--title">Add transfer details to Verifi registry</div>
-                  {{#if (gte this.project.progressPct 80)}}
-                    <div>Anchored on Ethereum blockchain at block 5289291238</div>
-                  {{/if}}
-                </div>
-                {{#if (gte this.project.progressPct 80)}}
-                  <div>Sep 1, 8:34 AM</div>
-                {{/if}}
-              </li>
-              <li class="cardflow-action-card__list-item {{if (gte this.project.progressPct 80) "completed"}}">
-                <div class="cardflow-action-card__list-item--checkbox" />
-                <div>
-                  <div class="cardflow-action-card__list-item--title">Retrieve and store media assets </div>
-                  <div>Move from Bunny Amazon S3 to CRD MediaNet account</div>
-                </div>
-                {{#if (gte this.project.progressPct 80)}}
-                  <div>Sep 1, 9:46 AM</div>
-                {{/if}}
-              </li>
+              {{#each this.actionSteps as |step i|}}
+                <CardflowStep
+                  @model={{step}}
+                  @i={{i}}
+                  @actionSteps={{this.actionSteps}}
+                  @updateProgress={{this.setProgress}}
+                />
+              {{/each}}
             </ul>
           </CardPlatter>
         </div>
 
-        {{#if (gte this.project.progressPct 80)}}
+        {{#if this.actionSteps.1.completed}}
           <div class="cardflow__message">
             <div class="cardflow__message-icon" style={{css-url "background-image" "/media-registry/button-verify.svg"}}></div>
             <div class="cardflow__message-info">
               <div class="cardflow__message-info-title">Published to <strong>Verifi Public Registry</strong></div>
-              <time>8:34 AM</time>
+              <time>{{moment-format this.actionSteps.1.timestamp "h:mm A"}}</time>
             </div>
             <div />
             <CardPlatter @class="cardflow-card cardflow-proposal-card cardflow-proposal-announcement-card">
@@ -241,12 +219,13 @@
               </section>
             </CardPlatter>
           </div>
-
+        {{/if}}
+        {{#if this.actionSteps.2.completed}}
           <div class="cardflow__message">
             <div class="cardflow__message-icon" style={{css-url "background-image" "/media-registry/button-crd-records.svg"}}></div>
             <div class="cardflow__message-info">
               <div class="cardflow__message-info-title">Added to <strong>CRD Records Catalog</strong></div>
-              <time>9:46 AM</time>
+              <time>{{moment-format this.actionSteps.2.timestamp "h:mm A"}}</time>
             </div>
             <div />
             {{!-- Catalog Summary Card --}}
