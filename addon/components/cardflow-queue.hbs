@@ -20,9 +20,9 @@
       {{#with (find-by "status" "open" (reverse @model.user.queueCards)) as |card|}}
         <QueueCard
           @card={{card}}
-          @progressPct={{@progressPct}}
-          @lastUpdated={{@lastUpdated}}
           @orgId={{@model.id}}
+          @currentMilestone={{@currentMilestone}}
+          @updateProgress={{@updateProgress}}
         />
       {{/with}}
     </div>

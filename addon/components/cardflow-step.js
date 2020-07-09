@@ -7,7 +7,6 @@ export default class CardflowStep extends Component {
     if (this.args.model.completed) { return; }
 
     set(this.args.model, 'completed', true);
-    this.args.setTimestamp(this.args.model.timestamp);
 
     let nextItem = this.args.actionSteps[this.args.i + 1];
     if (nextItem) {

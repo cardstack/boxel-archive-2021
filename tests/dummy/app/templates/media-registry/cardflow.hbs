@@ -1,14 +1,14 @@
  <aside class="media-registry__left-edge with-queue">
   <LeftEdgeNav @orgs={{@model.orgs}} @current={{@model.id}} />
   {{#each @model.orgs as |org|}}
-    <IconButton {{on "mouseover" (fn this.setOrg org)}} {{on "click" (fn this.transition org.id)}} class="media-registry__hover-zone media-registry__hover-zone--{{org.id}}" />
+    <IconButton {{on "mouseover" (fn this.setOrg org)}} {{on "click" (fn this.transition org)}} class="media-registry__hover-zone media-registry__hover-zone--{{org.id}}" />
   {{/each}}
   <div class="media-registry__left-edge-queue slide-in">
     <CardflowQueue
       @class="media-registry__queue"
       @model={{this.org}}
-      @progressPct={{this.progressPct}}
-      @lastUpdated={{this.lastUpdated}}
+      @currentMilestone={{this.currentMilestone}}
+      @updateProgress={{this.updateProgress}}
     />
   </div>
 </aside>
@@ -17,11 +17,10 @@
   <Cardflow
     @model={{@model}}
     @actionSteps={{this.actionSteps}}
+    @milestones={{this.milestones}}
+    @currentMilestone={{this.currentMilestone}}
     @updateProgress={{this.updateProgress}}
-    @updateTimestamp={{this.updateTimestamp}}
     @projectTitle={{this.projectTitle}}
-    @progressPct={{this.progressPct}}
-    @lastUpdated={{this.lastUpdated}}
     @isolatedCatalog={{this.isolatedCollection}}
     @catalog={{this.catalog}}
     @setItemId={{this.setItemId}}

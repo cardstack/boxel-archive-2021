@@ -1,37 +1,15 @@
-import Controller from '@ember/controller';
+import MediaRegistryController from '../media-registry';
 import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
+import { action, set } from '@ember/object';
 import { dasherize } from '@ember/string';
 import { fetchCollection } from 'dummy/media';
 
-const METADATASTEPS = [
-  {
-    title: 'Update ownership information',
-    description: '16 items updated, 32 fields changed',
-    timestamp: '2020-09-01T08:11',
-    summary: 'Transfer Accepted',
-    completed: true
-  },
-  {
-    title: 'Add transfer details to Verifi registry',
-    description: 'Anchored on Ethereum blockchain at block 5289291238',
-    timestamp: '2020-09-01T08:34'
-  },
-  {
-    title: 'Retrieve and store media assets',
-    description: 'Move from Bunny Amazon S3 to CRD MediaNet account',
-    timestamp: '2020-09-01T09:46'
-  }
-];
 
-export default class MediaRegistryCardflowController extends Controller {
+export default class MediaRegistryCardflowController extends MediaRegistryController {
   @tracked isolatedCollection = this.getIsolatedCollection(this.catalog.id);
   @tracked itemId = null;
   @tracked record = null;
-  @tracked org = this.model;
-  @tracked actionSteps = METADATASTEPS;
-  @tracked progressPct = this.model.user.queueCards[0].progressPct;
-  @tracked lastUpdated = this.model.user.queueCards[0].datetime;
+  @tracked currentMilestone = this.milestones.filter(el => el.pct === this.model.user.queueCards[0].progressPct)[0];
 
   catalog = {
     id: 'batch-f',
@@ -55,31 +33,40 @@ export default class MediaRegistryCardflowController extends Controller {
 
   @action
   updateProgress(val) {
-    this.progressPct = val;
+    if (!val) {
+      this.currentMilestone = this.milestones[0];
+    }
+    this.currentMilestone = this.milestones.filter(el => {
+      if (el.pct === val) {
+        set(el, 'current', true);
+        return el;
+      } else {
+        set(el, 'current', false);
+      }
+    })[0];
   }
 
   @action
-  updateTimestamp(val) {
-    this.lastUpdated = val;
+  mockStep(val) {
+    if (val.id === 'crd_records' && (!this.currentMilestone || this.currentMilestone.pct < 40)) {
+      this.updateProgress(40);
+    } else {
+      return;
+    }
   }
 
   @action
-  setOrg(val) {
-    if (this.org.id === val.id) { return; }
-    this.org = val;
-  }
-
-  @action
-  transition(id) {
+  transition(val) {
     let { currentRouteName } = this.target;
+    this.mockStep(val);
 
-    if (this.model.id !== id) {
+    if (this.model.id !== val.id) {
       if (currentRouteName === 'media-registry.agreements' || currentRouteName === 'media-registry.cardflow') {
-        return this.transitionToRoute(currentRouteName, id);
+        return this.transitionToRoute(currentRouteName, val.id);
       }
     }
 
-    this.transitionToRoute('media-registry', id);
+    this.transitionToRoute('media-registry', val.id);
   }
 
   @action
