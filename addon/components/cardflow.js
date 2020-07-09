@@ -66,6 +66,9 @@ export default class CardflowComponent extends Component {
     if (val === 60) {
       this.args.updateTimestamp(this.actionSteps[0].timestamp);
     }
+    if (val === 100) {
+      this.args.updateTimestamp('2020-09-01T09:51');
+    }
     this.args.updateProgress(val);
     set(this, 'progress', val);
   }

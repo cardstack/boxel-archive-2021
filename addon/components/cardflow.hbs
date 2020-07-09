@@ -136,14 +136,14 @@
             <time>2:56 PM</time>
           </div>
         </div>
-      {{/if}}
 
-      {{#if (gte this.progressPct 60)}}
         <div class="cardflow__message-divider">
           <div class="cardflow__message-divider-border" />
           <div class="cardflow__message-divider-date">{{moment-format this.actionSteps.0.timestamp "MMMM D"}}</div>
         </div>
+      {{/if}}
 
+      {{#if (gte this.progressPct 60)}}
         {{!-- TODO: Jump to card --}}
         <div class="cardflow__message">
           <div class="cardflow__message-icon__profile cardflow__message-icon__profile--crd" />
@@ -243,10 +243,10 @@
           <NextSteps @inlineBtnGroup={{true}} @moreActions={{true}} />
         </div>
       {{/if}}
-      {{#if (and (gte this.progressPct 80) (eq @model.id "crd_records"))}}
+      {{#if (and (eq this.progressPct 80) (eq @model.id "crd_records"))}}
         <div class="cardflow__message">
           <div />
-          <NextSteps @steps={{array "Redeliver to DSP" "Make Changes to Catalog"}} />
+          <NextSteps @steps={{array (hash title="Redeliver to DSP" action=(fn this.setProgress 100)) "Make Changes to Catalog"}} />
         </div>
       {{/if}}
     </div>
@@ -272,7 +272,7 @@
             <ul class="cardflow__checklist">
               <li class="cardflow__checklist-item {{if (gt progress 0) "completed" (if (eq progress 0) "current")}}">
                   {{svg-jar (if (gt progress 0) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Propose
-                  {{#if (gt progress 0)}}<span class="cardflow__checklist-time">{{if (eq @model.id "crd_records") "1d ago" "2h ago"}}</span>{{/if}}
+                  {{#if (gt progress 0)}}<span class="cardflow__checklist-time">1d ago</span>{{/if}}
               </li>
               <li class="cardflow__checklist-item {{if (gt progress 20) "completed" (if (eq progress 20) "current")}}">
                 {{svg-jar (if (gt progress 20) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Review
