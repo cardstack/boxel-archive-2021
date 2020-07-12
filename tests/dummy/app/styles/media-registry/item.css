@@ -18,6 +18,22 @@
   padding-bottom: 30px;
 }
 
+.item__sidebar {
+  min-width: 320px;
+  padding-right: 30px;
+}
+
+.item__sidebar-title {
+  padding-bottom: 25px;
+  font: var(--boxel-font);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp);
+}
+
+.item__sidebar-cards > * + * {
+  margin-top: 15px;
+}
+
 /* Header + sections */
 .item {
   max-width: 940px;

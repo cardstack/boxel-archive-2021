@@ -1,13 +1,8 @@
-.item__sidebar {
-  min-width: 320px;
-}
-
 .sidebar-related-card {
-  border: 1px solid #dcdcdc;
-  border-radius: 10px;
+  border: var(--boxel-border);
+  border-radius: var(--boxel-border-radius);
   background-color: white;
-  margin-top: 10px;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: var(--boxel-box-shadow);
 }
 
 .sidebar-related-card__inner {
