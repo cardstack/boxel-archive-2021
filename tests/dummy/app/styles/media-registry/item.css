@@ -14,12 +14,12 @@
 .item__main {
   display: grid;
   grid-template-columns: auto auto;
-  gap: 0 25px;
+  gap: 0 35px;
   padding-bottom: 30px;
 }
 
 .item__sidebar {
-  min-width: 320px;
+  min-width: 350px;
   padding-right: 30px;
 }
 

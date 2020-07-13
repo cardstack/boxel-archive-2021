@@ -65,7 +65,7 @@
           <div class="item__sidebar-cards">
             {{#each @model.catalog as |catalog i|}}
               <SidebarRelatedCard
-                @type="catalog"
+                @type="collection"
                 @title={{catalog}}
                 @route="media-registry.collection"
                 @routeModel={{dasherize (trim catalog)}}
