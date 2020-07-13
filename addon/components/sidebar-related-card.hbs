@@ -1,12 +1,8 @@
 <LinkTo @route={{@route}} @model={{@routeModel}} @class="sidebar-related-card__link">
   <Boxel @class="sidebar-related-card">
-    <div class="sidebar-related-card__label">
-      {{#if @type}}
-        {{@type}}
-      {{else}}
-        Collection
-      {{/if}}
-    </div>
+    <header class="sidebar-related-card__header">
+      {{@type}}
+    </header>
 
     <div class="sidebar-related-card__inner">
       <div class="sidebar-related-card__left">
