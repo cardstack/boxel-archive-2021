@@ -5,7 +5,7 @@
     <BoxelActions @status={{@status}} />
   {{/if}}
   {{#if @expandAction}}
-    <IconButton {{on "click" @expandAction}} @icon="expand" @class="boxel-card__expand-btn" />
+    <BoxelHighlight {{on "click" @expandAction}} @class="boxel-card__expand-overlay" />
   {{/if}}
   <div class="boxel-card boxel-card--default boxel-card--profile">
     <header class="boxel-card__header">
