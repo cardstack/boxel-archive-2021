@@ -42,6 +42,17 @@
   box-shadow: var(--boxel-box-shadow);
 }
 
+.item__label {
+  position: absolute;
+  top: 7px;
+  left: 15px;
+  color: white;
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+  z-index: 1;
+}
 
 /* Header */
 .item__header {
