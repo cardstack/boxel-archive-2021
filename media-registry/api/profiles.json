@@ -1,7 +1,7 @@
 [
   {
     "id": "lisa-track",
-    "type": "profile",
+    "type": "participant",
     "title": "Lisa Track",
     "description": "Administrator",
     "imgURL": "/boxel/media-registry/profiles/Lisa-Track-3c30c56c2a1c0aeefe23857deecd00eb.jpg",
@@ -21,7 +21,7 @@
   },
   {
     "id": "steve-rights",
-    "type": "profile",
+    "type": "participant",
     "title": "Steve Rights",
     "description": "Catalog Manager",
     "imgURL": "/boxel/media-registry/profiles/Steve-Rights-ad91f3565f1bfeca27c23da6da83793f.jpg",
@@ -41,7 +41,7 @@
   },
   {
     "id": "alex-sharp",
-    "type": "profile",
+    "type": "participant",
     "title": "Alex Sharp",
     "description": "Data Engineer",
     "imgURL": "/boxel/media-registry/profiles/Alex-Sharp-999ba5bc8e2647b030d676760ffc3a6b.jpg",
@@ -61,7 +61,7 @@
   },
   {
     "id": "pia-midina",
-    "type": "profile",
+    "type": "participant",
     "title": "Pia Midina",
     "description": "Recording artist & lyricist",
     "imgURL": "/boxel/media-registry/profiles/Pia-Midina-d0666ed3d57f7e3dd19484eeb17068f0.jpg",
@@ -81,7 +81,7 @@
   },
   {
     "id": "francesco-midina",
-    "type": "profile",
+    "type": "participant",
     "title": "Francesco Midina",
     "description": "Producer (Francesco Rocks)",
     "imgURL": "/boxel/media-registry/profiles/francesco-midina-59cd18c164876b32098ace0d199437f0.jpg",
@@ -101,7 +101,7 @@
   },
   {
     "id": "miles-ponia",
-    "type": "profile",
+    "type": "participant",
     "title": "Miles Ponia",
     "description": "Composer",
     "imgURL": "/boxel/media-registry/profiles/Miles_Ponia-d409e9eea649f7ca36b0611f4d5a8498.jpg",
@@ -121,7 +121,7 @@
   },
   {
     "id": "bb-clarke",
-    "type": "profile",
+    "type": "participant",
     "title": "BB Clarke",
     "description": "Recording artist & lyricist",
     "imgURL": "/boxel/media-registry/profiles/BB-Clarke-a76b453951f93eb96398fa5621669340.jpg",
@@ -141,12 +141,12 @@
   },
   {
     "id": "francine-stewart",
-    "type": "profile",
+    "type": "participant",
     "title": "Francine Stewart"
   },
   {
     "id": "michelle-harris",
-    "type": "profile",
+    "type": "participant",
     "title": "Michelle Harris",
     "description": "Producer (Music by Michelle)",
     "imgURL": "/boxel/media-registry/profiles/Michelle-Harris-1fed8a6084425ba1255c8259a8345a53.jpg",
@@ -166,7 +166,7 @@
   },
   {
     "id": "joel-kaplan",
-    "type": "profile",
+    "type": "participant",
     "title": "Joel Kaplan",
     "description": "Mastering engineer",
     "imgURL": "/boxel/media-registry/profiles/Joel-Kaplan-e6813c1d871e0baec13df71f632c6d57.jpg",
@@ -186,7 +186,7 @@
   },
   {
     "id": "mariah-solis",
-    "type": "profile",
+    "type": "participant",
     "title": "Mariah Solis",
     "description": "Mixing engineer",
     "imgURL": "/boxel/media-registry/profiles/Mariah-Solis-75c02885385bc853d6ac262dfcd20f3f.jpg",
@@ -206,7 +206,7 @@
   },
   {
     "id": "ian-adams",
-    "type": "profile",
+    "type": "participant",
     "title": "Ian Adams",
     "description": "Recording engineer",
     "imgURL": "/boxel/media-registry/profiles/Ian-Adams-1bb927c66c0c0707d1eeebfdb6c561af.jpg",
@@ -226,7 +226,7 @@
   },
   {
     "id": "jenny-sparks",
-    "type": "profile",
+    "type": "participant",
     "title": "Jenny Sparks",
     "description": "Background singer",
     "imgURL": "/boxel/media-registry/profiles/Jenny-Sparks-b211dc8f10578d870c01566ed5981d91.jpg",
@@ -246,7 +246,7 @@
   },
   {
     "id": "sophia-lanagan",
-    "type": "profile",
+    "type": "participant",
     "title": "Sophia Lanagan",
     "description": "Background singer",
     "imgURL": "/boxel/media-registry/profiles/Sophia-Lanagan-399debbbf2ef84c936b7d25969d92533.jpg",
@@ -266,7 +266,7 @@
   },
   {
     "id": "helen-gellar",
-    "type": "profile",
+    "type": "participant",
     "title": "Helen Gellar",
     "description": "Background singer",
     "imgURL": "/boxel/media-registry/profiles/Helen-Gellar-91cba54f8a12a875dc9e242931b99b86.jpg",
@@ -286,7 +286,7 @@
   },
   {
     "id": "arthur-doyle",
-    "type": "profile",
+    "type": "participant",
     "title": "Arthur Doyle",
     "description": "Drummer",
     "imgURL": "/boxel/media-registry/profiles/Arthur-Doyle-57453a4d5c44db3fdec5648cc293c52c.jpg",
