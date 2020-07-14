@@ -26,8 +26,8 @@
 
 .detail-card__label {
   position: absolute;
-  top: 7px;
-  left: 15px;
+  top: 15px;
+  left: 20px;
   color: #AFAFB7;
   font: var(--boxel-font-xs);
   font-weight: 600;

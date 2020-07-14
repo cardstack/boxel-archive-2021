@@ -44,8 +44,8 @@
 
 .item__label {
   position: absolute;
-  top: 7px;
-  left: 15px;
+  top: 15px;
+  left: 20px;
   color: white;
   font: var(--boxel-font-xs);
   font-weight: 600;
