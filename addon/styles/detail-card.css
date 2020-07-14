@@ -24,6 +24,17 @@
   max-width: 880px;
 }
 
+.detail-card__label {
+  position: absolute;
+  top: 7px;
+  left: 15px;
+  color: #AFAFB7;
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+}
+
 .detail-card__header {
   display: grid;
   grid-template-columns: 1fr auto;

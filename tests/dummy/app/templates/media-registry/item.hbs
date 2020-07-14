@@ -21,24 +21,8 @@
     </div>
 
     {{#if (eq this.target.currentRouteName "media-registry.item.musical-work")}}
-      <Boxel>
-        {{!-- Detail Card Layout --}}
-        <div class="detail-card__layout detail-card__layout--stacked">
-
-          {{!-- Detail Card --}}
-          <Boxel @class="detail-card detail-card--stacked">
-            <header class="detail-card__header">
-              <div>Master Detail - {{titleize this.model.song_title}}</div>
-              <button {{on "click" this.transitionToView}} class="breadcrumbs__pill">Back to Master Detail</button>
-            </header>
-            <div class="detail-card__body" />
-          </Boxel>
-        </div>
-
-        {{!-- Nested Detail Card --}}
-        {{outlet}}
-      </Boxel>
-
+      {{!-- Nested Detail Card --}}
+      {{outlet}}
     {{else}}
       {{!-- Detail Card Layout --}}
       <section class="detail-card__layout">
