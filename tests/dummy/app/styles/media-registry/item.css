@@ -1,25 +1,4 @@
-/* Includes breadcrumbs */
-.item__wrapper {
-  max-width: 1360px;
-  /* height: calc(100vh - 132px); */
-  padding: 0 30px;
-  z-index: 1;
-}
-
-.item__wrapper--no-scroll {
-  overflow: hidden;
-}
-
-/* Includes sidebar */
-.item__main {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 0 35px;
-  padding-bottom: 30px;
-}
-
 .item__sidebar {
-  min-width: 350px;
   padding-right: 30px;
 }
 

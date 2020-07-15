@@ -134,7 +134,7 @@ export default class MusicDetailCardComponent extends Component {
     return {
       id: this.model?.details?.iswc_id,
       type: 'card',
-      component: 'cards/musical-work-embedded',
+      component: 'cards/musical-work',
       title: 'Musical Work',
       value: this.model?.musicalWork
     }
@@ -148,7 +148,7 @@ export default class MusicDetailCardComponent extends Component {
     return {
       id: verifi_id,
       type: 'card',
-      component: 'cards/registration-embedded',
+      component: 'cards/registration',
       title,
       value: { verifi_id, verifi_reg_date: this.model?.details?.verifi_reg_date }
     }

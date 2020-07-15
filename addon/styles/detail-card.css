@@ -1,11 +1,13 @@
 .detail-card__layout {
+  width: 100%;
+  max-width: 1360px;
   position: relative;
   top: 0;
   display: grid;
   grid-template-columns: 945px auto;
   gap: 0 35px;
   justify-items: center;
-  padding-bottom: 30px;
+  padding: 0 30px 30px;
 }
 
 .detail-card__layout--stacked {
@@ -16,7 +18,7 @@
   width: 100%;
   min-height: 100px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: var(--boxel-border-radius);
   box-shadow: var(--boxel-box-shadow);
 }
 

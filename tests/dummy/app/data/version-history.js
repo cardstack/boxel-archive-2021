@@ -14,7 +14,7 @@ import {
 
 const MUSICAL_WORK = {
   "type": "card",
-  "component": "cards/musical-work-embedded",
+  "component": "cards/musical-work",
   "value": {
     "artist": "Pia Midina",
     "artist_id": "pia-midina",

@@ -1,25 +1,5 @@
-<Boxel class="detail-card">
-  {{!-- TODO: Uncomment after musical work card design update --}}
-  {{!-- <div class="detail-card__label">Musical Work</div> --}}
-  <BoxelActions
-    @class="media-collection__btn-overlay"
-    @displayHighlightActions={{true}}
-    @btnLeft="mode-btn"
-    @btnLeftContent="Edit"
-    @btnRight="settings"
-  />
-
-  {{!-- Detail Card Section --}}
-  <section class="media-detail-section">
-    <h3 class="media-detail-section__title">Musical Work</h3>
-    <div class="detail-card__body">
-      {{#each-in this.musicalWorkIsolated as |title field|}}
-        <FieldRenderer
-          @mode={{@mode}}
-          @field={{hash title=title value=(or field.value field) type=field.type component=field.component}}
-          @class="detail-card-field"
-        />
-      {{/each-in}}
-    </div>
-  </section>
-</Boxel>
+<Card
+  @mode="view"
+  @model={{this.musicalWorkEmbedded}}
+  @expandAction={{this.transitionToMusicalWork}}
+/>
