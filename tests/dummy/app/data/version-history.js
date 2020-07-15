@@ -211,15 +211,15 @@ export default [
                 "fields": [
                   {
                     "title": "United States",
-                    "value": "$117M"
+                    "value": "$7k"
                   },
                   {
                     "title": "International",
-                    "value": "$250M"
+                    "value": "$11k"
                   },
                   {
                     "title": "Total",
-                    "value": "$367M"
+                    "value": "$18k"
                   }
                 ]
               }
@@ -284,15 +284,15 @@ export default [
                 "fields": [
                   {
                     "title": "United States",
-                    "value": "$118M"
+                    "value": "$9k"
                   },
                   {
                     "title": "International",
-                    "value": "$251M"
+                    "value": "$13k"
                   },
                   {
                     "title": "Total",
-                    "value": "$369M"
+                    "value": "$22k"
                   }
                 ]
               }
