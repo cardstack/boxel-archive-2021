@@ -227,12 +227,16 @@ export default [
             "album_art": "media-registry/covers/medium/Autumn-Leaves.jpg",
             "release_date": {
               "type": "collection",
-              "value": [{
-                "type": "schedule",
-                "id": "release_date",
-                "title": "Release Date",
-                "description": "March 2, 2020"
-              }]
+              "value": [
+                {
+                  "type": "schedule",
+                  "id": "release_date",
+                  "fields": [{
+                    "title": "Release Date",
+                    "value": "March 2, 2020"
+                  }]
+                }
+              ]
             },
             "label": "Bunny Records",
             "copyright_notice": "℗ 2020 Bunny Records",
@@ -304,14 +308,18 @@ export default [
                 {
                   "type": "schedule",
                   "id": "release_date",
-                  "title": "Release Date",
-                  "description": "March 2, 2020"
+                  "fields": [{
+                    "title": "Release Date",
+                    "value": "March 2, 2020"
+                  }]
                 },
                 {
                   "type": "schedule",
                   "id": "digital_download",
-                  "title": "Digital Download",
-                  "description": "May 4, 2020"
+                  "fields": [{
+                    "title": "Digital Download",
+                    "value": "May 4, 2020"
+                  }]
                 }
               ]
             },
