@@ -3,21 +3,21 @@
 {{else}}
   <DetailTemplate>
     {{!-- Breadcrumbs --}}
-    <div class="breadcrumbs">
-      <LinkTo @route="media-registry" @class="breadcrumbs__pill">Master Recordings</LinkTo>
+    <Breadcrumbs>
+      <LinkTo @route="media-registry" @class="breadcrumbs__item">Master Recordings</LinkTo>
       {{#if @model.fromCollectionId}}
         <span class="breadcrumbs__carot" />
-        <LinkTo @route="media-registry.collection" @model={{@model.fromCollectionId}} @class="breadcrumbs__pill">
+        <LinkTo @route="media-registry.collection" @model={{@model.fromCollectionId}} @class="breadcrumbs__item">
           {{titleize (humanize @model.fromCollectionId)}}
         </LinkTo>
       {{/if}}
-      <span class="breadcrumbs__carot" />
-      <button {{on "click" this.transitionToView}} class="breadcrumbs__pill {{if (not-eq this.target.currentRouteName "media-registry.item.musical-work") "breadcrumbs__pill--current"}}">Master Detail</button>
       {{#if (eq this.target.currentRouteName "media-registry.item.musical-work")}}
         <span class="breadcrumbs__carot" />
-        <div class="breadcrumbs__pill breadcrumbs__pill--current">Musical Work</div>
+        <LinkTo @route="media-registry.item" @model={{format-id @model.song_title}} @class="breadcrumbs__item">
+          Master Detail
+        </LinkTo>
       {{/if}}
-    </div>
+    </Breadcrumbs>
 
     {{#if (eq this.target.currentRouteName "media-registry.item.musical-work")}}
       {{outlet}}

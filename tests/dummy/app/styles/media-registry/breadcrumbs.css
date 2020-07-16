@@ -1,0 +1,24 @@
+.breadcrumbs {
+  grid-column: 1 / -1;
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.breadcrumbs__item {
+  height: 30px;
+  padding: 5px 20px;
+  font: var(--boxel-font-sm);
+  letter-spacing: var(--boxel-lsp);
+  border: var(--boxel-border);
+  border-radius: 100px;
+  background-color: white;
+  color: black;
+  outline: 0;
+}
+
+.breadcrumbs__carot {
+  width: 30px;
+  height: 30px;
+  background: url(/assets/images/icons/carot.svg) center/7px no-repeat;
+}

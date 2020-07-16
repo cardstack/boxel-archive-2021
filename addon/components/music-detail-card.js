@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { dasherize } from '@ember/string';
 import { truncateVerifiId } from '@cardstack/boxel/utils/truncate-verifi-id';
+import { formatId } from '@cardstack/boxel/utils/format-id';
 
 export default class MusicDetailCardComponent extends Component {
   @tracked model = this.args.model;
@@ -222,7 +222,7 @@ export default class MusicDetailCardComponent extends Component {
         type: 'card', // field type
         component: 'cards/file',
         value: {
-          id: String(dasherize(this.model.album.trim())),
+          id: formatId(this.model.album),
           type: 'image', // card type
           title: this.model.album,
           imgURL: this.model.cover_art_thumb,
