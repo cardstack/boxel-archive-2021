@@ -1,6 +1,16 @@
 import Controller from '@ember/controller';
 
 export default class MediaRegistryItemMusicalWorkController extends Controller {
+  get headerFields() {
+    if (!this.model) { return null; }
+
+    return {
+      image: '/media-registry/musical-work.svg',
+      title: this.model.title,
+      description: this.model.composer ? `by ${this.model.artist}, ${this.model.composer}` : `by ${this.model.artist}`
+    }
+  }
+
   get isolatedFields() {
     if (!this.model) { return null; }
     return [

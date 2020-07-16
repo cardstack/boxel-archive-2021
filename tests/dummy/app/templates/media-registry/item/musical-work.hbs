@@ -1,11 +1,10 @@
 {{!-- Detail Card --}}
 <DetailCard
+  @headerFields={{this.headerFields}}
   @fields={{this.isolatedFields}}
-  @title="Musical Work"
+  @label="Musical Work"
   @mode="view"
 >
-  {{!-- TODO: Uncomment after musical work card design update --}}
-  {{!-- <div class="detail-card__label">Musical Work</div> --}}
   <BoxelActions
     @class="media-collection__btn-overlay"
     @displayHighlightActions={{true}}
