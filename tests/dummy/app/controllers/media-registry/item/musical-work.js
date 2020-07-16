@@ -6,7 +6,7 @@ export default class MediaRegistryItemMusicalWorkController extends Controller {
 
     return {
       image: '/media-registry/musical-work.svg',
-      title: this.model.title,
+      title: this.model.title || this.model.song_title,
       description: this.model.composer ? `by ${this.model.artist}, ${this.model.composer}` : `by ${this.model.artist}`
     }
   }
@@ -23,15 +23,15 @@ export default class MediaRegistryItemMusicalWorkController extends Controller {
         value: [
           {
             title: 'Lyricist',
-            value: this.model?.artistName || this.model?.artist,
-            type: this.model?.artistName ? 'card' : 'text',
-            component: this.model?.artistName ? 'cards/composer' : null
+            value: this.model.lyricists,
+            type: 'collection',
+            component: 'cards/composer'
           },
           {
             title: 'Composer',
-            value: this.model?.composerName || this.model?.composer,
-            type: this.model?.composerName ? 'card' : 'text',
-            component: this.model?.composerName ? 'cards/composer' : null
+            value: this.model.composers,
+            type: 'collection',
+            component: 'cards/composer'
           }
         ]
       },
