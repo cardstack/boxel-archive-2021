@@ -37,6 +37,8 @@ export default class MediaRegistryItemRoute extends Route {
     }
 
     record.selectableArtists = profiles;
+    record.type = 'master-detail';
+    record.id = itemId;
 
     return record;
   }

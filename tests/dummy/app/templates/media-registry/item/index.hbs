@@ -1,0 +1,51 @@
+<DetailTemplate>
+  <Breadcrumbs>
+    <LinkTo @route="media-registry" @class="breadcrumbs__item">
+      <div class="breadcrumbs__item-label">Collection</div>
+      <div class="breadcrumbs__item-title">Master Recordings</div>
+    </LinkTo>
+    {{#if @model.fromCollectionId}}
+      <span class="breadcrumbs__carot" />
+      <LinkTo @route="media-registry.collection" @model={{@model.fromCollectionId}} @class="breadcrumbs__item">
+        <div class="breadcrumbs__item-label">Collection</div>
+        <div class="breadcrumbs__item-title">{{titleize (humanize @model.fromCollectionId)}}</div>
+      </LinkTo>
+    {{/if}}
+  </Breadcrumbs>
+
+  <MusicDetailCard
+    @mode="view"
+    @model={{this.model}}
+    @itemId={{this.itemId}}
+    @displayFullHeader={{true}}
+  >
+    <BoxelActions
+      @class="media-collection__btn-overlay"
+      @displayHighlightActions={{true}}
+      @btnLeft="mode-btn"
+      @btnLeftContent="Edit"
+      @btnLeftAction={{this.transitionToEdit}}
+      @btnRight="settings"
+      @versionHistory={{true}}
+    />
+  </MusicDetailCard>
+
+  {{!-- Sidebar --}}
+  <aside class="item__sidebar">
+    <h3 class="item__sidebar-title">In these collections</h3>
+    <div class="item__sidebar-cards">
+      {{#each @model.catalog as |catalog i|}}
+        <SidebarRelatedCard
+          @type="collection"
+          @title={{catalog}}
+          @route="media-registry.collection"
+          @routeModel={{dasherize (trim catalog)}}
+          @subtitle={{get @model.catalogSubtitles i}}
+          @count={{get @model.catalogCounts i}} />
+      {{/each}}
+    </div>
+  </aside>
+</DetailTemplate>
+
+{{!-- Edit modal --}}
+{{outlet}}

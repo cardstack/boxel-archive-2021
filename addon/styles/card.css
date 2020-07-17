@@ -195,9 +195,9 @@
 }
 
 .boxel-card-field .field-renderer__title {
-  color: #AFAFB7;
+  color: #6B6A80;
   font: var(--boxel-font-xs);
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
   text-align: left;
