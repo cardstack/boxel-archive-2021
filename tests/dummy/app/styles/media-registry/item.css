@@ -46,13 +46,13 @@
 .item__header-content {
   max-width: 945px;
   max-height: 370px;
-  padding: 60px 50px 50px;
+  padding: 60px 30px 50px 70px;
   display: grid;
   grid-template:
     "img title"   2fr
     "img artist"  1fr
     "img details" 1fr / minmax(160px, 260px) 1fr;
-  gap: 0 20px;
+  gap: 0 30px;
   backdrop-filter: brightness(0.75) blur(50px) contrast(1.2);
   border-radius: 10px 10px 0 0;
 }
@@ -67,6 +67,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: var(--boxel-box-shadow);
 }
 
 .item__play-btn {
@@ -85,8 +86,8 @@
   grid-area: details;
   align-self: end;
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 40px;
+  grid-template-columns: repeat(3, max-content);
+  gap: 30px;
 }
 
 .item__title {

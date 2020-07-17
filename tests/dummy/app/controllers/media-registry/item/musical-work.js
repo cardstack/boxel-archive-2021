@@ -43,7 +43,7 @@ export default class MediaRegistryItemMusicalWorkController extends Controller {
         title: 'verifi id',
         id: this.model?.verifi_id,
         type: 'card',
-        component: 'cards/registration',
+        component: 'cards/registration-embedded',
         value: {
           verifi_id: this.model?.verifi_id,
           verifi_reg_date: this.model?.verifi_reg_date,

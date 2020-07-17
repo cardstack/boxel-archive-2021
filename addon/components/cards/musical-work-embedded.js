@@ -4,7 +4,7 @@ import { action } from '@ember/object';
 import { truncateVerifiId } from '@cardstack/boxel/utils/truncate-verifi-id';
 import { formatId } from '@cardstack/boxel/utils/format-id';
 
-export default class MusicalWork extends Component {
+export default class MusicalWorkEmbedded extends Component {
   @service router;
 
   get musicalWorkEmbedded() {
