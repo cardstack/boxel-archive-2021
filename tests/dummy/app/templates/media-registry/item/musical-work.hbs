@@ -1,18 +1,21 @@
-{{!-- Detail Card --}}
-<DetailCard
-  @headerFields={{this.headerFields}}
-  @fields={{this.isolatedFields}}
-  @label="Musical Work"
-  @mode="view"
->
-  <BoxelActions
-    @class="media-collection__btn-overlay"
-    @displayHighlightActions={{true}}
-    @btnLeft="mode-btn"
-    @btnLeftContent="Edit"
-    @btnRight="settings"
-  />
-</DetailCard>
+<AnimatedContainer>
+  {{#animated-value @model key="iswc" duration="1000"}}
+    <DetailCard
+      @headerFields={{this.headerFields}}
+      @fields={{this.isolatedFields}}
+      @label="Musical Work"
+      @mode="view"
+    >
+      <BoxelActions
+        @class="media-collection__btn-overlay"
+        @displayHighlightActions={{true}}
+        @btnLeft="mode-btn"
+        @btnLeftContent="Edit"
+        @btnRight="settings"
+      />
+    </DetailCard>
+  {{/animated-value}}
+</AnimatedContainer>
 
 {{!-- Related Cards Sidebar --}}
 <aside class="item__sidebar">
