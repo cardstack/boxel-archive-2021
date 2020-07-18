@@ -1,6 +1,6 @@
 import Route from '@ember/routing/route';
-import { dasherize } from '@ember/string';
 import { fetchCollection } from 'dummy/media';
+import { formatId } from '@cardstack/boxel/utils/format-id';
 
 export default class MediaRegistryCollectionRoute extends Route {
   async model({ collectionId }) {
@@ -8,12 +8,14 @@ export default class MediaRegistryCollectionRoute extends Route {
     let tracks = records.filter(item => {
       if (item.catalog) {
         return item.catalog.map(catalog => {
-          let catalogId = dasherize(catalog.trim());
+          let catalogId = formatId(catalog);
           return catalogId === collectionId;
         }).includes(true);
       }
     });
+    tracks.map(el => el.id = formatId(el.song_title));
     return {
+      id: collectionId,
       title: collectionId,
       type: 'collection',
       collection: tracks,

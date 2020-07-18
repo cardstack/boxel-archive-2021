@@ -13,22 +13,26 @@
     {{/if}}
   </Breadcrumbs>
 
-  <MusicDetailCard
-    @mode="view"
-    @model={{this.model}}
-    @itemId={{this.itemId}}
-    @displayFullHeader={{true}}
-  >
-    <BoxelActions
-      @class="media-collection__btn-overlay"
-      @displayHighlightActions={{true}}
-      @btnLeft="mode-btn"
-      @btnLeftContent="Edit"
-      @btnLeftAction={{this.transitionToEdit}}
-      @btnRight="settings"
-      @versionHistory={{true}}
-    />
-  </MusicDetailCard>
+  <AnimatedContainer @class="detail-card__container">
+    {{#animated-value @model key="id" duration="1000" use=this.transition}}
+      <MusicDetailCard
+        @mode="view"
+        @model={{this.model}}
+        @itemId={{this.itemId}}
+        @displayFullHeader={{true}}
+      >
+        <BoxelActions
+          @class="media-collection__btn-overlay"
+          @displayHighlightActions={{true}}
+          @btnLeft="mode-btn"
+          @btnLeftContent="Edit"
+          @btnLeftAction={{this.transitionToEdit}}
+          @btnRight="settings"
+          @versionHistory={{true}}
+        />
+      </MusicDetailCard>
+    {{/animated-value}}
+  </AnimatedContainer>
 
   {{!-- Sidebar --}}
   <aside class="item__sidebar">

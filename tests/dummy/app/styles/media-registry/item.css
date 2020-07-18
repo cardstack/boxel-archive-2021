@@ -35,6 +35,7 @@
 
 /* Header */
 .item__header {
+  max-width: 945px;
   background-color: #AFAFB7;
   background-image: var(--blurhash-image);
   background-size: cover;
@@ -44,25 +45,23 @@
 }
 
 .item__header-content {
-  max-width: 945px;
-  max-height: 370px;
+  position: relative;
+  height: 370px;
+  width: 100%;
   padding: 60px 30px 50px 70px;
   display: grid;
-  grid-template:
-    "img title"   2fr
-    "img artist"  1fr
-    "img details" 1fr / minmax(160px, 260px) 1fr;
+  grid-template-columns: 270px 1fr;
+  align-items: center;
   gap: 0 30px;
   backdrop-filter: brightness(0.75) blur(50px) contrast(1.2);
   border-radius: 10px 10px 0 0;
+  white-space: nowrap;
 }
 
 .item__img {
-  grid-area: img;
-  align-self: center;
   position: relative;
-  height: 0;
-  padding-top: 100%;
+  width: 260px;
+  height: 260px;
   background-image: url('/media-registry/placeholders/album_art.svg');
   background-position: center;
   background-size: cover;
@@ -83,16 +82,14 @@
 }
 
 .item__header-details {
-  grid-area: details;
-  align-self: end;
+  position: absolute;
+  bottom: 50px;
   display: grid;
   grid-template-columns: repeat(3, max-content);
   gap: 30px;
 }
 
 .item__title {
-  grid-area: title;
-  align-self: end;
   color: white;
   font: var(--boxel-font-lg);
   font-weight: 600;
@@ -100,7 +97,6 @@
 }
 
 .item__artist {
-  grid-area: artist;
   color: white;
   font: var(--boxel-font);
   font-weight: normal;

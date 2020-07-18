@@ -20,19 +20,21 @@
         <div class="item__img" style={{css-url "background-image" this.model.cover_art_medium}}>
           <button class="item__play-btn">{{svg-jar "play-btn" width="60px" height="60px"}}</button>
         </div>
-        <h1 class="item__title">{{titleize this.model.song_title}}</h1>
-        <h2 class="item__artist">{{this.model.artist}}</h2>
-        <ul class="item__header-details">
-          {{#each this.headerDetailFields as |field|}}
-            <li>
-              <FieldRenderer
-                @class="item-header-field"
-                @mode={{@mode}}
-                @field={{field}}
-              />
-            </li>
-          {{/each}}
-        </ul>
+        <div>
+          <h1 class="item__title">{{titleize this.model.song_title}}</h1>
+          <h2 class="item__artist">{{this.model.artist}}</h2>
+          <ul class="item__header-details">
+            {{#each this.headerDetailFields as |field|}}
+              <li>
+                <FieldRenderer
+                  @class="item-header-field"
+                  @mode={{@mode}}
+                  @field={{field}}
+                />
+              </li>
+            {{/each}}
+          </ul>
+        </div>
       </div>
     </header>
   {{/if}}
