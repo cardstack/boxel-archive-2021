@@ -6,15 +6,17 @@
     </LinkTo>
     {{#if @model.fromCollectionId}}
       <span class="breadcrumbs__carot" />
-      <LinkTo @route="media-registry.collection" @model={{@model.fromCollectionId}} @class="breadcrumbs__item">
-        <div class="breadcrumbs__item-label">Collection</div>
-        <div class="breadcrumbs__item-title">{{titleize (humanize @model.fromCollectionId)}}</div>
-      </LinkTo>
+      {{#animated-value @model key="fromCollectionId"}}
+        <LinkTo @route="media-registry.collection" @model={{@model.fromCollectionId}} @class="breadcrumbs__item">
+          <div class="breadcrumbs__item-label">Collection</div>
+          <div class="breadcrumbs__item-title">{{titleize (humanize @model.fromCollectionId)}}</div>
+        </LinkTo>
+      {{/animated-value}}
     {{/if}}
   </Breadcrumbs>
 
   <AnimatedContainer @class="detail-card__container">
-    {{#animated-value @model key="id" duration="1000" use=this.transition}}
+    {{#animated-value @model key="id" use=this.transition}}
       <MusicDetailCard
         @mode="view"
         @model={{this.model}}

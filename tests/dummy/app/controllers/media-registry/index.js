@@ -1,7 +1,11 @@
 import Controller from '@ember/controller';
 import { action, get } from '@ember/object';
 import { compare, isBlank } from '@ember/utils';
+import scale from 'ember-animated/motions/scale';
+import move from 'ember-animated/motions/move';
+import { parallel } from 'ember-animated';
 import { formatId } from '@cardstack/boxel/utils/format-id';
+// import { printSprites } from 'ember-animated';
 
 export default class MediaRegistryIndexController extends Controller {
   removed = [];
@@ -49,5 +53,18 @@ export default class MediaRegistryIndexController extends Controller {
   removeItem(item) {
     this.removed.push(item);
     return this.model.collection.filter(i => !this.removed.includes(i));
+  }
+
+  @action
+  * transition({ sentSprites, receivedSprites }) {
+    // printSprites(arguments[0]);
+    for (let sprite of sentSprites) {
+      parallel(move(sprite), scale(sprite));
+      sprite.applyStyles({ 'z-index': '1' });
+    }
+
+    for (let sprite of receivedSprites) {
+      parallel(move(sprite), scale(sprite));
+    }
   }
 }

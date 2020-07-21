@@ -13,15 +13,17 @@
         </LinkTo>
       {{/if}}
       <span class="breadcrumbs__carot" />
-      <LinkTo @route="media-registry.item" @model={{parent.params.itemId}} @class="breadcrumbs__item">
-        <div class="breadcrumbs__item-label">{{humanize parent.attributes.type}}</div>
-        <div class="breadcrumbs__item-title">{{titleize parent.attributes.song_title}}</div>
-      </LinkTo>
+      {{#animated-value parent.params.itemId}}
+        <LinkTo @route="media-registry.item" @model={{parent.params.itemId}} @class="breadcrumbs__item">
+          <div class="breadcrumbs__item-label">{{humanize parent.attributes.type}}</div>
+          <div class="breadcrumbs__item-title">{{titleize parent.attributes.song_title}}</div>
+        </LinkTo>
+      {{/animated-value}}
     {{/let}}
   </Breadcrumbs>
 
   <AnimatedContainer @class="detail-card__container">
-    {{#animated-value @model key="iswc" duration="1000"}}
+    {{#animated-value @model key="iswc" use=this.transition}}
       <DetailCard
         @headerFields={{this.headerFields}}
         @fields={{this.isolatedFields}}

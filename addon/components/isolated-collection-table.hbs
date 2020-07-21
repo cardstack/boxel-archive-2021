@@ -26,6 +26,7 @@
 
     <b.row class={{if b.rowValue.selected "is-selected"}} as |r|>
       <r.cell as |cell column row cellMeta columnMeta|>
+        {{!-- {{#animated-value row key="id" }} --}}
         <Boxel class="media-collection-table__boxel-cell">
           <BoxelHighlight {{on "click" (fn this.selectOrTransition row)}} @on={{row.selected}} @class="media-collection-table__highlight" />
           {{#if (and (eq (add columnMeta.index 1) b.cells.length) (eq @mode "edit"))}}
@@ -71,6 +72,7 @@
             </div>
           </div>
         </Boxel>
+        {{!-- {{/animated-value}} --}}
       </r.cell>
     </b.row>
   </t.body>

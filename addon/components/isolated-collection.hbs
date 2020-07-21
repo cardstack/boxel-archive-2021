@@ -74,26 +74,30 @@
       <div class="media-collection__inner-container">
         <ul class="media-collection__grid media-collection__grid--{{@model.type}}-{{this.format}}">
           {{#each this.collection as |item|}}
-            <li class="media-collection__grid-item media-collection__grid-item--{{this.format}}">
-              {{#if @itemComponent}}
-                {{component @itemComponent model=item transition=@transition mode=@mode}}
-              {{else}}
-                {{yield item}}
-              {{/if}}
-
-              <div class="media-collection__grid-item-btn-group {{if (eq @mode "view") "master-collection__select-btn"}} {{if item.selected "master-collection__select-btn--selected"}}">
-                <button {{on "click" (fn this.toggleSelect item)}} class="media-collection__grid-item-select-btn" aria-label="select">
-                  {{#if item.selected}}
-                    {{svg-jar "icon-circle-selected" class="media-collection__grid-item-select--selected" width="16px" height="16px"}}
+            <AnimatedContainer @tag="li">
+              {{#animated-value item key="id"}}
+                <div class="media-collection__grid-item media-collection__grid-item--{{this.format}}">
+                  {{#if @itemComponent}}
+                    {{component @itemComponent model=item transition=@transition mode=@mode}}
                   {{else}}
-                    {{svg-jar "icon-circle" width="16px" height="16px"}}
+                    {{yield item}}
                   {{/if}}
-                </button>
-                {{#if (eq @mode "edit")}}
-                  <button {{on "click" (fn this.removeItem item)}} class="media-collection__grid-item-select-btn" aria-label="remove">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
-                {{/if}}
-              </div>
-            </li>
+
+                  <div class="media-collection__grid-item-btn-group {{if (eq @mode "view") "master-collection__select-btn"}} {{if item.selected "master-collection__select-btn--selected"}}">
+                    <button {{on "click" (fn this.toggleSelect item)}} class="media-collection__grid-item-select-btn" aria-label="select">
+                      {{#if item.selected}}
+                        {{svg-jar "icon-circle-selected" class="media-collection__grid-item-select--selected" width="16px" height="16px"}}
+                      {{else}}
+                        {{svg-jar "icon-circle" width="16px" height="16px"}}
+                      {{/if}}
+                    </button>
+                    {{#if (eq @mode "edit")}}
+                      <button {{on "click" (fn this.removeItem item)}} class="media-collection__grid-item-select-btn" aria-label="remove">{{svg-jar "icon-minus-circle" width="16px" height="16px"}}</button>
+                    {{/if}}
+                  </div>
+                </div>
+              {{/animated-value}}
+            </AnimatedContainer>
           {{/each}}
           {{!-- Add new --}}
         </ul>

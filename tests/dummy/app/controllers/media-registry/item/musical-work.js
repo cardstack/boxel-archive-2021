@@ -1,4 +1,9 @@
 import Controller from '@ember/controller';
+import { action } from '@ember/object';
+import scale from 'ember-animated/motions/scale';
+import move from 'ember-animated/motions/move';
+import { parallel } from 'ember-animated';
+// import { printSprites } from 'ember-animated';
 
 export default class MediaRegistryItemMusicalWorkController extends Controller {
   get headerFields() {
@@ -63,5 +68,19 @@ export default class MediaRegistryItemMusicalWorkController extends Controller {
         value: this.model?.copyright_notice
       }
     ];
+  }
+
+  @action
+  * transition({ sentSprites, receivedSprites }) {
+    // printSprites(arguments[0]);
+    for (let sprite of sentSprites) {
+      parallel(move(sprite), scale(sprite));
+      sprite.applyStyles({ 'z-index': '2' });
+    }
+
+    for (let sprite of receivedSprites) {
+      parallel(move(sprite), scale(sprite));
+      sprite.applyStyles({ 'z-index': '2' });
+    }
   }
 }

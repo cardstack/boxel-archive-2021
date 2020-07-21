@@ -8,7 +8,7 @@
     <BoxelHighlight {{on "click" @expandAction}} @class="boxel-card__expand-overlay" />
   {{/if}}
   <AnimatedContainer>
-    {{#animated-value @model key="id" use=this.transition duration="1000"}}
+    {{#animated-value @model key="id"}}
       <div class="boxel-card boxel-card--default boxel-card--{{if @model @model.type "blank-card"}}">
         {{#if @model.type}}
           <header class="boxel-card__header">
