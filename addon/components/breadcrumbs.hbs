@@ -15,6 +15,37 @@
       {{/if}}
     {{/each}}
   {{else}}
-    {{yield}}
+    {{#let this.router.currentRoute.parent as |parent|}}
+      <AnimatedContainer>
+        {{#animated-value parent.parent.params.id}}
+          <LinkTo @route={{parent.parent.name}} @model={{parent.parent.params.id}} @class="breadcrumbs__item">
+            <div class="breadcrumbs__item-label">Collection</div>
+            <div class="breadcrumbs__item-title">{{parent.parent.attributes.title}}</div>
+          </LinkTo>
+        {{/animated-value}}
+      </AnimatedContainer>
+
+      {{#if parent.attributes.fromCollectionId}}
+        <span class="breadcrumbs__carot" />
+        {{#animated-value parent.attributes.fromCollectionId}}
+          <LinkTo @route={{@collectionRoute}} @model={{parent.attributes.fromCollectionId}} @class="breadcrumbs__item">
+            <div class="breadcrumbs__item-label">Collection</div>
+            <div class="breadcrumbs__item-title">{{titleize (humanize parent.attributes.fromCollectionId)}}</div>
+          </LinkTo>
+        {{/animated-value}}
+      {{/if}}
+
+      {{#if (and parent.params.itemId @itemRoute)}}
+        <span class="breadcrumbs__carot" />
+        {{#animated-value parent.params.itemId}}
+          <LinkTo @route={{@itemRoute}} @model={{parent.params.itemId}} @class="breadcrumbs__item">
+            <div class="breadcrumbs__item-label">{{humanize parent.attributes.type}}</div>
+            <div class="breadcrumbs__item-title">{{titleize parent.attributes.song_title}}</div>
+          </LinkTo>
+        {{/animated-value}}
+      {{/if}}
+
+      {{yield}}
+    {{/let}}
   {{/if}}
 </div>

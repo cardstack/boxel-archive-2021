@@ -1,26 +1,5 @@
 <DetailTemplate>
-  <Breadcrumbs>
-    {{#let this.target.currentRoute.parent as |parent|}}
-      <LinkTo @route="media-registry" @model={{parent.parent.params.id}} @class="breadcrumbs__item">
-        <div class="breadcrumbs__item-label">Collection</div>
-        <div class="breadcrumbs__item-title">{{parent.parent.attributes.title}}</div>
-      </LinkTo>
-      {{#if parent.attributes.fromCollectionId}}
-        <span class="breadcrumbs__carot" />
-        <LinkTo @route="media-registry.collection" @model={{parent.attributes.fromCollectionId}} @class="breadcrumbs__item">
-          <div class="breadcrumbs__item-label">Collection</div>
-          <div class="breadcrumbs__item-title">{{titleize (humanize parent.attributes.fromCollectionId)}}</div>
-        </LinkTo>
-      {{/if}}
-      <span class="breadcrumbs__carot" />
-      {{#animated-value parent.params.itemId}}
-        <LinkTo @route="media-registry.item" @model={{parent.params.itemId}} @class="breadcrumbs__item">
-          <div class="breadcrumbs__item-label">{{humanize parent.attributes.type}}</div>
-          <div class="breadcrumbs__item-title">{{titleize parent.attributes.song_title}}</div>
-        </LinkTo>
-      {{/animated-value}}
-    {{/let}}
-  </Breadcrumbs>
+  <Breadcrumbs @collectionRoute="media-registry.collection" @itemRoute="media-registry.item.index" />
 
   <AnimatedContainer @class="detail-card__container">
     {{#animated-value @model key="iswc" use=this.transition}}

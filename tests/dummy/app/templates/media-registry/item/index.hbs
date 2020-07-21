@@ -1,19 +1,5 @@
 <DetailTemplate>
-  <Breadcrumbs>
-    <LinkTo @route="media-registry" @class="breadcrumbs__item">
-      <div class="breadcrumbs__item-label">Collection</div>
-      <div class="breadcrumbs__item-title">Master Recordings</div>
-    </LinkTo>
-    {{#if @model.fromCollectionId}}
-      <span class="breadcrumbs__carot" />
-      {{#animated-value @model key="fromCollectionId"}}
-        <LinkTo @route="media-registry.collection" @model={{@model.fromCollectionId}} @class="breadcrumbs__item">
-          <div class="breadcrumbs__item-label">Collection</div>
-          <div class="breadcrumbs__item-title">{{titleize (humanize @model.fromCollectionId)}}</div>
-        </LinkTo>
-      {{/animated-value}}
-    {{/if}}
-  </Breadcrumbs>
+  <Breadcrumbs @collectionRoute="media-registry.collection" />
 
   <AnimatedContainer @class="detail-card__container">
     {{#animated-value @model key="id" use=this.transition}}

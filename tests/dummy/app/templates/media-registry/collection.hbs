@@ -1,14 +1,5 @@
 <div class="collection__wrapper">
-  <Breadcrumbs>
-    <AnimatedContainer>
-      {{#animated-value this.target.currentRoute.parent.parent.params.id}}
-        <LinkTo @route="media-registry" @class="breadcrumbs__item">
-          <div class="breadcrumbs__item-label">Collection</div>
-          <div class="breadcrumbs__item-title">Master Recordings</div>
-        </LinkTo>
-      {{/animated-value}}
-    </AnimatedContainer>
-  </Breadcrumbs>
+  <Breadcrumbs />
 
   {{#animated-value @model key="id" use=this.transition}}
     <IsolatedCollection
