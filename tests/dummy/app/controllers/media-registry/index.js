@@ -3,6 +3,7 @@ import { action, get } from '@ember/object';
 import { compare, isBlank } from '@ember/utils';
 import scale from 'ember-animated/motions/scale';
 import move from 'ember-animated/motions/move';
+// import { fadeOut, fadeIn } from 'ember-animated/motions/opacity';
 import { parallel } from 'ember-animated';
 import { formatId } from '@cardstack/boxel/utils/format-id';
 // import { printSprites } from 'ember-animated';

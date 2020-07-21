@@ -1,6 +1,11 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action, set } from '@ember/object';
+import { fadeOut } from 'ember-animated/motions/opacity';
+import scale from 'ember-animated/motions/scale';
+import move from 'ember-animated/motions/move';
+import { parallel } from 'ember-animated';
+// import { printSprites } from 'ember-animated';
 
 export default class IsolatedCollection extends Component {
   @tracked format = this.args.format || 'grid';
@@ -98,5 +103,16 @@ export default class IsolatedCollection extends Component {
   @action async removeItem(item) {
     this.collection = (await this.args.removeItem(item)).slice();
     this.updateSelectionCount();
+  }
+
+  @action
+  * transition ({ sentSprites }) {
+    // printSprites(arguments[0]);
+
+    for (let sprite of sentSprites) {
+      parallel(move(sprite), scale(sprite));
+      fadeOut(sprite, { duration: 200 });
+      sprite.applyStyles({ 'z-index': '2' });
+    }
   }
 }
