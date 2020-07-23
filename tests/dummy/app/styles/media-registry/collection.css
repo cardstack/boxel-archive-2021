@@ -101,22 +101,25 @@
 
 /* List item view */
 .collection--list {
-  height: 120px;
+  --list-view-item-height: 120px;
+  --list-view-img-size: 80px;
+
+  height: var(--list-view-item-height);
   min-height: auto;
-  grid-auto-columns: minmax(max-content, auto);
-  grid-template-rows: 1fr;
-  align-items: center;
   gap: 20px;
-  overflow-x: auto;
   padding: 20px;
   border-color: var(--boxel-border-color);
   letter-spacing: var(--boxel-lsp);
   text-align: left;
 }
 
+.collection--list.collection--edit {
+  gap: 10px;
+}
+
 .collection--list .collection__img {
-  width: 80px;
-  height: 80px;
+  width: var(--list-view-img-size);
+  height: var(--list-view-img-size);
 }
 
 .collection__list-field {
@@ -175,4 +178,11 @@
 .collection--list .collection__play-btn > svg {
   width: 30px;
   height: 30px;
+}
+
+.collection__list {
+  grid-row: 1;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
 }

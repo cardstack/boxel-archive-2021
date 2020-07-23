@@ -24,12 +24,14 @@
       </div>
 
       {{#if (eq @format "list")}}
-        {{#each @listFields as |field i|}}
-          <div class="collection__list-field collection__list-field--{{i}}">
-            <div class="collection__list-field-label">{{field.name}}</div>
-            <div>{{get item field.valuePath}}</div>
-          </div>
-        {{/each}}
+        <ul class="collection__list">
+          {{#each @listFields as |field i|}}
+            <li class="collection__list-field collection__list-field--{{i}}">
+              <div class="collection__list-field-label">{{field.name}}</div>
+              <div>{{get item field.valuePath}}</div>
+            </li>
+          {{/each}}
+        </ul>
       {{/if}}
     </div>
   </Boxel>

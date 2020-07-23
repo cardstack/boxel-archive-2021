@@ -24,7 +24,7 @@
 /* Media collection */
 .media-collection {
   --breadcrumbs-height: 90px;
-  --header-height: 175px;
+  --header-height: 170px;
 
   height: 100%;
   background-color: white;
@@ -352,6 +352,7 @@
   display: grid;
   grid-template-columns: 50px 1fr 50px;
   align-items: center;
+  gap: 0 2px;
 }
 
 .media-collection__grid-item--list .master-collection__select-btn {
@@ -398,6 +399,26 @@
   height: 30px;
   font: var(--boxel-font-sm);
   padding: 5px 10px;
+}
+
+.media-collection--edit .media-collection__grid-item--list > .media-collection__grid-item-btn-group {
+  display: contents;
+}
+
+.media-collection--edit .media-collection__grid-item--list .media-collection__grid-item-select-btn {
+  order: -1;
+  position: sticky;
+  left: 0;
+  background-color: #f0f0f0;
+  margin: 0;
+  width: 50px;
+  height: calc(100% + 10px);
+  z-index: 2;
+}
+
+.media-collection--edit .media-collection__grid-item--list .media-collection__grid-item-select-btn.remove-btn {
+  order: 1;
+  right: 0;
 }
 
 /* For sort btn */
