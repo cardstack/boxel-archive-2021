@@ -32,6 +32,13 @@ export default class WavePlayerComponent extends Component {
     `
   }
 
+  willDestroy() {
+    if (this.isPlaying) {
+      this.audio.pause();
+      this.isPlaying = false;
+    }
+  }
+
   @action
   async setupPlayer(canvas) {
     this.canvas = canvas;

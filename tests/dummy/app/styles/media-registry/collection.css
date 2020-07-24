@@ -42,15 +42,15 @@
 }
 
 .collection__play-btn {
+  --icon-btn-width: 60px;
+  --icon-btn-height: 60px;
+  --icon-color: rgba(0, 0, 0, 0.5);
   display: none;
   position: relative;
   top: 61px;
-  background: none;
-  border: none;
-  padding: 0;
-  z-index: 1;
 }
 
+.collection__play-btn.is-playing,
 .media-collection__grid-item:hover .collection__play-btn,
 .collection__boxel:hover .collection__play-btn,
 .collection__boxel:focus-within .collection__play-btn {
