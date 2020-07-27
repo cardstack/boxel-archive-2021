@@ -1,0 +1,1 @@
+.wave-player-template{margin:2em;max-width:450px}.wave-player{display:inline-flex;align-items:center;padding-top:15px}.wave-player>canvas{max-width:calc(100% - 120px)}.wave-player__play{padding-right:10px}.play-button.is-playing,.wave-player__play.is-playing{--icon-color:var(--boxel-highlight)}.wave-player__times{color:#6B6A80;font:var(--boxel-font-sm);white-space:nowrap}
