@@ -1,0 +1,47 @@
+<DetailTemplate>
+  <Breadcrumbs>
+    <LinkTo @route="media-registry" @class="breadcrumbs__item">
+      <div class="breadcrumbs__item-label">Collection</div>
+      <div class="breadcrumbs__item-title">Master Recordings</div>
+    </LinkTo>
+  </Breadcrumbs>
+
+  <DetailCard
+    @mode="view"
+    @title="Track Listing"
+    @fields={{this.model.tracks}}
+  >
+    <BoxelActions
+      @class="media-collection__btn-overlay"
+      @displayHighlightActions={{true}}
+      @btnLeft="mode-btn"
+      @btnLeftContent="Edit"
+      @btnRight="settings"
+    />
+    <header class="item__header" style={{css-url "background-image" this.model.cover_art_large}}>
+      <div class="item__label">Release Detail</div>
+      <div class="item__header-content">
+        <div class="item__img" style={{css-url "background-image" this.model.cover_art_medium}}>
+          <PlayButton @class="item__play-btn" @width="60px" @height="60px" />
+        </div>
+        <h1 class="item__title">{{titleize this.model.album}}</h1>
+        <h2 class="item__artist">by {{this.model.artist}}</h2>
+        <ul class="item__header-details">
+          {{#each this.headerDetailFields as |field|}}
+            <li>
+              <FieldRenderer
+                @class="item-header-field"
+                @mode={{@mode}}
+                @field={{field}}
+              />
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </header>
+
+  </DetailCard>
+
+
+
+</DetailTemplate>
