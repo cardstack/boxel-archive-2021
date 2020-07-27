@@ -17,6 +17,11 @@
   padding-right: 10px;
 }
 
+.wave-player__play.is-playing,
+.play-button.is-playing {
+  --icon-color: var(--boxel-highlight);
+}
+
 .wave-player__times {
   color: #6B6A80;
   font: var(--boxel-font-sm);
