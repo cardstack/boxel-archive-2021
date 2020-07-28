@@ -18,14 +18,14 @@
       @btnLeftContent="Edit"
       @btnRight="settings"
     />
-    <header class="item__header" style={{css-url "background-image" this.model.cover_art_large}}>
-      <div class="item__label">Release Detail</div>
+    <header class="item__header" style={{css-url "background-image" @model.cover_art_large}}>
+      <div class="item__label">{{@model.type_of_album}} Detail</div>
       <div class="item__header-content">
-        <div class="item__img" style={{css-url "background-image" this.model.cover_art_medium}}>
+        <div class="item__img" style={{css-url "background-image" @model.cover_art_medium}}>
           <PlayButton @class="item__play-btn" @width="60px" @height="60px" />
         </div>
-        <h1 class="item__title">{{titleize this.model.album}}</h1>
-        <h2 class="item__artist">by {{this.model.artist}}</h2>
+        <h1 class="item__title">{{titleize @model.album}}</h1>
+        <h2 class="item__artist">by {{@model.artist}}</h2>
         <ul class="item__header-details">
           {{#each this.headerDetailFields as |field|}}
             <li>

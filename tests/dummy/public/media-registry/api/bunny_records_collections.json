@@ -33,6 +33,7 @@
     "number_of_songs": 29,
     "top_artists": ["Pia Midina", "BB Clarke", "Marcy Blues"],
     "date_created": "2019-11-27",
+    "art_thumb": "/media-registry/film-music.png",
     "selected_art": [
       "media-registry/covers/thumb/Love-the-Love.jpg",
       "media-registry/covers/thumb/Sunlight.jpg",
@@ -130,6 +131,7 @@
     "catalog_description": "Transfer to CRD Records",
     "number_of_songs": 16,
     "date_created": "2020-01-14",
+    "art_thumb": "/media-registry/batch-f.png",
     "selected_art": [
       "media-registry/covers/thumb/Sunlight.jpg",
       "media-registry/covers/thumb/Change-Is-Good.jpg",
