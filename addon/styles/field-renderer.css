@@ -9,6 +9,7 @@
 
 .field-renderer.table-field {
   grid-template-columns: 1fr;
+  gap: 10px;
   max-width: 845px;
   padding: 0;
 }

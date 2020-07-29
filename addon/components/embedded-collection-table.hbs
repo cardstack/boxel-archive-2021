@@ -20,10 +20,11 @@
     <b.row as |r|>
       <r.cell as |cell column row cellMeta columnMeta|>
         <Boxel class="embedded-collection-table__boxel-cell">
+          <BoxelHighlight {{on "click" (optional (fn @expandAction row))}} @class="embedded-collection-table__highlight" />
           <div class="embedded-collection-table__cell {{if (eq columnMeta.index 0) "embedded-collection-table__cell--first-col"}} {{if row.selected "row-group-selected"}} embedded-collection-table__cell--{{@mode}}">
             <div class="embedded-collection-table__cell-value {{if (eq columnMeta.index 0) "embedded-collection-table__cell-value--first-col"}}">
               {{#if (eq column.type "image")}}
-                <div class="embedded-collection-table__img-cell" style={{css-url "background-image" row.cover_art_thumb}} />
+                <div class="embedded-collection-table__img-cell" style={{css-url "background-image" cell}} />
               {{else if column.titleCase}}
                 {{#if column.hasAudio}}
                   <PlayButton @class="embedded-collection-table__play-btn" @width="30px" @height="30px" />
@@ -44,7 +45,6 @@
     @estimateRowHeight={{60}}
     @class="embedded-collection-table__footer" as |f|
   >
-    {{log f}}
     <f.row />
   </t.foot>
 </EmberTable>

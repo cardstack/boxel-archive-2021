@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
+import { formatId } from '@cardstack/boxel/utils/format-id';
 
 export default class MediaRegistryProductsAlbumController extends Controller {
   get headerDetailFields() {
@@ -66,7 +67,7 @@ export default class MediaRegistryProductsAlbumController extends Controller {
             },
             {
               name: 'Artwork',
-              valuePath: 'cover_art',
+              valuePath: 'cover_art_thumb',
               width: 235,
               type: 'image'
             },
@@ -90,5 +91,11 @@ export default class MediaRegistryProductsAlbumController extends Controller {
   @action
   transitionToCatalog(id) {
     this.transitionToRoute('media-registry.collection', id);
+  }
+
+  @action
+  transitionToItem(item) {
+    if (!item || !item.song_title) { return; }
+    this.transitionToRoute('media-registry.item', formatId(item.song_title));
   }
 }

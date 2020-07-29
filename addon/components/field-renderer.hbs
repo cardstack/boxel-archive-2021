@@ -118,6 +118,7 @@
             @removedCards={{@removedCards}}
             @changedCards={{@changedCards}}
             @modifiedCard={{@modifiedCard}}
+            @expandAction={{@expandAction}}
           />
         {{else if (is-array @field.value)}}
           {{#let (filter-by "title" @field.value) as |multiTagList|}}
