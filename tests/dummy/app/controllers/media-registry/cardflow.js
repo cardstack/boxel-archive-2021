@@ -1,9 +1,8 @@
 import MediaRegistryController from '../media-registry';
 import { tracked } from '@glimmer/tracking';
 import { action, set } from '@ember/object';
-import { dasherize } from '@ember/string';
 import { fetchCollection } from 'dummy/media';
-
+import { formatId } from '@cardstack/boxel/utils/format-id';
 
 export default class MediaRegistryCardflowController extends MediaRegistryController {
   @tracked isolatedCollection = this.getIsolatedCollection(this.catalog.id);
@@ -72,7 +71,7 @@ export default class MediaRegistryCardflowController extends MediaRegistryContro
   @action
   setItemId(item) {
     if (item) {
-      this.itemId = dasherize(item.song_title.trim());
+      this.itemId = formatId(item.song_title);
       this.getRecord();
     } else {
       this.itemId = null;
@@ -87,7 +86,7 @@ export default class MediaRegistryCardflowController extends MediaRegistryContro
     let items = data.filter(item => {
       if (item.catalog) {
         return item.catalog.map(catalog => {
-          let catalogId = dasherize(catalog.trim());
+          let catalogId = formatId(catalog);
           return catalogId === id;
         }).includes(true);
       }
@@ -156,33 +155,62 @@ export default class MediaRegistryCardflowController extends MediaRegistryContro
     const profiles = await fetchCollection('profiles');
     const musicalWorks = await fetchCollection('musical-works');
 
-
-    const record = records.filter(item => {
+    const record = records.find(item => {
       if (item.catalog) {
-        return dasherize(item.song_title.trim()) === itemId;
+        return formatId(item.song_title) === itemId;
       }
-    })[0];
+    });
 
-    const recordDetail = recordDetails.filter(item => {
-      return dasherize(item.song_title.trim()) === itemId;
-    })[0];
+    const allCollections = this.model.collection;
+    const collections = allCollections.filter(el => record.catalog.includes(el.catalog_title));
+    record.collections = collections;
 
-    const artist = profiles.filter(profile => {
-      return profile.id === dasherize(record.artist.trim());
-    })[0];
+    const recordDetail = recordDetails.find(item => formatId(item.song_title) === itemId);
+    const artists = profiles.filter(profile => profile.id === formatId(record.artist));
 
-    if (artist) {
-      record.artist_info = artist;
+    if (artists.length) {
+      record.artist_info = artists;
     }
 
     if (recordDetail) {
-      const producer = profiles.filter(profile => (profile.id === recordDetail.producer_id))[0];
-      const musicalWork = musicalWorks.filter(item => item.iswc === recordDetail.iswc_id)[0];
-      record.producer = producer;
+      const producers = profiles.filter(profile => (profile.id === recordDetail.producer_id));
+      const musicalWork = musicalWorks.find(item => item.iswc === recordDetail.iswc_id);
+      if (producers.length) {
+        record.producer = producers;
+      }
       record.details = recordDetail;
       record.musicalWork = musicalWork;
     }
 
     this.record = record;
+  }
+
+  get album() {
+    if (!this.record || !this.record.album) { return null; }
+    return {
+      type: this.record.type_of_album,
+      title: this.record.album,
+      imgURL: this.record.cover_art_thumb,
+      fields: [
+        {
+          title: 'primary artist',
+          value: this.record.artist
+        },
+        {
+          title: 'label',
+          value: this.record.owner
+        }
+      ]
+    }
+  }
+
+  @action
+  transitionToProduct() {
+    this.transitionToRoute('media-registry.products.album', formatId(this.album));
+  }
+
+  @action
+  transitionToCatalog(id) {
+    this.transitionToRoute('media-registry.collection', id);
   }
 }
