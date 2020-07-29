@@ -9,7 +9,7 @@
   <DetailCard
     @mode="view"
     @title="Track Listing"
-    @fields={{this.model.tracks}}
+    @fields={{this.fields}}
   >
     <BoxelActions
       @class="media-collection__btn-overlay"
@@ -39,9 +39,41 @@
         </ul>
       </div>
     </header>
-
   </DetailCard>
 
-
-
+  {{!-- Sidebar --}}
+  <aside class="item__sidebar">
+    <h3 class="item__sidebar-title">In These Collections</h3>
+    <div class="item__sidebar-cards">
+      {{#each @model.collections as |collection|}}
+        <Card
+          @mode="view"
+          @model={{hash
+            type="collection"
+            title=collection.catalog_title
+            description=collection.catalog_description}}
+          @hasImage={{true}}
+          @expandAction={{fn this.transitionToCatalog (format-id collection.catalog_title)}}
+        >
+          <CoverArt @class="item__sidebar-covers" @size={{50}} @covers={{collection.selected_art}} />
+          <div class="sidebar-related-card__count">
+            <span class="sidebar-related-card__count__number">
+              {{collection.number_of_songs}}
+            </span>
+            Masters
+          </div>
+        </Card>
+      {{/each}}
+    </div>
+    {{#if @model.tracks.0.musicalWork}}
+      <h3 class="item__sidebar-title">Related Works</h3>
+      <div class="item__sidebar-cards">
+        {{#each @model.tracks as |track i|}}
+          {{#if (and track.musicalWork (lt i 3))}}
+            <Cards::MusicalWorkEmbedded @model={{track.musicalWork}} @mode="view" />
+          {{/if}}
+        {{/each}}
+      </div>
+    {{/if}}
+  </aside>
 </DetailTemplate>

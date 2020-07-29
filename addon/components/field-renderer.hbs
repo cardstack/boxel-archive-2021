@@ -76,7 +76,7 @@
   {{/if}}
 {{else}}
   {{!-- View Mode --}}
-  <Boxel @class="field-renderer {{lowercase (dasherize (trim @field.title))}}-field {{@class}}">
+  <Boxel @class="field-renderer {{format-id @field.title}}-field {{if (eq @field.format "table") "table-field"}} {{@class}}">
     {{#if (contains @field.title @addedFields)}}
       <BoxelHighlight @status="added" />
       <BoxelActions @status="added" />
@@ -106,6 +106,7 @@
         {{else if (eq @field.type "collection")}}
           <EmbeddedCollection
             @collection={{@field.value}}
+            @format={{@field.format}}
             @cardComponent={{@field.component}}
             @comparisonMode={{@comparisonMode}}
             @addedFields={{@addedFields}}
