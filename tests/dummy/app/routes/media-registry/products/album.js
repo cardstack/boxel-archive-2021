@@ -47,7 +47,8 @@ export default class MediaRegistryProductsAlbumRoute extends Route {
       el.track_no = String(i + 1);
     });
 
-    model.collections = allCollections.filter(el => model.catalog.includes(el.catalog_title));
+    const catalogs = model.catalog.map(el => formatId(el));
+    model.collections = allCollections.filter(el => catalogs.includes(el.id));
 
     return model;
   }

@@ -15,7 +15,6 @@ export default class MediaRegistryCardflowController extends MediaRegistryContro
     type: 'catalog',
     title: 'Batch F',
     catalog_title: 'Batch F',
-    catalog_description: 'Transfer to CRD Records',
     number_of_songs: 16,
     selected_art: [
       "media-registry/covers/thumb/Sunlight.jpg",
@@ -162,7 +161,8 @@ export default class MediaRegistryCardflowController extends MediaRegistryContro
     });
 
     const allCollections = this.model.collection;
-    const collections = allCollections.filter(el => record.catalog.includes(el.catalog_title));
+    const catalogs = record.catalog.map(el => formatId(el));
+    const collections = allCollections.filter(el => catalogs.includes(el.id));
     record.collections = collections;
 
     const recordDetail = recordDetails.find(item => formatId(item.song_title) === itemId);

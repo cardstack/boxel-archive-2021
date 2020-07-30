@@ -53,12 +53,9 @@
           {{#each @model.collections as |collection|}}
             <Card
               @mode="view"
-              @model={{hash
-                type="collection"
-                title=collection.catalog_title
-                description=collection.catalog_description}}
+              @model={{hash type="collection" id=collection.id title=collection.catalog_title}}
               @hasImage={{true}}
-              @expandAction={{fn this.transitionToCatalog (format-id collection.catalog_title)}}
+              @expandAction={{fn this.transitionToCatalog collection.id}}
             >
               <CoverArt @class="item__sidebar-covers" @size={{50}} @covers={{collection.selected_art}} />
               <div class="sidebar-related-card__count">

@@ -16,7 +16,8 @@ export default class MediaRegistryItemRoute extends Route {
     });
 
     const allCollections = this.modelFor('media-registry')?.collection;
-    const collections = allCollections.filter(el => record.catalog.includes(el.catalog_title));
+    const catalogs = record.catalog.map(el => formatId(el));
+    const collections = allCollections.filter(el => catalogs.includes(el.id));
     record.collections = collections;
 
     const recordDetail = recordDetails.find(item => formatId(item.song_title) === itemId);
