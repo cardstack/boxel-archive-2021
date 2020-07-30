@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
+import { titleize } from '@cardstack/boxel/utils/titleize';
 import { formatId } from '@cardstack/boxel/utils/format-id';
 
 export default class MediaRegistryItemController extends Controller {
@@ -12,7 +13,7 @@ export default class MediaRegistryItemController extends Controller {
     if (!this.model.album) { return null; }
     return {
       type: this.model.type_of_album,
-      title: this.model.album,
+      title: titleize(this.model.album),
       imgURL: this.model.cover_art_thumb,
       fields: [
         {

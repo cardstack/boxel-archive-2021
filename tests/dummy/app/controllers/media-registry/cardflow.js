@@ -206,7 +206,7 @@ export default class MediaRegistryCardflowController extends MediaRegistryContro
 
   @action
   transitionToProduct() {
-    this.transitionToRoute('media-registry.products.album', formatId(this.album));
+    this.transitionToRoute('media-registry.products.album', formatId(this.record.album));
   }
 
   @action
