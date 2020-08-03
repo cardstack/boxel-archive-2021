@@ -12,7 +12,7 @@ const VALENTINO_SOLANO = {
 
 export default [
   {
-    id: "comp-1",
+    id: "mw-the-sun-comes-out-wmg-wcm",
     baseCard: {
       type: 'musical-work',
       datetime: '20200408T10:45',
