@@ -36,6 +36,7 @@
   border-color: #37EB77;
 }
 
+.boxel-highlight--modified,
 .boxel-highlight--changed {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -53,6 +54,7 @@
   z-index: 0;
 }
 
+.boxel-highlight--removed-modified,
 .boxel-highlight--modified {
   border-color: #FFD800;
 }

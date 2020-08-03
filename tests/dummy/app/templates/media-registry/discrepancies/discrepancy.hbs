@@ -51,11 +51,20 @@
           <div class="discrepancy-field">
             {{#with (find-by "title" field.title @model.compCard.isolatedFields) as |compField|}}
               {{#if (not (is-equal field.value compField.value))}}
+                {{compute (fn this.compareFields field compField)}}
                 <FieldRenderer
                   @mode="view"
                   @class="comp-card"
                   @comparisonMode={{true}}
+                  @discrepancyView={{true}}
                   @field={{compField}}
+                  @addedValues={{this.addedValues}}
+                  @removedModifiedValues={{this.removedModifiedValues}}
+                  @changedFields={{this.changedFields}}
+                  @modifiedCard={{this.modifiedCard}}
+                  @changedCards={{this.changedCards}}
+                  @addedCards={{this.addedCards}}
+                  @removedCards={{this.removedCards}}
                   @expandAction={{@expandAction}}
                 />
               {{/if}}

@@ -83,6 +83,14 @@
     {{/if}}
     <div class="field-renderer__title">{{humanize @field.title}}</div>
     <Boxel @class="field-renderer__value {{if (eq @field.type "image") "field-renderer__value--img-field"}}">
+      {{#if (and @comparisonMode (contains @field.title @addedValues))}}
+        <BoxelHighlight @offsetHighlight={{true}} @status="added" />
+        <BoxelActions @offsetHighlight={{true}} @status="added" />
+      {{/if}}
+      {{#if (and @comparisonMode (contains @field.title @removedModifiedValues))}}
+        <BoxelHighlight @offsetHighlight={{true}} @status="removed-modified" />
+        <BoxelActions @offsetHighlight={{true}} @status="modified" />
+      {{/if}}
       {{#if @field.value}}
         {{#if (eq @field.type "card")}}
           {{#if (and @comparisonMode @field.value.id (eq @changedCards.0.value.id @field.value.id))}}
@@ -96,7 +104,7 @@
             </div>
           {{else if (and @comparisonMode @modifiedCard.value (is-equal @modifiedCard.value @field.value))}}
             <Boxel>
-              <BoxelHighlight @status="modified" />
+              <BoxelHighlight @status="removed-modified" />
               <BoxelActions @status="modified"><div class="field-renderer__modified-count">{{@modifiedCard.value.fields.length}}</div></BoxelActions>
               {{component (or @field.component "card") model=@field.value mode="view"}}
             </Boxel>
@@ -172,8 +180,8 @@
                 </Boxel>
               {{else}}
                 <Boxel>
-                  <BoxelHighlight @offsetHighlight={{true}} @status="changed" />
-                  <BoxelActions @offsetHighlight={{true}} @status="changed" />
+                  <BoxelHighlight @offsetHighlight={{true}} @status={{if @discrepancyView "modified" "changed"}} />
+                  <BoxelActions @offsetHighlight={{true}} @status={{if @discrepancyView "modified" "changed"}} />
                   <ins>{{if (eq @field.title "title") (titleize @field.value) @field.value}}</ins>
                 </Boxel>
                 <Boxel>
@@ -184,10 +192,6 @@
               {{/if}}
             {{/with}}
           {{else}}
-            {{#if (and @comparisonMode (contains @field.title @addedValues))}}
-              <BoxelHighlight @offsetHighlight={{true}} @status="added" />
-              <BoxelActions @offsetHighlight={{true}} @status="added" />
-            {{/if}}
             {{#if (eq @field.type "date")}}
               {{moment-format @field.value "MMM DD, YYYY" "YYYY-MM-DD"}}
             {{else if (eq @field.type "image")}}
