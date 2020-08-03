@@ -15,7 +15,8 @@ export default [
     id: "mw-the-sun-comes-out-wmg-wcm",
     baseCard: {
       type: 'musical-work',
-      datetime: '20200408T10:45',
+      owner: 'Warner Music Group',
+      datetime: '2020-04-08T10:45',
       id: 'wmg-the-sun-comes-out',
       itemId: 'the-sun-comes-out',
       title: 'The Sun Comes Out',
@@ -70,7 +71,8 @@ export default [
     },
     compCard: {
       type: 'musical-work',
-      datetime: '20191111T13:54',
+      owner: 'Warner Chappell Music',
+      datetime: '2019-11-11T13:54',
       id: 'wcm-the-sun-comes-out',
       isolatedFields: [
         {

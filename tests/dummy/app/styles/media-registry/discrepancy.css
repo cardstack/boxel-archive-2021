@@ -16,6 +16,43 @@
   padding: 20px;
 }
 
+.discrepancy__title {
+  padding-left: 35px;
+  padding-right: 20px;
+  background: url('/assets/images/icons/file-icon.svg') center left 5px/16px 20px no-repeat;
+  color: white;
+  font: var(--boxel-font);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-sm);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.discrepancy__mode-btn > a {
+  width: 300px;
+}
+
+.discrepancy__main {
+  padding-top: 20px;
+  border-top: 1px solid #7D7C93;
+}
+
+.discrepancy__reconcile-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: var(--boxel-highlight);
+  color: black;
+  font: var(--boxel-font-sm);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp);
+  text-align: center;
+}
+
 .discrepancy__header {
   display: flex;
   justify-content: space-between;
@@ -27,6 +64,24 @@
   grid-template-columns: auto auto;
   align-items: start;
   gap: 0 30px;
+  margin-top: 10px;
+}
+
+.discrepancy-card__header {
+  padding: 10px 15px;
+  background-color: var(--boxel-revision-dark-purple);
+  color: white;
+  font: var(--boxel-font-sm);
+  letter-spacing: var(--boxel-lsp);
+  border-radius: 10px 10px 0 0;
+}
+
+.discrepancy-card__title {
+  font-weight: bold;
+}
+
+.discrepancy-card__header > datetime {
+  opacity: 0.75;
 }
 
 .discrepancy-field {
