@@ -1,0 +1,63 @@
+<section class="versions">
+  <header class="versions__header">
+    <h1 class="versions__title">Discrepancy Card: Missing Data</h1>
+    <div class="versions__mode">
+      <LinkTo @route="media-registry.item.musical-work" @model={{@model.baseCard}} @class="mode-indicator mode-indicator--revision">
+        Comparison Mode
+      </LinkTo>
+    </div>
+  </header>
+
+  <Breadcrumbs>
+    <LinkTo @route="media-registry" @class="breadcrumbs__item">
+      <div class="breadcrumbs__item-label">Collection</div>
+      <div class="breadcrumbs__item-title">Master Recordings</div>
+    </LinkTo>
+    <span class="breadcrumbs__carot" />
+    <LinkTo @route="media-registry.item" @model={{@model.baseCard.itemId}} @class="breadcrumbs__item">
+      <div class="breadcrumbs__item-label">Master Detail</div>
+      <div class="breadcrumbs__item-title">{{@model.baseCard.title}}</div>
+    </LinkTo>
+    <span class="breadcrumbs__carot" />
+    <LinkTo @route="media-registry.item.musical-work" @model={{@model.baseCard.itemId}} @class="breadcrumbs__item">
+      <div class="breadcrumbs__item-label">Musical Work</div>
+      <div class="breadcrumbs__item-title">{{@model.baseCard.title}}</div>
+    </LinkTo>
+  </Breadcrumbs>
+
+  <div>
+    <div>
+      Reconcile between these 2 versions
+    </div>
+    <div>
+      <DetailCard
+        @fields={{@model.baseCard.isolatedFields}}
+        @label={{humanize @model.baseCard.type}}
+        @mode="view"
+      />
+
+      <DetailCard
+        @fields={{@model.compCard.isolatedFields}}
+        @label={{humanize @model.compCard.type}}
+        @mode="view"
+        @comparisonMode={{true}}
+      />
+
+      {{#each @fields as |field|}}
+        <div>
+          <FieldRenderer
+            @mode="view"
+            @field={{field}}
+            @expandAction={{@expandAction}}
+          />
+          <FieldRenderer
+            @mode="view"
+            @comparisonMode={{true}}
+            @field={{field}}
+            @expandAction={{@expandAction}}
+          />
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
