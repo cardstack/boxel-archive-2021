@@ -87,8 +87,8 @@
         <BoxelHighlight @offsetHighlight={{true}} @status="added" />
         <BoxelActions @offsetHighlight={{true}} @status="added" />
       {{/if}}
-      {{#if (and @comparisonMode (contains @field.title @removedModifiedValues))}}
-        <BoxelHighlight @offsetHighlight={{true}} @status="removed-modified" />
+      {{#if (and @comparisonMode (contains @field.title @modifiedValues))}}
+        <BoxelHighlight @offsetHighlight={{true}} @status="modified" />
         <BoxelActions @offsetHighlight={{true}} @status="modified" />
       {{/if}}
       {{#if @field.value}}
@@ -104,10 +104,12 @@
             </div>
           {{else if (and @comparisonMode @modifiedCard.value (is-equal @modifiedCard.value @field.value))}}
             <Boxel>
-              <BoxelHighlight @status="removed-modified" />
+              <BoxelHighlight @status="modified" />
               <BoxelActions @status="modified"><div class="field-renderer__modified-count">{{@modifiedCard.value.fields.length}}</div></BoxelActions>
               {{component (or @field.component "card") model=@field.value mode="view"}}
             </Boxel>
+          {{else if (and @comparisonMode (contains @field.id @addedCards))}}
+            <ins>{{component (or @field.component "card") model=@field.value status="added" mode="view"}}</ins>
           {{else}}
             {{component (or @field.component "card") model=@field.value mode="view"}}
           {{/if}}

@@ -1,4 +1,4 @@
-<section class="discrepancy">
+<section class="discrepancy" {{did-insert this.reset}}>
   <div class="discrepancy__container">
     <header class="discrepancy__header">
       <h1 class="discrepancy__title">Discrepancy Card: Missing Data</h1>
@@ -51,22 +51,25 @@
           <div class="discrepancy-field">
             {{#with (find-by "title" field.title @model.compCard.isolatedFields) as |compField|}}
               {{#if (not (is-equal field.value compField.value) (eq field.title "verifi_id"))}}
-                {{compute (fn this.compareFields field compField)}}
-                <FieldRenderer
-                  @mode="view"
-                  @class="comp-card"
-                  @comparisonMode={{true}}
-                  @discrepancyView={{true}}
-                  @field={{compField}}
-                  @addedValues={{this.addedValues}}
-                  @removedModifiedValues={{this.removedModifiedValues}}
-                  @changedFields={{this.changedFields}}
-                  @modifiedCard={{this.modifiedCard}}
-                  @changedCards={{this.changedCards}}
-                  @addedCards={{this.addedCards}}
-                  @removedCards={{this.removedCards}}
-                  @expandAction={{@expandAction}}
-                />
+                {{#with (compute (fn this.compareFields field compField)) as |return|}}
+                  {{#if return}}
+                    <FieldRenderer
+                      @mode="view"
+                      @class="comp-card"
+                      @comparisonMode={{true}}
+                      @discrepancyView={{true}}
+                      @field={{compField}}
+                      @addedValues={{this.addedValues}}
+                      @modifiedValues={{this.modifiedValues}}
+                      @changedFields={{this.changedFields}}
+                      @modifiedCard={{this.modifiedCard}}
+                      @changedCards={{this.changedCards}}
+                      @addedCards={{this.addedCards}}
+                      @removedCards={{this.removedCards}}
+                      @expandAction={{@expandAction}}
+                    />
+                  {{/if}}
+                {{/with}}
               {{/if}}
             {{/with}}
           </div>
