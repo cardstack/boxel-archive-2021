@@ -7,9 +7,9 @@
   {{#each @collection as |val i|}}
     {{#if @discrepancyView}}
       {{#let (find-by "id" val.id @addedCards) (find-by "id" val.id @modifiedCards) as |added modified|}}
-        {{#if (or added modified)}}
+        {{!-- {{#if (or added modified)}} --}}
           {{component (or @cardComponent "card") model=val mode="view" status=(if added "added" (if modified "modified"))}}
-        {{/if}}
+        {{!-- {{/if}} --}}
       {{/let}}
     {{else if @comparisonMode}}
       {{#let (find-by "id" val.id @addedCards) (find-by "id" val.id @changedCards) as |added changed|}}

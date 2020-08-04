@@ -30,41 +30,13 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     }
 
     // added field value
-    if (!field.value && compField.value && compField.type !== 'collection') {
+    if (!field.value && compField.value) {
       return this.addedValues.push(compField.title);
     }
 
     // removed field value
     if (field.value && !compField.value) {
       return this.removedValues.push(field.title);
-    }
-
-    // if (compField.type === 'card') {
-    //   if (field.type !== 'card') {
-    //     return this.addedCards.push(field.title);
-    //   }
-    //   return this.modifiedCards.push(field.title);
-    // }
-
-    if (compField.type === 'collection') {
-      let fieldJSON = JSON.stringify(field);
-
-      for (let val of compField.value) {
-        let valJSON = JSON.stringify(val);
-        if (!fieldJSON.includes(valJSON)) {
-          if (fieldJSON.includes(val.id)) {
-            this.modifiedCards.push(val);
-          } else {
-            this.addedCards.push(val);
-          }
-        }
-      }
-
-      if (this.addedCards.length || this.modifiedCards.length) {
-        return 'hasValue';
-      } else {
-        return;
-      }
     }
 
     if (typeOf(compField.value) === 'array') {
