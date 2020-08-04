@@ -50,7 +50,7 @@
           </div>
           <div class="discrepancy-field">
             {{#with (find-by "title" field.title @model.compCard.isolatedFields) as |compField|}}
-              {{#if (not (is-equal field.value compField.value))}}
+              {{#if (not (is-equal field.value compField.value) (eq field.title "verifi_id"))}}
                 {{compute (fn this.compareFields field compField)}}
                 <FieldRenderer
                   @mode="view"
