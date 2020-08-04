@@ -1,4 +1,26 @@
-import { VALENTINO_SOLANO, EMILIO_ROSSO } from './profiles';
+export const VALENTINO_SOLANO = {
+  "id": "valentino-solano",
+  "type": "participant",
+  "title": "Valentino Solano",
+  "description": "Lyricist",
+  "imgURL": "",
+  "ipi": "00815723492",
+  "pro": "Global Music Rights",
+  "email": "valentino@valsolanomusic.com",
+  "website": "www.valsolanomusic.com"
+};
+
+export const EMILIO_ROSSO = {
+  "id": "emilio-rosso",
+  "type": "participant",
+  "title": "Emilio Rosso",
+  "description": "Composer",
+  "imgURL": null,
+  "ipi": "00231925374",
+  "pro": "Global Music Rights",
+  "email": "emilio@rosso.com",
+  "website": null
+};
 
 export default {
   id: "mw-the-sun-comes-out-wmg-wcm",

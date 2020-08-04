@@ -10,6 +10,18 @@ export const VALENTINO_SOLANO = {
   "website": "www.valsolanomusic.com"
 };
 
+export const VALENTINO_SOLANO_PRO = {
+  "id": "valentino-solano",
+  "type": "participant",
+  "title": "Valentino Solano",
+  "description": "Lyricist",
+  "imgURL": "",
+  "ipi": "00914256714",
+  "pro": "Global Music Rights",
+  "email": "valentino@valsolanomusic.com",
+  "website": "www.valsolanomusic.com"
+};
+
 export const EMILIO_ROSSO = {
   "id": "emilio-rosso",
   "type": "participant",
@@ -35,7 +47,7 @@ export const MARIA_BIANCHI = {
 };
 
 export default {
-  id: "the-sun-comes-out-wcm-amp",
+  id: "the-sun-comes-out-wcm-gmr",
   baseCard: {
     type: 'musical-work',
     owner: 'Warner Chappell Music',
@@ -58,10 +70,10 @@ export default {
             value: [ VALENTINO_SOLANO ]
           },
           {
-            title: 'Composer',
+            title: 'Composers',
             type: 'collection',
             component: 'cards/composer',
-            value: [ EMILIO_ROSSO ]
+            value: [ EMILIO_ROSSO, MARIA_BIANCHI ]
           }
         ]
       },
@@ -93,7 +105,11 @@ export default {
           },
           {
             title: 'Emilio Rosso (Composer)',
-            value: '50%'
+            value: '25%'
+          },
+          {
+            title: 'Maria Bianchi (Composer)',
+            value: '25%'
           }
         ]
       },
@@ -139,10 +155,10 @@ export default {
   },
   compCard: {
     type: 'musical-work',
-    owner: 'Allegro Music Publishing',
-    datetime: '2020-05-18T11:36',
-    id: 'amp-the-sun-comes-out',
-    itemId: 'amp-the-sun-comes-out',
+    owner: 'Global Music Rights',
+    datetime: '2020-06-09T16:18',
+    id: 'gmr-the-sun-comes-out',
+    itemId: 'gmr-the-sun-comes-out',
     title: 'The Sun Comes Out',
     isolatedFields: [
       {
@@ -156,7 +172,7 @@ export default {
             title: 'Lyricist',
             type: 'collection',
             component: 'cards/composer',
-            value: [ VALENTINO_SOLANO ]
+            value: [ VALENTINO_SOLANO_PRO ]
           },
           {
             title: 'Composers',
@@ -172,12 +188,12 @@ export default {
       },
       {
         title: 'verifi_id',
-        id: '0x31ef32b4c27f6ca5d6bd6201fa7c14071228965dc2f1b4328c22e5609e8912ab4',
+        id: '0x7cf232e7c48d6ba5d8bd3101fc7a28071091165de2f1b4542c37e2812d89154be',
         type: 'card',
         component: 'cards/registration-embedded',
         value: {
-          verifi_id: '0x31ef32b4c27f6ca5d6bd6201fa7c14071228965dc2f1b4328c22e5609e8912ab4',
-          verifi_reg_date: '2020-05-18',
+          verifi_id: '0x7cf232e7c48d6ba5d8bd3101fc7a28071091165de2f1b4542c37e2812d89154be',
+          verifi_reg_date: '2020-06-09',
           asset_type: 'Original work'
         }
       },

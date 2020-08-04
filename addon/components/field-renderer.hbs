@@ -108,8 +108,6 @@
               <BoxelActions @status="modified"><div class="field-renderer__modified-count">{{@modifiedCard.value.fields.length}}</div></BoxelActions>
               {{component (or @field.component "card") model=@field.value mode="view"}}
             </Boxel>
-          {{else if (and @comparisonMode (contains @field.id @addedCards))}}
-            <ins>{{component (or @field.component "card") model=@field.value status="added" mode="view"}}</ins>
           {{else}}
             {{component (or @field.component "card") model=@field.value mode="view"}}
           {{/if}}
@@ -119,6 +117,7 @@
             @format={{@field.format}}
             @cardComponent={{@field.component}}
             @comparisonMode={{@comparisonMode}}
+            @discrepancyView={{@discrepancyView}}
             @addedFields={{@addedFields}}
             @addedValues={{@addedValues}}
             @changedFields={{@changedFields}}
@@ -128,6 +127,7 @@
             @removedCards={{@removedCards}}
             @changedCards={{@changedCards}}
             @modifiedCard={{@modifiedCard}}
+            @modifiedCards={{@modifiedCards}}
             @expandAction={{@expandAction}}
           />
         {{else if (is-array @field.value)}}
@@ -142,6 +142,7 @@
                     @collection={{val.value}}
                     @cardComponent={{val.component}}
                     @comparisonMode={{@comparisonMode}}
+                    @discrepancyView={{@discrepancyView}}
                     @addedFields={{@addedFields}}
                     @addedValues={{@addedValues}}
                     @changedFields={{@changedFields}}
@@ -151,6 +152,7 @@
                     @removedCards={{@removedCards}}
                     @changedCards={{@changedCards}}
                     @modifiedCard={{@modifiedCard}}
+                    @modifiedCards={{@modifiedCards}}
                   />
                 {{else}}
                   {{#each val.value as |vv|}}

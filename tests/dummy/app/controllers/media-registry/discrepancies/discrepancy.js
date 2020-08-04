@@ -6,21 +6,19 @@ import { typeOf } from '@ember/utils';
 export default class MediaRegistryDiscrepanciesDiscrepancyController extends Controller {
   @tracked addedValues = [];
   @tracked changedFields = [];
-  @tracked changedCards = [];
   @tracked addedCards = [];
-  @tracked removedCards = [];
   @tracked modifiedValues = [];
-  @tracked modifiedCard = {};
+  @tracked modifiedCards = [];
+  @tracked removedValues = [];
 
   @action
   reset() {
     this.addedValues = [];
     this.changedFields = [];
-    this.changedCards = [];
     this.addedCards = [];
-    this.removedCards = [];
     this.modifiedValues = [];
-    this.modifiedCard = {};
+    this.modifiedCards = [];
+    this.removedValues = [];
   }
 
   @action
@@ -32,7 +30,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     }
 
     // added field value
-    if (!field.value && compField.value) {
+    if (!field.value && compField.value && compField.type !== 'collection') {
       return this.addedValues.push(compField.title);
     }
 
@@ -41,33 +39,48 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
       return this.removedValues.push(field.title);
     }
 
-    if (compField.type === 'card') {
-      return this.modifiedCard = {
-        value: compField.value,
-        oldValue: field.value
-      };
-    }
+    // if (compField.type === 'card') {
+    //   if (field.type !== 'card') {
+    //     return this.addedCards.push(field.title);
+    //   }
+    //   return this.modifiedCards.push(field.title);
+    // }
 
     if (compField.type === 'collection') {
-      return;
+      let fieldJSON = JSON.stringify(field);
+
+      for (let val of compField.value) {
+        let valJSON = JSON.stringify(val);
+        if (!fieldJSON.includes(valJSON)) {
+          if (fieldJSON.includes(val.id)) {
+            this.modifiedCards.push(val);
+          } else {
+            this.addedCards.push(val);
+          }
+        }
+      }
+
+      if (this.addedCards.length || this.modifiedCards.length) {
+        return 'hasValue';
+      } else {
+        return;
+      }
     }
 
     if (typeOf(compField.value) === 'array') {
       let fieldJSON = JSON.stringify(field);
 
       for (let val of compField.value) {
-        let valJSON = JSON.stringify(val);
-
-        if (val.type === 'card') {
-          if (!fieldJSON.includes(valJSON)) {
-            this.addedCards.push(val);
-          }
-        }
-        else if (val.type === 'collection') {
+        if (val.type === 'collection') {
           for (let v of val.value) {
             let vJSON = JSON.stringify(v);
+
             if (!fieldJSON.includes(vJSON)) {
-              this.addedCards.push(v);
+              if (fieldJSON.includes(v.id)) {
+                this.modifiedCards.push(v);
+              } else {
+                this.addedCards.push(v);
+              }
             }
           }
         }
@@ -76,7 +89,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
         }
       }
 
-      if (this.addedCards.length || this.modifiedValues.length) {
+      if (this.addedCards.length || this.modifiedCards.length || this.modifiedValues.length) {
         return 'hasValue';
       } else {
         return;
