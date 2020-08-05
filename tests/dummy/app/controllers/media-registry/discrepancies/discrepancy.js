@@ -30,7 +30,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     }
 
     // added field value
-    if (!field.value && compField.value) {
+    if (!field.value && compField.value && compField.type !== 'collection') {
       return this.addedValues.push(compField.title);
     }
 
@@ -39,22 +39,14 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
       return this.removedValues.push(field.title);
     }
 
-    if (typeOf(compField.value) === 'array') {
-      let fieldJSON = JSON.stringify(field);
+    if (compField.type === 'collection') {
+      return this.collectionComparison(field, compField);
+    }
 
+    if (typeOf(compField.value) === 'array') {
       for (let val of compField.value) {
         if (val.type === 'collection') {
-          for (let v of val.value) {
-            let vJSON = JSON.stringify(v);
-
-            if (!fieldJSON.includes(vJSON)) {
-              if (fieldJSON.includes(v.id)) {
-                this.modifiedCards.push(v);
-              } else {
-                this.addedCards.push(v);
-              }
-            }
-          }
+          this.collectionComparison(field, val.value);
         }
         else {
           this.modifiedValues.push(field.title);
@@ -62,12 +54,35 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
       }
 
       if (this.addedCards.length || this.modifiedCards.length || this.modifiedValues.length) {
-        return 'hasValue';
+        return true;
       } else {
         return;
       }
     }
 
     return;
+  }
+
+  @action
+  collectionComparison(field, compField) {
+    let fieldJSON = JSON.stringify(field);
+
+    for (let v of compField.value) {
+      let vJSON = JSON.stringify(v);
+
+      if (!fieldJSON.includes(vJSON)) {
+        if (fieldJSON.includes(v.id)) {
+          this.modifiedCards.push(v);
+        } else {
+          this.addedCards.push(v);
+        }
+      }
+    }
+
+    if (this.addedCards.length || this.modifiedCards.length) {
+      return true;
+    } else {
+      return;
+    }
   }
 }

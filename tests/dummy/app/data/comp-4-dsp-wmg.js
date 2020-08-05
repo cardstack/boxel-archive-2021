@@ -1,38 +1,4 @@
-export const VALENTINO_SOLANO = {
-  "id": "valentino-solano",
-  "type": "participant",
-  "title": "Valentino Solano",
-  "description": "Lyricist",
-  "imgURL": "",
-  "ipi": "00815723492",
-  "pro": "Global Music Rights",
-  "email": "valentino@valsolanomusic.com",
-  "website": "www.valsolanomusic.com"
-};
-
-export const EMILIO_ROSSO = {
-  "id": "emilio-rosso",
-  "type": "participant",
-  "title": "Emilio Rosso",
-  "description": "Composer",
-  "imgURL": null,
-  "ipi": "00231925374",
-  "pro": "Global Music Rights",
-  "email": "emilio@rosso.com",
-  "website": null
-};
-
-export const MARIA_BIANCHI = {
-  "id": "maria-bianchi",
-  "type": "participant",
-  "title": "Maria Bianchi",
-  "description": "Composer",
-  "imgURL": null,
-  "ipi": "00181928972",
-  "pro": "Global Music Rights",
-  "email": "m.bianchi@gmail.com",
-  "website": null
-};
+import { WCM, AMP, VALENTINO_PR, EMILIO_PR, MARIA_PR } from "./comp-data";
 
 export default {
   id: "the-sun-comes-out-dsp-wmg",
@@ -93,19 +59,12 @@ export default {
       },
       {
         title: "writers",
+        type: "collection",
+        component: "cards/publishing-representation",
         value: [
-          {
-            title: 'Lyricist',
-            type: 'collection',
-            component: 'cards/composer',
-            value: [ VALENTINO_SOLANO ]
-          },
-          {
-            title: 'Composers',
-            type: 'collection',
-            component: 'cards/composer',
-            value: [ EMILIO_ROSSO, MARIA_BIANCHI ]
-          }
+          VALENTINO_PR,
+          EMILIO_PR,
+          MARIA_PR
         ]
       },
       {
@@ -125,7 +84,12 @@ export default {
       },
       {
         title: 'version_type',
-        value: 'Original work'
+        type: 'card',
+        component: 'cards/file',
+        value: {
+          type: 'file',
+          title: 'Original work'
+        }
       },
       {
         title: 'ownership_splits',
@@ -146,34 +110,13 @@ export default {
       },
       {
         title: 'publisher',
-        type: 'collection',
         value: [
           {
-            type: 'publisher',
-            title: 'Warner Chappel Music',
-            fields: [
-              {
-                title: 'website',
-                value: 'www.warnerchappell.com'
-              },
-              {
-                title: 'main office',
-                value: 'Los Angeles, USA'
-              }
-            ]
-          },
-          {
-            type: 'publisher',
-            title: 'Allegro Music Publishing',
-            fields: [
-              {
-                title: 'website',
-                value: 'www.allegromusic.com'
-              },
-              {
-                title: 'main office',
-                value: 'New York, USA'
-              }
+            title: 'Worldwide',
+            type: 'collection',
+            value: [
+              WCM,
+              AMP
             ]
           }
         ]
