@@ -53,6 +53,7 @@
               {{#if (not (is-equal field.value compField.value) (eq field.title "verifi_id"))}}
                 {{#with (compute (fn this.compareFields field compField)) as |return|}}
                   {{#if return}}
+                    <IconButton @class="discrepancy-field__btn" @icon="carot" @variant="primary" />
                     <FieldRenderer
                       @mode="view"
                       @class="comp-card"

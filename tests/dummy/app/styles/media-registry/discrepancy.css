@@ -85,9 +85,21 @@
 }
 
 .discrepancy-field {
+  position: relative;
   height: 100%;
   padding: 30px;
   background-color: white;
+}
+
+.discrepancy-field__btn {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: var(--boxel-highlight);
+  border: 2.5px solid var(--boxel-revision-medium-purple);
+  border-radius: 100px;
+  top: 40%;
+  left: -45px;
 }
 
 

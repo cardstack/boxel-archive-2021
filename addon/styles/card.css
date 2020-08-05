@@ -264,3 +264,12 @@
 .boxel-card--schedule .boxel-card-field > .field-renderer__value {
   font: var(--boxel-font-med);
 }
+
+
+/* Discrepancy view */
+.boxel-card__no-change {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
