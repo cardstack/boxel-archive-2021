@@ -99,10 +99,3 @@
 .comp-card.field-renderer {
   grid-template-columns: 450px;
 }
-
-.publishing-representation__field {
-  width: 100%;
-  grid-template-columns: 1fr;
-  justify-items: start;
-  gap: 10px;
-}

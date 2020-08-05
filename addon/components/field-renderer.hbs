@@ -117,7 +117,6 @@
             @format={{@field.format}}
             @cardComponent={{@field.component}}
             @comparisonMode={{@comparisonMode}}
-            @discrepancyView={{@discrepancyView}}
             @addedFields={{@addedFields}}
             @addedValues={{@addedValues}}
             @changedFields={{@changedFields}}
@@ -134,34 +133,14 @@
           {{#let (filter-by "title" @field.value) as |multiTagList|}}
             {{#if multiTagList.length}}
               {{#each @field.value as |val|}}
-                <div class="field-renderer__taglist-title">{{val.title}}</div>
-                {{#if (eq val.type "card")}}
-                  {{component (or val.component "card") model=val.value mode="view"}}
-                {{else if (and (eq val.type "collection") val.value)}}
-                  <EmbeddedCollection
-                    @collection={{val.value}}
-                    @cardComponent={{val.component}}
-                    @comparisonMode={{@comparisonMode}}
-                    @discrepancyView={{@discrepancyView}}
-                    @addedFields={{@addedFields}}
-                    @addedValues={{@addedValues}}
-                    @changedFields={{@changedFields}}
-                    @removedFields={{@removedFields}}
-                    @removedValues={{@removedValues}}
-                    @addedCards={{@addedCards}}
-                    @removedCards={{@removedCards}}
-                    @changedCards={{@changedCards}}
-                    @modifiedCard={{@modifiedCard}}
-                    @modifiedCards={{@modifiedCards}}
-                    @displayChildrenInDiffView={{true}}
-                  />
-                {{else}}
-                  {{#each val.value as |vv|}}
-                    <div>{{vv}}</div>
-                  {{else}}
-                    {{or val.value "N/A"}}
-                  {{/each}}
-                {{/if}}
+                <FieldRenderer
+                  @class="field-renderer__meta-field"
+                  @field={{val}}
+                  @mode="view"
+                  @status={{@status}}
+                  @comparisonMode={{@comparisonMode}}
+                  @discrepancyView={{@discrepancyView}}
+                />
               {{/each}}
             {{else}}
               {{#each @field.value as |val|}}

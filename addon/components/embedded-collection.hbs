@@ -5,17 +5,11 @@
 
 {{else}}
   {{#each @collection as |val i|}}
-    {{#if @discrepancyView}}
-      {{#let (find-by "id" val.id @addedCards) (find-by "id" val.id @modifiedCards) as |added modified|}}
-        {{#if (or added modified @displayChildrenInDiffView)}}
-          {{component (or @cardComponent "card") model=val mode="view" status=(if added "added" (if modified "modified"))}}
-        {{/if}}
-      {{/let}}
-    {{else if @comparisonMode}}
-      {{#let (find-by "id" val.id @addedCards) (find-by "id" val.id @changedCards) as |added changed|}}
+    {{#if @comparisonMode}}
+      {{#let (find-by "id" val.id @addedCards) (find-by "id" val.id @changedCards) (find-by "id" val.id @modifiedCards) as |added changed modified|}}
         {{#if (lt i this.displayCount)}}
           <div>
-            {{component (or @cardComponent "card") model=val mode="view" status=(if added "added" (if changed "changed"))}}
+            {{component (or @cardComponent "card") model=val mode="view" status=(if added "added" (if changed "changed" (if modified "modified")))}}
             {{#if changed}}
               <Boxel>
                 <BoxelHighlight @status="deleted" />

@@ -53,7 +53,12 @@ export default {
       },
       {
         title: 'version_type',
-        value: 'Original work'
+        type: 'card',
+        component: 'cards/file',
+        value: {
+          type: 'version-type',
+          title: 'Original work'
+        }
       },
       {
         title: 'ownership_splits',
@@ -145,7 +150,12 @@ export default {
       },
       {
         title: 'version_type',
-        value: 'Original work'
+        type: 'card',
+        component: 'cards/file',
+        value: {
+          type: 'version-type',
+          title: 'Original work'
+        }
       },
       {
         title: 'ownership_splits',

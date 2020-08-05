@@ -87,7 +87,7 @@ export default {
         type: 'card',
         component: 'cards/file',
         value: {
-          type: 'file',
+          type: 'version-type',
           title: 'Original work'
         }
       },
