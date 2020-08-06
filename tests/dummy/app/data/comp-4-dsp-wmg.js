@@ -36,7 +36,6 @@ export default {
       },
       {
         title: 'publisher',
-        type: 'collection',
         value: null
       },
       {

@@ -91,7 +91,7 @@
         <BoxelHighlight @offsetHighlight={{true}} @status="modified" />
         <BoxelActions @offsetHighlight={{true}} @status="modified" />
       {{/if}}
-      {{#if @field.value}}
+      {{#if (or @field.value @discrepancyView)}}
         {{#if (eq @field.type "card")}}
           {{#if (and @comparisonMode @field.value.id (eq @changedCards.0.value.id @field.value.id))}}
             <div>
@@ -108,27 +108,38 @@
               <BoxelActions @status="modified"><div class="field-renderer__modified-count">{{@modifiedCard.value.fields.length}}</div></BoxelActions>
               {{component (or @field.component "card") model=@field.value mode="view"}}
             </Boxel>
+          {{else if (contains @field.title @modifiedCards)}}
+            {{component (or @field.component "card") model=@field.value mode="view" status="modified"}}
           {{else}}
             {{component (or @field.component "card") model=@field.value mode="view"}}
           {{/if}}
         {{else if (eq @field.type "collection")}}
-          <EmbeddedCollection
-            @collection={{@field.value}}
-            @format={{@field.format}}
-            @cardComponent={{@field.component}}
-            @comparisonMode={{@comparisonMode}}
-            @addedFields={{@addedFields}}
-            @addedValues={{@addedValues}}
-            @changedFields={{@changedFields}}
-            @removedFields={{@removedFields}}
-            @removedValues={{@removedValues}}
-            @addedCards={{@addedCards}}
-            @removedCards={{@removedCards}}
-            @changedCards={{@changedCards}}
-            @modifiedCard={{@modifiedCard}}
-            @modifiedCards={{@modifiedCards}}
-            @expandAction={{@expandAction}}
-          />
+          {{#if @discrepancyView}}
+            <EmbeddedCollection
+              @collection={{or @field.compCollection @field.value}}
+              @format={{@field.format}}
+              @cardComponent={{@field.component}}
+              @comparisonMode={{@comparisonMode}}
+            />
+          {{else}}
+            <EmbeddedCollection
+              @collection={{@field.value}}
+              @format={{@field.format}}
+              @cardComponent={{@field.component}}
+              @comparisonMode={{@comparisonMode}}
+              @addedFields={{@addedFields}}
+              @addedValues={{@addedValues}}
+              @changedFields={{@changedFields}}
+              @removedFields={{@removedFields}}
+              @removedValues={{@removedValues}}
+              @addedCards={{@addedCards}}
+              @removedCards={{@removedCards}}
+              @changedCards={{@changedCards}}
+              @modifiedCard={{@modifiedCard}}
+              @modifiedCards={{@modifiedCards}}
+              @expandAction={{@expandAction}}
+            />
+          {{/if}}
         {{else if (is-array @field.value)}}
           {{#let (filter-by "title" @field.value) as |multiTagList|}}
             {{#if multiTagList.length}}

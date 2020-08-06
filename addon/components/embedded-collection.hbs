@@ -6,9 +6,13 @@
 {{else}}
   {{#each @collection as |val i|}}
     {{#if @comparisonMode}}
+      {{val.status}}
       {{#let (find-by "id" val.id @addedCards) (find-by "id" val.id @changedCards) (find-by "id" val.id @modifiedCards) as |added changed modified|}}
         {{#if (lt i this.displayCount)}}
           <div>
+            {{#if (and val.status (not-eq val.status "same"))}}
+              <IconButton @class="discrepancy-field__btn" @icon="carot" @variant="primary" />
+            {{/if}}
             {{component (or @cardComponent "card") model=val mode="view" status=(if added "added" (if changed "changed" (if modified "modified")))}}
             {{#if changed}}
               <Boxel>

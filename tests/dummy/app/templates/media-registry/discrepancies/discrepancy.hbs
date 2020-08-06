@@ -40,7 +40,7 @@
           <datetime>{{moment-format @model.compCard.datetime "MMM D YYYY, h:mm A"}}</datetime>
         </div>
         {{#each @model.baseCard.isolatedFields as |field|}}
-          <div class="discrepancy-field">
+          <div class="discrepancy-field {{format-id field.title}}">
             <FieldRenderer
               @mode="view"
               @class="base-card"
@@ -60,30 +60,28 @@
             {{/if}}
           </div>
           <div class="discrepancy-field">
-            {{#with (find-by "title" field.title @model.compCard.isolatedFields) as |compField|}}
-              {{#if (not (is-equal field.value compField.value) (eq field.title "verifi_id"))}}
-                {{#with (compute (fn this.compareFields field compField)) as |return|}}
-                  {{#if return}}
-                    {{#unless field.new}}
-                      <IconButton @class="discrepancy-field__btn" @icon="carot" @variant="primary" {{on "click" (fn this.reconciliateField field compField)}} />
-                    {{/unless}}
-                    <FieldRenderer
-                      @mode="view"
-                      @class="comp-card"
-                      @comparisonMode={{not field.new}}
-                      @discrepancyView={{not field.new}}
-                      @field={{compField}}
-                      @addedValues={{this.addedValues}}
-                      @changedFields={{this.changedFields}}
-                      @addedCards={{this.addedCards}}
-                      @modifiedValues={{this.modifiedValues}}
-                      @modifiedCards={{this.modifiedCards}}
-                      @removedValues={{this.removedValues}}
-                    />
-                  {{/if}}
-                {{/with}}
+            {{#each @model.compCard.isolatedFields as |compField|}}
+              {{#if (eq compField.title field.title)}}
+                {{compute (fn this.compareFields field compField)}}
+                {{#if (and (not field.new) (not-eq compField.status 'same') (not-eq compField.type 'collection'))}}
+                  <IconButton @class="discrepancy-field__btn" @icon="carot" @variant="primary" {{on "click" (fn this.reconciliateField field compField)}} />
+                {{/if}}
+                {{uppercase compField.status}}
+                <FieldRenderer
+                  @mode="view"
+                  @class="comp-card"
+                  @comparisonMode={{not field.new}}
+                  @discrepancyView={{not field.new}}
+                  @field={{compField}}
+                  @addedValues={{this.addedValues}}
+                  @changedFields={{this.changedFields}}
+                  @addedCards={{this.addedCards}}
+                  @modifiedValues={{this.modifiedValues}}
+                  @modifiedCards={{this.modifiedCards}}
+                  @removedValues={{this.removedValues}}
+                />
               {{/if}}
-            {{/with}}
+            {{/each}}
           </div>
         {{/each}}
 

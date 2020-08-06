@@ -25,66 +25,98 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
 
   @action
   compareFields(field, compField) {
+    // assumption: cards have the same fields even if values might be null
+
     let [ json1, json2 ] = [ field, compField ].map(data => JSON.stringify(data));
 
     if (json1 === json2) {
+      set(compField, 'status', 'same');
       return;
     }
 
-    // added field value
-    if (!field.value && compField.value && compField.type !== 'collection') {
-      return this.addedValues.push(compField.title);
+    if (compField.type === 'collection' || field.type === 'collection') {
+      this.collectionComparison(field, compField);
+      return;
     }
 
-    // removed field value
-    if (field.value && !compField.value) {
-      return this.removedValues.push(field.title);
-    }
-
-    if (compField.type === 'collection') {
-      return this.collectionComparison(field, compField);
-    }
-
-    if (typeOf(compField.value) === 'array') {
-      for (let val of compField.value) {
-        if (val.type === 'collection') {
-          this.collectionComparison(field, val.value);
-        }
-        else {
-          this.modifiedValues.push(field.title);
-        }
-      }
-
-      if (this.addedCards.length || this.modifiedCards.length || this.modifiedValues.length) {
-        return true;
-      } else {
+    if (!field.value && compField.value) {
+      if (compField.type === 'card') {
+        set(compField, 'status', 'addedCard');
         return;
       }
-    }
+      set(compField, 'status', 'addedValue');
+      return;
+    } // added
 
+    if (field.value && !compField.value) {
+      if (field.type === 'card') {
+        set(compField, 'status', 'removedCard');
+        set(compField, 'previousValue', field.value);
+        return;
+      }
+      set(compField, 'status', 'removedValue');
+      set(compField, 'previousValue', field.value);
+      return;
+    } // removed
+
+    if (compField.type === 'card' || compField.id) {
+      if (field.type === 'card' || field.id) {
+        set(compField, 'status', 'modifiedCard');
+        set(compField, 'previousValue', field.value);
+        return;
+      }
+    } // modified
+
+    set(compField, 'status', 'modifiedValue');
+    set(compField, 'previousValue', field.value);
     return;
   }
 
   @action
   collectionComparison(field, compField) {
-    let fieldJSON = JSON.stringify(field);
-
-    for (let v of compField.value) {
-      let vJSON = JSON.stringify(v);
-
-      if (!fieldJSON.includes(vJSON)) {
-        if (fieldJSON.includes(v.id)) {
-          this.modifiedCards.push(v);
-        } else {
-          this.addedCards.push(v);
-        }
-      }
+    if (!field.value && !compField.value) {
+      set(compField, 'status', 'same');
+      return;
     }
 
-    if (this.addedCards.length || this.modifiedCards.length) {
-      return true;
-    } else {
+    if (!field.value) {
+      for (let card of compField.value) {
+        set(card, 'status', 'addedCard');
+      }
       return;
+    }
+
+    if (!compField.value) {
+      set (compField, 'compCollection', []);
+      set (compField, 'type', field.type);
+      set (compField, 'component', field.component);
+
+      for (let card of field.value) {
+        set(card, 'status', 'removedCard');
+        set(compField, 'compCollection', [ ...compField.compCollection, card ]);
+      }
+      return;
+    }
+
+    if (field.value.length && compField.value.length) {
+      set (compField, 'compCollection', [ ...compField.value ]);
+
+      for (let card of compField.value) {
+        let eqCard = field.value.find(el => el.id === card.id);
+        if (eqCard) {
+          this.compareFields(eqCard, card);
+        } else {
+          set(card, 'status', 'addedCard');
+        }
+      }
+
+      for (let card of field.value) {
+        let eqCard = compField.value.find(el => el.id === card.id);
+        if (!eqCard) {
+          set(card, 'status', 'removedCard');
+          set(compField, 'compCollection', [ ...compField.compCollection, card ]);
+        }
+      }
     }
   }
 
