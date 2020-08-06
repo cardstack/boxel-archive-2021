@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import { action } from '@ember/object';
+import { action, set } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { typeOf } from '@ember/utils';
 
@@ -83,6 +83,19 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
       return true;
     } else {
       return;
+    }
+  }
+
+  @action
+  reconciliateField(field, compField) {
+    set(field, 'value', compField.value);
+
+    if (compField.type) {
+      set(field, 'type', compField.type);
+    }
+
+    if (compField.component) {
+      set(field, 'component', compField.component);
     }
   }
 }
