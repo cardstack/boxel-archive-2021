@@ -6,14 +6,10 @@
 {{else}}
   {{#each @collection as |val i|}}
     {{#if @comparisonMode}}
-      {{val.status}}
-      {{#let (find-by "id" val.id @addedCards) (find-by "id" val.id @changedCards) (find-by "id" val.id @modifiedCards) as |added changed modified|}}
+      {{#let (find-by "id" val.id @addedCards) (find-by "id" val.id @changedCards) as |added changed|}}
         {{#if (lt i this.displayCount)}}
           <div>
-            {{#if (and val.status (not-eq val.status "same"))}}
-              <IconButton @class="discrepancy-field__btn" @icon="carot" @variant="primary" />
-            {{/if}}
-            {{component (or @cardComponent "card") model=val mode="view" status=(if added "added" (if changed "changed" (if modified "modified")))}}
+            {{component (or @cardComponent "card") model=val mode="view" status=(if added "added" (if changed "changed" val.status))}}
             {{#if changed}}
               <Boxel>
                 <BoxelHighlight @status="deleted" />
@@ -35,7 +31,7 @@
       {{/if}}
     {{else}}
       {{#if (lt i this.displayCount)}}
-        {{component (or @cardComponent "card") model=val mode="view"}}
+        {{component (or @cardComponent "card") model=val mode="view" status=val.status}}
       {{/if}}
     {{/if}}
 

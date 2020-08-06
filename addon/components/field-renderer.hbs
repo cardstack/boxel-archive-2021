@@ -76,7 +76,7 @@
   {{/if}}
 {{else}}
   {{!-- View Mode --}}
-  <Boxel @class="field-renderer {{format-id @field.title}}-field {{if (eq @field.format "table") "table-field"}} {{@class}}">
+  <Boxel @class="field-renderer field-renderer--{{@field.type}} {{format-id @field.title}}-field {{if (eq @field.format "table") "table-field"}} {{@class}}">
     {{#if (contains @field.title @addedFields)}}
       <BoxelHighlight @status="added" />
       <BoxelActions @status="added" />
@@ -108,10 +108,8 @@
               <BoxelActions @status="modified"><div class="field-renderer__modified-count">{{@modifiedCard.value.fields.length}}</div></BoxelActions>
               {{component (or @field.component "card") model=@field.value mode="view"}}
             </Boxel>
-          {{else if (contains @field.title @modifiedCards)}}
-            {{component (or @field.component "card") model=@field.value mode="view" status="modified"}}
           {{else}}
-            {{component (or @field.component "card") model=@field.value mode="view"}}
+            {{component (or @field.component "card") model=@field.value mode="view" status=@field.value.status}}
           {{/if}}
         {{else if (eq @field.type "collection")}}
           {{#if @discrepancyView}}
@@ -120,6 +118,7 @@
               @format={{@field.format}}
               @cardComponent={{@field.component}}
               @comparisonMode={{@comparisonMode}}
+              @selectChange={{@selectChange}}
             />
           {{else}}
             <EmbeddedCollection

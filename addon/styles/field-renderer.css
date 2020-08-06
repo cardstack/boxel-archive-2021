@@ -18,6 +18,11 @@
   text-align: left;
 }
 
+.field-renderer--collection,
+.field-renderer--card {
+  padding: 0;
+}
+
 .field-renderer__meta-field {
   width: 100%;
   max-width: 450px;

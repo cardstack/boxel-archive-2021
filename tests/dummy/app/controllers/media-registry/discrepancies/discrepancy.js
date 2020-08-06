@@ -30,7 +30,6 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     let [ json1, json2 ] = [ field, compField ].map(data => JSON.stringify(data));
 
     if (json1 === json2) {
-      set(compField, 'status', 'same');
       return;
     }
 
@@ -40,48 +39,47 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     }
 
     if (!field.value && compField.value) {
-      if (compField.type === 'card') {
-        set(compField, 'status', 'addedCard');
+      if (compField.type === 'card' || compField.id) {
+        set(compField.value, 'status', 'added');
         return;
       }
-      set(compField, 'status', 'addedValue');
+      set(compField, 'status', 'added');
       return;
     } // added
 
     if (field.value && !compField.value) {
-      if (field.type === 'card') {
-        set(compField, 'status', 'removedCard');
-        set(compField, 'previousValue', field.value);
+      if (field.type === 'card' || compField.id) {
+        set(compField.value, 'status', 'removed');
+        set(compField.value, 'oldValue', field.value);
         return;
       }
-      set(compField, 'status', 'removedValue');
-      set(compField, 'previousValue', field.value);
+      set(compField, 'status', 'removed');
+      set(compField, 'oldValue', field.value);
       return;
     } // removed
 
     if (compField.type === 'card' || compField.id) {
       if (field.type === 'card' || field.id) {
-        set(compField, 'status', 'modifiedCard');
-        set(compField, 'previousValue', field.value);
+        set(compField.value, 'status', 'modified');
+        set(compField.value, 'oldValue', field.value);
         return;
       }
     } // modified
 
-    set(compField, 'status', 'modifiedValue');
-    set(compField, 'previousValue', field.value);
+    set(compField, 'status', 'modified');
+    set(compField, 'oldValue', field.value);
     return;
   }
 
   @action
   collectionComparison(field, compField) {
     if (!field.value && !compField.value) {
-      set(compField, 'status', 'same');
       return;
     }
 
     if (!field.value) {
       for (let card of compField.value) {
-        set(card, 'status', 'addedCard');
+        set(card, 'status', 'added');
       }
       return;
     }
@@ -92,7 +90,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
       set (compField, 'component', field.component);
 
       for (let card of field.value) {
-        set(card, 'status', 'removedCard');
+        set(card, 'status', 'removed');
         set(compField, 'compCollection', [ ...compField.compCollection, card ]);
       }
       return;
@@ -106,14 +104,14 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
         if (eqCard) {
           this.compareFields(eqCard, card);
         } else {
-          set(card, 'status', 'addedCard');
+          set(card, 'status', 'added');
         }
       }
 
       for (let card of field.value) {
         let eqCard = compField.value.find(el => el.id === card.id);
         if (!eqCard) {
-          set(card, 'status', 'removedCard');
+          set(card, 'status', 'removed');
           set(compField, 'compCollection', [ ...compField.compCollection, card ]);
         }
       }

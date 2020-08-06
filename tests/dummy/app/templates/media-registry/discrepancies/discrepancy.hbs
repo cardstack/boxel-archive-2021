@@ -1,7 +1,7 @@
 <section class="discrepancy" {{did-insert this.reset}}>
   <div class="discrepancy__container">
     <header class="discrepancy__header">
-      <h1 class="discrepancy__title">Discrepancy Card: Missing Data</h1>
+      <h1 class="discrepancy__title">Discrepancy Card: Additional Data</h1>
       <div class="discrepancy__mode-btn">
         <LinkTo @route="media-registry.item.musical-work" @model={{@model.baseCard}} @class="mode-indicator mode-indicator--revision">
           Comparison Mode
@@ -47,13 +47,6 @@
               @field={{or field.new field}}
               @comparisonMode={{field.new}}
               @discrepancyView={{field.new}}
-              @expandAction={{@expandAction}}
-              @addedValues={{this.addedValues}}
-              @changedFields={{this.changedFields}}
-              @addedCards={{this.addedCards}}
-              @modifiedValues={{this.modifiedValues}}
-              @modifiedCards={{this.modifiedCards}}
-              @removedValues={{this.removedValues}}
             />
             {{#if field.new}}
               <IconButton @class="discrepancy-field__btn discrepancy-field__btn--revert" @icon="carot" {{on "click" (fn this.revertField field)}} />
@@ -63,23 +56,20 @@
             {{#each @model.compCard.isolatedFields as |compField|}}
               {{#if (eq compField.title field.title)}}
                 {{compute (fn this.compareFields field compField)}}
-                {{#if (and (not field.new) (not-eq compField.status 'same') (not-eq compField.type 'collection'))}}
+                {{#if (and (not field.new) compField.status)}}
                   <IconButton @class="discrepancy-field__btn" @icon="carot" @variant="primary" {{on "click" (fn this.reconciliateField field compField)}} />
                 {{/if}}
-                {{uppercase compField.status}}
-                <FieldRenderer
-                  @mode="view"
-                  @class="comp-card"
-                  @comparisonMode={{not field.new}}
-                  @discrepancyView={{not field.new}}
-                  @field={{compField}}
-                  @addedValues={{this.addedValues}}
-                  @changedFields={{this.changedFields}}
-                  @addedCards={{this.addedCards}}
-                  @modifiedValues={{this.modifiedValues}}
-                  @modifiedCards={{this.modifiedCards}}
-                  @removedValues={{this.removedValues}}
-                />
+                <Boxel>
+                  <BoxelHighlight @on={{compField.status}} @status={{compField.status}} />
+                  <BoxelActions @status={{compField.status}} />
+                  <FieldRenderer
+                    @mode="view"
+                    @class="comp-card"
+                    @field={{compField}}
+                    @comparisonMode={{not field.new}}
+                    @discrepancyView={{not field.new}}
+                  />
+                </Boxel>
               {{/if}}
             {{/each}}
           </div>
