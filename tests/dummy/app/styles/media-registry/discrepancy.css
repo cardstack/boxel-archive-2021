@@ -13,6 +13,7 @@
 .discrepancy__container {
   height: 100%;
   max-width: 1440px;
+  margin: 0 auto;
   padding: 20px;
 }
 
@@ -100,6 +101,13 @@
   border-radius: 100px;
   top: 40%;
   left: -45px;
+  right: auto;
+}
+
+.discrepancy-field__btn--revert {
+  left: auto;
+  right: -45px;
+  transform: rotate(180deg);
 }
 
 

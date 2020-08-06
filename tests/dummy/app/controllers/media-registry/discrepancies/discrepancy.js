@@ -88,14 +88,21 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
 
   @action
   reconciliateField(field, compField) {
-    set(field, 'value', compField.value);
+    set(field, 'new', {});
+    set(field.new, 'title', compField.title);
+    set(field.new, 'value', compField.value);
 
     if (compField.type) {
-      set(field, 'type', compField.type);
+      set(field.new, 'type', compField.type);
     }
 
     if (compField.component) {
-      set(field, 'component', compField.component);
+      set(field.new, 'component', compField.component);
     }
+  }
+
+  @action
+  revertField(field) {
+    set(field, 'new', false);
   }
 }

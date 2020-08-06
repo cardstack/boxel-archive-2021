@@ -44,21 +44,34 @@
             <FieldRenderer
               @mode="view"
               @class="base-card"
-              @field={{field}}
+              @field={{or field.new field}}
+              @comparisonMode={{field.new}}
+              @discrepancyView={{field.new}}
               @expandAction={{@expandAction}}
+              @addedValues={{this.addedValues}}
+              @changedFields={{this.changedFields}}
+              @addedCards={{this.addedCards}}
+              @modifiedValues={{this.modifiedValues}}
+              @modifiedCards={{this.modifiedCards}}
+              @removedValues={{this.removedValues}}
             />
+            {{#if field.new}}
+              <IconButton @class="discrepancy-field__btn discrepancy-field__btn--revert" @icon="carot" {{on "click" (fn this.revertField field)}} />
+            {{/if}}
           </div>
           <div class="discrepancy-field">
             {{#with (find-by "title" field.title @model.compCard.isolatedFields) as |compField|}}
               {{#if (not (is-equal field.value compField.value) (eq field.title "verifi_id"))}}
                 {{#with (compute (fn this.compareFields field compField)) as |return|}}
                   {{#if return}}
-                    <IconButton @class="discrepancy-field__btn" @icon="carot" @variant="primary" {{on "click" (fn this.reconciliateField field compField)}} />
+                    {{#unless field.new}}
+                      <IconButton @class="discrepancy-field__btn" @icon="carot" @variant="primary" {{on "click" (fn this.reconciliateField field compField)}} />
+                    {{/unless}}
                     <FieldRenderer
                       @mode="view"
                       @class="comp-card"
-                      @comparisonMode={{true}}
-                      @discrepancyView={{true}}
+                      @comparisonMode={{not field.new}}
+                      @discrepancyView={{not field.new}}
                       @field={{compField}}
                       @addedValues={{this.addedValues}}
                       @changedFields={{this.changedFields}}
@@ -66,7 +79,6 @@
                       @modifiedValues={{this.modifiedValues}}
                       @modifiedCards={{this.modifiedCards}}
                       @removedValues={{this.removedValues}}
-                      @expandAction={{@expandAction}}
                     />
                   {{/if}}
                 {{/with}}
