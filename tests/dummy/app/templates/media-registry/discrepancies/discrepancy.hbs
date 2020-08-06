@@ -86,6 +86,22 @@
             {{/with}}
           </div>
         {{/each}}
+
+        <div class="discrepancy-card__footer">
+          <div class="discrepancy__count-btn-container {{if this.count "visible"}}">
+            {{#if this.count}}
+              <PillButton @class="discrepancy__count-btn" @variant="primary">
+                {{#if (eq this.count 1)}}
+                  Make 1 change to your version
+                {{else}}
+                  Make {{this.count}} changes to your version
+                {{/if}}
+              </PillButton>
+            {{/if}}
+          </div>
+        </div>
+
+        <div class="discrepancy-card__footer"></div>
       </div>
     </div>
   </div>

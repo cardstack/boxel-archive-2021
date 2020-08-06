@@ -4,6 +4,7 @@ import { tracked } from '@glimmer/tracking';
 import { typeOf } from '@ember/utils';
 
 export default class MediaRegistryDiscrepanciesDiscrepancyController extends Controller {
+  @tracked count = 0;
   @tracked addedValues = [];
   @tracked changedFields = [];
   @tracked addedCards = [];
@@ -13,6 +14,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
 
   @action
   reset() {
+    this.count = 0;
     this.addedValues = [];
     this.changedFields = [];
     this.addedCards = [];
@@ -99,10 +101,13 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     if (compField.component) {
       set(field.new, 'component', compField.component);
     }
+
+    this.count++;
   }
 
   @action
   revertField(field) {
     set(field, 'new', false);
+    this.count--;
   }
 }
