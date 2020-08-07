@@ -57,7 +57,7 @@
               <PillButton @class="discrepancy-field__btn--reset-btn" {{on "click" (fn this.revertField field)}}>Reset</PillButton>
             {{/if}}
             <FieldRenderer
-              @mode="comparison"
+              @mode="view"
               @class="discrepancy-field-renderer base-card-field {{if (eq this.mode "comparison") "comp-view"}}"
               @field={{if field.new field.new field}}
               @comparisonMode={{if field.new true false}}

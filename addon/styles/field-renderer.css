@@ -224,3 +224,16 @@
 .field-renderer__dropdown .cs-dropdown .ember-power-select-status-icon {
   background: url('/assets/images/icons/dropdown-arrows.svg') center/contain no-repeat;
 }
+
+/* comparison mode */
+.field-renderer--comparison-mode {
+  padding: 0;
+}
+
+.field-renderer__card {
+  min-height: auto;
+}
+
+.field-renderer__inner {
+  padding: 15px;
+}
