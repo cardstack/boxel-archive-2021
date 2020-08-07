@@ -115,9 +115,10 @@
           {{#if @discrepancyView}}
             <EmbeddedCollection
               @collection={{or @field.compCollection @field.value}}
+              @title={{@field.title}}
               @format={{@field.format}}
               @cardComponent={{@field.component}}
-              @comparisonMode={{@comparisonMode}}
+              @discrepancyView={{@discrepancyView}}
               @selectChange={{@selectChange}}
             />
           {{else}}

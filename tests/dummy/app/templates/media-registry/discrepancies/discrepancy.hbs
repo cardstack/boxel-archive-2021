@@ -1,4 +1,4 @@
-<section class="discrepancy" {{did-insert this.reset}}>
+<section class="discrepancy" {{did-insert this.adjustCount}}>
   <div class="discrepancy__container">
     <header class="discrepancy__header">
       <h1 class="discrepancy__title">Discrepancy Card: Additional Data</h1>
@@ -47,17 +47,19 @@
               @field={{or field.new field}}
               @comparisonMode={{field.new}}
               @discrepancyView={{field.new}}
+              @selectChange={{this.selectChange}}
             />
             {{#if field.new}}
-              <IconButton @class="discrepancy-field__btn discrepancy-field__btn--revert" @icon="carot" {{on "click" (fn this.revertField field)}} />
+              <IconButton @class="discrepancy-field__btn discrepancy-field__btn--noop" @icon="carot" />
+              <PillButton @class="discrepancy-field__btn--reset-btn" {{on "click" (fn this.revertField field)}}>Reset</PillButton>
             {{/if}}
           </div>
           <div class="discrepancy-field">
             {{#each @model.compCard.isolatedFields as |compField|}}
               {{#if (eq compField.title field.title)}}
                 {{compute (fn this.compareFields field compField)}}
-                {{#if (and (not field.new) compField.status)}}
-                  <IconButton @class="discrepancy-field__btn" @icon="carot" @variant="primary" {{on "click" (fn this.reconciliateField field compField)}} />
+                {{#if (and (not field.new) compField.status (not-eq field.title "verifi_id"))}}
+                  <IconButton @class="discrepancy-field__btn" @icon="carot" {{on "click" (fn this.reconciliateField field compField)}} />
                 {{/if}}
                 <Boxel>
                   <BoxelHighlight @on={{compField.status}} @status={{compField.status}} />
@@ -68,6 +70,7 @@
                     @field={{compField}}
                     @comparisonMode={{not field.new}}
                     @discrepancyView={{not field.new}}
+                    @selectChange={{this.selectChange}}
                   />
                 </Boxel>
               {{/if}}
@@ -76,13 +79,13 @@
         {{/each}}
 
         <div class="discrepancy-card__footer">
-          <div class="discrepancy__count-btn-container {{if this.count "visible"}}">
-            {{#if this.count}}
+          <div class="discrepancy__count-btn-container {{if this.model.count "visible"}}">
+            {{#if this.model.count}}
               <PillButton @class="discrepancy__count-btn" @variant="primary">
-                {{#if (eq this.count 1)}}
+                {{#if (eq this.model.count 1)}}
                   Make 1 change to your version
                 {{else}}
-                  Make {{this.count}} changes to your version
+                  Make {{this.model.count}} changes to your version
                 {{/if}}
               </PillButton>
             {{/if}}

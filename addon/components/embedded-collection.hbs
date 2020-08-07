@@ -5,7 +5,20 @@
 
 {{else}}
   {{#each @collection as |val i|}}
-    {{#if @comparisonMode}}
+    {{#if @discrepancyView}}
+      <Boxel>
+        {{#if val.new}}
+          <IconButton @class="discrepancy-field__btn embedded-collection__discrepancy-btn discrepancy-field__btn--noop" @icon="carot" disabled />
+          <PillButton @class="discrepancy-field__btn--reset-btn embedded-collection__discrepancy-btn">Reset</PillButton>
+          {{component (or @cardComponent "card") model=val mode="view"}}
+        {{else}}
+          {{#if (and @selectChange val.status)}}
+            <IconButton @class="discrepancy-field__btn embedded-collection__discrepancy-btn" @icon="carot" {{on "click" (optional (fn @selectChange val @title @cardComponent))}} />
+          {{/if}}
+          {{component (or @cardComponent "card") model=val mode="view" status=val.status}}
+        {{/if}}
+      </Boxel>
+    {{else if @comparisonMode}}
       {{#let (find-by "id" val.id @addedCards) (find-by "id" val.id @changedCards) as |added changed|}}
         {{#if (lt i this.displayCount)}}
           <div>
@@ -31,7 +44,7 @@
       {{/if}}
     {{else}}
       {{#if (lt i this.displayCount)}}
-        {{component (or @cardComponent "card") model=val mode="view" status=val.status}}
+        {{component (or @cardComponent "card") model=val mode="view"}}
       {{/if}}
     {{/if}}
 

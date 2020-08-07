@@ -1,26 +1,18 @@
 import Controller from '@ember/controller';
 import { action, set } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import { typeOf } from '@ember/utils';
 
 export default class MediaRegistryDiscrepanciesDiscrepancyController extends Controller {
-  @tracked count = 0;
-  @tracked addedValues = [];
-  @tracked changedFields = [];
-  @tracked addedCards = [];
-  @tracked modifiedValues = [];
-  @tracked modifiedCards = [];
-  @tracked removedValues = [];
+  @tracked count;
 
   @action
-  reset() {
-    this.count = 0;
-    this.addedValues = [];
-    this.changedFields = [];
-    this.addedCards = [];
-    this.modifiedValues = [];
-    this.modifiedCards = [];
-    this.removedValues = [];
+  adjustCount() {
+    if (this.model.count) {
+      this.count = this.model.count;
+    } else {
+      this.count = 0;
+      set(this.model, 'count', this.count);
+    }
   }
 
   @action
@@ -39,35 +31,16 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     }
 
     if (!field.value && compField.value) {
-      if (compField.type === 'card' || compField.id) {
-        set(compField.value, 'status', 'added');
-        return;
-      }
       set(compField, 'status', 'added');
       return;
-    } // added
+    }
 
     if (field.value && !compField.value) {
-      if (field.type === 'card' || compField.id) {
-        set(compField.value, 'status', 'removed');
-        set(compField.value, 'oldValue', field.value);
-        return;
-      }
       set(compField, 'status', 'removed');
-      set(compField, 'oldValue', field.value);
       return;
     } // removed
 
-    if (compField.type === 'card' || compField.id) {
-      if (field.type === 'card' || field.id) {
-        set(compField.value, 'status', 'modified');
-        set(compField.value, 'oldValue', field.value);
-        return;
-      }
-    } // modified
-
     set(compField, 'status', 'modified');
-    set(compField, 'oldValue', field.value);
     return;
   }
 
@@ -133,11 +106,34 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     }
 
     this.count++;
+    set(this.model, 'count', this.count);
   }
 
   @action
   revertField(field) {
     set(field, 'new', false);
     this.count--;
+    set(this.model, 'count', this.count);
+  }
+
+  @action selectChange(val, title, component) {
+    let collection = this.model.baseCard.isolatedFields.find(el => el.title === title);
+
+    if (collection && collection.value) {
+      let item = collection.value.find(el => el.id === val.id);
+      if (item) {
+        set(item, 'new', val);
+      } else {
+        set(collection, 'value', [ ...collection.value, val ]);
+      }
+    } else {
+      set(collection, 'value', [ val ]);
+      set(collection, 'type', 'collection');
+      set(collection, 'component', component);
+    }
+
+    set(val, 'new', true);
+    this.count++;
+    set(this.model, 'count', this.count);
   }
 }
