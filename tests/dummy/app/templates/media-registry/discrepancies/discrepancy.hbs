@@ -62,8 +62,8 @@
                   <IconButton @class="discrepancy-field__btn" @icon="carot" {{on "click" (fn this.reconciliateField field compField)}} />
                 {{/if}}
                 <Boxel>
-                  <BoxelHighlight @on={{compField.status}} @status={{compField.status}} />
-                  <BoxelActions @status={{compField.status}} />
+                  <BoxelHighlight @status={{if field.new '' compField.status}} />
+                  <BoxelActions @status={{if field.new '' compField.status}} />
                   <FieldRenderer
                     @mode="view"
                     @class="comp-card"
