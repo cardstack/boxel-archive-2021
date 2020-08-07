@@ -105,6 +105,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     set(field, 'new', {});
     set(field.new, 'title', compField.title);
     set(field.new, 'value', compField.value);
+    set(field.new, 'status', compField.status);
 
     if (compField.type) {
       set(field.new, 'type', compField.type);
@@ -144,7 +145,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
 
     this.displayId = [ ...this.displayId, val.id];
     set(this.model, 'displayId', this.displayId);
-    // set(val, 'new', true);
+
     this.count++;
     set(this.model, 'count', this.count);
   }

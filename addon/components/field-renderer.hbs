@@ -83,6 +83,10 @@
     {{/if}}
     <div class="field-renderer__title">{{humanize @field.title}}</div>
     <Boxel @class="field-renderer__value {{if (eq @field.type "image") "field-renderer__value--img-field"}}">
+      {{#if (and @discrepancyView (not-eq @field.type "card"))}}
+        <BoxelHighlight @offsetHighlight={{true}} @status={{@field.status}} />
+        <BoxelActions @offsetHighlight={{true}} @status={{@field.status}} />
+      {{/if}}
       {{#if (and @comparisonMode (contains @field.title @addedValues))}}
         <BoxelHighlight @offsetHighlight={{true}} @status="added" />
         <BoxelActions @offsetHighlight={{true}} @status="added" />
@@ -109,7 +113,7 @@
               {{component (or @field.component "card") model=@field.value mode="view"}}
             </Boxel>
           {{else}}
-            {{component (or @field.component "card") model=@field.value mode="view" status=@field.value.status}}
+            {{component (or @field.component "card") model=@field.value mode="view" status=(if @discrepancyView @field.status)}}
           {{/if}}
         {{else if (eq @field.type "collection")}}
           {{#if @discrepancyView}}

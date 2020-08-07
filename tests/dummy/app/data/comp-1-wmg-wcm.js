@@ -1,6 +1,29 @@
 
 import { WCM, AMP, VALENTINO_PR, EMILIO_PR } from "./comp-data";
 
+const VALENTINO_SOLANO_MISSING = {
+  "id": "valentino-solano",
+  "type": "participant",
+  "title": "Valentino Solano"
+};
+
+const VALENTINO_PR_MISSING = {
+  id: 'valentino-solano-pr',
+  type: 'publishing-representation',
+  writer: VALENTINO_SOLANO_MISSING,
+  role: 'Lyricist',
+  publisher: {
+    title: 'publisher',
+    value: [
+      {
+        title: 'Worldwide',
+        type: 'collection',
+        value: [ WCM ]
+      }
+    ]
+  }
+};
+
 export default {
   id: "mw-the-sun-comes-out-wmg-wcm",
   baseCard: {
@@ -20,7 +43,7 @@ export default {
         type: "collection",
         component: "cards/publishing-representation",
         value: [
-          VALENTINO_PR
+          VALENTINO_PR_MISSING
         ]
       },
       {

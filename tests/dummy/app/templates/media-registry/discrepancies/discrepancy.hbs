@@ -41,18 +41,17 @@
         </div>
         {{#each @model.baseCard.isolatedFields as |field|}}
           <div class="discrepancy-field {{format-id field.title}}">
-            <FieldRenderer
-              @mode="view"
-              @class="base-card"
-              @field={{or field.new field}}
-              @comparisonMode={{field.new}}
-              @discrepancyView={{field.new}}
-              @selectChange={{this.selectChange}}
-            />
             {{#if field.new}}
               <IconButton @class="discrepancy-field__btn discrepancy-field__btn--noop" @icon="carot" />
               <PillButton @class="discrepancy-field__btn--reset-btn" {{on "click" (fn this.revertField field)}}>Reset</PillButton>
             {{/if}}
+            <FieldRenderer
+              @mode="view"
+              @class="base-card"
+              @field={{if field.new field.new field}}
+              @comparisonMode={{if field.new true false}}
+              @discrepancyView={{if field.new true false}}
+            />
           </div>
           <div class="discrepancy-field">
             {{#each @model.compCard.isolatedFields as |compField|}}
@@ -61,20 +60,16 @@
                 {{#if (and (not field.new) compField.status (not-eq field.title "verifi_id"))}}
                   <IconButton @class="discrepancy-field__btn" @icon="carot" {{on "click" (fn this.reconciliateField field compField)}} />
                 {{/if}}
-                <Boxel>
-                  <BoxelHighlight @status={{if field.new '' compField.status}} />
-                  <BoxelActions @status={{if field.new '' compField.status}} />
-                  <FieldRenderer
-                    @mode="view"
-                    @class="comp-card"
-                    @field={{compField}}
-                    @comparisonMode={{not field.new}}
-                    @discrepancyView={{not field.new}}
-                    @displayId={{this.model.displayId}}
-                    @selectChange={{this.selectChange}}
-                    @revertChange={{this.revertChange}}
-                  />
-                </Boxel>
+                <FieldRenderer
+                  @mode="view"
+                  @class="comp-card"
+                  @field={{compField}}
+                  @comparisonMode={{if (eq compField.type 'collection') true (not field.new)}}
+                  @discrepancyView={{if (eq compField.type 'collection') true (not field.new)}}
+                  @displayId={{this.model.displayId}}
+                  @selectChange={{this.selectChange}}
+                  @revertChange={{this.revertChange}}
+                />
               {{/if}}
             {{/each}}
           </div>
