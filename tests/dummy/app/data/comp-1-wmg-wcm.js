@@ -126,6 +126,7 @@ export default {
       },
       {
         title: 'ownership_splits',
+        type: 'manuscript-share',
         value: [
             {
               title: 'Valentino Solano (Lyricist)',
@@ -139,6 +140,7 @@ export default {
       },
       {
         title: 'publisher',
+        type: 'territory',
         value: [
           {
             title: 'Worldwide',

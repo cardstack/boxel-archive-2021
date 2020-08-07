@@ -19,8 +19,8 @@ export const AMP = {
 export const WCM = {
   type: 'publisher',
   territory: 'worldwide',
-  id: 'warner-chappel-music',
-  title: 'Warner Chappel Music',
+  id: 'warner-chappell-music',
+  title: 'Warner Chappell Music',
   fields: [
     {
       title: 'website',

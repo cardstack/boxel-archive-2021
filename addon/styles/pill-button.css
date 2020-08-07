@@ -11,6 +11,12 @@
   outline: 0;
 }
 
+.boxel-pill-btn__inverse {
+  background-color: var(--boxel-dark-purple);
+  color: white;
+  border-color: #666;
+}
+
 .boxel-pill-btn__primary {
   background-color: var(--boxel-highlight);
   border-color: var(--boxel-highlight);

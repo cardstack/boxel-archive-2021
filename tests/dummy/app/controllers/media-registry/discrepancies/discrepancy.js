@@ -6,6 +6,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   @tracked count;
   @tracked displayId;
   @tracked removed = [];
+  @tracked mode = 'comparison';
 
   @action
   adjustCount() {
@@ -21,6 +22,15 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     } else {
       this.displayId = [];
       set(this.model, 'displayId', []);
+    }
+  }
+
+  @action
+  toggleView() {
+    if (this.mode === 'comparison') {
+      this.mode = 'display';
+    } else {
+      this.mode = 'comparison';
     }
   }
 
