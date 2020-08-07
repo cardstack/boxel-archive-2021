@@ -4,6 +4,8 @@ import { tracked } from '@glimmer/tracking';
 
 export default class MediaRegistryDiscrepanciesDiscrepancyController extends Controller {
   @tracked count;
+  @tracked displayId;
+  @tracked removed = [];
 
   @action
   adjustCount() {
@@ -12,6 +14,13 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     } else {
       this.count = 0;
       set(this.model, 'count', this.count);
+    }
+
+    if (this.model.displayId) {
+      this.displayId = this.model.displayId;
+    } else {
+      this.displayId = [];
+      set(this.model, 'displayId', []);
     }
   }
 
@@ -121,6 +130,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
 
     if (collection && collection.value) {
       let item = collection.value.find(el => el.id === val.id);
+
       if (item) {
         set(item, 'new', val);
       } else {
@@ -132,8 +142,32 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
       set(collection, 'component', component);
     }
 
-    set(val, 'new', true);
+    this.displayId = [ ...this.displayId, val.id];
+    set(this.model, 'displayId', this.displayId);
+    // set(val, 'new', true);
     this.count++;
     set(this.model, 'count', this.count);
+  }
+
+  @action revertChange(val, title) {
+    let collection = this.model.baseCard.isolatedFields.find(el => el.title === title);
+    this.displayId = this.displayId.filter(el => el !== val.id);
+    set(this.model, 'displayId', this.displayId);
+
+    if (collection && collection.value) {
+      this.removed.push(val);
+      let newColl = collection.value.filter(el => !this.removed.includes(el));
+      set(collection, 'value', newColl);
+      this.removed = [];
+    } else {
+      set(collection, 'value', null);
+      set(collection, 'type', null);
+      set(collection, 'component', null);
+    }
+
+    if (this.count > 0) {
+      this.count--;
+      set(this.model, 'count', this.count);
+    }
   }
 }

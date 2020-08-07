@@ -7,13 +7,15 @@
   {{#each @collection as |val i|}}
     {{#if @discrepancyView}}
       <Boxel>
-        {{#if val.new}}
-          <IconButton @class="discrepancy-field__btn embedded-collection__discrepancy-btn discrepancy-field__btn--noop" @icon="carot" disabled />
-          <PillButton @class="discrepancy-field__btn--reset-btn embedded-collection__discrepancy-btn">Reset</PillButton>
+        {{#if (contains val.id @displayId)}}
+          {{#if @revertChange}}
+            <IconButton @class="discrepancy-field__btn embedded-collection__discrepancy-btn discrepancy-field__btn--noop" @icon="carot" disabled />
+            <PillButton @class="discrepancy-field__btn--reset-btn embedded-collection__discrepancy-btn" {{on "click" (fn @revertChange val @title)}}>Reset</PillButton>
+          {{/if}}
           {{component (or @cardComponent "card") model=val mode="view"}}
         {{else}}
           {{#if (and @selectChange val.status)}}
-            <IconButton @class="discrepancy-field__btn embedded-collection__discrepancy-btn" @icon="carot" {{on "click" (optional (fn @selectChange val @title @cardComponent))}} />
+            <IconButton @class="discrepancy-field__btn embedded-collection__discrepancy-btn" @icon="carot" {{on "click" (fn @selectChange val @title @cardComponent)}} />
           {{/if}}
           {{component (or @cardComponent "card") model=val mode="view" status=val.status}}
         {{/if}}
