@@ -2,7 +2,9 @@
   <div class="card__gradient" />
   {{#if @status}}
     <BoxelHighlight @status={{@status}} />
-    <BoxelActions @status={{@status}} />
+    <BoxelActions @status={{@status}}>
+      {{if @statusText @statusText (if (eq @status "no-change") "Same data" @status)}}
+    </BoxelActions>
   {{/if}}
   {{#if @expandAction}}
     <BoxelHighlight {{on "click" @expandAction}} @class="boxel-card__expand-overlay" />
@@ -11,7 +13,7 @@
     <header class="boxel-card__header">
       {{humanize @model.type}}
     </header>
-    <div class="boxel-card__inner boxel-card__inner--with-img boxel-card__inner--{{or @format "list"}}">
+    <div class="boxel-card__inner boxel-card__inner--with-img boxel-card__inner--{{or @format "list"}} {{if (and @status (not-eq @status "no-change")) "" "field-renderer__opacity-control"}}">
       {{#if (eq @model.organization "verifi")}}
         <div class="boxel-card__profile-org" />
       {{/if}}

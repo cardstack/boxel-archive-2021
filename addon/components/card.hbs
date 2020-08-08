@@ -5,7 +5,9 @@
   {{/if}}
   {{#if @status}}
     <BoxelHighlight @status={{@status}} />
-    <BoxelActions @status={{@status}} />
+    <BoxelActions @status={{@status}}>
+      {{if @statusText @statusText (if (eq @status "no-change") "Same data" @status)}}
+    </BoxelActions>
   {{/if}}
   {{#if @expandAction}}
     <BoxelHighlight {{on "click" @expandAction}} @class="boxel-card__expand-overlay" />
@@ -16,7 +18,7 @@
         {{humanize @model.type}}
       </header>
     {{/if}}
-    <div class="boxel-card__inner boxel-card__inner--{{or @format "list"}} {{if (or @model.imgURL @hasImage) "boxel-card__inner--with-img"}}">
+    <div class="boxel-card__inner boxel-card__inner--{{or @format "list"}} {{if (or @model.imgURL @hasImage) "boxel-card__inner--with-img"}} {{if (and @status (not-eq @status "no-change")) "" "field-renderer__opacity-control"}}">
       {{#if @model.imgURL}}
         <div class="boxel-card__bg-img" style={{css-url "background-image" @model.imgURL}} />
       {{/if}}

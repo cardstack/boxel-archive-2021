@@ -179,6 +179,25 @@
   border-left: 1px solid #696969;
 }
 
+.discrepancy-field--base-field.linked-view,
+.discrepancy-field--comp-field.keep-current-view,
+.discrepancy-field--comp-field.comparison-view {
+  background-color: #EDEDEF;
+}
+
+.discrepancy-field--base-field.linked-view .field-renderer__opacity-control,
+.discrepancy-field--comp-field.keep-current-view .field-renderer__opacity-control,
+.discrepancy-field--comp-field.comparison-view .field-renderer__opacity-control {
+  opacity: 0.25;
+}
+
+.discrepancy-field--base-field.linked-view .field-renderer__meta-field *,
+.discrepancy-field--comp-field.keep-current-view .field-renderer__meta-field *,
+.discrepancy-field--comp-field.comparison-view .field-renderer__meta-field * {
+  opacity: initial;
+}
+
+
 .discrepancy-field__btn {
   position: absolute;
   width: 60px;
@@ -281,10 +300,6 @@
     width: 685px;
   }
 
-  .discrepancy__count-btn-container--linked {
-    width: 666px;
-  }
-
   .discrepancy__count-btn-container--comparison {
     width: 755px;
   }
@@ -311,4 +326,8 @@
   visibility: collapse;
   width: 90px;
   transition: width 0.2s ease-out, visibility 0.2s ease-out;
+}
+
+.discrepancy-field-renderer.base-card-field.comp-view * {
+  opacity: 1;
 }
