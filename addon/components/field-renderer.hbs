@@ -78,7 +78,7 @@
   <Boxel @class="field-renderer field-renderer--comparison-mode field-renderer--{{@field.type}} {{format-id @field.title}}-field {{@class}}">
     <div class="field-renderer__title">{{humanize @field.title}}</div>
     <div class="field-renderer__value">
-      {{#if (eq @field.type "card")}}
+      {{#if (and @field.value (eq @field.type "card"))}}
         {{component (or @field.component "card") model=@field.value mode="view" status=(if @discrepancyView @field.status)}}
       {{else if (eq @field.type "collection")}}
         {{#each @field.value as |val|}}
@@ -97,7 +97,7 @@
             {{/if}}
           </Boxel>
         {{/each}}
-      {{else if (is-array @field.value)}}
+      {{else if (and @field.value (is-array @field.value))}}
         <CardPlatter @class="field-renderer__card">
           {{#if @discrepancyView}}
             <BoxelHighlight @status={{@field.status}} />
@@ -126,16 +126,18 @@
           </div>
         </CardPlatter>
       {{else}}
-        <CardPlatter @class="field-renderer__card">
-          {{#if @discrepancyView}}
+        {{#if @field.value}}
+          <CardPlatter @class="field-renderer__card">
             <BoxelHighlight @status={{@field.status}} />
             <BoxelActions @status={{@field.status}} />
-          {{/if}}
-          <header class="boxel-card__header">{{if @field.type (humanize @field.type) "text"}}</header>
-          <div class="field-renderer__inner">
-            {{@field.value}}
-          </div>
-        </CardPlatter>
+            <header class="boxel-card__header">{{if @field.type (humanize @field.type) "text"}}</header>
+            <div class="field-renderer__inner">
+              {{@field.value}}
+            </div>
+          </CardPlatter>
+        {{else}}
+          <CardPlatter @class="field-renderer__card field-renderer__card--blank" />
+        {{/if}}
       {{/if}}
     </div>
   </Boxel>

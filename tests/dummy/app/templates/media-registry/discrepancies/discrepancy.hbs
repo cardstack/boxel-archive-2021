@@ -70,7 +70,7 @@
               <PillButton @class="discrepancy-field__btn--reset-btn" {{on "click" (fn this.revertField field)}}>Reset</PillButton>
             {{/if}}
             <FieldRenderer
-              @mode="view"
+              @mode={{if (eq this.mode "keep-current") "view" "comparison"}}
               @class="discrepancy-field-renderer base-card-field {{if (eq this.mode "comparison") "comp-view"}}"
               @field={{if field.new field.new field}}
               @comparisonMode={{if field.new true false}}
@@ -85,7 +85,7 @@
                   <IconButton @class="discrepancy-field__btn" @icon="carot" {{on "click" (fn this.reconciliateField field compField)}} />
                 {{/if}}
                 <FieldRenderer
-                  @mode="comparison"
+                  @mode={{if (eq this.mode "linked") "view" "comparison"}}
                   @class="discrepancy-field-renderer comp-card-field {{if (eq this.mode "comparison") "comp-view"}}"
                   @field={{compField}}
                   @comparisonMode={{if (eq compField.type 'collection') true (not field.new)}}

@@ -232,8 +232,15 @@
 
 .field-renderer__card {
   min-height: auto;
+  border: var(--boxel-border);
+  box-shadow: none;
 }
 
 .field-renderer__inner {
   padding: 15px;
+}
+
+.field-renderer__card--blank {
+  height: 180px;
+  border: 1.5px dashed var(--boxel-border-color);
 }
