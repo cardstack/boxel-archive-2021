@@ -29,26 +29,39 @@
     <div class="discrepancy__main {{if (eq this.mode "comparison") "discrepancy__main--comp-view"}}">
       <div class="discrepancy__comparison-header {{if (eq this.mode "comparison") "discrepancy__comparison-header--comp-mode"}}">
         Comparison between these 2 versions
-        <PillButton {{on "click" this.toggleView}} @class="discrepancy-card__header-btn {{if (eq this.mode "comparison") "checked"}}" @variant="inverse">
+        <PillButton
+          {{on "click" this.toggleView}}
+          @class="discrepancy-card__header-btn {{if (eq this.mode "comparison") "checked"}}"
+        >
           Resolve discrepancies
         </PillButton>
       </div>
       <div class="discrepancy__cards {{if (eq this.mode "comparison") "discrepancy__cards--comp-view"}}">
-        <div class="discrepancy-card__header my-stuff">
-          <div class="discrepancy-card__header-label">My stuff</div>
+        <div class="discrepancy-card__header your-version {{if (eq this.mode "keep-current") "selected-version"}}">
+          <div class="discrepancy-card__header-label">Your version</div>
           <div>
             <div class="discrepancy-card__title">{{@model.baseCard.owner}}</div>
             <div class="discrepancy-card__datetime">{{moment-format @model.baseCard.datetime "MMM D, YYYY h:mm A"}}</div>
           </div>
-          <PillButton @class="discrepancy-card__header-btn" @variant="inverse">Keep current version</PillButton>
+          <PillButton
+            {{on "click" (fn this.selectView "keep-current")}}
+            @class="discrepancy-card__header-btn {{if (eq this.mode "keep-current") "checked"}}"
+          >
+            Keep current version
+            </PillButton>
         </div>
-        <div class="discrepancy-card__header other-version">
+        <div class="discrepancy-card__header other-version {{if (eq this.mode "linked") "selected-version"}}">
           <div class="discrepancy-card__header-label">Other version</div>
           <div>
             <div class="discrepancy-card__title">{{@model.compCard.owner}}</div>
             <div class="discrepancy-card__datetime">{{moment-format @model.compCard.datetime "MMM D, YYYY h:mm A"}}</div>
           </div>
-          <PillButton @class="discrepancy-card__header-btn" @variant="inverse">Link this version</PillButton>
+          <PillButton
+            {{on "click" (fn this.selectView "linked")}}
+            @class="discrepancy-card__header-btn {{if (eq this.mode "linked") "checked"}}"
+          >
+            Link this version
+          </PillButton>
         </div>
         {{#each @model.baseCard.isolatedFields as |field|}}
           <div class="discrepancy-field discrepancy-field--base-field {{format-id field.title}} {{if (eq this.mode "comparison") "comp-view"}}">
@@ -87,8 +100,8 @@
         {{/each}}
 
         <div class="discrepancy-card__footer">
-          <div class="discrepancy__count-btn-container discrepancy__count-btn-container--left {{if (and this.model.count (eq this.mode "comparison")) "visible"}}">
-            {{#if this.model.count}}
+          <div class="discrepancy__count-btn-container discrepancy__count-btn-container--{{this.mode}} container-left {{if (or (and this.model.count (eq this.mode "comparison")) (eq this.mode "keep-current")) "visible"}}">
+            {{#if (and this.model.count (eq this.mode "comparison"))}}
               <PillButton @class="discrepancy__count-btn" @variant="primary">
                 {{#if (eq this.model.count 1)}}
                   Make 1 change to your version
@@ -96,15 +109,20 @@
                   Make {{this.model.count}} changes to your version
                 {{/if}}
               </PillButton>
+            {{else if (eq this.mode "keep-current")}}
+              <PillButton @class="discrepancy__count-btn" @variant="primary">
+                Keep current version
+              </PillButton>
             {{/if}}
           </div>
         </div>
 
         <div class="discrepancy-card__footer">
-          <div class="discrepancy__count-btn-container discrepancy__count-btn-container--right {{if this.CONDITION "visible"}}">
-            {{#if this.CONDITION}}
+          <div class="discrepancy__count-btn-container discrepancy__count-btn-container--{{this.mode}} container-right {{if (eq this.mode "linked") "visible"}}">
+            {{#if (eq this.mode "linked")}}
+              <div class="discrepancy__count-btn__link-copy">Your entry will always reflect the updated version of this {{lowercase (humanize this.model.compCard.type)}} card.</div>
               <PillButton @class="discrepancy__count-btn" @variant="primary">
-
+                Link this {{lowercase (humanize this.model.compCard.type)}} card
               </PillButton>
             {{/if}}
           </div>
