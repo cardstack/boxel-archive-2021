@@ -123,10 +123,13 @@
         <div class="discrepancy-card__footer discrepancy-field--comp-field {{this.mode}}-view">
           <div class="discrepancy__count-btn-container discrepancy__count-btn-container--{{this.mode}} container-right {{if (eq this.mode "linked") "visible"}}">
             {{#if (eq this.mode "linked")}}
-              <div class="discrepancy__count-btn__link-copy">Your entry will always reflect the updated version of this {{lowercase (humanize this.model.compCard.type)}} card.</div>
               <PillButton @class="discrepancy__count-btn" @variant="primary">
                 Link this {{lowercase (humanize this.model.compCard.type)}} card
               </PillButton>
+              <div class="discrepancy__count-btn__link-copy">
+                Your entry will always reflect the updated version of this
+                {{lowercase (humanize this.model.compCard.type)}} card.
+              </div>
             {{/if}}
           </div>
         </div>
