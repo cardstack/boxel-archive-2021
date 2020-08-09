@@ -24,6 +24,9 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
       this.displayId = [];
       set(this.model, 'displayId', []);
     }
+
+    this.mode = 'comparison';
+    this.lastSelection = null;
   }
 
   @action
