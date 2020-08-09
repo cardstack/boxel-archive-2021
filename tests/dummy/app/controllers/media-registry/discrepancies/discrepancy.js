@@ -135,26 +135,15 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
 
   @action
   reconciliateField(field, compField) {
-    set(field, 'new', {});
-    set(field.new, 'title', compField.title);
-    set(field.new, 'value', compField.value);
-    set(field.new, 'status', compField.status);
-
-    if (compField.type) {
-      set(field.new, 'type', compField.type);
-    }
-
-    if (compField.component) {
-      set(field.new, 'component', compField.component);
-    }
-
+    let tempField = Object.assign({}, compField);
+    set(field, 'tempField', tempField);
     this.count++;
     set(this.model, 'count', this.count);
   }
 
   @action
   revertField(field) {
-    set(field, 'new', false);
+    set(field, 'tempField', null);
     this.count--;
     set(this.model, 'count', this.count);
   }

@@ -65,15 +65,15 @@
         </div>
         {{#each @model.baseCard.isolatedFields as |field|}}
           <div class="discrepancy-field discrepancy-field--base-field {{format-id field.title}} {{this.mode}}-view">
-            {{#if (and field.new (eq this.mode "comparison"))}}
+            {{#if (and field.tempField (eq this.mode "comparison"))}}
               <IconButton @class="discrepancy-field__btn discrepancy-field__btn--noop" @icon="carot" />
               <PillButton @class="discrepancy-field__btn--reset-btn" {{on "click" (fn this.revertField field)}}>Reset</PillButton>
             {{/if}}
             <FieldRenderer
               @mode={{if (eq this.mode "comparison") "comparison" "view"}}
               @class="discrepancy-field-renderer base-card-field {{if (eq this.mode "comparison") "comp-view"}}"
-              @field={{if field.new field.new field}}
-              @showCompHighlights={{if field.new true false}}
+              @field={{field}}
+              @showCompHighlights={{if field.tempField true false}}
               @comparisonType="base"
             />
           </div>
@@ -81,7 +81,7 @@
             {{#each @model.compCard.isolatedFields as |compField|}}
               {{#if (eq compField.title field.title)}}
                 {{compute (fn this.compareFields field compField)}}
-                {{#if (and (not field.new) compField.status (not-eq field.title "verifi_id") (eq this.mode "comparison"))}}
+                {{#if (and (not field.tempField) compField.status (not-eq field.title "verifi_id") (eq this.mode "comparison"))}}
                   <IconButton @class="discrepancy-field__btn" @icon="carot" {{on "click" (fn this.reconciliateField field compField)}} />
                 {{/if}}
                 <FieldRenderer
