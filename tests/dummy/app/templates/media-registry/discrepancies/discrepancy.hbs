@@ -65,10 +65,6 @@
         </div>
         {{#each @model.baseCard.isolatedFields as |field|}}
           <div class="discrepancy-field discrepancy-field--base-field {{format-id field.title}} {{this.mode}}-view">
-            {{#if (and field.tempField (eq this.mode "comparison"))}}
-              <IconButton @class="discrepancy-field__btn discrepancy-field__btn--noop" @icon="carot" />
-              <PillButton @class="discrepancy-field__btn--reset-btn" {{on "click" (fn this.revertField field)}}>Reset</PillButton>
-            {{/if}}
             <FieldRenderer
               @mode={{if (eq this.mode "comparison") "comparison" "view"}}
               @class="discrepancy-field-renderer base-card-field {{if (eq this.mode "comparison") "comp-view"}}"
@@ -81,8 +77,15 @@
             {{#each @model.compCard.isolatedFields as |compField|}}
               {{#if (eq compField.title field.title)}}
                 {{compute (fn this.compareFields field compField)}}
-                {{#if (and (not field.tempField) compField.status (not-eq field.title "verifi_id") (eq this.mode "comparison"))}}
-                  <IconButton @class="discrepancy-field__btn" @icon="carot" {{on "click" (fn this.reconciliateField field compField)}} />
+                {{#if (and compField.status (eq this.mode "comparison") (not-eq field.title "verifi_id"))}}
+                  {{#if field.tempField}}
+                    <div class="discrepancy-field__btn-container">
+                      <IconButton @class="discrepancy-field__btn discrepancy-field__toggle-btn" @icon="carot-left" {{on "click" (fn this.revertField field)}} />
+                      {{!-- <PillButton @class="discrepancy-field__btn--reset-btn" {{on "click" (fn this.revertField field)}}>Reset</PillButton> --}}
+                    </div>
+                  {{else}}
+                    <IconButton @class="discrepancy-field__btn" @icon="carot-left" {{on "click" (fn this.reconciliateField field compField)}} />
+                  {{/if}}
                 {{/if}}
                 <FieldRenderer
                   @mode={{if (eq this.mode "linked") "view" "comparison"}}

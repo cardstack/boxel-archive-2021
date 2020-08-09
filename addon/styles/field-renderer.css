@@ -227,7 +227,12 @@
 
 /* comparison mode */
 .field-renderer--comparison-mode {
+  height: 100%;
   padding: 0;
+}
+
+.field-renderer--comparison-mode.field-renderer--collection {
+  height: auto;
 }
 
 .field-renderer__card {
@@ -241,6 +246,6 @@
 }
 
 .field-renderer__card--blank {
-  height: 180px;
+  height: 100%;
   border: 1.5px dashed var(--boxel-border-color);
 }
