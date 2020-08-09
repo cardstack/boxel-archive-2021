@@ -47,9 +47,12 @@
   margin-bottom: 20px;
 }
 
-.discrepancy__main {}
+.discrepancy__main {
+  --icon-color: white;
+}
 
 .discrepancy__main--comp-view {
+  --icon-color: black;
   background-color: var(--boxel-highlight);
   padding: 0 25px;
   border-radius: 10px 10px 0 0;
@@ -72,6 +75,65 @@
   letter-spacing: var(--boxel-lsp-lg);
   transition: max-width 0.2s ease-in;
 }
+
+.discrepancy__comparison-header-title-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.discrepancy__comparison-header-icons {
+  display: inline-flex;
+  margin-right: 15px;
+}
+
+.discrepancy__profile-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 7px;
+  font: var(--boxel-font-sm);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 30px;
+  text-align: center;
+}
+
+.discrepancy__profile-icon--wmg {
+  background-color: #0061aa;
+}
+.discrepancy__profile-icon--wcm {
+  background-size: auto 23px;
+}
+.discrepancy__profile-icon--dsp {
+  background-position: top center;
+  background-size: auto 23px;
+}
+.discrepancy__profile-icon--gmr {
+  background-size: auto 20px;
+}
+.discrepancy__profile-icon--amp {
+  background-color: #0069F9;
+}
+
+.boxel-card__bg-img--wcm {
+  background-size: auto 35px;
+  background-color: black;
+  border-radius: 100px;
+}
+
+.discrepancy__comparison-header-icons-carot {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
 
 .discrepancy__comparison-header--comp-mode {
   height: auto;
@@ -111,7 +173,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 15px 20px 15px;
+  padding: 20px 15px;
   background-color: var(--boxel-dark-purple);
   color: white;
   font: var(--boxel-font-sm);
@@ -130,13 +192,23 @@
 
 .discrepancy-card__header-label {
   position: absolute;
-  top: 10px;
+  top: 8px;
   left: 15px;
   color: #A5A5A5;
   font: var(--boxel-font-xs);
   font-weight: 600;
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
+}
+
+.discrepancy-card__header-title-group {
+  display: inline-flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.discrepancy-card__header-icons {
+  margin-right: 15px;
 }
 
 .discrepancy-card__title {

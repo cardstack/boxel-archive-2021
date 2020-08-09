@@ -88,14 +88,14 @@
               {{#if (contains val.id @displayId)}}
                 {{#if @revertChange}}
                   <div class="discrepancy-field__btn-container">
-                    <IconButton @class="field-renderer__btn field-renderer__toggle-btn" @icon="carot-left" {{on "click" (fn @revertChange val field.title)}} />
+                    <IconButton @class="field-renderer__btn field-renderer__toggle-btn" @icon="carot-thin-left" {{on "click" (fn @revertChange val field.title)}} />
                     {{!-- <PillButton @class="discrepancy-field__btn--reset-btn embedded-collection__discrepancy-btn" {{on "click" (fn @revertChange val field.title)}}>Reset</PillButton> --}}
                   </div>
                 {{/if}}
                 {{component (or field.component "card") model=val mode="view" status=(if (or @showCompHighlights val.new) (if val.status val.status "no-change")) comparisonType=@comparisonType}}
               {{else}}
                 {{#if (and @selectChange val.status)}}
-                  <IconButton @class="field-renderer__btn" @icon="carot-left" {{on "click" (fn @selectChange val field.title field.component)}} />
+                  <IconButton @class="field-renderer__btn" @icon="carot-thin-left" {{on "click" (fn @selectChange val field.title field.component)}} />
                 {{/if}}
                 {{component (or field.component "card") model=val mode="view" status=(if (or @showCompHighlights val.new) (if val.status val.status "no-change")) comparisonType=@comparisonType}}
               {{/if}}

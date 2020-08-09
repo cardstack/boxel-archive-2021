@@ -3,7 +3,7 @@
     <header class="discrepancy__header">
       <h1 class="discrepancy__title">Discrepancy Card: Additional Data</h1>
       <div class="discrepancy__mode-btn">
-        <LinkTo @route="media-registry.item.musical-work" @model={{@model.baseCard}} @class="mode-indicator mode-indicator--revision">
+        <LinkTo @route="media-registry.discrepancies" @model={{@model.baseCard}} @class="mode-indicator mode-indicator--revision">
           Comparison Mode
         </LinkTo>
       </div>
@@ -28,7 +28,24 @@
 
     <div class="discrepancy__main {{if (eq this.mode "comparison") "discrepancy__main--comp-view"}}">
       <div class="discrepancy__comparison-header {{if (eq this.mode "comparison") "discrepancy__comparison-header--comp-mode"}}">
-        Comparison between these 2 versions
+        <div class="discrepancy__comparison-header-title-group">
+          <div class="discrepancy__comparison-header-icons">
+            <div class="discrepancy__profile-icon discrepancy__profile-icon--{{@model.baseCard.ownerId}}" style={{css-url "background-image" @model.baseCard.iconURL}}>
+              {{#unless @model.baseCard.iconURL}}
+                {{truncate @model.baseCard.owner 1 false}}
+              {{/unless}}
+            </div>
+            <div class="discrepancy__comparison-header-icons-carot">
+              {{svg-jar "carot-left"}}
+            </div>
+            <div class="discrepancy__profile-icon discrepancy__profile-icon--{{@model.compCard.ownerId}}" style={{css-url "background-image" @model.compCard.iconURL}}>
+              {{#unless @model.compCard.iconURL}}
+                {{truncate @model.compCard.owner 1 false}}
+              {{/unless}}
+            </div>
+          </div>
+          <div>Comparison between these 2 versions</div>
+        </div>
         <PillButton
           {{on "click" this.toggleView}}
           @class="discrepancy-card__header-btn {{if (eq this.mode "comparison") "checked"}}"
@@ -39,9 +56,18 @@
       <div class="discrepancy__cards {{if (eq this.mode "comparison") "discrepancy__cards--comp-view"}}">
         <div class="discrepancy-card__header your-version {{if (eq this.mode "keep-current") "selected-version"}}">
           <div class="discrepancy-card__header-label">Your version</div>
-          <div>
-            <div class="discrepancy-card__title">{{@model.baseCard.owner}}</div>
-            <div class="discrepancy-card__datetime">{{moment-format @model.baseCard.datetime "MMM D, YYYY h:mm A"}}</div>
+          <div class="discrepancy-card__header-title-group">
+            <div class="discrepancy-card__header-icons">
+              <div class="discrepancy__profile-icon discrepancy__profile-icon--{{@model.baseCard.ownerId}}" style={{css-url "background-image" @model.baseCard.iconURL}}>
+                {{#unless @model.baseCard.iconURL}}
+                  {{truncate @model.baseCard.owner 1 false}}
+                {{/unless}}
+              </div>
+            </div>
+            <div>
+              <div class="discrepancy-card__title">{{@model.baseCard.owner}}</div>
+              <div class="discrepancy-card__datetime">{{moment-format @model.baseCard.datetime "MMM D, YYYY h:mm A"}}</div>
+            </div>
           </div>
           <PillButton
             {{on "click" (fn this.selectView "keep-current")}}
@@ -52,9 +78,18 @@
         </div>
         <div class="discrepancy-card__header other-version {{if (eq this.mode "linked") "selected-version"}}">
           <div class="discrepancy-card__header-label">Other version</div>
-          <div>
-            <div class="discrepancy-card__title">{{@model.compCard.owner}}</div>
-            <div class="discrepancy-card__datetime">{{moment-format @model.compCard.datetime "MMM D, YYYY h:mm A"}}</div>
+          <div class="discrepancy-card__header-title-group">
+            <div class="discrepancy-card__header-icons">
+              <div class="discrepancy__profile-icon discrepancy__profile-icon--{{@model.compCard.ownerId}}" style={{css-url "background-image" @model.compCard.iconURL}}>
+                {{#unless @model.compCard.iconURL}}
+                  {{truncate @model.compCard.owner 1 false}}
+                {{/unless}}
+              </div>
+            </div>
+            <div>
+              <div class="discrepancy-card__title">{{@model.compCard.owner}}</div>
+              <div class="discrepancy-card__datetime">{{moment-format @model.compCard.datetime "MMM D, YYYY h:mm A"}}</div>
+            </div>
           </div>
           <PillButton
             {{on "click" (fn this.selectView "linked")}}
@@ -80,11 +115,11 @@
                 {{#if (and compField.status (eq this.mode "comparison") (not-eq field.title "verifi_id"))}}
                   {{#if field.tempField}}
                     <div class="discrepancy-field__btn-container">
-                      <IconButton @class="discrepancy-field__btn discrepancy-field__toggle-btn" @icon="carot-left" {{on "click" (fn this.revertField field)}} />
+                      <IconButton @class="discrepancy-field__btn discrepancy-field__toggle-btn" @icon="carot-thin-left" {{on "click" (fn this.revertField field)}} />
                       {{!-- <PillButton @class="discrepancy-field__btn--reset-btn" {{on "click" (fn this.revertField field)}}>Reset</PillButton> --}}
                     </div>
                   {{else}}
-                    <IconButton @class="discrepancy-field__btn" @icon="carot-left" {{on "click" (fn this.reconciliateField field compField)}} />
+                    <IconButton @class="discrepancy-field__btn" @icon="carot-thin-left" {{on "click" (fn this.reconciliateField field compField)}} />
                   {{/if}}
                 {{/if}}
                 <FieldRenderer

@@ -29,6 +29,8 @@ export default {
   baseCard: {
     type: 'musical-work',
     owner: 'Warner Music Group',
+    ownerId: 'wmg',
+    iconURL: '/media-registry/wmg-logo.svg',
     datetime: '2020-04-08T10:45',
     id: 'wmg-the-sun-comes-out',
     itemId: 'wmg-the-sun-comes-out',
@@ -82,6 +84,8 @@ export default {
   compCard: {
     type: 'musical-work',
     owner: 'Warner Chappell Music',
+    ownerId: 'wcm',
+    iconURL: '/media-registry/wcm-logo.png',
     datetime: '2019-11-11T13:54',
     id: 'wcm-the-sun-comes-out',
     itemId: 'wcm-the-sun-comes-out',
