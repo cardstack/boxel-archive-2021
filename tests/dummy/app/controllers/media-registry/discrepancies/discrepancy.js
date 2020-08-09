@@ -4,7 +4,7 @@ import { tracked } from '@glimmer/tracking';
 
 export default class MediaRegistryDiscrepanciesDiscrepancyController extends Controller {
   @tracked count;
-  @tracked displayId;
+  @tracked displayId; // TODO: clean up this field
   @tracked removed = [];
   @tracked mode = 'comparison';
   @tracked lastSelection;
@@ -77,6 +77,14 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
 
   @action
   collectionComparison(field, compField) {
+    // clear previously set card status
+    if (compField.value && compField.value.length) {
+      compField.value.forEach(card => set(card, 'status', null));
+    }
+    if (field.value && field.value.length) {
+      field.value.forEach(card => set(card, 'status', null));
+    }
+
     if (!field.value && !compField.value) {
       return;
     }
@@ -151,7 +159,10 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   @action selectChange(val, title, component) {
     let collection = this.model.baseCard.isolatedFields.find(el => el.title === title);
 
-    if (collection && collection.value) {
+    // assumption: cards have the same fields even if values might be null
+    if (!collection) { return; }
+
+    if (collection.tempCollection || collection.value) {
       let tempVal = Object.assign({}, val);
       let tempCollection = Object.assign([], collection.tempCollection || collection.value);
       let item = tempCollection.find(el => el.id === val.id);
@@ -169,8 +180,11 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
       }
       set(collection, 'tempCollection', tempCollection);
     } else {
-      // TODO
-      return;
+      let tempVal = Object.assign({}, val);
+      tempVal.new = true;
+      set(collection, 'type', 'collection');
+      set(collection, 'component', component);
+      set(collection, 'tempCollection', [ tempVal ]);
     }
 
     this.displayId = [ ...this.displayId, val.id];
@@ -181,20 +195,37 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   }
 
   @action revertChange(val, title) {
-    // TODO
     let collection = this.model.baseCard.isolatedFields.find(el => el.title === title);
     this.displayId = this.displayId.filter(el => el !== val.id);
     set(this.model, 'displayId', this.displayId);
 
-    if (collection && collection.value) {
-      this.removed.push(val);
-      let newColl = collection.value.filter(el => !this.removed.includes(el));
-      set(collection, 'value', newColl);
+    if (collection.tempCollection && collection.value) {
+      let tempCollection = Object.assign([], collection.tempCollection);
+      let tempVal = Object.assign({}, val);
+      let item = collection.value.find(el => el.id === tempVal.id);
+      if (item) {
+        tempCollection.filter((el, i) => {
+          if (el.id === tempVal.id) {
+            tempCollection[i] = item;
+          }
+        });
+        set(collection, 'tempCollection', tempCollection);
+      } else {
+        this.removed.push(val.id);
+        let filteredColl = collection.tempCollection.filter(el => !this.removed.includes(el.id));
+        set(collection, 'tempCollection', filteredColl);
+        this.removed = [];
+      }
+    }
+
+    else if (collection.tempCollection) {
+      this.removed.push(val.id);
+      let filteredColl = collection.tempCollection.filter(el => !this.removed.includes(el.id));
+      set(collection, 'tempCollection', filteredColl);
       this.removed = [];
-    } else {
-      set(collection, 'value', null);
-      set(collection, 'type', null);
-      set(collection, 'component', null);
+    }
+    else {
+      return;
     }
 
     if (this.count > 0) {

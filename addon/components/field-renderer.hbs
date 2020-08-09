@@ -96,6 +96,8 @@
               {{component (or @field.component "card") model=val mode="view" status=(if (or @showCompHighlights val.new) (if val.status val.status "no-change")) comparisonType=@comparisonType}}
             {{/if}}
           </Boxel>
+        {{else}}
+          <CardPlatter @class="field-renderer__card field-renderer__card--blank" />
         {{/each}}
       {{else if (and @field.value (is-array @field.value))}}
         <CardPlatter @class="field-renderer__card">
