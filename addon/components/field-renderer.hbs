@@ -79,21 +79,21 @@
     <div class="field-renderer__title">{{humanize @field.title}}</div>
     <div class="field-renderer__value">
       {{#if (and @field.value (eq @field.type "card"))}}
-        {{component (or @field.component "card") model=@field.value mode="view" status=(if @showCompHighlights (if @field.status @field.status "no-change"))}}
+        {{component (or @field.component "card") model=@field.value mode="view" status=(if @showCompHighlights (if @field.status @field.status "no-change")) comparisonType=@comparisonType}}
       {{else if (eq @field.type "collection")}}
-        {{#each @field.value as |val|}}
+        {{#each (if @field.tempCollection @field.tempCollection @field.value) as |val|}}
           <Boxel>
             {{#if (contains val.id @displayId)}}
               {{#if @revertChange}}
                 <IconButton @class="discrepancy-field__btn embedded-collection__discrepancy-btn discrepancy-field__btn--noop" @icon="carot" disabled />
                 <PillButton @class="discrepancy-field__btn--reset-btn embedded-collection__discrepancy-btn" {{on "click" (fn @revertChange val @field.title)}}>Reset</PillButton>
               {{/if}}
-              {{component (or @field.component "card") model=val mode="view"}}
+              {{component (or @field.component "card") model=val mode="view" status=(if (or @showCompHighlights val.new) (if val.status val.status "no-change")) comparisonType=@comparisonType}}
             {{else}}
               {{#if (and @selectChange val.status)}}
                 <IconButton @class="discrepancy-field__btn embedded-collection__discrepancy-btn" @icon="carot" {{on "click" (fn @selectChange val @field.title @field.component)}} />
               {{/if}}
-              {{component (or @field.component "card") model=val mode="view" status=(if @showCompHighlights (if val.status val.status "no-change"))}}
+              {{component (or @field.component "card") model=val mode="view" status=(if (or @showCompHighlights val.new) (if val.status val.status "no-change")) comparisonType=@comparisonType}}
             {{/if}}
           </Boxel>
         {{/each}}
@@ -101,8 +101,8 @@
         <CardPlatter @class="field-renderer__card">
           {{#if @showCompHighlights}}
             <BoxelHighlight @status={{@field.status}} />
-            <BoxelActions @status={{if @field.status @field.status "no-change"}}>
-              {{if @field.status @field.status "Same data"}}
+            <BoxelActions @class="boxel-actions--comparison-mode" @status={{if @field.status @field.status "no-change"}}>
+              <ComparisonModeLabel @status={{@field.status}} @comparisonType={{@comparisonType}} />
             </BoxelActions>
           {{/if}}
           <header class="boxel-card__header">{{if @field.type (humanize @field.type) "text"}}</header>
@@ -131,8 +131,8 @@
           <CardPlatter @class="field-renderer__card">
             {{#if @showCompHighlights}}
               <BoxelHighlight @status={{@field.status}} />
-              <BoxelActions @status={{if @field.status @field.status "no-change"}}>
-                {{if @field.status @field.status "Same data"}}
+              <BoxelActions @class="boxel-actions--comparison-mode" @status={{if @field.status @field.status "no-change"}}>
+                <ComparisonModeLabel @status={{@field.status}} @comparisonType={{@comparisonType}} />
               </BoxelActions>
             {{/if}}
             <header class="boxel-card__header">{{if @field.type (humanize @field.type) "text"}}</header>

@@ -74,6 +74,7 @@
               @class="discrepancy-field-renderer base-card-field {{if (eq this.mode "comparison") "comp-view"}}"
               @field={{if field.new field.new field}}
               @showCompHighlights={{if field.new true false}}
+              @comparisonType="base"
             />
           </div>
           <div class="discrepancy-field discrepancy-field--comp-field {{this.mode}}-view">
@@ -88,6 +89,7 @@
                   @class="discrepancy-field-renderer comp-card-field {{if (eq this.mode "comparison") "comp-view"}}"
                   @field={{compField}}
                   @showCompHighlights={{true}}
+                  @comparisonType="comp"
                   @displayId={{this.model.displayId}}
                   @selectChange={{if (eq this.mode "comparison") this.selectChange false}}
                   @revertChange={{if (eq this.mode "comparison") this.revertChange false}}

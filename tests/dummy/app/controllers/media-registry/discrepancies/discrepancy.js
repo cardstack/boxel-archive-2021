@@ -152,17 +152,25 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     let collection = this.model.baseCard.isolatedFields.find(el => el.title === title);
 
     if (collection && collection.value) {
-      let item = collection.value.find(el => el.id === val.id);
+      let tempVal = Object.assign({}, val);
+      let tempCollection = Object.assign([], collection.tempCollection || collection.value);
+      let item = tempCollection.find(el => el.id === val.id);
 
       if (item) {
-        set(item, 'new', val);
+        tempCollection.filter((el, i) => {
+          if (el.id === tempVal.id) {
+            tempCollection[i] = tempVal;
+            tempCollection[i].new = true;
+          }
+        });
       } else {
-        set(collection, 'value', [ ...collection.value, val ]);
+        tempVal.new = true;
+        tempCollection = [ ...tempCollection, tempVal ];
       }
+      set(collection, 'tempCollection', tempCollection);
     } else {
-      set(collection, 'value', [ val ]);
-      set(collection, 'type', 'collection');
-      set(collection, 'component', component);
+      // TODO
+      return;
     }
 
     this.displayId = [ ...this.displayId, val.id];
@@ -173,6 +181,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   }
 
   @action revertChange(val, title) {
+    // TODO
     let collection = this.model.baseCard.isolatedFields.find(el => el.title === title);
     this.displayId = this.displayId.filter(el => el !== val.id);
     set(this.model, 'displayId', this.displayId);

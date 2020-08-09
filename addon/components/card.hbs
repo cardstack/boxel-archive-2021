@@ -5,8 +5,10 @@
   {{/if}}
   {{#if @status}}
     <BoxelHighlight @status={{@status}} />
-    <BoxelActions @status={{@status}}>
-      {{if @statusText @statusText (if (eq @status "no-change") "Same data" @status)}}
+    <BoxelActions @status={{@status}} @class={{if @comparisonType "boxel-actions--comparison-mode"}}>
+      {{#if @comparisonType}}
+        <ComparisonModeLabel @status={{@status}} @statusText={{@statusText}} @comparisonType={{@comparisonType}} />
+      {{/if}}
     </BoxelActions>
   {{/if}}
   {{#if @expandAction}}
