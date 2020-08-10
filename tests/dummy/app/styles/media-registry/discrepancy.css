@@ -328,6 +328,7 @@
   width: 100%;
   max-width: 500px;
   font-weight: 600;
+  line-height: 3;
 }
 
 .discrepancy__count-btn-container {

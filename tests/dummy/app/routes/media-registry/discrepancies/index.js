@@ -6,6 +6,8 @@ export default class MediaRegistryDiscrepanciesIndexRoute extends Route {
     return {
       title: 'All Discrepancies',
       type: 'list',
+      id: 'verifi-registry',
+      company: 'Verifi Registry',
       typeField: 'type',
       collection: DISCREPANCIES,
       route: 'media-registry.discrepancies.discrepancy',

@@ -3,7 +3,7 @@
     <header class="discrepancy__header">
       <h1 class="discrepancy__title">Discrepancy Card: Additional Data</h1>
       <div class="discrepancy__mode-btn">
-        <LinkTo @route="media-registry.discrepancies" @model={{@model.baseCard}} @class="mode-indicator mode-indicator--revision">
+        <LinkTo @route="media-registry.discrepancies.index" @model="verifi-registry" @class="mode-indicator mode-indicator--revision">
           Comparison Mode
         </LinkTo>
       </div>
@@ -148,7 +148,7 @@
                 {{/if}}
               </PillButton>
             {{else if (eq this.mode "keep-current")}}
-              <PillButton @class="discrepancy__count-btn" @variant="primary">
+              <PillButton @class="discrepancy__count-btn" @variant="primary" @isLink={{true}} @route="media-registry.discrepancies.index" @routeModel="verifi-registry">
                 Keep current version
               </PillButton>
             {{/if}}
