@@ -9,7 +9,7 @@
     <FieldRenderer @class="publishing-representation__field" @field={{hash title="writer" value=@model.writer type="card" component="cards/composer"}} @mode="view" />
     <FieldRenderer @class="publishing-representation__field publishing-representation__additional-field" @field={{hash title="role" value=@model.role}} @mode="view" />
   </div>
-  <div class="publishing-representation__publishers publishers-card">
+  <div class="publishing-representation__publishers">
     <FieldRenderer @class="publishing-representation__field" @field={{@model.publisher}} @mode="view" />
   </div>
 </Card>

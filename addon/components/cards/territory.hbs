@@ -7,7 +7,7 @@
       {{/if}}
     </BoxelActions>
   {{/if}}
-  <div class={{if @status "territory__wrapper"}}>
+  <div class={{if (and @status (not-eq @status "no-change")) "territory__wrapper"}}>
     <Card @class="territory-card territory-card--{{format-id @model.title}}" @model={{@model}} @mode="view" />
     <ul class="territory__publishers-list">
       {{#each @model.value as |card|}}

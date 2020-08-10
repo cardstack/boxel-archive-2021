@@ -288,7 +288,7 @@
   text-transform: capitalize;
 }
 
-.publishers-card {
+.publishing-representation__publishers {
   padding: 15px;
   border-top: var(--boxel-border);
 }

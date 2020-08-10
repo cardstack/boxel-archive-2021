@@ -415,8 +415,11 @@
   opacity: 1;
 }
 
-.discrepancy-field--comp-field.comparison-view .publishing-representation__writers .field-renderer__opacity-control,
-.discrepancy-field--comp-field.comparison-view .publishers-card .field-renderer__opacity-control {
+.discrepancy-field--base-field.linked-view .publishing-representation__writers .field-renderer__opacity-control,
+.discrepancy-field--base-field.linked-view .publishing-representation__publishers .field-renderer__opacity-control,
+.discrepancy-field--comp-field .publishing-representation__writers .field-renderer__opacity-control,
+.discrepancy-field--comp-field .publishing-representation__publishers .field-renderer__opacity-control,
+.discrepancy-field--comp-field .territory__wrapper .field-renderer__opacity-control {
   opacity: initial;
 }
 
