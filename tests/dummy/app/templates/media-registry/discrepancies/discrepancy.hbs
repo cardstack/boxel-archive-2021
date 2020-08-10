@@ -106,13 +106,14 @@
               @field={{field}}
               @showCompHighlights={{if field.tempField true false}}
               @comparisonType="base"
+              @omittedFields={{this.omittedFields}}
             />
           </div>
           <div class="discrepancy-field discrepancy-field--comp-field {{this.mode}}-view">
             {{#each @model.compCard.isolatedFields as |compField|}}
               {{#if (eq compField.title field.title)}}
                 {{compute (fn this.compareFields field compField)}}
-                {{#if (and compField.status (eq this.mode "comparison") (not-eq field.title "verifi_id"))}}
+                {{#if (and compField.status (eq this.mode "comparison") (not (contains field.title this.omittedFields)))}}
                   {{#if field.tempField}}
                     <div class="discrepancy-field__btn-container">
                       <IconButton @class="discrepancy-field__btn discrepancy-field__toggle-btn" @icon="carot-thin-left" {{on "click" (fn this.revertField field)}} />

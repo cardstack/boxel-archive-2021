@@ -101,7 +101,11 @@
               {{/if}}
             </Boxel>
           {{else}}
-            <CardPlatter @class="field-renderer__card field-renderer__card--blank" />
+            {{#if (contains field.title @omittedFields)}}
+              N/A
+            {{else}}
+              <CardPlatter @class="field-renderer__card field-renderer__card--blank" />
+            {{/if}}
           {{/each}}
         {{else if (and field.value (is-array field.value))}}
           <CardPlatter @class="field-renderer__card">
@@ -147,7 +151,11 @@
               </div>
             </CardPlatter>
           {{else}}
-            <CardPlatter @class="field-renderer__card field-renderer__card--blank" />
+            {{#if (contains field.title @omittedFields)}}
+              N/A
+            {{else}}
+              <CardPlatter @class="field-renderer__card field-renderer__card--blank" />
+            {{/if}}
           {{/if}}
         {{/if}}
       </div>
