@@ -118,16 +118,10 @@ export const VALENTINO_PR_V0 = {
   id: 'valentino-solano-pr',
   type: 'publishing-representation',
   writer: VALENTINO_SOLANO_V0,
-  role: 'Lyricist',
+  role: null,
   publisher: {
     title: 'publisher',
-    value: [
-      {
-        title: 'Worldwide',
-        type: 'collection',
-        value: [ WCM ]
-      }
-    ]
+    value: null
   }
 };
 
