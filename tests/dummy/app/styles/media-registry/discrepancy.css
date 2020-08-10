@@ -415,6 +415,11 @@
   opacity: 1;
 }
 
+.discrepancy-field--comp-field.comparison-view .publishing-representation__writers .field-renderer__opacity-control,
+.discrepancy-field--comp-field.comparison-view .publishers-card .field-renderer__opacity-control {
+  opacity: initial;
+}
+
 .discrepancy-field-renderer.base-card-field.comp-view .boxel-highlight {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
 }

@@ -75,7 +75,7 @@
   overflow: hidden;
 }
 
-.boxel-card ul {
+.boxel-card__fields {
   list-style-type: none;
   margin: 0;
   padding-left: 0;
@@ -349,4 +349,8 @@
 
 .territory__publishers-list > * + * {
   margin-top: 15px;
+}
+
+.territory__wrapper {
+  padding: 10px;
 }
