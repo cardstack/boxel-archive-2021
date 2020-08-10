@@ -48,7 +48,7 @@
 
 .field-renderer__value {
   display: grid;
-  gap: 10px 0;
+  gap: 20px 0;
   width: 100%;
   font: var(--boxel-font);
   letter-spacing: var(--boxel-lsp-sm);
