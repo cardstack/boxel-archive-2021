@@ -17,10 +17,11 @@ export const AMP = {
   id: 'amp',
   type: 'publisher',
   title: 'Allegro Music Publishing',
+  imgURL: '/media-registry/amp-logo.png',
   territory: 'worldwide',
   fields: [
     {
-      title: 'IPI #',
+      title: 'cae/ipi #',
       value: '00170191322'
     },
     {
@@ -42,7 +43,7 @@ export const WCM = {
   territory: 'worldwide',
   fields: [
     {
-      title: 'IPI #',
+      title: 'cae/ipi #',
       value: '00160187388'
     },
     {
