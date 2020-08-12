@@ -8,7 +8,11 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   @tracked removed = [];
   @tracked mode = 'comparison';
   @tracked lastSelection;
-  omittedFields = ['verifi_id'];
+  @tracked nestedView;
+  @tracked nestedField;
+  @tracked nestedCompField;
+  @tracked omittedFields = ['verifi_id'];
+  cardTypes = ['participant', 'file', 'registration', 'publishing-representation', 'territory' ];
 
   @action
   adjustCount() {
@@ -224,6 +228,56 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     if (this.count > 0) {
       this.count--;
       set(this.model, 'count', this.count);
+    }
+  }
+
+  @action
+  drillDown(field, val) {
+    this.nestedView = true;
+    this.nestedField = [];
+    this.nestedCompField = [];
+
+    for (let v in val) {
+      this.nestedField.push({
+        title: v,
+        value: null
+      });
+
+      if (val[v].type === 'collection') {
+        this.nestedCompField.push({
+          title: v,
+          type: val[v].type,
+          value: val[v].value,
+          component: val[v].component
+        });
+      }
+      else if (typeof(val[v]) === 'object') {
+        if (val[v].length) {
+          this.nestedField[this.nestedField.length - 1].type = 'collection';
+
+          let nestedCollection = [];
+          this.nestedCompField.push({
+            title: v,
+            type: 'collection',
+            value: nestedCollection
+          });
+          for (let card of val[v]) {
+            nestedCollection.push(card);
+          }
+        } else {
+          this.nestedCompField.push({
+            title: v,
+            type: 'card',
+            value: val[v],
+            component: val[v].type === 'participant' ? 'cards/composer' : null //TODO
+          });
+        }
+      } else {
+        this.nestedCompField.push({
+          title: v,
+          value: val[v]
+        });
+      }
     }
   }
 }

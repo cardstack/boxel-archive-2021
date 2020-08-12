@@ -96,7 +96,7 @@
             Link this version
           </PillButton>
         </div>
-        {{#each @model.baseCard.isolatedFields as |field|}}
+        {{#each (if this.nestedField.length this.nestedField @model.baseCard.isolatedFields) as |field|}}
           <div class="discrepancy-field discrepancy-field--base-field {{format-id field.title}} {{this.mode}}-view">
             <FieldRenderer
               @mode={{if (eq this.mode "comparison") "comparison" "view"}}
@@ -104,18 +104,18 @@
               @field={{field}}
               @showCompHighlights={{if field.tempField true false}}
               @comparisonType="base"
+              @drillDown={{this.collectionDrillDown}}
               @omittedFields={{this.omittedFields}}
             />
           </div>
           <div class="discrepancy-field discrepancy-field--comp-field {{this.mode}}-view">
-            {{#each @model.compCard.isolatedFields as |compField|}}
+            {{#each (if this.nestedCompField.length this.nestedCompField @model.compCard.isolatedFields) as |compField|}}
               {{#if (eq compField.title field.title)}}
                 {{compute (fn this.compareFields field compField)}}
                 {{#if (and compField.status (eq this.mode "comparison") (not (contains field.title this.omittedFields)))}}
                   {{#if field.tempField}}
                     <div class="discrepancy-field__btn-container discrepancy-field__btn-container--toggled">
                       <IconButton @class="discrepancy-field__btn discrepancy-field__btn--toggled" @icon="carot-thin-left" {{on "click" (fn this.revertField field)}} />
-                      {{!-- <PillButton @class="discrepancy-field__btn--reset-btn" {{on "click" (fn this.revertField field)}}>Reset</PillButton> --}}
                     </div>
                   {{else}}
                     <div class="discrepancy-field__btn-container">
@@ -130,6 +130,7 @@
                   @showCompHighlights={{true}}
                   @comparisonType="comp"
                   @displayId={{this.model.displayId}}
+                  @drillDown={{fn this.drillDown field}}
                   @selectChange={{if (eq this.mode "comparison") this.selectChange false}}
                   @revertChange={{if (eq this.mode "comparison") this.revertChange false}}
                 />

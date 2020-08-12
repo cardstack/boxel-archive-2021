@@ -81,7 +81,7 @@
       <div class="field-renderer__title">{{humanize field.title}}</div>
       <div class="field-renderer__value">
         {{#if (and field.value (eq field.type "card"))}}
-          {{component (or field.component "card") model=field.value mode="view" status=(if @showCompHighlights (if field.status field.status "no-change")) comparisonType=@comparisonType}}
+          {{component (or field.component "card") model=field.value mode="view" status=(if @showCompHighlights (if field.status field.status "no-change")) comparisonType=@comparisonType drillDown=@drillDown}}
         {{else if (eq field.type "collection")}}
           {{#each (if field.tempCollection field.tempCollection field.value) as |val|}}
             <Boxel>
@@ -98,7 +98,7 @@
                     <IconButton @class="discrepancy-field__btn" @icon="carot-thin-left" {{on "click" (fn @selectChange val field.title field.component)}} />
                   </div>
                 {{/if}}
-                {{component (or field.component "card") model=val mode="view" status=(if (or @showCompHighlights val.new) (if val.status val.status "no-change")) comparisonType=@comparisonType}}
+                {{component (or field.component "card") model=val mode="view" status=(if (or @showCompHighlights val.new) (if val.status val.status "no-change")) comparisonType=@comparisonType drillDown=@drillDown}}
               {{/if}}
             </Boxel>
           {{else}}
