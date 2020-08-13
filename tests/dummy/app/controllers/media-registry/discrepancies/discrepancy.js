@@ -64,7 +64,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
 
     let [ json1, json2 ] = [ field, compField ].map(data => JSON.stringify(data));
 
-    if (json1 === json2) {
+    if (json1 === json2 || (!field.value && !compField.value && !field.id && !compField.id)) {
       return;
     }
 
@@ -146,6 +146,25 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   reconciliateField(field, compField) {
     let tempField = Object.assign({}, compField);
     set(field, 'tempField', tempField);
+
+    if (compField.belongsTo) {
+      let baseField = this.model.baseCard.isolatedFields.find(el => el.title === compField.belongsTo.title);
+      let newField = Object.assign({}, compField.belongsTo);
+      let value;
+      if (baseField.value || baseField?.tempField?.value) {
+        value = Object.assign({}, baseField.value || baseField.tempField.value);
+        value[field.title] = newField.value[field.title];
+      } else {
+        value = {
+          type: newField.value.type,
+          [field.title]: newField.value[field.title]
+        }
+      }
+      newField.value = value;
+      set(baseField, 'tempField', newField);
+    }
+
+    // TODO: fix count
     this.count++;
     set(this.model, 'count', this.count);
   }
@@ -241,7 +260,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   }
 
   @action
-  drillDown(f, val) {
+  drillDown(f, val, fieldData) {
     this.nestedView = true;
     this.nestedField = [];
     this.nestedCompField = [];
@@ -303,7 +322,8 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
           if (!item[v] || typeof item[v] !== 'object') {
             this.nestedField.push({
               title: v,
-              value: item[v]
+              value: item[v],
+              belongsTo: fieldData
             });
           } else {
             if (!item[v].value && !item[v].type) {
@@ -354,7 +374,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
         }
       }
 
-      if (val[v].type === 'collection') {
+      if (val[v] && val[v].type === 'collection') {
         this.nestedCompField.push({
           title: v,
           type: val[v].type,
@@ -362,7 +382,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
           component: val[v].component
         });
       }
-      else if (typeof(val[v]) === 'object') {
+      else if (val[v] && typeof(val[v]) === 'object') {
         if (val[v].length) {
           this.nestedField[this.nestedField.length - 1].type = 'collection';
 
@@ -386,7 +406,8 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
       } else {
         this.nestedCompField.push({
           title: v,
-          value: val[v]
+          value: val[v],
+          belongsTo: fieldData
         });
       }
     }
