@@ -1,7 +1,7 @@
 <Boxel>
   {{#if @status}}
     <BoxelHighlight @status={{@status}} />
-    <BoxelActions @status={{@status}} @class="{{if @comparisonType "boxel-actions--comparison-mode"}} {{if (not-eq @status "no-change") "with-expand"}}">
+    <BoxelActions @status={{@status}} @class="{{if @comparisonType "boxel-actions--comparison-mode"}} {{if (and @drillDown (not-eq @status "no-change")) "with-expand"}}">
       {{#if @comparisonType}}
         <ComparisonModeLabel @status={{@status}} @statusText={{@statusText}} @comparisonType={{@comparisonType}} />
       {{/if}}

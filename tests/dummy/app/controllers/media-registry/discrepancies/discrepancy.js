@@ -236,6 +236,11 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   }
 
   @action
+  backToTopLevel() {
+    this.nestedView = false;
+  }
+
+  @action
   drillDown(f, val) {
     this.nestedView = true;
     this.nestedField = [];

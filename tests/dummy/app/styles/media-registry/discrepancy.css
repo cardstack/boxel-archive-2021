@@ -96,6 +96,18 @@
   align-items: center;
 }
 
+.discrepancy__nested-level-back-btn {
+  padding: 10px 20px;
+  border: none;
+  background: url('/assets/images/icons/curved-arrow.svg') left center/12px 12px no-repeat;
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-lg);
+}
+
+.discrepancy__nested-level-back-btn:hover {
+  cursor: pointer;
+}
+
 .discrepancy__comparison-header-icons {
   display: inline-flex;
   margin-right: 15px;
@@ -152,7 +164,6 @@
 
 
 .discrepancy__comparison-header--comp-mode {
-  height: auto;
   max-width: 100%;
   padding-right: 0;
   padding-left: 0;
