@@ -11,7 +11,8 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   @tracked nestedView;
   @tracked nestedField;
   @tracked nestedCompField;
-  @tracked omittedFields = ['verifi_id'];
+  omittedFields = ['verifi_id'];
+  fieldsNotRendered = ['id', 'type', 'status', 'new'];
   cardTypes = ['participant', 'file', 'registration', 'publishing-representation', 'territory' ];
 
   @action

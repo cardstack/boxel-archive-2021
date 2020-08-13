@@ -97,6 +97,7 @@
           </PillButton>
         </div>
         {{#each (if this.nestedField.length this.nestedField @model.baseCard.isolatedFields) as |field|}}
+          {{#if (not (contains field.title this.fieldsNotRendered))}}
           <div class="discrepancy-field discrepancy-field--base-field {{format-id field.title}} {{this.mode}}-view">
             <FieldRenderer
               @mode={{if (eq this.mode "comparison") "comparison" "view"}}
@@ -137,6 +138,7 @@
               {{/if}}
             {{/each}}
           </div>
+        {{/if}}
         {{/each}}
 
         <div class="discrepancy-card__footer discrepancy-field--base-field {{this.mode}}-view">
