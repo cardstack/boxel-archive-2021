@@ -235,15 +235,18 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   }
 
   @action
-  drillDown(field, val) {
+  drillDown(f, val) {
     this.nestedView = true;
     this.nestedField = [];
     this.nestedCompField = [];
 
+    let field = f.tempField ? f.tempField : f;
+    let value = field.tempCollection ? field.tempCollection : field.value;
+
     // field (base field)
-    if (field.value) {
+    if (value) {
       if (field.type === 'collection') {
-        let item = field.value.find(el => el.id === val.id);
+        let item = value.find(el => el.id === val.id);
         if (item) {
           for (let v in item) {
             if (!item[v] || typeof item[v] !== 'object') {
@@ -252,10 +255,18 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
                 value: item[v]
               });
             } else {
-              if (!item[v].value && !item[v].type) {
+              if (!item[v].value && !item[v].type && !item[v].length) {
                 this.nestedField.push({
                   title: v,
                   value: null
+                });
+              }
+              else if (item[v].type === 'collection') {
+                this.nestedField.push({
+                  title: v,
+                  type: item[v].type,
+                  value: item[v].value,
+                  component: item[v].component
                 });
               }
               else if (item[v].length) {
@@ -280,7 +291,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
           }
         }
       } else if (typeof(field) === 'object') {
-        let item = field.value || field;
+        let item = value || field;
 
         for (let v in item) {
           if (!item[v] || typeof item[v] !== 'object') {
@@ -320,15 +331,15 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
 
     // val (comp field)
     for (let v in val) {
-      if (!field.value || (!field.value.length && !field.value[v])) {
+      if (!value || (!value.length && !value[v])) {
         this.nestedField.push({
           title: v,
           value: null
         });
       }
 
-      if (field.value && field.value.length) {
-        let item = field.value.find(el => el.id === val.id);
+      if (value && value.length) {
+        let item = value.find(el => el.id === val.id);
         if (!item) {
           this.nestedField.push({
             title: v,

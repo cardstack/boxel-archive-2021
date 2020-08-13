@@ -104,7 +104,7 @@
               @field={{field}}
               @showCompHighlights={{if field.tempField true false}}
               @comparisonType="base"
-              @drillDown={{this.collectionDrillDown}}
+              @drillDown={{fn this.drillDown field}}
               @omittedFields={{this.omittedFields}}
             />
           </div>
