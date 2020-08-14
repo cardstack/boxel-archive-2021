@@ -149,19 +149,63 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
 
     if (compField.belongsTo) {
       let baseField = this.model.baseCard.isolatedFields.find(el => el.title === compField.belongsTo.title);
-      let newField = Object.assign({}, compField.belongsTo);
-      let value;
-      if (baseField.value || baseField?.tempField?.value) {
-        value = Object.assign({}, baseField.value || baseField.tempField.value);
-        value[field.title] = newField.value[field.title];
-      } else {
-        value = {
-          type: newField.value.type,
-          [field.title]: newField.value[field.title]
+
+      if (baseField.type === 'collection') {
+        let existingCollection = baseField.tempCollection || baseField.value;
+        // let newField = Object.assign({}, compField.belongsTo);
+        let baseItem = existingCollection.find(el => el.id === compField.belongsToItem.id);
+        let newItem = Object.assign({}, compField.belongsToItem);
+        let value;
+        if (baseItem) {
+          value = Object.assign({}, baseItem);
+          value[field.title] = newItem[field.title];
+        } else {
+          if (newItem.type === 'publishing-representation') {
+            value = {
+              id: newItem.id,
+              type: newItem.type,
+              writer: null,
+              role: null,
+              publisher: {
+                title: 'publisher',
+                value: null
+              }
+            }
+            value[field.title] = newItem[field.title];
+          } else {
+            value = {
+              id: newItem.id,
+              type: newItem.type,
+              [field.title]: newItem[field.title]
+            }
+          }
         }
+        newItem = value;
+
+        let tempCollection = Object.assign([], [...existingCollection]);
+        let index = existingCollection.indexOf(baseItem);
+        if (index > -1) {
+          tempCollection[index] = newItem;
+        } else {
+          tempCollection.push(newItem);
+        }
+
+        set(baseField, 'tempCollection', tempCollection);
+      } else {
+        let newField = Object.assign({}, compField.belongsTo);
+        let value;
+        if (baseField.value || baseField?.tempField?.value) {
+          value = Object.assign({}, baseField.value || baseField.tempField.value);
+          value[field.title] = newField.value[field.title];
+        } else {
+          value = {
+            type: newField.value.type,
+            [field.title]: newField.value[field.title]
+          }
+        }
+        newField.value = value;
+        set(baseField, 'tempField', newField);
       }
-      newField.value = value;
-      set(baseField, 'tempField', newField);
     }
 
     // TODO: fix count
@@ -267,7 +311,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
 
     let field = f.tempField ? f.tempField : f;
     let value = field.tempCollection ? field.tempCollection : field.value;
-
+    // debugger;
     // field (base field)
     if (value) {
       if (field.type === 'collection') {
@@ -407,7 +451,8 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
         this.nestedCompField.push({
           title: v,
           value: val[v],
-          belongsTo: fieldData
+          belongsTo: fieldData,
+          belongsToItem: val
         });
       }
     }

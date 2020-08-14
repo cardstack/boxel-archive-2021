@@ -91,14 +91,14 @@
                     <IconButton @class="discrepancy-field__btn discrepancy-field__btn--toggled" @icon="carot-thin-left" {{on "click" (fn @revertChange val field.title)}} />
                   </div>
                 {{/if}}
-                {{component (or field.component "card") model=val mode="view" status=(if (or @showCompHighlights val.new) (if val.status val.status "no-change")) comparisonType=@comparisonType drillDown=@drillDown}}
+                {{component (or field.component "card") model=val mode="view" status=(if (or @showCompHighlights val.new) (if val.status val.status "no-change")) comparisonType=@comparisonType drillDown=@drillDown fieldData=field}}
               {{else}}
                 {{#if (and @selectChange val.status)}}
                   <div class="field-renderer__btn-container discrepancy-field__btn-container">
                     <IconButton @class="discrepancy-field__btn" @icon="carot-thin-left" {{on "click" (fn @selectChange val field.title field.component)}} />
                   </div>
                 {{/if}}
-                {{component (or field.component "card") model=val mode="view" status=(if (or @showCompHighlights val.new) (if val.status val.status "no-change")) comparisonType=@comparisonType drillDown=@drillDown}}
+                {{component (or field.component "card") model=val mode="view" status=(if (or @showCompHighlights val.new) (if val.status val.status "no-change")) comparisonType=@comparisonType drillDown=@drillDown fieldData=field}}
               {{/if}}
             </Boxel>
           {{else}}
