@@ -185,7 +185,7 @@
         <BoxelHighlight @status="modified" />
         <BoxelActions @status="modified" />
       {{/if}}
-      {{#if @field.value}}
+      {{#if (or @field.value @field.tempCollection)}}
         {{#if (eq @field.type "card")}}
           {{#if (and @comparisonMode @field.value.id (eq @changedCards.0.value.id @field.value.id))}}
             <div>
@@ -207,7 +207,7 @@
           {{/if}}
         {{else if (eq @field.type "collection")}}
           <EmbeddedCollection
-            @collection={{@field.value}}
+            @collection={{if @field.tempCollection @field.tempCollection @field.value}}
             @format={{@field.format}}
             @cardComponent={{@field.component}}
             @comparisonMode={{@comparisonMode}}

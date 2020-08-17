@@ -22,6 +22,22 @@
         <div class="breadcrumbs__item-label">Musical Work</div>
         <div class="breadcrumbs__item-title">{{@model.baseCard.title}}</div>
       </LinkTo> --}}
+      {{#if this.fieldTrail.length}}
+        {{#each this.fieldTrail as |field i|}}
+          {{#if (gt i 0)}}
+            <span class="breadcrumbs__carot" />
+          {{/if}}
+          <div class="breadcrumbs__item breadcrumbs__item--inverse">
+            <div class="breadcrumbs__item-label">Field</div>
+            <div class="breadcrumbs__item-title">{{humanize field.title}}</div>
+          </div>
+        {{/each}}
+        <span class="breadcrumbs__carot" />
+        <div class="breadcrumbs__item breadcrumbs__item--inverse">
+          <div class="breadcrumbs__item-label">{{humanize this.currentItem.type}}</div>
+          <div class="breadcrumbs__item-title">{{humanize this.currentItem.title}}</div>
+        </div>
+      {{/if}}
     </Breadcrumbs>
 
     <div class="discrepancy__main {{if (eq this.mode "comparison") "discrepancy__main--comp-view"}}">

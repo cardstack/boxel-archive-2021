@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { action, set } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { typeOf } from '@ember/utils';
 
 export default class MediaRegistryDiscrepanciesDiscrepancyController extends Controller {
   @tracked count;
@@ -11,6 +12,9 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   @tracked nestedView;
   @tracked nestedField;
   @tracked nestedCompField;
+  @tracked fieldTrail = [];
+  @tracked currentField = {};
+  @tracked currentItem = {}; // for collection fields
   omittedFields = ['verifi_id'];
   fieldsNotRendered = ['id', 'type', 'status', 'new'];
   cardTypes = ['participant', 'file', 'registration', 'publishing-representation', 'territory' ];
@@ -147,64 +151,71 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     let tempField = Object.assign({}, compField);
     set(field, 'tempField', tempField);
 
-    if (compField.belongsTo) {
-      let baseField = this.model.baseCard.isolatedFields.find(el => el.title === compField.belongsTo.title);
+    let currentField = this.model.baseCard.isolatedFields.find(el => el.title === this.currentField.title);
 
-      if (baseField.type === 'collection') {
-        let existingCollection = baseField.tempCollection || baseField.value;
-        // let newField = Object.assign({}, compField.belongsTo);
-        let baseItem = existingCollection.find(el => el.id === compField.belongsToItem.id);
-        let newItem = Object.assign({}, compField.belongsToItem);
-        let value;
-        if (baseItem) {
-          value = Object.assign({}, baseItem);
-          value[field.title] = newItem[field.title];
-        } else {
-          if (newItem.type === 'publishing-representation') {
-            value = {
-              id: newItem.id,
-              type: newItem.type,
-              writer: null,
-              role: null,
-              publisher: {
-                title: 'publisher',
-                value: null
-              }
-            }
-            value[field.title] = newItem[field.title];
-          } else {
-            value = {
-              id: newItem.id,
-              type: newItem.type,
-              [field.title]: newItem[field.title]
-            }
-          }
+    if (currentField.type === 'collection' || typeOf(currentField.value) === 'array') {
+      let value = currentField.tempCollection ? currentField.tempCollection : currentField.value;
+      let currentItem = value.find(el => el.id === this.currentItem.id);
+      if (currentItem) {
+        if (!currentItem.new) {
+          currentItem.new = true;
         }
-        newItem = value;
-
-        let tempCollection = Object.assign([], [...existingCollection]);
-        let index = existingCollection.indexOf(baseItem);
-        if (index > -1) {
-          tempCollection[index] = newItem;
-        } else {
-          tempCollection.push(newItem);
-        }
-
-        set(baseField, 'tempCollection', tempCollection);
+        set(currentItem, field.title, tempField.value);
       } else {
-        let newField = Object.assign({}, compField.belongsTo);
-        let value;
-        if (baseField.value || baseField?.tempField?.value) {
-          value = Object.assign({}, baseField.value || baseField.tempField.value);
-          value[field.title] = newField.value[field.title];
-        } else {
-          value = {
-            type: newField.value.type,
-            [field.title]: newField.value[field.title]
+        let tempCollection = Object.assign([], value);
+        tempCollection.push({});
+        currentItem = tempCollection[tempCollection.length - 1];
+
+        for (let f in this.currentItem) {
+          if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
+            currentItem[f] = this.currentItem[f];
+          } else {
+            currentItem[f] = null;
           }
         }
-        newField.value = value;
-        set(baseField, 'tempField', newField);
+
+        set(currentItem, field.title, tempField.value);
+        set(currentField, 'tempCollection', tempCollection);
+      }
+
+      this.displayId = [ ...this.displayId, currentItem.id];
+      set(this.model, 'displayId', this.displayId);
+    }
+
+    if (!currentField.value && this.currentField.value) {
+      let newField = {};
+
+      for (let f in this.currentField) {
+        if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
+          newField[f] = this.currentField[f];
+        } else {
+          newField[f] = null;
+        }
+      }
+
+      if (newField.type === 'card') {
+        set(newField, 'value', this.currentItem);
+        set(currentField, 'tempField', newField);
+      }
+
+      if (newField.type === 'collection' || typeOf(this.currentField.value) === 'array') {
+        newField.tempCollection = [{}];
+        let currentItem = newField.tempCollection[0];
+
+        for (let f in this.currentItem) {
+          if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
+            currentItem[f] = this.currentItem[f];
+          } else {
+            currentItem[f] = null;
+          }
+        }
+
+        set(currentItem, field.title, tempField.value);
+
+        let index = this.model.baseCard.isolatedFields.indexOf(currentField);
+        if (index > -1) {
+          this.model.baseCard.isolatedFields[index] = newField;
+        }
       }
     }
 
@@ -216,12 +227,16 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   @action
   revertField(field) {
     set(field, 'tempField', null);
-    this.count--;
-    set(this.model, 'count', this.count);
+
+    if (this.count > 0) {
+      this.count--;
+      set(this.model, 'count', this.count);
+    }
   }
 
   @action selectChange(val, title, component) {
-    let collection = this.model.baseCard.isolatedFields.find(el => el.title === title);
+    let fields = this.nestedView ? this.nestedField : this.model.baseCard.isolatedFields;
+    let collection = fields.find(el => el.title === title);
 
     // assumption: cards have the same fields even if values might be null
     if (!collection) { return; }
@@ -246,9 +261,68 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     } else {
       let tempVal = Object.assign({}, val);
       tempVal.new = true;
+
       set(collection, 'type', 'collection');
       set(collection, 'component', component);
       set(collection, 'tempCollection', [ tempVal ]);
+    }
+
+    if (this.nestedView) {
+      let currentField = this.model.baseCard.isolatedFields.find(el => el.title === this.currentField.title);
+      if (currentField.value) {
+        let currentItem = currentField.value.find(el => el.id === this.currentItem.id);
+        if (currentItem) {
+          set(currentItem, collection.title, collection);
+        } else {
+          let tempCollection = Object.assign([], currentField.value);
+          tempCollection.push({});
+          currentItem = tempCollection[tempCollection.length - 1];
+
+          for (let f in this.currentItem) {
+            if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
+              currentItem[f] = this.currentItem[f];
+            } else {
+              currentItem[f] = null;
+            }
+          }
+
+          set(currentItem, collection.title, collection);
+          set(currentField, 'tempCollection', tempCollection);
+        }
+      } else {
+        let newField = {};
+
+        for (let f in this.currentField) {
+          if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
+            newField[f] = this.currentField[f];
+          } else {
+            newField[f] = null;
+          }
+        }
+
+        if (newField.type === 'collection' || typeOf(this.currentField.value) === 'array') {
+          newField.tempCollection = [{}];
+          let currentItem = newField.tempCollection[0];
+          currentItem.new = true;
+
+          for (let f in this.currentItem) {
+            if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
+              currentItem[f] = this.currentItem[f];
+            } else {
+              currentItem[f] = null;
+            }
+          }
+
+          set(currentItem, collection.title, collection.tempCollection);
+        }
+
+
+        let index = this.model.baseCard.isolatedFields.indexOf(currentField);
+        if (index > -1) {
+          this.model.baseCard.isolatedFields[index] = newField;
+        }
+      }
+
     }
 
     this.displayId = [ ...this.displayId, val.id];
@@ -309,9 +383,13 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     this.nestedField = [];
     this.nestedCompField = [];
 
+    this.fieldTrail = [...this.fieldTrail, fieldData];
+    this.currentField = fieldData;
+    this.currentItem = val;
+
     let field = f.tempField ? f.tempField : f;
     let value = field.tempCollection ? field.tempCollection : field.value;
-    // debugger;
+
     // field (base field)
     if (value) {
       if (field.type === 'collection') {
@@ -334,7 +412,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
                 this.nestedField.push({
                   title: v,
                   type: item[v].type,
-                  value: item[v].value,
+                  value: item[v].tempCollection || item[v].value,
                   component: item[v].component
                 });
               }
@@ -366,8 +444,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
           if (!item[v] || typeof item[v] !== 'object') {
             this.nestedField.push({
               title: v,
-              value: item[v],
-              belongsTo: fieldData
+              value: item[v]
             });
           } else {
             if (!item[v].value && !item[v].type) {
@@ -422,7 +499,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
         this.nestedCompField.push({
           title: v,
           type: val[v].type,
-          value: val[v].value,
+          value: val[v].tempCollection || val[v].value,
           component: val[v].component
         });
       }
@@ -450,9 +527,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
       } else {
         this.nestedCompField.push({
           title: v,
-          value: val[v],
-          belongsTo: fieldData,
-          belongsToItem: val
+          value: val[v]
         });
       }
     }
