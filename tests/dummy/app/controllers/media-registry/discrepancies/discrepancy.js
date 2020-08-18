@@ -1,7 +1,6 @@
 import Controller from '@ember/controller';
 import { action, set } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import { typeOf } from '@ember/utils';
 
 export default class MediaRegistryDiscrepanciesDiscrepancyController extends Controller {
   @tracked count;

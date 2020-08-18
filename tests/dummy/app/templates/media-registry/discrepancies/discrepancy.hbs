@@ -8,22 +8,12 @@
     </header>
 
     <Breadcrumbs @class="discrepancy__breadcrumbs">
-      {{!-- <LinkTo @route="media-registry" @class="breadcrumbs__item breadcrumbs__item--inverse">
-        <div class="breadcrumbs__item-label">Collection</div>
-        <div class="breadcrumbs__item-title">Master Recordings</div>
-      </LinkTo>
-      <span class="breadcrumbs__carot" />
-      <LinkTo @route="media-registry.item" @model={{@model.baseCard.itemId}} @class="breadcrumbs__item breadcrumbs__item--inverse">
-        <div class="breadcrumbs__item-label">Master Detail</div>
-        <div class="breadcrumbs__item-title">{{@model.baseCard.title}}</div>
-      </LinkTo>
-      <span class="breadcrumbs__carot" /> --}}
       <button {{on "click" this.backToTopLevel}} class="breadcrumbs__item breadcrumbs__item--inverse">
         <div class="breadcrumbs__item-label">Field</div>
         <div class="breadcrumbs__item-title">Musical Work</div>
       </button>
       {{#if this.fieldTrail.length}}
-        {{#each this.fieldTrail as |field i|}}
+        {{#each this.fieldTrail as |field|}}
           <span class="breadcrumbs__carot" />
           <div class="breadcrumbs__item breadcrumbs__item--inverse">
             <div class="breadcrumbs__item-label">Field</div>
