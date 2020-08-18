@@ -153,76 +153,6 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   reconciliateField(field, compField) {
     let tempField = Object.assign({}, compField);
     set(field, 'tempField', tempField);
-
-    let currentField = this.model.baseCard.isolatedFields.find(el => el.title === this.currentField.title);
-
-    if (currentField.type === 'collection' || typeOf(currentField.value) === 'array') {
-      let value = currentField.tempCollection ? currentField.tempCollection : currentField.value;
-      let currentItem = value.find(el => el.id === this.currentItem.id);
-      if (currentItem) {
-        if (!currentItem.new) {
-          currentItem.new = true;
-        }
-        set(currentItem, field.title, tempField.value);
-      } else {
-        let tempCollection = Object.assign([], value);
-        tempCollection.push({});
-        currentItem = tempCollection[tempCollection.length - 1];
-
-        for (let f in this.currentItem) {
-          if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
-            currentItem[f] = this.currentItem[f];
-          } else {
-            currentItem[f] = null;
-          }
-        }
-
-        set(currentItem, field.title, tempField.value);
-        set(currentField, 'tempCollection', tempCollection);
-      }
-
-      this.displayId = [ ...this.displayId, currentItem.id];
-      set(this.model, 'displayId', this.displayId);
-    }
-
-    if (!currentField.value && this.currentField.value) {
-      let newField = {};
-
-      for (let f in this.currentField) {
-        if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
-          newField[f] = this.currentField[f];
-        } else {
-          newField[f] = null;
-        }
-      }
-
-      if (newField.type === 'card') {
-        set(newField, 'value', this.currentItem);
-        set(currentField, 'tempField', newField);
-      }
-
-      if (newField.type === 'collection' || typeOf(this.currentField.value) === 'array') {
-        newField.tempCollection = [{}];
-        let currentItem = newField.tempCollection[0];
-
-        for (let f in this.currentItem) {
-          if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
-            currentItem[f] = this.currentItem[f];
-          } else {
-            currentItem[f] = null;
-          }
-        }
-
-        set(currentItem, field.title, tempField.value);
-
-        let index = this.model.baseCard.isolatedFields.indexOf(currentField);
-        if (index > -1) {
-          this.model.baseCard.isolatedFields[index] = newField;
-        }
-      }
-    }
-
-    // TODO: fix count
     this.count++;
     set(this.model, 'count', this.count);
   }
@@ -238,8 +168,7 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   }
 
   @action selectChange(val, title, component) {
-    let fields = this.nestedView ? this.nestedField : this.model.baseCard.isolatedFields;
-    let collection = fields.find(el => el.title === title);
+    let collection = this.model.baseCard.isolatedFields.find(el => el.title === title);
 
     // assumption: cards have the same fields even if values might be null
     if (!collection) { return; }
@@ -264,68 +193,9 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     } else {
       let tempVal = Object.assign({}, val);
       tempVal.new = true;
-
       set(collection, 'type', 'collection');
       set(collection, 'component', component);
       set(collection, 'tempCollection', [ tempVal ]);
-    }
-
-    if (this.nestedView) {
-      let currentField = this.model.baseCard.isolatedFields.find(el => el.title === this.currentField.title);
-      if (currentField.value) {
-        let currentItem = currentField.value.find(el => el.id === this.currentItem.id);
-        if (currentItem) {
-          set(currentItem, collection.title, collection);
-        } else {
-          let tempCollection = Object.assign([], currentField.value);
-          tempCollection.push({});
-          currentItem = tempCollection[tempCollection.length - 1];
-
-          for (let f in this.currentItem) {
-            if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
-              currentItem[f] = this.currentItem[f];
-            } else {
-              currentItem[f] = null;
-            }
-          }
-
-          set(currentItem, collection.title, collection);
-          set(currentField, 'tempCollection', tempCollection);
-        }
-      } else {
-        let newField = {};
-
-        for (let f in this.currentField) {
-          if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
-            newField[f] = this.currentField[f];
-          } else {
-            newField[f] = null;
-          }
-        }
-
-        if (newField.type === 'collection' || typeOf(this.currentField.value) === 'array') {
-          newField.tempCollection = [{}];
-          let currentItem = newField.tempCollection[0];
-          currentItem.new = true;
-
-          for (let f in this.currentItem) {
-            if (f === 'id' || f === 'title' || f === 'type' || f === 'component' || f === 'status') {
-              currentItem[f] = this.currentItem[f];
-            } else {
-              currentItem[f] = null;
-            }
-          }
-
-          set(currentItem, collection.title, collection.tempCollection);
-        }
-
-
-        let index = this.model.baseCard.isolatedFields.indexOf(currentField);
-        if (index > -1) {
-          this.model.baseCard.isolatedFields[index] = newField;
-        }
-      }
-
     }
 
     this.displayId = [ ...this.displayId, val.id];
