@@ -17,26 +17,19 @@
         <div class="breadcrumbs__item-label">Master Detail</div>
         <div class="breadcrumbs__item-title">{{@model.baseCard.title}}</div>
       </LinkTo>
-      <span class="breadcrumbs__carot" />
-      <LinkTo @route="media-registry.item.musical-work" @model={{@model.baseCard.itemId}} @class="breadcrumbs__item breadcrumbs__item--inverse">
-        <div class="breadcrumbs__item-label">Musical Work</div>
-        <div class="breadcrumbs__item-title">{{@model.baseCard.title}}</div>
-      </LinkTo> --}}
+      <span class="breadcrumbs__carot" /> --}}
+      <button {{on "click" this.backToTopLevel}} class="breadcrumbs__item breadcrumbs__item--inverse">
+        <div class="breadcrumbs__item-label">Field</div>
+        <div class="breadcrumbs__item-title">Musical Work</div>
+      </button>
       {{#if this.fieldTrail.length}}
         {{#each this.fieldTrail as |field i|}}
-          {{#if (gt i 0)}}
-            <span class="breadcrumbs__carot" />
-          {{/if}}
+          <span class="breadcrumbs__carot" />
           <div class="breadcrumbs__item breadcrumbs__item--inverse">
             <div class="breadcrumbs__item-label">Field</div>
             <div class="breadcrumbs__item-title">{{humanize field.title}}</div>
           </div>
         {{/each}}
-        <span class="breadcrumbs__carot" />
-        <div class="breadcrumbs__item breadcrumbs__item--inverse">
-          <div class="breadcrumbs__item-label">{{humanize this.currentItem.type}}</div>
-          <div class="breadcrumbs__item-title">{{humanize this.currentItem.title}}</div>
-        </div>
       {{/if}}
     </Breadcrumbs>
 

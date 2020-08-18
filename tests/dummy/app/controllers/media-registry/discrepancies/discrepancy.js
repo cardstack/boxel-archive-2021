@@ -40,6 +40,9 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
     this.nestedView = false;
     this.nestedField = [];
     this.nestedCompField = [];
+    this.fieldTrail = [];
+    this.currentField = {};
+    this.currentItem = {};
   }
 
   @action
@@ -375,6 +378,9 @@ export default class MediaRegistryDiscrepanciesDiscrepancyController extends Con
   @action
   backToTopLevel() {
     this.nestedView = false;
+    this.fieldTrail = [];
+    this.currentField = {};
+    this.currentItem = {};
   }
 
   @action
