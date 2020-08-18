@@ -156,17 +156,15 @@
               {{#if (eq compField.title field.title)}}
                 {{compute (fn this.compareFields field compField)}}
                 {{#if (and compField.status (eq this.mode "comparison") (not (contains field.title this.omittedFields)))}}
-                  {{#unless this.nestedView}}
-                    {{#if field.tempField}}
-                      <div class="discrepancy-field__btn-container discrepancy-field__btn-container--toggled">
-                        <IconButton @class="discrepancy-field__btn discrepancy-field__btn--toggled" @icon="carot-thin-left" {{on "click" (fn this.revertField field)}} />
-                      </div>
-                    {{else}}
-                      <div class="discrepancy-field__btn-container">
-                        <IconButton @class="discrepancy-field__btn" @icon="carot-thin-left" {{on "click" (fn this.reconciliateField field compField)}} />
-                      </div>
-                    {{/if}}
-                  {{/unless}}
+                  {{#if field.tempField}}
+                    <div class="discrepancy-field__btn-container discrepancy-field__btn-container--toggled">
+                      <IconButton @class="discrepancy-field__btn discrepancy-field__btn--toggled" @icon="carot-thin-left" {{on "click" (fn this.revertField field)}} />
+                    </div>
+                  {{else}}
+                    <div class="discrepancy-field__btn-container">
+                      <IconButton @class="discrepancy-field__btn" @icon="carot-thin-left" {{on "click" (fn this.reconciliateField field compField)}} />
+                    </div>
+                  {{/if}}
                 {{/if}}
                 <FieldRenderer
                   @mode={{if (eq this.mode "linked") "view" "comparison"}}
