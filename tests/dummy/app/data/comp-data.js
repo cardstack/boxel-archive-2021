@@ -117,17 +117,16 @@ const MARIA_BIANCHI = {
 // WRITER PUBLISHER REP CARDS
 export const VALENTINO_PR_V0 = {
   id: 'valentino-solano-pr',
+  version: '0',
   type: 'publishing-representation',
   writer: VALENTINO_SOLANO_V0,
   role: null,
-  publisher: {
-    title: 'publisher',
-    value: null
-  }
+  publisher: null
 };
 
 export const VALENTINO_PR_V1 = {
   id: 'valentino-solano-pr',
+  version: '1',
   type: 'publishing-representation',
   writer: VALENTINO_SOLANO_V1,
   role: 'Lyricist',
@@ -137,9 +136,11 @@ export const VALENTINO_PR_V1 = {
     component: 'cards/territory',
     value: [
       {
+        id: 'worldwide',
         title: 'Worldwide',
         type: 'territory',
-        value: [ WCM ]
+        value: [ WCM ],
+        publishers: [ WCM ]
       }
     ]
   }
@@ -148,6 +149,7 @@ export const VALENTINO_PR_V1 = {
 // complete version
 export const VALENTINO_PR = {
   id: 'valentino-solano-pr',
+  version: '2',
   type: 'publishing-representation',
   writer: VALENTINO_SOLANO,
   role: 'Lyricist',
@@ -157,9 +159,11 @@ export const VALENTINO_PR = {
     component: 'cards/territory',
     value: [
       {
+        id: 'worldwide',
         title: 'Worldwide',
         type: 'territory',
-        value: [ WCM ]
+        value: [ WCM ],
+        publishers: [ WCM ]
       }
     ]
   }
@@ -176,9 +180,11 @@ export const EMILIO_PR = {
     component: 'cards/territory',
     value: [
       {
+        id: 'worldwide',
         title: 'Worldwide',
         type: 'territory',
-        value: [ AMP ]
+        value: [ AMP ],
+        publishers: [ AMP ]
       }
     ]
   }
@@ -195,9 +201,11 @@ export const MARIA_PR = {
     component: 'cards/territory',
     value: [
       {
+        id: 'worldwide',
         title: 'Worldwide',
         type: 'territory',
-        value: [ AMP ]
+        value: [ AMP ],
+        publishers: [ AMP ]
       }
     ]
   }
