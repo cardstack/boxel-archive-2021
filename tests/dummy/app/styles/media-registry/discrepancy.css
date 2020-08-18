@@ -69,8 +69,9 @@
 .discrepancy__main--comp-view {
   --icon-color: black;
   background-color: var(--boxel-highlight);
-  padding: 0 25px;
-  border-radius: 10px 10px 0 0;
+  padding: 0 25px 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 .discrepancy__comparison-header {
