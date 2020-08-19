@@ -157,7 +157,37 @@ export default class ComparisonComponent extends Component {
     } // removed
 
     set(compField, 'status', 'modified');
+    if (!this.omittedFields.includes(field.title)) {
+      this.diffCount(field, compField);
+    }
+
     return;
+  }
+
+  @action
+  diffCount(field, compField) {
+    let count = 0;
+    count += this.diffCounter(count, field, compField);
+    set(compField, 'modifiedCount', count);
+  }
+
+  @action
+  diffCounter(count, field, compField) {
+    for (let f in compField) {
+      if (!this.fieldsNotRendered.includes(f)) {
+        if (typeof compField[f] === 'object') {
+          if (f === 'publisher' && compField[f] && !field[f]) {
+            count++;
+          } else {
+            count += this.diffCounter(count, field[f], compField[f]);
+          }
+        }
+        else if ((!field && compField) || field[f] !== compField[f]) {
+          count++;
+        }
+      }
+    }
+    return count;
   }
 
   @action
@@ -260,10 +290,20 @@ export default class ComparisonComponent extends Component {
       }
 
       set(this.model.nestedField, field.title, compField.value);
+      let newCount = 0;
+      if (compField.modifiedCount) {
+        newCount += compField.modifiedCount;
+      } else {
+        newCount++;
+      }
+      let finalCount = this.model.topLevelCard.count ? this.model.topLevelCard.count += newCount : newCount;
+      set(this.model.topLevelCard, 'count', finalCount);
     }
 
-    this.count++;
-    set(this.model, 'count', this.count);
+    if (!this.nestedView) {
+      this.count++;
+      set(this.model, 'count', this.count);
+    }
   }
 
   @action
@@ -310,7 +350,11 @@ export default class ComparisonComponent extends Component {
     this.displayId = [ ...this.displayId, val.id];
     set(this.model, 'displayId', this.displayId);
 
-    this.count++;
+    if (val.modifiedCount) {
+      this.count += val.modifiedCount;
+    } else {
+      this.count++;
+    }
     set(this.model, 'count', this.count);
   }
 
@@ -349,7 +393,11 @@ export default class ComparisonComponent extends Component {
     }
 
     if (this.count > 0) {
-      this.count--;
+      if (val.modifiedCount) {
+        this.count -= val.modifiedCount;
+      } else {
+        this.count--;
+      }
       set(this.model, 'count', this.count);
     }
   }
