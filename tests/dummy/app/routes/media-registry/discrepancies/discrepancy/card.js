@@ -9,9 +9,10 @@ export default class MediaRegistryDiscrepanciesDiscrepancyCardRoute extends Rout
     let baseCard;
     let compCard;
 
-    if (baseField.value) {
-      if (baseField.value.length) {
-        baseCard = baseField.value.find(el => el.id === cardId);
+    let value = baseField.tempField || baseField.tempCollection || baseField.value;
+    if (value) {
+      if (value.length) {
+        baseCard = value.find(el => el.id === cardId);
       } else {
         baseCard = compField.value;
       }

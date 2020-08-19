@@ -20,7 +20,6 @@ export default {
       },
       {
         title: 'writers',
-        type: 'collection',
         value: null
       },
       {

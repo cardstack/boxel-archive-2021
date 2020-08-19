@@ -78,7 +78,6 @@ export default class ComparisonComponent extends Component {
   }
 
   @action getFieldArray(field, allFields) {
-    // debugger;
     let array = [];
     let fieldData = allFields ? allFields : field;
 
@@ -98,7 +97,7 @@ export default class ComparisonComponent extends Component {
               title: f,
               type: 'card',
               value: field ? field[f] : null,
-              component: field && field[f].type === 'participant' ? 'cards/composer' : null // TODO
+              component: field && field[f] && field[f].type === 'participant' ? 'cards/composer' : null // TODO
             }];
           }
         } else {
@@ -220,6 +219,49 @@ export default class ComparisonComponent extends Component {
   reconciliateField(field, compField) {
     let tempField = Object.assign({}, compField);
     set(field, 'tempField', tempField);
+
+    if (!this.model.grandParentCard && this.model.parentCard) {
+      if (this.model.parentCard.nestedField) {
+        set(this.model.parentCard.nestedField[this.model.cardType], field.title, compField.value);
+      }
+    }
+
+    else if (!this.model.parentCard && this.model.topLevelCard) {
+      if (!this.model.nestedField) {
+        let newField = {
+          id: this.model.nestedCompField.id,
+          type: this.model.nestedCompField.type
+        }
+        set(this.model, 'nestedField', newField);
+        let baseField = this.model.topLevelCard.baseCard.isolatedFields.find(el => el.title === this.model.cardType);
+        let compField = this.model.topLevelCard.compCard.isolatedFields.find(el => el.title === this.model.cardType);
+
+        if (compField.type && compField.type === 'collection') {
+          let value = baseField.value || baseField.tempCollection;
+          if (value) {
+            set(baseField, 'tempCollection', [ ...value, this.model.nestedField ]);
+          } else {
+            baseField.type = compField.type;
+            baseField.component = compField.component;
+            baseField.tempCollection = [ this.model.nestedField ];
+          }
+        } else if (compField.type && compField.type === 'card') {
+          let compCard = Object.assign({}, compField);
+          let newCard = {};
+
+          for (let f in compCard) {
+            newCard[f] = compCard[f];
+          }
+
+          newCard.value = this.model.nestedField;
+
+          set(baseField, 'tempField', newCard);
+        }
+      }
+
+      set(this.model.nestedField, field.title, compField.value);
+    }
+
     this.count++;
     set(this.model, 'count', this.count);
   }

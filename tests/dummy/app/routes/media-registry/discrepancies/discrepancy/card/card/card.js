@@ -14,8 +14,10 @@ export default class MediaRegistryDiscrepanciesDiscrepancyCardCardRoute extends 
     let nestedCompCard;
 
     if (nestedCompField) {
-      if (nestedCompField.type === 'collection' && nestedCompField.value && nestedCompField.value.length) {
-        nestedCompCard = nestedCompField.value.find(el => el.id === innerCardCardId);
+      let value = nestedCompField.tempField || nestedCompField.tempCollection || nestedCompField.value;
+
+      if (nestedCompField.type === 'collection' && value && value.length) {
+        nestedCompCard = value.find(el => el.id === innerCardCardId);
       } else if (typeOf(nestedCompField) === 'array' && nestedCompField.length) {
         nestedCompCard = nestedCompField.find(el => el.id === innerCardCardId);
       } else {
