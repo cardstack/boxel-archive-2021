@@ -147,6 +147,7 @@
               @field={{field}}
               @showCompHighlights={{if field.tempField true false}}
               @comparisonType="base"
+              @displayId={{this.model.displayId}}
               @drillDown={{if (eq this.mode "comparison") (fn @drillDown field)}}
               @omittedFields={{this.omittedFields}}
             />

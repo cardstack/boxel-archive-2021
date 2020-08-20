@@ -13,10 +13,6 @@ export default class ComparisonComponent extends Component {
   @tracked nestedView = this.args.nestedView;
   @tracked nestedField = [];
   @tracked nestedCompField = [];
-  @tracked fieldTrail = [];
-  @tracked cardDataTrail = [];
-  @tracked currentField = {};
-  @tracked currentItem = {}; // for collection fields
   @tracked fieldsNotRendered = this.args.fieldsNotRendered;
   omittedFields = this.args.omittedFields;
   cardTypes = this.args.cardTypes;
@@ -39,12 +35,6 @@ export default class ComparisonComponent extends Component {
 
     this.mode = 'comparison';
     this.lastSelection = null;
-
-    this.fieldTrail = [];
-    this.cardDataTrail = [];
-    this.currentField = {};
-    this.currentItem = {};
-
     this.nestedView = false;
     this.nestedField = [];
     this.nestedCompField = [];
@@ -56,6 +46,22 @@ export default class ComparisonComponent extends Component {
     this.nestedView = true;
     this.nestedField = [];
     this.nestedCompField = [];
+
+    let topLevelCard = this.model.topLevelCard;
+
+    if (topLevelCard.count) {
+      this.count = topLevelCard.count;
+    } else {
+      this.count = 0;
+      set(topLevelCard, 'count', this.count);
+    }
+
+    if (topLevelCard.displayId) {
+      this.displayId = topLevelCard.displayId;
+    } else {
+      this.displayId = [];
+      set(topLevelCard, 'displayId', []);
+    }
 
     if (this.model.nestedField && this.model.nestedField.fields && this.model.nestedField.fields.length) {
       for (let f of this.model.nestedField.fields) {
@@ -157,6 +163,7 @@ export default class ComparisonComponent extends Component {
     } // removed
 
     set(compField, 'status', 'modified');
+
     if (!this.omittedFields.includes(field.title)) {
       this.diffCount(field, compField);
     }
@@ -168,7 +175,9 @@ export default class ComparisonComponent extends Component {
   diffCount(field, compField) {
     let count = 0;
     count += this.diffCounter(count, field, compField);
-    set(compField, 'modifiedCount', count);
+    if (count > 0) {
+      set(compField, 'modifiedCount', count);
+    }
   }
 
   @action
@@ -176,8 +185,10 @@ export default class ComparisonComponent extends Component {
     for (let f in compField) {
       if (!this.fieldsNotRendered.includes(f)) {
         if (typeof compField[f] === 'object') {
-          if (f === 'publisher' && compField[f] && !field[f]) {
-            count++;
+          if (f === 'publisher' && compField[f].value && !field[f].value) {
+            count++; // count this field as only 1
+          } else if (f === 'publisher') {
+            count; // skipping this field
           } else {
             count += this.diffCounter(count, field[f], compField[f]);
           }
@@ -252,11 +263,37 @@ export default class ComparisonComponent extends Component {
 
     if (!this.model.grandParentCard && this.model.parentCard) {
       if (this.model.parentCard.nestedField) {
-        set(this.model.parentCard.nestedField[this.model.cardType], field.title, compField.value);
+        let tempItem;
+
+        if (this.model.nestedField.tempItem) {
+          tempItem = this.model.nestedField.tempItem;
+        } else {
+          tempItem = Object.assign({}, this.model.nestedField);
+        }
+
+        set(tempItem, field.title, compField.value);
+        set(this.model.nestedField, 'tempItem', tempItem);
+
+        let item = this.model.parentCard.nestedField;
+
+        let newCount = 1;
+        if (item.modifiedCount) {
+          newCount = item.modifiedCount + newCount;
+        }
+        set(item, 'modifiedCount', newCount);
+
+        this.count++;
+        let model = this.model.topLevelCard;
+        set(model, 'count', this.count);
+
+        this.selectChange(this.model.parentCard.nestedField, this.model.parentCard.cardType);
+        // set(this.model.parentCard.nestedField[this.model.cardType], field.title, compField.value);
       }
     }
 
     else if (!this.model.parentCard && this.model.topLevelCard) {
+      let model = this.model.topLevelCard;
+
       if (!this.model.nestedField) {
         let newField = {
           id: this.model.nestedCompField.id,
@@ -268,6 +305,7 @@ export default class ComparisonComponent extends Component {
 
         if (compField.type && compField.type === 'collection') {
           let value = baseField.value || baseField.tempCollection;
+
           if (value) {
             set(baseField, 'tempCollection', [ ...value, this.model.nestedField ]);
           } else {
@@ -275,6 +313,13 @@ export default class ComparisonComponent extends Component {
             baseField.component = compField.component;
             baseField.tempCollection = [ this.model.nestedField ];
           }
+
+          this.model.nestedField.new = true;
+          this.model.nestedField.status = 'added';
+
+          this.displayId = [ ...this.displayId, this.model.cardId];
+          set(model, 'displayId', this.displayId);
+
         } else if (compField.type && compField.type === 'card') {
           let compCard = Object.assign({}, compField);
           let newCard = {};
@@ -290,14 +335,14 @@ export default class ComparisonComponent extends Component {
       }
 
       set(this.model.nestedField, field.title, compField.value);
-      let newCount = 0;
+
       if (compField.modifiedCount) {
-        newCount += compField.modifiedCount;
+        this.count += compField.modifiedCount;
       } else {
-        newCount++;
+        this.count++;
       }
-      let finalCount = this.model.topLevelCard.count ? this.model.topLevelCard.count += newCount : newCount;
-      set(this.model.topLevelCard, 'count', finalCount);
+
+      set(model, 'count', this.count);
     }
 
     if (!this.nestedView) {
@@ -317,7 +362,8 @@ export default class ComparisonComponent extends Component {
   }
 
   @action selectChange(val, title, component) {
-    let collection = this.model.baseCard.isolatedFields.find(el => el.title === title);
+    let model = this.model.topLevelCard || this.model;
+    let collection = model.baseCard.isolatedFields.find(el => el.title === title);
 
     // assumption: cards have the same fields even if values might be null
     if (!collection) { return; }
@@ -332,6 +378,7 @@ export default class ComparisonComponent extends Component {
           if (el.id === tempVal.id) {
             tempCollection[i] = tempVal;
             tempCollection[i].new = true;
+            tempCollection[i].status = 'modified';
           }
         });
       } else {
@@ -348,14 +395,17 @@ export default class ComparisonComponent extends Component {
     }
 
     this.displayId = [ ...this.displayId, val.id];
-    set(this.model, 'displayId', this.displayId);
+    set(model, 'displayId', this.displayId);
 
-    if (val.modifiedCount) {
-      this.count += val.modifiedCount;
-    } else {
-      this.count++;
+    if (!this.nestedView) {
+      if (val.modifiedCount) {
+        this.count += val.modifiedCount;
+      } else {
+        this.count++;
+      }
+
+      set(model, 'count', this.count);
     }
-    set(this.model, 'count', this.count);
   }
 
   @action revertChange(val, title) {
@@ -392,13 +442,15 @@ export default class ComparisonComponent extends Component {
       return;
     }
 
-    if (this.count > 0) {
-      if (val.modifiedCount) {
-        this.count -= val.modifiedCount;
+    if (val.modifiedCount) {
+      if (val.modifiedCount > this.count) {
+        this.count = 0;
       } else {
-        this.count--;
+        this.count -= val.modifiedCount;
       }
-      set(this.model, 'count', this.count);
+    } else {
+      this.count--;
     }
+    set(this.model, 'count', this.count);
   }
 }

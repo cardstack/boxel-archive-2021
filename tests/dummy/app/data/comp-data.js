@@ -117,7 +117,10 @@ export const VALENTINO_PR_V0 = {
   type: 'publishing-representation',
   writer: VALENTINO_SOLANO_V0,
   role: null,
-  publisher: null
+  publisher: {
+    title: 'publisher',
+    value: null
+  }
 };
 
 export const VALENTINO_PR_V1 = {
