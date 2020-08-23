@@ -1,18 +1,3 @@
-// ORGS
-const WMG = {
-  "id": "wmg",
-  "type": "label",
-  "title": "Warner Music Group",
-  "imgURL": '/media-registry/wmg-logo.svg',
-};
-
-const GMR = {
-  "id": "gmr",
-  "type": "pro",
-  "title": "Global Music Rights",
-  "imgURL": '/media-registry/gmr-logo.svg',
-};
-
 export const AMP = {
   id: 'amp',
   type: 'publisher',
@@ -58,25 +43,6 @@ export const WCM = {
 }
 
 // WRITERS
-const VALENTINO_SOLANO_V0 = {
-  "id": "valentino-solano",
-  "type": "participant",
-  "title": "Valentino Solano",
-  "expandable": true
-};
-
-const VALENTINO_SOLANO_V1 = {
-  "id": "valentino-solano",
-  "type": "participant",
-  "title": "Valentino Solano",
-  "imgURL": "/media-registry/profiles/thumb/Valentino-Solano.jpg",
-  "ipi": "00815723492",
-  "pro": "Global Music Rights",
-  "email": "valentino@valsolanomusic.com",
-  "website": "www.valsolanomusic.com",
-  "expandable": true
-};
-
 // complete data
 const VALENTINO_SOLANO = {
   "id": "valentino-solano",
