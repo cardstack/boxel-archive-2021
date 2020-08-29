@@ -1,0 +1,319 @@
+[
+  {
+    "id": "golden-girl",
+    "owner_id": "bunny_records",
+    "title": "Golden Girl",
+    "description": "All recordings by GG",
+    "count": "42",
+    "top_titles": ["Golden Girl"],
+    "date_created": "2019-02-13",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Love-the-Love-df0cbae4837448f41fcc0a94d025b3ca.jpg",
+      "/boxel/media-registry/covers/thumb/Home-Isnt-Sweet-7db533203e90322189bda582bbbdad0a.jpg",
+      "/boxel/media-registry/covers/thumb/Never-Lonely-16682007e12dbc6ef1ada9c2bc4e69f1.jpg",
+      "/boxel/media-registry/covers/thumb/On-the-Brink-of-Happiness-00637f8a7dfdd5a7da7adc2e6606be17.jpg",
+      "/boxel/media-registry/covers/thumb/Zig-and-Zag-9ca19a1f0b42538deb117cd1312278f5.jpg"
+    ]
+  },
+  {
+    "id": "extra-long",
+    "owner_id": "bunny_records",
+    "title": "Extra Long",
+    "description": "Tracks over 4 min",
+    "count": "102",
+    "top_titles": ["Fly Me To The Moon", "Charlotte's Cats", "The Mash"],
+    "date_created": "2019-08-14",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/All-About-the-Quality-of-Life-6aea16c68268651c69652080c2748137.jpg",
+      "/boxel/media-registry/covers/thumb/Love-Conquers-All-2ca88e7d2cd46c54c79c224885f4d054.jpg",
+      "/boxel/media-registry/covers/thumb/Make-Magic-9804577be992ea22d1149017f41ed2a8.jpg",
+      "/boxel/media-registry/covers/thumb/Good-Times-0299fde8bef73fb6c2cb43afe3767861.jpg",
+      "/boxel/media-registry/covers/thumb/More-Than-We-Know-fce4cd590553ddb8fe5a100b7bb85f82.jpg"
+    ]
+  },
+  {
+    "id": "film-music",
+    "owner_id": "bunny_records",
+    "title": "Film Music",
+    "description": "Themes & soundtracks",
+    "count": "29",
+    "top_titles": ["Pia Midina", "BB Clarke", "Marcy Blues"],
+    "date_created": "2019-11-27",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Love-the-Love-df0cbae4837448f41fcc0a94d025b3ca.jpg",
+      "/boxel/media-registry/covers/thumb/Sunlight-8a9bf8f867e964b9410e55ec85d8714b.jpg",
+      "/boxel/media-registry/covers/thumb/Moments-7e0d35fb6d65638429cb16589dbb842d.jpg",
+      "/boxel/media-registry/covers/thumb/Escape-4c83e91f454c860a02e4e493d46439c6.jpg",
+      "/boxel/media-registry/covers/thumb/Just-Like-Birds-606af991c1a826bbf854894539c893fc.jpg"
+    ]
+  },
+  {
+    "id": "super-successful",
+    "owner_id": "bunny_records",
+    "title": "Super Successful",
+    "description": "Popular records across genres & artists",
+    "count": "89",
+    "top_titles": ["Make Me", "Nancy Jay", "Boyband"],
+    "date_created": "2020-01-21",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Infatuated-46a2913ca5e99871617db7099ec3ff22.jpg",
+      "/boxel/media-registry/covers/thumb/Sailing-9c03c4b6cb8b0625605c86a16fd202a3.jpg",
+      "/boxel/media-registry/covers/thumb/Superficial-bf354f8286aba46d7524c106bd4d31a3.jpg",
+      "/boxel/media-registry/covers/thumb/Seven-Seasons-746ce0882d3650e8e346926b30f41cf7.jpg",
+      "/boxel/media-registry/covers/thumb/Rollercoaster-of-Emotions-d8599ffc2bbe50beb1cdad2da7fdd1ac.jpg"
+    ]
+  },
+  {
+    "id": "batch-a",
+    "owner_id": "bunny_records",
+    "title": "Batch A ",
+    "description": "Sold to Maxime Records",
+    "count": "23",
+    "top_titles": ["The Clue", "Paula Sin", "The Francines"],
+    "date_created": "2020-07-14",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Save-Humankind-0262ab3a5295a27652ae36c6ba8b8152.jpg",
+      "/boxel/media-registry/covers/thumb/All-About-Heaven-069c6d8a49b40e8b301c39c224fae38f.jpg",
+      "/boxel/media-registry/covers/thumb/Little-Lies-150b87e74e7d780632c2e74afb211625.jpg",
+      "/boxel/media-registry/covers/thumb/Maximum-Mildness-f17a6d44926d863f0cdb6d6e9ad94ca3.jpg",
+      "/boxel/media-registry/covers/thumb/Magnitude-0a1e9aae111c3bcc763923c26da4c583.jpg"
+    ]
+  },
+  {
+    "id": "batch-b",
+    "owner_id": "bunny_records",
+    "title": "Batch B ",
+    "description": "Sold to Philanthropic Music Group",
+    "count": "120",
+    "top_titles": ["Mouthwash", "Patrick Moles", "Sun and Moon"],
+    "date_created": "2020-07-29",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/The-Future-Is-Ours-45e11565293a0a6a63c25e16b855f5d6.jpg",
+      "/boxel/media-registry/covers/thumb/Drive-Me-Crazy-7df954a64f14551ec3426ad82613b4cb.jpg",
+      "/boxel/media-registry/covers/thumb/Beauty-vs-Reality-adccb7e1ae7dc99e35c8b0ecfec4bd14.jpg",
+      "/boxel/media-registry/covers/thumb/Happy-Ever-After-5b9417c1d296a17cb98acd6cea5ea023.jpg",
+      "/boxel/media-registry/covers/thumb/All-About-the-Man-84cbc81bb8707c2af079faf59a7f986f.jpg"
+    ]
+  },
+  {
+    "id": "batch-c",
+    "owner_id": "bunny_records",
+    "title": "Batch C",
+    "description": "Prepared for transfer to Candle Light Records",
+    "count": "211",
+    "top_titles": ["Things", "UNIF", "Melodrama"],
+    "date_created": "2020-08-05",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Gotta-Be-Silly-ce720bd892ead9a0f3e80229cd4585bc.jpg",
+      "/boxel/media-registry/covers/thumb/Call-Me-Crazy-587c9443265522073220f274b587ba37.jpg",
+      "/boxel/media-registry/covers/thumb/Liars-d48f6788c1611e675b98c6a4c9f3fe88.jpg",
+      "/boxel/media-registry/covers/thumb/Mighty-Moon-bfca398f11196c81db3cfa95b82477dd.jpg",
+      "/boxel/media-registry/covers/thumb/Drama-Queen-b499f27098b6eb98d251fcebe57b6f5a.jpg"
+    ]
+  },
+  {
+    "id": "batch-d",
+    "owner_id": "bunny_records",
+    "title": "Batch D",
+    "description": "In progress",
+    "count": "7",
+    "top_titles": ["Australians", "Super Nova", "Picture Perfect"],
+    "date_created": "2020-08-11",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/On-the-Day-You-Were-Born-62047768e7600a3d4ceb270b9c171271.jpg",
+      "/boxel/media-registry/covers/thumb/Magna-Cum-Love-9622000927ec2ecf4aefe86b82744236.jpg",
+      "/boxel/media-registry/covers/thumb/Fairy-Tales-9e0207462f77a45b1ffbf589b135346c.jpg",
+      "/boxel/media-registry/covers/thumb/Drunk-d6ae90643d8a48299bb8a3e446f17302.jpg",
+      "/boxel/media-registry/covers/thumb/Why-Do-You-Like-Me-2fe1ab569893ac7aed7993433b9fd379.jpg"
+    ]
+  },
+  {
+    "id": "batch-e",
+    "owner_id": "bunny_records",
+    "title": "Batch E",
+    "description": "In progress",
+    "count": "12",
+    "top_titles": ["Love Monkeys", "Gross Guest", "Jason The Boss"],
+    "date_created": "2020-08-13",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Sold-Out-cf2903d0c872405d7e89317cec849b73.jpg",
+      "/boxel/media-registry/covers/thumb/Sunny-Side-Up-be2acb93289f6bb548323b170b46c4bb.jpg",
+      "/boxel/media-registry/covers/thumb/Friends-with-Benefits-9ac09161c4ef958630214efc5ee98643.jpg",
+      "/boxel/media-registry/covers/thumb/When-You-Hit-Me-46b55d7d3636811b85a388cf51a7aafa.jpg",
+      "/boxel/media-registry/covers/thumb/Why-Not-1302863aa6cdce8b578683eab8f98725.jpg"
+    ]
+  },
+  {
+    "id": "batch-f",
+    "owner_id": "bunny_records",
+    "title": "Batch F",
+    "description": "Transfer to CRD Records",
+    "count": "16",
+    "date_created": "2020-01-14",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Sunlight-8a9bf8f867e964b9410e55ec85d8714b.jpg",
+      "/boxel/media-registry/covers/thumb/Change-Is-Good-1026df6851c172548980fabf8406c14b.jpg",
+      "/boxel/media-registry/covers/thumb/Full-Moon-df1c07f87979dec7b3ea3fce7bcaec74.jpg",
+      "/boxel/media-registry/covers/thumb/Love-Never-Dies-8e230ef0d503b03840a4bc21751cb1ea.jpg",
+      "/boxel/media-registry/covers/thumb/Animals-c648b6ce05964ecee200e817fedf74e5.jpg"
+    ]
+  },
+  {
+    "id": "bunny-hop-1",
+    "owner_id": "bunny_records",
+    "title": "Bunny Hop 1",
+    "description": "—",
+    "count": "22",
+    "top_titles": ["Ping Pong", "Boyband", "Nancy Jay"],
+    "date_created": "2018-05-04",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Infatuated-46a2913ca5e99871617db7099ec3ff22.jpg",
+      "/boxel/media-registry/covers/thumb/Sailing-9c03c4b6cb8b0625605c86a16fd202a3.jpg",
+      "/boxel/media-registry/covers/thumb/Superficial-bf354f8286aba46d7524c106bd4d31a3.jpg",
+      "/boxel/media-registry/covers/thumb/Seven-Seasons-746ce0882d3650e8e346926b30f41cf7.jpg",
+      "/boxel/media-registry/covers/thumb/Rollercoaster-of-Emotions-d8599ffc2bbe50beb1cdad2da7fdd1ac.jpg"
+    ]
+  },
+  {
+    "id": "bunny-hop-2",
+    "owner_id": "bunny_records",
+    "title": "Bunny Hop 2",
+    "description": "—",
+    "count": "22",
+    "top_titles": ["Golden Girl", "The Edge Of Nowhere", "Princess May"],
+    "date_created": "2019-05-02",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/All-About-the-Quality-of-Life-6aea16c68268651c69652080c2748137.jpg",
+      "/boxel/media-registry/covers/thumb/Never-Lonely-16682007e12dbc6ef1ada9c2bc4e69f1.jpg",
+      "/boxel/media-registry/covers/thumb/Make-Magic-9804577be992ea22d1149017f41ed2a8.jpg",
+      "/boxel/media-registry/covers/thumb/Good-Times-0299fde8bef73fb6c2cb43afe3767861.jpg",
+      "/boxel/media-registry/covers/thumb/Beauty-vs-Reality-adccb7e1ae7dc99e35c8b0ecfec4bd14.jpg"
+    ]
+  },
+  {
+    "id": "hit-songs",
+    "owner_id": "crd_records",
+    "title": "Hit Songs",
+    "description": "Big-selling records",
+    "count": "387",
+    "top_titles": ["Bambi Attack", "Mad Max", "Light & Shadow"],
+    "genres": ["Pop", "Rock", "Metal"],
+    "date_created": "2019-05-02",
+    "date_updated": "2020-01-08",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Innocent-Kittens-c25afc68eb3ed514552a9b1c9a89f5ed.jpg",
+      "/boxel/media-registry/covers/thumb/Been-There-Done-That-116308553e7b5771408343a3b4203e84.jpg",
+      "/boxel/media-registry/covers/thumb/Roller-Coaster-ccb410102ec5946e03d27901d67ceef4.jpg",
+      "/boxel/media-registry/covers/thumb/Freedom-2790d45474801c5fec95319d4e70cb21.jpg",
+      "/boxel/media-registry/covers/thumb/The-Vamps-of-the-World-50c4682a6a477681ce5c5d4491673de6.jpg"
+    ]
+  },
+  {
+    "id": "radio-friendly",
+    "owner_id": "crd_records",
+    "title": "Radio-friendly",
+    "description": "Suitable for mainstream radio",
+    "count": "1300",
+    "top_titles": ["The Sunshine Band", "Light & Shadow", "Mad Max"],
+    "genres": ["Musical", "Pop", "Rock", "Metal", "Alternative"],
+    "date_created": "2019-08-16",
+    "date_updated": "2020-02-18",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Cast-Me-f17caba6168d8125d37d782c1b6280ef.jpg",
+      "/boxel/media-registry/covers/thumb/The-Vamps-of-the-World-50c4682a6a477681ce5c5d4491673de6.jpg",
+      "/boxel/media-registry/covers/thumb/Innocent-Kittens-c25afc68eb3ed514552a9b1c9a89f5ed.jpg",
+      "/boxel/media-registry/covers/thumb/Roller-Coaster-ccb410102ec5946e03d27901d67ceef4.jpg",
+      "/boxel/media-registry/covers/thumb/Freedom-2790d45474801c5fec95319d4e70cb21.jpg"
+    ]
+  },
+  {
+    "id": "love-songs",
+    "owner_id": "crd_records",
+    "title": "Love Songs",
+    "description": "—",
+    "count": "505",
+    "top_titles": ["Bambi Attack", "Gary and the whales", "The Sunshine Band"],
+    "genres": ["Alternative", "Pop", "Rock", "Musical", "Metal"],
+    "date_created": "2019-01-22",
+    "date_updated": "2019-06-25",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Freedom-2790d45474801c5fec95319d4e70cb21.jpg",
+      "/boxel/media-registry/covers/thumb/Innocent-Kittens-c25afc68eb3ed514552a9b1c9a89f5ed.jpg",
+      "/boxel/media-registry/covers/thumb/Roller-Coaster-ccb410102ec5946e03d27901d67ceef4.jpg",
+      "/boxel/media-registry/covers/thumb/Cast-Me-f17caba6168d8125d37d782c1b6280ef.jpg",
+      "/boxel/media-registry/covers/thumb/The-Vamps-of-the-World-50c4682a6a477681ce5c5d4491673de6.jpg"
+    ]
+  },
+  {
+    "id": "gary-and-the-whales",
+    "owner_id": "crd_records",
+    "title": "Gary and the Whales",
+    "description": "All recordings by this band",
+    "count": "79",
+    "top_titles": ["Gary and the whales"],
+    "genres": ["Alternative"],
+    "date_created": "2018-12-19",
+    "date_updated": "2020-02-07",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Freedom-2790d45474801c5fec95319d4e70cb21.jpg",
+      "/boxel/media-registry/covers/thumb/Been-There-Done-That-116308553e7b5771408343a3b4203e84.jpg",
+      "/boxel/media-registry/covers/thumb/Home-Sweet-Home-7ddd4b79496441cb0e8483a479689f7f.jpg",
+      "/boxel/media-registry/covers/thumb/Pinnacles-436877bcada32a81c96b8c6dcdfff6bd.jpg",
+      "/boxel/media-registry/covers/thumb/Sulking-Maids-970afbd1613d4cfa46117fac1e412cdd.jpg"
+    ]
+  },
+  {
+    "id": "instrumental",
+    "owner_id": "crd_records",
+    "title": "Instrumental",
+    "description": "—",
+    "count": "290",
+    "top_titles": ["No Lyrics", "Ears Open", "The Musicians"],
+    "genres": ["Instrumental"],
+    "date_created": "2020-02-07",
+    "date_updated": "2020-06-03",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/What-Musical-Instruments-Can-Do-69e2bb44dcf2efa8423d13b7e1373a1d.jpg",
+      "/boxel/media-registry/covers/thumb/Just-Listen-53de82f82285c3653afd35ed56c572e0.jpg",
+      "/boxel/media-registry/covers/thumb/Fried-Pork-3326351313128584b8bf3f0926338036.jpg",
+      "/boxel/media-registry/covers/thumb/Longing-17b3fc0558be0c18a232bbf2dc7e81da.jpg",
+      "/boxel/media-registry/covers/thumb/Nobodys-Claims-6b87a959623775951aef5c782d087347.jpg"
+    ]
+  },
+  {
+    "id": "soundtracks",
+    "owner_id": "crd_records",
+    "title": "Soundtracks",
+    "description": "Used in movies and TV shows",
+    "count": "112",
+    "top_titles": ["The Sunshine Band", "The Punk Band", "Light & Shadow"],
+    "genres": ["Musical"],
+    "date_created": "2020-03-18",
+    "date_updated": "2020-03-31",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/Cast-Me-f17caba6168d8125d37d782c1b6280ef.jpg",
+      "/boxel/media-registry/covers/thumb/The-Vamps-of-the-World-50c4682a6a477681ce5c5d4491673de6.jpg",
+      "/boxel/media-registry/covers/thumb/Innocent-Kittens-c25afc68eb3ed514552a9b1c9a89f5ed.jpg",
+      "/boxel/media-registry/covers/thumb/Roller-Coaster-ccb410102ec5946e03d27901d67ceef4.jpg",
+      "/boxel/media-registry/covers/thumb/Zombies-afe98eae931b3191aad65b70307e0d46.jpg"
+    ]
+  },
+  {
+    "id": "unplugged",
+    "owner_id": "crd_records",
+    "title": "Unplugged",
+    "description": "—",
+    "count": "166",
+    "top_titles": ["Light & Shadow", "Bambi Attack", "Mad Max"],
+    "genres": ["Metal", "Rock", "Pop", "Alternative"],
+    "date_created": "2020-06-01",
+    "date_updated": "2020-07-23",
+    "selected_art": [
+      "/boxel/media-registry/covers/thumb/The-Vamps-of-the-World-50c4682a6a477681ce5c5d4491673de6.jpg",
+      "/boxel/media-registry/covers/thumb/Roller-Coaster-ccb410102ec5946e03d27901d67ceef4.jpg",
+      "/boxel/media-registry/covers/thumb/Innocent-Kittens-c25afc68eb3ed514552a9b1c9a89f5ed.jpg",
+      "/boxel/media-registry/covers/thumb/Freedom-2790d45474801c5fec95319d4e70cb21.jpg",
+      "/boxel/media-registry/covers/thumb/Zombies-afe98eae931b3191aad65b70307e0d46.jpg"
+    ]
+  }
+]
