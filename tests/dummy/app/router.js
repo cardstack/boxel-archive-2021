@@ -8,7 +8,8 @@ class Router extends EmberRouterScroll {
 }
 
 Router.map(function() {
-  this.route('media-registry', { path: 'media-registry/:orgId' }, function() {
+  this.route('home', { path: 'media-registry' });
+  this.route('media-registry', { path: '/media-registry/:orgId' }, function() {
     this.route('collection', { path: '/collections/:collectionId' }, function() {
       this.route('edit');
     });

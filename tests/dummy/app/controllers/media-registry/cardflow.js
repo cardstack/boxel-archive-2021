@@ -8,7 +8,7 @@ export default class MediaRegistryCardflowController extends MediaRegistryContro
   @tracked isolatedCollection = this.getIsolatedCollection(this.catalog.id);
   @tracked itemId = null;
   @tracked record = null;
-  @tracked currentMilestone = this.org.user ? this.milestones.filter(el => el.pct === this.org.user.queueCards[0].progressPct)[0] : null;
+  @tracked currentMilestone = this.model.currentOrg.user ? this.milestones.filter(el => el.pct === this.model.currentOrg.user.queueCards[0].progressPct)[0] : null;
 
   catalog = {
     id: 'batch-f',
@@ -25,7 +25,7 @@ export default class MediaRegistryCardflowController extends MediaRegistryContro
   }
 
   get projectTitle() {
-    return this.org.user.queueCards[0].projectTitle;
+    return this.model.currentOrg.user.queueCards[0].projectTitle;
   }
 
   @action
