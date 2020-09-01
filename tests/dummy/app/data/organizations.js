@@ -12,7 +12,7 @@ export default [
         queueCards: [
           {
             id: "1",
-            status: "open",
+            status: "unread",
             title: "Catalog transfer",
             description: "Catalog transfer from Bunny Records to CRD Records for 16 masters",
             datetime: "2020-08-31T14:46",
