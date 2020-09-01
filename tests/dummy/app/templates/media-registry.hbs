@@ -6,7 +6,13 @@
       {{outlet}}
     {{else}}
       <aside class="media-registry__left-edge {{if this.isQueueFixed "with-queue"}}">
-        <LeftEdgeNav @orgs={{@model.orgs}} @current={{@model.currentOrg.id}} @currentRouteName={{this.target.currentRouteName}} />
+        <LeftEdgeNav
+          @orgs={{@model.orgs}}
+          @current={{@model.currentOrg.id}}
+          @currentRouteName={{this.target.currentRouteName}}
+          @mediaRegistry={{true}}
+        />
+
         {{#each @model.orgs as |org|}}
           {{#if org.user}}
             <IconButton {{on "click" (fn this.transition org.id)}} class="media-registry__hover-zone media-registry__hover-zone--{{org.id}}" />

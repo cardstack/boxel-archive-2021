@@ -1,0 +1,51 @@
+[
+  {
+    "id": "hsh",
+    "type": "organization",
+    "title": "Home Sweet Home",
+    "iconURL": "/workflow/orgs/hsh-logo_transparent.png",
+    "logoURL": "/workflow/orgs/hsh-logo.png",
+    "website": "www.homesweethome.com",
+    "address": "112 Milford Ave, Hartford, CT 06106, United States",
+    "employees": [
+      {
+        "id": "ryan-saint-james",
+        "type": "employee",
+        "name": "Ryan Saint-James",
+        "role": "E-Commerce Manager"
+      },
+      {
+        "id": "haley-oconnell",
+        "type": "employee",
+        "name": "Haley O’Connell",
+        "role": "Store Manager"
+      },
+      {
+        "id": "rupert-grisham",
+        "type": "employee",
+        "name": "Rupert Grisham",
+        "role": "CEO"
+      },
+      {
+        "id": "lola-sampson",
+        "type": "employee",
+        "name": "Lola Sampson",
+        "role": "Marketing Manager"
+      }
+    ]
+  },
+  {
+    "id": "hlc",
+    "type": "organization",
+    "title": "Haley's Love Couch",
+    "iconURL": "/workflow/orgs/hlc-logo_transparent.png",
+    "logoURL": "/workflow/orgs/hlc-logo.png"
+  },
+  {
+    "id": "spwb",
+    "type": "organization",
+    "title": "Self-Publishing Writers & Bloggers",
+    "iconURL": "/workflow/orgs/swb-logo_transparent.png",
+    "logoURL": "/workflow/orgs/swb-logo.png"
+  }
+]
