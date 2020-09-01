@@ -3,7 +3,7 @@
     "id": "hsh",
     "type": "organization",
     "title": "Home Sweet Home",
-    "iconURL": "/workflow/orgs/hsh-logo_transparent.png",
+    "iconURL": "/workflow/orgs/hsh-icon.png",
     "logoURL": "/workflow/orgs/hsh-logo.png",
     "website": "www.homesweethome.com",
     "address": "112 Milford Ave, Hartford, CT 06106, United States",
@@ -38,14 +38,14 @@
     "id": "hlc",
     "type": "organization",
     "title": "Haley's Love Couch",
-    "iconURL": "/workflow/orgs/hlc-logo_transparent.png",
+    "iconURL": "/workflow/orgs/hlc-icon.png",
     "logoURL": "/workflow/orgs/hlc-logo.png"
   },
   {
     "id": "spwb",
     "type": "organization",
     "title": "Self-Publishing Writers & Bloggers",
-    "iconURL": "/workflow/orgs/swb-logo_transparent.png",
-    "logoURL": "/workflow/orgs/swb-logo.png"
+    "iconURL": "/workflow/orgs/spwb-icon.png",
+    "logoURL": "/workflow/orgs/spwb-logo.png"
   }
 ]
