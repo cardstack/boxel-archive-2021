@@ -13,14 +13,20 @@
   --boxel-lsp: 0.025em;
   --boxel-lsp-sm: 0.015em;
 
+  --boxel-spacing: 20px;
   --boxel-border-color: #dedede;
+  --boxel-border-color-dark: #000;
   --boxel-border: 1px solid var(--boxel-border-color);
+  --boxel-border-dark: 1px solid var(--boxel-border-color-dark);
   --boxel-border-radius-sm: 5px;
   --boxel-border-radius: 10px;
   --boxel-highlight: #00ebe5;
   --boxel-highlight-hover: #00b0ad;
+  --boxel-darkest-purple: #2e2b38;
   --boxel-dark-purple: #393642;
+  --boxel-medium-dark-purple: #413e4e;
   --boxel-medium-purple: #5d5c6f;
+  --boxel-light-purple: #afafb7;
 
   --boxel-transition: 0.2s ease;
 

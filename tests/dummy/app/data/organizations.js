@@ -6,8 +6,8 @@ export default [
       iconURL: "/media-registry/button-bunny-records.svg",
       logoURL: '/media-registry/bunny-logo.svg',
       user: {
-        name: "Lisa Track",
-        title: "Administrator",
+        title: "Lisa Track",
+        role: "Administrator",
         imgURL: "/media-registry/profiles/Lisa-Track.jpg",
         queueCards: [
           {
@@ -85,8 +85,8 @@ export default [
       iconURL: "/media-registry/button-crd-records.svg",
       logoURL: '/media-registry/crd_records_logo.svg',
       user: {
-        name: "Steve Rights",
-        title: "Catalog Manager",
+        title: "Steve Rights",
+        role: "Catalog Manager",
         imgURL: "/media-registry/profiles/Steve-Rights.jpg",
         queueCards: [
           {

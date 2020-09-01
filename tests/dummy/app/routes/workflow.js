@@ -16,11 +16,12 @@ export default class WorkflowRoute extends Route {
 
     let user = users.find(el => el.id === this.userId);
     let orgs = userOrgs.filter(el => user.org_ids.includes(el.id));
+    let currentOrg = orgs.find(el => el.id === this.orgId);
 
     return {
       user,
       orgs,
-      currentOrg: this.orgId
+      currentOrg
     }
   }
 }

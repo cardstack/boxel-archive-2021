@@ -1,20 +1,38 @@
+{{log @model}}
 <div class="queue {{@class}}">
   <header class="queue__header">
-    <div class="queue__company">
-      {{#if @model.iconURL}}
-        <span class="queue__company-logo" style={{css-url "background-image" @model.iconURL}} />
-      {{/if}}
-      {{@model.title}}
+    <div class="queue__org">
+      <div class="queue__org-logo" style={{css-url "background-image" @model.iconURL}} />
+      <div>
+        <div class="queue__org-title">{{@model.title}}</div>
+        <div class="queue__user-title">{{this.user.title}}</div>
+      </div>
     </div>
-    <div class="queue__user queue__user--active">
-      <div class="queue__user-name">{{@model.user.name}}</div>
-      <div class="queue__user-title">{{@model.user.title}}</div>
+
+    <ul class="queue__nav">
+      <li class="queue__nav-item queue__nav-item--selected">Queue</li>
+      <li class="queue__nav-item">Workflows</li>
+      <li class="queue__nav-item">Tasks</li>
+    </ul>
+
+    <div class="queue__header-input-group">
+      <div class="queue__pill-btn-group pill-btn-group">
+        <button class="pill-btn-group__btn pill-btn-group__btn--left pill-btn-group__btn--selected">Shared Queue</button>
+        <button class="pill-btn-group__btn pill-btn-group__btn--right">My Queue</button>
+      </div>
+      <Input @value="Search" @class="queue__filter" />
     </div>
-    <Input @placeholder="Filter Notifications" @class="queue__filter">
-    </Input>
+
+    <div class="queue__display-format">
+      <div>View as {{capitalize this.displayFormat}}</div>
+      <div class="queue__display-format-btns">
+        <IconButton @class="queue__display-format-btn {{if (eq this.displayFormat "list") "queue__display-format-btn--selected"}}" @icon="list-2" @width="14px" @height="14px" />
+        <IconButton @class="queue__display-format-btn {{if (eq this.displayFormat "grid") "queue__display-format-btn--selected"}}" @icon="grid-2" @width="14px" @height="14px" />
+      </div>
+    </div>
   </header>
 
-  <section class="queue__section">
+  {{!-- <section class="queue__section">
     <header class="queue__section-header">Open</header>
     <div class="queue__section-content">
       {{#with (find-by "status" "open" (reverse @model.user.queueCards)) as |card|}}
@@ -59,5 +77,5 @@
         {{/each}}
       {{/let}}
     </div>
-  </section>
+  </section> --}}
 </div>

@@ -11,25 +11,25 @@
       {
         "id": "ryan-saint-james",
         "type": "employee",
-        "name": "Ryan Saint-James",
+        "title": "Ryan Saint-James",
         "role": "E-Commerce Manager"
       },
       {
         "id": "haley-oconnell",
         "type": "employee",
-        "name": "Haley O’Connell",
+        "title": "Haley O’Connell",
         "role": "Store Manager"
       },
       {
         "id": "rupert-grisham",
         "type": "employee",
-        "name": "Rupert Grisham",
+        "title": "Rupert Grisham",
         "role": "CEO"
       },
       {
         "id": "lola-sampson",
         "type": "employee",
-        "name": "Lola Sampson",
+        "title": "Lola Sampson",
         "role": "Marketing Manager"
       }
     ]
