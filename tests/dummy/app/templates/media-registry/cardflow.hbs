@@ -1,5 +1,5 @@
  <aside class="media-registry__left-edge with-queue">
-  <LeftEdgeNav @orgs={{@model.orgs}} @current={{@model.id}} />
+  <LeftEdgeNav @orgs={{@model.orgs}} @current={{@model.id}} @mediaRegistry={{true}} />
   {{#each @model.orgs as |org|}}
     <IconButton {{on "click" (fn this.transition org)}} class="media-registry__hover-zone media-registry__hover-zone--{{org.id}}" />
   {{/each}}
