@@ -110,6 +110,7 @@
 }
 
 .pill-btn-group__btn:hover {
+  color: white;
   cursor: pointer;
 }
 

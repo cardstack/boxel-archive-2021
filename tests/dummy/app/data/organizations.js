@@ -14,66 +14,66 @@ export default [
         {
           id: "1",
           status: "unread",
-          label: "Catalog transfer",
+          title: "Catalog transfer",
           description: "Catalog transfer from Bunny Records to CRD Records for 16 masters",
           datetime: "2020-08-31T14:46",
-          title: "Rights transfer, CRD Records",
+          project: "Rights transfer, CRD Records",
           progressPct: 20
         },
         {
           id: "2",
           status: "needs-response",
-          label: "Interesting band | Jelly Club",
+          title: "Interesting band | Jelly Club",
           datetime: "2020-08-31T13:26",
-          title: "Potential artist, Hard rock",
-          progressPct: 40,
+          project: "Potential artist, Hard rock",
+          progressPct: 40
         },
         {
           id: "3",
           status: "needs-response",
-          label: "Cover art | GG Greatest Hits",
+          title: "Cover art | GG Greatest Hits",
           datetime: "2020-08-25T17:02",
-          title: "New album, Golden Girl",
-          progressPct: 40,
+          project: "New album, Golden Girl",
+          progressPct: 40
         },
         {
           id: "4",
-          status: "closed",
-          label: "Agreements | BB Clarke",
+          status: "complete",
+          title: "Agreements | BB Clarke",
           datetime: "2020-08-20T15:11",
-          title: "Rights transfer, CRD Records",
-          progressPct: 100,
+          project: "Rights transfer, CRD Records",
+          progressPct: 100
         },
         {
           id: "5",
-          status: "closed",
-          label: "Agreements | Pia Midina",
+          status: "complete",
+          title: "Agreements | Pia Midina",
           datetime: "2020-07-31T11:40",
-          title: "Rights transfer, CRD Records",
-          progressPct: 100,
+          project: "Rights transfer, CRD Records",
+          progressPct: 100
         },
         {
           id: "6",
-          status: "recent",
-          label: "Registration | GG Greatest Hits",
+          status: "recent-activity",
+          title: "Registration | GG Greatest Hits",
           datetime: "2020-07-30T09:22",
-          title: " New album, Golden Girl",
-          progressPct: 40,
+          project: "New album, Golden Girl",
+          progressPct: 40
         },
         {
           id: "7",
-          status: "closed",
-          label: "Request | Pia Midina",
+          status: "complete",
+          title: "Request | Pia Midina",
           datetime: "2020-07-16T13:38",
-          title: "Rights transfer, CRD Records",
-          progressPct: 100,
+          project: "Rights transfer, CRD Records",
+          progressPct: 100
         },
         {
           id: "8",
-          status: "recent",
-          label: "Tracks | GG Greatest Hits",
+          status: "recent-activity",
+          title: "Tracks | GG Greatest Hits",
           datetime: "2020-07-15T12:21",
-          title: " New album, Golden Girl",
+          project: "New album, Golden Girl",
           progressPct: 40
         }
       ]
@@ -93,42 +93,42 @@ export default [
         {
           id: "1",
           status: "unread",
-          label: "Catalog transfer",
+          title: "Catalog transfer",
           description: "Catalog transfer from Bunny Records to CRD Records for 16 masters",
           datetime: "2020-08-31T14:56",
-          title: "Rights transfer, Bunny Records",
+          project: "Rights transfer, Bunny Records",
           progressPct: 40
         },
         {
           id: "2",
           status: "needs-response",
-          label: "Radio interview | FM8",
+          title: "Radio interview | FM8",
           datetime: "2020-08-25T11:00",
-          title: "Interviews, CEO",
+          project: "Interviews, CEO",
           progressPct: 20
         },
         {
           id: "3",
-          status: "closed",
-          label: "To Dos",
+          status: "complete",
+          title: "To Dos",
           datetime: "2020-08-13T10:10",
-          title: "Rights transfer, Bunny Records",
+          project: "Rights transfer, Bunny Records",
           progressPct: 100
         },
         {
           id: "4",
-          status: "recent",
-          label: "TV interview | ZBZ",
+          status: "recent-activity",
+          title: "TV interview | ZBZ",
           datetime: "2020-08-12T16:38",
-          title: "Interviews, CEO",
+          project: "Interviews, CEO",
           progressPct: 40
         },
         {
           id: "5",
-          status: "recent",
-          label: "Newspaper interview | New Times",
+          status: "recent-activity",
+          title: "Newspaper interview | New Times",
           datetime: "2020-07-29T17:01",
-          title: "Interviews, CEO",
+          project: "Interviews, CEO",
           progressPct: 40
         }
       ]

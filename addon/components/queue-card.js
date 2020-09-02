@@ -67,7 +67,7 @@ export default class QueueCardComponent extends Component {
 
   @action
   openThread() {
-    let pct = this.args?.currentMilestone?.pct || this.args.card.progressPct;
+    let pct = Number(this.args?.currentMilestone?.pct) || Number(this.args.card.progressPct);
     if (this.args.updateProgress && pct === 20 && this.args.orgId === 'crd_records') {
       // when steve opens the thread for the first time, thread should get to 40% completion
       this.args.updateProgress(40);

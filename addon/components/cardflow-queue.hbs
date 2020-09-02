@@ -16,8 +16,18 @@
 
     <div class="queue__header-input-group">
       <div class="queue__pill-btn-group pill-btn-group">
-        <button class="pill-btn-group__btn pill-btn-group__btn--left pill-btn-group__btn--selected">Shared Queue</button>
-        <button class="pill-btn-group__btn pill-btn-group__btn--right">My Queue</button>
+        <button
+          {{on "click" (fn this.filterQueue null)}}
+          class="pill-btn-group__btn pill-btn-group__btn--left {{if (eq this.displayQueue "shared") "pill-btn-group__btn--selected"}}"
+        >
+          Shared Queue
+        </button>
+        <button
+          {{on "click" (fn this.filterQueue @user.id)}}
+          class="pill-btn-group__btn pill-btn-group__btn--right {{if (eq this.displayQueue "user") "pill-btn-group__btn--selected"}}"
+        >
+          My Queue
+        </button>
       </div>
       <Input @value="Search" @class="queue__filter" />
     </div>
