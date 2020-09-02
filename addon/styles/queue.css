@@ -20,6 +20,7 @@
   padding: 20px;
   background-color: inherit;
   border-bottom: var(--boxel-border-dark);
+  z-index: 1;
 }
 
 .queue__header > * + * {

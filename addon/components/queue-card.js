@@ -5,8 +5,28 @@ import { inject as service } from '@ember/service';
 export default class QueueCardComponent extends Component {
   @service router;
 
+  get members() {
+    let members = this.args.card.members;
+    let maxMembers = 2;
+
+    if (!members) { return null; }
+
+    if (members.length > maxMembers) {
+      let remaining = members.length - maxMembers;
+      return `${members[0]}, ${members[1]}, +${remaining} more`;
+    }
+
+    return members.toString().replace(',', ', ');
+  }
+
   get progress() {
     switch(this.args?.currentMilestone?.pct || this.args.card.progressPct) {
+      case (0):
+        return {
+          status: 'not started',
+          icon: '/media-registry/progress-pie/progress-circle-dark.svg',
+          iconOpen: '/assets/images/icons/progress-circle.svg'
+        }
       case (20):
         return {
           status: 'proposal',
@@ -34,15 +54,11 @@ export default class QueueCardComponent extends Component {
       case (100):
         return {
           status: 'complete',
-          icon: '/media-registry/progress-pie/progress-100pct.svg',
+          icon: '/media-registry/progress-pie/progress-100pct-dark.svg',
           iconOpen: '/media-registry/progress-pie/progress-100pct.svg'
         }
       default:
-        return {
-          status: 'not started',
-          icon: '/media-registry/progress-pie/progress-circle-dark.svg',
-          iconOpen: '/assets/images/icons/progress-circle.svg'
-        }
+        return null;
     }
   }
 
