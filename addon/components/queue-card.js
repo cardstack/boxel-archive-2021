@@ -5,55 +5,58 @@ import { inject as service } from '@ember/service';
 export default class QueueCardComponent extends Component {
   @service router;
 
-  get members() {
-    let members = this.args.card.members;
-    let maxMembers = 2;
+  get participants() {
+    let participants = this.args.card.participants;
+    let max = 2;
 
-    if (!members) { return null; }
+    if (!participants) { return null; }
 
-    if (members.length > maxMembers) {
-      let remaining = members.length - maxMembers;
-      return `${members[0]}, ${members[1]}, +${remaining} more`;
+    if (participants.length > max) {
+      let remaining = participants.length - max;
+      return `${participants[0]}, ${participants[1]}, +${remaining} more`;
     }
 
-    return members.toString().replace(',', ', ');
+    return participants.toString().replace(',', ', ');
   }
 
   get progress() {
-    switch(this.args?.currentMilestone?.pct || this.args.card.progressPct) {
+    let progressPct = Number(this.args?.currentMilestone?.pct) || Number(this.args.card.progressPct);
+    let progressStatus = this.args.card.currentMilestone || null;
+
+    switch(progressPct) {
       case (0):
         return {
-          status: 'not started',
+          status: progressStatus || 'not started',
           icon: '/media-registry/progress-pie/progress-circle-dark.svg',
           iconOpen: '/assets/images/icons/progress-circle.svg'
         }
       case (20):
         return {
-          status: 'proposal',
+          status: progressStatus || 'proposal',
           icon: '/media-registry/progress-pie/progress-20pct-dark.svg',
           iconOpen: '/media-registry/progress-pie/progress-20pct.svg'
         }
       case (40):
         return {
-          status: 'under-review',
+          status: progressStatus || 'under-review',
           icon: '/media-registry/progress-pie/progress-40pct-dark.svg',
           iconOpen: '/media-registry/progress-pie/progress-40pct.svg'
         }
       case (60):
         return {
-          status: 'transfer-accepted',
+          status: progressStatus || 'transfer-accepted',
           icon: '/media-registry/progress-pie/progress-60pct-dark.svg',
           iconOpen: '/media-registry/progress-pie/progress-60pct.svg'
         }
       case (80):
         return {
-          status: 'redeliver',
+          status: progressStatus || 'redeliver',
           icon: '/media-registry/progress-pie/progress-80pct-dark.svg',
           iconOpen: '/media-registry/progress-pie/progress-80pct.svg'
         }
       case (100):
         return {
-          status: 'complete',
+          status: progressStatus || 'complete',
           icon: '/media-registry/progress-pie/progress-100pct-dark.svg',
           iconOpen: '/media-registry/progress-pie/progress-100pct.svg'
         }

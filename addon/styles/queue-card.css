@@ -73,26 +73,26 @@
   overflow: hidden;
 }
 
-.queue-card__members {
+.queue-card__participants {
   --icon-color: #fff;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.queue-card__members svg {
+.queue-card__participants svg {
   display: inline-block;
   vertical-align: middle;
   margin-right: 8px;
 }
 
-.queue-card__member-names {
+.queue-card__participant-names {
   display: inline-block;
   vertical-align: middle;
   opacity: 0.5;
 }
 
-.queue-card__project-title + .queue-card__members {
+.queue-card__project-title + .queue-card__participants {
   margin-top: 10px;
 }
 
@@ -123,6 +123,7 @@
 
 .queue-card__task-label--awaiting-reply {
   background-color: var(--awaiting-reply-label-color);
+  color: #fff;
 }
 
 .queue-card__status {
@@ -153,7 +154,7 @@
   color: black;
 }
 
-.queue-card--light-theme .queue-card__members {
+.queue-card--light-theme .queue-card__participants {
   --icon-color: #000;
 }
 .queue-card--light-theme .queue-card__footer {

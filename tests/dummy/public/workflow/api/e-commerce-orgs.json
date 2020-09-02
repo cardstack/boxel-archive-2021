@@ -37,67 +37,96 @@
       {
         "id": "1",
         "status": "unread",
-        "label": "Catalog transfer",
-        "description": "Catalog transfer from Bunny Records to CRD Records for 16 masters",
-        "datetime": "2020-08-31T14:46",
-        "title": "Catalog transfer from Bunny Records to CRD Records for 16 masters",
-        "members": ["Lisa Track", "Steve Rights"]
+        "project": "customers",
+        "title": "Purchase Order, Julia Mason",
+        "participants": ["Julia Mason", "Haley O'Connell"],
+        "datetime": "2020-09-21T20:12",
+        "workflow_id": "customer-support",
+        "progressPct": "40",
+        "currentMilestone": "Reserve products",
+        "tasks": [
+          {
+            "assigned_to": "haley-oconnell",
+            "title": "Reserve products"
+          }
+        ]
       },
       {
         "id": "2",
         "status": "needs-response",
-        "label": "Interesting band | Jelly Club",
-        "datetime": "2020-08-31T13:26",
-        "title": "Potential artist, Hard rock",
-        "members": ["Lisa Track"]
+        "project": "customers",
+        "title": "Personal Shopping Assistance, Miriam Jackson",
+        "participants": ["Miriam Jackson", "Haley O'Connell"],
+        "datetime": "2020-09-21T17:12",
+        "workflow_id": "customer-support",
+        "progressPct": "80",
+        "currentMilestone": "Track delivery",
+        "tasks": [
+          {
+            "assigned_to": "haley-oconnell",
+            "title": "Track delivery"
+          }
+        ]
       },
       {
         "id": "3",
         "status": "needs-response",
-        "label": "Cover art | GG Greatest Hits",
-        "datetime": "2020-08-25T17:02",
-        "title": "New album, Golden Girl",
-        "progressPct": 40
+        "project": "marketing",
+        "title": "Newspaper Ad, New Times",
+        "participants": ["Lucy Hatch", "Lola Sampson"],
+        "datetime": "2020-09-18T12:57",
+        "progressPct": "60",
+        "currentMilestone": "Accept"
       },
       {
         "id": "4",
-        "status": "closed",
-        "label": "Agreements | BB Clarke",
-        "datetime": "2020-08-20T15:11",
-        "title": "Rights transfer, CRD Records",
-        "progressPct": 100
+        "status": "needs-response",
+        "project": "marketing",
+        "title": "Radio Ad, FM8",
+        "participants": ["Martin Stiles", "Lola Sampson"],
+        "datetime": "2020-09-18T15:17",
+        "progressPct": "80",
+        "currentMilestone": "Submit files"
       },
       {
         "id": "5",
-        "status": "closed",
-        "label": "Agreements | Pia Midina",
-        "datetime": "2020-07-31T11:40",
-        "title": "Rights transfer, CRD Records",
-        "progressPct": 100
+        "status": "recent-activity",
+        "project": "website",
+        "title": "Product Catalog, Question",
+        "participants": ["Ryan Saint-James", "Haley O'Connell"],
+        "datetime": "2020-09-18T11:47"
       },
       {
         "id": "6",
-        "status": "recent",
-        "label": "Registration | GG Greatest Hits",
-        "datetime": "2020-07-30T09:22",
-        "title": " New album, Golden Girl",
-        "progressPct": 40
+        "status": "recent-activity",
+        "project": "hr",
+        "title": "Salesperson, Seth Johansson",
+        "participants": ["Seth Johansson", "Rupert Grisham", "Haley O'Connell"],
+        "datetime": "2020-09-16T15:23",
+        "progressPct": "60",
+        "currentMilestone": "Review",
+        "awaitingResponse": true
       },
       {
         "id": "7",
-        "status": "closed",
-        "label": "Request | Pia Midina",
-        "datetime": "2020-07-16T13:38",
-        "title": "Rights transfer, CRD Records",
-        "progressPct": 100
+        "status": "recent-activity",
+        "project": "hr",
+        "title": "Salesperson, Alina McMillan",
+        "participants": ["Alina McMillan", "Rupert Grisham", "Haley O'Connell"],
+        "datetime": "2020-09-18T16:25",
+        "progressPct": "60",
+        "currentMilestone": "Review",
+        "awaitingResponse": true
       },
       {
         "id": "8",
-        "status": "recent",
-        "label": "Tracks | GG Greatest Hits",
-        "datetime": "2020-07-15T12:21",
-        "title": " New album, Golden Girl",
-        "progressPct": 40
+        "status": "recent-activity",
+        "project": "marketing",
+        "title": "TV Ad, ZBZ",
+        "participants": ["Kevin Collins", "Lola Sampson"],
+        "datetime": "2020-09-17T12:17",
+        "progressPct": "20",
+        "currentMilestone": "Offer"
       }
     ]
   },

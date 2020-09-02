@@ -23,7 +23,7 @@ export default class CardflowQueueComponent extends Component {
 
   get recentCards() {
     if (!this.args.model || !this.args.model.queueCards) { return null; }
-    let recentCards = this.args.model.queueCards.filter(el => el.status !== 'unread' && el.status !== 'needs-response');
+    let recentCards = this.args.model.queueCards.filter(el => el.status === 'recent-activity');
     return this.sortedCards(recentCards);
   }
 
