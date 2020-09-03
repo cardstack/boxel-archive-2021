@@ -1,0 +1,37 @@
+.workflow-project {
+  padding: 0 30px 30px 35px;
+  background-color: var(--boxel-medium-purple);
+}
+
+.workflow-project__header {
+  --icon-color: #fff;
+  padding: 20px 0 25px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--boxel-spacing);
+  color: #fff;
+}
+
+.workflow-project__label {
+  color: var(--boxel-light-purple);
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+}
+
+.workflow-project__title {
+  font: var(--boxel-font);
+  font-weight: 700;
+  letter-spacing: var(--boxel-lsp-xs);
+}
+
+.workflow-project__participants {
+  font: var(--boxel-font-xs);
+  letter-spacing: var(--boxel-lsp-lg);
+}
+
+.workflow-project__participants svg {
+  margin-left: 5px;
+}

@@ -18,17 +18,30 @@
   </aside>
 
   <main class="media-registry__outlet">
-    <Cardflow
-      @model={{@model}}
-      @org={{@model.currentOrg}}
-      {{!-- @actionSteps={{this.actionSteps}} --}}
-      {{!-- @milestones={{this.milestones}} --}}
-      {{!-- @currentMilestone={{this.currentMilestone}} --}}
-      {{!-- @updateProgress={{this.updateProgress}} --}}
-      {{!-- @projectTitle={{this.projectTitle}} --}}
-      {{!-- @catalog={{this.catalog}} --}}
-      {{!-- @expandAction={{action this.displayCatalog}} --}}
-      {{!-- @transitionToProduct={{this.transitionToProduct}} --}}
-    />
+    <section class="workflow-project">
+      <header class="workflow-project__header">
+        <div>
+          <div class="workflow-project__label">Project</div>
+          <h1 class="workflow-project__title">Title TK</h1>
+        </div>
+        <div class="workflow-project__participants">
+          X people can see this project
+          {{svg-jar "users" width="15px" height="13px"}}
+        </div>
+      </header>
+
+      <Cardflow
+        @model={{@model}}
+        @org={{@model.currentOrg}}
+        {{!-- @actionSteps={{this.actionSteps}} --}}
+        {{!-- @milestones={{this.milestones}} --}}
+        {{!-- @currentMilestone={{this.currentMilestone}} --}}
+        {{!-- @updateProgress={{this.updateProgress}} --}}
+        {{!-- @projectTitle={{this.projectTitle}} --}}
+        {{!-- @catalog={{this.catalog}} --}}
+        {{!-- @expandAction={{action this.displayCatalog}} --}}
+        {{!-- @transitionToProduct={{this.transitionToProduct}} --}}
+      />
+    </section>
   </main>
 </section>

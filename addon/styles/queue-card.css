@@ -9,7 +9,7 @@
   width: 100%;
   padding: 0 0 10px 10px;
   border-radius: var(--boxel-border-radius);
-  background-color: #5A586A;
+  background-color: var(--boxel-medium-purple);
   color: white;
   font: var(--boxel-font-xs);
   letter-spacing: var(--boxel-lsp-lg);

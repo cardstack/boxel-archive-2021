@@ -10,6 +10,8 @@
 @import 'media-registry/discrepancies-index.css';
 @import 'media-registry/discrepancy.css';
 
+@import 'workflow.css';
+
 
 html, body {
   height: 100%;
