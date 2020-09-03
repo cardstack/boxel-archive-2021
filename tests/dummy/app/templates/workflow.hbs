@@ -1,5 +1,5 @@
 <section class="media-registry media-registry--{{@model.currentOrg.id}}">
-  <aside class="media-registry__left-edge">
+  <aside class="media-registry__left-edge with-queue">
     <LeftEdgeNav
       @orgs={{@model.orgs}}
       @current={{@model.currentOrg.id}}
@@ -18,6 +18,17 @@
   </aside>
 
   <main class="media-registry__outlet">
-    {{outlet}}
+    <Cardflow
+      @model={{@model}}
+      @org={{@model.currentOrg}}
+      {{!-- @actionSteps={{this.actionSteps}} --}}
+      {{!-- @milestones={{this.milestones}} --}}
+      {{!-- @currentMilestone={{this.currentMilestone}} --}}
+      {{!-- @updateProgress={{this.updateProgress}} --}}
+      {{!-- @projectTitle={{this.projectTitle}} --}}
+      {{!-- @catalog={{this.catalog}} --}}
+      {{!-- @expandAction={{action this.displayCatalog}} --}}
+      {{!-- @transitionToProduct={{this.transitionToProduct}} --}}
+    />
   </main>
 </section>
