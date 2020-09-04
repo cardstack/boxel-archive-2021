@@ -2,10 +2,15 @@
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr;
+  gap: 0 80px;
+  background-color: #EFEFEF;
+  border-radius: var(--boxel-border-radius);
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
-  overflow: hidden;
-  height: 100%;
+}
+
+.cardflow-platter {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 /* Header */
@@ -16,25 +21,61 @@
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 20px;
-  min-height: 80px;
-  height: auto;
-  padding: 15px 20px 20px 30px;
+  padding: 25px 20px;
+  border-radius: var(--boxel-border-radius) var(--boxel-border-radius) 0 0;
   background-color: white;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.cardflow__project-title {
-  border-radius: 10px 0 5px 0;
-  color: rgba(0, 0, 0, 0.7);
+.cardflow__label {
+  color: var(--boxel-medium-light-purple);
+  font: var(--boxel-font-xs);
+  font-weight: 600;
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
 }
 
 .cardflow__title {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: calc(27/20);
-  letter-spacing: 0.005em;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: calc(24/18);
+  letter-spacing: var(--boxel-lsp-xs);
+}
+
+.cardflow__label + .cardflow__title {
+  margin-top: 5px;
+}
+
+.cardflow__header-participants {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+  color: var(--boxel-medium-light-purple);
+  font: var(--boxel-font-xs);
+  letter-spacing: var(--boxel-lsp-lg);
+}
+
+.cardflow__header-participant-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cardflow__notification {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 13px 3px;
+  border-radius: 0 10px 0 5px;
+  background-color: var(--boxel-red);
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: var(--boxel-lsp-sm);
+  text-align: center;
 }
 
 
@@ -44,14 +85,14 @@
   grid-auto-rows: max-content;
   gap: 30px;
   height: 100%;
-  padding: 20px 30px 50px;
+  padding: 30px 20px;
   overflow-y: auto;
 }
 
 .cardflow__message {
   display: grid;
   grid-template-columns: 60px 1fr;
-  gap: 5px 20px;
+  gap: 10px 20px;
   color: black;
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
@@ -63,6 +104,12 @@
 
 .cardflow__message-content > * + * {
   margin-top: 20px;
+}
+
+.cardflow__message-content {
+  font-size: 15px;
+  line-height: calc(23/15);
+  letter-spacing: var(--boxel-lsp-sm);
 }
 
 
@@ -97,12 +144,21 @@
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 0 10px;
-  color: #666;
 }
 
 .cardflow__message-info-title {
-  color: black;
   font-weight: 600;
+}
+
+.cardflow__message-info > time {
+  color: #666;
+}
+
+.cardflow__message-info > time + div {
+  grid-column: 1 / -1;
+  color: #666;
+  font: var(--boxel-font-xs);
+  letter-spacing: var(--boxel-lsp-lg);
 }
 
 
@@ -121,7 +177,7 @@
   top: 0;
   left: 40%;
   padding: 5px 10px;
-  background-color: #F6F6F6;
+  background-color: #EFEFEF;
   font-weight: bold;
   text-align: center;
 }
@@ -129,22 +185,23 @@
 
 /* Right Sidebar */
 .cardflow__sidebar {
-  width: 100%;
-  height: 100%;
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: var(--boxel-spacing);
   max-width: 290px;
   padding: 20px 30px;
-  border-left: 1px solid #D6D6D6;
   overflow-y: auto;
 }
 
-.cardflow__sidebar-section + .cardflow__sidebar-section {
-  margin-top: 20px;
+.cardflow__sidebar-section {
+  padding: 15px 20px;
 }
 
 .cardflow__sidebar-title {
   padding-bottom: 15px;
+  color: var(--boxel-medium-light-purple);
   font: var(--boxel-font-sm);
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
 }
@@ -281,6 +338,7 @@
 /* Cardflow Card */
 .cardflow-card {
   max-width: 615px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .cardflow-card__header {
@@ -474,6 +532,11 @@
   background-position: right 55px center, right 15px center;
   background-repeat: no-repeat, no-repeat;
   background-size: 15px 15px, 20px 20px;
+  font-size: 15px;
+  line-height: calc(23/15);
+  letter-spacing: var(--boxel-lsp-sm);
+  border: var(--boxel-border);
+  border-radius: var(--boxel-border-radius);
 }
 
 

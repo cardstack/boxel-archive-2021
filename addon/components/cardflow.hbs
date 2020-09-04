@@ -1,9 +1,16 @@
-<CardPlatter>
+<CardPlatter @class="cardflow-platter">
   <div class="cardflow">
     <header class="cardflow__header">
+      {{#if (eq this.project.status "unread")}}
+        <div class="cardflow__notification">1</div>
+      {{/if}}
       <div>
-        <div class="cardflow__project-title">{{this.project.project}}</div>
-        <div class="cardflow__title">{{or this.project.description this.project.title}}</div>
+        <div class="cardflow__label">{{this.project.project}}</div>
+        <h2 class="cardflow__title">{{or this.project.description this.project.title}}</h2>
+      </div>
+      <div class="cardflow__header-participants">
+        <span>Haley O’Connell, Lucas Farrow, +2</span>
+        <span class="cardflow__header-participant-img" style={{css-url "background-image" @model.user.imgURL}} />
       </div>
     </header>
 
@@ -207,20 +214,21 @@
     {{!-- Right Sidebar --}}
     <aside class="cardflow__sidebar">
       {{!-- Progress Pie --}}
-      <section class="cardflow__sidebar-section">
-        <h3 class="cardflow__sidebar-title">Progress</h3>
-        <div class="cardflow__progress">
-          <div class="cardflow__progress-icon" style={{css-url "background-image" @currentMilestone.iconLg}}>
-            <span class="cardflow__progress-pct">{{@currentMilestone.pct}}%</span>
-          </div>
-          <div class="cardflow__progress-status">{{@currentMilestone.desc}}</div>
-        </div>
-      </section>
 
-      {{!-- Checklist --}}
-      <section class="cardflow__sidebar-section">
-        <h3 class="cardflow__sidebar-title">Checklist</h3>
-        <CardPlatter>
+      <CardPlatter @class="cardflow-platter">
+        <section class="cardflow__sidebar-section">
+          <h3 class="cardflow__sidebar-title">Progress</h3>
+          <div class="cardflow__progress">
+            <div class="cardflow__progress-icon" style={{css-url "background-image" @currentMilestone.iconLg}}>
+              <span class="cardflow__progress-pct">{{@currentMilestone.pct}}%</span>
+            </div>
+            <div class="cardflow__progress-status">{{@currentMilestone.desc}}</div>
+          </div>
+        </section>
+
+        {{!-- Checklist --}}
+        <section class="cardflow__sidebar-section">
+          <h3 class="cardflow__sidebar-title">Milestones</h3>
           <ul class="cardflow__checklist">
             <li class="cardflow__checklist-item {{if (gt @currentMilestone.pct 0) "completed" (if (eq @currentMilestone.pct 0) "current")}}">
                 {{svg-jar (if (gt @currentMilestone.pct 0) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Propose
@@ -243,13 +251,13 @@
               {{#if (gt @currentMilestone.pct 80)}}<span class="cardflow__checklist-time">1m ago</span>{{/if}}
             </li>
           </ul>
-        </CardPlatter>
-      </section>
+        </section>
+      </CardPlatter>
 
       {{!-- Participants Box --}}
-      <section class="cardflow__sidebar-section">
-        <h3 class="cardflow__sidebar-title">Participants</h3>
-        <CardPlatter>
+      <CardPlatter @class="cardflow-platter">
+        <section class="cardflow__sidebar-section">
+          <h3 class="cardflow__sidebar-title">Participants</h3>
           {{#each @model.orgs as |participant|}}
             <div class="cardflow__participants">
               <div class="cardflow__participant">
@@ -265,8 +273,8 @@
               </div>
             </div>
           {{/each}}
-        </CardPlatter>
-      </section>
+        </section>
+      </CardPlatter>
     </aside>
   </div>
 </CardPlatter>
