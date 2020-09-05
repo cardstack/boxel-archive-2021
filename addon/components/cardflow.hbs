@@ -37,7 +37,7 @@
             Lisa
           </div>
           {{!-- Transfer Proposal CARD --}}
-          <CardPlatter @class="cardflow-card cardflow-proposal-card">
+          {{!-- <CardPlatter @class="cardflow-card cardflow-proposal-card">
             <header class="cardflow-card__header">
               <div class="cardflow-card__title">Transfer Proposal</div>
               <div class="cardflow-card__date">Aug 31, 2020</div>
@@ -85,11 +85,11 @@
                 <IconButton @class="cardflow-action-card__icon-btn" @icon="more-actions" @aria-label="Other actions" />
               </div>
             {{/if}}
-          </CardPlatter>
+          </CardPlatter> --}}
         </div>
       </div>
 
-      {{#if (gte @currentMilestone.pct 40)}}
+      {{!-- {{#if (gte @currentMilestone.pct 40)}}
         <div class="cardflow__message">
           <div class="cardflow__message-icon__profile cardflow__message-icon__profile--crd" />
           <div class="cardflow__message-info">
@@ -97,15 +97,14 @@
             <time>2:56 PM</time>
           </div>
         </div>
-      {{/if}}
+      {{/if}} --}}
 
-      {{#if (gte @currentMilestone.pct 60)}}
+      {{!-- {{#if (gte @currentMilestone.pct 60)}}
         <div class="cardflow__message-divider">
           <div class="cardflow__message-divider-border" />
           <div class="cardflow__message-divider-date">{{moment-format this.actionSteps.0.timestamp "MMMM D"}}</div>
         </div>
 
-        {{!-- TODO: Jump to card --}}
         <div class="cardflow__message">
           <div class="cardflow__message-icon__profile cardflow__message-icon__profile--crd" />
           <div class="cardflow__message-info">
@@ -113,13 +112,13 @@
             <time>{{moment-format this.actionSteps.0.timestamp "h:mm A"}}</time>
           </div>
         </div>
-      {{/if}}
+      {{/if}} --}}
 
-      {{#if (gte @currentMilestone.pct 60)}}
+      {{!-- {{#if (gte @currentMilestone.pct 60)}}
         <div class="cardflow__message">
-          <div />
+          <div /> --}}
           {{!-- Metadata CARD --}}
-          <CardPlatter @class="cardflow-card cardflow-action-card">
+          {{!-- <CardPlatter @class="cardflow-card cardflow-action-card">
             <header class="cardflow-card__header">
               <div class="cardflow-card__label cardflow-card__label--{{if (eq @currentMilestone.pct 60) "in-progress" "completed"}}">{{#if (eq @currentMilestone.pct 60)}}In Progress{{else}}Completed{{/if}}</div>
               <div class="cardflow-card__title">{{#if (eq @currentMilestone.pct 60)}}Amending{{else}}Amended{{/if}} Metadata</div>
@@ -134,10 +133,10 @@
                 />
               {{/each}}
             </ul>
-          </CardPlatter>
-        </div>
+          </CardPlatter> --}}
+        {{!-- </div> --}}
 
-        {{#if this.actionSteps.1.completed}}
+        {{!-- {{#if this.actionSteps.1.completed}}
           <div class="cardflow__message">
             <div class="cardflow__message-icon" style={{css-url "background-image" "/media-registry/button-verify.svg"}}></div>
             <div class="cardflow__message-info">
@@ -168,36 +167,36 @@
               </section>
             </CardPlatter>
           </div>
-        {{/if}}
-        {{#if this.actionSteps.2.completed}}
+        {{/if}} --}}
+        {{!-- {{#if this.actionSteps.2.completed}}
           <div class="cardflow__message">
             <div class="cardflow__message-icon" style={{css-url "background-image" "/media-registry/button-crd-records.svg"}}></div>
             <div class="cardflow__message-info">
               <div class="cardflow__message-info-title">Added to <strong>CRD Records Catalog</strong></div>
               <time>{{moment-format this.actionSteps.2.timestamp "h:mm A"}}</time>
             </div>
-            <div />
+            <div /> --}}
             {{!-- Catalog Summary Card --}}
-            <CardPlatter @class="cardflow-card catalog-summary-card">
+            {{!-- <CardPlatter @class="cardflow-card catalog-summary-card">
               <div class="catalog-summary-card__img" />
               <div>
                 <div><strong>Pia Midina & BB Clarke</strong></div>
                 <div class="catalog-summary-card__desc">Transfer from Bunny Records</div>
               </div>
               <div class="catalog-summary-card__count"><strong>16</strong> Masters</div>
-            </CardPlatter>
-          </div>
+            </CardPlatter> --}}
+          {{!-- </div>
         {{/if}}
-      {{/if}}
+      {{/if}} --}}
 
       {{!-- Reply to message box --}}
-      <div class="cardflow__message">
+      {{!-- <div class="cardflow__message">
         <div class="cardflow__message-icon__profile cardflow__message-icon__profile--{{if (eq @model.id "crd_records") "crd" "bunny"}}" />
         <Input @class="cardflow__reply-to field-renderer__input" @placeholder="Reply to {{if (eq @model.id "crd_records") "Lisa" "Steve"}}"></Input>
-      </div>
+      </div> --}}
 
       {{!-- Next steps --}}
-      {{#if (and (lt @currentMilestone.pct 80) (eq @model.id "bunny_records"))}}
+      {{!-- {{#if (and (lt @currentMilestone.pct 80) (eq @model.id "bunny_records"))}}
         <div class="cardflow__message">
           <div />
           <NextSteps @inlineBtnGroup={{true}} @moreActions={{true}} />
@@ -208,7 +207,7 @@
           <div />
           <NextSteps @steps={{array (hash title="Redeliver to DSP" action=(fn this.setProgress 100)) "Make Changes to Catalog"}} />
         </div>
-      {{/if}}
+      {{/if}} --}}
     </div>
 
     {{!-- Right Sidebar --}}
@@ -258,19 +257,19 @@
       <CardPlatter @class="cardflow-platter">
         <section class="cardflow__sidebar-section">
           <h3 class="cardflow__sidebar-title">Participants</h3>
-          {{#each @model.orgs as |participant|}}
+          {{#each @model.participants as |participant|}}
             <div class="cardflow__participants">
               <div class="cardflow__participant">
                 <div class="cardflow__participant-company-img" style={{css-url "background-image" participant.iconURL}} />
-                <div class="cardflow__participant-company">{{participant.title}}</div>
+                <div class="cardflow__participant-company">{{participant}}</div>
               </div>
-              <div class="cardflow__participant">
+              {{!-- <div class="cardflow__participant">
                 <div class="cardflow__participant-user-img" style={{css-url "background-image" participant.user.imgURL}} />
                 <div class="cardflow__participant-user">
                   {{participant.user.title}}<br>
                   <span>{{participant.user.role}}</span>
                 </div>
-              </div>
+              </div> --}}
             </div>
           {{/each}}
         </section>

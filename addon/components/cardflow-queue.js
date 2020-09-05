@@ -7,21 +7,26 @@ export default class CardflowQueueComponent extends Component {
   @tracked displayQueue = "shared";
   @tracked updatedCards;
 
-  getCards() {
-    return this.updatedCards ? this.updatedCards : this.args.model.queueCards;
+  _getCards() {
+    return this.updatedCards ? this.updatedCards : this.args.model.orgQueueCards;
   }
 
-  setCards(val) {
+  _setCards(val) {
     this.updatedCards = val;
-  }
-
-  get cards() {
-    return this.getCards();
   }
 
   get user() {
     if (!this.args.model) { return null; }
-    return this.args.user || this.args.model.user;
+    return this.args.model.user;
+  }
+
+  get org() {
+    if (!this.args.model) { return null; }
+    return this.args.model.currentOrg;
+  }
+
+  get cards() {
+    return this._getCards();
   }
 
   get unreadCards() {
@@ -53,12 +58,12 @@ export default class CardflowQueueComponent extends Component {
 
     if (val) {
       let cards = this.cards.filter(el => el.participant_ids.includes(val));
-      this.setCards(cards);
+      this._setCards(cards);
       this.displayQueue = "user";
       return;
     }
 
-    this.setCards(this.args.model.queueCards);
+    this._setCards(this.args.model.queueCards);
     this.displayQueue = "shared";
   }
 }

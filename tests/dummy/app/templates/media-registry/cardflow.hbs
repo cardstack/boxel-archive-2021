@@ -4,12 +4,12 @@
     <IconButton {{on "click" (fn this.transition org)}} class="media-registry__hover-zone media-registry__hover-zone--{{org.id}}" />
   {{/each}}
   <div class="media-registry__left-edge-queue slide-in">
-    <CardflowQueue
+    {{!-- <CardflowQueue
       @class="media-registry__queue"
       @model={{this.model.currentOrg}}
       @currentMilestone={{this.currentMilestone}}
       @updateProgress={{this.updateProgress}}
-    />
+    /> --}}
   </div>
 </aside>
 
@@ -102,7 +102,7 @@
     </BoxelModal>
   {{/if}}
 
-  <Cardflow
+  {{!-- <Cardflow
     @model={{@model}}
     @org={{this.model.currentOrg}}
     @actionSteps={{this.actionSteps}}
@@ -111,5 +111,5 @@
     @updateProgress={{this.updateProgress}}
     @catalog={{this.catalog}}
     @expandAction={{action this.displayCatalog}}
-  />
+  /> --}}
 </div>

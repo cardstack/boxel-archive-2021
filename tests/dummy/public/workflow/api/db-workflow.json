@@ -1,0 +1,223 @@
+{
+  "orgs": [
+    {
+      "id": "hsh",
+      "type": "organization",
+      "title": "Home Sweet Home",
+      "iconURL": "/workflow/orgs/hsh-icon.png",
+      "logoURL": "/workflow/orgs/hsh-logo.png",
+      "website": "www.homesweethome.com",
+      "address": "112 Milford Ave, Hartford, CT 06106, United States",
+      "employees": [
+        {
+          "id": "ryan-saint-james",
+          "type": "employee",
+          "title": "Ryan Saint-James",
+          "role": "E-Commerce Manager"
+        },
+        {
+          "id": "haley-oconnell",
+          "type": "employee",
+          "title": "Haley O’Connell",
+          "role": "Store Manager"
+        },
+        {
+          "id": "rupert-grisham",
+          "type": "employee",
+          "title": "Rupert Grisham",
+          "role": "CEO"
+        },
+        {
+          "id": "lola-sampson",
+          "type": "employee",
+          "title": "Lola Sampson",
+          "role": "Marketing Manager"
+        }
+      ]
+    },
+    {
+      "id": "hlc",
+      "type": "organization",
+      "title": "Haley's Love Couch",
+      "iconURL": "/workflow/orgs/hlc-icon.png",
+      "logoURL": "/workflow/orgs/hlc-logo.png"
+    },
+    {
+      "id": "spwb",
+      "type": "organization",
+      "title": "Self-Publishing Writers & Bloggers",
+      "iconURL": "/workflow/orgs/spwb-icon.png",
+      "logoURL": "/workflow/orgs/spwb-logo.png"
+    }
+  ],
+  "users": [
+    {
+      "id": "ryan-saint-james",
+      "type": "participant",
+      "title": "Ryan Saint-James",
+      "imgURL": "/workflow/participants/thumb/Ryan-Saint-James.jpg",
+      "date_of_birth": "1986-02-12",
+      "email": "ryan.saintjames@hsh.com",
+      "phone": "+1 860 206 3345",
+      "address": "1429 Lester Ave, Hartford, CT 06106, United States",
+      "org_ids": ["hsh"]
+    },
+    {
+      "id": "haley-oconnell",
+      "type": "participant",
+      "title": "Haley O’Connell",
+      "imgURL": "/workflow/participants/thumb/Haley-OConnell.jpg",
+      "description": "Writer",
+      "date_of_birth": "1980-12-24",
+      "email": "haley.oconnell@hsh.com",
+      "phone": "+1 860 206 2917",
+      "address": "19 Stevenson Blvd, South Windsor, CT 06074, United States",
+      "org_ids": ["hsh", "spwb", "hlc"]
+    },
+    {
+      "id": "rupert-grisham",
+      "type": "participant",
+      "title": "Rupert Grisham",
+      "imgURL": "/workflow/participants/thumb/Rupert-Grisham.jpg",
+      "date_of_birth": "1970-12-18",
+      "email": "rupert.grisham@hsh.com",
+      "phone": "+1 860 206 3819",
+      "address": "22 Mandarin St, South Windsor, CT 06074, United States",
+      "org_ids": ["hsh"]
+    },
+    {
+      "id": "lola-sampson",
+      "type": "participant",
+      "title": "Lola Sampson",
+      "imgURL": "/workflow/participants/thumb/Lola-Sampson.jpg",
+      "date_of_birth": "1988-04-10",
+      "email": "lola.sampson@hsh.com",
+      "phone": "+1 404 526 9665",
+      "address": "701 Manson Ave NE, Atlanta, GA 30312, United States",
+      "org_ids": ["hsh"]
+    },
+    {
+      "id": "julia-mason",
+      "type": "participant",
+      "title": "Julia Mason",
+      "imgURL": "/workflow/participants/thumb/Julia-Mason.jpg",
+      "date_of_birth": "1987-04-03",
+      "email": "julia-mason@gmail.com",
+      "phone": "+1 412 672 0608",
+      "address": "44 Mandalay Ave, Glassport, PA 15045, United States",
+      "address_2": "82 Laurie St, Glassport, PA 15045, United States"
+    }
+  ],
+  "queueCards": [
+    {
+      "id": "1",
+      "orgId": "hsh",
+      "status": "unread",
+      "project": "customers",
+      "title": "Purchase Order, Julia Mason",
+      "participant_ids": ["julia-mason", "haley-oconnell"],
+      "participants": ["Julia Mason", "Haley O'Connell"],
+      "datetime": "2020-09-21T20:12",
+      "workflow_id": "customer-support",
+      "progressPct": "40",
+      "currentMilestone": "Reserve products",
+      "tasks": [
+        {
+          "assigned_to": "haley-oconnell",
+          "title": "Reserve products"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "orgId": "hsh",
+      "status": "needs-response",
+      "project": "customers",
+      "title": "Personal Shopping Assistance, Miriam Jackson",
+      "participant_ids": ["miriam-jackson", "haley-oconnell"],
+      "participants": ["Miriam Jackson", "Haley O'Connell"],
+      "datetime": "2020-09-21T17:12",
+      "workflow_id": "customer-support",
+      "progressPct": "80",
+      "currentMilestone": "Track delivery",
+      "tasks": [
+        {
+          "assigned_to": "haley-oconnell",
+          "title": "Track delivery"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "orgId": "hsh",
+      "status": "needs-response",
+      "project": "marketing",
+      "title": "Newspaper Ad, New Times",
+      "participant_ids": ["lucy-hatch", "lola-sampson"],
+      "participants": ["Lucy Hatch", "Lola Sampson"],
+      "datetime": "2020-09-18T12:57",
+      "progressPct": "60",
+      "currentMilestone": "Accept"
+    },
+    {
+      "id": "4",
+      "orgId": "hsh",
+      "status": "needs-response",
+      "project": "marketing",
+      "title": "Radio Ad, FM8",
+      "participant_ids": ["martin-stiles", "lola-sampson"],
+      "participants": ["Martin Stiles", "Lola Sampson"],
+      "datetime": "2020-09-18T15:17",
+      "progressPct": "80",
+      "currentMilestone": "Submit files"
+    },
+    {
+      "id": "5",
+      "orgId": "hsh",
+      "status": "recent-activity",
+      "project": "website",
+      "title": "Product Catalog, Question",
+      "participant_ids": ["ryan-saint-james", "haley-oconnell"],
+      "participants": ["Ryan Saint-James", "Haley O'Connell"],
+      "datetime": "2020-09-18T11:47"
+    },
+    {
+      "id": "6",
+      "orgId": "hsh",
+      "status": "recent-activity",
+      "project": "hr",
+      "title": "Salesperson, Seth Johansson",
+      "participant_ids": ["seth-johansson", "rupert-grisham", "haley-oconnell"],
+      "participants": ["Seth Johansson", "Rupert Grisham", "Haley O'Connell"],
+      "datetime": "2020-09-16T15:23",
+      "progressPct": "60",
+      "currentMilestone": "Review",
+      "awaitingResponse": true
+    },
+    {
+      "id": "7",
+      "orgId": "hsh",
+      "status": "recent-activity",
+      "project": "hr",
+      "title": "Salesperson, Alina McMillan",
+      "participant_ids": ["alina-mcmillan", "rupert-grisham", "haley-oconnell"],
+      "participants": ["Alina McMillan", "Rupert Grisham", "Haley O'Connell"],
+      "datetime": "2020-09-18T16:25",
+      "progressPct": "60",
+      "currentMilestone": "Review",
+      "awaitingResponse": true
+    },
+    {
+      "id": "8",
+      "orgId": "hsh",
+      "status": "recent-activity",
+      "project": "marketing",
+      "title": "TV Ad, ZBZ",
+      "participant_ids": ["kevin-collins", "lola-sampson"],
+      "participants": ["Kevin Collins", "Lola Sampson"],
+      "datetime": "2020-09-17T12:17",
+      "progressPct": "20",
+      "currentMilestone": "Offer"
+    }
+  ]
+}

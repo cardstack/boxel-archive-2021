@@ -1,9 +1,9 @@
 <div class="queue {{@class}}">
   <header class="queue__header">
     <div class="queue__org">
-      <div class="queue__org-logo" style={{css-url "background-image" @model.iconURL}} />
+      <div class="queue__org-logo" style={{css-url "background-image" this.org.iconURL}} />
       <div>
-        <div class="queue__org-title">{{@model.title}}</div>
+        <div class="queue__org-title">{{this.org.title}}</div>
         <div class="queue__user-title">{{this.user.title}}</div>
       </div>
     </div>
@@ -23,7 +23,7 @@
           Shared Queue
         </button>
         <button
-          {{on "click" (fn this.filterQueue @user.id)}}
+          {{on "click" (fn this.filterQueue this.user.id)}}
           class="pill-btn-group__btn pill-btn-group__btn--right {{if (eq this.displayQueue "user") "pill-btn-group__btn--selected"}}"
         >
           My Queue
@@ -50,7 +50,7 @@
       {{#each this.unreadCards as |card|}}
         <QueueCard
           @card={{card}}
-          @orgId={{@model.id}}
+          @selectCard={{fn @selectCard card}}
           @currentMilestone={{@currentMilestone}}
           @updateProgress={{@updateProgress}}
         />
@@ -65,7 +65,7 @@
     </header>
     <div class="queue__section-content">
       {{#each this.actionReqCards as |card|}}
-        <QueueCard @card={{card}} @orgId={{@model.id}} />
+        <QueueCard @card={{card}} @selectCard={{fn @selectCard card}} />
       {{/each}}
     </div>
   </section>
@@ -77,7 +77,7 @@
     </header>
     <div class="queue__section-content">
       {{#each this.recentCards as |card|}}
-        <QueueCard @card={{card}} @orgId={{@model.id}} />
+        <QueueCard @card={{card}} @selectCard={{fn @selectCard card}} />
       {{/each}}
     </div>
   </section>

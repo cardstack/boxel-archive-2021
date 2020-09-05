@@ -1,4 +1,4 @@
-<div role="button" {{on "click" this.openThread}} class="queue-card {{if (eq @card.status "unread") "queue-card--light-theme"}}">
+<div role="button" {{on "click" @selectCard}} class="queue-card {{if (eq @card.status "unread") "queue-card--light-theme"}}">
   <header class="queue-card__header">
     <h3 class="queue-card__label">{{@card.project}}</h3>
     {{#let (if @currentMilestone.timestamp @currentMilestone.timestamp @card.datetime) as |datetime|}}
