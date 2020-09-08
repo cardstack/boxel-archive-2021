@@ -4,6 +4,7 @@
       "id": "hsh",
       "type": "organization",
       "title": "Home Sweet Home",
+      "imgURL": "/workflow/orgs/hsh-icon.png",
       "iconURL": "/workflow/orgs/hsh-icon.png",
       "logoURL": "/workflow/orgs/hsh-logo.png",
       "website": "www.homesweethome.com",
@@ -39,6 +40,7 @@
       "id": "hlc",
       "type": "organization",
       "title": "Haley's Love Couch",
+      "imgURL": "/workflow/orgs/hlc-icon.png",
       "iconURL": "/workflow/orgs/hlc-icon.png",
       "logoURL": "/workflow/orgs/hlc-logo.png"
     },
@@ -46,6 +48,7 @@
       "id": "spwb",
       "type": "organization",
       "title": "Self-Publishing Writers & Bloggers",
+      "imgURL": "/workflow/orgs/spwb-icon.png",
       "iconURL": "/workflow/orgs/spwb-icon.png",
       "logoURL": "/workflow/orgs/spwb-logo.png"
     }
@@ -260,9 +263,9 @@
       "id": "1",
       "threadId": "1",
       "participantId": "hsh",
-      "participantType": "organization",
+      "participantType": "bot",
       "datetime": "2020-09-21T20:12",
-      "msg": "You have placed an order for an item that requires a manual inventory check. Your credit card has not been charged. If the products are in stock, we will reserve them for you and proceed to the payment process. You will receive status updates via email and in this thread."
+      "content": "You have placed an order for an item that requires a manual inventory check. Your credit card has not been charged. If the products are in stock, we will reserve them for you and proceed to the payment process. You will receive status updates via email and in this thread."
     }
   ]
 }

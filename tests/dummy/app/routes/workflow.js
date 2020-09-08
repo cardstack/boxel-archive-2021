@@ -8,7 +8,7 @@ export default class WorkflowRoute extends Route {
 
   async model() {
     let db = await fetchData('db-workflow');
-    let { users, orgs, queueCards } = db;
+    let { users, orgs, queueCards, messages } = db;
 
     let user = users.find(el => el.id === this.userId);
     let userOrgs = orgs.filter(el => user.org_ids.includes(el.id));
@@ -17,7 +17,8 @@ export default class WorkflowRoute extends Route {
       user,
       users,
       userOrgs,
-      queueCards
+      queueCards,
+      messages
     };
   }
 }

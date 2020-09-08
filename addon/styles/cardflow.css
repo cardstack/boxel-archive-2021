@@ -50,18 +50,28 @@
 
 .cardflow__header-participants {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 10px;
+  gap: 0 30px;
   color: #000;
   font-weight: 700;
   letter-spacing: var(--boxel-lsp-xl);
 }
 
+.cardflow__header-participant-icons {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 15px;
+  direction: rtl; /* hack to revert item order */
+}
+
 .cardflow__header-participant-img {
+  position: relative;
   width: 30px;
   height: 30px;
+  border: 1px solid white;
   border-radius: 100px;
+  background-image: url('/media-registry/placeholders/profile.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -94,15 +104,11 @@
 
 .cardflow__message {
   display: grid;
-  grid-template-columns: 60px 1fr;
+  grid-template-columns: 40px 1fr;
   gap: 10px 20px;
   color: black;
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
-}
-
-.cardflow__message:last-child > *:last-child {
-  margin-bottom: 60px;
 }
 
 .cardflow__message-content > * + * {
@@ -129,9 +135,14 @@
 .cardflow__message-icon__profile {
   width: 40px;
   height: 40px;
+  border-radius: 100px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.cardflow__message-icon__profile--bot {
+  border-radius: var(--boxel-border-radius);
 }
 
 .cardflow__message-info {
@@ -141,15 +152,18 @@
   gap: 0 10px;
 }
 
-.cardflow__message-info-title {
+.cardflow__message-sender {
   font-weight: 600;
 }
 
-.cardflow__message-info > time {
-  color: #666;
+.cardflow__message-time {
+  color: var(--boxel-medium-light-purple);
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-lg);
 }
 
-.cardflow__message-info > time + div {
+.cardflow__message-sender-role {
   grid-column: 1 / -1;
   color: #666;
   font: var(--boxel-font-xs);
@@ -543,6 +557,7 @@
 
 .cardflow__reply-to.field-renderer__input {
   padding-right: 80px;
+  height: 45px;
   background-image: url("/assets/images/icons/plus.svg"), url("/assets/images/icons/emoji.svg");
   background-position: right 55px center, right 15px center;
   background-repeat: no-repeat, no-repeat;
@@ -554,6 +569,9 @@
   border-radius: var(--boxel-border-radius);
 }
 
+.cardflow__reply-to.field-renderer__input:focus {
+  outline: 0;
+}
 
 /* Cardflow overlay */
 .cardflow-overlay {
