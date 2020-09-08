@@ -2,9 +2,11 @@
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr;
-  gap: 0 80px;
+  gap: 0 var(--boxel-spacing);
+  height: 100%;
   background-color: #EFEFEF;
-  border-radius: var(--boxel-border-radius);
+  border-radius: 0 var(--boxel-border-radius) 0 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
 }
@@ -16,14 +18,16 @@
 /* Header */
 .cardflow__header {
   grid-column: 1 / -1;
-  position: relative;
-  z-index: 2;
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 20px;
-  padding: 25px 20px;
-  border-radius: var(--boxel-border-radius) var(--boxel-border-radius) 0 0;
-  background-color: white;
+  gap: var(--boxel-spacing);
+  padding: var(--boxel-spacing);
+  background-color: #fff;
+  border-top-right-radius: var(--boxel-border-radius);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
@@ -36,9 +40,7 @@
 }
 
 .cardflow__title {
-  font-size: 18px;
   font-weight: 700;
-  line-height: calc(24/18);
   letter-spacing: var(--boxel-lsp-xs);
 }
 
@@ -51,9 +53,9 @@
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 10px;
-  color: var(--boxel-medium-light-purple);
-  font: var(--boxel-font-xs);
-  letter-spacing: var(--boxel-lsp-lg);
+  color: #000;
+  font-weight: 700;
+  letter-spacing: var(--boxel-lsp-xl);
 }
 
 .cardflow__header-participant-img {
@@ -81,12 +83,13 @@
 
 /* Main Thread */
 .cardflow__thread {
-  display: grid;
-  grid-auto-rows: max-content;
-  gap: 30px;
-  height: 100%;
-  padding: 30px 20px;
+  max-width: 660px;
+  padding: var(--boxel-spacing);
   overflow-y: auto;
+}
+
+.cardflow__thread > * + * {
+  margin-top: var(--boxel-spacing);
 }
 
 .cardflow__message {
@@ -124,19 +127,11 @@
 }
 
 .cardflow__message-icon__profile {
-  width: 60px;
+  width: 40px;
   height: 40px;
-  background-position: left top, left 20px center;
-  background-repeat: no-repeat, no-repeat;
-  background-size: 15px 15px, contain;
-}
-
-.cardflow__message-icon__profile--crd {
-  background-image: url("/media-registry/button-crd-records.svg"), url("/media-registry/crd-user.png");
-}
-
-.cardflow__message-icon__profile--bunny {
-  background-image: url("/media-registry/button-bunny-records.svg"), url("/media-registry/bunny-user.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .cardflow__message-info {
@@ -185,22 +180,27 @@
 
 /* Right Sidebar */
 .cardflow__sidebar {
-  display: grid;
-  grid-auto-rows: max-content;
-  gap: var(--boxel-spacing);
   max-width: 290px;
-  padding: 20px 30px;
+  padding: var(--boxel-spacing);
   overflow-y: auto;
+}
+
+.cardflow__sidebar > * + * {
+  margin-top: var(--boxel-spacing);
 }
 
 .cardflow__sidebar-section {
   padding: 15px 20px;
 }
 
+.cardflow__sidebar-section + .cardflow__sidebar-section {
+  border-top: 1px solid #D6D6D6;
+}
+
 .cardflow__sidebar-title {
-  padding-bottom: 15px;
+  padding-bottom: var(--boxel-spacing);
   color: var(--boxel-medium-light-purple);
-  font: var(--boxel-font-sm);
+  font: var(--boxel-font-xs);
   font-weight: 600;
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
@@ -214,17 +214,18 @@
 }
 
 .cardflow__progress-status {
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 5px;
-  color: #666;
+  color: #000;
+  font-weight: 600;
 }
 
 .cardflow__progress-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 124px;
-  height: 124px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -234,15 +235,15 @@
 .cardflow__progress-pct {
   font-size: 25px;
   font-weight: bold;
+  letter-spacing: 0;
 }
 
 
 /* Checklist */
 .cardflow__checklist {
   --icon-color: #D6D6D6;
-
   margin: 0;
-  padding: 30px 15px;
+  padding-bottom: 15px;
   color: #666;
 }
 
@@ -265,73 +266,72 @@
 }
 
 .cardflow__checklist-item.current {
-  color: black;
-  --icon-color: #FFD800;
+  --icon-color: var(--boxel-highlight);
+  color: var(--boxel-highlight);
+  font-weight: 600;
 }
 
 .cardflow__checklist-item.completed {
-  color: black;
+  --icon-color: var(--boxel-highlight);
+  color: #000;
   font-weight: 600;
-  --icon-color: #1CFF25;
 }
 
 .cardflow__checklist-time {
   position: absolute;
-  right: 0;
-  color: #666;
-  font: var(--boxel-font-xs);
+  left: 38px;
+  color: var(--boxel-medium-light-purple);
+  font-size: 11px;
 }
 
 
 /* Participants Box */
 .cardflow__participants {
-  padding: 20px;
-}
-
-.cardflow__participants + .cardflow__participants {
-  border-top: 1px solid #EFEFEF;
+  list-style-type: none;
+  padding-bottom: 15px;
 }
 
 .cardflow__participant {
   display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 20px 10px;
+  grid-template-columns: 30px 1fr;
+  gap: 0 10px;
   align-items: center;
-  font: var(--boxel-font-sm);
-  font-weight: 600;
-  color: black;
 }
 
 .cardflow__participant + .cardflow__participant {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
-.cardflow__participant-company-img {
-  width: 40px;
-  height: 40px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.cardflow__participant-company {
-  font-size: 14px;
-}
-
-.cardflow__participant-user-img {
-  justify-self: center;
+.cardflow__participant-org-img {
   width: 30px;
   height: 30px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.cardflow__participant-img {
+  justify-self: center;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 100px;
 }
 
-.cardflow__participant-user > span {
+.cardflow__participant-org-title {
+  font-weight: 600;
+}
+
+.cardflow__participant-title {
   font: var(--boxel-font-xs);
+  font-weight: 600;
+}
+
+.cardflow__participant-role {
   color: #666;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 

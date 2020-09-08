@@ -1,14 +1,13 @@
-<section class="media-registry media-registry--{{@model.currentOrg.id}}">
-  <aside class="media-registry__left-edge with-queue">
+<section class="workflow-org workflow-org--{{@model.currentOrg.id}}">
+  <aside class="workflow-org__left-edge">
     <LeftEdgeNav
       @orgs={{@model.userOrgs}}
       @current={{@model.currentOrg.id}}
       @user={{@model.user}}
     />
 
-    <div class="media-registry__left-edge-queue slide-in">
+    <div class="workflow-org__left-edge-queue">
       <CardflowQueue
-        @class="media-registry__queue"
         @model={{@model}}
         @selectCard={{this.selectCard}}
         {{!-- @currentMilestone={{this.currentMilestone}}
@@ -17,20 +16,7 @@
     </div>
   </aside>
 
-  <main class="media-registry__outlet">
-    <section class="workflow-project">
-      <header class="workflow-project__header">
-        <div>
-          <div class="workflow-project__label">Project</div>
-          <h1 class="workflow-project__title">Title TK</h1>
-        </div>
-        <div class="workflow-project__participants">
-          X people can see this project
-          {{svg-jar "users" width="15px" height="13px"}}
-        </div>
-      </header>
-
-      {{outlet}}
-    </section>
+  <main class="workflow-org__main">
+    {{outlet}}
   </main>
 </section>
