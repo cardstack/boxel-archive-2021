@@ -4,12 +4,14 @@
         <div class="cardflow__notification">1</div>
       {{/if}}
       <div>
-        <div class="cardflow__label">{{this.project.project}}</div>
-        <h2 class="cardflow__title">{{or this.project.description this.project.title}}</h2>
+        <div class="cardflow__label">{{this.thread.project}}</div>
+        <h2 class="cardflow__title">{{or this.thread.description this.thread.title}}</h2>
       </div>
       <div class="cardflow__header-participants">
-        <span>{{this.project.participants.length}} {{svg-jar "users" width="15px" height="13px"}}</span>
-        <span class="cardflow__header-participant-img" style={{css-url "background-image" this.project.user.imgURL}} />
+        <span>{{this.participants.length}} {{svg-jar "users" width="15px" height="13px"}}</span>
+        {{#each this.participants as |user|}}
+          <span class="cardflow__header-participant-img" style={{css-url "background-image" user.imgURL}} />
+        {{/each}}
       </div>
     </header>
 
@@ -18,7 +20,7 @@
       <div class="cardflow__message-divider">
         <div class="cardflow__message-divider-border" />
         <div class="cardflow__message-divider-date">
-          <time datetime={{this.project.datetime}}>{{moment-format this.project.datetime "MMM D, YYYY"}}</time>
+          <time datetime={{this.thread.datetime}}>{{moment-format this.thread.datetime "MMM D, YYYY"}}</time>
         </div>
       </div>
 
@@ -254,24 +256,34 @@
 
       {{!-- Participants Box --}}
       <CardPlatter @class="cardflow-platter">
-        <section class="cardflow__sidebar-section">
+        <section class="cardflow__sidebar-section cardflow__sidebar-section--participants">
           <h3 class="cardflow__sidebar-title">Participants</h3>
-          <ul class="cardflow__participants">
-            {{#each @model.participants as |participant|}}
-              {{#if (eq participant.type "organization")}}
+          {{#if this.otherParticipants}}
+            <ul class="cardflow__participants">
+              {{#each this.otherParticipants as |participant|}}
                 <li class="cardflow__participant">
-                  <div class="cardflow__participant-org-img" style={{css-url "background-image" participant.iconURL}} />
-                  <div class="cardflow__participant-org-title">{{participant}}</div>
-                </li>
-              {{else}}
-                <li class="cardflow__participant">
-                  <div class="cardflow__participant-img" style={{css-url "background-image" participant.iconURL}} />
+                  <div class="cardflow__participant-img" style={{css-url "background-image" participant.imgURL}} />
                   <div class="cardflow__participant-title">
-                    {{participant}}
-                    <div class="cardflow__participant-role">Role TK</div>
+                    {{participant.title}}
+                    <div class="cardflow__participant-role">{{participant.role}}</div>
                   </div>
                 </li>
-              {{/if}}
+              {{/each}}
+            </ul>
+          {{/if}}
+          <ul class="cardflow__participants">
+            <li class="cardflow__participant cardflow__participant-org">
+              <div class="cardflow__participant-org-img" style={{css-url "background-image" this.org.iconURL}} />
+              <div class="cardflow__participant-org-title">{{this.org.title}}</div>
+            </li>
+            {{#each this.participatingOrgMembers as |participant|}}
+              <li class="cardflow__participant">
+                <div class="cardflow__participant-img" style={{css-url "background-image" participant.imgURL}} />
+                <div class="cardflow__participant-title">
+                  {{participant.title}}
+                  <div class="cardflow__participant-role">{{participant.role}}</div>
+                </div>
+              </li>
             {{/each}}
           </ul>
         </section>

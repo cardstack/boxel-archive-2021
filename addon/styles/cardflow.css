@@ -286,9 +286,23 @@
 
 
 /* Participants Box */
+.cardflow__sidebar-section--participants {
+  padding: 15px 0 30px;
+}
+
+.cardflow__sidebar-section--participants .cardflow__sidebar-title {
+  padding-left: var(--boxel-spacing);
+}
+
 .cardflow__participants {
   list-style-type: none;
-  padding-bottom: 15px;
+  padding: 0 var(--boxel-spacing);
+}
+
+.cardflow__participants + .cardflow__participants {
+  margin-top: var(--boxel-spacing);
+  padding-top: var(--boxel-spacing);
+  border-top: 1px solid #D6D6D6;
 }
 
 .cardflow__participant {
@@ -314,6 +328,7 @@
   justify-self: center;
   width: 30px;
   height: 30px;
+  background-image: url('/media-registry/placeholders/profile.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

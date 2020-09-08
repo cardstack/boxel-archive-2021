@@ -60,7 +60,8 @@
       "email": "ryan.saintjames@hsh.com",
       "phone": "+1 860 206 3345",
       "address": "1429 Lester Ave, Hartford, CT 06106, United States",
-      "org_ids": ["hsh"]
+      "org_ids": ["hsh"],
+      "role": "E-Commerce Manager"
     },
     {
       "id": "haley-oconnell",
@@ -72,7 +73,8 @@
       "email": "haley.oconnell@hsh.com",
       "phone": "+1 860 206 2917",
       "address": "19 Stevenson Blvd, South Windsor, CT 06074, United States",
-      "org_ids": ["hsh", "spwb", "hlc"]
+      "org_ids": ["hsh", "spwb", "hlc"],
+      "role": "Store Manager"
     },
     {
       "id": "rupert-grisham",
@@ -83,7 +85,8 @@
       "email": "rupert.grisham@hsh.com",
       "phone": "+1 860 206 3819",
       "address": "22 Mandarin St, South Windsor, CT 06074, United States",
-      "org_ids": ["hsh"]
+      "org_ids": ["hsh"],
+      "role": "CEO"
     },
     {
       "id": "lola-sampson",
@@ -94,7 +97,8 @@
       "email": "lola.sampson@hsh.com",
       "phone": "+1 404 526 9665",
       "address": "701 Manson Ave NE, Atlanta, GA 30312, United States",
-      "org_ids": ["hsh"]
+      "org_ids": ["hsh"],
+      "role": "Marketing Manager"
     },
     {
       "id": "julia-mason",
@@ -105,7 +109,38 @@
       "email": "julia-mason@gmail.com",
       "phone": "+1 412 672 0608",
       "address": "44 Mandalay Ave, Glassport, PA 15045, United States",
-      "address_2": "82 Laurie St, Glassport, PA 15045, United States"
+      "address_2": "82 Laurie St, Glassport, PA 15045, United States",
+      "role": "Customer"
+    },
+    {
+      "id": "miriam-jackson",
+      "type": "participant",
+      "title": "Miriam Jackson"
+    },
+    {
+      "id": "lucy-hatch",
+      "type": "participant",
+      "title": "Lucy Hatch"
+    },
+    {
+      "id": "martin-stiles",
+      "type": "participant",
+      "title": "Martin Stiles"
+    },
+    {
+      "id": "seth-johansson",
+      "type": "participant",
+      "title": "Seth Johansson"
+    },
+    {
+      "id": "alina-mcmillan",
+      "type": "participant",
+      "title": "Alina McMillan"
+    },
+    {
+      "id": "kevin-collins",
+      "type": "participant",
+      "title": "Kevin Collins"
     }
   ],
   "queueCards": [
@@ -218,6 +253,16 @@
       "datetime": "2020-09-17T12:17",
       "progressPct": "20",
       "currentMilestone": "Offer"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "threadId": "1",
+      "participantId": "hsh",
+      "participantType": "organization",
+      "datetime": "2020-09-21T20:12",
+      "msg": "You have placed an order for an item that requires a manual inventory check. Your credit card has not been charged. If the products are in stock, we will reserve them for you and proceed to the payment process. You will receive status updates via email and in this thread."
     }
   ]
 }
