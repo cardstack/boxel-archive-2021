@@ -127,29 +127,38 @@
 }
 
 .queue-card__status {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
   color: var(--boxel-highlight);
   font-weight: 600;
   letter-spacing: var(--boxel-lsp);
 }
 
-.queue-card__progress-pie {
-  display: inline-block;
-  margin-left: 5px;
-  vertical-align: middle;
-}
-
 .queue-card__progress-icon {
+  --icon-color: var(--boxel-highlight);
+  position: relative;
   width: 24px;
   height: 24px;
+  background-image: url('/media-registry/progress-pie/progress-circle-dark.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
+.queue-card__progress-pie {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  stroke-dasharray: 0 60;
+  transition: stroke-dasharray var(--boxel-transition);
+}
+
 
 /* Light Theme */
 .queue-card--light-theme {
-  --boxel-highlight: var(--boxel-highlight-light-theme);
   background-color: #fff;
   color: black;
 }
@@ -157,6 +166,15 @@
 .queue-card--light-theme .queue-card__participants {
   --icon-color: #000;
 }
+
 .queue-card--light-theme .queue-card__footer {
   border-color: rgba(55, 53, 67, 0.15);
+}
+
+.queue-card--light-theme .queue-card__status {
+  color: var(--boxel-highlight-lt);
+}
+
+.queue-card--light-theme .queue-card__progress-icon {
+  background-image: url('/assets/images/icons/progress-circle.svg');
 }

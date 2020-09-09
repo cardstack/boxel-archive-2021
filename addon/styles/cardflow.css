@@ -235,15 +235,26 @@
 }
 
 .cardflow__progress-icon {
+  --icon-color: var(--boxel-highlight);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   width: 120px;
   height: 120px;
   margin: 0 auto;
+  background-image: url('/assets/images/icons/progress-circle-lg.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.cardflow__progress-pie {
+  position: absolute;
+  top: 0;
+  transform: rotate(-90deg);
+  stroke-dasharray: 0 360;
+  transition: stroke-dasharray var(--boxel-transition);
 }
 
 .cardflow__progress-pct {
@@ -255,7 +266,6 @@
 
 /* Checklist */
 .cardflow__checklist {
-  --boxel-highlight: #03C4BF;
   --icon-color: #666;
   margin: 0;
   padding-bottom: 15px;
@@ -284,7 +294,7 @@
   --icon-color: var(--boxel-highlight);
   --icon-fill-color: #000;
 
-  color: var(--boxel-highlight);
+  color: #03C4BF;
   font-weight: 600;
 }
 

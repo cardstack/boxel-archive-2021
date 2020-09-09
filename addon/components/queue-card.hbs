@@ -19,7 +19,7 @@
     {{/if}}
   </section>
 
-  {{#if (or @card.tasks this.progress.status)}}
+  {{#if (or @card.tasks this.progress)}}
     <footer class="queue-card__footer">
       <div>
         {{#if @card.awaitingResponse}}
@@ -34,11 +34,12 @@
         {{/if}}
       </div>
       <div class="queue-card__status">
-        {{titleize (humanize this.progress.status)}}
-        <span
-          class="queue-card__progress-icon queue-card__progress-pie"
-          style={{css-url "background-image" (if (eq @card.status "unread") this.progress.iconOpen this.progress.icon)}}
-        />
+        {{titleize (humanize this.progress)}}
+        <div class="queue-card__progress-icon">
+          <div class="queue-card__progress-pie" style={{html-safe (concat "stroke-dasharray:" (mult this.progressPct 60) " " 60)}}>
+            {{svg-jar "progress-circle" width="24px" height="24px"}}
+          </div>
+        </div>
       </div>
     </footer>
   {{/if}}

@@ -157,7 +157,7 @@
       "participants": ["Julia Mason", "Haley O'Connell"],
       "datetime": "2020-09-21T20:12",
       "workflow_id": "customer-support",
-      "progressPct": "40",
+      "progressPct": "25",
       "currentMilestone": "Reserve products",
       "tasks": [
         {
@@ -176,7 +176,7 @@
       "participants": ["Miriam Jackson", "Haley O'Connell"],
       "datetime": "2020-09-21T17:12",
       "workflow_id": "customer-support",
-      "progressPct": "80",
+      "progressPct": "75",
       "currentMilestone": "Track delivery",
       "tasks": [
         {
@@ -275,27 +275,27 @@
       "milestones": [
         {
           "id": "1",
-          "pct": "20",
+          "pct": "0",
           "title": "Place Order",
           "icon": "/media-registry/progress-pie/progress-20pct-lg.svg"
         },
         {
           "id": "2",
-          "pct": "40",
+          "pct": "25",
           "title": "Reserve Products",
           "description": "Order placed",
           "icon": "/media-registry/progress-pie/progress-40pct-lg.svg"
         },
         {
           "id": "3",
-          "pct": "60",
+          "pct": "50",
           "title": "Submit Payment",
           "description": "Products reserved",
           "icon": "/media-registry/progress-pie/progress-60pct-lg.svg"
         },
         {
           "id": "4",
-          "pct": "80",
+          "pct": "75",
           "title": "Track Delivery",
           "description": "Payment submitted",
           "icon": "/media-registry/progress-pie/progress-80pct-lg.svg"

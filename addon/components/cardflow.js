@@ -42,6 +42,14 @@ export default class CardflowComponent extends Component {
     return this._getProgress();
   }
 
+  get milestoneId() {
+    return Number(this.milestone.id);
+  }
+
+  get progressPct() {
+    return Number(this.milestone.pct) / 100;
+  }
+
   _getProgress() {
     return this.progress ? this.progress : this.args.model.workflow.milestones.find(el => el.pct === this.thread.progressPct);
   }
