@@ -255,7 +255,8 @@
 
 /* Checklist */
 .cardflow__checklist {
-  --icon-color: #D6D6D6;
+  --boxel-highlight: #03C4BF;
+  --icon-color: #666;
   margin: 0;
   padding-bottom: 15px;
   color: #666;
@@ -281,14 +282,22 @@
 
 .cardflow__checklist-item.current {
   --icon-color: var(--boxel-highlight);
+  --icon-fill-color: #000;
+
   color: var(--boxel-highlight);
   font-weight: 600;
 }
 
 .cardflow__checklist-item.completed {
-  --icon-color: var(--boxel-highlight);
+  --icon-color: #000;
   color: #000;
   font-weight: 600;
+}
+
+.cardflow__checklist-item.completed > svg {
+  padding: 3px;
+  background-color: var(--boxel-highlight);
+  border-radius: 100px;
 }
 
 .cardflow__checklist-time {

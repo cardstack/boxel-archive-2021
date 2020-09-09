@@ -43,44 +43,31 @@
 
     {{!-- Right Sidebar --}}
     <aside class="cardflow__sidebar">
-      {{#if this.workflow}}
+      {{#if @model.workflow}}
         {{!-- Progress Pie --}}
         <CardPlatter @class="cardflow-platter">
           <section class="cardflow__sidebar-section">
             <h3 class="cardflow__sidebar-title">Workflow Progress</h3>
             <div class="cardflow__progress">
-              <div class="cardflow__progress-icon" style={{css-url "background-image" @currentMilestone.iconLg}}>
-                <span class="cardflow__progress-pct">{{@currentMilestone.pct}}%</span>
+              <div class="cardflow__progress-icon" style={{css-url "background-image" this.milestone.icon}}>
+                <span class="cardflow__progress-pct">{{this.milestone.pct}}%</span>
               </div>
-              <div class="cardflow__progress-status">{{@currentMilestone.desc}}Status</div>
+              <div class="cardflow__progress-status">{{this.milestone.description}}</div>
             </div>
           </section>
 
           {{!-- Milestones --}}
           <section class="cardflow__sidebar-section">
-            <h3 class="cardflow__sidebar-title">Milestones</h3>
+            <h3 class="cardflow__sidebar-title">{{@model.workflow.title}}</h3>
             <ul class="cardflow__checklist">
-              <li class="cardflow__checklist-item {{if (gt @currentMilestone.pct 0) "completed" (if (eq @currentMilestone.pct 0) "current")}}">
-                  {{svg-jar (if (gt @currentMilestone.pct 0) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Propose
-                  <br>
-                  <span class="cardflow__checklist-time">12h ago</span>
-              </li>
-              <li class="cardflow__checklist-item {{if (gt @currentMilestone.pct 20) "completed" (if (eq @currentMilestone.pct 20) "current")}}">
-                {{svg-jar (if (gt @currentMilestone.pct 20) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Review
-                {{#if (gt @currentMilestone.pct 20)}}<span class="cardflow__checklist-time">1d ago</span>{{/if}}
-              </li>
-              <li class="cardflow__checklist-item {{if (gt @currentMilestone.pct 40) "completed" (if (eq @currentMilestone.pct 40) "current")}}">
-                {{svg-jar (if (gt @currentMilestone.pct 40) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Accept
-                {{#if (gt @currentMilestone.pct 40)}}<span class="cardflow__checklist-time">10m ago</span>{{/if}}
-              </li>
-              <li class="cardflow__checklist-item {{if (gt @currentMilestone.pct 60) "completed" (if (eq @currentMilestone.pct 60) "current")}}">
-                {{svg-jar (if (gt @currentMilestone.pct 60) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Amend
-                {{#if (gt @currentMilestone.pct 60)}}<span class="cardflow__checklist-time">5m ago</span>{{/if}}
-              </li>
-              <li class="cardflow__checklist-item {{if (gt @currentMilestone.pct 80) "completed" (if (eq @currentMilestone.pct 80) "current")}}">
-                {{svg-jar (if (gt @currentMilestone.pct 80) "checkmark-lg" "checklist-circle") width="16px" height="16px"}} Redeliver
-                {{#if (gt @currentMilestone.pct 80)}}<span class="cardflow__checklist-time">1m ago</span>{{/if}}
-              </li>
+              {{#each @model.workflow.milestones as |milestone i|}}
+                <li class="cardflow__checklist-item {{if (gt (mult this.milestone.id 1) (add i 1)) "completed"}} {{if (eq this.milestone.id (concat "" (add i 1))) "current"}}">
+                  {{svg-jar (if (gt (mult this.milestone.id 1) (add i 1)) "check-mark" "checklist-circle") width="16px" height="16px"}}
+                  {{milestone.title}}
+                  {{!-- <br>
+                  <span class="cardflow__checklist-time">12h ago</span> --}}
+                </li>
+              {{/each}}
             </ul>
           </section>
         </CardPlatter>

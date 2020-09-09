@@ -267,5 +267,40 @@
       "datetime": "2020-09-21T20:12",
       "content": "You have placed an order for an item that requires a manual inventory check. Your credit card has not been charged. If the products are in stock, we will reserve them for you and proceed to the payment process. You will receive status updates via email and in this thread."
     }
+  ],
+  "workflows": [
+    {
+      "id": "customer-support",
+      "title": "Customer Support",
+      "milestones": [
+        {
+          "id": "1",
+          "pct": "20",
+          "title": "Place Order",
+          "icon": "/media-registry/progress-pie/progress-20pct-lg.svg"
+        },
+        {
+          "id": "2",
+          "pct": "40",
+          "title": "Reserve Products",
+          "description": "Order placed",
+          "icon": "/media-registry/progress-pie/progress-40pct-lg.svg"
+        },
+        {
+          "id": "3",
+          "pct": "60",
+          "title": "Submit Payment",
+          "description": "Products reserved",
+          "icon": "/media-registry/progress-pie/progress-60pct-lg.svg"
+        },
+        {
+          "id": "4",
+          "pct": "80",
+          "title": "Track Delivery",
+          "description": "Payment submitted",
+          "icon": "/media-registry/progress-pie/progress-80pct-lg.svg"
+        }
+      ]
+    }
   ]
 }

@@ -4,6 +4,7 @@ import { action } from '@ember/object';
 
 
 export default class CardflowComponent extends Component {
+  @tracked progress;
   @tracked actionSteps = this.args.actionSteps;
   @tracked lastUpdated = this.args.lastUpdated;
 
@@ -35,6 +36,18 @@ export default class CardflowComponent extends Component {
       return this.participants;
     }
     return this.participants.filter(el => !el.org_ids || !el.org_ids.includes(this.org.id));
+  }
+
+  get milestone() {
+    return this._getProgress();
+  }
+
+  _getProgress() {
+    return this.progress ? this.progress : this.args.model.workflow.milestones.find(el => el.pct === this.thread.progressPct);
+  }
+
+  _setProgress(val) {
+    this.progress = val;
   }
 
   @action
