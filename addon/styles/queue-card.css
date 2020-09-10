@@ -13,6 +13,7 @@
   color: white;
   font: var(--boxel-font-xs);
   letter-spacing: var(--boxel-lsp-lg);
+  transition: background-color var(--boxel-transition);
 }
 
 .queue-card:hover {
@@ -20,11 +21,19 @@
 }
 
 .queue-card__header {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 10px;
   padding-left: 10px;
+}
+
+.queue-card__datetime-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
   white-space: nowrap;
+  text-align: right;
+}
+
+.queue-card__datetime-row + .queue-card__label {
+  margin-top: 15px;
 }
 
 .queue-card__label {
@@ -37,11 +46,14 @@
 
 .queue-card__label,
 .queue-card__datetime {
-  padding-top: 8px;
-  padding-bottom: 2px;
   font-size: 10px;
   font-weight: 600;
   line-height: 1.4;
+}
+
+.queue-card__datetime {
+  padding-top: 8px;
+  color: var(--boxel-light-purple);
 }
 
 .queue-card__datetime:last-child {
@@ -93,7 +105,7 @@
 }
 
 .queue-card__project-title + .queue-card__participants {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .queue-card__footer {
@@ -172,9 +184,10 @@
 }
 
 .queue-card--light-theme .queue-card__status {
-  color: var(--boxel-highlight-lt);
+  color: #00B2AE;
 }
 
 .queue-card--light-theme .queue-card__progress-icon {
+  --icon-color: #00B2AE;
   background-image: url('/assets/images/icons/progress-circle.svg');
 }

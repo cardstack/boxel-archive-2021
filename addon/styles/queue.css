@@ -41,9 +41,8 @@
 }
 
 .queue__org-title {
-  font-size: 18px;
+  font: var(--boxel-font);
   font-weight: 700;
-  line-height: calc(24/18);
   letter-spacing: 0.005em;
 }
 

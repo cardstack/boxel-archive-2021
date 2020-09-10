@@ -9,29 +9,21 @@
       "logoURL": "/workflow/orgs/hsh-logo.png",
       "website": "www.homesweethome.com",
       "address": "112 Milford Ave, Hartford, CT 06106, United States",
-      "employees": [
+      "members": [
         {
           "id": "ryan-saint-james",
-          "type": "employee",
-          "title": "Ryan Saint-James",
           "role": "E-Commerce Manager"
         },
         {
           "id": "haley-oconnell",
-          "type": "employee",
-          "title": "Haley O’Connell",
           "role": "Store Manager"
         },
         {
           "id": "rupert-grisham",
-          "type": "employee",
-          "title": "Rupert Grisham",
           "role": "CEO"
         },
         {
           "id": "lola-sampson",
-          "type": "employee",
-          "title": "Lola Sampson",
           "role": "Marketing Manager"
         }
       ]
@@ -45,12 +37,30 @@
       "logoURL": "/workflow/orgs/hlc-logo.png"
     },
     {
-      "id": "spwb",
+      "id": "spw",
       "type": "organization",
-      "title": "Self-Publishing Writers & Bloggers",
+      "title": "Self-Publishing Writers",
       "imgURL": "/workflow/orgs/spwb-icon.png",
       "iconURL": "/workflow/orgs/spwb-icon.png",
-      "logoURL": "/workflow/orgs/spwb-logo.png"
+      "logoURL": "/workflow/orgs/spwb-logo.png",
+      "members": [
+        {
+          "id": "lucas-farrow",
+          "role": "Editor"
+        },
+        {
+          "id": "haley-oconnell",
+          "role": "Writer"
+        },
+        {
+          "id": "kirsten-schober",
+          "role": "Translator"
+        },
+        {
+          "id": "eliza-farrington",
+          "role": "Proofreader"
+        }
+      ]
     }
   ],
   "users": [
@@ -63,8 +73,7 @@
       "email": "ryan.saintjames@hsh.com",
       "phone": "+1 860 206 3345",
       "address": "1429 Lester Ave, Hartford, CT 06106, United States",
-      "org_ids": ["hsh"],
-      "role": "E-Commerce Manager"
+      "org_ids": ["hsh"]
     },
     {
       "id": "haley-oconnell",
@@ -76,8 +85,7 @@
       "email": "haley.oconnell@hsh.com",
       "phone": "+1 860 206 2917",
       "address": "19 Stevenson Blvd, South Windsor, CT 06074, United States",
-      "org_ids": ["hsh", "spwb", "hlc"],
-      "role": "Store Manager"
+      "org_ids": ["hsh", "spw", "hlc"]
     },
     {
       "id": "rupert-grisham",
@@ -88,8 +96,7 @@
       "email": "rupert.grisham@hsh.com",
       "phone": "+1 860 206 3819",
       "address": "22 Mandarin St, South Windsor, CT 06074, United States",
-      "org_ids": ["hsh"],
-      "role": "CEO"
+      "org_ids": ["hsh"]
     },
     {
       "id": "lola-sampson",
@@ -100,8 +107,7 @@
       "email": "lola.sampson@hsh.com",
       "phone": "+1 404 526 9665",
       "address": "701 Manson Ave NE, Atlanta, GA 30312, United States",
-      "org_ids": ["hsh"],
-      "role": "Marketing Manager"
+      "org_ids": ["hsh"]
     },
     {
       "id": "julia-mason",
@@ -144,6 +150,27 @@
       "id": "kevin-collins",
       "type": "participant",
       "title": "Kevin Collins"
+    },
+    {
+      "id": "lucas-farrow",
+      "type": "participant",
+      "title": "Lucas Farrow",
+      "imgURL": "/workflow/participants/thumb/Lucas-Farrow.jpg",
+      "org_ids": ["spw"]
+    },
+    {
+      "id": "kirsten-schober",
+      "type": "participant",
+      "title": "Kirsten Schober",
+      "imgURL": "/workflow/participants/thumb/Kirsten-Schober.jpg",
+      "org_ids": ["spw"]
+    },
+    {
+      "id": "eliza-farrington",
+      "type": "participant",
+      "title": "Eliza Farrington",
+      "imgURL": "/workflow/participants/thumb/Eliza-Farrington.jpg",
+      "org_ids": ["spw"]
     }
   ],
   "queueCards": [
@@ -194,7 +221,8 @@
       "participant_ids": ["lucy-hatch", "lola-sampson"],
       "participants": ["Lucy Hatch", "Lola Sampson"],
       "datetime": "2020-09-18T12:57",
-      "progressPct": "60",
+      "workflow_id": "advertisement",
+      "progressPct": "40",
       "currentMilestone": "Accept"
     },
     {
@@ -206,6 +234,7 @@
       "participant_ids": ["martin-stiles", "lola-sampson"],
       "participants": ["Martin Stiles", "Lola Sampson"],
       "datetime": "2020-09-18T15:17",
+      "workflow_id": "advertisement",
       "progressPct": "80",
       "currentMilestone": "Submit files"
     },
@@ -228,7 +257,8 @@
       "participant_ids": ["seth-johansson", "rupert-grisham", "haley-oconnell"],
       "participants": ["Seth Johansson", "Rupert Grisham", "Haley O'Connell"],
       "datetime": "2020-09-16T15:23",
-      "progressPct": "60",
+      "workflow_id": "job-application",
+      "progressPct": "33",
       "currentMilestone": "Review",
       "awaitingResponse": true
     },
@@ -241,7 +271,8 @@
       "participant_ids": ["alina-mcmillan", "rupert-grisham", "haley-oconnell"],
       "participants": ["Alina McMillan", "Rupert Grisham", "Haley O'Connell"],
       "datetime": "2020-09-18T16:25",
-      "progressPct": "60",
+      "workflow_id": "job-application",
+      "progressPct": "33",
       "currentMilestone": "Review",
       "awaitingResponse": true
     },
@@ -254,18 +285,126 @@
       "participant_ids": ["kevin-collins", "lola-sampson"],
       "participants": ["Kevin Collins", "Lola Sampson"],
       "datetime": "2020-09-17T12:17",
+      "workflow_id": "advertisement",
+      "progressPct": "0",
+      "currentMilestone": "Make offer"
+    },
+    {
+      "id": "1",
+      "orgId": "spw",
+      "status": "unread",
+      "project": "Ebook Editing",
+      "title": "Ebook editing: The Magic Bird",
+      "participant_ids": ["haley-oconnell", "lucas-farrow", "kirsten-schober", "eliza-farrington"],
+      "participants": ["Haley O'Connell", "Lucas Farrow", "Kristen Schober", "Eliza Farrington"],
+      "datetime": "2020-09-19T16:58",
+      "workflow_id": "ebook-editing",
+      "progressPct": "40",
+      "currentMilestone": "Proofread",
+      "tasks": [
+        {
+          "assigned_to": "haley-oconnell",
+          "title": ""
+        },
+        {}, {}, {}, {}, {}
+      ]
+    },
+    {
+      "id": "2",
+      "orgId": "spw",
+      "status": "unread",
+      "title": "Recommendations for your reading list",
+      "participant_ids": ["haley-oconnell", "randy-stout"],
+      "participants": ["Haley O'Connell", "Randy Stout"],
+      "datetime": "2020-09-18T12:57"
+    },
+    {
+      "id": "3",
+      "orgId": "spw",
+      "status": "unread",
+      "title": "Writing advice",
+      "participant_ids": ["haley-oconnell", "sabrina-milford"],
+      "participants": ["Haley O'Connell", "Sabrina Milford"],
+      "datetime": "2020-09-18T22:07"
+    },
+    {
+      "id": "4",
+      "orgId": "spw",
+      "status": "needs-response",
+      "project": "Article submission",
+      "title": "Article submission: The secret of dealing with customers",
+      "participant_ids": ["haley-oconnell"],
+      "participants": ["Haley O'Connell"],
+      "datetime": "2020-09-17T23:12",
+      "workflow_id": "article-submission",
       "progressPct": "20",
-      "currentMilestone": "Offer"
+      "currentMilestone": "Submit content",
+      "tasks": [{}]
+    },
+    {
+      "id": "5",
+      "orgId": "spw",
+      "status": "recent-activity",
+      "project": "Ebook submission",
+      "title": "Ebook submission: The Magic Bird",
+      "participant_ids": ["haley-oconnell"],
+      "participants": ["Haley O'Connell"],
+      "datetime": "2020-09-12T16:21",
+      "workflow_id": "ebook-editing",
+      "isCancelled": true
+    },
+    {
+      "id": "6",
+      "orgId": "spw",
+      "status": "recent-activity",
+      "project": "Article submission",
+      "title": "Article submission: Love Triangles",
+      "participant_ids": ["haley-oconnell"],
+      "participants": ["Haley O'Connell"],
+      "datetime": "2020-09-12T16:21",
+      "workflow_id": "article-submission",
+      "progressPct": "100",
+      "currentMilestone": "Approved & published"
+    },
+    {
+      "id": "7",
+      "orgId": "spw",
+      "status": "recent-activity",
+      "project": "Article editing",
+      "title": "Article editing: Love Triangles",
+      "participant_ids": ["haley-oconnell", "lucas-farrow"],
+      "participants": ["Haley O'Connell", "Lucas Farrow"],
+      "datetime": "2020-09-11T16:25",
+      "progressPct": "100",
+      "currentMilestone": "Completed"
+    },
+    {
+      "id": "8",
+      "orgId": "spw",
+      "status": "recent-activity",
+      "title": "Random question",
+      "participant_ids": ["haley-oconnell", "conny-james"],
+      "participants": ["Haley O'Connell", "Conny James"],
+      "datetime": "2020-09-09T23:47"
     }
   ],
   "messages": [
     {
       "id": "1",
+      "orgId": "hsh",
       "threadId": "1",
       "participantId": "hsh",
       "participantType": "bot",
       "datetime": "2020-09-21T20:12",
       "content": "You have placed an order for an item that requires a manual inventory check. Your credit card has not been charged. If the products are in stock, we will reserve them for you and proceed to the payment process. You will receive status updates via email and in this thread."
+    },
+    {
+      "id": "1",
+      "orgId": "spw",
+      "threadId": "1",
+      "participantId": "lucas-farrow",
+      "datetime": "2020-09-12T14:49",
+      "content": "Hi Haley, Here’s your manuscript with all the edits I would recommend. Please review and let me know if you have any questions. I also added a couple tasks for you about things you should think about, as you figure out the rest of your story."
     }
   ],
   "workflows": [
@@ -276,31 +415,179 @@
         {
           "id": "1",
           "pct": "0",
-          "title": "Place Order",
-          "icon": "/media-registry/progress-pie/progress-20pct-lg.svg"
+          "title": "Place order"
         },
         {
           "id": "2",
           "pct": "25",
-          "title": "Reserve Products",
-          "description": "Order placed",
-          "icon": "/media-registry/progress-pie/progress-40pct-lg.svg"
+          "title": "Reserve products",
+          "description": "Order placed"
         },
         {
           "id": "3",
           "pct": "50",
-          "title": "Submit Payment",
-          "description": "Products reserved",
-          "icon": "/media-registry/progress-pie/progress-60pct-lg.svg"
+          "title": "Submit payment",
+          "description": "Products reserved"
         },
         {
           "id": "4",
           "pct": "75",
-          "title": "Track Delivery",
-          "description": "Payment submitted",
-          "icon": "/media-registry/progress-pie/progress-80pct-lg.svg"
+          "title": "Track delivery",
+          "description": "Payment submitted"
         }
-      ]
+      ],
+      "completion": {
+        "id": "5",
+        "pct": "100",
+        "description": "Delivery tracked"
+      }
+    },
+    {
+      "id": "advertisement",
+      "title": "Advertisement",
+      "milestones": [
+        {
+          "id": "1",
+          "pct": "0",
+          "title": "Offer"
+        },
+        {
+          "id": "2",
+          "pct": "20",
+          "title": "Review",
+          "description": "Offer made"
+        },
+        {
+          "id": "3",
+          "pct": "40",
+          "title": "Accept",
+          "description": "Offer reviewed"
+        },
+        {
+          "id": "4",
+          "pct": "60",
+          "title": "Submit payment",
+          "description": "Offer accepted"
+        },
+        {
+          "id": "5",
+          "pct": "80",
+          "title": "Submit files",
+          "description": "Payment submitted"
+        }
+      ],
+      "completion": {
+        "id": "6",
+        "pct": "100",
+        "description": "Files submitted"
+      }
+    },
+    {
+      "id": "job-application",
+      "title": "Job Application",
+      "milestones": [
+        {
+          "id": "1",
+          "pct": "0",
+          "title": "Submit"
+        },
+        {
+          "id": "2",
+          "pct": "33",
+          "title": "Review",
+          "description": "Application submitted"
+        },
+        {
+          "id": "3",
+          "pct": "66",
+          "title": "Accept / Deny",
+          "description": "Application reviewed"
+        }
+      ],
+      "completion": {
+        "id": "4",
+        "pct": "100"
+      }
+    },
+    {
+      "id": "ebook-editing",
+      "title": "Ebook Editing",
+      "milestones": [
+        {
+          "id": "1",
+          "pct": "0",
+          "title": "Share"
+        },
+        {
+          "id": "2",
+          "pct": "20",
+          "title": "Edit",
+          "description": "Manuscript shared"
+        },
+        {
+          "id": "3",
+          "pct": "40",
+          "title": "Proofread",
+          "description": "Manuscript edited"
+        },
+        {
+          "id": "4",
+          "pct": "60",
+          "title": "Translate",
+          "description": "Manuscript proofread"
+        },
+        {
+          "id": "5",
+          "pct": "80",
+          "title": "Submit",
+          "description": "Manuscript translated"
+        }
+      ],
+      "completion": {
+        "id": "6",
+        "pct": "100",
+        "description": "Manuscript submitted"
+      }
+    },
+    {
+      "id": "article-submission",
+      "title": "Article Submission",
+      "milestones": [
+        {
+          "id": "1",
+          "pct": "0",
+          "title": "Accept terms"
+        },
+        {
+          "id": "2",
+          "pct": "20",
+          "title": "Submit content",
+          "description": "Terms accepted"
+        },
+        {
+          "id": "3",
+          "pct": "40",
+          "title": "Select category",
+          "description": "Content submitted"
+        },
+        {
+          "id": "4",
+          "pct": "60",
+          "title": "Review content",
+          "description": "Category selected"
+        },
+        {
+          "id": "5",
+          "pct": "80",
+          "title": "Approve & publish",
+          "description": "Content reviewed"
+        }
+      ],
+      "completion": {
+        "id": "6",
+        "pct": "100",
+        "description": "Approved & published"
+      }
     }
   ]
 }

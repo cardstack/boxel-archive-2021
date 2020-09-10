@@ -51,6 +51,7 @@
         <QueueCard
           @card={{card}}
           @selectCard={{fn @selectCard card}}
+          @currentCard={{@currentCard}}
           @currentMilestone={{@currentMilestone}}
           @updateProgress={{@updateProgress}}
         />
@@ -65,7 +66,11 @@
     </header>
     <div class="queue__section-content">
       {{#each this.actionReqCards as |card|}}
-        <QueueCard @card={{card}} @selectCard={{fn @selectCard card}} />
+        <QueueCard
+          @card={{card}}
+          @selectCard={{fn @selectCard card}}
+          @currentCard={{@currentCard}}
+        />
       {{/each}}
     </div>
   </section>
@@ -77,7 +82,11 @@
     </header>
     <div class="queue__section-content">
       {{#each this.recentCards as |card|}}
-        <QueueCard @card={{card}} @selectCard={{fn @selectCard card}} />
+        <QueueCard
+          @card={{card}}
+          @selectCard={{fn @selectCard card}}
+          @currentCard={{@currentCard}}
+        />
       {{/each}}
     </div>
   </section>

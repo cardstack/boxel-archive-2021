@@ -43,14 +43,24 @@ export default class CardflowComponent extends Component {
   }
 
   get milestoneId() {
+    if (!this.milestone || !this.milestone.id) { return null; }
     return Number(this.milestone.id);
   }
 
   get progressPct() {
+    if (!this.milestone || !this.milestone.pct) { return 0; }
     return Number(this.milestone.pct) / 100;
   }
 
   _getProgress() {
+    if (this.thread.isCancelled) {
+      return {
+        "description": "Cancelled"
+      };
+    }
+    if (this.thread.isCompleted || this.thread.progressPct === "100") {
+      return this.args.model.workflow.completion;
+    }
     return this.progress ? this.progress : this.args.model.workflow.milestones.find(el => el.pct === this.thread.progressPct);
   }
 

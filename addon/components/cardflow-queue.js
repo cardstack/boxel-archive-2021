@@ -54,7 +54,7 @@ export default class CardflowQueueComponent extends Component {
 
   @action
   filterQueue(val) {
-    if (!this.cards || this.args.model.user) { return; }
+    if (!this.cards || !this.args.model.user) { return; }
 
     if (val) {
       let cards = this.cards.filter(el => el.participant_ids.includes(val));
