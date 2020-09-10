@@ -1,30 +1,26 @@
 .queue-card {
   --my-tasks-label-color: var(--boxel-lime);
   --awaiting-reply-label-color: var(--boxel-lilac);
+  --queue-card-primary-color: #fff;
+  --queue-card-secondary-color: var(--boxel-light-purple);
 
   position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 10px;
   width: 100%;
-  padding: 0 0 10px 10px;
+  padding: 0;
   border-radius: var(--boxel-border-radius);
   background-color: var(--boxel-medium-purple);
-  color: white;
+  color: var(--queue-card-primary-color);
   font: var(--boxel-font-xs);
   letter-spacing: var(--boxel-lsp-lg);
-  transition: background-color var(--boxel-transition);
+  transition: color var(--boxel-transition), background-color var(--boxel-transition);
 }
 
 .queue-card:hover {
   cursor: pointer;
 }
 
-.queue-card__header {
-  padding-left: 10px;
-}
-
 .queue-card__datetime-row {
+  padding-left: 20px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 10px;
@@ -32,12 +28,9 @@
   text-align: right;
 }
 
-.queue-card__datetime-row + .queue-card__label {
-  margin-top: 15px;
-}
-
 .queue-card__label {
-  opacity: 0.5;
+  padding-top: 3px;
+  font: var(--boxel-font-xs);
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
   overflow: hidden;
@@ -46,14 +39,13 @@
 
 .queue-card__label,
 .queue-card__datetime {
-  font-size: 10px;
+  color: var(--queue-card-secondary-color);
   font-weight: 600;
-  line-height: 1.4;
+  transition: color var(--boxel-transition);
 }
 
 .queue-card__datetime {
   padding-top: 8px;
-  color: var(--boxel-light-purple);
 }
 
 .queue-card__datetime:last-child {
@@ -72,7 +64,11 @@
 }
 
 .queue-card__content {
-  padding: 0 20px 0 10px;
+  padding: 10px 20px 17px;
+}
+
+.queue-card__label + .queue-card__project-title {
+  padding-top: 3px;
 }
 
 .queue-card__project-title {
@@ -86,35 +82,26 @@
 }
 
 .queue-card__participants {
-  --icon-color: #fff;
+  --icon-color: var(--queue-card-primary-color);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 10px;
+  align-items: center;
+  padding-top: 12px;
+  color: var(--queue-card-secondary-color);
+  font: var(--boxel-font-xs);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-.queue-card__participants svg {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 8px;
-}
-
-.queue-card__participant-names {
-  display: inline-block;
-  vertical-align: middle;
-  opacity: 0.5;
-}
-
-.queue-card__project-title + .queue-card__participants {
-  margin-top: 20px;
+  transition: color var(--boxel-transition);
 }
 
 .queue-card__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  margin-right: 10px;
-  padding-top: 10px;
+  margin: 0 10px;
+  padding: 10px 0;
   border-top: 1px solid var(--boxel-dark-purple);
 }
 
@@ -171,23 +158,17 @@
 
 /* Light Theme */
 .queue-card--light-theme {
-  background-color: #fff;
-  color: black;
-}
+  --queue-card-primary-color: #000;
+  --queue-card-secondary-color: var(--boxel-medium-light-purple);
+  --boxel-highlight: #00B2AE;
 
-.queue-card--light-theme .queue-card__participants {
-  --icon-color: #000;
+  background-color: #fff;
 }
 
 .queue-card--light-theme .queue-card__footer {
   border-color: rgba(55, 53, 67, 0.15);
 }
 
-.queue-card--light-theme .queue-card__status {
-  color: #00B2AE;
-}
-
 .queue-card--light-theme .queue-card__progress-icon {
-  --icon-color: #00B2AE;
   background-image: url('/assets/images/icons/progress-circle.svg');
 }

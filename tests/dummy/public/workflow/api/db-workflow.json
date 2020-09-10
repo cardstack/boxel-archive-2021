@@ -29,14 +29,6 @@
       ]
     },
     {
-      "id": "hlc",
-      "type": "organization",
-      "title": "Haley's Love Couch",
-      "imgURL": "/workflow/orgs/hlc-icon.png",
-      "iconURL": "/workflow/orgs/hlc-icon.png",
-      "logoURL": "/workflow/orgs/hlc-logo.png"
-    },
-    {
       "id": "spw",
       "type": "organization",
       "title": "Self-Publishing Writers",
@@ -61,6 +53,14 @@
           "role": "Proofreader"
         }
       ]
+    },
+    {
+      "id": "hlc",
+      "type": "organization",
+      "title": "Haley's Love Couch",
+      "imgURL": "/workflow/orgs/hlc-icon.png",
+      "iconURL": "/workflow/orgs/hlc-icon.png",
+      "logoURL": "/workflow/orgs/hlc-logo.png"
     }
   ],
   "users": [

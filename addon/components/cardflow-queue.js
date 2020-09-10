@@ -3,8 +3,11 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class CardflowQueueComponent extends Component {
-  @tracked displayFormat = "list";
-  @tracked displayQueue = "shared";
+  viewOptions = [
+    { id: 'shared', name: 'Shared Queue' },
+    { id: 'my-queue', name: 'My Queue' }
+  ];
+  @tracked displayQueue = this.viewOptions[0];
   @tracked updatedCards;
 
   _getCards() {
@@ -55,15 +58,14 @@ export default class CardflowQueueComponent extends Component {
   @action
   filterQueue(val) {
     if (!this.cards || !this.args.model.user) { return; }
+    let cards = this.args.model.queueCards;
+    let userId = this.args.model.user.id;
 
-    if (val) {
-      let cards = this.cards.filter(el => el.participant_ids.includes(val));
-      this._setCards(cards);
-      this.displayQueue = "user";
-      return;
+    if (val.id === 'my-queue') {
+      cards = this.cards.filter(el => el.participant_ids.includes(userId));
     }
 
-    this._setCards(this.args.model.queueCards);
-    this.displayQueue = "shared";
+    this._setCards(cards);
+    this.displayQueue = val;
   }
 }
