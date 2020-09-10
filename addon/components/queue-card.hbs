@@ -37,10 +37,12 @@
       </div>
       <div class="queue-card__status">
         {{this.progress}}
-        <div class="queue-card__progress-icon">
-          <div class="queue-card__progress-pie" style={{html-safe (concat "stroke-dasharray:" (mult this.progressPct 60) " " 60)}}>
-            {{svg-jar "progress-circle" width="24px" height="24px"}}
-          </div>
+        <div class="queue-card__progress-icon {{if @card.isCancelled "cancelled"}} {{if @card.isComplete "complete"}}">
+          {{#if (not (or @card.isCancelled @card.isComplete))}}
+            <div class="queue-card__progress-pie" style={{html-safe (concat "stroke-dasharray:" (mult this.progressPct 60) " " 60)}}>
+              {{svg-jar "progress-circle" width="24px" height="24px"}}
+            </div>
+          {{/if}}
         </div>
       </div>
     </footer>

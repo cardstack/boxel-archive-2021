@@ -16,11 +16,21 @@ export default class QueueCardComponent extends Component {
   }
 
   get progress() {
+    if (this.args.card.isCancelled) {
+      return 'Cancelled';
+    }
+    else if (this.args.card.isComplete) {
+      return 'Complete';
+    }
+    if (!this.args.card.currentMilestone) {
+      return null;
+    }
     return this.args.card.currentMilestone;
   }
 
   get progressPct() {
     let pct = this.args.card.progressPct;
+    if (!pct) { return null; }
     return Number(pct) / 100;
   }
 }

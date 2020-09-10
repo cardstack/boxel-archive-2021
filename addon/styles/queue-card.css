@@ -125,6 +125,26 @@
   color: #fff;
 }
 
+
+/* Light Theme */
+.queue-card--light-theme {
+  --queue-card-primary-color: #000;
+  --queue-card-secondary-color: var(--boxel-medium-light-purple);
+  --boxel-highlight: #00B2AE;
+
+  background-color: #fff;
+}
+
+.queue-card--light-theme .queue-card__footer {
+  border-color: rgba(55, 53, 67, 0.15);
+}
+
+.queue-card--light-theme .queue-card__progress-icon {
+  background-image: url('/assets/images/icons/progress-circle.svg');
+}
+
+
+/* Status */
 .queue-card__status {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -146,6 +166,18 @@
   background-size: contain;
 }
 
+.queue-card__progress-icon.cancelled {
+  width: 16px;
+  height: 16px;
+  background-image: url('/assets/images/icons/icon-x-circle-ht.svg');
+}
+
+.queue-card__progress-icon.complete {
+  width: 16px;
+  height: 16px;
+  background-image: url('/assets/images/icons/icon-check-circle-ht.svg');
+}
+
 .queue-card__progress-pie {
   position: absolute;
   width: 100%;
@@ -153,22 +185,4 @@
   transform: rotate(-90deg);
   stroke-dasharray: 0 60;
   transition: stroke-dasharray var(--boxel-transition);
-}
-
-
-/* Light Theme */
-.queue-card--light-theme {
-  --queue-card-primary-color: #000;
-  --queue-card-secondary-color: var(--boxel-medium-light-purple);
-  --boxel-highlight: #00B2AE;
-
-  background-color: #fff;
-}
-
-.queue-card--light-theme .queue-card__footer {
-  border-color: rgba(55, 53, 67, 0.15);
-}
-
-.queue-card--light-theme .queue-card__progress-icon {
-  background-image: url('/assets/images/icons/progress-circle.svg');
 }

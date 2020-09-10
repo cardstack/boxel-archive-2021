@@ -364,7 +364,7 @@
       "datetime": "2020-09-12T16:21",
       "workflow_id": "article-submission",
       "progressPct": "100",
-      "currentMilestone": "Approved & published"
+      "isComplete": true
     },
     {
       "id": "7",
@@ -376,7 +376,7 @@
       "participants": ["Haley O'Connell", "Lucas Farrow"],
       "datetime": "2020-09-11T16:25",
       "progressPct": "100",
-      "currentMilestone": "Completed"
+      "isComplete": true
     },
     {
       "id": "8",
