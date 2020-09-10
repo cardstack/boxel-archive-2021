@@ -9,7 +9,7 @@ export default class QueueCardComponent extends Component {
 
     if (participants.length > max) {
       let remaining = participants.length - max;
-      return `${participants[0]}, ${participants[1]}, +${remaining} more`;
+      return `${participants[0]}, ${participants[1]}, +${remaining}`;
     }
 
     return participants.toString().replace(',', ', ');

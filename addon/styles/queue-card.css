@@ -29,7 +29,6 @@
 }
 
 .queue-card__label {
-  padding-top: 3px;
   font: var(--boxel-font-xs);
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
@@ -68,7 +67,7 @@
 }
 
 .queue-card__label + .queue-card__project-title {
-  padding-top: 3px;
+  padding-top: 5px;
 }
 
 .queue-card__project-title {
