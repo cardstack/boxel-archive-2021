@@ -1,4 +1,4 @@
-<div role="button" {{on "click" @selectCard}} class="queue-card {{if (eq @card.id @currentCard.id) "queue-card--light-theme"}}">
+<div role="button" {{on "click" @selectCard}} class="queue-card {{if (and (eq @card.id @currentCard.id) (eq @card.orgId @currentCard.orgId)) "queue-card--light-theme"}}">
   <header class="queue-card__header">
     <div class="queue-card__datetime-row">
       {{#let (if @currentMilestone.timestamp @currentMilestone.timestamp @card.datetime) as |datetime|}}
