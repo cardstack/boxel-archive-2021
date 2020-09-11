@@ -104,10 +104,15 @@
   border-top: 1px solid var(--boxel-dark-purple);
 }
 
+.queue-card__task-labels {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  white-space: nowrap;
+  gap: 5px;
+  padding-right: 7px;
+}
+
 .queue-card__task-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 5px 10px;
   background-color: var(--my-tasks-label-color);
   border-radius: 5px;
@@ -122,6 +127,9 @@
 .queue-card__task-label--awaiting-reply {
   background-color: var(--awaiting-reply-label-color);
   color: #fff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 
@@ -148,7 +156,7 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
   color: var(--boxel-highlight);
   font-weight: 600;
   letter-spacing: var(--boxel-lsp);
