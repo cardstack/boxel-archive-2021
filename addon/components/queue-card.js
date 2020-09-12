@@ -13,7 +13,7 @@ export default class QueueCardComponent extends Component {
     let tasks = this.args.card.tasks;
     let user = this.args.user;
     if (!tasks || !user) { return null; }
-
+    // do not count completed or self-assigned tasks
     return tasks.filter(el => !el.completed && el.assigned_by === user.id && el.assigned_to !== user.id);
   }
 

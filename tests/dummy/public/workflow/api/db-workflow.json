@@ -320,13 +320,15 @@
           "assigned_by": "system",
           "assigned_to": "haley-oconnell",
           "title": "Send to translator",
-          "due_date": "2020-09-19"
+          "due_date": "2020-09-19",
+          "shortcut_link": ""
         },
         {
           "assigned_by": "haley-oconnell",
           "assigned_to": "haley-oconnell",
           "title": "Find cover art",
-          "due_date": "2020-09-26"
+          "due_date": "2020-09-26",
+          "shortcut_link": ""
         },
         {
           "assigned_by": "haley-oconnell",
@@ -353,12 +355,14 @@
         {
           "assigned_by": "system",
           "assigned_to": "eliza-farrington",
-          "title": "Proofread content"
+          "title": "Proofread content",
+          "shortcut_link": ""
         },
         {
           "assigned_by": "haley-oconnell",
           "assigned_to": "lucas-farrow",
-          "title": "Review chapter outline"
+          "title": "Review chapter outline",
+          "shortcut_link": ""
         },
         {
           "assigned_by": "haley-oconnell",
