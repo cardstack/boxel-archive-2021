@@ -1,17 +1,3 @@
-<div class="cardflow__taskbar-overlay">
-  <div class="cardflow__taskbar-overlay-header">
-    <button>Close</button>
-  </div>
-  <div class="cardflow__taskbar-scroll-container">
-    <Tasklist
-      @tableHeaders={{this.tasklistCols}}
-      @userTasks={{this.userTasks}}
-      @assignedTasks={{this.assignedTasks}}
-      @completedTasks={{this.completedTasks}}
-    />
-  </div>
-</div>
-
 <CardPlatter @class="cardflow">
   <header class="cardflow__header">
     {{#if (eq this.project.status "unread")}}
@@ -33,17 +19,17 @@
 
   {{!-- Main Area --}}
   <div>
-    {{#if @model.thread.tasks}}
+    {{#if @activeTasks}}
       <div class="cardflow__taskbar">
-        <div class="cardflow__taskbar-count">{{this.activeTasks.length}} {{#if (eq this.activeTasks.length 1)}}task{{else}}tasks{{/if}} for this workflow</div>
-        {{#if this.userTasks}}
+        <div class="cardflow__taskbar-count">{{@activeTasks.length}} {{#if (eq this.activeTasks.length 1)}}task{{else}}tasks{{/if}} for this workflow</div>
+        {{#if @userTasks}}
           <div class="cardflow__taskbar-label">
-            {{this.userTasks.length}} assigned to me
+            {{@userTasks.length}} assigned to me
           </div>
         {{/if}}
-        {{#if this.assignedTasks}}
+        {{#if @assignedTasks}}
           <div class="cardflow__taskbar-label cardflow__taskbar-label--assigned">
-            {{this.assignedTasks.length}} pending action
+            {{@assignedTasks.length}} pending action
           </div>
         {{/if}}
       </div>

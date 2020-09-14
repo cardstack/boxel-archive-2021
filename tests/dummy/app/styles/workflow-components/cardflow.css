@@ -144,7 +144,7 @@
 
 .cardflow__taskbar-count {
   padding-left: 22px;
-  background: url('/assets/images/icons/task.svg') left center/contain no-repeat;
+  background: url('/assets/images/icons/task.svg') left center/15px 15px no-repeat;
 }
 
 .cardflow__taskbar-label {

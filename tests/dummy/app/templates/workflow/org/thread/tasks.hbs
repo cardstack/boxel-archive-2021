@@ -1,0 +1,13 @@
+<div class="cardflow__taskbar-overlay">
+  <div class="cardflow__taskbar-overlay-header">
+    <button>Close</button>
+  </div>
+  <div class="cardflow__taskbar-scroll-container">
+    <Tasklist
+      @tableHeaders={{this.tasklistCols}}
+      @userTasks={{this.userTasks}}
+      @assignedTasks={{this.assignedTasks}}
+      @completedTasks={{this.completedTasks}}
+    />
+  </div>
+</div>

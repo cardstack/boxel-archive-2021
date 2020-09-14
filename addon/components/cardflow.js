@@ -4,33 +4,6 @@ import { action } from '@ember/object';
 
 
 export default class CardflowComponent extends Component {
-  tasklistCols = [
-    {
-      name: 'Assigned By',
-      valuePath: 'assigned_by',
-      width: 150
-    },
-    {
-      name: 'Task',
-      valuePath: 'title',
-      width: 300
-    },
-    {
-      name: 'Due Date',
-      valuePath: 'due_date',
-      width: 150
-    },
-    {
-      name: 'Assignee',
-      valuePath: 'assigned_to',
-      width: 150
-    },
-    {
-      name: 'Shortcut',
-      valuePath: 'shortcut_link'
-    }
-  ];
-
   @tracked progress;
   @tracked actionSteps = this.args.actionSteps;
   @tracked lastUpdated = this.args.lastUpdated;
@@ -41,28 +14,6 @@ export default class CardflowComponent extends Component {
 
   get thread() {
     return this.args.model.thread;
-  }
-
-  get activeTasks() {
-    if (!this.thread.tasks) { return null; }
-    return this.thread.tasks.filter(el => !el.completed);
-  }
-
-  get completedTasks() {
-    if (!this.thread.tasks) { return null; }
-    return this.thread.tasks.filter(el => el.completed);
-  }
-
-  get userTasks() {
-    if (!this.activeTasks || !this.user) { return null; }
-    return this.activeTasks.filter(el => el.assigned_to === this.user.id);
-  }
-
-  get assignedTasks() {
-    // tasks assigned from this user to others
-    if (!this.activeTasks || !this.user) { return null; }
-    // do not count self-assigned tasks
-    return this.activeTasks.filter(el => el.assigned_by === this.user.id && el.assigned_to !== this.user.id);
   }
 
   get participants() {
