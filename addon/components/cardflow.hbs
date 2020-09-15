@@ -19,8 +19,8 @@
 
   {{!-- Main Area --}}
   <div>
-    {{#if @activeTasks}}
-      <div class="cardflow__taskbar">
+    {{#if (and @activeTasks @tasksRoute)}}
+      <LinkTo @route={{@tasksRoute}} @class="cardflow__taskbar">
         <div class="cardflow__taskbar-count">{{@activeTasks.length}} {{#if (eq this.activeTasks.length 1)}}task{{else}}tasks{{/if}} for this workflow</div>
         {{#if @userTasks}}
           <div class="cardflow__taskbar-label">
@@ -32,7 +32,7 @@
             {{@assignedTasks.length}} pending action
           </div>
         {{/if}}
-      </div>
+      </LinkTo>
     {{/if}}
 
     <div class="cardflow__thread">
