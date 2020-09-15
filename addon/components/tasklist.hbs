@@ -10,6 +10,7 @@
       <TasklistTable
         @columns={{@tableHeaders}}
         @rows={{@userTasks}}
+        @now={{@now}}
       />
     </section>
     <section class="tasklist__section">
@@ -22,6 +23,7 @@
       <TasklistTable
         @columns={{@tableHeaders}}
         @rows={{@assignedTasks}}
+        @now={{@now}}
       />
     </section>
     <section class="tasklist__section">
@@ -34,6 +36,8 @@
       <TasklistTable
         @columns={{@tableHeaders}}
         @rows={{@completedTasks}}
+        @isCompleted={{true}}
+        @now={{@now}}
       />
     </section>
     <footer class="tasklist__footer">

@@ -45,3 +45,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.tasklist-table__cell-important {
+  color: var(--boxel-red);
+}
