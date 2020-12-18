@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { fetchCollection } from 'dummy/media';
+import { fetchCollection } from '@cardstack/boxel/media';
 
 export default class MediaRegistryVersionRoute extends Route {
   async model({ itemId, versionId }, transition) {

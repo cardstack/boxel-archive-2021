@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { fetchCollection } from 'dummy/media';
+import { fetchCollection } from '@cardstack/boxel/media';
 import { formatId } from '@cardstack/boxel/utils/format-id';
 import { titleize } from '@cardstack/boxel/utils/titleize';
 

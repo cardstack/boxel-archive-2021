@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { fetchData } from 'dummy/data-workflow';
+import { fetchData } from '@cardstack/boxel/data-workflow';
 
 const USER_ID = 'haley-oconnell';
 

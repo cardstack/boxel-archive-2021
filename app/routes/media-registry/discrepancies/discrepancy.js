@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import DISCREPANCIES from 'dummy/data/discrepancies-list';
+import DISCREPANCIES from '@cardstack/boxel/data/discrepancies-list';
 
 export default class MediaRegistryDiscrepanciesDiscrepancyRoute extends Route {
   titleToken(model) {

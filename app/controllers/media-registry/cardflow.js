@@ -2,7 +2,7 @@ import MediaRegistryController from '../media-registry';
 import { tracked } from '@glimmer/tracking';
 import { action, set, get } from '@ember/object';
 import { compare, isBlank } from '@ember/utils';
-import { fetchCollection } from 'dummy/media';
+import { fetchCollection } from '@cardstack/boxel/media';
 import { formatId } from '@cardstack/boxel/utils/format-id';
 
 export default class MediaRegistryCardflowController extends MediaRegistryController {

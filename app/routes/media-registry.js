@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import ORGS from 'dummy/data/organizations';
+import ORGS from '@cardstack/boxel/data/organizations';
 
 export default class MediaRegistryRoute extends Route {
   defaultGroup = [ 'bunny_records', 'crd_records' ];

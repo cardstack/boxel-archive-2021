@@ -1,8 +1,8 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import METADATASTEPS from 'dummy/data/amend-metadata-steps';
-import MILESTONES from 'dummy/data/catalog-transfer-workflow';
+import METADATASTEPS from '../data/amend-metadata-steps';
+import MILESTONES from '../data/catalog-transfer-workflow';
 
 export default class MediaRegistryController extends Controller {
   @tracked actionSteps = METADATASTEPS;

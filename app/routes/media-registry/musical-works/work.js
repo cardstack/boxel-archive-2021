@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { fetchCollection } from 'dummy/media';
+import { fetchCollection } from '@cardstack/boxel/media';
 import { titleize } from '@cardstack/boxel/utils/titleize';
 
 export default class MediaRegistryMusicalWorksWorkRoute extends Route {
