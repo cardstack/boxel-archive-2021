@@ -1,4 +1,4 @@
-import ENV from 'dummy/config/environment';
+import ENV from '../config/environment';
 import fetch from 'fetch';
 
 export async function fetchData(data) {
