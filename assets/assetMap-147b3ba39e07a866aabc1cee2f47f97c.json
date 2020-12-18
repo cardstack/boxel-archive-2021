@@ -1,10 +1,10 @@
 {
   "assets": {
-    "/boxel/assets/assetMap-e74918465b4e174ff653333f90e9f3b7.json": "assets/assetMap-87a2c35acf6c9891e40f0852e23a8f49.json",
+    "/boxel/assets/assetMap-147b3ba39e07a866aabc1cee2f47f97c.json": "assets/assetMap-87a2c35acf6c9891e40f0852e23a8f49.json",
     "/boxel/assets/auto-import-fastboot-1aae09d61e516c5d4fdd63368daff189.js": "assets/auto-import-fastboot-1aae09d61e516c5d4fdd63368daff189.js",
     "/boxel/assets/demo_flac-4d792657e7885ef64baa82470d49b987.flac": "assets/demo_flac-4d792657e7885ef64baa82470d49b987.flac",
     "/boxel/assets/dummy-4cf9b5c13c50ea64426039135b08f02e.css": "assets/dummy-4cf9b5c13c50ea64426039135b08f02e.css",
-    "/boxel/assets/dummy-5713e0b3321a605fb7767185035a6762.js": "assets/dummy-5713e0b3321a605fb7767185035a6762.js",
+    "/boxel/assets/dummy-832385c55be44ae5c05066ba6f934065.js": "assets/dummy-832385c55be44ae5c05066ba6f934065.js",
     "/boxel/assets/images/icons/active-circle-00b5dcfc09b7f4d3801d365d1eed8cfb.svg": "assets/images/icons/active-circle-00b5dcfc09b7f4d3801d365d1eed8cfb.svg",
     "/boxel/assets/images/icons/arrow-down-677c616fc9f4bcd92dcd0fa92cb28ab7.svg": "assets/images/icons/arrow-down-677c616fc9f4bcd92dcd0fa92cb28ab7.svg",
     "/boxel/assets/images/icons/arrow-left-14bf2ed7e4e16adff9a9308000b7ea06.svg": "assets/images/icons/arrow-left-14bf2ed7e4e16adff9a9308000b7ea06.svg",
@@ -105,7 +105,7 @@
     "/boxel/assets/media-registry/wave-player-1af59274b12fb4678b5615a9b4b5cdf8.css": "assets/media-registry/wave-player-1af59274b12fb4678b5615a9b4b5cdf8.css",
     "/boxel/assets/tools-467bc4bb90735698ee2c87847053021c.css": "assets/tools-467bc4bb90735698ee2c87847053021c.css",
     "/boxel/assets/vendor-87067a8e31129dc1daffa0a32eafd87d.css": "assets/vendor-87067a8e31129dc1daffa0a32eafd87d.css",
-    "/boxel/assets/vendor-bacbc12bb70b1ec2235b3fdc7ab6d7b9.js": "assets/vendor-bacbc12bb70b1ec2235b3fdc7ab6d7b9.js",
+    "/boxel/assets/vendor-1acd916d6f476f7d445e2dce006e2929.js": "assets/vendor-1acd916d6f476f7d445e2dce006e2929.js",
     "/boxel/assets/workflow-components/cardflow-fa2d5dd462b906dc7779c6f2756a3fa1.css": "assets/workflow-components/cardflow-fa2d5dd462b906dc7779c6f2756a3fa1.css",
     "/boxel/assets/workflow-components/tasklist-table-1bee9f2e8e7ec33e25cd2bd51c5ee685.css": "assets/workflow-components/tasklist-table-1bee9f2e8e7ec33e25cd2bd51c5ee685.css",
     "/boxel/assets/workflow-components/tasklist-b17d101d76ac36666b77c58cfe7f11e2.css": "assets/workflow-components/tasklist-b17d101d76ac36666b77c58cfe7f11e2.css",

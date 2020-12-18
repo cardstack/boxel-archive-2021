@@ -695,19 +695,20 @@ for(var t=arguments.length,i=new Array(t),a=0;a<t;a++)i[a]=arguments[a]
 return s(l(e=n.call.apply(n,[this].concat(i))),"location",r.default.locationType),s(l(e),"rootURL",r.default.rootURL),e}return f}(t.default)
 f.map((function(){this.route("workflow",(function(){this.route("org",{path:"/:orgId"},(function(){this.route("thread",{path:"/:threadId"},(function(){this.route("tasks")}))}))})),this.route("home",{path:"media-registry"}),this.route("media-registry",{path:"/media-registry/:orgId"},(function(){this.route("collection",{path:"/collections/:collectionId"},(function(){this.route("edit")})),this.route("item",{path:"/:itemId"},(function(){this.route("edit"),this.route("musical-work")})),this.route("products",(function(){this.route("album",{path:"/:albumId"})})),this.route("musical-works",(function(){this.route("work",{path:"/:workId"}),this.route("work-version",{path:"/:workId/:versionId"})})),this.route("versions",{path:"/:itemId/versions"}),this.route("version",{path:"/:itemId/:versionId"}),this.route("discrepancies",(function(){this.route("discrepancy",{path:"/:compId"},(function(){this.route("card",{path:"/:cardType/:cardId"},(function(){this.route("card",{path:"/:innerCardType/:innerCardId"})}))}))})),this.route("agreements",{path:"/agreements/:agreementId"}),this.route("cardflow")})),this.route("wave-player")}))
 var d=f
-e.default=d})),define("dummy/routes/application",["exports"],(function(e){function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function n(e,r){return!r||"object"!==t(r)&&"function"!=typeof r?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}(e):r}function o(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
+e.default=d})),define("dummy/routes/application",["exports"],(function(e){function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function n(e,t){for(var r=0;r<t.length;r++){var n=t[r]
+n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function o(e,r){return!r||"object"!==t(r)&&"function"!=typeof r?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return e}(e):r}function i(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
 if("function"==typeof Proxy)return!0
-try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function i(e){return(i=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function l(e,t){return(l=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var a=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&l(e,t)})(u,Ember.Route)
-var t,a=(t=u,function(){var e,r=i(t)
-if(o()){var l=i(this).constructor
-e=Reflect.construct(r,arguments,l)}else e=r.apply(this,arguments)
-return n(this,e)})
-function u(){return r(this,u),a.apply(this,arguments)}return u}()
-e.default=a})),define("dummy/routes/boxelized",["exports","@cardstack/boxel/routes/boxelized"],(function(e,t){Object.defineProperty(e,"__esModule",{value:!0}),Object.defineProperty(e,"default",{enumerable:!0,get:function(){return t.default}})})),define("dummy/routes/home",["exports"],(function(e){function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){for(var r=0;r<t.length;r++){var n=t[r]
+try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function l(e){return(l=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function a(e,t){return(a=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var u=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&a(e,t)})(d,Ember.Route)
+var t,u,c,s,f=(t=d,function(){var e,r=l(t)
+if(i()){var n=l(this).constructor
+e=Reflect.construct(r,arguments,n)}else e=r.apply(this,arguments)
+return o(this,e)})
+function d(){return r(this,d),f.apply(this,arguments)}return u=d,(c=[{key:"title",value:function(e){return e?e.reverse().join(" - "):"Boxel"}}])&&n(u.prototype,c),s&&n(u,s),d}()
+e.default=u})),define("dummy/routes/boxelized",["exports","@cardstack/boxel/routes/boxelized"],(function(e,t){Object.defineProperty(e,"__esModule",{value:!0}),Object.defineProperty(e,"default",{enumerable:!0,get:function(){return t.default}})})),define("dummy/routes/home",["exports"],(function(e){function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){for(var r=0;r<t.length;r++){var n=t[r]
 n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function i(e,t,r){return(i="undefined"!=typeof Reflect&&Reflect.get?Reflect.get:function(e,t,r){var n=function(e,t){for(;!Object.prototype.hasOwnProperty.call(e,t)&&null!==(e=u(e)););return e}(e,t)
 if(n){var o=Object.getOwnPropertyDescriptor(n,t)
 return o.get?o.get.call(r):o.value}})(e,t,r||e)}function l(e,r){return!r||"object"!==t(r)&&"function"!=typeof r?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
@@ -741,7 +742,7 @@ if(a()){var n=u(this).constructor
 e=Reflect.construct(r,arguments,n)}else e=r.apply(this,arguments)
 return l(this,e)})
 function b(){return n(this,b),y.apply(this,arguments)}return s=b,(f=[{key:"beforeModel",value:(p=regeneratorRuntime.mark((function e(t){return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,i(u(b.prototype),"beforeModel",this).call(this,t)
-case 2:this.transitionTo("workflow")
+case 2:this.transitionTo("media-registry","bunny_records")
 case 3:case"end":return e.stop()}}),e,this)})),m=function(){var e=this,t=arguments
 return new Promise((function(n,o){var i=p.apply(e,t)
 function l(e){r(i,n,o,l,a,"next",e)}function a(e){r(i,n,o,l,a,"throw",e)}l(void 0)}))},function(e){return m.apply(this,arguments)})}])&&o(s.prototype,f),d&&o(s,d),b}()
@@ -760,7 +761,7 @@ return i(this,e)})
 function y(){var e
 n(this,y)
 for(var t=arguments.length,r=new Array(t),o=0;o<t;o++)r[o]=arguments[o]
-return s(l(e=m.call.apply(m,[this].concat(r))),"defaultGroup",["bunny_records","crd_records"]),s(l(e),"verifiGroup",["warner-music-group","allegro-music-publishing","warner-chappell-music","global-music-rights","deezer"]),e}return f=y,(d=[{key:"model",value:function(e){var r,n=e.orgId
+return s(l(e=m.call.apply(m,[this].concat(r))),"defaultGroup",["bunny_records","crd_records"]),s(l(e),"verifiGroup",["warner-music-group","allegro-music-publishing","warner-chappell-music","global-music-rights","deezer"]),e}return f=y,(d=[{key:"titleToken",value:function(e){return"".concat(e.currentOrg.title)}},{key:"model",value:function(e){var r,n=e.orgId
 return{orgs:(this.verifiGroup.includes(n)?this.verifiGroup:this.defaultGroup).map((function(e){return t.default.find((function(t){return t.id===n&&(r=t),t.id===e}))})),currentOrg:r}}}])&&o(f.prototype,d),p&&o(f,p),y}()
 e.default=f})),define("dummy/routes/media-registry/agreements",["exports","dummy/media"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r]
 n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function l(e,t){return!t||"object"!==r(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
@@ -774,7 +775,7 @@ var r,s,f,d,p,m,y=(r=b,function(){var e,t=u(r)
 if(a()){var n=u(this).constructor
 e=Reflect.construct(t,arguments,n)}else e=t.apply(this,arguments)
 return l(this,e)})
-function b(){return o(this,b),y.apply(this,arguments)}return s=b,(f=[{key:"model",value:(p=regeneratorRuntime.mark((function e(r){var n,o,i,l,a,u
+function b(){return o(this,b),y.apply(this,arguments)}return s=b,(f=[{key:"titleToken",value:function(){return"Agreements"}},{key:"model",value:(p=regeneratorRuntime.mark((function e(r){var n,o,i,l,a,u
 return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return n=r.agreementId,o=this.modelFor("media-registry").currentOrg,e.next=4,(0,t.fetchCollection)("transfer_agreements_verifi")
 case 4:if(i=e.sent,!(l=i.find((function(e){return e.reference_code===n})))||!l.catalog_id){e.next=12
 break}return e.next=9,(0,t.fetchCollection)("collections")
@@ -795,25 +796,25 @@ if(i()){var n=l(this).constructor
 e=Reflect.construct(r,arguments,n)}else e=r.apply(this,arguments)
 return o(this,e)})
 function u(){return n(this,u),r.apply(this,arguments)}return u}(t.default)
-e.default=u})),define("dummy/routes/media-registry/collection",["exports","dummy/media"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r]
-n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function l(e,t){return!t||"object"!==r(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}(e):t}function a(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
+e.default=u})),define("dummy/routes/media-registry/collection",["exports","dummy/media","@cardstack/boxel/utils/titleize"],(function(e,t,r){function n(e){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function o(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function l(e,t){for(var r=0;r<t.length;r++){var n=t[r]
+n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function a(e,t){return!t||"object"!==n(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return e}(e):t}function u(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
 if("function"==typeof Proxy)return!0
-try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function u(e){return(u=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function c(e,t){return(c=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var s=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&c(e,t)})(b,Ember.Route)
-var r,s,f,d,p,m,y=(r=b,function(){var e,t=u(r)
-if(a()){var n=u(this).constructor
-e=Reflect.construct(t,arguments,n)}else e=t.apply(this,arguments)
-return l(this,e)})
-function b(){return o(this,b),y.apply(this,arguments)}return s=b,(f=[{key:"model",value:(p=regeneratorRuntime.mark((function e(r){var n,o,i,l,a,u
+try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function c(e){return(c=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function s(e,t){return(s=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var f=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&s(e,t)})(h,Ember.Route)
+var n,f,d,p,m,y,b=(n=h,function(){var e,t=c(n)
+if(u()){var r=c(this).constructor
+e=Reflect.construct(t,arguments,r)}else e=t.apply(this,arguments)
+return a(this,e)})
+function h(){return i(this,h),b.apply(this,arguments)}return f=h,(d=[{key:"titleToken",value:function(e){return"".concat((0,r.titleize)(e.title)," - Master Recordings")}},{key:"model",value:(m=regeneratorRuntime.mark((function e(r){var n,o,i,l,a,u
 return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return n=r.collectionId,o=this.modelFor("media-registry"),i=o.currentOrg,l=o.orgs,e.next=4,(0,t.fetchCollection)("all_tracks_combined")
 case 4:return a=e.sent,u=a.filter((function(e){if(e.collection_ids)return e.collection_ids.includes(n)})),e.abrupt("return",{id:n,currentOrg:i,orgs:l,title:n,type:"collection",collection:u,itemType:"master",itemTypePlural:"masters",itemComponent:"cards/master-collection-item",route:"media-registry.item",listFields:[{name:"Release Title",valuePath:"album"},{name:"Release Type",valuePath:"type_of_album"},{name:"Genre",valuePath:"genre"},{name:"Length",valuePath:"length"}],columns:[{name:"Title",valuePath:"title",isFixed:"left",width:350},{name:"Artist",valuePath:"artist",width:250},{name:"Release Title",valuePath:"album",width:250},{name:"Artwork",valuePath:"cover_art",width:175,isSortable:!1},{name:"Release Type",valuePath:"type_of_album",width:250},{name:"Genre",valuePath:"genre",width:250},{name:"Length",valuePath:"length",width:250,sortType:"numeric"},{width:0,isFixed:"right"}]})
-case 7:case"end":return e.stop()}}),e,this)})),m=function(){var e=this,t=arguments
-return new Promise((function(r,o){var i=p.apply(e,t)
-function l(e){n(i,r,o,l,a,"next",e)}function a(e){n(i,r,o,l,a,"throw",e)}l(void 0)}))},function(e){return m.apply(this,arguments)})}])&&i(s.prototype,f),d&&i(s,d),b}()
-e.default=s})),define("dummy/routes/media-registry/collection/edit",["exports"],(function(e){function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){for(var r=0;r<t.length;r++){var n=t[r]
+case 7:case"end":return e.stop()}}),e,this)})),y=function(){var e=this,t=arguments
+return new Promise((function(r,n){var i=m.apply(e,t)
+function l(e){o(i,r,n,l,a,"next",e)}function a(e){o(i,r,n,l,a,"throw",e)}l(void 0)}))},function(e){return y.apply(this,arguments)})}])&&l(f.prototype,d),p&&l(f,p),h}()
+e.default=f})),define("dummy/routes/media-registry/collection/edit",["exports"],(function(e){function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){for(var r=0;r<t.length;r++){var n=t[r]
 n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function i(e,r){return!r||"object"!==t(r)&&"function"!=typeof r?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
 return e}(e):r}function l(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
@@ -842,7 +843,7 @@ var r,c,s,f,d=(r=p,function(){var e,t=a(r)
 if(l()){var n=a(this).constructor
 e=Reflect.construct(t,arguments,n)}else e=t.apply(this,arguments)
 return i(this,e)})
-function p(){return n(this,p),d.apply(this,arguments)}return c=p,(s=[{key:"model",value:function(e){var r=e.compId
+function p(){return n(this,p),d.apply(this,arguments)}return c=p,(s=[{key:"titleToken",value:function(e){return"Discrepancy - ".concat(e.title," (").concat(e.type,")")}},{key:"model",value:function(e){var r=e.compId
 return t.default.find((function(e){return e.id===r}))}}])&&o(c.prototype,s),f&&o(c,f),p}()
 e.default=c})),define("dummy/routes/media-registry/discrepancies/discrepancy/card",["exports"],(function(e){function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function n(e,t){for(var r=0;r<t.length;r++){var n=t[r]
 n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function o(e,r){return!r||"object"!==t(r)&&"function"!=typeof r?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
@@ -884,7 +885,7 @@ var r,c,s,f,d=(r=p,function(){var e,t=a(r)
 if(l()){var n=a(this).constructor
 e=Reflect.construct(t,arguments,n)}else e=t.apply(this,arguments)
 return i(this,e)})
-function p(){return n(this,p),d.apply(this,arguments)}return c=p,(s=[{key:"model",value:function(){var e=this.modelFor("media-registry"),r=e.currentOrg,n=e.orgs,o=r.id,i=t.default.filter((function(e){return e.ownerId===o}))
+function p(){return n(this,p),d.apply(this,arguments)}return c=p,(s=[{key:"titleToken",value:function(){return"Discrepancies"}},{key:"model",value:function(){var e=this.modelFor("media-registry"),r=e.currentOrg,n=e.orgs,o=r.id,i=t.default.filter((function(e){return e.ownerId===o}))
 return{id:o,currentOrg:r,orgs:n,title:"All Discrepancies",type:"list",collection:i,listTitleFields:["Title","Type","Version","Other Version"],listFields:[{valuePath:"title"},{valuePath:"type"},{valuePath:"baseOwner"},{valuePath:"compOwner"}],columns:[{name:"Title",valuePath:"title"},{name:"Type",valuePath:"type"},{name:"Version",valuePath:"baseOwner"},{name:"Other Version",valuePath:"compOwner"}]}}}])&&o(c.prototype,s),f&&o(c,f),p}()
 e.default=c})),define("dummy/routes/media-registry/index",["exports","dummy/media"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r]
 n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function l(e,t){return!t||"object"!==r(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
@@ -898,7 +899,7 @@ var r,s,f,d,p,m,y=(r=b,function(){var e,t=u(r)
 if(a()){var n=u(this).constructor
 e=Reflect.construct(t,arguments,n)}else e=t.apply(this,arguments)
 return l(this,e)})
-function b(){return o(this,b),y.apply(this,arguments)}return s=b,(f=[{key:"model",value:(p=regeneratorRuntime.mark((function e(){var r,n,o,i,l,a,u,c
+function b(){return o(this,b),y.apply(this,arguments)}return s=b,(f=[{key:"titleToken",value:function(e){return"".concat(e.title)}},{key:"model",value:(p=regeneratorRuntime.mark((function e(){var r,n,o,i,l,a,u,c
 return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return r=this.modelFor("media-registry"),n=r.currentOrg,o=r.orgs,i=n.id,e.next=4,(0,t.fetchCollection)("collections")
 case 4:if(l=e.sent,!(a=l.filter((function(e){return e.owner_id===i}))).length){e.next=8
 break}return e.abrupt("return",{id:i,currentOrg:n,orgs:o,title:"Master Recordings",type:"master-collection",itemComponent:"cards/master-collection",itemType:"collection",itemTypePlural:"collections",collection:a,columns:[{name:"Name",valuePath:"title",isFixed:"left",width:250},{name:"Description",valuePath:"description",width:250},{name:"Masters",valuePath:"count",width:250,isSortable:!1},{name:"Top Artists",valuePath:"top_titles",width:250},{name:"Date Created",valuePath:"date_created",width:250},{width:0,isFixed:"right"}]})
@@ -907,19 +908,19 @@ case 10:return u=e.sent,c=u.filter((function(e){return e.owner_id===i})),e.abrup
 case 13:case"end":return e.stop()}}),e,this)})),m=function(){var e=this,t=arguments
 return new Promise((function(r,o){var i=p.apply(e,t)
 function l(e){n(i,r,o,l,a,"next",e)}function a(e){n(i,r,o,l,a,"throw",e)}l(void 0)}))},function(){return m.apply(this,arguments)})}])&&i(s.prototype,f),d&&i(s,d),b}()
-e.default=s})),define("dummy/routes/media-registry/item",["exports","dummy/media"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r]
-n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function l(e,t){return!t||"object"!==r(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}(e):t}function a(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
+e.default=s})),define("dummy/routes/media-registry/item",["exports","dummy/media","@cardstack/boxel/utils/titleize"],(function(e,t,r){function n(e){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function o(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function l(e,t){for(var r=0;r<t.length;r++){var n=t[r]
+n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function a(e,t){return!t||"object"!==n(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return e}(e):t}function u(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
 if("function"==typeof Proxy)return!0
-try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function u(e){return(u=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function c(e,t){return(c=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var s=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&c(e,t)})(b,Ember.Route)
-var r,s,f,d,p,m,y=(r=b,function(){var e,t=u(r)
-if(a()){var n=u(this).constructor
-e=Reflect.construct(t,arguments,n)}else e=t.apply(this,arguments)
-return l(this,e)})
-function b(){return o(this,b),y.apply(this,arguments)}return s=b,(f=[{key:"model",value:(p=regeneratorRuntime.mark((function e(r,n){var o,i,l,a,u,c,s,f,d,p,m,y,b,h,v,g
+try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function c(e){return(c=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function s(e,t){return(s=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var f=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&s(e,t)})(h,Ember.Route)
+var n,f,d,p,m,y,b=(n=h,function(){var e,t=c(n)
+if(u()){var r=c(this).constructor
+e=Reflect.construct(t,arguments,r)}else e=t.apply(this,arguments)
+return a(this,e)})
+function h(){return i(this,h),b.apply(this,arguments)}return f=h,(d=[{key:"titleToken",value:function(e){return"".concat((0,r.titleize)(e.title)," (Master Recording)")}},{key:"model",value:(m=regeneratorRuntime.mark((function e(r,n){var o,i,l,a,u,c,s,f,d,p,m,y,b,h,v,g
 return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return a=r.itemId,e.next=3,(0,t.fetchCollection)("all_tracks_combined")
 case 3:return u=e.sent,e.next=6,(0,t.fetchCollection)("profiles")
 case 6:return c=e.sent,e.next=9,(0,t.fetchCollection)("musical-works")
@@ -927,10 +928,10 @@ case 9:return s=e.sent,e.next=12,(0,t.fetchCollection)("collections")
 case 12:if(f=e.sent,d=this.modelFor("media-registry"),p=d.currentOrg,m=p.id,y=u.find((function(e){return e.owner_id===m&&e.id===a&&!e.version}))){e.next=18
 break}return e.abrupt("return")
 case 18:return y.currentOrg=p,y.artist_id&&(b=c.filter((function(e){return e.id===y.artist_id})),y.artists=b),y.producer_id&&(h=c.filter((function(e){return e.id===y.producer_id})),y.producers=h),y.iswc_id&&(v=s.find((function(e){return e.owner_id===m&&e.iswc===y.iswc_id&&!e.version})),y.musicalWork=v),y.collection_ids&&(g=f.filter((function(e){return y.collection_ids.includes(e.id)})),y.collections=g),n&&(null==n||null===(o=n.from)||void 0===o||null===(i=o.parent)||void 0===i||null===(l=i.params)||void 0===l?void 0:l.collectionId)&&(y.fromCollectionId=n.from.parent.params.collectionId),y.selectableArtists=c,y.selectableWorks=s,e.abrupt("return",y)
-case 27:case"end":return e.stop()}}),e,this)})),m=function(){var e=this,t=arguments
-return new Promise((function(r,o){var i=p.apply(e,t)
-function l(e){n(i,r,o,l,a,"next",e)}function a(e){n(i,r,o,l,a,"throw",e)}l(void 0)}))},function(e,t){return m.apply(this,arguments)})}])&&i(s.prototype,f),d&&i(s,d),b}()
-e.default=s})),define("dummy/routes/media-registry/item/edit",["exports"],(function(e){function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){for(var r=0;r<t.length;r++){var n=t[r]
+case 27:case"end":return e.stop()}}),e,this)})),y=function(){var e=this,t=arguments
+return new Promise((function(r,n){var i=m.apply(e,t)
+function l(e){o(i,r,n,l,a,"next",e)}function a(e){o(i,r,n,l,a,"throw",e)}l(void 0)}))},function(e,t){return y.apply(this,arguments)})}])&&l(f.prototype,d),p&&l(f,p),h}()
+e.default=f})),define("dummy/routes/media-registry/item/edit",["exports"],(function(e){function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){for(var r=0;r<t.length;r++){var n=t[r]
 n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function i(e,r){return!r||"object"!==t(r)&&"function"!=typeof r?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
 return e}(e):r}function l(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
@@ -947,25 +948,25 @@ return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:
 case 2:case"end":return e.stop()}}),e,this)})),p=function(){var e=this,t=arguments
 return new Promise((function(n,o){var i=d.apply(e,t)
 function l(e){r(i,n,o,l,a,"next",e)}function a(e){r(i,n,o,l,a,"throw",e)}l(void 0)}))},function(){return p.apply(this,arguments)})}])&&o(c.prototype,s),f&&o(c,f),y}()
-e.default=c})),define("dummy/routes/media-registry/item/musical-work",["exports","dummy/media"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r]
-n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function l(e,t){return!t||"object"!==r(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}(e):t}function a(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
+e.default=c})),define("dummy/routes/media-registry/item/musical-work",["exports","dummy/media","@cardstack/boxel/utils/titleize"],(function(e,t,r){function n(e){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function o(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function l(e,t){for(var r=0;r<t.length;r++){var n=t[r]
+n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function a(e,t){return!t||"object"!==n(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return e}(e):t}function u(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
 if("function"==typeof Proxy)return!0
-try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function u(e){return(u=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function c(e,t){return(c=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var s=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&c(e,t)})(b,Ember.Route)
-var r,s,f,d,p,m,y=(r=b,function(){var e,t=u(r)
-if(a()){var n=u(this).constructor
-e=Reflect.construct(t,arguments,n)}else e=t.apply(this,arguments)
-return l(this,e)})
-function b(){return o(this,b),y.apply(this,arguments)}return s=b,(f=[{key:"model",value:(p=regeneratorRuntime.mark((function e(){var r,n,o
+try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function c(e){return(c=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function s(e,t){return(s=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var f=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&s(e,t)})(h,Ember.Route)
+var n,f,d,p,m,y,b=(n=h,function(){var e,t=c(n)
+if(u()){var r=c(this).constructor
+e=Reflect.construct(t,arguments,r)}else e=t.apply(this,arguments)
+return a(this,e)})
+function h(){return i(this,h),b.apply(this,arguments)}return f=h,(d=[{key:"titleToken",value:function(e){return"".concat((0,r.titleize)(e.title)," (").concat((0,r.titleize)(e.type),")")}},{key:"model",value:(m=regeneratorRuntime.mark((function e(){var r,n,o
 return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,(0,t.fetchCollection)("profiles")
 case 2:return r=e.sent,n=this.modelFor("media-registry.item"),(o=n.musicalWork)?(o.lyricists=r.filter((function(e){return e.id===o.artist_id})),o.composers=r.filter((function(e){return e.id===o.composer_id}))):o=n,e.abrupt("return",o)
-case 7:case"end":return e.stop()}}),e,this)})),m=function(){var e=this,t=arguments
-return new Promise((function(r,o){var i=p.apply(e,t)
-function l(e){n(i,r,o,l,a,"next",e)}function a(e){n(i,r,o,l,a,"throw",e)}l(void 0)}))},function(){return m.apply(this,arguments)})}])&&i(s.prototype,f),d&&i(s,d),b}()
-e.default=s})),define("dummy/routes/media-registry/musical-works/work-version",["exports","dummy/media"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e){return function(e){if(Array.isArray(e))return o(e)}(e)||function(e){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(e))return Array.from(e)}(e)||function(e,t){if(!e)return
+case 7:case"end":return e.stop()}}),e,this)})),y=function(){var e=this,t=arguments
+return new Promise((function(r,n){var i=m.apply(e,t)
+function l(e){o(i,r,n,l,a,"next",e)}function a(e){o(i,r,n,l,a,"throw",e)}l(void 0)}))},function(){return y.apply(this,arguments)})}])&&l(f.prototype,d),p&&l(f,p),h}()
+e.default=f})),define("dummy/routes/media-registry/musical-works/work-version",["exports","dummy/media"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e){return function(e){if(Array.isArray(e))return o(e)}(e)||function(e){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(e))return Array.from(e)}(e)||function(e,t){if(!e)return
 if("string"==typeof e)return o(e,t)
 var r=Object.prototype.toString.call(e).slice(8,-1)
 "Object"===r&&e.constructor&&(r=e.constructor.name)
@@ -994,56 +995,56 @@ return{id:"".concat(e.id,"-publishing-representation"),version:e.version,type:"p
 case 16:case"end":return e.stop()}}),e,this)})),y=function(){var e=this,t=arguments
 return new Promise((function(r,n){var o=m.apply(e,t)
 function l(e){i(o,r,n,l,a,"next",e)}function a(e){i(o,r,n,l,a,"throw",e)}l(void 0)}))},function(e){return y.apply(this,arguments)})}])&&a(o.prototype,d),p&&a(o,p),h}()
-e.default=d})),define("dummy/routes/media-registry/musical-works/work",["exports","dummy/media"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e){return function(e){if(Array.isArray(e))return o(e)}(e)||function(e){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(e))return Array.from(e)}(e)||function(e,t){if(!e)return
-if("string"==typeof e)return o(e,t)
+e.default=d})),define("dummy/routes/media-registry/musical-works/work",["exports","dummy/media","@cardstack/boxel/utils/titleize"],(function(e,t,r){function n(e){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function o(e){return function(e){if(Array.isArray(e))return i(e)}(e)||function(e){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(e))return Array.from(e)}(e)||function(e,t){if(!e)return
+if("string"==typeof e)return i(e,t)
 var r=Object.prototype.toString.call(e).slice(8,-1)
 "Object"===r&&e.constructor&&(r=e.constructor.name)
 if("Map"===r||"Set"===r)return Array.from(r)
-if("Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r))return o(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function o(e,t){(null==t||t>e.length)&&(t=e.length)
+if("Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r))return i(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function i(e,t){(null==t||t>e.length)&&(t=e.length)
 for(var r=0,n=new Array(t);r<t;r++)n[r]=e[r]
-return n}function i(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function l(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function a(e,t){for(var r=0;r<t.length;r++){var n=t[r]
-n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function u(e,t){return!t||"object"!==r(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return n}function l(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function a(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function u(e,t){for(var r=0;r<t.length;r++){var n=t[r]
+n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function c(e,t){return!t||"object"!==n(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return e}(e):t}function s(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
+if(Reflect.construct.sham)return!1
+if("function"==typeof Proxy)return!0
+try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function f(e){return(f=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function d(e,t){return(d=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var p=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&d(e,t)})(v,Ember.Route)
+var n,i,p,m,y,b,h=(n=v,function(){var e,t=f(n)
+if(s()){var r=f(this).constructor
+e=Reflect.construct(t,arguments,r)}else e=t.apply(this,arguments)
+return c(this,e)})
+function v(){return a(this,v),h.apply(this,arguments)}return i=v,(p=[{key:"titleToken",value:function(e){return"".concat((0,r.titleize)(e.work.title)," (Musical Work)")}},{key:"model",value:(y=regeneratorRuntime.mark((function e(r){var n,i,l,a,u,c,s,f,d,p,m
+return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return n=r.workId,e.next=3,(0,t.fetchCollection)("musical-works")
+case 3:return i=e.sent,e.next=6,(0,t.fetchCollection)("all_tracks_combined")
+case 6:return l=e.sent,e.next=9,(0,t.fetchCollection)("profiles")
+case 9:return a=e.sent,u=this.modelFor("media-registry"),c=u.currentOrg,s=u.orgs,f=i.find((function(e){return e.owner_id===c.id&&e.id===n&&!e.version})),d=l.find((function(e){return e.owner_id===c.id&&e.id===n&&!e.version})),f.masterDetail=d,f.writer_ids&&f.writer_ids.length&&(p=a.filter((function(e){return f.writer_ids.includes(e.id)})),f.writers=p,f.publisher_ids=f.writers.map((function(e){return e.publisher_id})),(m=s.filter((function(e){return f.publisher_ids.includes(e.id)}))).filter((function(e){return"worldwide"===e.territory})),m.length&&(f.publishers={id:"worldwide",title:"Worldwide",type:"territory",value:m}),f.composers=[],f.publishing_representatives=f.writers.map((function(e){e.role&&"lyricist"===e.role.toLowerCase()?f.lyricist=e.title:e.role&&"composer"===e.role.toLowerCase()&&(f.composers=[].concat(o(f.composers),[e.title]))
+var t=s.find((function(t){return t.id===e.publisher_id}))
+return{id:"".concat(e.id,"-publishing-representation"),version:e.version,type:"publishing-representation",writer:e,role:e.role,publisher:e.publisher_id?{id:"worldwide",title:"Worldwide",type:"territory",value:[t]}:null}}))),e.abrupt("return",{currentOrg:c,orgs:s,work:f})
+case 16:case"end":return e.stop()}}),e,this)})),b=function(){var e=this,t=arguments
+return new Promise((function(r,n){var o=y.apply(e,t)
+function i(e){l(o,r,n,i,a,"next",e)}function a(e){l(o,r,n,i,a,"throw",e)}i(void 0)}))},function(e){return b.apply(this,arguments)})}])&&u(i.prototype,p),m&&u(i,m),v}()
+e.default=p})),define("dummy/routes/media-registry/products/album",["exports","dummy/media","@cardstack/boxel/utils/format-id","@cardstack/boxel/utils/titleize"],(function(e,t,r,n){function o(e){return(o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function i(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function l(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function a(e,t){for(var r=0;r<t.length;r++){var n=t[r]
+n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function u(e,t){return!t||"object"!==o(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
 return e}(e):t}function c(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
 if("function"==typeof Proxy)return!0
 try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function s(e){return(s=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function f(e,t){return(f=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var d=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&f(e,t)})(h,Ember.Route)
-var r,o,d,p,m,y,b=(r=h,function(){var e,t=s(r)
-if(c()){var n=s(this).constructor
-e=Reflect.construct(t,arguments,n)}else e=t.apply(this,arguments)
-return u(this,e)})
-function h(){return l(this,h),b.apply(this,arguments)}return o=h,(d=[{key:"model",value:(m=regeneratorRuntime.mark((function e(r){var o,i,l,a,u,c,s,f,d,p,m
-return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return o=r.workId,e.next=3,(0,t.fetchCollection)("musical-works")
-case 3:return i=e.sent,e.next=6,(0,t.fetchCollection)("all_tracks_combined")
-case 6:return l=e.sent,e.next=9,(0,t.fetchCollection)("profiles")
-case 9:return a=e.sent,u=this.modelFor("media-registry"),c=u.currentOrg,s=u.orgs,f=i.find((function(e){return e.owner_id===c.id&&e.id===o&&!e.version})),d=l.find((function(e){return e.owner_id===c.id&&e.id===o&&!e.version})),f.masterDetail=d,f.writer_ids&&f.writer_ids.length&&(p=a.filter((function(e){return f.writer_ids.includes(e.id)})),f.writers=p,f.publisher_ids=f.writers.map((function(e){return e.publisher_id})),(m=s.filter((function(e){return f.publisher_ids.includes(e.id)}))).filter((function(e){return"worldwide"===e.territory})),m.length&&(f.publishers={id:"worldwide",title:"Worldwide",type:"territory",value:m}),f.composers=[],f.publishing_representatives=f.writers.map((function(e){e.role&&"lyricist"===e.role.toLowerCase()?f.lyricist=e.title:e.role&&"composer"===e.role.toLowerCase()&&(f.composers=[].concat(n(f.composers),[e.title]))
-var t=s.find((function(t){return t.id===e.publisher_id}))
-return{id:"".concat(e.id,"-publishing-representation"),version:e.version,type:"publishing-representation",writer:e,role:e.role,publisher:e.publisher_id?{id:"worldwide",title:"Worldwide",type:"territory",value:[t]}:null}}))),e.abrupt("return",{currentOrg:c,orgs:s,work:f})
-case 16:case"end":return e.stop()}}),e,this)})),y=function(){var e=this,t=arguments
-return new Promise((function(r,n){var o=m.apply(e,t)
-function l(e){i(o,r,n,l,a,"next",e)}function a(e){i(o,r,n,l,a,"throw",e)}l(void 0)}))},function(e){return y.apply(this,arguments)})}])&&a(o.prototype,d),p&&a(o,p),h}()
-e.default=d})),define("dummy/routes/media-registry/products/album",["exports","dummy/media","@cardstack/boxel/utils/format-id"],(function(e,t,r){function n(e){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function o(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function l(e,t){for(var r=0;r<t.length;r++){var n=t[r]
-n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function a(e,t){return!t||"object"!==n(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}(e):t}function u(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
-if(Reflect.construct.sham)return!1
-if("function"==typeof Proxy)return!0
-try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function c(e){return(c=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function s(e,t){return(s=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var f=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&s(e,t)})(h,Ember.Route)
-var n,f,d,p,m,y,b=(n=h,function(){var e,t=c(n)
-if(u()){var r=c(this).constructor
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&f(e,t)})(v,Ember.Route)
+var o,d,p,m,y,b,h=(o=v,function(){var e,t=s(o)
+if(c()){var r=s(this).constructor
 e=Reflect.construct(t,arguments,r)}else e=t.apply(this,arguments)
-return a(this,e)})
-function h(){return i(this,h),b.apply(this,arguments)}return f=h,(d=[{key:"model",value:(m=regeneratorRuntime.mark((function e(n){var o,i,l,a,u,c,s,f,d,p,m,y,b,h,v,g,_,w,O,P,j,x
+return u(this,e)})
+function v(){return l(this,v),h.apply(this,arguments)}return d=v,(p=[{key:"titleToken",value:function(e){return"".concat((0,n.titleize)(e.album)," (").concat((0,n.titleize)(e.type_of_album),")")}},{key:"model",value:(y=regeneratorRuntime.mark((function e(n){var o,i,l,a,u,c,s,f,d,p,m,y,b,h,v,g,_,w,O,P,j,x
 return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return o=n.albumId,e.next=3,(0,t.fetchCollection)("all_tracks_combined")
 case 3:return i=e.sent,e.next=6,(0,t.fetchCollection)("musical-works")
 case 6:return l=e.sent,e.next=9,(0,t.fetchCollection)("collections")
 case 9:return a=e.sent,u=i.filter((function(e){return(0,r.formatId)(e.album)===o})),c=this.modelFor("media-registry"),s=c.currentOrg,(f={}).currentOrg=s,d=u[0],p=d.album,m=d.artist,y=d.collection_ids,b=d.cover_art,h=d.cover_art_date,v=d.cover_art_large,g=d.cover_art_medium,_=d.cover_art_thumb,w=d.genre,O=d.label,P=d.owner,j=d.owner_id,x=d.type_of_album,(f={album:p,artist:m,collection_ids:y,cover_art:b,cover_art_date:h,cover_art_large:v,cover_art_medium:g,cover_art_thumb:_,genre:w,label:O,owner:P,owner_id:j,type_of_album:x}).tracks=u,f.tracks.map((function(e,t){e.musicalWork=l.find((function(t){return t.id===e.id})),e.track_no=String(t+1)})),f.collections=a.filter((function(e){return f.collection_ids.includes(e.id)})),e.abrupt("return",f)
-case 20:case"end":return e.stop()}}),e,this)})),y=function(){var e=this,t=arguments
-return new Promise((function(r,n){var i=m.apply(e,t)
-function l(e){o(i,r,n,l,a,"next",e)}function a(e){o(i,r,n,l,a,"throw",e)}l(void 0)}))},function(e){return y.apply(this,arguments)})}])&&l(f.prototype,d),p&&l(f,p),h}()
-e.default=f})),define("dummy/routes/media-registry/version",["exports","dummy/media"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r]
+case 20:case"end":return e.stop()}}),e,this)})),b=function(){var e=this,t=arguments
+return new Promise((function(r,n){var o=y.apply(e,t)
+function l(e){i(o,r,n,l,a,"next",e)}function a(e){i(o,r,n,l,a,"throw",e)}l(void 0)}))},function(e){return b.apply(this,arguments)})}])&&a(d.prototype,p),m&&a(d,m),v}()
+e.default=d})),define("dummy/routes/media-registry/version",["exports","dummy/media"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r]
 n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function l(e,t){return!t||"object"!==r(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
 return e}(e):t}function a(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
@@ -1066,24 +1067,24 @@ case 18:return b.currentOrg=m,b.artist_id&&(h=s.filter((function(e){return e.id=
 case 27:case"end":return e.stop()}}),e,this)})),m=function(){var e=this,t=arguments
 return new Promise((function(r,o){var i=p.apply(e,t)
 function l(e){n(i,r,o,l,a,"next",e)}function a(e){n(i,r,o,l,a,"throw",e)}l(void 0)}))},function(e,t){return m.apply(this,arguments)})}])&&i(s.prototype,f),d&&i(s,d),b}()
-e.default=s})),define("dummy/routes/media-registry/versions",["exports","dummy/data/version-history"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r]
-n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function l(e,t){return!t||"object"!==r(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}(e):t}function a(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
+e.default=s})),define("dummy/routes/media-registry/versions",["exports","@cardstack/boxel/utils/titleize","dummy/data/version-history"],(function(e,t,r){function n(e){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function o(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function l(e,t){for(var r=0;r<t.length;r++){var n=t[r]
+n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function a(e,t){return!t||"object"!==n(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return e}(e):t}function u(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
 if("function"==typeof Proxy)return!0
-try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function u(e){return(u=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function c(e,t){return(c=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var s=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&c(e,t)})(b,Ember.Route)
-var r,s,f,d,p,m,y=(r=b,function(){var e,t=u(r)
-if(a()){var n=u(this).constructor
-e=Reflect.construct(t,arguments,n)}else e=t.apply(this,arguments)
-return l(this,e)})
-function b(){return o(this,b),y.apply(this,arguments)}return s=b,(f=[{key:"model",value:(p=regeneratorRuntime.mark((function e(r){var n,o,i,l,a
-return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return n=r.itemId,o=t.default.filter((function(e){return e.id===n}))[0],i=o.id,l=o.title,a=o.versions,e.abrupt("return",{id:i,title:l,versions:a})
-case 4:case"end":return e.stop()}}),e)})),m=function(){var e=this,t=arguments
-return new Promise((function(r,o){var i=p.apply(e,t)
-function l(e){n(i,r,o,l,a,"next",e)}function a(e){n(i,r,o,l,a,"throw",e)}l(void 0)}))},function(e){return m.apply(this,arguments)})}])&&i(s.prototype,f),d&&i(s,d),b}()
-e.default=s}))
+try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}function c(e){return(c=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function s(e,t){return(s=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var f=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&s(e,t)})(h,Ember.Route)
+var n,f,d,p,m,y,b=(n=h,function(){var e,t=c(n)
+if(u()){var r=c(this).constructor
+e=Reflect.construct(t,arguments,r)}else e=t.apply(this,arguments)
+return a(this,e)})
+function h(){return i(this,h),b.apply(this,arguments)}return f=h,(d=[{key:"titleToken",value:function(e){return"".concat((0,t.titleize)(e.title)," - Versions")}},{key:"model",value:(m=regeneratorRuntime.mark((function e(t){var n,o,i,l,a
+return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return n=t.itemId,o=r.default.filter((function(e){return e.id===n}))[0],i=o.id,l=o.title,a=o.versions,e.abrupt("return",{id:i,title:l,versions:a})
+case 4:case"end":return e.stop()}}),e)})),y=function(){var e=this,t=arguments
+return new Promise((function(r,n){var i=m.apply(e,t)
+function l(e){o(i,r,n,l,a,"next",e)}function a(e){o(i,r,n,l,a,"throw",e)}l(void 0)}))},function(e){return y.apply(this,arguments)})}])&&l(f.prototype,d),p&&l(f,p),h}()
+e.default=f}))
 define("dummy/routes/workflow",["exports","dummy/data-workflow"],(function(e,t){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e,t,r,n,o,i,l){try{var a=e[i](l),u=a.value}catch(c){return void r(c)}a.done?t(u):Promise.resolve(u).then(n,o)}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r]
 n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function l(e,t){return!t||"object"!==r(t)&&"function"!=typeof t?a(e):t}function a(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
 return e}function u(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
@@ -1181,7 +1182,7 @@ var t,o,i,p,m,y,b=(t=h,function(){var e,r=f(t)
 if(s()){var n=f(this).constructor
 e=Reflect.construct(r,arguments,n)}else e=r.apply(this,arguments)
 return c(this,e)})
-function h(){return a(this,h),b.apply(this,arguments)}return o=h,(i=[{key:"model",value:(m=regeneratorRuntime.mark((function e(t){var o,i,l,a,u,c,s,f,d,p,m,y,b,h,v,g,_,w,O,P
+function h(){return a(this,h),b.apply(this,arguments)}return o=h,(i=[{key:"titleToken",value:function(e){return e.thread.title?"".concat(e.thread.title," - ").concat(e.currentOrg.title):"Workflow - ".concat(e.currentOrg.title)}},{key:"model",value:(m=regeneratorRuntime.mark((function e(t){var o,i,l,a,u,c,s,f,d,p,m,y,b,h,v,g,_,w,O,P
 return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:if(o=t.threadId,i=this.modelFor("workflow.org"),l=i.user,a=i.currentOrg,u=i.userOrgs,c=i.orgQueueCards,s=this.modelFor("workflow"),f=s.users,d=s.messages,p=s.workflows,m=c.find((function(e){return e.id===o})),y=[],b=d.filter((function(e){return e.threadId===o&&e.orgId===a.id})),m.workflow_id&&(h=p.find((function(e){return e.id===m.workflow_id}))),m.participant_ids&&m.participant_ids.length){v=n(m.participant_ids)
 try{for(_=function(){var e=g.value,t=f.find((function(t){return t.id===e}))
 if(t&&a.members){var n=a.members.find((function(t){return t.id===e}))

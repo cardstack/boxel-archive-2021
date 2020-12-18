@@ -5019,7 +5019,15 @@ var fe=function(e,t){return i.async(e,t)}
 function me(){i.on.apply(i,arguments)}function he(){i.off.apply(i,arguments)}if(e.async=fe,"undefined"!=typeof window&&"object"==typeof window.__PROMISE_INSTRUMENTATION__){var ve=window.__PROMISE_INSTRUMENTATION__
 for(var be in o("instrument",!0),ve)ve.hasOwnProperty(be)&&me(be,ve[be])}var ye={asap:Z,cast:pe,Promise:S,EventTarget:a,all:P,allSettled:R,race:T,hash:B,hashSettled:I,rethrow:L,defer:N,denodeify:C,configure:o,on:me,off:he,resolve:G,reject:U,map:K,async:fe,filter:J}
 e.default=ye})),t("ember")}(),define("jquery",[],(function(){"use strict"
-return{default:self.jQuery,__esModule:!0}})),Ember.Component.reopen({$:function(e){if(this.element)return e?jQuery(e,this.element):jQuery(this.element)}}),function(){var e=new WeakMap
+return{default:self.jQuery,__esModule:!0}})),Ember.Component.reopen({$:function(e){if(this.element)return e?jQuery(e,this.element):jQuery(this.element)}}),function(){var e=Ember.get,t=Ember.getOwner,n=Ember.RSVP.Promise,r={titleToken:null,title:null}
+r[function(){for(var e=Ember.Route.proto().mergedProperties,t=0,n=e.length;t<n;t++){var r=e[t]
+if("actions"===r||"_actions"===r)return r}}()]={collectTitleTokens:function(r){var a=e(this,"titleToken")
+"function"==typeof a&&(a=a.call(this,e(this,"currentModel"))),Ember.isArray(a)?r.unshift.apply(r,a):a&&r.unshift(a)
+var i=e(this,"title")
+if(!i)return!0
+var o,s=this,l=n.resolve().then((function(){return"function"==typeof i?n.all(r).then((function(e){return i.call(s,e)})):i})).then((function(e){("function"==typeof t?t(s).lookup("router:main"):s.router).setTitle(e)})),u=(o=this,(t?t(o):o.container).lookup("service:fastboot"))
+u&&u.isFastBoot&&u.deferRendering(l)}},Ember.Route.reopen(r),Ember.Router.reopen({updateTitle:Ember.on("didTransition",(function(){this.send("collectTitleTokens",[])})),setTitle:function(e){var n=t?t(this):this.container,r=n.lookup("renderer:-dom"),a=n.lookup("service:-document")
+r&&r._dom?Ember.set(r,"_dom.document.title",e):a?Ember.set(a,"title",e):document.title=e}})}(),function(){var e=new WeakMap
 define("ember-macro-helpers/-computed-store",(function(){return{default:e,__esModule:!0}}))
 var t=Ember.computed
 Ember.computed=function(){var n=Array.prototype.slice.call(arguments),r=t.apply(this,n),a=n.slice(0,n.length-1),i=n[n.length-1]
@@ -6462,7 +6470,7 @@ e.default=c})),define("@cardstack/boxel/utils/format-id",["exports"],(function(e
 Object.defineProperty(e,"__esModule",{value:!0}),e.formatId=function(e){if(!e||"string"!==Ember.typeOf(e))return
 return Ember.String.dasherize(e.trim())}})),define("@cardstack/boxel/utils/titleize",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.titleize=function(e){if(!e||"string"!==Ember.typeOf(e))return
-return e.split(" ").map((function(e){return Ember.String.capitalize(e)})).join(" ")}})),define("@cardstack/boxel/utils/truncate-verifi-id",["exports"],(function(e){"use strict"
+return(e.includes("-")?e.split("-"):e.split(" ")).map((function(e){return Ember.String.capitalize(e)})).join(" ")}})),define("@cardstack/boxel/utils/truncate-verifi-id",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.truncateVerifiId=function(e){if(!e)return"N/A"
 return"".concat(e.slice(0,6),"...").concat(e.slice(-4))}})),define("@ember-decorators/component/index",["exports","@ember-decorators/utils/collapse-proto","@ember-decorators/utils/decorator"],(function(e,t,n){"use strict"
 function r(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){if("undefined"==typeof Symbol||!(Symbol.iterator in Object(e)))return
