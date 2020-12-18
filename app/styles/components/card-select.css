@@ -1,5 +1,3 @@
-@import 'ember-power-select-typeahead';
-
 .cs-card-select__container {
   grid-column: 1 / -1;
   width: 700px;
