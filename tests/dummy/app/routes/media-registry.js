@@ -6,7 +6,7 @@ export default class MediaRegistryRoute extends Route {
   verifiGroup = [ 'warner-music-group', 'allegro-music-publishing', 'warner-chappell-music', 'global-music-rights', 'deezer'];
 
   titleToken(model) {
-    return `(${model.title}) - ${model.company}`;
+    return `${model.currentOrg.title}`;
   }
 
   model({ orgId }) {

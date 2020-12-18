@@ -1,9 +1,10 @@
 import Route from '@ember/routing/route';
 import { fetchCollection } from 'dummy/media';
+import { titleize } from '@cardstack/boxel/utils/titleize';
 
 export default class MediaRegistryItemRoute extends Route {
   titleToken(model) {
-    return model.song_title;
+    return `${titleize(model.title)} (Master Recording)`;
   }
 
   async model({ itemId }, transition) {
