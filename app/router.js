@@ -1,6 +1,6 @@
 /* eslint-disable ember/routes-segments-snake-case */
 import EmberRouterScroll from 'ember-router-scroll';
-import config from '../config/environment';
+import config from './config/environment';
 
 class Router extends EmberRouterScroll {
   location = config.locationType;

@@ -12,8 +12,8 @@ export default class BoxelService extends Service {
   moveBoxelToPlane(boxelId, planeId) {
     let boxel = this.getBoxelById(boxelId);
 
-    this.set('currentPlane', planeId);
-    boxel.sendAction('moveToPlane', planeId);
+    this.currentPlane = planeId;
+    boxel.moveToPlane(planeId);
   }
 
   registerPlane(plane) {

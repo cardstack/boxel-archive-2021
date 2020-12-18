@@ -2,7 +2,6 @@
 
 /* Components */
 @import '/assets/components/card-select/before-options.css';
-@import '/assets/components/boxel.css';
 @import '/assets/components/boxel-actions.css';
 @import '/assets/components/boxel-highlight.css';
 @import '/assets/components/boxel-modal.css';
@@ -16,7 +15,7 @@
 @import '/assets/components/detail-section.css';
 @import '/assets/components/embedded-collection-editor.css';
 @import '/assets/components/field-renderer.css';
-@import '/assets/components/icon-button.css';
+@import '/assets/components/icon-btn.css';
 @import '/assets/components/isolated-collection-table.css';
 @import '/assets/components/isolated-collection.css';
 @import '/assets/components/left-edge-nav.css';
@@ -25,7 +24,7 @@
 @import '/assets/components/pill-button.css';
 @import '/assets/components/queue-card.css';
 @import '/assets/components/queue.css';
-@import '/assets/components/select-button.css';
+@import '/assets/components/select-btn.css';
 @import '/assets/components/sidebar-related-card.css';
 @import '/assets/components/version-history.css';
 @import '/assets/components/workflow/cardflow.css';
@@ -104,6 +103,11 @@ ul {
   margin: 0;
   padding-left: 0;
 }
+
+.boxel {
+  position: relative;
+}
+
 
 
 /* for ember animated */
