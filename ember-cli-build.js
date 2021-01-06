@@ -1,9 +1,14 @@
 'use strict';
-const crypto = require('crypto');
+
+// const crypto = require('crypto');
+
+const replace = require('broccoli-string-replace');
+var BroccoliDebug = require('broccoli-debug');
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const environment = EmberApp.env();
 const IS_PROD = environment === 'production';
+const IS_DEV = environment === 'development';
 const IS_TEST = environment === 'test';
 
 module.exports = function(defaults) {
@@ -26,25 +31,33 @@ module.exports = function(defaults) {
       fingerprintAssetMap: true,
       prepend: '/boxel/',
       replaceExtensions: ['html', 'css', 'js', 'json'],
-      enabled: !IS_TEST,
-      customHash: function(buf) {
-        if (IS_PROD) {
-          let md5 = crypto.createHash('md5');
-          md5.update(buf);
-          return md5.digest('hex');
-        }
-
-        return '0';
-      }
+      enabled: IS_PROD,
     },
 
     // Add options here
     'ember-power-select': { theme: false },
-    'ember-composable-helpers': {
-      only: ['append', 'compact', 'flatten', 'join', 'optional', 'queue', 'repeat', 'sort-by']
-    }
   });
 
+  let config = app.project.config(environment);
+  let appTree = app.toTree();
 
-  return app.toTree();
+  appTree = new BroccoliDebug(appTree, 'boxel');
+
+  if (IS_DEV || IS_TEST) {
+    appTree = replace(appTree, {
+      files: ['**/*.css'],
+      patterns: [
+        {
+          match: /\/assets/g,
+          replacement: `${config.rootURL}assets`
+        },
+        {
+          match: /url\('\/media-registry/g,
+          replacement: `url('${config.rootURL}media-registry`
+        },
+      ]
+    });
+  }
+
+  return appTree;
 };

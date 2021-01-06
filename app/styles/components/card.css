@@ -55,7 +55,7 @@
 }
 
 .boxel-card__expand-overlay:hover + .boxel-card > .boxel-card__header {
-  background-image: url("/assets/images/icons/expand.svg");
+  background-image: url('/assets/images/icons/expand.svg');
   background-position: top 7px right 7px;
   background-size: 16px 16px;
   background-repeat: no-repeat;
