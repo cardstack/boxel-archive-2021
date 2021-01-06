@@ -39,7 +39,10 @@ module.exports = function(defaults) {
     },
 
     // Add options here
-    'ember-power-select': { theme: false }
+    'ember-power-select': { theme: false },
+    'ember-composable-helpers': {
+      only: ['append', 'compact', 'flatten', 'join', 'optional', 'queue', 'repeat', 'sort-by']
+    }
   });
 
 
