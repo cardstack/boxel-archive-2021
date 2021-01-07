@@ -3,6 +3,13 @@
 const { Webpack } = require('@embroider/webpack');
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
+const PostCSSImportConfig = {
+  module: require('postcss-import'),
+  options: {
+    path: [`${__dirname}/node_modules`]
+  }
+}
+
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     /*
@@ -22,6 +29,14 @@ module.exports = function(defaults) {
       prepend: '/boxel/',
       replaceExtensions: ['html', 'css', 'js', 'json'],
       enabled: (process.env.EMBER_ENV !== 'test')
+    },
+
+    postcssOptions: {
+      compile: {
+        plugins: [
+          PostCSSImportConfig
+        ]
+      }
     },
 
     // Add options here
