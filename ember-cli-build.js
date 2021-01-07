@@ -49,8 +49,9 @@ module.exports = function(defaults) {
     staticAddonTrees: true,
     // staticHelpers: true,
     // staticComponents: true,
-    // packagerOptions: {
+    packagerOptions: {
     //    webpackConfig: { }
-    // }
+      publicAssetURL: '/boxel/'
+    }
   });
 };

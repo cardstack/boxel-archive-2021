@@ -145,7 +145,7 @@
 }
 
 .queue-card--light-theme .queue-card__progress-icon {
-  background-image: url('/assets/images/icons/progress-circle.svg');
+  background-image: url('/boxel/assets/images/icons/progress-circle.svg');
 }
 
 
@@ -165,7 +165,7 @@
   position: relative;
   width: 24px;
   height: 24px;
-  background-image: url('/media-registry/progress-pie/progress-circle-dark.svg');
+  background-image: url('/boxel/media-registry/progress-pie/progress-circle-dark.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -174,13 +174,13 @@
 .queue-card__progress-icon.cancelled {
   width: 16px;
   height: 16px;
-  background-image: url('/assets/images/icons/icon-x-circle-ht.svg');
+  background-image: url('/boxel/assets/images/icons/icon-x-circle-ht.svg');
 }
 
 .queue-card__progress-icon.complete {
   width: 16px;
   height: 16px;
-  background-image: url('/assets/images/icons/icon-check-circle-ht.svg');
+  background-image: url('/boxel/assets/images/icons/icon-check-circle-ht.svg');
 }
 
 .queue-card__progress-pie {
