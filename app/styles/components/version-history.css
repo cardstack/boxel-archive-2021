@@ -185,7 +185,7 @@
   display: grid;
   grid-template-columns: auto auto 1fr;
   align-items: center;
-  background-color: var(--boxel-purple-600);
+  background-color: var(--boxel-purple-700);
   color: var(--boxel-light);
   height: 50px;
   padding: 16px 20px;
@@ -196,6 +196,14 @@
 
 .version-card:not(.version-card--p0) .version-card__header:hover {
   color: var(--boxel-highlight);
+}
+
+.version-card.version-card--base-card .version-card__header:hover {
+  color: var(--boxel-dark);
+}
+
+.version-card.version-card--comp-card .version-card__header:hover {
+  color: var(--boxel-light);
 }
 
 .version__title {
@@ -560,7 +568,7 @@
 }
 
 .versions__view-selector .versions__view-selector--mode-link.active {
-  background-color: var(--boxel-purple-600);
+  background-color: var(--boxel-purple-700);
   color: var(--boxel-highlight);
 }
 

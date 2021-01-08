@@ -101,7 +101,7 @@
   align-items: center;
   margin: 0 10px;
   padding: 10px 0;
-  border-top: 1px solid var(--boxel-purple-600);
+  border-top: 1px solid var(--boxel-purple-700);
 }
 
 .queue-card__task-labels {

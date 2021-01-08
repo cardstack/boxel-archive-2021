@@ -71,6 +71,7 @@
 
 .cardflow__title {
   font-weight: 700;
+  font-size: 1.25rem; /* 20px */
   letter-spacing: var(--boxel-lsp-xs);
 }
 
