@@ -57,12 +57,12 @@ html, body {
 
 body {
   margin: 0;
-  background-color: #f5f5f5;
-  color: black;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  background-color: var(--boxel-light-100, #f5f5f5);
+  color: var(--boxel-dark, #000);
+  font-family: var(--boxel-font-family, 'Open Sans', Helvetica, Arial, sans-serif);
   font-size: 16px;
   letter-spacing: 0.025em;
-  line-height: 1.5;
+  line-height: calc(22/16);
   overscroll-behavior: none;
 }
 
@@ -87,7 +87,7 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 button {
