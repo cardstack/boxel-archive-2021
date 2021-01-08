@@ -1,3 +1,4 @@
+@import '/assets/fonts.css';
 @import '/assets/variables.css';
 
 /* Components */
@@ -78,6 +79,18 @@ a:focus {
 
 svg {
   display: inline-block;
+}
+
+h1 {
+  font: var(--boxel-font-xl);
+}
+
+h2 {
+  font: var(--boxel-font-lg);
+}
+
+h3 {
+  font: var(--boxel-font);
 }
 
 h1,
