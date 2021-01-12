@@ -22,21 +22,18 @@ module.exports = function(defaults) {
     // our app always uses faker, even in production
     'ember-faker': { enabled: true },
 
-    fingerprint: {
-      extensions: ['js', 'css', 'map', 'png', 'jpg', 'gif', 'svg', 'flac'],
-      generateAssetMap: true,
-      fingerprintAssetMap: true,
-      prepend: '/boxel/',
-      replaceExtensions: ['html', 'css', 'js', 'json'],
-      enabled: (process.env.EMBER_ENV !== 'test')
-    },
-
     postcssOptions: {
       compile: {
         plugins: [
           PostCSSImportConfig
         ]
       }
+    },
+
+    svgJar: {
+      sourceDirs: [
+        'app/images/icons',
+      ],
     },
 
     // Add options here
@@ -63,7 +60,7 @@ module.exports = function(defaults) {
           ],
         },
       },
-      publicAssetURL: '/boxel/'
+      // publicAssetURL: '/boxel/'
     }
   });
 };
