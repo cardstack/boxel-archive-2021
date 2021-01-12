@@ -37,6 +37,12 @@ module.exports = function(defaults) {
       }
     },
 
+    svgJar: {
+      sourceDirs: [
+        'app/images/icons',
+      ],
+    },
+
     // Add options here
     'ember-power-select': { theme: false }
   });
