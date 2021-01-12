@@ -84,13 +84,13 @@
   width: auto;
   height: 40px;
   padding-left: 38px;
-  background: url('/boxel/assets/images/icons/edit-box.svg') left 14px center/14px 14px no-repeat;
+  background: url('/images/icons/edit-box.svg') left 14px center/14px 14px no-repeat;
   text-align: left;
 }
 .version-history {
   width: 40px;
   height: 40px;
-  background: url('/boxel/assets/images/icons/gear.svg') center/17px 17px no-repeat;
+  background: url('/images/icons/gear.svg') center/17px 17px no-repeat;
 }
 
 .media-collection__title-row {
@@ -156,7 +156,7 @@
 }
 
 .media-collection__pill--dropdown {
-  background: url('/boxel/assets/images/icons/carot-down.svg') center right 17px/8px auto no-repeat;
+  background: url('/images/icons/carot-down.svg') center right 17px/8px auto no-repeat;
 }
 
 .media-collection__select-all {
@@ -263,15 +263,15 @@
 }
 
 .media-collection__btn.list {
-  background-image: url('/boxel/assets/images/icons/list.svg');
+  background-image: url('/images/icons/list.svg');
 }
 
 .media-collection__btn.grid {
-  background-image: url('/boxel/assets/images/icons/grid.svg');
+  background-image: url('/images/icons/grid.svg');
 }
 
 .media-collection__btn.table {
-  background-image: url('/boxel/assets/images/icons/table.svg');
+  background-image: url('/images/icons/table.svg');
 }
 
 .isolated-collection__table-list-header {
@@ -498,7 +498,7 @@
 }
 
 .media-collection__sort .media-collection__sort-dropdown__active::before {
-  content: url('/boxel/assets/images/icons/checkmark-highlighted.svg');
+  content: url('/images/icons/checkmark-highlighted.svg');
   position: absolute;
   left: -10px;
 }

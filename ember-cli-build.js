@@ -3,13 +3,6 @@
 const { Webpack } = require('@embroider/webpack');
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-const PostCSSImportConfig = {
-  module: require('postcss-import'),
-  options: {
-    path: [`${__dirname}/node_modules`]
-  }
-}
-
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     /*
@@ -21,14 +14,6 @@ module.exports = function(defaults) {
 
     // our app always uses faker, even in production
     'ember-faker': { enabled: true },
-
-    postcssOptions: {
-      compile: {
-        plugins: [
-          PostCSSImportConfig
-        ]
-      }
-    },
 
     svgJar: {
       sourceDirs: [
@@ -57,6 +42,25 @@ module.exports = function(defaults) {
                 name: "[path][name]-[contenthash].[ext]",
               },
             },
+            {
+              test: /\.css$/,
+              exclude: /node_modules/,
+              use: [
+                { loader: 'style-loader', },
+                { loader: 'css-loader', options: { importLoaders: 1, } },
+                { loader: 'postcss-loader', options: {
+                  postcssOptions: {
+                    plugins: [
+                      [
+                        ['postcss-import', {
+                            path: [`${__dirname}/node_modules`]
+                        }]
+                      ],
+                    ]
+                  }
+                }}
+              ]
+            }
           ],
         },
       },
