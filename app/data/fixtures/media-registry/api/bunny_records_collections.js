@@ -23,7 +23,7 @@ import {
   LittleLiesThumb,
   LoveConquersAllThumb,
   LoveNeverDiesThumb,
-  LoveTheLoveThumb,
+  LovetheLoveThumb,
   MagnaCumLoveThumb,
   MagnitudeThumb,
   MakeMagicThumb,
@@ -58,7 +58,7 @@ export default [
     "top_artists": ["Golden Girl"],
     "date_created": "2019-02-13",
     "selected_art": [
-      LoveTheLoveThumb,
+      LovetheLoveThumb,
       HomeIsntSweetThumb,
       NeverLonelyThumb,
       OntheBrinkofHappinessThumb,
@@ -88,7 +88,7 @@ export default [
     "top_artists": ["Pia Midina", "BB Clarke", "Marcy Blues"],
     "date_created": "2019-11-27",
     "selected_art": [
-      LoveTheLoveThumb,
+      LovetheLoveThumb,
       SunlightThumb,
       MomentsThumb,
       EscapeThumb,

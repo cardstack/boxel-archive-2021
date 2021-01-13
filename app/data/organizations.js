@@ -10,7 +10,7 @@ import gmrLogo from '@cardstack/boxel/images/media-registry/gmr-logo.svg';
 import wcmLogo from '@cardstack/boxel/images/media-registry/wcm-logo.png';
 import wmgLogo from '@cardstack/boxel/images/media-registry/wmg-logo.svg';
 
-export { ampLogo, gmrLogo, wcmLogo, wmgLogo, lisaTrackProfile, steveRightsProfile }
+export { ampLogo, deezerLogo, gmrLogo, wcmLogo, wmgLogo, lisaTrackProfile, steveRightsProfile }
 
 export default [
     {
