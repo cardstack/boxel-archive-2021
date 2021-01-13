@@ -1,6 +1,17 @@
 import Route from '@ember/routing/route';
 import ORGS from '@cardstack/boxel/data/organizations';
 
+import '@cardstack/boxel/assets/templates/media-registry.css';
+import '@cardstack/boxel/assets/templates/media-registry/master-collection.css';
+import '@cardstack/boxel/assets/templates/media-registry/collection.css';
+import '@cardstack/boxel/assets/templates/media-registry/item.css';
+import '@cardstack/boxel/assets/templates/media-registry/item-edit.css';
+import '@cardstack/boxel/assets/templates/media-registry/agreements.css';
+import '@cardstack/boxel/assets/templates/media-registry/breadcrumbs.css';
+import '@cardstack/boxel/assets/templates/media-registry/embedded-collection-table.css';
+import '@cardstack/boxel/assets/templates/media-registry/discrepancies-index.css';
+import '@cardstack/boxel/assets/templates/media-registry/discrepancy.css';
+
 export default class MediaRegistryRoute extends Route {
   defaultGroup = [ 'bunny_records', 'crd_records' ];
   verifiGroup = [ 'warner-music-group', 'allegro-music-publishing', 'warner-chappell-music', 'global-music-rights', 'deezer'];

@@ -36,31 +36,31 @@ module.exports = function(defaults) {
         module: {
           rules: [
             {
-              test: /\.(png|jpg|gif|svg)$/i,
+              test: /\.(png|jpg|gif|svg|woff|woff2|eot|ttf|otf)$/i,
               loader: "file-loader",
               options: {
                 name: "[path][name]-[contenthash].[ext]",
               },
             },
-            {
-              test: /\.css$/,
-              exclude: /node_modules/,
-              use: [
-                { loader: 'style-loader', },
-                { loader: 'css-loader', options: { importLoaders: 1, } },
-                { loader: 'postcss-loader', options: {
-                  postcssOptions: {
-                    plugins: [
-                      [
-                        ['postcss-import', {
-                            path: [`${__dirname}/node_modules`]
-                        }]
-                      ],
-                    ]
-                  }
-                }}
-              ]
-            }
+            // {
+            //   test: /\.css$/,
+            //   exclude: /node_modules/,
+            //   use: [
+            //     { loader: 'style-loader', },
+            //     { loader: 'css-loader', options: { importLoaders: 1, } },
+            //     { loader: 'postcss-loader', options: {
+            //       postcssOptions: {
+            //         plugins: [
+            //           [
+            //             ['postcss-import', {
+            //                 path: [`${__dirname}/node_modules`]
+            //             }]
+            //           ],
+            //         ]
+            //       }
+            //     }}
+            //   ]
+            // }
           ],
         },
       },
