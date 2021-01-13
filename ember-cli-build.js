@@ -41,26 +41,7 @@ module.exports = function(defaults) {
               options: {
                 name: "[path][name]-[contenthash].[ext]",
               },
-            },
-            // {
-            //   test: /\.css$/,
-            //   exclude: /node_modules/,
-            //   use: [
-            //     { loader: 'style-loader', },
-            //     { loader: 'css-loader', options: { importLoaders: 1, } },
-            //     { loader: 'postcss-loader', options: {
-            //       postcssOptions: {
-            //         plugins: [
-            //           [
-            //             ['postcss-import', {
-            //                 path: [`${__dirname}/node_modules`]
-            //             }]
-            //           ],
-            //         ]
-            //       }
-            //     }}
-            //   ]
-            // }
+            }
           ],
         },
       },
