@@ -18,6 +18,7 @@ module.exports = function(defaults) {
     svgJar: {
       sourceDirs: [
         'app/images/icons',
+        'app/images/media-registry',
       ],
     },
 
