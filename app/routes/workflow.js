@@ -2,7 +2,7 @@ import Route from '@ember/routing/route';
 // NOTE: This import should eventually be replaced by fetch to
 // mirage data
 import dbWorkflow from '@cardstack/boxel/data/db-workflow'
-import '@cardstack/boxel/assets/templates/workflow.css';
+import '@cardstack/boxel/css/templates/workflow.css';
 
 const USER_ID = 'haley-oconnell';
 

@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import '@cardstack/boxel/assets/templates/docs.css';
+import '@cardstack/boxel/css/templates/docs.css';
 
 export default class DocsRoute extends Route {
 }
