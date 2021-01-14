@@ -1,4 +1,16 @@
-<CardPlatter @class="cardflow">
+<Boxel::Thread class="cardflow" @model={{@model}} as |t|>
+  <t.header
+    class="cardflow__header"
+    @title={{or this.thread.description this.thread.title}}
+    @label={{this.thread.project}}
+    @notifications={{if (eq this.thread.status "unread") (array "notif") null}}
+    @participants={{this.participants}}
+  >
+  </t.header>
+
+</Boxel::Thread>
+
+{{!-- <CardPlatter @class="cardflow">
   <header class="cardflow__header">
     {{#if (eq this.project.status "unread")}}
       <div class="cardflow__notification">1</div>
@@ -15,10 +27,10 @@
         {{/each}}
       </div>
     </div>
-  </header>
+  </header> --}}
 
   {{!-- Main Area --}}
-  <div>
+  {{!-- <div>
     {{#if (and @activeTasks @tasksRoute)}}
       <LinkTo @route={{@tasksRoute}} @class="cardflow__taskbar">
         <div class="cardflow__taskbar-count">{{@activeTasks.length}} {{#if (eq this.activeTasks.length 1)}}task{{else}}tasks{{/if}} for this workflow</div>
@@ -49,23 +61,23 @@
             {{post.content}}
           </div>
         </div>
-      {{/each}}
+      {{/each}} --}}
 
       {{!-- Reply to message box --}}
-      {{#if (includes @model.user.id @model.thread.participant_ids)}}
+      {{!-- {{#if (includes @model.user.id @model.thread.participant_ids)}}
         <div class="cardflow__message">
           <div class="cardflow__message-icon__profile" style={{css-url "background-image" @model.user.imgURL}} />
           <Input @class="cardflow__reply-to field-renderer__input" @placeholder="Post a message to this thread"></Input>
         </div>
       {{/if}}
     </div>
-  </div>
+  </div> --}}
 
   {{!-- Right Sidebar --}}
-  <aside class="cardflow__sidebar">
-    {{#if @model.workflow}}
+  {{!-- <aside class="cardflow__sidebar">
+    {{#if @model.workflow}} --}}
       {{!-- Progress Pie --}}
-      <CardPlatter @class="cardflow-platter">
+      {{!-- <CardPlatter @class="cardflow-platter">
         <section class="cardflow__sidebar-section">
           <h3 class="cardflow__sidebar-title">Workflow Progress</h3>
           <div class="cardflow__progress">
@@ -75,26 +87,26 @@
             />
             <div class="cardflow__progress-status">{{this.milestone.description}}</div>
           </div>
-        </section>
+        </section> --}}
 
         {{!-- Milestones --}}
-        <section class="cardflow__sidebar-section">
+        {{!-- <section class="cardflow__sidebar-section">
           <h3 class="cardflow__sidebar-title">{{@model.workflow.title}}</h3>
           <ul class="cardflow__checklist">
             {{#each @model.workflow.milestones as |milestone i|}}
               <li class="cardflow__checklist-item {{if (gt this.milestoneId (add i 1)) "completed"}} {{if (eq this.milestoneId (add i 1)) "current"}}">
                 {{svg-jar (if (gt this.milestoneId (add i 1)) "check-mark" "checklist-circle") width="16px" height="16px"}}
-                {{milestone.title}}
+                {{milestone.title}} --}}
                 {{!-- <br><span class="cardflow__checklist-time">12h ago</span> --}}
-              </li>
+              {{!-- </li>
             {{/each}}
           </ul>
         </section>
       </CardPlatter>
-    {{/if}}
+    {{/if}} --}}
 
     {{!-- Participants Box --}}
-    <CardPlatter @class="cardflow-platter">
+    {{!-- <CardPlatter @class="cardflow-platter">
       <section class="cardflow__sidebar-section cardflow__sidebar-section--participants">
         <h3 class="cardflow__sidebar-title">Participants</h3>
         {{#if this.otherParticipants}}
@@ -128,4 +140,4 @@
       </section>
     </CardPlatter>
   </aside>
-</CardPlatter>
+</CardPlatter> --}}
