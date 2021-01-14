@@ -36,17 +36,10 @@
 }
 
 .sidebar-related-card__link:hover .sidebar-related-card__header {
-  background-image: url("/images/assets/expand.svg");
+  background-image: url("../../images/icons/expand.svg");
   background-position: top 7px right 7px;
   background-size: 16px 16px;
   background-repeat: no-repeat;
-}
-
-.sidebar-related-card__thumb-collection {
-  width: 60px;
-  height: 50px;
-  margin-right: 20px;
-  background: url('/boxel/media-registry/master-covers.svg') center left/cover no-repeat;
 }
 
 .sidebar-related-card__title {

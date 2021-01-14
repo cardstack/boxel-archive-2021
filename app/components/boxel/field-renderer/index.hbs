@@ -106,7 +106,7 @@
               {{#let (filter-by "title" @field.value) as |multiTagList|}}
                 {{#if multiTagList.length}}
                   {{#each @field.value as |val|}}
-                    <FieldRenderer
+                    <Boxel::FieldRenderer
                       @class="field-renderer__meta-field"
                       @field={{val}}
                       @mode="view"
@@ -210,7 +210,7 @@
             {{#let (filter-by "title" @field.value) as |multiTagList|}}
               {{#if multiTagList.length}}
                 {{#each @field.value as |val|}}
-                  <FieldRenderer
+                  <Boxel::FieldRenderer
                     @class="field-renderer__meta-field"
                     @field={{val}}
                     @mode="view"
@@ -262,7 +262,7 @@
                 {{moment-format @field.value "MMM DD, YYYY" "YYYY-MM-DD"}}
               {{else if (eq @field.type "image")}}
                 {{!-- Make this more generic --}}
-                <img src={{or @field.value "/boxel/media-registry/album_art.svg"}} alt="cover art" width="260" height="260" />
+                <img src={{or @field.value this.albumArtSvg}} alt="cover art" width="260" height="260" />
               {{else}}
                 {{@field.value}}
               {{/if}}
