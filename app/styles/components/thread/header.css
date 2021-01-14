@@ -1,17 +1,12 @@
 .thread-header {
-  grid-column: 1 / -1;
-  position: sticky;
-  top: 0;
-  right: 0;
-  z-index: 1;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: var(--boxel-spacing);
   padding: var(--boxel-spacing);
   background-color: var(--boxel-light);
-  border-top-right-radius: inherit;
-  border-top-left-radius: inherit;
+  border-top-right-radius: var(--boxel-border-radius);
+  border-top-left-radius: var(--boxel-border-radius);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 

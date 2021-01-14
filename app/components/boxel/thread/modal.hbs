@@ -7,5 +7,38 @@
     >
     </t.header>
 
+    <t.content>
+      <section class="workflow-modal__thread">
+        <div class="workflow-divider">
+          <hr class="workflow-divider__hr">
+          <time class="workflow-divider__date">{{moment-format this.startTimestamp "MMMM D, YYYY"}}</time>
+        </div>
+        {{#each @workflow.milestones as |milestone i|}}
+          {{#if (lte i this.progress)}}
+            <Boxel::Thread::Message
+              @contents={{milestone.message}}
+              @datetime={{milestone.datetime}}
+            />
+
+            {{!-- {{#if milestone.actionCard}}
+              <AnimatedContainer onInitialRender={{true}}>
+                {{#animated-value this initialInsertion=true use=this.revealCard duration=(or milestone.delayMs "200")}}
+                  {{component milestone.actionCard}}
+                {{/animated-value}}
+              </AnimatedContainer>
+            {{/if}} --}}
+          {{/if}}
+
+          {{#if (gt this.progress i)}}
+            <div>Milestone Reached</div>
+          {{/if}}
+        {{/each}}
+      </section>
+    </t.content>
+
+    <t.sidebar>
+      <CardPlatter />
+    </t.sidebar>
+
   </Boxel::Thread>
 </BoxelModal>

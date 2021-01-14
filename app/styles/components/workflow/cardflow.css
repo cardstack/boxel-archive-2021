@@ -3,9 +3,6 @@
   --cardflow-user-tasks: var(--boxel-lime);
   --cardflow-assigned-tasks: var(--boxel-lilac);
 
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto 1fr;
   border-radius: 0 var(--boxel-border-radius) 0 0;
 }
 
@@ -38,6 +35,10 @@
 
 
 /* Header */
+.cardflow__header {
+  border-top-left-radius: 0;
+}
+
 .cardflow__header h2 {
   margin-left: 0;
   margin-bottom: 0;
@@ -85,21 +86,18 @@
 
 /* Main Thread */
 /* 600px max-width for embedded cards */
-.cardflow__thread {
-  padding: var(--boxel-spacing);
-  overflow-y: auto;
+
+/* Thread Message */
+.cardflow__bot-message .workflow-message__icon {
+  border-radius: initial;
 }
 
-@media only screen and (min-width: 1440px) {
-  .cardflow__thread {
-    padding-right: 80px;
-  }
+.cardflow__bot-message .workflow-message__description {
+  text-transform: capitalize;
 }
 
-.cardflow__thread > * + * {
-  margin-top: var(--boxel-spacing);
-}
 
+/* Reply box */
 .cardflow__message {
   display: grid;
   grid-template-columns: 40px 1fr;
@@ -109,67 +107,33 @@
   letter-spacing: var(--boxel-lsp);
 }
 
-.cardflow__message-content > * + * {
-  margin-top: 20px;
-}
-
-.cardflow__message-content {
-  font-size: 15px;
-  line-height: calc(23/15);
-  letter-spacing: var(--boxel-lsp-sm);
-}
-
-
-/* Sender */
-.cardflow__message-icon {
-  justify-self: end;
-  width: 40px;
-  height: 40px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
 .cardflow__message-icon__profile {
   width: 40px;
   height: 40px;
   border-radius: 100px;
+  background-image: url('/assets/images/icons/cardbot-lg.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.cardflow__message-icon__profile--bot {
+.cardflow__reply-to.field-renderer__input {
+  padding-right: 80px;
+  height: 45px;
+  background-image: url("/assets/images/icons/plus.svg"), url("/assets/images/icons/emoji.svg");
+  background-position: right 55px center, right 15px center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 15px 15px, 20px 20px;
+  font-size: 15px;
+  line-height: calc(23/15);
+  letter-spacing: var(--boxel-lsp-sm);
+  border: var(--boxel-border);
   border-radius: var(--boxel-border-radius);
 }
 
-.cardflow__message-info {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 0 10px;
+.cardflow__reply-to.field-renderer__input:focus {
+  outline: 0;
 }
-
-.cardflow__message-sender {
-  font-weight: 600;
-}
-
-.cardflow__message-time {
-  color: var(--boxel-purple-400);
-  font: var(--boxel-font-xs);
-  font-weight: 600;
-  letter-spacing: var(--boxel-lsp-lg);
-}
-
-.cardflow__message-sender-role {
-  grid-column: 1 / -1;
-  color: var(--boxel-purple-400);
-  font: var(--boxel-font-xs);
-  letter-spacing: var(--boxel-lsp-lg);
-}
-
-
-/* Reply box */
 .cardflow__reply-to.field-renderer__input {
   padding-right: 80px;
   height: 45px;
@@ -190,7 +154,7 @@
 
 
 /* Right Sidebar */
-.cardflow__sidebar {
+/* .cardflow__sidebar {
   max-width: 290px;
   padding: var(--boxel-spacing);
   overflow-y: auto;
@@ -198,7 +162,7 @@
 
 .cardflow__sidebar > * + * {
   margin-top: var(--boxel-spacing);
-}
+} */
 
 .cardflow__sidebar-section {
   padding: 15px 20px;

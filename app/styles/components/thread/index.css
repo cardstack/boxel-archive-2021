@@ -9,12 +9,12 @@
 }
 
 .thread__scroll-wrapper {
-  height: calc(100% - 50px);
   overflow-y: auto;
   padding-bottom: 30px;
 }
 
 .thread__content-wrapper {
+  height: calc(100% - 90px);
   display: grid;
   grid-template-columns: 1fr auto;
   background-color: var(--boxel-light-300);
@@ -23,10 +23,116 @@
 
 .thread__content {
   padding: var(--boxel-spacing);
-  padding-left: 40px;
+  /* padding-left: 40px; */
+}
+
+@media only screen and (min-width: 1440px) {
+  .thread__content {
+    padding-right: 80px;
+  }
+}
+
+.thread__content > * + *,
+.thread__sidebar > * + * {
+  margin-top: var(--boxel-spacing);
 }
 
 .thread__sidebar {
   padding: var(--boxel-spacing);
   padding-bottom: 40px;
+}
+
+.thread__sticky-container {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+
+/* Message component */
+.workflow-message {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--boxel-spacing);
+  color: var(--boxel-dark);
+  font: var(--boxel-font-sm);
+  letter-spacing: var(--boxel-lsp);
+}
+
+.workflow-message__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background-image: url('/assets/images/icons/cardbot-lg.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.workflow-message__name {
+  display: inline-block;
+  font-weight: 600;
+}
+
+.workflow-message__time {
+  display: inline-block;
+  color: var(--boxel-purple-400);
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-lg);
+}
+
+.workflow-message__name + .workflow-message__time {
+  margin-left: 10px;
+}
+
+.workflow-message__description {
+  color: var(--boxel-purple-400);
+  font: var(--boxel-font-xs);
+  letter-spacing: var(--boxel-lsp-lg);
+}
+
+.workflow-message__description + .workflow-message__content {
+  margin-top: 10px;
+}
+
+.workflow-message__content {
+  font-size: 0.9375rem; /* 15px */
+  line-height: calc(23/15);
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+.workflow-message__content > p {
+  margin-top: 1px;
+  margin-bottom: 30px;
+}
+
+
+/* Divider date line */
+.workflow-divider {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: var(--boxel-spacing);
+  margin-bottom: var(--boxel-spacing);
+}
+
+.workflow-divider__hr {
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--boxel-light-600);
+}
+
+.workflow-divider__date {
+  grid-row: 1;
+  grid-column: 1;
+  padding: 0 10px;
+  background-color: var(--boxel-light-300);
+  color: var(--boxel-purple-400);
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-lg);
+  text-align: center;
 }
