@@ -1,5 +1,5 @@
 <BoxelModal @onClose={{@onClose}} @class="thread-modal {{if this.expanded "thread-modal--full-width"}}">
-  <Boxel::Thread class="thread-modal__inner" @model={{@model}} as |t|>
+  <Boxel::Thread class="thread-modal__inner" as |t|>
     <t.header
       @title={{@workflow.title}}
       @toggleExpand={{this.toggleExpand}}
@@ -36,20 +36,29 @@
       </section>
     </t.content>
 
-    <t.sidebar>
-      <section class="workflow-sidebar-card">
-        <section class="workflow-sidebar-section">
-          <h3 class="workflow-sidebar-section__title">
-              Workflow:<br>
-              {{@workflow.title}}
-          </h3>
+    <t.sidebar as |s|>
+      <s.card as |c|>
+        <c.section @title={{html-safe (concat "Workflow:<br>" @workflow.title)}}>
           <Boxel::ProgressCircle
             @size={{120}}
             @percentComplete={{this.progressPct}}
             @status={{this.progressStatus}}
           />
-        </section>
-      </section>
+        </c.section>
+        <c.section @title="Milestones">
+          {{!-- Milestones --}}
+        </c.section>
+      </s.card>
+
+      <s.card as |c|>
+        {{!-- Participants --}}
+        <c.section @title="Participants">
+
+        </c.section>
+        <c.section>
+
+        </c.section>
+      </s.card>
     </t.sidebar>
 
   </Boxel::Thread>

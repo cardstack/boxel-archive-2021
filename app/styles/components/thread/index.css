@@ -136,3 +136,31 @@
   letter-spacing: var(--boxel-lsp-lg);
   text-align: center;
 }
+
+
+/* Sidebar card */
+.workflow-sidebar-card {
+  width: 230px;
+  min-height: 100px;
+  background-color: var(--boxel-light);
+  border-radius: var(--boxel-border-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Sidebar section */
+.workflow-sidebar-section {
+  padding: var(--boxel-spacing);
+}
+
+.workflow-sidebar-section + .workflow-sidebar-section {
+  border-top: 1px solid var(--boxel-light-400);
+}
+
+.workflow-sidebar-section__title {
+  padding-bottom: var(--boxel-spacing);
+  color: var(--boxel-purple-400);
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+}
