@@ -1,0 +1,11 @@
+<BoxelModal @class="thread-modal {{if this.expanded "thread-modal--full-width"}}">
+  <Boxel::Thread @class="thread-modal__inner" @model={{@model}} as |t|>
+    <t.header
+      @title={{@workflow.title}}
+      @toggleExpand={{this.toggleExpand}}
+      @expanded={{this.expanded}}
+    >
+    </t.header>
+
+  </Boxel::Thread>
+</BoxelModal>

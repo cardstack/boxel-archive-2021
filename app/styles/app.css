@@ -9,7 +9,7 @@
 @import '/assets/components/card-platter.css';
 @import '/assets/components/card-select.css';
 @import '/assets/components/card.css';
-@import '/assets/components/cardflow.css';
+@import '/assets/components/old-cardflow.css';
 @import '/assets/components/collection-add-button.css';
 @import '/assets/components/cover-art.css';
 @import '/assets/components/doc/dark-theme-and-light-theme.css';
@@ -31,6 +31,9 @@
 @import '/assets/components/select-btn.css';
 @import '/assets/components/sidebar-related-card.css';
 @import '/assets/components/version-history.css';
+@import '/assets/components/thread/modal.css';
+@import '/assets/components/thread/index.css';
+@import '/assets/components/thread/header.css';
 @import '/assets/components/workflow/cardflow.css';
 @import '/assets/components/workflow/tasklist.css';
 @import '/assets/components/workflow/tasklist-table.css';

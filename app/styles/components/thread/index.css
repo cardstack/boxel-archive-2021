@@ -1,0 +1,32 @@
+.thread {
+  position: relative;
+  height: 100%;
+  background-color: var(--boxel-light-300);
+  border-radius: var(--boxel-border-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  font: var(--boxel-font-sm);
+  letter-spacing: var(--boxel-lsp);
+}
+
+.thread__scroll-wrapper {
+  height: calc(100% - 50px);
+  overflow-y: auto;
+  padding-bottom: 30px;
+}
+
+.thread__content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-color: var(--boxel-light-300);
+  border-radius: var(--boxel-border-radius);
+}
+
+.thread__content {
+  padding: var(--boxel-spacing);
+  padding-left: 40px;
+}
+
+.thread__sidebar {
+  padding: var(--boxel-spacing);
+  padding-bottom: 40px;
+}

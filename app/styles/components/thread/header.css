@@ -1,0 +1,94 @@
+.thread-header {
+  grid-column: 1 / -1;
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--boxel-spacing);
+  padding: var(--boxel-spacing);
+  background-color: var(--boxel-light);
+  border-top-right-radius: inherit;
+  border-top-left-radius: inherit;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.thread-header__label {
+  color: var(--boxel-purple-400);
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+}
+
+.thread-header__title {
+  margin-top: 4px;
+  margin-bottom: 6px;
+  margin-left: 20px;
+  font: var(--boxel-font-lg);
+  font-weight: 700;
+  letter-spacing: var(--boxel-lsp-xs);
+}
+
+.thread-header__expand-button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  background: none;
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp);
+}
+
+.thread-header__expand-button:hover {
+  cursor: pointer;
+}
+
+.thread-header__expand-button > svg {
+  margin-left: 15px;
+}
+
+.thread-header__participants {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0 30px;
+  color: var(--boxel-dark);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-xl);
+}
+
+.thread-header__participant-icons {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 15px;
+  direction: rtl; /* hack to revert item order */
+}
+
+.thread-header__participant-img {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--boxel-light);
+  border-radius: 100px;
+  background-image: url('/media-registry/placeholders/profile.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.thread-header__notification {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 13px 3px;
+  border-radius: 0 10px 0 5px;
+  background-color: var(--boxel-error-100);
+  color: var(--boxel-light);
+  font-weight: 700;
+  letter-spacing: var(--boxel-lsp-sm);
+  text-align: center;
+}
