@@ -7,7 +7,6 @@ import '@cardstack/boxel/assets/templates/media-registry/collection.css';
 import '@cardstack/boxel/assets/templates/media-registry/item.css';
 import '@cardstack/boxel/assets/templates/media-registry/item-edit.css';
 import '@cardstack/boxel/assets/templates/media-registry/agreements.css';
-import '@cardstack/boxel/assets/templates/media-registry/breadcrumbs.css';
 import '@cardstack/boxel/assets/templates/media-registry/embedded-collection-table.css';
 import '@cardstack/boxel/assets/templates/media-registry/discrepancies-index.css';
 import '@cardstack/boxel/assets/templates/media-registry/discrepancy.css';
