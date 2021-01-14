@@ -47,7 +47,7 @@
           <div class="cardflow__progress">
             <Boxel::ProgressCircle
               @size={{120}}
-              @fractionComplete={{div this.milestone.pct 100}}
+              @percentComplete={{this.milestone.pct}}
             />
             <div class="cardflow__progress-status">{{this.milestone.description}}</div>
           </div>

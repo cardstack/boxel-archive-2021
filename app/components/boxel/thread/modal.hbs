@@ -37,7 +37,19 @@
     </t.content>
 
     <t.sidebar>
-      <CardPlatter />
+      <section class="workflow-sidebar-card">
+        <section class="workflow-sidebar-section">
+          <h3 class="workflow-sidebar-section__title">
+              Workflow:<br>
+              {{@workflow.title}}
+          </h3>
+          <Boxel::ProgressCircle
+            @size={{120}}
+            @percentComplete={{this.progressPct}}
+            @status={{this.progressStatus}}
+          />
+        </section>
+      </section>
     </t.sidebar>
 
   </Boxel::Thread>

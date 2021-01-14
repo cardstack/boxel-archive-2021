@@ -7,8 +7,8 @@ export default class extends Component {
     return this.args.size * FONT_SIZE_RATIO;
   }
   get humanPercentComplete() {
-    if (this.args.fractionComplete) {
-      return Math.round(this.args.fractionComplete * 100);
+    if (this.args.percentComplete) {
+      return Math.round(this.args.percentComplete);
     }
     return 0;
   }
