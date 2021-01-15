@@ -129,32 +129,28 @@
       "milestones": [
         {
           "id": "1",
-          "title": "Connect Layer-1 Wallet"
+          "title": "Connect Layer-1 Wallet",
+          "statusOnCompletion": "Layer-1 wallet connected"
         },
         {
           "id": "2",
           "pct": "25",
           "title": "Connect Layer-2 Wallet",
-          "description": "Layer-1 wallet connected"
+          "statusOnCompletion": "Layer-2 wallet connected"
         },
         {
           "id": "3",
           "pct": "50",
           "title": "Deposit Into Reserve Pool",
-          "description": "Layer-2 wallet connected"
+          "statusOnCompletion": "Reserve pool deposited"
         },
         {
           "id": "4",
           "pct": "75",
           "title": "Add Balance to Layer-2 Wallet",
-          "description": "Reserve pool deposited"
+          "statusOnCompletion": "Balance added"
         }
-      ],
-      "completion": {
-        "id": "5",
-        "pct": "100",
-        "description": "Balance added"
-      }
+      ]
     },
     {
       "id": "prepaid-card-transfer",
@@ -162,32 +158,28 @@
       "milestones": [
         {
           "id": "1",
-          "title": "Select Card"
+          "title": "Select Card",
+          "statusOnCompletion": "Card selected"
         },
         {
           "id": "2",
           "pct": "25",
           "title": "Select Delivery Method",
-          "description": "Card selected"
+          "statusOnCompletion": "Delivery method selected"
         },
         {
           "id": "3",
           "pct": "50",
           "title": "Approve Transaction",
-          "description": "Delivery method selected"
+          "statusOnCompletion": "Transaction approved"
         },
         {
           "id": "3",
           "pct": "75",
           "title": "Transfer Card",
-          "description": "Transaction approved"
+          "statusOnCompletion": "Card transferred"
         }
-      ],
-      "completion": {
-        "id": "4",
-        "pct": "100",
-        "description": "Card transferred"
-      }
+      ]
     }
   ]
 }

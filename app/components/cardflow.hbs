@@ -38,9 +38,25 @@
     {{/if}}
   </t.content>
 
-  <t.sidebar as |s|>
+  <t.sidebar>
     {{#if @model.workflow}}
-      <s.card as |c|>
+      <Boxel::Thread::ProgressBox
+        @progressCircleTitle="Workflow Progress"
+        @milestonesTitle={{@model.workflow.title}}
+        @status={{this.milestone.description}}
+      as |progressBox|>
+        <progressBox.progressCircle
+          @size={{120}}
+          @percentComplete={{this.milestone.pct}}
+        />
+        <progressBox.milestones
+          @milestones={{@model.workflow.milestones}}
+          @completedCount={{this.milestoneId}}
+        />
+      </Boxel::Thread::ProgressBox>
+    {{/if}}
+
+      {{!-- <s.card as |c|>
         <c.section class="cardflow__sidebar-section" @title="Workflow Progress">
           <div class="cardflow__progress">
             <Boxel::ProgressCircle
@@ -56,44 +72,13 @@
             {{#each @model.workflow.milestones as |milestone i|}}
               <li class="cardflow__checklist-item {{if (gt this.milestoneId (add i 1)) "completed"}} {{if (eq this.milestoneId (add i 1)) "current"}}">
                 {{svg-jar (if (gt this.milestoneId (add i 1)) "check-mark" "checklist-circle") width="16px" height="16px"}}
-                {{milestone.title}}
+                {{milestone.title}} --}}
                 {{!-- <br><span class="cardflow__checklist-time">12h ago</span> --}}
-              </li>
+              {{!-- </li>
             {{/each}}
           </ul>
         </c.section>
-      </s.card>
-    {{/if}}
-
-    {{#if @model.workflow}}
-      {{!-- Progress Pie --}}
-      <CardPlatter @class="cardflow-platter">
-        <section class="cardflow__sidebar-section">
-          <h3 class="cardflow__sidebar-title">Workflow Progress</h3>
-          <div class="cardflow__progress">
-            <Boxel::ProgressCircle
-              @size={{120}}
-              @percentComplete={{this.milestone.pct}}
-            />
-            <div class="cardflow__progress-status">{{this.milestone.description}}</div>
-          </div>
-        </section>
-
-        {{!-- Milestones --}}
-        <section class="cardflow__sidebar-section">
-          <h3 class="cardflow__sidebar-title">{{@model.workflow.title}}</h3>
-          <ul class="cardflow__checklist">
-            {{#each @model.workflow.milestones as |milestone i|}}
-              <li class="cardflow__checklist-item {{if (gt this.milestoneId (add i 1)) "completed"}} {{if (eq this.milestoneId (add i 1)) "current"}}">
-                {{svg-jar (if (gt this.milestoneId (add i 1)) "check-mark" "checklist-circle") width="16px" height="16px"}}
-                {{milestone.title}}
-                {{!-- <br><span class="cardflow__checklist-time">12h ago</span> --}}
-              </li>
-            {{/each}}
-          </ul>
-        </section>
-      </CardPlatter>
-    {{/if}}
+      </s.card> --}}
 
     {{!-- Participants Box --}}
     <CardPlatter @class="cardflow-platter">

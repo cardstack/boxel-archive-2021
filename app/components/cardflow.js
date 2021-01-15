@@ -25,9 +25,8 @@ export default class CardflowComponent extends Component {
   }
 
   get participatingOrgMembers() {
-    if (!this.participants || !this.participants.length) { return null; }
-    if (!this.org) { return null; }
-    return this.participants.filter(el => el.org_ids && el.org_ids.includes(this.org.id));
+    let [...members] = this.participants.filter(el => el.org_ids && el.org_ids.includes(this.org.id));
+    return [this.org, ...members];
   }
 
   get otherParticipants() {
@@ -44,12 +43,12 @@ export default class CardflowComponent extends Component {
 
   get milestoneId() {
     if (!this.milestone || !this.milestone.id) { return null; }
-    return Number(this.milestone.id);
+    return Number(this.milestone.id) - 1;
   }
 
   get progressPct() {
     if (!this.milestone || !this.milestone.pct) { return 0; }
-    return Number(this.milestone.pct) / 100;
+    return Number(this.milestone.pct);
   }
 
   _getProgress() {

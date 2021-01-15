@@ -1,5 +1,6 @@
 <BoxelModal @onClose={{@onClose}} @class="thread-modal {{if this.expanded "thread-modal--full-width"}}">
-  <Boxel::Thread class="thread-modal__inner" as |t|>
+  {{!-- OnClick action is temporarily added for demo's sake. --}}
+  <Boxel::Thread class="thread-modal__inner" {{on "click" this.updateProgress}} as |t|>
     <t.header
       @title={{@workflow.title}}
       @toggleExpand={{this.toggleExpand}}
@@ -36,29 +37,30 @@
       </section>
     </t.content>
 
-    <t.sidebar as |s|>
-      <s.card as |c|>
-        <c.section @title={{html-safe (concat "Workflow:<br>" @workflow.title)}}>
-          <Boxel::ProgressCircle
-            @size={{120}}
-            @percentComplete={{this.progressPct}}
-            @status={{this.progressStatus}}
-          />
-        </c.section>
-        <c.section @title="Milestones">
-          {{!-- Milestones --}}
-        </c.section>
-      </s.card>
+    <t.sidebar>
+      <Boxel::Thread::ProgressBox
+        @progressCircleTitle={{html-safe (concat "Workflow:<br>" @workflow.title)}}
+        @milestonesTitle="Milestones"
+        @status={{this.progressStatus}}
+      as |progressBox|>
+        <progressBox.progressCircle
+          @size={{120}}
+          @percentComplete={{this.progressPct}}
+        />
+        <progressBox.milestones
+          @milestones={{@workflow.milestones}}
+          @completedCount={{this.progress}}
+        />
+      </Boxel::Thread::ProgressBox>
 
-      <s.card as |c|>
-        {{!-- Participants --}}
+      {{!-- <s.card as |c|>
         <c.section @title="Participants">
 
         </c.section>
         <c.section>
 
         </c.section>
-      </s.card>
+      </s.card> --}}
     </t.sidebar>
 
   </Boxel::Thread>

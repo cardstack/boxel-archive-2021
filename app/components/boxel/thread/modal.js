@@ -8,7 +8,7 @@ import { easeOut } from 'ember-animated/easings/cosine';
 // import { printSprites } from 'ember-animated';
 
 export default class ThreadModalComponent extends Component {
-  @tracked progress = 0;
+  @tracked progress = 0; // resetting to 0 so we can demo
   @tracked expanded = false;
   @tracked isCancelled = false;
   @tracked isCompleted = false;

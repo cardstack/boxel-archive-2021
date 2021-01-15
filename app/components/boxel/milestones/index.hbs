@@ -1,0 +1,10 @@
+<ul class="milestones" ...attributes>
+  {{#each @milestones as |milestone i|}}
+    <li class="milestones__item {{if (gt @completedCount i) "completed"}} {{if (eq @completedCount i) "current"}}">
+      <span class="milestones__item-grid">
+        {{svg-jar (if (gt @completedCount i) "check-mark" "milestone") width="16px" height="16px"}}
+        <span>{{milestone.title}}</span>
+      </span>
+    </li>
+  {{/each}}
+</ul>
