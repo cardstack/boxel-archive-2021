@@ -1,15 +1,25 @@
 import Route from '@ember/routing/route';
 
+// workflow representative
+const BOT = {
+  "id": "cardbot",
+  "title": "Cardbot",
+  "imgURL": "/assets/images/icons/cardbot-lg.svg"
+};
+
 export default class CardPayWorkflowRoute extends Route {
   model({ workflowId }) {
     let cardpay = this.modelFor('card-pay');
     let { user, workflows } = cardpay;
-    let currentWorkflow = workflows.find(el => el.id === workflowId);
+    let workflow = workflows.find(el => el.id === workflowId);
 
-    return {
+    let thread = {
       id: workflowId,
-      user,
-      workflow: currentWorkflow
+      participants: [user],
+      orgRepresentatives: [BOT],
+      workflow
     }
+
+    return thread;
   }
 }

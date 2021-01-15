@@ -2,7 +2,7 @@
   {{!-- OnClick action is temporarily added for demo's sake. --}}
   <Boxel::Thread class="thread-modal__inner" {{on "click" this.updateProgress}} as |t|>
     <t.header
-      @title={{@workflow.title}}
+      @title={{@model.workflow.title}}
       @toggleExpand={{this.toggleExpand}}
       @expanded={{this.expanded}}
     >
@@ -14,7 +14,7 @@
           <hr class="workflow-divider__hr">
           <time class="workflow-divider__date">{{moment-format this.startTimestamp "MMMM D, YYYY"}}</time>
         </div>
-        {{#each @workflow.milestones as |milestone i|}}
+        {{#each @model.workflow.milestones as |milestone i|}}
           {{#if (lte i this.progress)}}
             <Boxel::Thread::Message
               @contents={{milestone.message}}
@@ -30,16 +30,16 @@
             {{/if}} --}}
           {{/if}}
 
-          {{#if (gt this.progress i)}}
+          {{!-- {{#if (gt this.progress i)}}
             <div>Milestone Reached</div>
-          {{/if}}
+          {{/if}} --}}
         {{/each}}
       </section>
     </t.content>
 
     <t.sidebar>
       <Boxel::Thread::ProgressBox
-        @progressCircleTitle={{html-safe (concat "Workflow:<br>" @workflow.title)}}
+        @progressCircleTitle={{html-safe (concat "Workflow:<br>" @model.workflow.title)}}
         @milestonesTitle="Milestones"
         @status={{this.progressStatus}}
       as |progressBox|>
@@ -48,19 +48,21 @@
           @percentComplete={{this.progressPct}}
         />
         <progressBox.milestones
-          @milestones={{@workflow.milestones}}
+          @milestones={{@model.workflow.milestones}}
           @completedCount={{this.progress}}
         />
       </Boxel::Thread::ProgressBox>
 
-      {{!-- <s.card as |c|>
-        <c.section @title="Participants">
-
-        </c.section>
-        <c.section>
-
-        </c.section>
-      </s.card> --}}
+      <Boxel::Thread::ParticipantsBox
+        @addAction={{true}}
+      as |participantsBox|>
+        <participantsBox.participants
+          @participants={{@model.participants}}
+        />
+        <participantsBox.participants
+          @participants={{@model.orgRepresentatives}}
+        />
+      </Boxel::Thread::ParticipantsBox>
     </t.sidebar>
 
   </Boxel::Thread>

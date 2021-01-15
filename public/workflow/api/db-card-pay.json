@@ -1,9 +1,15 @@
 {
   "orgs": [],
+  "threads": [
+    {
+      "id": "1",
+      "workflowId": "prepaid-card-issuance",
+      "participants": ["gary-walker"]
+    }
+  ],
   "users": [
     {
       "id": "gary-walker",
-      "type": "participant",
       "title": "Gary Walker",
       "imgURL": "/workflow/participants/thumb/Gary-Walker.jpg",
       "accounts": [
@@ -25,10 +31,27 @@
       ],
       "workflows": [
         {
+          "id": "1",
           "workflowId": "prepaid-card-issuance",
+          "accountId": "1"
+        },
+        {
+          "id": "2",
+          "workflowId": "reserve-pool-deposit",
+          "accountId": "1"
+        },
+        {
+          "id": "3",
+          "workflowId": "prepaid-card-transfer",
           "accountId": "1"
         }
       ]
+    },
+    {
+      "id": "anna-graham",
+      "title": "Anna Graham",
+      "accounts": [],
+      "workflows": []
     }
   ],
   "queueCards": [],

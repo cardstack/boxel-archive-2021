@@ -1,4 +1,4 @@
-/* Cardflow/workflow-specific styles only */
+/* Cardflow thread-specific styles only */
 .cardflow {
   --cardflow-user-tasks: var(--boxel-lime);
   --cardflow-assigned-tasks: var(--boxel-lilac);
@@ -154,161 +154,17 @@
 
 
 /* Right Sidebar */
-/* .cardflow__sidebar {
-  max-width: 290px;
-  padding: var(--boxel-spacing);
-  overflow-y: auto;
-}
-
-.cardflow__sidebar > * + * {
-  margin-top: var(--boxel-spacing);
-} */
-
-.cardflow__sidebar-section {
-  padding: 15px 20px;
-}
-
 .cardflow__sidebar-section + .cardflow__sidebar-section {
   border-top: 1px solid #D6D6D6;
 }
 
-.cardflow__sidebar-title {
-  padding-bottom: var(--boxel-spacing);
-  color: var(--boxel-purple-400);
-  font: var(--boxel-font-xs);
-  font-weight: 600;
-  letter-spacing: var(--boxel-lsp-xl);
-  text-transform: uppercase;
-}
-
-
-/* Progress Pie */
-.cardflow__progress {
-  position: relative;
-  text-align: center;
-}
-
-.cardflow__progress-status {
-  padding-top: 15px;
-  padding-bottom: 5px;
-  color: var(--boxel-dark);
-  font-weight: 600;
-}
-
-/* Checklist */
-.cardflow__checklist {
-  --icon-color: var(--boxel-purple-400);
-  margin: 0;
-  padding-bottom: 15px;
-  color: var(--boxel-purple-400);
-}
-
-.cardflow__checklist-item {
-  position: relative;
-}
-
-.cardflow__checklist-item > svg {
-  margin-right: 18px;
-  vertical-align: top;
-}
-
-.cardflow__checklist-item + .cardflow__checklist-item::before {
-  display: block;
-  content: "";
-  width: 1px;
-  height: 15px;
-  margin: 2px 0 3px 6.5px;
-  background-color: #D6D6D6;
-}
-
-.cardflow__checklist-item.current {
-  --icon-color: var(--boxel-highlight);
-  --icon-fill-color: var(--boxel-dark);
-
-  color: var(--boxel-success-200);
-  font-weight: 600;
-}
-
-.cardflow__checklist-item.completed {
-  --icon-color: var(--boxel-dark);
-  color: var(--boxel-dark);
-  font-weight: 600;
-}
-
-.cardflow__checklist-item.completed > svg {
-  padding: 3px;
-  background-color: var(--boxel-highlight);
-  border-radius: 100px;
-}
-
-.cardflow__checklist-time {
-  position: absolute;
-  left: 38px;
-  color: var(--boxel-purple-400);
-  font-size: 11px;
-}
-
 
 /* Participants Box */
-.cardflow__sidebar-section--participants {
-  padding: 15px 0 30px;
+.cardflow__org-members > li:first-of-type .participant__image {
+  border-radius: initial;
 }
 
-.cardflow__sidebar-section--participants .cardflow__sidebar-title {
-  padding-left: var(--boxel-spacing);
-}
-
-.cardflow__participants {
-  list-style-type: none;
-  padding: 0 var(--boxel-spacing);
-}
-
-.cardflow__participants + .cardflow__participants {
-  margin-top: var(--boxel-spacing);
-  padding-top: var(--boxel-spacing);
-  border-top: 1px solid #D6D6D6;
-}
-
-.cardflow__participant {
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  gap: 0 10px;
-  align-items: center;
-}
-
-.cardflow__participant + .cardflow__participant {
-  margin-top: 15px;
-}
-
-.cardflow__participant-org-img {
-  width: 30px;
-  height: 30px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.cardflow__participant-img {
-  justify-self: center;
-  width: 30px;
-  height: 30px;
-  background-image: url('/media-registry/placeholders/profile.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 100px;
-}
-
-.cardflow__participant-org-title {
+.cardflow__org-members > li:first-of-type .participant__title {
+  font: var(--boxel-font-sm);
   font-weight: 600;
-}
-
-.cardflow__participant-title {
-  font: var(--boxel-font-xs);
-  font-weight: 600;
-}
-
-.cardflow__participant-role {
-  color: var(--boxel-purple-400);
-  font-weight: 400;
 }

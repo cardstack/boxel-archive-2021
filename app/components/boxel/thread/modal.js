@@ -12,7 +12,7 @@ export default class ThreadModalComponent extends Component {
   @tracked expanded = false;
   @tracked isCancelled = false;
   @tracked isCompleted = false;
-  @tracked startTimestamp = this.args.workflow?.milestones[0]?.datetime;
+  @tracked startTimestamp = this.args.model.workflow?.milestones[0]?.datetime;
 
   @action
   toggleExpand() {
@@ -20,20 +20,20 @@ export default class ThreadModalComponent extends Component {
   }
 
   get milestone() {
-    return this.args.workflow?.milestones[this.progress];
+    return this.args.model.workflow?.milestones[this.progress];
   }
 
   get progressPct() {
-    if (!this.args.workflow?.milestones?.length) {
+    if (!this.args.model.workflow?.milestones?.length) {
       return null;
     }
 
-    let totalMilestones = this.args.workflow.milestones.length;
+    let totalMilestones = this.args.model.workflow.milestones.length;
     return Math.trunc(this.progress / totalMilestones * 100);
   }
 
   get progressStatus() {
-    if (!this.args.workflow?.milestones?.length) {
+    if (!this.args.model.workflow?.milestones?.length) {
       return null;
     }
 
@@ -41,25 +41,12 @@ export default class ThreadModalComponent extends Component {
       return 'Workflow started';
     }
 
-    return this.args.workflow.milestones[this.progress - 1].statusOnCompletion;
-  }
-
-  get workflowParticipants() {
-    return this.args.workflow?.participants || [this.args.user];
-  }
-
-  get orgParticipants() {
-    return [
-      {
-        title: "Cardbot",
-        imgURL: "/assets/images/icons/cardbot-lg.svg"
-      }
-    ]
+    return this.args.model.workflow.milestones[this.progress - 1].statusOnCompletion;
   }
 
   @action
   updateProgress() {
-    if (this.progress === this.args.workflow.milestones.length) {
+    if (this.progress === this.args.model.workflow.milestones.length) {
       return;
     }
     this.progress++;

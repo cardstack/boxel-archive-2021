@@ -56,64 +56,20 @@
       </Boxel::Thread::ProgressBox>
     {{/if}}
 
-      {{!-- <s.card as |c|>
-        <c.section class="cardflow__sidebar-section" @title="Workflow Progress">
-          <div class="cardflow__progress">
-            <Boxel::ProgressCircle
-              @size={{120}}
-              @percentComplete={{this.milestone.pct}}
-            />
-            <div class="cardflow__progress-status">{{this.milestone.description}}</div>
-          </div>
-        </c.section>
-
-        <c.section class="cardflow__sidebar-section" @title={{@model.workflow.title}}>
-          <ul class="cardflow__checklist">
-            {{#each @model.workflow.milestones as |milestone i|}}
-              <li class="cardflow__checklist-item {{if (gt this.milestoneId (add i 1)) "completed"}} {{if (eq this.milestoneId (add i 1)) "current"}}">
-                {{svg-jar (if (gt this.milestoneId (add i 1)) "check-mark" "checklist-circle") width="16px" height="16px"}}
-                {{milestone.title}} --}}
-                {{!-- <br><span class="cardflow__checklist-time">12h ago</span> --}}
-              {{!-- </li>
-            {{/each}}
-          </ul>
-        </c.section>
-      </s.card> --}}
-
-    {{!-- Participants Box --}}
-    <CardPlatter @class="cardflow-platter">
-      <section class="cardflow__sidebar-section cardflow__sidebar-section--participants">
-        <h3 class="cardflow__sidebar-title">Participants</h3>
-        {{#if this.otherParticipants}}
-          <ul class="cardflow__participants">
-            {{#each this.otherParticipants as |participant|}}
-              <li class="cardflow__participant">
-                <div class="cardflow__participant-img" style={{css-url "background-image" participant.imgURL}} />
-                <div class="cardflow__participant-title">
-                  {{participant.title}}
-                  <div class="cardflow__participant-role">{{participant.role}}</div>
-                </div>
-              </li>
-            {{/each}}
-          </ul>
-        {{/if}}
-        <ul class="cardflow__participants">
-          <li class="cardflow__participant cardflow__participant-org">
-            <div class="cardflow__participant-org-img" style={{css-url "background-image" this.org.imgURL}} />
-            <div class="cardflow__participant-org-title">{{this.org.title}}</div>
-          </li>
-          {{#each this.participatingOrgMembers as |participant|}}
-            <li class="cardflow__participant">
-              <div class="cardflow__participant-img" style={{css-url "background-image" participant.imgURL}} />
-              <div class="cardflow__participant-title">
-                {{participant.title}}
-                <div class="cardflow__participant-role">{{participant.role}}</div>
-              </div>
-            </li>
-          {{/each}}
-        </ul>
-      </section>
-    </CardPlatter>
+    <Boxel::Thread::ParticipantsBox
+    as |participantsBox|>
+      {{#if this.otherParticipants}}
+        <participantsBox.participants
+          @participants={{this.otherParticipants}}
+        />
+      {{/if}}
+      {{#if this.participatingOrgMembers}}
+        <participantsBox.participants
+          class="cardflow__org-members"
+          @participants={{this.participatingOrgMembers}}
+        />
+      {{/if}}
+    </Boxel::Thread::ParticipantsBox>
   </t.sidebar>
 
 </Boxel::Thread>

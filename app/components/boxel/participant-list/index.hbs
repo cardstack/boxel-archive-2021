@@ -1,0 +1,11 @@
+<ul class="participant-list" ...attributes>
+  {{#each @participants as |participant|}}
+    <li>
+      <Boxel::Participant
+        @title={{participant.title}}
+        @description={{participant.role}}
+        @image={{participant.imgURL}}
+      />
+    </li>
+  {{/each}}
+</ul>

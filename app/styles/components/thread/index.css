@@ -142,6 +142,7 @@
 .workflow-sidebar-card {
   width: 230px;
   min-height: 100px;
+  padding-bottom: 15px;
   background-color: var(--boxel-light);
   border-radius: var(--boxel-border-radius);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
@@ -181,7 +182,6 @@
   --icon-fill-color: var(--boxel-light-600);
 
   margin: 0;
-  padding-bottom: var(--boxel-spacing);
   color: var(--boxel-purple-400);
   font: var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
@@ -224,4 +224,94 @@
   padding: 3px;
   background-color: var(--boxel-highlight);
   border-radius: 100px;
+}
+
+
+/* Participant List */
+.participant-list {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.participant-list > li + li {
+  margin-top: 15px;
+}
+
+
+/* Participants Box */
+.participants-box__participants {
+  padding: 15px 0 10px;
+}
+
+.participants-box__participants > ul + ul {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--boxel-light-400);
+}
+
+.participants-box__participants > * {
+  padding-right: var(--boxel-spacing);
+  padding-left: var(--boxel-spacing);
+}
+
+.participant-list__add-button {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 0 12px;
+  align-items: center;
+  height: 40px;
+  background: none;
+  border: none;
+  margin-left: var(--boxel-spacing);
+  padding: 0;
+  font: var(--boxel-font-xs);
+  color: var(--boxel-purple-400);
+  letter-spacing: var(--boxel-lsp-lg);
+}
+
+.participant-list__add-button-icon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--boxel-light-400);
+  border-radius: 100px;
+}
+
+.participant-list__add-button-icon > svg {
+  height: 100%;
+}
+
+
+/* Participant Component */
+.participant {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 0 12px;
+  align-items: center;
+  font: var(--boxel-font-xs);
+  letter-spacing: var(--boxel-lsp-lg);
+}
+
+.participant--icon-only {
+  display: inline-block;
+}
+
+.participant__image {
+  justify-self: center;
+  width: 30px;
+  height: 30px;
+  background-image: url('/media-registry/placeholders/profile.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100px;
+}
+
+.participant__title {
+  font-weight: 600;
+}
+
+.participant__description {
+  color: var(--boxel-purple-400);
+  font-weight: 400;
 }
