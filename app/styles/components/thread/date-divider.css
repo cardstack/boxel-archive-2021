@@ -1,4 +1,4 @@
-.workflow-divider {
+.date-divider {
   display: grid;
   align-items: center;
   justify-items: center;
@@ -6,7 +6,7 @@
   margin-bottom: var(--boxel-spacing);
 }
 
-.workflow-divider__hr {
+.date-divider__hr {
   grid-row: 1;
   grid-column: 1;
   width: 100%;
@@ -14,7 +14,7 @@
   border-top: 1px solid var(--boxel-light-600);
 }
 
-.workflow-divider__date {
+.date-divider__date {
   grid-row: 1;
   grid-column: 1;
   padding: 0 10px;

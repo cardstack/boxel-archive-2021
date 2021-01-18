@@ -10,12 +10,10 @@
 
     <t.content>
       <section class="workflow-modal__thread">
-        <div class="workflow-divider">
-          <hr class="workflow-divider__hr">
-          <time class="workflow-divider__date">{{moment-format this.startTimestamp "MMMM D, YYYY"}}</time>
-        </div>
+        <Boxel::Thread::DateDivider @date={{this.startTimestamp}} />
+
         {{#each @model.workflow.milestones as |milestone i|}}
-          {{#if (lte i this.progress)}}
+          {{#if (and (lte i this.progress) milestone.message)}}
             <Boxel::Thread::Message
               @contents={{milestone.message}}
               @datetime={{milestone.datetime}}
