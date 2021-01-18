@@ -19,12 +19,12 @@
   <t.content>
     {{#each @model.posts as |post|}}
       <Boxel::Thread::Message
-        class={{if (eq post.participantType "bot") "cardflow__bot-message" ""}}
         @senderName={{post.sender.title}}
         @senderImage={{post.sender.imgURL}}
-        @senderDescription={{or post.sender.role post.participantType}}
+        @senderDescription={{capitalize (or post.sender.role post.participantType)}}
         @content={{post.content}}
         @datetime={{post.datetime}}
+        @isLogo={{eq post.participantType "bot"}}
       >
       </Boxel::Thread::Message>
     {{/each}}

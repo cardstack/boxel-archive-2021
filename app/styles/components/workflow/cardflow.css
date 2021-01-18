@@ -87,15 +87,6 @@
 /* Main Thread */
 /* 600px max-width for embedded cards */
 
-/* Thread Message */
-.cardflow__bot-message .workflow-message__icon {
-  border-radius: initial;
-}
-
-.cardflow__bot-message .workflow-message__description {
-  text-transform: capitalize;
-}
-
 
 /* Reply box */
 .cardflow__message {

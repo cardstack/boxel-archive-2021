@@ -1,4 +1,4 @@
-.workflow-message {
+.thread-message {
   display: grid;
   grid-template-columns: 40px 1fr;
   gap: var(--boxel-spacing);
@@ -7,22 +7,27 @@
   letter-spacing: var(--boxel-lsp);
 }
 
-.workflow-message__icon {
+.thread-message__icon {
   width: 40px;
   height: 40px;
   border-radius: 100px;
-  background-image: url('/assets/images/icons/cardbot-lg.svg');
+  background-image: url('/media-registry/placeholders/profile.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.workflow-message__name {
+.thread-message__logo .thread-message__icon {
+  border-radius: initial;
+  background-image: url('/assets/images/icons/cardbot-lg.svg');
+}
+
+.thread-message__name {
   display: inline-block;
   font-weight: 600;
 }
 
-.workflow-message__time {
+.thread-message__time {
   display: inline-block;
   color: var(--boxel-purple-400);
   font: var(--boxel-font-xs);
@@ -30,27 +35,27 @@
   letter-spacing: var(--boxel-lsp-lg);
 }
 
-.workflow-message__name + .workflow-message__time {
+.thread-message__name + .thread-message__time {
   margin-left: 10px;
 }
 
-.workflow-message__description {
+.thread-message__description {
   color: var(--boxel-purple-400);
   font: var(--boxel-font-xs);
   letter-spacing: var(--boxel-lsp-lg);
 }
 
-.workflow-message__description + .workflow-message__content {
+.thread-message__description + .thread-message__content {
   margin-top: 10px;
 }
 
-.workflow-message__content {
+.thread-message__content {
   font-size: 0.9375rem; /* 15px */
   line-height: calc(23/15);
   letter-spacing: var(--boxel-lsp-sm);
 }
 
-.workflow-message__content > p {
+.thread-message__content > p {
   margin-top: 1px;
   margin-bottom: 30px;
 }

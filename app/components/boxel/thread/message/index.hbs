@@ -1,16 +1,16 @@
 <AnimatedContainer onInitialRender={{true}}>
   {{#animated-value @datetime initialInsertion=true use=this.transition}}
-    <div class="workflow-message" ...attributes>
-      <div class="workflow-message__icon" style={{css-url "background-image" @senderImage}} />
+    <div class="thread-message {{if @isLogo "thread-message__logo"}}" ...attributes>
+      <div class="thread-message__icon" style={{css-url "background-image" @senderImage}} />
       <div>
         {{#if @senderName}}
-          <div class="workflow-message__name">{{@senderName}}</div>
+          <div class="thread-message__name">{{@senderName}}</div>
         {{/if}}
-        <time class="workflow-message__time">{{moment-format @datetime "MMM D, h:m A"}}</time>
+        <time class="thread-message__time">{{moment-format (or @datetime (now)) "MMM D, h:mm A"}}</time>
         {{#if @senderDescription}}
-          <div class="workflow-message__description">{{@senderDescription}}</div>
+          <div class="thread-message__description">{{@senderDescription}}</div>
         {{/if}}
-        <AnimatedContainer onInitialRender={{true}} class="workflow-message__content">
+        <AnimatedContainer onInitialRender={{true}} class="thread-message__content">
           {{#if @contents}}
             {{#animated-each @contents initialInsertion=true use=this.transition as |content|}}
               <p>{{content}}</p>
