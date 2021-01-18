@@ -9,31 +9,29 @@
     </t.header>
 
     <t.content>
-      <section class="workflow-modal__thread">
-        <Boxel::Thread::DateDivider @date={{this.startTimestamp}} />
+      <Boxel::Thread::DateDivider @date={{this.startTimestamp}} />
 
-        {{#each @model.workflow.milestones as |milestone i|}}
-          {{#if (and (lte i this.progress) milestone.message)}}
-            <Boxel::Thread::Message
-              @contents={{milestone.message}}
-              @datetime={{milestone.datetime}}
-              @hasLogo={{true}}
-            />
+      {{#each @model.workflow.milestones as |milestone i|}}
+        {{#if (and (lte i this.progress) milestone.message)}}
+          <Boxel::Thread::Message
+            @contents={{milestone.message}}
+            @datetime={{milestone.datetime}}
+            @hasLogo={{true}}
+          />
 
-            {{!-- {{#if milestone.actionCard}}
-              <AnimatedContainer onInitialRender={{true}}>
-                {{#animated-value this initialInsertion=true use=this.revealCard duration=(or milestone.delayMs "200")}}
-                  {{component milestone.actionCard}}
-                {{/animated-value}}
-              </AnimatedContainer>
-            {{/if}} --}}
-          {{/if}}
-
-          {{!-- {{#if (gt this.progress i)}}
-            <div>Milestone Reached</div>
+          {{!-- {{#if milestone.actionCard}}
+            <AnimatedContainer onInitialRender={{true}}>
+              {{#animated-value this initialInsertion=true use=this.revealCard duration=(or milestone.delayMs "200")}}
+                {{component milestone.actionCard}}
+              {{/animated-value}}
+            </AnimatedContainer>
           {{/if}} --}}
-        {{/each}}
-      </section>
+        {{/if}}
+
+        {{!-- {{#if (gt this.progress i)}}
+          <div>Milestone Reached</div>
+        {{/if}} --}}
+      {{/each}}
     </t.content>
 
     <t.sidebar>
