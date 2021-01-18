@@ -3,11 +3,11 @@
     {{yield (hash
       progressCircle=(component 'boxel/progress-circle')
     )}}
-    <div class="progress-pie__status">
+    <div class="progress-box__status">
       {{@status}}
     </div>
   </c.section>
-  <c.section @title={{@milestonesTitle}}>
+  <c.section @title={{or @milestonesTitle "Milestones"}}>
     {{yield (hash
       milestones=(component 'boxel/milestones')
     )}}

@@ -1,0 +1,26 @@
+<FreestyleAnnotation @slug="progress-box">
+  <ul>
+    <li><code>@progressCircleTitle</code> (string) — Title of the workflow.</li>
+    <li><code>@milestonesTitle</code> (string) — Title of the milestones section. Defaults to "Milestones".</li>
+    <li><code>@status</code> (string) — Description under the ProgressCircle.</li>
+  </ul>
+  <p>
+    Combines <code>Milestones</code> and <code>ProgressCircle</code> components together in a sidebar card format.
+  </p>
+</FreestyleAnnotation>
+
+<FreestyleUsage @slug="progress-box">
+  <Boxel::Thread::ProgressBox
+    @progressCircleTitle="Customer Support"
+    @status="Products reserved"
+  as |progressBox|>
+    <progressBox.progressCircle
+      @size={{120}}
+      @percentComplete={{50}}
+    />
+    <progressBox.milestones
+      @milestones={{this.sampleMilestones}}
+      @completedCount={{2}}
+    />
+  </Boxel::Thread::ProgressBox>
+</FreestyleUsage>
