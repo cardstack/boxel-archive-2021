@@ -1,0 +1,9 @@
+.participant-list {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.participant-list > li + li {
+  margin-top: 15px;
+}

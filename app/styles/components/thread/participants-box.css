@@ -1,0 +1,40 @@
+.participants-box__participants {
+  padding: 15px 0 10px;
+}
+
+.participants-box__participants > ul + ul {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--boxel-light-400);
+}
+
+.participants-box__participants > * {
+  padding-right: var(--boxel-spacing);
+  padding-left: var(--boxel-spacing);
+}
+
+.participant-list__add-button {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 0 12px;
+  align-items: center;
+  height: 40px;
+  background: none;
+  border: none;
+  margin-left: var(--boxel-spacing);
+  padding: 0;
+  font: var(--boxel-font-xs);
+  color: var(--boxel-purple-400);
+  letter-spacing: var(--boxel-lsp-lg);
+}
+
+.participant-list__add-button-icon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--boxel-light-400);
+  border-radius: 100px;
+}
+
+.participant-list__add-button-icon > svg {
+  height: 100%;
+}

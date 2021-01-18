@@ -31,9 +31,19 @@
 @import '/assets/components/select-btn.css';
 @import '/assets/components/sidebar-related-card.css';
 @import '/assets/components/version-history.css';
+@import '/assets/components/participant.css';
+@import '/assets/components/participant-list.css';
+@import '/assets/components/milestones.css';
+
 @import '/assets/components/thread/modal.css';
 @import '/assets/components/thread/index.css';
 @import '/assets/components/thread/header.css';
+@import '/assets/components/thread/message.css';
+@import '/assets/components/thread/date-divider.css';
+@import '/assets/components/thread/sidebar-card/index.css';
+@import '/assets/components/thread/sidebar-card/section.css';
+@import '/assets/components/thread/participants-box.css';
+@import '/assets/components/thread/progress-box.css';
 @import '/assets/components/workflow/cardflow.css';
 @import '/assets/components/workflow/tasklist.css';
 @import '/assets/components/workflow/tasklist-table.css';

@@ -1,0 +1,8 @@
+.progress-pie__status {
+  padding-top: 15px;
+  color: var(--boxel-dark);
+  font: var(--boxel-font-sm);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp);
+  text-align: center;
+}
