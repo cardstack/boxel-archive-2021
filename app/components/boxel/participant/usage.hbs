@@ -1,0 +1,54 @@
+<FreestyleAnnotation @slug="participant">
+  <ul>
+    <li><code>@title</code> (string)</li>
+    <li><code>@description</code> (string)</li>
+    <li><code>@image</code> (url string) — Defaults to generic profile icon.</li>
+  </ul>
+</FreestyleAnnotation>
+
+<FreestyleUsage @slug="participant">
+  {{!--
+  const sampleParticipant = {
+    "title": "Haley O’Connell",
+    "imgURL": "/workflow/participants/thumb/Haley-OConnell.jpg",
+    "role": "Writer"
+  };
+  --}}
+
+  <Boxel::Participant
+    @title={{this.sampleParticipant.title}}
+    @description={{this.sampleParticipant.role}}
+    @image={{this.sampleParticipant.imgURL}}
+  />
+</FreestyleUsage>
+
+<FreestyleUsage @slug="participant-icon-only">
+  <Boxel::Participant />
+</FreestyleUsage>
+
+<FreestyleUsage @slug="participant-no-image">
+  {{!--
+  const sampleParticipant2 = {
+    "title": "Carl Stack",
+    "role": "Accountant"
+  }
+  --}}
+
+  <Boxel::Participant
+    @title={{this.sampleParticipant2.title}}
+    @description={{this.sampleParticipant2.role}}
+  />
+</FreestyleUsage>
+
+<FreestyleUsage @slug="participant-no-description">
+  <Boxel::Participant
+    @title={{this.sampleParticipant.title}}
+    @image={{this.sampleParticipant.imgURL}}
+  />
+</FreestyleUsage>
+
+<FreestyleUsage @slug="participant-img-only">
+  <Boxel::Participant
+    @image={{this.sampleParticipant.imgURL}}
+  />
+</FreestyleUsage>

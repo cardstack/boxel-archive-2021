@@ -1,0 +1,37 @@
+<FreestyleAnnotation @slug="participant-list">
+  <ul>
+    <li><code>@participants</code> (array of <code>Participant</code>s)</li>
+  </ul>
+  <p>
+    A <code>Participant</code> object can have <code>title</code>, <code>role</code>, and <code>imgURL</code> fields.
+  </p>
+</FreestyleAnnotation>
+
+<FreestyleUsage @slug="participant-list">
+  <Boxel::ParticipantList
+    @participants={{this.sampleParticipants}}
+  />
+
+  {{!--
+  const sampleParticipants = [
+    {
+      "title": "Gary Walker",
+      "imgURL": "/workflow/participants/thumb/Gary-Walker.jpg"
+    },
+    {
+      "title": "Haley O’Connell",
+      "imgURL": "/workflow/participants/thumb/Haley-OConnell.jpg",
+      "role": "Writer"
+    },
+    {
+      "title": "Rupert Grisham",
+      "imgURL": "/workflow/participants/thumb/Rupert-Grisham.jpg",
+      "role": "CEO"
+    },
+    {
+      "title": "Lola Sampson",
+      "imgURL": "/workflow/participants/thumb/Lola-Sampson.jpg"
+    }
+  ];
+  --}}
+</FreestyleUsage>

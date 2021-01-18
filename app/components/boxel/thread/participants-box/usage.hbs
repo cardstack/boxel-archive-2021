@@ -1,0 +1,50 @@
+<FreestyleAnnotation @slug="progress-box">
+  <ul>
+    <li><code>@addAction</code> (boolean) — Defaults to <code>false</code>. <code>true</code> if an action is provided.</li>
+    <li><code>@groupClass</code> (string) — CSS class name for a group of participants.</li>
+  </ul>
+  <p>
+    Uses <code>Boxel::ParticipantList</code> component.
+  </p>
+</FreestyleAnnotation>
+
+<FreestyleUsage @slug="progress-box">
+  <Boxel::Thread::ParticipantsBox
+    @addAction={{true}}
+  as |participantsBox|>
+    <participantsBox.participants
+      @participants={{this.sampleParticipantGroup}}
+    />
+  </Boxel::Thread::ParticipantsBox>
+</FreestyleUsage>
+
+<FreestyleAnnotation @slug="progress-box-multi">
+  <p>Displaying multiple participant groups:</p>
+</FreestyleAnnotation>
+
+<FreestyleUsage @slug="progress-box-multi">
+  <Boxel::Thread::ParticipantsBox
+    @addAction={{true}}
+  as |participantsBox|>
+    <participantsBox.participants
+      @participants={{this.sampleParticipantGroup}}
+    />
+    <participantsBox.participants
+      @participants={{this.sampleParticipantGroup2}}
+    />
+  </Boxel::Thread::ParticipantsBox>
+</FreestyleUsage>
+
+<FreestyleAnnotation @slug="progress-box-multi">
+  <p>Without <code>@addAction</code>:</p>
+</FreestyleAnnotation>
+
+<FreestyleUsage @slug="progress-box-group-2">
+  <Boxel::Thread::ParticipantsBox
+  as |participantsBox|>
+    <participantsBox.participants
+      @participants={{this.sampleParticipantGroup2}}
+    />
+  </Boxel::Thread::ParticipantsBox>
+</FreestyleUsage>
+
