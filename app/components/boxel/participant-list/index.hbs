@@ -5,6 +5,7 @@
         @title={{participant.title}}
         @description={{participant.role}}
         @image={{participant.imgURL}}
+        @hasLogo={{eq participant.type "organization"}}
       />
     </li>
   {{/each}}

@@ -17,7 +17,7 @@
   background-size: cover;
 }
 
-.thread-message__logo .thread-message__icon {
+.thread-message__has-logo .thread-message__icon {
   border-radius: initial;
   background-image: url('/assets/images/icons/cardbot-lg.svg');
 }

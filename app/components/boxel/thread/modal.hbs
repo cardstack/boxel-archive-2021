@@ -17,7 +17,7 @@
             <Boxel::Thread::Message
               @contents={{milestone.message}}
               @datetime={{milestone.datetime}}
-              @isLogo={{true}}
+              @hasLogo={{true}}
             />
 
             {{!-- {{#if milestone.actionCard}}
@@ -38,8 +38,7 @@
 
     <t.sidebar>
       <Boxel::Thread::ProgressBox
-        @progressCircleTitle={{html-safe (concat "Workflow:<br>" @model.workflow.title)}}
-        @milestonesTitle="Milestones"
+        @title={{@model.workflow.title}}
         @status={{this.progressStatus}}
       as |progressBox|>
         <progressBox.progressCircle

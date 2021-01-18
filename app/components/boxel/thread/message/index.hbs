@@ -1,6 +1,6 @@
 <AnimatedContainer onInitialRender={{true}}>
   {{#animated-value @datetime initialInsertion=true use=this.transition}}
-    <div class="thread-message {{if @isLogo "thread-message__logo"}}" ...attributes>
+    <div class="thread-message {{if @hasLogo "thread-message__has-logo"}}" ...attributes>
       <div class="thread-message__icon" style={{css-url "background-image" @senderImage}} />
       <div>
         {{#if @senderName}}

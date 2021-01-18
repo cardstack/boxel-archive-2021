@@ -1,5 +1,5 @@
 <Boxel::Thread::SidebarCard ...attributes as |c|>
-  <c.section @title={{@progressCircleTitle}}>
+  <c.section @title={{or (html-safe (concat "Workflow:<br>" @title)) "Workflow Progress"}}>
     {{yield (hash
       progressCircle=(component 'boxel/progress-circle')
     )}}
@@ -7,7 +7,7 @@
       {{@status}}
     </div>
   </c.section>
-  <c.section @title={{or @milestonesTitle "Milestones"}}>
+  <c.section @title="Milestones">
     {{yield (hash
       milestones=(component 'boxel/milestones')
     )}}

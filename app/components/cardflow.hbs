@@ -21,10 +21,10 @@
       <Boxel::Thread::Message
         @senderName={{post.sender.title}}
         @senderImage={{post.sender.imgURL}}
-        @senderDescription={{capitalize (or post.sender.role post.participantType)}}
+        @senderDescription={{or post.sender.role (capitalize post.participantType)}}
         @content={{post.content}}
         @datetime={{post.datetime}}
-        @isLogo={{eq post.participantType "bot"}}
+        @hasLogo={{eq post.participantType "bot"}}
       >
       </Boxel::Thread::Message>
     {{/each}}
@@ -41,8 +41,7 @@
   <t.sidebar>
     {{#if @model.workflow}}
       <Boxel::Thread::ProgressBox
-        @progressCircleTitle="Workflow Progress"
-        @milestonesTitle={{@model.workflow.title}}
+        @title={{@model.workflow.title}}
         @status={{this.milestone.description}}
       as |progressBox|>
         <progressBox.progressCircle
@@ -65,7 +64,6 @@
       {{/if}}
       {{#if this.participatingOrgMembers}}
         <participantsBox.participants
-          class="cardflow__org-members"
           @participants={{this.participatingOrgMembers}}
         />
       {{/if}}

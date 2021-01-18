@@ -7,6 +7,18 @@
 }
 
 
+/* Header */
+.cardflow__header {
+  border-top-left-radius: 0;
+}
+
+.cardflow__header h2 {
+  margin-left: 0;
+  margin-bottom: 0;
+  font-size: 1.25rem; /* 20px */
+}
+
+
 /* Tasklist overlay */
 .cardflow__taskbar-overlay {
   position: absolute;
@@ -31,18 +43,6 @@
   border-top-right-radius: var(--boxel-border-radius);
   border-top-left-radius: var(--boxel-border-radius);
   overflow: auto;
-}
-
-
-/* Header */
-.cardflow__header {
-  border-top-left-radius: 0;
-}
-
-.cardflow__header h2 {
-  margin-left: 0;
-  margin-bottom: 0;
-  font-size: 1.25rem; /* 20px */
 }
 
 
@@ -82,10 +82,6 @@
   background-color: var(--cardflow-assigned-tasks);
   color: var(--boxel-light);
 }
-
-
-/* Main Thread */
-/* 600px max-width for embedded cards */
 
 
 /* Reply box */
@@ -141,21 +137,4 @@
 
 .cardflow__reply-to.field-renderer__input:focus {
   outline: 0;
-}
-
-
-/* Right Sidebar */
-.cardflow__sidebar-section + .cardflow__sidebar-section {
-  border-top: 1px solid #D6D6D6;
-}
-
-
-/* Participants Box */
-.cardflow__org-members > li:first-of-type .participant__image {
-  border-radius: initial;
-}
-
-.cardflow__org-members > li:first-of-type .participant__title {
-  font: var(--boxel-font-sm);
-  font-weight: 600;
 }

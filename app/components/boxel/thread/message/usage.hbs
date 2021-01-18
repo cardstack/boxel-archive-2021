@@ -1,11 +1,11 @@
 <FreestyleAnnotation @slug="thread-message">
   <ul>
     <li><code>@senderName</code> (string)</li>
-    <li><code>@senderImage</code> (string) — Defaults to profile placeholder icon. If <code>@isLogo</code> is true, defaults to Cardbot icon.</li>
+    <li><code>@senderImage</code> (string) — Defaults to profile placeholder icon. If <code>@hasLogo</code> is true, defaults to Cardbot icon.</li>
     <li><code>@senderDescription</code> (string)</li>
     <li><code>@contents</code> (string array)</li>
     <li><code>@content</code> (string)</li>
-    <li><code>@isLogo</code> (boolean) — Logo has different styling.</li>
+    <li><code>@hasLogo</code> (boolean) — Logo has different styling.</li>
     <li><code>@datetime</code> (datetime) — Message timestamp. Defaults to <code>now</code>.</li>
   </ul>
   {{!-- TODOs / Improvements: Use user initials instead of placeholder icon. --}}
@@ -21,7 +21,7 @@
       "Let’s issue a Prepaid Card."
       "First, you can choose the look and feel of your card, so that your customers and other users recognize that this Prepaid Card came from you."
     }}
-    @isLogo={{true}}
+    @hasLogo={{true}}
     @datetime="2020-03-07T10:11"
   />
 </FreestyleUsage>
@@ -36,7 +36,7 @@
     @senderDescription="Bot"
     @senderImage="/workflow/orgs/hsh-icon.png"
     @content="You have placed an order for an item that requires a manual inventory check. Your credit card has not been charged. If the products are in stock, we will reserve them for you and proceed to the payment process. You will receive status updates via email and in this thread."
-    @isLogo={{true}}
+    @hasLogo={{true}}
   />
 </FreestyleUsage>
 
