@@ -18,19 +18,7 @@
             @datetime={{milestone.datetime}}
             @hasLogo={{true}}
           />
-
-          {{!-- {{#if milestone.actionCard}}
-            <AnimatedContainer onInitialRender={{true}}>
-              {{#animated-value this initialInsertion=true use=this.revealCard duration=(or milestone.delayMs "200")}}
-                {{component milestone.actionCard}}
-              {{/animated-value}}
-            </AnimatedContainer>
-          {{/if}} --}}
         {{/if}}
-
-        {{!-- {{#if (gt this.progress i)}}
-          <div>Milestone Reached</div>
-        {{/if}} --}}
       {{/each}}
     </t.content>
 

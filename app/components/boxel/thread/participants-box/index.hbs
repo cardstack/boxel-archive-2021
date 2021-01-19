@@ -1,5 +1,5 @@
 <Boxel::Thread::SidebarCard ...attributes as |c|>
-  <c.section class="participants-box__participants {{@groupClass}}" @title="Participants">
+  <c.section class="participants-box__participants" @title="Participants">
     {{yield (hash
       participants=(component "boxel/participant-list")
     )}}
