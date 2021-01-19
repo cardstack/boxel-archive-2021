@@ -43,16 +43,10 @@
       <Boxel::Thread::ProgressBox
         @title={{@model.workflow.title}}
         @status={{this.milestone.description}}
-      as |progressBox|>
-        <progressBox.progressCircle
-          @size={{120}}
-          @percentComplete={{this.milestone.pct}}
-        />
-        <progressBox.milestones
-          @milestones={{@model.workflow.milestones}}
-          @completedCount={{this.milestoneId}}
-        />
-      </Boxel::Thread::ProgressBox>
+        @percentComplete={{this.milestone.pct}}
+        @milestones={{@model.workflow.milestones}}
+        @completedCount={{this.milestoneId}}
+      />
     {{/if}}
 
     <Boxel::Thread::ParticipantsBox
