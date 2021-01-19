@@ -32,6 +32,7 @@ module.exports = function(defaults) {
     staticAddonTrees: true,
     // staticHelpers: true,
     // staticComponents: true,
+    staticAppPaths: ['data'],
     packagerOptions: {
       webpackConfig: {
         module: {
