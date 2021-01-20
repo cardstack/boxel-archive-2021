@@ -2,6 +2,11 @@ import Component from '@glimmer/component';
 
 const sampleParticipants = [
   {
+    "type": "organization",
+    "title": "Home Sweet Home",
+    "imgURL": "/workflow/orgs/hsh-icon.png"
+  },
+  {
     "title": "Gary Walker",
     "imgURL": "/workflow/participants/thumb/Gary-Walker.jpg"
   },

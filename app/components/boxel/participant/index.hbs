@@ -1,4 +1,8 @@
-<div class="participant {{if @hasLogo "participant__has-logo"}} {{unless @title "participant--icon-only"}}" ...attributes>
+<div class={{cn
+  "participant"
+  (if @hasLogo "participant__has-logo")
+  (unless @title "participant--icon-only")
+}} ...attributes>
   <div class="participant__image" style={{css-url "background-image" @image}} />
   {{#if @title}}
     <div class="participant__title">
