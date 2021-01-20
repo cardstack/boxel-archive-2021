@@ -1,10 +1,11 @@
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
+import { reads } from 'macro-decorators';
 
 const FONT_SIZE_RATIO = 25/120;
 
 export default class extends Component {
-  @tracked size = this.args.size ? this.args.size : 120;
+  @reads('args.size', 120) size;
+
   get fontSize() {
     return this.size * FONT_SIZE_RATIO;
   }
