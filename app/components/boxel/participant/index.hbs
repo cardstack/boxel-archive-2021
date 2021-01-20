@@ -1,15 +1,17 @@
-<div class={{cn
-  "participant"
-  (if @hasLogo "participant__has-logo")
-  (unless @title "participant--icon-only")
-}} ...attributes>
-  <div class="participant__image" style={{css-url "background-image" @image}} />
-  {{#if @title}}
-    <div class="participant__title">
-      {{@title}}
-      <div class="participant__description">
-        {{@description}}
+{{#let (or @iconOnly (not @title)) as |iconOnly|}}
+  <div class={{cn
+    "participant"
+    participant__icon-only=iconOnly
+    participant__has-logo=@hasLogo
+  }} ...attributes>
+    <div class="participant__image" style={{css-url "background-image" @image}} />
+    {{#unless iconOnly}}
+      <div class="participant__title">
+        {{@title}}
+        <div class="participant__description">
+          {{@description}}
+        </div>
       </div>
-    </div>
-  {{/if}}
-</div>
+    {{/unless}}
+  </div>
+{{/let}}

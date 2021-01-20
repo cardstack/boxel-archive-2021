@@ -7,7 +7,7 @@
   letter-spacing: var(--boxel-lsp-lg);
 }
 
-.participant--icon-only {
+.participant__icon-only {
   display: inline-block;
 }
 

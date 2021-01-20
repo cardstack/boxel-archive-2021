@@ -3,7 +3,7 @@
     <li><code>@participants</code> (array of <code>Participant</code>s)</li>
   </ul>
   <p>
-    A <code>Participant</code> object can have <code>title</code>, <code>role</code>, and <code>imgURL</code> fields.
+    A <code>Participant</code> object may have <code>title</code>, <code>role</code>, <code>imgURL</code>, and <code>type</code> fields.
   </p>
 </FreestyleAnnotation>
 
@@ -14,6 +14,11 @@
 
   {{!--
   const sampleParticipants = [
+    {
+      "type": "organization",
+      "title": "Home Sweet Home",
+      "imgURL": "/workflow/orgs/hsh-icon.png"
+    },
     {
       "title": "Gary Walker",
       "imgURL": "/workflow/participants/thumb/Gary-Walker.jpg"
@@ -31,11 +36,6 @@
     {
       "title": "Lola Sampson",
       "imgURL": "/workflow/participants/thumb/Lola-Sampson.jpg"
-    },
-    {
-      "type": "organization",
-      "title": "Home Sweet Home",
-      "imgURL": "/workflow/orgs/hsh-icon.png"
     }
   ];
   --}}

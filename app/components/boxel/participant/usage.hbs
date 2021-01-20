@@ -3,53 +3,80 @@
     <li><code>@title</code> (string)</li>
     <li><code>@description</code> (string)</li>
     <li><code>@image</code> (url string) — Defaults to generic profile icon.</li>
-    <li><code>@hasLogo</code> (boolean) — True if <code>type</code> of Participant object is set to "organization". Defaults to false.</li>
+    <li><code>@iconOnly</code> (boolean) — If true, displays the icon only. Defaults to false.</li>
+    <li><code>@hasLogo</code> (boolean) — If true, alternative styling is applied. Defaults to false.</li>
   </ul>
 </FreestyleAnnotation>
 
 <FreestyleUsage @slug="participant">
-  {{!--
-  const sampleParticipant = {
-    "title": "Haley O’Connell",
-    "imgURL": "/workflow/participants/thumb/Haley-OConnell.jpg",
-    "role": "Writer"
-  };
-  --}}
-
   <Boxel::Participant
-    @title={{this.sampleParticipant.title}}
-    @description={{this.sampleParticipant.role}}
-    @image={{this.sampleParticipant.imgURL}}
+    @title="Haley O’Connell"
+    @description="Writer"
+    @image="/workflow/participants/thumb/Haley-OConnell.jpg"
   />
 </FreestyleUsage>
 
-<FreestyleUsage @slug="participant-icon-only">
+<FreestyleAnnotation @slug="participant-no-attr">
+  Placeholder usage without any attributes.
+</FreestyleAnnotation>
+
+<FreestyleUsage @slug="participant-no-attr">
   <Boxel::Participant />
 </FreestyleUsage>
 
-<FreestyleUsage @slug="participant-no-image">
-  {{!--
-  const sampleParticipant2 = {
-    "title": "Carl Stack",
-    "role": "Accountant"
-  }
-  --}}
+<FreestyleAnnotation @slug="participant-no-image">
+  Participant does not have an <code>@image</code>.
+</FreestyleAnnotation>
 
+<FreestyleUsage @slug="participant-no-image">
   <Boxel::Participant
-    @title={{this.sampleParticipant2.title}}
-    @description={{this.sampleParticipant2.role}}
+    @title="Carl Stack"
+    @description="Accountant"
   />
 </FreestyleUsage>
+
+<FreestyleAnnotation @slug="participant-no-description">
+  Usage without <code>@description</code> attribute.
+</FreestyleAnnotation>
 
 <FreestyleUsage @slug="participant-no-description">
   <Boxel::Participant
-    @title={{this.sampleParticipant.title}}
-    @image={{this.sampleParticipant.imgURL}}
+    @title="Haley O’Connell"
+    @image="/workflow/participants/thumb/Haley-OConnell.jpg"
   />
 </FreestyleUsage>
 
-<FreestyleUsage @slug="participant-img-only">
+<FreestyleAnnotation @slug="participant-icon-only">
+  Usage with <code>@iconOnly</code> attribute.
+</FreestyleAnnotation>
+
+<FreestyleUsage @slug="participant-icon-only">
   <Boxel::Participant
-    @image={{this.sampleParticipant.imgURL}}
+    @iconOnly={{true}}
+    @title="Haley O’Connell"
+    @description="Writer"
+    @image="/workflow/participants/thumb/Haley-OConnell.jpg"
   />
 </FreestyleUsage>
+
+<FreestyleAnnotation @slug="participant-has-logo">
+  Usage with <code>@hasLogo</code> attribute.
+</FreestyleAnnotation>
+
+<FreestyleUsage @slug="participant-has-logo">
+  <Boxel::Participant
+    @title="Haley's Love Couch"
+    @description="Home store"
+    @image="/workflow/orgs/hlc-icon.png"
+    @hasLogo={{true}}
+  />
+
+  <br>
+
+  <Boxel::Participant
+    @title="Home Sweet Home"
+    @image="/workflow/orgs/hsh-icon.png"
+    @hasLogo={{true}}
+  />
+</FreestyleUsage>
+
