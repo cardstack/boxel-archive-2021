@@ -2,7 +2,7 @@
   <c.section @title={{or (html-safe (concat "Workflow:<br>" @title)) "Workflow Progress"}}>
     <Boxel::ProgressCircle
       @size={{@size}}
-      @percentComplete={{@percentComplete}}
+      @percentComplete={{this.percentComplete}}
     />
     <div class="progress-box__status">
       {{@status}}
