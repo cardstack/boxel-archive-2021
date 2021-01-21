@@ -46,6 +46,12 @@
   margin-left: 15px;
 }
 
+@media only screen and (max-width: 1149px) {
+  .thread-header__expand-button {
+    display: none;
+  }
+}
+
 .thread-header__participants {
   display: grid;
   grid-template-columns: auto 1fr;
