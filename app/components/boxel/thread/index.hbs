@@ -1,8 +1,6 @@
 <section class="thread" ...attributes>
   <div class="thread__sticky-container">
-    {{yield (hash
-      header=(component 'boxel/thread/header')
-    )}}
+    {{yield to="header"}}
   </div>
 
   <section class="thread__content-wrapper">
@@ -13,17 +11,13 @@
         )}}
       </div>
       <section class="thread__content">
-        {{yield (hash
-          content=(component 'boxel/thread/content')
-        )}}
+        {{yield to="content"}}
       </section>
     </div>
 
     <div class="thread__scroll-wrapper">
       <aside class="thread__sidebar">
-        {{yield (hash
-          sidebar=(component 'boxel/thread/sidebar')
-        )}}
+        {{yield to="sidebar"}}
       </aside>
     </div>
   </section>
