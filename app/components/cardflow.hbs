@@ -42,9 +42,9 @@
     {{#if @model.workflow}}
       <Boxel::Thread::ProgressBox
         @title={{@model.workflow.title}}
-        @status={{this.milestone.description}}
+        @status={{this.progressStatus}}
         @milestones={{@model.workflow.milestones}}
-        @completedCount={{this.milestoneId}}
+        @completedCount={{this.progress}}
       />
     {{/if}}
 

@@ -23,15 +23,6 @@ export default class ThreadModalComponent extends Component {
     return this.args.model.workflow?.milestones[this.progress];
   }
 
-  get progressPct() {
-    if (!this.args.model.workflow?.milestones?.length) {
-      return null;
-    }
-
-    let totalMilestones = this.args.model.workflow.milestones.length;
-    return Math.trunc(this.progress / totalMilestones * 100);
-  }
-
   get progressStatus() {
     if (!this.args.model.workflow?.milestones?.length) {
       return null;
