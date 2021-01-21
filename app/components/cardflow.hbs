@@ -1,22 +1,24 @@
-<Boxel::Thread class="cardflow" as |t|>
-  <t.header
-    class="cardflow__header"
-    @title={{or this.thread.description this.thread.title}}
-    @label={{this.thread.project}}
-    @notifications={{if (eq this.thread.status "unread") (array "notif") null}}
-    @participants={{this.participants}}
-  >
-  </t.header>
+<Boxel::Thread class="cardflow">
+  <:header>
+    <Boxel::Thread::Header
+      class="cardflow__header"
+      @title={{or this.thread.description this.thread.title}}
+      @label={{this.thread.project}}
+      @notifications={{if (eq this.thread.status "unread") (array "notif") null}}
+      @participants={{this.participants}}
+    />
+  </:header>
 
-  <t.taskbar
-    @tasksRoute={{@tasksRoute}}
-    @activeTasks={{@activeTasks}}
-    @userTasks={{@userTasks}}
-    @assignedTasks={{@assignedTasks}}
-  >
-  </t.taskbar>
+  <:taskbar>
+    <Boxel::Thread::Taskbar
+      @tasksRoute={{@tasksRoute}}
+      @activeTasks={{@activeTasks}}
+      @userTasks={{@userTasks}}
+      @assignedTasks={{@assignedTasks}}
+    />
+  </:taskbar>
 
-  <t.content>
+  <:content>
     {{#each @model.posts as |post|}}
       <Boxel::Thread::Message
         @senderName={{post.sender.title}}
@@ -36,9 +38,9 @@
         <Input @class="cardflow__reply-to field-renderer__input" @placeholder="Post a message to this thread"></Input>
       </div>
     {{/if}}
-  </t.content>
+  </:content>
 
-  <t.sidebar>
+  <:sidebar>
     {{#if @model.workflow}}
       <Boxel::Thread::ProgressBox
         @title={{@model.workflow.title}}
@@ -61,6 +63,6 @@
         />
       {{/if}}
     </Boxel::Thread::ParticipantsBox>
-  </t.sidebar>
+  </:sidebar>
 
 </Boxel::Thread>
