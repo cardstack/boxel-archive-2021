@@ -9,6 +9,7 @@
 }
 
 .participants-box__participants > * {
+  width: 100%;
   padding-right: var(--boxel-spacing);
   padding-left: var(--boxel-spacing);
 }

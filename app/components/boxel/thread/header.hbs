@@ -19,11 +19,11 @@
     {{#if @participants}}
       <div class="thread-header__participants">
         <span>{{@participants.length}} {{svg-jar "users" width="15px" height="13px"}}</span>
-        <div class="thread-header__participant-icons">
-          {{#each @participants as |user|}}
-            <div class="thread-header__participant-img" style={{css-url "background-image" user.imgURL}} />
-          {{/each}}
-        </div>
+        <Boxel::ParticipantList
+          @participants={{@participants}}
+          @iconSize={{30}}
+          @fanned={{true}}
+        />
       </div>
     {{/if}}
   </div>

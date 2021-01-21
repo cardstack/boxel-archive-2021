@@ -28,4 +28,8 @@ const sampleParticipants = [
 
 export default class ParticipantListUsageComponent extends Component {
   sampleParticipants = sampleParticipants;
+  iconSize = 30;
+  maxCount = 5;
+  iconSizeFanned = 30;
+  maxCountFanned = 5;
 }

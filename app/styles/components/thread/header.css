@@ -56,29 +56,10 @@
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 0 30px;
+  gap: 0 15px;
   color: var(--boxel-dark);
   font-weight: 600;
   letter-spacing: var(--boxel-lsp-xl);
-}
-
-.thread-header__participant-icons {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 15px;
-  direction: rtl; /* hack to revert item order */
-}
-
-.thread-header__participant-img {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  border: 1px solid var(--boxel-light);
-  border-radius: 100px;
-  background-image: url('/media-registry/placeholders/profile.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .thread-header__notification {

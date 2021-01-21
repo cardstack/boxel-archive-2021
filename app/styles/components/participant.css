@@ -1,6 +1,8 @@
 .participant {
+  --icon-size: 30px;
+
   display: grid;
-  grid-template-columns: 30px 1fr;
+  grid-template-columns: var(--icon-size) 1fr;
   gap: 0 12px;
   align-items: center;
   font: var(--boxel-font-xs);
@@ -13,13 +15,14 @@
 
 .participant__image {
   justify-self: center;
-  width: 30px;
-  height: 30px;
+  width: var(--icon-size);
+  height: var(--icon-size);
   background-image: url('/media-registry/placeholders/profile.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 100px;
+  border: 1px solid var(--boxel-light);
 }
 
 .participant__has-logo .participant__image {

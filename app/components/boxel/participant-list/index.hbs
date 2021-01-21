@@ -1,12 +1,20 @@
-<ul class="participant-list" ...attributes>
-  {{#each @participants as |participant|}}
-    <li>
-      <Boxel::Participant
-        @title={{participant.title}}
-        @description={{participant.role}}
-        @image={{participant.imgURL}}
-        @hasLogo={{eq participant.type "organization"}}
-      />
-    </li>
+<ul
+  class={{cn "participant-list" participant-list__fanned=@fanned}}
+  style={{css-var icon-size=(concat this.iconSize "px")}}
+  ...attributes
+>
+  {{#each @participants as |participant i|}}
+    {{#if (lt i this.maxCount)}}
+      <li>
+        <Boxel::Participant
+          @title={{participant.title}}
+          @description={{participant.role}}
+          @image={{participant.imgURL}}
+          @hasLogo={{or @hasLogo (eq participant.type "organization")}}
+          @iconSize={{this.iconSize}}
+          @iconOnly={{or @iconOnly @fanned}}
+        />
+      </li>
+    {{/if}}
   {{/each}}
 </ul>

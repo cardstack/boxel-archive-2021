@@ -3,9 +3,22 @@
     <li><code>@title</code> (string)</li>
     <li><code>@description</code> (string)</li>
     <li><code>@image</code> (url string) — Defaults to generic profile icon.</li>
+    <li><code>@iconSize</code> (integer) — Height and width of the image. Default is 30px.</li>
     <li><code>@iconOnly</code> (boolean) — If true, displays the icon only. Defaults to false.</li>
     <li><code>@hasLogo</code> (boolean) — If true, alternative styling is applied. Defaults to false.</li>
   </ul>
+
+  <div>
+    @iconSize
+    <input
+      type="range"
+      min={{25}}
+      max={{80}}
+      step={{1}}
+      value={{this.iconSize}}
+      {{on 'input' (pick 'target.value' (fn (mut this.iconSize)))}}
+    /> ({{this.iconSize}}px)
+  </div>
 </FreestyleAnnotation>
 
 <FreestyleUsage @slug="participant">
@@ -13,6 +26,7 @@
     @title="Haley O’Connell"
     @description="Writer"
     @image="/workflow/participants/thumb/Haley-OConnell.jpg"
+    @iconSize={{this.iconSize}}
   />
 </FreestyleUsage>
 
