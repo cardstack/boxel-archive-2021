@@ -1,0 +1,25 @@
+<AnimatedContainer onInitialRender={{true}}>
+  {{#animated-value @datetime initialInsertion=true use=this.transition}}
+    <div class="thread-message {{if @hasLogo "thread-message__has-logo"}}" ...attributes>
+      <div class="thread-message__icon" style={{css-url "background-image" @senderImage}} />
+      <div>
+        {{#if @senderName}}
+          <div class="thread-message__name">{{@senderName}}</div>
+        {{/if}}
+        <time class="thread-message__time">{{moment-format (or @datetime (now)) "MMM D, h:mm A"}}</time>
+        {{#if @senderDescription}}
+          <div class="thread-message__description">{{@senderDescription}}</div>
+        {{/if}}
+        <AnimatedContainer onInitialRender={{true}} class="thread-message__content">
+          {{#if @contents}}
+            {{#animated-each @contents initialInsertion=true use=this.transition as |content|}}
+              <p>{{content}}</p>
+            {{/animated-each}}
+          {{else}}
+            {{@content}}
+          {{/if}}
+        </AnimatedContainer>
+      </div>
+    </div>
+  {{/animated-value}}
+</AnimatedContainer>

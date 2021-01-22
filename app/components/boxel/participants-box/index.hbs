@@ -1,0 +1,15 @@
+<Boxel::Thread::SidebarCard ...attributes as |c|>
+  <c.section class="participants-box__participants" @title="Participants">
+    {{yield (hash
+      participants=(component "boxel/participant-list")
+    )}}
+  </c.section>
+  {{#if @addAction}}
+    <button {{on "click" (optional @addAction)}} class="participant-list__add-button">
+      <span class="participant-list__add-button-icon">
+        {{svg-jar "plus" width="11px" height="11px"}}
+      </span>
+      <span>Add participant</span>
+    </button>
+  {{/if}}
+</Boxel::Thread::SidebarCard>
