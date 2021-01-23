@@ -10,13 +10,6 @@ export default {
     }
   ],
   "orgs": [],
-  "threads": [
-    {
-      "id": "1",
-      "workflowId": "prepaid-card-issuance",
-      "participants": ["gary-walker"]
-    }
-  ],
   "users": [
     {
       "id": "gary-walker",
@@ -76,6 +69,7 @@ export default {
           "id": "1",
           "title": "Customize Layout",
           "statusOnCompletion": "Layout customized",
+          "sender": Cardbot,
           "message": [
             "Hello, it’s nice to see you!",
             "Let’s issue a Prepaid Card.",
@@ -89,6 +83,7 @@ export default {
           "id": "2",
           "title": "Choose Face Value",
           "statusOnCompletion": "Face value chosen",
+          "sender": Cardbot,
           "message": [
             "Nice choice!",
             "On to the next step: When you choose the face value of your Prepaid Card, you may want to consider creating one card with a larger balance, as opposed to several cards with smaller balances (which would require a separate transaction, incl. fees, for each card). After you have created your card, you can split it up into multiple cards with smaller balances to transfer to your customers."
@@ -101,6 +96,7 @@ export default {
           "id": "3",
           "title": "Confirm Transaction",
           "statusOnCompletion": "Transaction confirmed",
+          "sender": Cardbot,
           "message": [
             "We are ready to submit your transaction to the xDai network via a relayer. The transaction fee for the relay will be added to your payment, but you do not need to acquire the gas token (xDai) in order to complete the transaction."
           ],
@@ -109,51 +105,6 @@ export default {
             "Congratulations, you have created a Prepaid Card! This Prepaid Card has been added to your Layer-2 Wallet."
           ],
           "datetimeOnCompletion": "2020-03-07T10:27"
-        }
-      ],
-      "messages": [
-        {
-          "id": "1",
-          "milestoneId": "1",
-          "datetime": "2020-03-07T10:11",
-          "content": [
-            "Hello, it’s nice to see you!",
-            "Let’s issue a Prepaid Card.",
-            "First, you can choose the look and feel of your card, so that your customers and other users recognize that this Prepaid Card came from you."
-          ]
-        },
-        {
-          "id": "2",
-          "milestoneId": "2",
-          "datetime": "2020-03-07T10:16",
-          "content": [
-            "Nice choice!",
-            "On to the next step: When you choose the face value of your Prepaid Card, you may want to consider creating one card with a larger balance, as opposed to several cards with smaller balances (which would require a separate transaction, incl. fees, for each card). After you have created your card, you can split it up into multiple cards with smaller balances to transfer to your customers."
-          ]
-        },
-        {
-          "id": "3",
-          "milestoneId": "3",
-          "datetime": "2020-03-07T10:22",
-          "content": [
-            "We are ready to submit your transaction to the xDai network via a relayer. The transaction fee for the relay will be added to your payment, but you do not need to acquire the gas token (xDai) in order to complete the transaction."
-          ]
-        },
-        {
-          "id": "4",
-          "milestoneId": "4",
-          "datetime": "2020-03-07T10:27",
-          "content": [
-            "Congratulations, you have created a Prepaid Card! This Prepaid Card has been added to your Layer-2 Wallet."
-          ]
-        },
-        {
-          "id": "5",
-          "milestoneId": "4",
-          "datetime": "2020-03-07T10:28",
-          "content": [
-            "You have earned an Issuer badge."
-          ]
         }
       ]
     },

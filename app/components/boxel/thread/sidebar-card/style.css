@@ -1,8 +1,0 @@
-.workflow-sidebar-card {
-  width: 230px;
-  min-height: 100px;
-  padding-bottom: 15px;
-  background-color: var(--boxel-light);
-  border-radius: var(--boxel-border-radius);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-}

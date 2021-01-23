@@ -1,5 +1,12 @@
-<Boxel::Thread::SidebarCard ...attributes as |c|>
-  <c.section @title={{or (html-safe (concat "Workflow:<br>" @title)) "Workflow Progress"}}>
+<section class="progress-box" ...attributes>
+  <section class="progress-box__section">
+    <h3 class="progress-box__section-title">
+      {{#if @title}}
+        {{html-safe (concat "Workflow:<br>" @title)}}
+      {{else}}
+        Workflow Progress
+      {{/if}}
+    </h3>
     <Boxel::ProgressCircle
       @size={{@size}}
       @percentComplete={{this.percentComplete}}
@@ -7,11 +14,14 @@
     <div class="progress-box__status">
       {{@status}}
     </div>
-  </c.section>
-  <c.section @title="Milestones">
+  </section>
+  <section class="progress-box__section">
+    <h3 class="progress-box__section-title">
+      Milestones
+    </h3>
     <Boxel::Milestones
       @milestones={{@milestones}}
       @completedCount={{@completedCount}}
     />
-  </c.section>
-</Boxel::Thread::SidebarCard>
+  </section>
+</section>

@@ -22,7 +22,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 100px;
-  border: 1px solid var(--boxel-light);
 }
 
 .participant__has-logo .participant__image {
@@ -35,11 +34,12 @@
 }
 
 .participant__has-logo .participant__title {
+  margin: 0;
   font: var(--boxel-font-sm);
   font-weight: 600;
 }
 
 .participant__description {
+  margin: 0;
   color: var(--boxel-purple-400);
-  font-weight: 400;
 }

@@ -16,6 +16,7 @@
           <Boxel::ThreadMessage
             @contents={{milestone.message}}
             @datetime={{milestone.datetime}}
+            @senderImage={{milestone.sender}}
             @hasLogo={{true}}
           />
         {{/if}}
@@ -30,15 +31,15 @@
         @completedCount={{this.progress}}
       />
 
-      <Boxel::ParticipantsBox
-        @addAction={{true}}
-      as |participantsBox|>
-        <participantsBox.participants
-          @participants={{@model.participants}}
-        />
-        <participantsBox.participants
-          @participants={{@model.orgRepresentatives}}
-        />
+      <Boxel::ParticipantsBox @addAction={{true}}>
+        <:list>
+          <Boxel::ParticipantList
+            @participants={{@model.participants}}
+          />
+          <Boxel::ParticipantList
+            @participants={{@model.orgRepresentatives}}
+          />
+        </:list>
       </Boxel::ParticipantsBox>
     </:sidebar>
   </Boxel::Thread>

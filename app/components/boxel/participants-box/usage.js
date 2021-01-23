@@ -1,26 +1,30 @@
 import Component from '@glimmer/component';
+import HaleyOConnellThumb from '../../../images/workflow/participants/thumb/Haley-OConnell.jpg';
+import JuliaMasonThumb from '../../../images/workflow/participants/thumb/Julia-Mason.jpg';
+import LolaSampsonThumb from '../../../images/workflow/participants/thumb/Lola-Sampson.jpg';
+import RupertGrishamThumb from '../../../images/workflow/participants/thumb/Rupert-Grisham.jpg';
 
 const sampleParticipantGroup2 = [
   {
     "title": "Haley O’Connell",
-    "imgURL": "/workflow/participants/thumb/Haley-OConnell.jpg",
+    "imgURL": HaleyOConnellThumb,
     "role": "Writer"
   },
   {
     "title": "Rupert Grisham",
-    "imgURL": "/workflow/participants/thumb/Rupert-Grisham.jpg",
+    "imgURL": RupertGrishamThumb,
     "role": "CEO"
   }
 ];
 
 const sampleParticipantGroup = [
   {
-    "title": "Gary Walker",
-    "imgURL": "/workflow/participants/thumb/Gary-Walker.jpg",
+    "title": "Julia Mason",
+    "imgURL": JuliaMasonThumb,
   },
   {
     "title": "Lola Sampson",
-    "imgURL": "/workflow/participants/thumb/Lola-Sampson.jpg"
+    "imgURL": LolaSampsonThumb
   }
 ];
 

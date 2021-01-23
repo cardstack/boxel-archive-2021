@@ -1,28 +1,32 @@
 import Component from '@glimmer/component';
+import HaleyOConnellThumb from '../../../images/workflow/participants/thumb/Haley-OConnell.jpg';
+import JuliaMasonThumb from '../../../images/workflow/participants/thumb/Julia-Mason.jpg';
+import LolaSampsonThumb from '../../../images/workflow/participants/thumb/Lola-Sampson.jpg';
+import RupertGrishamThumb from '../../../images/workflow/participants/thumb/Rupert-Grisham.jpg';
+import HSHIcon from '../../../images/workflow/orgs/hsh-icon.png';
 
 const sampleParticipants = [
   {
     "type": "organization",
     "title": "Home Sweet Home",
-    "imgURL": "/workflow/orgs/hsh-icon.png"
+    "imgURL": HSHIcon,
   },
   {
-    "title": "Gary Walker",
-    "imgURL": "/workflow/participants/thumb/Gary-Walker.jpg"
+    "title": "Lola Sampson",
+      "imgURL": LolaSampsonThumb,
   },
   {
     "title": "Haley O’Connell",
-    "imgURL": "/workflow/participants/thumb/Haley-OConnell.jpg",
+    "imgURL": HaleyOConnellThumb,
     "role": "Writer"
   },
   {
     "title": "Rupert Grisham",
-    "imgURL": "/workflow/participants/thumb/Rupert-Grisham.jpg",
-    "role": "CEO"
+    "imgURL": RupertGrishamThumb,
   },
   {
-    "title": "Lola Sampson",
-    "imgURL": "/workflow/participants/thumb/Lola-Sampson.jpg"
+    "title": "Julia Mason",
+    "imgURL": JuliaMasonThumb,
   }
 ];
 

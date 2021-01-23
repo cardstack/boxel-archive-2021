@@ -16,3 +16,7 @@
   direction: rtl;
   padding-left: var(--column-size);
 }
+
+.participant-list__fanned .participant-list__participant > div {
+  border: 1px solid var(--boxel-light);
+}

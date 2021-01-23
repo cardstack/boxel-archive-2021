@@ -10,12 +10,16 @@
   >
     <div class="participant__image" style={{css-url "background-image" @image}} />
     {{#unless iconOnly}}
-      <div class="participant__title">
-        {{@title}}
-        <div class="participant__description">
+      <div>
+        <h4 class="participant__title">
+          {{@title}}
+        </h4>
+        <p class="participant__description">
           {{@description}}
-        </div>
+        </p>
       </div>
     {{/unless}}
+
+    {{yield}}
   </div>
 {{/let}}

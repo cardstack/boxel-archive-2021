@@ -23,7 +23,6 @@
       <Boxel::ThreadMessage
         @senderName={{post.sender.title}}
         @senderImage={{post.sender.imgURL}}
-        @senderDescription={{or post.sender.role (capitalize post.participantType)}}
         @content={{post.content}}
         @datetime={{post.datetime}}
         @hasLogo={{eq post.participantType "bot"}}
@@ -50,18 +49,19 @@
       />
     {{/if}}
 
-    <Boxel::ParticipantsBox
-    as |participantsBox|>
-      {{#if this.otherParticipants}}
-        <participantsBox.participants
-          @participants={{this.otherParticipants}}
-        />
-      {{/if}}
-      {{#if this.participatingOrgMembers}}
-        <participantsBox.participants
-          @participants={{this.participatingOrgMembers}}
-        />
-      {{/if}}
+    <Boxel::ParticipantsBox>
+      <:list>
+        {{#if this.otherParticipants}}
+          <Boxel::ParticipantList
+            @participants={{this.otherParticipants}}
+          />
+        {{/if}}
+        {{#if this.participatingOrgMembers}}
+          <Boxel::ParticipantList
+            @participants={{this.participatingOrgMembers}}
+          />
+        {{/if}}
+      </:list>
     </Boxel::ParticipantsBox>
   </:sidebar>
 

@@ -8,12 +8,12 @@
 </FreestyleAnnotation>
 
 <FreestyleUsage @slug="progress-box">
-  <Boxel::ParticipantsBox
-    @addAction={{true}}
-  as |participantsBox|>
-    <participantsBox.participants
-      @participants={{this.sampleParticipantGroup}}
-    />
+  <Boxel::ParticipantsBox @addAction={{true}}>
+    <:list>
+      <Boxel::ParticipantList
+        @participants={{this.sampleParticipantGroup}}
+      />
+    </:list>
   </Boxel::ParticipantsBox>
 </FreestyleUsage>
 
@@ -22,13 +22,11 @@
 </FreestyleAnnotation>
 
 <FreestyleUsage @slug="progress-box-multi">
-  <Boxel::ParticipantsBox
-    @addAction={{true}}
-  as |participantsBox|>
-    <participantsBox.participants
+  <Boxel::ParticipantsBox @addAction={{true}}>
+    <Boxel::ParticipantList
       @participants={{this.sampleParticipantGroup}}
     />
-    <participantsBox.participants
+    <Boxel::ParticipantList
       @participants={{this.sampleParticipantGroup2}}
     />
   </Boxel::ParticipantsBox>
@@ -39,9 +37,8 @@
 </FreestyleAnnotation>
 
 <FreestyleUsage @slug="progress-box-group-2">
-  <Boxel::ParticipantsBox
-  as |participantsBox|>
-    <participantsBox.participants
+  <Boxel::ParticipantsBox>
+    <Boxel::ParticipantList
       @participants={{this.sampleParticipantGroup2}}
     />
   </Boxel::ParticipantsBox>
