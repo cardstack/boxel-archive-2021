@@ -15,7 +15,12 @@ export default class ThreadMessageComponent extends Component {
 
     for (let [i, sprite] of [...insertedSprites].entries()) {
       if (i === 0) {
-        fadeIn(sprite, { easing: easeOut, duration: 200 });
+        yield wait(1200);
+        sprite.startTranslatedBy(0, 30);
+        parallel(
+          fadeIn(sprite, { easing: easeOut, duration: 200 }),
+          move(sprite, { easing: easeOut, duration: 200 })
+        );
       } else {
         yield wait(800);
         sprite.startTranslatedBy(0, 30);

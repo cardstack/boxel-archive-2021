@@ -21,9 +21,11 @@
           />
         {{/if}}
 
-        {{#if (gt this.progress i)}}
-          <Boxel::MilestoneBanner @title={{milestone.statusOnCompletion}} />
-        {{/if}}
+        <AnimatedContainer>
+          {{#animated-if (gt this.progress i) use=this.bannerTransition}}
+            <Boxel::MilestoneBanner @title={{milestone.statusOnCompletion}} />
+          {{/animated-if}}
+        </AnimatedContainer>
       {{/each}}
     </:content>
 
