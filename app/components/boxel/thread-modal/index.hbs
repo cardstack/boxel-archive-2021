@@ -20,6 +20,10 @@
             @hasLogo={{true}}
           />
         {{/if}}
+
+        {{#if (gt this.progress i)}}
+          <Boxel::MilestoneBanner @title={{milestone.statusOnCompletion}} />
+        {{/if}}
       {{/each}}
     </:content>
 
