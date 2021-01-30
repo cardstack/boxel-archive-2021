@@ -4,13 +4,14 @@
       "participant"
       participant__icon-only=iconOnly
       participant__has-logo=@hasLogo
+      boxel--dark-theme=@darkTheme
     }}
     style={{css-var icon-size=(concat this.iconSize "px")}}
     ...attributes
   >
     <div class="participant__image" style={{css-url "background-image" @image}} />
     {{#unless iconOnly}}
-      <div>
+      <div class="participant__info">
         <h4 class="participant__title">
           {{@title}}
         </h4>

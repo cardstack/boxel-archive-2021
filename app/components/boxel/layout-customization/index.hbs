@@ -1,0 +1,18 @@
+{{#if (eq @mode "edit")}}
+  <Boxel::LayoutCustomization::EditLayout
+    @issuerName={{@issuerName}}
+    @updateIssuerName={{@updateIssuerName}}
+    @colorOptions={{@colorOptions}}
+    @headerColor={{@headerColor}}
+    @patternOptions={{@patternOptions}}
+    @updateHeaderColor={{@updateHeaderColor}}
+    @headerPattern={{@headerPattern}}
+    @updateHeaderPattern={{@updateHeaderPattern}}
+  />
+{{else}}
+  <Boxel::LayoutCustomization::ViewLayout
+    @issuerName={{@issuerName}}
+    @headerColor={{@headerColor}}
+    @headerPattern={{@headerPattern}}
+  />
+{{/if}}

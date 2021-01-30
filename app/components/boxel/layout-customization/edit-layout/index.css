@@ -1,0 +1,157 @@
+.layout-customization-editor {
+  --headerColor: var(--boxel-lime);
+  width: 100%;
+  max-width: 700px;
+  background-color: var(--boxel-light);
+  border-radius: var(--boxel-border-radius);
+  color: var(--boxel-dark);
+  font: var(--boxel-font);
+  letter-spacing: var(--boxel-lsp);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.layout-customization-editor__header {
+  height: 30px;
+  padding: 7px 15px;
+  border-top-right-radius: var(--boxel-border-radius);
+  border-top-left-radius: var(--boxel-border-radius);
+  background-color: var(--boxel-purple-100);
+  color: var(--boxel-purple-400);
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+}
+
+.layout-customization-editor__body {
+  padding: 45px 30px 60px;
+}
+
+.layout-customization-editor__prompt {
+  margin: 0;
+  padding-bottom: 40px;
+  font-size: 1.125rem; /* 18px */
+  font-weight: 700;
+  line-height: 1.33;
+  letter-spacing: 0;
+}
+
+.layout-customization-editor__fields {
+  display: grid;
+  gap: var(--boxel-spacing);
+}
+
+.layout-customization-editor__preview-field {
+  grid-column: 1 / -1;
+  display: inline-grid;
+  justify-items: center;
+  padding-bottom: var(--boxel-spacing);
+}
+
+.layout-customization-editor__field {
+  display: grid;
+  grid-template-columns: 120px auto;
+  align-items: center;
+  gap: var(--boxel-spacing);
+}
+
+.layout-customization-editor__field .string-field-editor__input,
+.layout-customization-editor__field .layout-customization-editor__dropdown {
+  max-width: 470px;
+  height: 40px;
+}
+
+.layout-customization-editor__field .string-field-editor__label,
+.layout-customization-editor__label {
+  padding: 10px;
+  text-align: right;
+}
+
+.layout-customization-editor__label {
+  color: var(--boxel-purple-400);
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+}
+
+.layout-customization-editor__dropdown > .ember-power-select-trigger {
+  background: url('../../../../images/icons/carot-down.svg') right 18px center/auto 8px no-repeat;
+  border: 1px solid var(--boxel-purple-300);
+  border-radius: 6px;
+  font: var(--boxel-font);
+  letter-spacing: var(--boxel-lsp-sm);
+  transition: border-color var(--boxel-transition);
+}
+.layout-customization-editor__dropdown > .ember-power-select-trigger:hover {
+  border-color: var(--boxel-dark);
+  cursor: pointer;
+}
+.layout-customization-editor__dropdown > .ember-power-select-trigger:focus {
+  outline-color: var(--boxel-highlight);
+}
+.layout-customization-editor__dropdown .ember-basic-dropdown-content {
+  min-width: 210px;
+  border-radius: var(--boxel-border-radius);
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.25);
+}
+.layout-customization-editor__dropdown .ember-basic-dropdown-content.ember-basic-dropdown--transitioning-in {
+  animation: drop-fade-below var(--boxel-transition);
+}
+.layout-customization-editor__dropdown .ember-basic-dropdown-content.ember-basic-dropdown--transitioning-out {
+  animation: drop-fade-below var(--boxel-transition) reverse;
+}
+
+.layout-customization-editor__dropdown-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0 10px;
+}
+.layout-customization-editor__dropdown .ember-power-select-dropdown .layout-customization-editor__dropdown-option:hover {
+  background-color: var(--boxel-light-300);
+  cursor: pointer;
+}
+
+.layout-customization-editor__dropdown-option-icon {
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--boxel-purple-300);
+  border-radius: 5px;
+  background-color: var(--headerColor, var(--boxel-lime));
+}
+
+.layout-customization-editor__dropdown-option-title {
+  font-size: var(--boxel-font-size-sm);
+  font-weight: 600;
+}
+
+
+.layout-customization-editor__footer {
+  --icon-color: var(--boxel-purple-300);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background-color: var(--boxel-purple-700);
+  color: var(--boxel-purple-300);
+  font: var(--boxel-font-xs);
+  border-bottom-right-radius: var(--boxel-border-radius);
+  border-bottom-left-radius: var(--boxel-border-radius);
+}
+
+.layout-customization-editor__footer > button {
+  min-height: initial;
+  height: 32px;
+  padding: 7px 40px;
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+.layout-customization-editor__footer-text {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+}

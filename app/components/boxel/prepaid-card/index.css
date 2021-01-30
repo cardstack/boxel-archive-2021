@@ -1,0 +1,111 @@
+.prepaid-card {
+  --header-color: var(--boxel-lime);
+  width: 364px;
+  height: 230px;
+  background-color: var(--boxel-light);
+  border-radius: var(--boxel-border-radius);
+  color: var(--boxel-dark);
+  font: var(--boxel-font);
+  letter-spacing: var(--boxel-lsp);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.prepaid-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 102px;
+  background-image: url('../../../images/icons/curve-header.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--header-color, var(--boxel-lime));
+  border-top-right-radius: var(--boxel-border-radius);
+  border-top-left-radius: var(--boxel-border-radius);
+  padding: 10px;
+}
+
+.boxel--dark-theme {
+  color: var(--boxel-light);
+}
+
+.prepaid-card__participant.participant {
+  gap: 0 10px;
+  letter-spacing: var(--boxel-lsp);
+}
+
+.prepaid-card__participant .participant__image {
+  background-image: url('../../../images/media-registry/placeholders/profile-inverted.svg');
+}
+
+.prepaid-card__participant .participant__description {
+  order: -1;
+  color: var(--boxel-dark);
+}
+
+.prepaid-card__account-info {
+  padding-top: 15px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.prepaid-card__account-address {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.125rem; /* 18px */
+  letter-spacing: var(--boxel-lsp-sm);
+  line-height: calc(24/18);
+}
+
+.prepaid-card__account-network {
+  font: var(--boxel-font-xs);
+}
+
+.prepaid-card__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 var(--boxel-spacing) 15px;
+}
+
+.prepaid-card__balance-label {
+  color: var(--boxel-purple-700);
+  font: var(--boxel-font-sm);
+  letter-spacing: 0.01em;
+}
+
+.prepaid-card__balance {
+  font-weight: 700;
+}
+
+.prepaid-card__balance span {
+  margin-right: 4px;
+  font-size: 2.5rem; /* 40px */
+  line-height: calc(55/40);
+}
+
+.prepaid-card__usd-balance {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.prepaid-card__content-rs {
+  display: grid;
+  justify-items: end;
+  gap: var(--boxel-spacing);
+  padding-top: var(--boxel-spacing);
+  text-align: right;
+}
+
+.prepaid-card__logo {
+  width: 45px;
+  height: 45px;
+  background-image: url('../../../images/icons/cardpay-logo.svg');
+  background-repeat: no-repeat;
+}
+
+.prepaid-card__attributes {
+  color: var(--boxel-purple-300);
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+}

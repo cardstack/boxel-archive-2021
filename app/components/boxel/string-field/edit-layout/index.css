@@ -1,0 +1,27 @@
+.string-field-editor {
+}
+
+.string-field-editor__label {
+  color: var(--boxel-purple-400);
+  font: var(--boxel-font-xs);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+}
+
+.string-field-editor__input {
+  padding: 8px var(--boxel-spacing);
+  border: 1px solid var(--boxel-purple-300);
+  border-radius: 6px;
+  font: var(--boxel-font);
+  letter-spacing: var(--boxel-lsp-sm);
+  transition: border-color var(--boxel-transition);
+}
+
+.string-field-editor__input:hover {
+  border-color: var(--boxel-dark);
+}
+
+.string-field-editor__input:focus {
+  outline-color: var(--boxel-highlight);
+}
