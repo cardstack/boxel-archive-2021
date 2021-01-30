@@ -27,6 +27,10 @@
   border-radius: initial;
 }
 
+.participant__info {
+  display: grid;
+}
+
 .participant__title {
   font-weight: 600;
 }
@@ -40,4 +44,9 @@
 .participant__description {
   margin: 0;
   color: var(--boxel-purple-400);
+}
+
+.boxel--dark-theme .participant__info,
+.boxel--dark-theme .participant__description {
+  color: var(--boxel-light);
 }

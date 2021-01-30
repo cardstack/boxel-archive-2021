@@ -1,0 +1,14 @@
+{{#if (eq @mode "edit")}}
+  <Boxel::StringField::EditLayout
+    @fieldLabel={{@fieldLabel}}
+    @fieldValue={{@fieldValue}}
+    @updateFieldValue={{@updateFieldValue}}
+    ...attributes
+  />
+{{else}}
+  <Boxel::StringField::ViewLayout
+    @fieldLabel={{@fieldLabel}}
+    @fieldValue={{@fieldValue}}
+    ...attributes
+  />
+{{/if}}

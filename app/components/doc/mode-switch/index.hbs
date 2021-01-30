@@ -1,0 +1,20 @@
+<div>
+  <label>
+    <Input
+      @type="checkbox"
+      @name="edit"
+      @checked={{eq @mode "edit"}}
+      {{on "click" (optional @updateFieldValue)}}
+    />
+    Edit mode
+  </label>
+  <label>
+    <Input
+      @type="checkbox"
+      @name="view"
+      @checked={{eq @mode "view"}}
+      {{on "click" (optional @updateFieldValue)}}
+    />
+    View mode
+  </label>
+</div>

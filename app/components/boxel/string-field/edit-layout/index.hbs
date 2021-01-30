@@ -1,0 +1,10 @@
+<label class="string-field-editor" ...attributes>
+  <span class="string-field-editor__label">
+    {{@fieldLabel}}
+  </span>
+  <Input
+    class="string-field-editor__input"
+    @value={{@fieldValue}}
+    {{on "input" (optional @updateFieldValue)}}
+  />
+</label>
