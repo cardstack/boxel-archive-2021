@@ -1,0 +1,85 @@
+{{#if (or (eq @field.type "card") (eq @field.type "collection") @field.value.id (is-array @field.value))}}
+  <div class="field-renderer {{lowercase (dasherize (trim @field.title))}}-edit-field {{@class}}" ...attributes>
+    <h4 class="field-renderer__title">{{humanize @field.title}}</h4>
+    {{#if (eq @field.type "card")}}
+      <EmbeddedCollectionEditor
+        @belongsToField={{true}}
+        @field={{@field}}
+        @format={{@field.format}}
+        @expandAction={{@expandAction}}
+        @mode="edit"
+      />
+    {{else if (eq @field.type "collection")}}
+      <EmbeddedCollectionEditor
+        @collection={{@field.value}}
+        @format={{@field.format}}
+        @title={{@field.title}}
+        @field={{@field}}
+        @mode="edit"
+      />
+    {{else}}
+      {{#let (filter-by "title" @field.value) as |multiTagList|}}
+        {{#if multiTagList.length}}
+          {{!-- Taglist with multiple sections --}}
+          <div class="field-renderer__group">
+            {{#each @field.value as |val|}}
+              <div class="field-renderer__taglist-title">{{val.title}}</div>
+              <ul class="field-renderer__taglist-editor field-renderer__taglist-editor--vertical">
+                {{#if (is-array val.value)}}
+                  {{#each val.value as |vv|}}
+                    <li class="item__pill">
+                      <span>{{vv}}</span>
+                      <button class="item__remove-btn" aria-label="remove" />
+                    </li>
+                  {{/each}}
+                {{else}}
+                  {{#if val.value}}
+                    <li class="item__pill">
+                      <span>{{val.value}}</span>
+                      <button class="item__remove-btn" aria-label="remove" />
+                    </li>
+                  {{/if}}
+                {{/if}}
+                <button class="item__add-btn" aria-label="add" />
+              </ul>
+            {{/each}}
+          </div>
+        {{else}}
+          {{!-- Horizontal tagList --}}
+          <ul class="field-renderer__taglist-editor">
+            {{#each @field.value as |val|}}
+              <li class="item__pill">
+                <span>{{val}}</span>
+                <button class="item__remove-btn" aria-label="remove" />
+              </li>
+            {{/each}}
+            <button class="item__add-btn" aria-label="add" />
+          </ul>
+        {{/if}}
+      {{/let}}
+    {{/if}}
+  </div>
+{{else}}
+  <label class="field-renderer">
+    <div class="field-renderer__title">{{humanize @field.title}}</div>
+    <div class="field-renderer__value">
+      {{#if (eq @field.type "dropdown")}}
+        <div class="field-renderer__dropdown">
+          <PowerSelect
+            @options={{@field.options}}
+            @selected={{@field.value}}
+            @onChange={{fn (mut @field.value)}}
+            @renderInPlace={{true}}
+            @verticalPosition="below"
+          as |option|>
+            {{option}}
+          </PowerSelect>
+        </div>
+      {{else if (eq @field.type "textarea")}}
+        <Textarea @type={{@field.type}} @class="field-renderer__input field-renderer__textarea" @value={{@field.value}} />
+      {{else}}
+        <Input @type={{@field.type}} @class="field-renderer__input" @value={{if (eq @field.title "title") (titleize @field.value) @field.value}} />
+      {{/if}}
+    </div>
+  </label>
+{{/if}}

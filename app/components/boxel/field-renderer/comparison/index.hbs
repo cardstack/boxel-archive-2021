@@ -1,0 +1,62 @@
+<Boxel @class="field-renderer field-renderer--comparison-mode field-renderer--{{@field.type}} {{dasherize @field.title}}-field {{@class}}" ...attributes>
+  <div class="field-renderer__title">{{@title}}</div>
+  <div class="field-renderer__value">
+    {{#if (and @field.value (or @field.id (eq @field.type "card")))}}
+      {{component (or @field.component "card") model=@field.value mode="view" status=(if @showCompHighlights (if @field.status @field.status "no-change")) comparisonType=@comparisonType drillDown=@drillDown fieldData=@field}}
+    {{else if (and @field.value (is-array @field.value))}}
+      <Boxel>
+        {{#if @showCompHighlights}}
+          <BoxelHighlight @status={{@field.status}} />
+          <BoxelActions @class="boxel-actions--comparison-mode" @status={{if @field.status @field.status "no-change"}}>
+            <ComparisonModeLabel @status={{@field.status}} @comparisonType={{@comparisonType}} />
+          </BoxelActions>
+        {{/if}}
+        <CardPlatter @class="field-renderer__card">
+          <header class="boxel-card__header">{{if @field.type (humanize @field.type) "text"}}</header>
+          <div class="field-renderer__inner {{if @field.status "" "field-renderer__opacity-control"}}">
+            {{#let (filter-by "title" @field.value) as |multiTagList|}}
+              {{#if multiTagList.length}}
+                {{#each @field.value as |val|}}
+                  <Boxel::FieldRenderer
+                    @class="field-renderer__meta-field"
+                    @field={{val}}
+                    @mode="view"
+                  />
+                {{/each}}
+              {{else}}
+                <span>
+                  {{#each @field.value as |val|}}
+                    {{val}}{{#if (has-next val @field.value)}}, {{/if}}
+                  {{/each}}
+                </span>
+              {{/if}}
+            {{/let}}
+          </div>
+        </CardPlatter>
+      </Boxel>
+    {{else}}
+      {{#if @field.value}}
+        <Boxel>
+          {{#if @showCompHighlights}}
+            <BoxelHighlight @status={{@field.status}} />
+            <BoxelActions @class="boxel-actions--comparison-mode" @status={{if @field.status @field.status "no-change"}}>
+              <ComparisonModeLabel @status={{@field.status}} @comparisonType={{@comparisonType}} />
+            </BoxelActions>
+          {{/if}}
+          <CardPlatter @class="field-renderer__card">
+            <header class="boxel-card__header">{{if @field.type (humanize @field.type) "text"}}</header>
+            <div class="field-renderer__inner {{if @field.status "" "field-renderer__opacity-control"}}">
+              {{@field.value}}
+            </div>
+          </CardPlatter>
+        </Boxel>
+      {{else}}
+        {{#if (includes @field.title @omittedFields)}}
+          N/A
+        {{else}}
+          <CardPlatter @class="field-renderer__card field-renderer__card--blank" />
+        {{/if}}
+      {{/if}}
+    {{/if}}
+  </div>
+</Boxel>
