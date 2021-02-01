@@ -1,0 +1,137 @@
+<Freestyle::Usage @name="FieldRenderer">
+  <:example>
+    <h3>Type: text</h3>
+    <Boxel::FieldRenderer
+      @mode={{this.mode}}
+      @field={{hash title="first_name" value="Luke"}}
+      @expandAction={{this.onExpandAction}}
+    />
+
+    <h3>Type: date</h3>
+    <Boxel::FieldRenderer
+      @mode={{this.mode}}
+      @field={{hash type="date" title="start_date" value=(moment-format (now) "MM/DD/YYYY HH:mm")}}
+      @expandAction={{this.onExpandAction}}
+    />
+
+    <h3>Type: textarea</h3>
+    <Boxel::FieldRenderer
+      @mode={{this.mode}}
+      @field={{hash type="textarea" title="biography" value=this.biography}}
+      @expandAction={{this.onExpandAction}}
+    />
+
+    <h3>Type: dropdown</h3>
+    <Boxel::FieldRenderer
+      @mode={{this.mode}}
+      @field={{hash
+        type="dropdown"
+        title='rating'
+        value=this.rating
+        options=this.ratings
+      }}
+      @expandAction={{this.onExpandAction}}
+    />
+
+    <h3>Type: image</h3>
+    <Boxel::FieldRenderer
+      @mode={{this.mode}}
+      @field={{hash type="image" type="image" title="album_art" value=this.albumLeavesSrc}}
+      @expandAction={{this.onExpandAction}}
+    />
+
+    <h3>Type: card</h3>
+    <Boxel::FieldRenderer
+      @mode={{this.mode}}
+      @field={{hash type="card" title="artist" value=this.cardFieldValue component=this.component}}
+      @expandAction={{this.onExpandAction}}
+    />
+
+    <h3>Type: collection</h3>
+    <Boxel::FieldRenderer
+      @mode={{this.mode}}
+      @field={{hash
+        type="collection"
+        title="artists"
+        component=this.component
+        value=this.collectionFieldValue
+        format=this.collectionFormat
+      }}
+      @expandAction={{this.onExpandAction}}
+    />
+  </:example>
+  <:api as |Args|>
+    <Args.Object
+      @name="field"
+      @required={{true}}
+      @description="The 'field' to render. Properties are: type, value, title, format, component, options, status"
+    />
+    <Args.String
+      @name="mode"
+      @description="which card mode are we in"
+      @options={{array "comparison" "edit" "view"}}
+      @value={{this.mode}}
+      @defaultValue="view"
+      @onInput={{fn (mut this.mode)}}
+    />
+    <Args.String
+      @name="format"
+      @description="What format should be used (only applies to cards of type='collection')"
+      @options={{this.collectionFormats}}
+      @value={{this.collectionFormat}}
+      @onInput={{fn (mut this.collectionFormat)}}
+    />
+    <Args.String
+      @name="component"
+      @description="The component name that should be used to render the card, applies to types of 'card' and 'colllection'"
+      @value={{this.component}}
+      @defaultValue='card'
+      @options={{array 'card' 'cards/artist' 'cards/composer'}}
+      @onInput={{fn (mut this.component)}}
+    />
+    <Args.Bool
+      @name="comparisonMode"
+      @description="When true, the field is rendered in comparison mode"
+      @value={{this.comparisonMode}}
+      @defaultValue={{false}}
+      @onInput={{fn (mut this.comparisonMode)}}
+    />
+    <Args.Bool
+      @name="showCompHighlights"
+      @description="When true, the field show changes highlighted (ONLY RELEVANT TO COMPARISON MODE)"
+      @value={{this.showCompHighlights}}
+      @defaultValue={{false}}
+      @onInput={{fn (mut this.showCompHighlights)}}
+    />
+    <Args.Bool
+      @name="comparisonMode"
+      @description="When true, renders the field highlights (ONLY RELEVANT TO VIEW MODE)"
+      @value={{this.comparisonMode}}
+      @defaultValue={{false}}
+      @onInput={{fn (mut this.comparisonMode)}}
+    />
+    <Args.Object
+      @name="comparisonType"
+      @description="Known values: 'base' and 'comp'. (ONLY RELEVANT TO COMPARISON MODE)."
+    />
+    <Args.Object
+      @name="omittedFields"
+      @description="String array of fields to be excluded from comparison.  (ONLY RELEVANT TO COMPARISON MODE)."
+    />
+    <Args.Object
+      @name="title"
+      @description="Shown as title in comparison mode. (ONLY RELEVANT TO COMPARISON MODE)."
+    />
+    <Args.Object
+      @name="class"
+      @description="For providing a css class when invoking via the component helper. Otherwise use splattributes."
+    />
+    <Args.Action
+      @name="expandAction"
+      @description="Triggered when an embedded card or collection is clicked to request expansion."
+    />
+    <p>
+    TODO: deal with VIEW-mode-only fields: @addedFields,  @addedValues,  @modifiedValues,  @removedFields,  @changedFields,  @removedValues,  @addedCards,  @removedCards,  @changedCards,  @modifiedCard,  @modifiedCards
+    </p>
+</:api>
+</Freestyle::Usage>
