@@ -1,5 +1,5 @@
 /* Embedded Collection field (edit mode) */
-.collection-field {
+.embedded-collection-editor {
   max-width: 450px;
   min-height: 60px;
   padding-top: 10px;
@@ -9,79 +9,79 @@
   border-radius: var(--boxel-border-radius-sm);
 }
 
-.collection-field__header {
+.embedded-collection-editor__header {
   display: grid;
   grid-template-columns: 45px 1fr;
   padding-top: 10px;
   padding-bottom: 20px;
 }
 
-.collection-field__header > button {
+.embedded-collection-editor__header > button {
   margin: 0 auto;
 }
 
-.collection-field__items {
+.embedded-collection-editor__items {
   display: grid;
   gap: 10px;
 }
 
-.collection-field__items--grid {
+.embedded-collection-editor__items--grid {
   grid-template-columns: repeat(auto-fill, 210px);
   justify-content: center;
 }
 
-.collection-field__item {
+.embedded-collection-editor__item {
   display: grid;
   align-items: center;
   justify-items: center;
 }
 
-.collection-field__item--list {
+.embedded-collection-editor__item--list {
   grid-template-columns: 1fr 45px;
   padding-left: 10px;
 }
 
-.collection-field__item--list.collection-field__item--multiple {
+.embedded-collection-editor__item--list.embedded-collection-editor__item--multiple {
   grid-template-columns: 45px 1fr 45px;
   padding-left: 0;
 }
 
-.collection-field__item--grid {
+.embedded-collection-editor__item--grid {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 45px;
 }
 
-.collection-field__item--grid > .boxel-card {
+.embedded-collection-editor__item--grid > .boxel-card {
   width: auto;
   grid-column: -1 / 1;
 }
 
-.collection-field__item--grid.collection-field__item--multiple {
+.embedded-collection-editor__item--grid.embedded-collection-editor__item--multiple {
   grid-template: ". select remove .";
   grid-template-rows: 1fr 45px;
   gap: 0 30px;
 }
 
-.collection-field__item--grid.collection-field__item--multiple .collection-field__select-button {
+.embedded-collection-editor__item--grid.embedded-collection-editor__item--multiple .embedded-collection-editor__select-button {
   grid-area: select;
   grid-row: 2;
 }
 
-.collection-field__item--grid.collection-field__item--multiple .collection-field__remove-btn {
+.embedded-collection-editor__item--grid.embedded-collection-editor__item--multiple .embedded-collection-editor__remove-btn {
   grid-area: remove;
   grid-row: 2;
 }
 
-.collection-field__items--grid .collection-field__view-all-btn-container {
+.embedded-collection-editor__items--grid .embedded-collection-editor__view-all-btn-container {
   padding: 0;
 }
 
-.collection-field__view-all-btn-container {
+.embedded-collection-editor__view-all-btn-container {
   grid-column: 1 / -1;
   padding: 0 45px;
 }
 
-.collection-field__view-all-btn {
+.embedded-collection-editor__view-all-btn {
   width: 100%;
   margin: 0 auto;
   padding: 10px 0;
@@ -94,6 +94,6 @@
   text-align: center;
 }
 
-.collection-field__view-all-btn:hover {
+.embedded-collection-editor__view-all-btn:hover {
   cursor: pointer;
 }

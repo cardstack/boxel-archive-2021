@@ -34,7 +34,7 @@
           {{component (or @field.component "card") model=@field.value mode="view" expandAction=@expandAction}}
         {{/if}}
       {{else if (eq @field.type "collection")}}
-        <EmbeddedCollection
+        <Boxel::EmbeddedCollection
           @collection={{@field.value}}
           @format={{@field.format}}
           @cardComponent={{@field.component}}

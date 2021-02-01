@@ -1,6 +1,6 @@
 {{#if (eq @format "table")}}
   <Card @format={{@format}} @model={{hash type="collection"}}>
-    <EmbeddedCollectionTable @model={{@collection}} @mode="view" @expandAction={{@expandAction}} />
+    <Boxel::EmbeddedCollection::Table @model={{@collection}} @mode="view" @expandAction={{@expandAction}} />
   </Card>
 
 {{else}}
