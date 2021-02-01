@@ -1,10 +1,10 @@
 <Boxel>
-  <div class="collection-field">
+  <div class="embedded-collection-editor">
     {{#if @belongsToField}}
       {{#if this.field.value}}
-        <div class="collection-field__item collection-field__item--{{this.format}}">
+        <div class="embedded-collection-editor__item embedded-collection-editor__item--{{this.format}}">
           {{component (or this.field.component "card") model=this.field.value mode="view" format=this.format expandAction=@expandAction}}
-          <IconButton {{on "click" this.removeBelongsToItem}} @icon="icon-minus-circle" @class="collection-field__remove-btn" @aria-label="remove" />
+          <IconButton {{on "click" this.removeBelongsToItem}} @icon="icon-minus-circle" @class="embedded-collection-editor__remove-btn" @aria-label="remove" />
         </div>
       {{else}}
         <CollectionAddButton
@@ -19,7 +19,7 @@
       {{/if}}
     {{else}}
       {{#if (gt this.collection.length 1)}}
-        <header class="collection-field__header">
+        <header class="embedded-collection-editor__header">
           <Boxel::SelectionControlGroup
             @toggleSelectAll={{this.toggleSelectAll}}
             @mode={{@mode}}
@@ -29,20 +29,20 @@
           />
         </header>
       {{/if}}
-      <div class="collection-field__items collection-field__items--{{this.format}}">
+      <div class="embedded-collection-editor__items embedded-collection-editor__items--{{this.format}}">
         {{#each this.collection as |item i|}}
           {{#if (lt i this.displayCount)}}
-            <div class="collection-field__item collection-field__item--{{this.format}} {{if (gt this.collection.length 1) "collection-field__item--multiple"}}">
+            <div class="embedded-collection-editor__item embedded-collection-editor__item--{{this.format}} {{if (gt this.collection.length 1) "embedded-collection-editor__item--multiple"}}">
               {{#if (gt this.collection.length 1)}}
                 <Boxel::SelectButton
                   {{on "click" (fn this.toggleSelect item)}}
                   @isSelected={{item.selected}}
-                  @class="collection-field__select-button"
+                  @class="embedded-collection-editor__select-button"
                   @mode={{@mode}}
                 />
               {{/if}}
               {{component (or item.component @field.component "card") model=item format=this.format}}
-              <IconButton {{on "click" (fn this.removeItem item)}} @icon="icon-minus-circle" @class="collection-field__remove-btn" @aria-label="remove" />
+              <IconButton {{on "click" (fn this.removeItem item)}} @icon="icon-minus-circle" @class="embedded-collection-editor__remove-btn" @aria-label="remove" />
             </div>
           {{/if}}
         {{/each}}
@@ -56,15 +56,15 @@
           @newItemComponent={{component "card" mode="view"}}
         >
           {{#if (and (gt this.collection.length this.displayCount) (not this.expanded))}}
-            <div class="collection-field__view-all-btn-container">
-              <button {{on "click" this.viewAll}} class="collection-field__view-all-btn">
+            <div class="embedded-collection-editor__view-all-btn-container">
+              <button {{on "click" this.viewAll}} class="embedded-collection-editor__view-all-btn">
                 View all ({{this.collection.length}})
               </button>
             </div>
           {{/if}}
           {{#if (and (gt this.collection.length 2) this.expanded)}}
-            <div class="collection-field__view-all-btn-container">
-              <button {{on "click" this.collapse}} class="collection-field__view-all-btn">
+            <div class="embedded-collection-editor__view-all-btn-container">
+              <button {{on "click" this.collapse}} class="embedded-collection-editor__view-all-btn">
                 Collapse
               </button>
             </div>

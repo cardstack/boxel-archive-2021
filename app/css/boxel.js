@@ -13,7 +13,6 @@ import './components/cardflow.css';
 import './components/collection-add-button.css';
 import './components/detail-card.css';
 import './components/detail-section.css';
-import './components/embedded-collection-editor.css';
 import './components/icon-btn.css';
 import './components/isolated-collection-table.css';
 import './components/isolated-collection.css';

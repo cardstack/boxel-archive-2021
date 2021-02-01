@@ -2,7 +2,7 @@
   <div class="field-renderer {{lowercase (dasherize (trim @field.title))}}-edit-field {{@class}}" ...attributes>
     <h4 class="field-renderer__title">{{humanize @field.title}}</h4>
     {{#if (eq @field.type "card")}}
-      <EmbeddedCollectionEditor
+      <Boxel::EmbeddedCollection::Editor
         @belongsToField={{true}}
         @field={{@field}}
         @format={{@field.format}}
@@ -10,7 +10,7 @@
         @mode="edit"
       />
     {{else if (eq @field.type "collection")}}
-      <EmbeddedCollectionEditor
+      <Boxel::EmbeddedCollection::Editor
         @collection={{@field.value}}
         @format={{@field.format}}
         @title={{@field.title}}
