@@ -1,0 +1,16 @@
+<FreestyleAnnotation @slug="action-container">
+
+</FreestyleAnnotation>
+
+<FreestyleUsage @slug="action-container">
+  <Boxel::ActionContainer
+    @header="Label"
+    @prompt="Action prompt"
+    @incompleteActionLabel="Save"
+    @completeActionLabel="Edit"
+    @isComplete={{this.isComplete}}
+    @onClickButton={{fn (mut this.isComplete) (not this.isComplete)}}
+  >
+    CARD CONTENT
+  </Boxel::ActionContainer>
+</FreestyleUsage>
