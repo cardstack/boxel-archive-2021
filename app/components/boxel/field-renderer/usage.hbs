@@ -111,6 +111,10 @@
       @onInput={{fn (mut this.comparisonMode)}}
     />
     <Args.Object
+      @name="comparison"
+      @description="An object describing the differences discovered when comparing this field to another. Properties are addedValues, modifiedValues, removedFields, changedFields, removedValues, addedCards, removedCards, changedCards, modifiedCard, modifiedCards. Applies only to VIEW mode."
+    />
+    <Args.Object
       @name="comparisonType"
       @description="Known values: 'base' and 'comp'. (ONLY RELEVANT TO COMPARISON MODE)."
     />
@@ -131,7 +135,7 @@
       @description="Triggered when an embedded card or collection is clicked to request expansion."
     />
     <p>
-    TODO: deal with VIEW-mode-only fields: @addedFields,  @addedValues,  @modifiedValues,  @removedFields,  @changedFields,  @removedValues,  @addedCards,  @removedCards,  @changedCards,  @modifiedCard,  @modifiedCards
+        TODO: @drillDown appears unused??
     </p>
 </:api>
 </Freestyle::Usage>

@@ -17,15 +17,17 @@
           @mode={{@mode}}
           @field={{hash title=title value=(or field.value field) type=(if (eq title "album_art") "image" field.type) component=field.component}}
           @comparisonMode={{@comparisonMode}}
-          @addedFields={{@addedFields}}
-          @addedValues={{@addedValues}}
-          @changedFields={{@changedFields}}
-          @removedFields={{@removedFields}}
-          @removedValues={{@removedValues}}
-          @addedCards={{@addedCards}}
-          @removedCards={{@removedCards}}
-          @changedCards={{@changedCards}}
-          @modifiedCard={{@modifiedCard}}
+          @comparison={{hash
+            addedFields=@addedFields
+            addedValues=@addedValues
+            changedFields=@changedFields
+            removedFields=@removedFields
+            removedValues=@removedValues
+            addedCards=@addedCards
+            removedCards=@removedCards
+            changedCards=@changedCards
+            modifiedCard=@modifiedCard
+          }}
           @expandAction={{@expandAction}}
         />
       {{/each-in}}

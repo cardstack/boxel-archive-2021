@@ -1,33 +1,33 @@
 <Boxel @class="field-renderer field-renderer--{{@field.type}} {{format-id @field.title}}-field {{if (eq @field.format "table") "table-field"}} {{@class}}" ...attributes>
-  {{#if (includes @field.title @addedFields)}}
+  {{#if (includes @field.title @comparison.addedFields)}}
     <BoxelHighlight @status="added" />
     <BoxelActions @status="added" />
   {{/if}}
   <div class="field-renderer__title">{{humanize @field.title}}</div>
   <Boxel @class="field-renderer__value {{if (eq @field.type "image") "field-renderer__value--img-field"}}">
-    {{#if (and @comparisonMode (includes @field.title @addedValues))}}
+    {{#if (and @comparisonMode (includes @field.title @comparison.addedValues))}}
       <BoxelHighlight @status="added" />
       <BoxelActions @status="added" />
     {{/if}}
-    {{#if (and @comparisonMode (includes @field.title @modifiedValues))}}
+    {{#if (and @comparisonMode (includes @field.title @comparison.modifiedValues))}}
       <BoxelHighlight @status="modified" />
       <BoxelActions @status="modified" />
     {{/if}}
     {{#if @field.value}}
       {{#if (eq @field.type "card")}}
-        {{#if (and @comparisonMode @field.value.id (eq @changedCards.0.value.id @field.value.id))}}
+        {{#if (and @comparisonMode @field.value.id (eq @comparison.changedCards.0.value.id @field.value.id))}}
           <div>
             <ins class="field-renderer--inserted">{{component (or @field.component "card") model=@field.value mode="view" status="changed"}}</ins>
             <Boxel>
               <BoxelHighlight @status="deleted" />
               <BoxelActions @status="deleted" />
-              <del class="field-renderer--deleted">{{@changedCards.0.oldValue}}</del>
+              <del class="field-renderer--deleted">{{@comparison.changedCards.0.oldValue}}</del>
             </Boxel>
           </div>
-        {{else if (and @comparisonMode @modifiedCard.value (is-equal @modifiedCard.value @field.value))}}
+        {{else if (and @comparisonMode @comparison.modifiedCard.value (is-equal @comparison.modifiedCard.value @field.value))}}
           <Boxel>
             <BoxelHighlight @status="modified" />
-            <BoxelActions @status="modified"><div class="field-renderer__modified-count">{{@modifiedCard.value.fields.length}}</div></BoxelActions>
+            <BoxelActions @status="modified"><div class="field-renderer__modified-count">{{@comparison.modifiedCard.value.fields.length}}</div></BoxelActions>
             {{component (or @field.component "card") model=@field.value mode="view"}}
           </Boxel>
         {{else}}
@@ -39,16 +39,16 @@
           @format={{@field.format}}
           @cardComponent={{@field.component}}
           @comparisonMode={{@comparisonMode}}
-          @addedFields={{@addedFields}}
-          @addedValues={{@addedValues}}
-          @changedFields={{@changedFields}}
-          @removedFields={{@removedFields}}
-          @removedValues={{@removedValues}}
-          @addedCards={{@addedCards}}
-          @removedCards={{@removedCards}}
-          @changedCards={{@changedCards}}
-          @modifiedCard={{@modifiedCard}}
-          @modifiedCards={{@modifiedCards}}
+          @addedFields={{@comparison.addedFields}}
+          @addedValues={{@comparison.addedValues}}
+          @changedFields={{@comparison.changedFields}}
+          @removedFields={{@comparison.removedFields}}
+          @removedValues={{@comparison.removedValues}}
+          @addedCards={{@comparison.addedCards}}
+          @removedCards={{@comparison.removedCards}}
+          @changedCards={{@comparison.changedCards}}
+          @modifiedCard={{@comparison.modifiedCard}}
+          @modifiedCards={{@comparison.modifiedCards}}
           @expandAction={{@expandAction}}
         />
       {{else if (is-array @field.value)}}
