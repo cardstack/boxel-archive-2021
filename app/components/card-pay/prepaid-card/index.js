@@ -15,6 +15,9 @@ export default class PrepaidCard extends Component {
       return '';
     }
 
-    return `${this.args.accountAddress.slice(0, 6)}...${this.args.accountAddress.slice(-4)}`;
+    return `${this.args.accountAddress.slice(
+      0,
+      6
+    )}...${this.args.accountAddress.slice(-4)}`;
   }
 }
