@@ -17,6 +17,8 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
+
+/* Card Header */
 .action-container__header {
   height: 30px;
   padding: 7px 15px;
@@ -30,19 +32,19 @@
   text-transform: uppercase;
 }
 
+
+/* Optional prompt */
 .action-container__prompt {
   margin: 0;
-  padding-bottom: 40px;
+  padding: 40px 30px;
   font-size: 1.125rem; /* 18px */
   font-weight: 700;
   line-height: 1.33;
   letter-spacing: 0;
 }
 
-.action-container__body {
-  padding: 40px 30px;
-}
 
+/* Card Chin */
 .action-container__footer {
   --icon-color: var(--boxel-purple-300);
   display: flex;

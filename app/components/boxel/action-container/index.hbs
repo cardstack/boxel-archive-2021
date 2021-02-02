@@ -1,23 +1,17 @@
-<div
-  class={{cn
-    "action-container"
-    action-container--is-complete=@isComplete
-  }}
+<article class={{cn "action-container" action-container--is-complete=@isComplete}}
   ...attributes
 >
   <header class="action-container__header">
     {{@header}}
   </header>
 
-  <section class="action-container__body">
-    {{#if @prompt}}
-      <p class="action-container__prompt">
-        {{@prompt}}
-      </p>
-    {{/if}}
+  {{#if @prompt}}
+    <p class="action-container__prompt">
+      {{@prompt}}
+    </p>
+  {{/if}}
 
-    {{yield}}
-  </section>
+  {{yield}}
 
   <footer class="action-container__footer">
     <Boxel::Button
@@ -35,4 +29,4 @@
       {{svg-jar "lock" width="12px" height="12px"}}
     </span>
   </footer>
-</div>
+</article>
