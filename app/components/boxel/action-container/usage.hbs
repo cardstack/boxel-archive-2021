@@ -1,16 +1,60 @@
-<FreestyleAnnotation @slug="action-container">
+<Freestyle::Usage @name="ActionContainer">
+  <:description>
+    Container for an action card.
+  </:description>
 
-</FreestyleAnnotation>
+  <:api as |Args|>
+    <Args.String
+      @name="header"
+      @description="action card header/label (String)"
+      @onInput={{fn (mut this.header)}}
+      @value={{this.header}}
+    />
+    <Args.String
+      @name="prompt"
+      @optional={{true}}
+      @description="Optional main prompt with styling"
+      @onInput={{fn (mut this.prompt)}}
+      @value={{this.prompt}}
+    />
+    <Args.String
+      @name="incompleteActionLabel"
+      @description="CTA button label for blocking action. It means the action is incomplete"
+      @onInput={{fn (mut this.incompleteActionLabel)}}
+      @value={{this.incompleteActionLabel}}
+    />
+    <Args.String
+      @name="completeActionLabel"
+      @description="CTA button label for non-blocking action"
+      @onInput={{fn (mut this.completeActionLabel)}}
+      @value={{this.completeActionLabel}}
+    />
+    <Args.Object
+      @name="onClickButton"
+      @description="Function for the CTA button action"
+    />
+    <Args.Bool
+      @name="isComplete"
+      @description="Condition for action's completeness (Boolean)"
+      @defaultValue={{false}}
+      @onInput={{fn (mut this.isComplete)}}
+    />
+    <Args.Yield
+      @optional={{true}}
+      @description="Unstyled area for custom card content and fields"
+    />
+  </:api>
 
-<FreestyleUsage @slug="action-container">
-  <Boxel::ActionContainer
-    @header="Label"
-    @prompt="Action prompt"
-    @incompleteActionLabel="Save"
-    @completeActionLabel="Edit"
-    @isComplete={{this.isComplete}}
-    @onClickButton={{fn (mut this.isComplete) (not this.isComplete)}}
-  >
-    CARD CONTENT
-  </Boxel::ActionContainer>
-</FreestyleUsage>
+  <:example>
+    <Boxel::ActionContainer
+      @header={{this.header}}
+      @prompt={{this.prompt}}
+      @incompleteActionLabel={{this.incompleteActionLabel}}
+      @completeActionLabel={{this.completeActionLabel}}
+      @isComplete={{this.isComplete}}
+      @onClickButton={{fn (mut this.isComplete) (not this.isComplete)}}
+    >
+
+    </Boxel::ActionContainer>
+  </:example>
+</Freestyle::Usage>

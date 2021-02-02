@@ -3,6 +3,7 @@ import { reads } from 'macro-decorators';
 
 export default class PrepaidCard extends Component {
   @reads('args.headerColor', 'var(--boxel-lime)') headerColor;
+  @reads('args.headerPattern', 'none') headerPattern;
 
   get usdBalance() {
     // TODO: Need conversion rate
