@@ -1,5 +1,5 @@
 .layout-form-view {
-  --headerColor: var(--boxel-lime);
+  --header-color: var(--boxel-lime);
   --field-width: 470px;
   --field-height: 40px;
 
@@ -98,7 +98,7 @@
   height: 25px;
   border: 1px solid var(--boxel-purple-300);
   border-radius: 5px;
-  background: var(--headerColor);
+  background: var(--header-color);
 }
 .layout-form-view__pattern-icon {
   background: var(--boxel-light);
