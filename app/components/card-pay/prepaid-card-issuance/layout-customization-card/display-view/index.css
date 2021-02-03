@@ -1,8 +1,8 @@
 .layout-display-view {
   --preview-card-width: 230px;
   --preview-card-height: 145px;
-  --headerColor: var(--boxel-lime);
-  --headerPattern: var(--boxel-light);
+  --header-color: var(--boxel-lime);
+  --header-pattern: var(--boxel-light);
 
   display: grid;
   grid-template-columns: var(--preview-card-width) auto;
@@ -59,9 +59,9 @@
   height: 25px;
   border: 1px solid var(--boxel-purple-300);
   border-radius: 5px;
-  background: var(--headerColor);
+  background: var(--header-color);
 }
 
 .layout-display-view__pattern-swatch {
-  background: var(--headerPattern);
+  background: var(--header-pattern);
 }
