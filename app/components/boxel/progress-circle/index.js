@@ -1,9 +1,6 @@
 import Component from '@glimmer/component';
-import { reads } from 'macro-decorators';
+import { or } from 'macro-decorators';
 import { htmlSafe } from '@ember/template';
-
-const FONT_SIZE_RATIO = 25 / 120;
-
 export default class extends Component {
   progressArcThickness = 12;
   outerCircleRadius = 60;
@@ -12,7 +9,7 @@ export default class extends Component {
   outerCircleDiameter = this.outerCircleRadius * 2;
   innerCircleDiameter = this.innerCircleRadius * 2;
   strokeCircleCircumference = this.strokeCircleRadius * 2 * Math.PI;
-  @reads('args.size', 120) size;
+  @or('args.size', 'outerCircleDiameter') size;
 
   get pieStyle() {
     return htmlSafe(
@@ -22,11 +19,11 @@ export default class extends Component {
   get progressArcLength() {
     return (this.args.percentComplete / 100) * this.strokeCircleCircumference;
   }
-  get fontSize() {
-    return this.size * FONT_SIZE_RATIO;
-  }
   get scale() {
     return this.size / this.outerCircleDiameter;
+  }
+  get fontSize() {
+    return this.scale * 25;
   }
   get percentLabelDiameter() {
     return this.scale * this.innerCircleDiameter;
