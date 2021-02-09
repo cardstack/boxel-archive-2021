@@ -7,7 +7,12 @@
     class="progress-circle__pie"
     style={{html-safe (concat "stroke-dasharray:" (mult (div @percentComplete 100) 339) " " 339)}}
   >
-    {{svg-jar "progress-circle-lg" width=this.size height=this.size}}
+    <svg xmlns="http://www.w3.org/2000/svg" width={{this.size}} height={{this.size}} viewBox="0 0 120 120">
+      <g fill="none" stroke="var(--icon-color, #e8e8e8)" stroke-width="12">
+        <circle cx="60" cy="60" r="60" stroke="none"/>
+        <circle cx="60" cy="60" r="54" fill="none"/>
+      </g>
+    </svg>
   </div>
   <div
     class="progress-circle__pct-label"
