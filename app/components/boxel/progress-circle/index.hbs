@@ -13,6 +13,13 @@
           cy={{this.outerCircleRadius}}  
           r={{this.strokeCircleRadius}} 
           fill="none" 
+          style="stroke-dasharray: 339; stroke: #e8e8e8;"
+        />
+        <circle 
+          cx={{this.outerCircleRadius}} 
+          cy={{this.outerCircleRadius}}  
+          r={{this.strokeCircleRadius}} 
+          fill="none" 
           style={{html-safe (concat "stroke-dasharray:" (mult (div @percentComplete 100) 339) " " 339)}}
         />
       </g>
