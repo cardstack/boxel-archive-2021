@@ -7,6 +7,7 @@ export default class extends Component {
   progressArcThickness = 12;
   outerCircleRadius = 60;
   innerCircleRadius = this.outerCircleRadius - this.progressArcThickness;
+  strokeCircleRadius = (this.outerCircleRadius + this.innerCircleRadius) / 2;
   outerCircleDiameter = this.outerCircleRadius * 2;
   innerCircleDiameter = this.innerCircleRadius * 2;
   @reads('args.size', 120) size;
@@ -18,7 +19,7 @@ export default class extends Component {
     return this.size / this.outerCircleDiameter;
   }
   get percentLabelDiameter() {
-    return this.scale * this.innerCircleDiameter
+    return this.scale * this.innerCircleDiameter;
   }
   get humanPercentComplete() {
     if (this.args.percentComplete) {
