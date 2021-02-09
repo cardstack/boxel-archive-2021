@@ -4,6 +4,8 @@ import { reads } from 'macro-decorators';
 const FONT_SIZE_RATIO = 25 / 120;
 
 export default class extends Component {
+  outerCircleRadius = 60;
+  outerCircleDiameter = this.outerCircleRadius * 2;
   @reads('args.size', 120) size;
 
   get fontSize() {

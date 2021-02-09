@@ -6,11 +6,11 @@
   <div
     class="progress-circle__pie"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" width={{this.size}} height={{this.size}} viewBox="0 0 120 120">
+    <svg xmlns="http://www.w3.org/2000/svg" width={{this.size}} height={{this.size}} viewBox="0 0 {{this.outerCircleDiameter}} {{this.outerCircleDiameter}}">
       <g fill="none" stroke="var(--icon-color, #e8e8e8)" stroke-width="12">
         <circle 
-          cx="60" 
-          cy="60" 
+          cx={{this.outerCircleRadius}} 
+          cy={{this.outerCircleRadius}}  
           r="54" 
           fill="none" 
           style={{html-safe (concat "stroke-dasharray:" (mult (div @percentComplete 100) 339) " " 339)}}
