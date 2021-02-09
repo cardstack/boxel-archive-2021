@@ -14,8 +14,11 @@ export default class extends Component {
   get fontSize() {
     return this.size * FONT_SIZE_RATIO;
   }
-  get innerCircleSize() {
-    return this.size - this.fontSize;
+  get scale() {
+    return this.size / this.outerCircleDiameter;
+  }
+  get percentLabelDiameter() {
+    return this.scale * this.innerCircleDiameter
   }
   get humanPercentComplete() {
     if (this.args.percentComplete) {
