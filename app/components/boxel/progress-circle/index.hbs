@@ -7,19 +7,18 @@
     class="progress-circle__pie"
   >
     <svg xmlns="http://www.w3.org/2000/svg" width={{this.size}} height={{this.size}} viewBox="0 0 {{this.outerCircleDiameter}} {{this.outerCircleDiameter}}">
-      <g fill="none" stroke="var(--icon-color, #e8e8e8)" stroke-width="{{this.progressArcThickness}}">
+      <g stroke-width="{{this.progressArcThickness}}">
         <circle 
           cx={{this.outerCircleRadius}} 
           cy={{this.outerCircleRadius}}  
           r={{this.strokeCircleRadius}} 
-          fill="none" 
-          style="stroke-dasharray: 339; stroke: #e8e8e8;"
+          class="progress-circle__background-circle"
         />
         <circle 
           cx={{this.outerCircleRadius}} 
           cy={{this.outerCircleRadius}}  
           r={{this.strokeCircleRadius}} 
-          fill="none" 
+          class="progress-circle__indicator-circle"
           style={{this.pieStyle}}
         />
       </g>
