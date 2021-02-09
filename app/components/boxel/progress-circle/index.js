@@ -6,7 +6,9 @@ const FONT_SIZE_RATIO = 25 / 120;
 export default class extends Component {
   progressArcThickness = 12;
   outerCircleRadius = 60;
+  innerCircleRadius = this.outerCircleRadius - this.progressArcThickness;
   outerCircleDiameter = this.outerCircleRadius * 2;
+  innerCircleDiameter = this.innerCircleRadius * 2;
   @reads('args.size', 120) size;
 
   get fontSize() {
