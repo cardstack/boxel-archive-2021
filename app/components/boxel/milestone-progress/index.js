@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 
-export default class ProgressBoxComponent extends Component {
+export default class MilestoneProgressComponent extends Component {
   get percentComplete() {
     let totalMilestones = this.args.milestones
       ? this.args.milestones.length

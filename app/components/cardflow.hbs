@@ -39,18 +39,20 @@
     {{/if}}
   </:content>
 
-  <:sidebar>
+  <:sidebar as |SidebarSection|>
     {{#if @model.workflow}}
-      <Boxel::ProgressBox
-        @title={{@model.workflow.title}}
-        @status={{this.progressStatus}}
-        @milestones={{@model.workflow.milestones}}
-        @completedCount={{this.progress}}
-      />
+      <SidebarSection @border={{true}}>
+        <Boxel::MilestoneProgress
+          @title={{@model.workflow.title}}
+          @status={{this.progressStatus}}
+          @milestones={{@model.workflow.milestones}}
+          @completedCount={{this.progress}}
+        />
+      </SidebarSection>
     {{/if}}
 
-    <Boxel::ParticipantsBox>
-      <:list>
+    <SidebarSection @border={{true}}>
+      <Boxel::ParticipantsBox>
         {{#if this.otherParticipants}}
           <Boxel::ParticipantList
             @participants={{this.otherParticipants}}
@@ -61,8 +63,8 @@
             @participants={{this.participatingOrgMembers}}
           />
         {{/if}}
-      </:list>
-    </Boxel::ParticipantsBox>
+      </Boxel::ParticipantsBox>
+    </SidebarSection>
   </:sidebar>
 
 </Boxel::Thread>

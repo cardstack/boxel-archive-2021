@@ -1,11 +1,9 @@
 <Freestyle::Usage @name="ParticipantsBox">
   <:example>
     <Boxel::ParticipantsBox @addAction={{this.addAction}}>
-      <:list>
-        <Boxel::ParticipantList
-          @participants={{this.sampleParticipantGroup}}
-        />
-      </:list>
+      <Boxel::ParticipantList
+        @participants={{this.sampleParticipantGroup}}
+      />
     </Boxel::ParticipantsBox>
   </:example>
   <:api as |Args|>
@@ -24,11 +22,9 @@
 <Freestyle::Usage @slug="ParticipantsBox-no-action" @description="Without addAction passed">
   <:example>
     <Boxel::ParticipantsBox>
-      <:list>
-        <Boxel::ParticipantList
-          @participants={{this.sampleParticipantGroup}}
-        />
-      </:list>
+      <Boxel::ParticipantList
+        @participants={{this.sampleParticipantGroup}}
+      />
     </Boxel::ParticipantsBox>
   </:example>
 </Freestyle::Usage>
@@ -36,14 +32,12 @@
 <Freestyle::Usage @slug="ParticipantsBox-multi" @description="Displaying multiple participant groups">
   <:example>
     <Boxel::ParticipantsBox @addAction={{this.addAction}}>
-      <:list>
-        <Boxel::ParticipantList
-          @participants={{this.sampleParticipantGroup}}
-        />
-        <Boxel::ParticipantList
-          @participants={{this.sampleParticipantGroup2}}
-        />
-      </:list>
+      <Boxel::ParticipantList
+        @participants={{this.sampleParticipantGroup}}
+      />
+      <Boxel::ParticipantList
+        @participants={{this.sampleParticipantGroup2}}
+      />
     </Boxel::ParticipantsBox>
   </:example>
 </Freestyle::Usage>

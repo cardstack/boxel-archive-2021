@@ -1,12 +1,14 @@
-<Freestyle::Usage @name="ProgressBox" @description="Combines `Boxel::Milestones` and `Boxel::ProgressCircle` components in a sidebar card format.">
+<Freestyle::Usage @name="MilestoneProgress" @description="Combines `Boxel::Milestones` and `Boxel::ProgressCircle` components stacked and ready for use in a sidebar.">
   <:example>
-    <Boxel::ProgressBox
-      @title={{this.title}}
-      @status={{this.status}}
-      @size={{this.size}}
-      @milestones={{this.milestones}}
-      @completedCount={{this.completedCount}}
-    />
+    <Doc::DemoStage @width="230px" @paddingX="0px" @paddingY="0px">
+      <Boxel::MilestoneProgress
+        @title={{this.title}}
+        @status={{this.status}}
+        @size={{this.size}}
+        @milestones={{this.milestones}}
+        @completedCount={{this.completedCount}}
+      />
+    </Doc::DemoStage>
   </:example>
   <:api as |Args|>
     <Args.String

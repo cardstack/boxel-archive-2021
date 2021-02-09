@@ -1,0 +1,21 @@
+.sidebar-section--bordered {
+  background-color: var(--boxel-light);
+  border-radius: var(--boxel-border-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  padding-bottom: 10px;
+}
+
+.sidebar-section__title {
+  padding-bottom: var(--boxel-spacing);
+  font: var(--boxel-font);
+  font-weight: 600;
+  letter-spacing: var(--boxel-lsp);
+}
+
+.sidebar-section__content > * + * {
+  margin-top: 15px;
+}
+
+.sidebar-section--bordered .sidebar-section__content > * + * {
+  margin-top: 0;
+}

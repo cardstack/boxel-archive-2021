@@ -1,19 +1,5 @@
-.participants-box {
-  width: 230px;
-  min-height: 100px;
-  padding-bottom: 15px;
-  background-color: var(--boxel-light);
-  border-radius: var(--boxel-border-radius);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-}
-
-.participants-box__title {
-  padding: 15px var(--boxel-spacing) var(--boxel-spacing);
-  color: var(--boxel-purple-400);
-  font: var(--boxel-font-xs);
-  font-weight: 600;
-  letter-spacing: var(--boxel-lsp-xl);
-  text-transform: uppercase;
+.participants-box__participants {
+  padding: 10px 0 10px;
 }
 
 .participants-box__participants > ul {
@@ -23,32 +9,36 @@
 
 .participants-box__participants > ul + ul {
   margin-top: 5px;
-  padding-top: 15px;
+  padding-top: 5px;
   border-top: 1px solid var(--boxel-light-400);
 }
 
-.participant-list__add-button {
+.participant-box__add-button {
   display: grid;
   grid-template-columns: 30px 1fr;
   gap: 0 12px;
+  width: 100%;
   align-items: center;
   height: 40px;
   background: none;
   border: none;
-  margin-left: var(--boxel-spacing);
-  padding: 0;
+  padding: 0 var(--boxel-spacing) var(--boxel-spacing);
   font: var(--boxel-font-xs);
   color: var(--boxel-purple-400);
   letter-spacing: var(--boxel-lsp-lg);
 }
 
-.participant-list__add-button-icon {
+.participant-box__add-button-label {
+  text-align: left;
+}
+
+.participant-box__add-button-icon {
   width: 30px;
   height: 30px;
   border: 1px solid var(--boxel-light-400);
   border-radius: 100px;
 }
 
-.participant-list__add-button-icon > svg {
+.participant-box__add-button-icon > svg {
   height: 100%;
 }

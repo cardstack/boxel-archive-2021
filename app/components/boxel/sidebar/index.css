@@ -1,0 +1,3 @@
+.sidebar * + .sidebar-section {
+  margin-top: var(--boxel-spacing);
+}

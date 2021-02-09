@@ -21,7 +21,7 @@ const SAMPLE_MILESTONS = [
   },
 ];
 
-export default class ProgressBoxUsageComponent extends Component {
+export default class MilestoneProgressUsageComponent extends Component {
   @tracked milestones = A(SAMPLE_MILESTONS);
   @tracked title = 'Customer Support';
   @tracked status = 'Products reserved';

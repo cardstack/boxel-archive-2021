@@ -22,9 +22,9 @@
   {{/if}}
   <div class="boxel-card boxel-card--default boxel-card--{{if @model @model.type "blank-card"}} {{@class}}">
     {{#if @model.type}}
-      <header class="boxel-card__header">
+      <Boxel::Header class="boxel-card__header">
         {{humanize @model.type}}
-      </header>
+      </Boxel::Header>
     {{/if}}
     <div class="boxel-card__inner boxel-card__inner--{{or @format "list"}} {{if (or @model.imgURL @hasImage) "boxel-card__inner--with-img"}} {{if (and @status (not-eq @status "no-change")) "" "field-renderer__opacity-control"}}">
       {{#if @model.imgURL}}

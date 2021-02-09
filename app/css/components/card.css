@@ -35,19 +35,6 @@
   background: url('../../images/media-registry/placeholders/blank-card.png') center/contain no-repeat;
 }
 
-.boxel-card__header {
-  height: 30px;
-  padding: 7px 15px;
-  border-radius: 10px 10px 0 0;
-  background-color: var(--boxel-purple-100);
-  color: var(--boxel-purple-400);
-  font: var(--boxel-font-xs);
-  font-weight: 600;
-  letter-spacing: var(--boxel-lsp-xl);
-  text-transform: uppercase;
-  transition: background-image var(--boxel-transition), color var(--boxel-transition);
-}
-
 .boxel-card__expand-overlay:hover {
   box-shadow: var(--boxel-box-shadow);
   cursor: pointer;

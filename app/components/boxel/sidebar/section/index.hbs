@@ -1,0 +1,10 @@
+<section class={{cn "sidebar-section" sidebar-section--bordered=@border}} ...attributes>
+  {{#if @title}}
+    <h3 class="sidebar-section__title">
+      {{@title}}
+    </h3>
+  {{/if}}
+  <div class="sidebar-section__content">
+    {{yield}}
+  </div>
+</section>

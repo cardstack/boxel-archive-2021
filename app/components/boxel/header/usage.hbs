@@ -1,0 +1,15 @@
+<Freestyle::Usage @name="BoxelHeader">
+  <:description>
+    Usually shown at the top of an embedded "card"
+  </:description>
+  <:example>
+    <Boxel::Header>
+      Some Header Text
+    </Boxel::Header>
+  </:example>
+  <:api as |Args|>
+    <Args.Yield
+      @description="Header text to show"
+    />
+  </:api>
+</Freestyle::Usage>

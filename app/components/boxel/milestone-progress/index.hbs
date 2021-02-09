@@ -1,0 +1,27 @@
+<section class="milestone-progress" ...attributes>
+  <Boxel::Header class="milestone-progress__section-title">
+    {{#if @title}}
+      {{html-safe (concat "Workflow:<br>" @title)}}
+    {{else}}
+      Workflow Progress
+    {{/if}}
+  </Boxel::Header>
+  <section class="milestone-progress__section">
+    <Boxel::ProgressCircle
+      @size={{@size}}
+      @percentComplete={{this.percentComplete}}
+    />
+    <div class="milestone-progress__status">
+      {{@status}}
+    </div>
+  </section>
+  <Boxel::Header class="milestone-progress__section-title">
+    Milestones
+  </Boxel::Header>
+  <section class="milestone-progress__section">
+    <Boxel::Milestones
+      @milestones={{@milestones}}
+      @completedCount={{@completedCount}}
+    />
+  </section>
+</section>

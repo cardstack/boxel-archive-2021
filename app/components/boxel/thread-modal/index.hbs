@@ -30,24 +30,25 @@
       {{/each}}
     </:content>
 
-    <:sidebar>
-      <Boxel::ProgressBox
-        @title={{@model.workflow.title}}
-        @status={{this.progressStatus}}
-        @milestones={{@model.workflow.milestones}}
-        @completedCount={{this.progress}}
-      />
-
-      <Boxel::ParticipantsBox @addAction={{true}}>
-        <:list>
+    <:sidebar as |SidebarSection|>
+      <SidebarSection @border={{true}}>
+        <Boxel::MilestoneProgress
+          @title={{@model.workflow.title}}
+          @status={{this.progressStatus}}
+          @milestones={{@model.workflow.milestones}}
+          @completedCount={{this.progress}}
+        />
+      </SidebarSection>
+      <SidebarSection @border={{true}}>
+        <Boxel::ParticipantsBox @addAction={{true}}>
           <Boxel::ParticipantList
             @participants={{@model.participants}}
           />
           <Boxel::ParticipantList
             @participants={{@model.orgRepresentatives}}
           />
-        </:list>
-      </Boxel::ParticipantsBox>
+        </Boxel::ParticipantsBox>
+      </SidebarSection>
     </:sidebar>
   </Boxel::Thread>
 </BoxelModal>
