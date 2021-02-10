@@ -1,18 +1,18 @@
 'use strict';
 
 const { Webpack } = require('@embroider/webpack');
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const EmberAddon = require('ember-cli/lib/broccoli/ember-app');
 const mergeTrees = require('broccoli-merge-trees');
 const Funnel = require('broccoli-funnel');
 const SynthesizeTemplateOnlyComponents = require('@embroider/compat/src/synthesize-template-only-components')
   .default;
 const AddStyleImportsToComponents = require('./lib/add-style-imports-to-components');
 
+// const { maybeEmbroider } = require('@embroider/test-setup');
+// return maybeEmbroider(app);
+
 module.exports = function (defaults) {
-  let app = new EmberApp(defaults, {
-    'ember-fetch': {
-      preferNative: true,
-    },
+  let app = new EmberAddon(defaults, {
     /*
       Leave jQuery out of this addon's own test suite & dummy app by default,
       so that the addon can be used in apps without jQuery. If you really need

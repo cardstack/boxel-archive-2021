@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { dropTask } from 'ember-concurrency-decorators';
+import fetch from 'fetch';
 
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 
