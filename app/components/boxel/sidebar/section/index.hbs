@@ -1,8 +1,17 @@
-<section class={{cn "sidebar-section" sidebar-section--bordered=@border}} ...attributes>
+<section class={{cn
+    "sidebar-section"
+    sidebar-section--bordered=@border
+    sidebar-section--attach-next=@attachNext
+  }}
+  ...attributes
+>
   {{#if @title}}
     <h3 class="sidebar-section__title">
       {{@title}}
     </h3>
+  {{/if}}
+  {{#if @header}}
+    <Boxel::Header>{{@header}}</Boxel::Header>
   {{/if}}
   <div class="sidebar-section__content">
     {{yield}}

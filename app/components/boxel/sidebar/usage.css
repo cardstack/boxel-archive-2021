@@ -1,12 +1,14 @@
 .sidebar-usage-container {
   background-color: var(--boxel-light-300);
-    height:600px;
-    padding:10px 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 230px);
-    column-gap: 100px;
-  }
+  padding-left: var(--boxel-sp-sm);
+  height:600px;
+  padding:10px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
+  column-gap: 100px;
+}
 
   .sidebar-usage-container__example-content {
-    padding: 0 15px;
+    padding-left: var(--boxel-sp-sm);
+    padding-right: var(--boxel-sp-sm);
   }

@@ -1,6 +1,18 @@
 <Freestyle::Usage @name="Sidebar">
   <:example>
+    <div>Three examples:</div>
     <div class="sidebar-usage-container">
+
+      <Boxel::Sidebar as |SidebarSection|>
+        <SidebarSection @border={{false}} @title="Section Title">
+          <div>Content goes here!</div>
+          <div>Some more goes here!</div>
+        </SidebarSection>
+        <SidebarSection @border={{false}} @title="Another Title">
+          <div>Content goes here!</div>
+          <div>Some more goes here!</div>
+        </SidebarSection>
+      </Boxel::Sidebar>
 
       <Boxel::Sidebar as |SidebarSection|>
         <SidebarSection @border={{true}}>
@@ -20,15 +32,31 @@
       </Boxel::Sidebar>
 
       <Boxel::Sidebar as |SidebarSection|>
-        <SidebarSection @border={{false}} @title="Section Title">
-          <div>Content goes here!</div>
-          <div>Some more goes here!</div>
+        <SidebarSection @border={{true}} @attachNext={{true}}>
+          <Boxel::Header>Section Title</Boxel::Header>
+          <div class="sidebar-usage-container__example-content">
+            <div>Content goes here!</div>
+            <div>Some more goes here!</div>
+          </div>
         </SidebarSection>
-        <SidebarSection @border={{false}} @title="Another Title">
-          <div>Content goes here!</div>
-          <div>Some more goes here!</div>
+        <SidebarSection @border={{true}}>
+          <Boxel::Header>Another Section</Boxel::Header>
+          <div class="sidebar-usage-container__example-content">
+            <div>Notice how this one is attached to the one above!</div>
+            <div>Some more goes here!</div>
+            <div>Lots of great stuff!</div>
+            <div>Some more goes here!</div>
+          </div>
+        </SidebarSection>
+        <SidebarSection @border={{true}}>
+          <Boxel::Header>A Third Section</Boxel::Header>
+          <div class="sidebar-usage-container__example-content">
+            <div>Content goes here!</div>
+            <div>Some more goes here!</div>
+          </div>
         </SidebarSection>
       </Boxel::Sidebar>
+
     
     </div>
   </:example>

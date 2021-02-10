@@ -41,29 +41,39 @@
 
   <:sidebar as |SidebarSection|>
     {{#if @model.workflow}}
-      <SidebarSection @border={{true}}>
-        <Boxel::MilestoneProgress
-          @title={{@model.workflow.title}}
-          @status={{this.progressStatus}}
+      <SidebarSection
+        @header={{if @model.workflow.title (html-safe (concat "Workflow:<br>" @model.workflow.title)) 'Workflow Progress'}}
+        @border={{true}}
+        @attachNext={{true}}
+      >
+        <Boxel::ProgressCircle
+          @percentComplete={{percent-complete total=@model.workflow.milestones.length completed=this.progress}}
+        />
+        <div class="cardflow__milestone-progress-status">
+          {{this.progressStatus}}
+        </div>
+      </SidebarSection>
+      <SidebarSection @header="Milestones" @border={{true}}>
+        <Boxel::Milestones
           @milestones={{@model.workflow.milestones}}
           @completedCount={{this.progress}}
         />
       </SidebarSection>
     {{/if}}
 
-    <SidebarSection @border={{true}}>
-      <Boxel::ParticipantsBox>
-        {{#if this.otherParticipants}}
-          <Boxel::ParticipantList
-            @participants={{this.otherParticipants}}
-          />
-        {{/if}}
-        {{#if this.participatingOrgMembers}}
-          <Boxel::ParticipantList
-            @participants={{this.participatingOrgMembers}}
-          />
-        {{/if}}
-      </Boxel::ParticipantsBox>
+    <SidebarSection @header="Participants" @border={{true}}>
+      {{#if this.otherParticipants}}
+        <Boxel::ParticipantList
+          @fullWidth={{true}}
+          @participants={{this.otherParticipants}}
+        />
+      {{/if}}
+      {{#if this.participatingOrgMembers}}
+        <Boxel::ParticipantList
+          @fullWidth={{true}}
+          @participants={{this.participatingOrgMembers}}
+        />
+      {{/if}}
     </SidebarSection>
   </:sidebar>
 

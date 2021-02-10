@@ -1,7 +1,8 @@
 .boxel-header {
-  min-height: 30px;
-  padding: 7px 15px;
-  border-radius: 10px 10px 0 0;
+  min-height: var(--boxel-sp-xl);
+  padding: var(--boxel-sp-sm);
+  border-top-left-radius: var(--boxel-border-radius);
+  border-top-right-radius: var(--boxel-border-radius);
   background-color: var(--boxel-purple-100);
   color: var(--boxel-purple-400);
   font: var(--boxel-font-xs);

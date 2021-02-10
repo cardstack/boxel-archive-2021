@@ -31,23 +31,36 @@
     </:content>
 
     <:sidebar as |SidebarSection|>
-      <SidebarSection @border={{true}}>
-        <Boxel::MilestoneProgress
-          @title={{@model.workflow.title}}
-          @status={{this.progressStatus}}
+      <SidebarSection
+        @header={{if @model.workflow.title (html-safe (concat "Workflow:<br>" @model.workflow.title)) 'Workflow Progress'}}
+        @border={{true}}
+        @attachNext={{true}}
+      >
+        <Boxel::ProgressCircle
+          @percentComplete={{percent-complete total=@model.workflow.milestones.length completed=this.progress}}
+        />
+        <div class="thread-modal__milestone-progress-status">
+          {{this.progressStatus}}
+        </div>
+      </SidebarSection>
+      <SidebarSection @header="Milestones" @border={{true}}>
+        <Boxel::Milestones
           @milestones={{@model.workflow.milestones}}
           @completedCount={{this.progress}}
         />
       </SidebarSection>
-      <SidebarSection @border={{true}}>
-        <Boxel::ParticipantsBox @addAction={{true}}>
-          <Boxel::ParticipantList
-            @participants={{@model.participants}}
-          />
-          <Boxel::ParticipantList
-            @participants={{@model.orgRepresentatives}}
-          />
-        </Boxel::ParticipantsBox>
+      <SidebarSection @header="Participants" @border={{true}}>
+        <Boxel::ParticipantList
+          @fullWidth={{true}}
+          @participants={{@model.participants}}
+        />
+        <Boxel::ParticipantList
+          @fullWidth={{true}}
+          @participants={{@model.orgRepresentatives}}
+        />
+        <Boxel::AddParticipantButton
+          {{on 'click' (optional this.addParticipant)}}
+        />
       </SidebarSection>
     </:sidebar>
   </Boxel::Thread>
