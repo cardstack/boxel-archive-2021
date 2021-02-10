@@ -11,16 +11,7 @@
     </h3>
   {{/if}}
   {{#if @header}}
-    <Boxel::Header
-      class="sidebar-section__header"
-      style={{css-var
-        header-padding="0"
-        header-background-color="transparent"
-        header-min-height="0"
-      }}
-    >
-      {{@header}}
-    </Boxel::Header>
+    <Boxel::Header>{{@header}}</Boxel::Header>
   {{/if}}
   <div class="sidebar-section__content">
     {{yield}}
