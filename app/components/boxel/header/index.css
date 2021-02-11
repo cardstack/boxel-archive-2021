@@ -1,13 +1,17 @@
 .boxel-header {
-  min-height: var(--boxel-sp-xl);
-  padding: var(--boxel-sp-sm);
+  --header-padding: var(--boxel-sp-sm);
+  --header-background-color: var(--boxel-purple-100);
+  --header-min-height: var(--boxel-sp-xl);
+
+  background-color: var(--header-background-color);
   border-top-left-radius: var(--boxel-border-radius);
   border-top-right-radius: var(--boxel-border-radius);
-  background-color: var(--boxel-purple-100);
   color: var(--boxel-purple-400);
   font: var(--boxel-font-xs);
   font-weight: 600;
   letter-spacing: var(--boxel-lsp-xl);
+  min-height: var(--header-min-height);
+  padding: var(--header-padding);
   text-transform: uppercase;
   transition: background-image var(--boxel-transition), color var(--boxel-transition);  
 }

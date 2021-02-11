@@ -3,11 +3,37 @@
     Usually shown at the top of an embedded "card"
   </:description>
   <:example>
-    <Boxel::Header>
+    <Boxel::Header style={{css-var
+        header-padding=this.headerPadding
+        header-background-color=this.headerBackgroundColor
+        header-min-height=this.headerMinHeight
+      }}
+>
       Some Header Text
     </Boxel::Header>
   </:example>
   <:api as |Args|>
+    <Args.String
+      @name="--header-padding"
+      @description="padding CSS style"
+      @defaultValue="var(--boxel-s-1)"
+      @value={{this.headerPadding}}
+      @onInput={{fn (mut this.headerPadding)}}
+    />
+    <Args.String
+      @name="--header-background-color"
+      @description="background-color CSS style"
+      @defaultValue="var(--boxel-s-1)"
+      @value={{this.headerBackgroundColor}}
+      @onInput={{fn (mut this.headerBackgroundColor)}}
+    />
+    <Args.String
+      @name="--header-min-height"
+      @description="min-height CSS style"
+      @defaultValue="var(--boxel-s2)"
+      @value={{this.headerMinHeight}}
+      @onInput={{fn (mut this.headerMinHeight)}}
+    />
     <Args.Yield
       @description="Header text to show"
     />

@@ -49,7 +49,7 @@
       as |SidebarSection|
     >
       {{#if @model.collections.length}}
-        <SidebarSection @title="In These Collections" class="item__sidebar">
+        <SidebarSection @title="In These Collections">
           {{#each @model.collections as |collection|}}
             <Card
               @mode="view"

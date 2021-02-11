@@ -1,14 +1,8 @@
 .sidebar-usage-container {
   background-color: var(--boxel-light-300);
-  padding-left: var(--boxel-sp-sm);
   height:600px;
-  padding:10px 0;
+  padding:10px var(--boxel-sp-xl);
   display: grid;
   grid-template-columns: repeat(auto-fill, 230px);
-  column-gap: 100px;
+  column-gap: 50px;
 }
-
-  .sidebar-usage-container__example-content {
-    padding-left: var(--boxel-sp-sm);
-    padding-right: var(--boxel-sp-sm);
-  }

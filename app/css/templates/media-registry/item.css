@@ -1,8 +1,5 @@
-.item_sidebar {
-  margin-right: 30px;
-}
 .item__sidebar .boxel-card {
-  min-width: 360px;
+  min-width: 320px;
   min-height: 160px;
 }
 
@@ -17,7 +14,6 @@
   height: 50px;
   margin-right: 10px;
 }
-
 
 /* Header + sections */
 .item {

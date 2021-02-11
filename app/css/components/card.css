@@ -90,7 +90,7 @@
   "img title" auto
   "img desc"  auto
   "img ."     auto
-  "img ."     auto / auto 1fr;
+  "img ."     auto / 160px auto;
 }
 
 .boxel-card__inner--with-img .boxel-card__title {
