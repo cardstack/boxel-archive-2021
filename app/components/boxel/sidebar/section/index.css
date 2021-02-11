@@ -5,7 +5,11 @@
 .sidebar-section--bordered {
   background-color: var(--boxel-light);
   border-radius: var(--boxel-border-radius);
+<<<<<<< HEAD
   padding: var(--boxel-sp);
+=======
+  padding: var(--boxel-s0);
+>>>>>>> 8cf4ff4 (Add CSS props to allow Boxel::Header to work in sidebar cards.)
   position: relative;
   z-index: 0;
 }
