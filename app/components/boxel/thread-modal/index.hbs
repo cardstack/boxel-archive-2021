@@ -32,7 +32,7 @@
 
     <:sidebar as |SidebarSection|>
       <SidebarSection
-        @header={{if @model.workflow.title (html-safe (concat "Workflow:<br>" @model.workflow.title)) 'Workflow Progress'}}
+        @header={{if @model.workflow.title (html-safe (concat "Workflow:<br>" @model.workflow.title)) "Workflow Progress"}}
         @border={{true}}
         @attachNext={{true}}
       >
