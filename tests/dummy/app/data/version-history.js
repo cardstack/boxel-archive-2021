@@ -1,8 +1,8 @@
-import oldAlbumArt from 'dummy/images/media-registry/old-album-art.png';
-import autumnLeavesCover from 'dummy/images/media-registry/covers/Autumn-Leaves.jpg';
-import autumnLeavesThumb from 'dummy/images/media-registry/covers/thumb/Autumn-Leaves.jpg';
-import autumnLeavesMedium from 'dummy/images/media-registry/covers/medium/Autumn-Leaves.jpg';
-import autumnLeavesLarge from 'dummy/images/media-registry/covers/large/Autumn-Leaves.jpg';
+import oldAlbumArt from '@cardstack/boxel/images/media-registry/old-album-art.png';
+import autumnLeavesCover from '@cardstack/boxel/images/media-registry/covers/Autumn-Leaves.jpg';
+import autumnLeavesThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Autumn-Leaves.jpg';
+import autumnLeavesMedium from '@cardstack/boxel/images/media-registry/covers/medium/Autumn-Leaves.jpg';
+import autumnLeavesLarge from '@cardstack/boxel/images/media-registry/covers/large/Autumn-Leaves.jpg';
 
 import {
   PIA_MIDINA,

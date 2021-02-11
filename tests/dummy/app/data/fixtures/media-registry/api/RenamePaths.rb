@@ -9,10 +9,10 @@ cover_art_file_names = javascript
 
 imports = cover_art_file_names.map do |filename|
   modulename_prefix = filename.gsub('-', '')
-"import #{modulename_prefix}Cover from 'dummy/images/media-registry/covers/#{filename}.jpg';
-import #{modulename_prefix}Thumb from 'dummy/images/media-registry/covers/thumb/#{filename}.jpg';
-import #{modulename_prefix}Medium from 'dummy/images/media-registry/covers/medium/#{filename}.jpg';
-import #{modulename_prefix}Large from 'dummy/images/media-registry/covers/large/#{filename}.jpg';
+"import #{modulename_prefix}Cover from '@cardstack/boxel/images/media-registry/covers/#{filename}.jpg';
+import #{modulename_prefix}Thumb from '@cardstack/boxel/images/media-registry/covers/thumb/#{filename}.jpg';
+import #{modulename_prefix}Medium from '@cardstack/boxel/images/media-registry/covers/medium/#{filename}.jpg';
+import #{modulename_prefix}Large from '@cardstack/boxel/images/media-registry/covers/large/#{filename}.jpg';
 "
 end
 # insert imports at top

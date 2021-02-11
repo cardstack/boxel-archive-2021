@@ -1,367 +1,367 @@
-import AccidentsCover from 'dummy/images/media-registry/covers/Accidents.jpg';
-import AccidentsThumb from 'dummy/images/media-registry/covers/thumb/Accidents.jpg';
-import AccidentsMedium from 'dummy/images/media-registry/covers/medium/Accidents.jpg';
-import AccidentsLarge from 'dummy/images/media-registry/covers/large/Accidents.jpg';
-
-import AllAboutHeavenCover from 'dummy/images/media-registry/covers/All-About-Heaven.jpg';
-import AllAboutHeavenThumb from 'dummy/images/media-registry/covers/thumb/All-About-Heaven.jpg';
-import AllAboutHeavenMedium from 'dummy/images/media-registry/covers/medium/All-About-Heaven.jpg';
-import AllAboutHeavenLarge from 'dummy/images/media-registry/covers/large/All-About-Heaven.jpg';
-
-import AllAbouttheManCover from 'dummy/images/media-registry/covers/All-About-the-Man.jpg';
-import AllAbouttheManThumb from 'dummy/images/media-registry/covers/thumb/All-About-the-Man.jpg';
-import AllAbouttheManMedium from 'dummy/images/media-registry/covers/medium/All-About-the-Man.jpg';
-import AllAbouttheManLarge from 'dummy/images/media-registry/covers/large/All-About-the-Man.jpg';
-
-import AllAbouttheQualityofLifeCover from 'dummy/images/media-registry/covers/All-About-the-Quality-of-Life.jpg';
-import AllAbouttheQualityofLifeThumb from 'dummy/images/media-registry/covers/thumb/All-About-the-Quality-of-Life.jpg';
-import AllAbouttheQualityofLifeMedium from 'dummy/images/media-registry/covers/medium/All-About-the-Quality-of-Life.jpg';
-import AllAbouttheQualityofLifeLarge from 'dummy/images/media-registry/covers/large/All-About-the-Quality-of-Life.jpg';
-
-import AlwaysInLoveCover from 'dummy/images/media-registry/covers/Always-In-Love.jpg';
-import AlwaysInLoveThumb from 'dummy/images/media-registry/covers/thumb/Always-In-Love.jpg';
-import AlwaysInLoveMedium from 'dummy/images/media-registry/covers/medium/Always-In-Love.jpg';
-import AlwaysInLoveLarge from 'dummy/images/media-registry/covers/large/Always-In-Love.jpg';
-
-import AnimalsCover from 'dummy/images/media-registry/covers/Animals.jpg';
-import AnimalsThumb from 'dummy/images/media-registry/covers/thumb/Animals.jpg';
-import AnimalsMedium from 'dummy/images/media-registry/covers/medium/Animals.jpg';
-import AnimalsLarge from 'dummy/images/media-registry/covers/large/Animals.jpg';
-
-import AroundtheWorldCover from 'dummy/images/media-registry/covers/Around-the-World.jpg';
-import AroundtheWorldThumb from 'dummy/images/media-registry/covers/thumb/Around-the-World.jpg';
-import AroundtheWorldMedium from 'dummy/images/media-registry/covers/medium/Around-the-World.jpg';
-import AroundtheWorldLarge from 'dummy/images/media-registry/covers/large/Around-the-World.jpg';
-
-import AutumnLeavesCover from 'dummy/images/media-registry/covers/Autumn-Leaves.jpg';
-import AutumnLeavesThumb from 'dummy/images/media-registry/covers/thumb/Autumn-Leaves.jpg';
-import AutumnLeavesMedium from 'dummy/images/media-registry/covers/medium/Autumn-Leaves.jpg';
-import AutumnLeavesLarge from 'dummy/images/media-registry/covers/large/Autumn-Leaves.jpg';
-
-import BeautyvsRealityCover from 'dummy/images/media-registry/covers/Beauty-vs-Reality.jpg';
-import BeautyvsRealityThumb from 'dummy/images/media-registry/covers/thumb/Beauty-vs-Reality.jpg';
-import BeautyvsRealityMedium from 'dummy/images/media-registry/covers/medium/Beauty-vs-Reality.jpg';
-import BeautyvsRealityLarge from 'dummy/images/media-registry/covers/large/Beauty-vs-Reality.jpg';
-
-import BeenThereDoneThatCover from 'dummy/images/media-registry/covers/Been-There-Done-That.jpg';
-import BeenThereDoneThatThumb from 'dummy/images/media-registry/covers/thumb/Been-There-Done-That.jpg';
-import BeenThereDoneThatMedium from 'dummy/images/media-registry/covers/medium/Been-There-Done-That.jpg';
-import BeenThereDoneThatLarge from 'dummy/images/media-registry/covers/large/Been-There-Done-That.jpg';
-
-import CallMeCrazyCover from 'dummy/images/media-registry/covers/Call-Me-Crazy.jpg';
-import CallMeCrazyThumb from 'dummy/images/media-registry/covers/thumb/Call-Me-Crazy.jpg';
-import CallMeCrazyMedium from 'dummy/images/media-registry/covers/medium/Call-Me-Crazy.jpg';
-import CallMeCrazyLarge from 'dummy/images/media-registry/covers/large/Call-Me-Crazy.jpg';
-
-import CastMeCover from 'dummy/images/media-registry/covers/Cast-Me.jpg';
-import CastMeThumb from 'dummy/images/media-registry/covers/thumb/Cast-Me.jpg';
-import CastMeMedium from 'dummy/images/media-registry/covers/medium/Cast-Me.jpg';
-import CastMeLarge from 'dummy/images/media-registry/covers/large/Cast-Me.jpg';
-
-import ChangeIsGoodCover from 'dummy/images/media-registry/covers/Change-Is-Good.jpg';
-import ChangeIsGoodThumb from 'dummy/images/media-registry/covers/thumb/Change-Is-Good.jpg';
-import ChangeIsGoodMedium from 'dummy/images/media-registry/covers/medium/Change-Is-Good.jpg';
-import ChangeIsGoodLarge from 'dummy/images/media-registry/covers/large/Change-Is-Good.jpg';
-
-import DramaQueenCover from 'dummy/images/media-registry/covers/Drama-Queen.jpg';
-import DramaQueenThumb from 'dummy/images/media-registry/covers/thumb/Drama-Queen.jpg';
-import DramaQueenMedium from 'dummy/images/media-registry/covers/medium/Drama-Queen.jpg';
-import DramaQueenLarge from 'dummy/images/media-registry/covers/large/Drama-Queen.jpg';
-
-import DriveMeCrazyCover from 'dummy/images/media-registry/covers/Drive-Me-Crazy.jpg';
-import DriveMeCrazyThumb from 'dummy/images/media-registry/covers/thumb/Drive-Me-Crazy.jpg';
-import DriveMeCrazyMedium from 'dummy/images/media-registry/covers/medium/Drive-Me-Crazy.jpg';
-import DriveMeCrazyLarge from 'dummy/images/media-registry/covers/large/Drive-Me-Crazy.jpg';
-
-import DrunkCover from 'dummy/images/media-registry/covers/Drunk.jpg';
-import DrunkThumb from 'dummy/images/media-registry/covers/thumb/Drunk.jpg';
-import DrunkMedium from 'dummy/images/media-registry/covers/medium/Drunk.jpg';
-import DrunkLarge from 'dummy/images/media-registry/covers/large/Drunk.jpg';
-
-import EscapeCover from 'dummy/images/media-registry/covers/Escape.jpg';
-import EscapeThumb from 'dummy/images/media-registry/covers/thumb/Escape.jpg';
-import EscapeMedium from 'dummy/images/media-registry/covers/medium/Escape.jpg';
-import EscapeLarge from 'dummy/images/media-registry/covers/large/Escape.jpg';
-
-import FairyTalesCover from 'dummy/images/media-registry/covers/Fairy-Tales.jpg';
-import FairyTalesThumb from 'dummy/images/media-registry/covers/thumb/Fairy-Tales.jpg';
-import FairyTalesMedium from 'dummy/images/media-registry/covers/medium/Fairy-Tales.jpg';
-import FairyTalesLarge from 'dummy/images/media-registry/covers/large/Fairy-Tales.jpg';
-
-import FreedomCover from 'dummy/images/media-registry/covers/Freedom.jpg';
-import FreedomThumb from 'dummy/images/media-registry/covers/thumb/Freedom.jpg';
-import FreedomMedium from 'dummy/images/media-registry/covers/medium/Freedom.jpg';
-import FreedomLarge from 'dummy/images/media-registry/covers/large/Freedom.jpg';
-
-import FriedPorkCover from 'dummy/images/media-registry/covers/Fried-Pork.jpg';
-import FriedPorkThumb from 'dummy/images/media-registry/covers/thumb/Fried-Pork.jpg';
-import FriedPorkMedium from 'dummy/images/media-registry/covers/medium/Fried-Pork.jpg';
-import FriedPorkLarge from 'dummy/images/media-registry/covers/large/Fried-Pork.jpg';
-
-import FriendswithBenefitsCover from 'dummy/images/media-registry/covers/Friends-with-Benefits.jpg';
-import FriendswithBenefitsThumb from 'dummy/images/media-registry/covers/thumb/Friends-with-Benefits.jpg';
-import FriendswithBenefitsMedium from 'dummy/images/media-registry/covers/medium/Friends-with-Benefits.jpg';
-import FriendswithBenefitsLarge from 'dummy/images/media-registry/covers/large/Friends-with-Benefits.jpg';
-
-import FullMoonCover from 'dummy/images/media-registry/covers/Full-Moon.jpg';
-import FullMoonThumb from 'dummy/images/media-registry/covers/thumb/Full-Moon.jpg';
-import FullMoonMedium from 'dummy/images/media-registry/covers/medium/Full-Moon.jpg';
-import FullMoonLarge from 'dummy/images/media-registry/covers/large/Full-Moon.jpg';
-
-import GoodTimesCover from 'dummy/images/media-registry/covers/Good-Times.jpg';
-import GoodTimesThumb from 'dummy/images/media-registry/covers/thumb/Good-Times.jpg';
-import GoodTimesMedium from 'dummy/images/media-registry/covers/medium/Good-Times.jpg';
-import GoodTimesLarge from 'dummy/images/media-registry/covers/large/Good-Times.jpg';
-
-import GottaBeSillyCover from 'dummy/images/media-registry/covers/Gotta-Be-Silly.jpg';
-import GottaBeSillyThumb from 'dummy/images/media-registry/covers/thumb/Gotta-Be-Silly.jpg';
-import GottaBeSillyMedium from 'dummy/images/media-registry/covers/medium/Gotta-Be-Silly.jpg';
-import GottaBeSillyLarge from 'dummy/images/media-registry/covers/large/Gotta-Be-Silly.jpg';
-
-import GraduationDayCover from 'dummy/images/media-registry/covers/Graduation-Day.jpg';
-import GraduationDayThumb from 'dummy/images/media-registry/covers/thumb/Graduation-Day.jpg';
-import GraduationDayMedium from 'dummy/images/media-registry/covers/medium/Graduation-Day.jpg';
-import GraduationDayLarge from 'dummy/images/media-registry/covers/large/Graduation-Day.jpg';
-
-import HandsOnCover from 'dummy/images/media-registry/covers/Hands-On.jpg';
-import HandsOnThumb from 'dummy/images/media-registry/covers/thumb/Hands-On.jpg';
-import HandsOnMedium from 'dummy/images/media-registry/covers/medium/Hands-On.jpg';
-import HandsOnLarge from 'dummy/images/media-registry/covers/large/Hands-On.jpg';
-
-import HappyEverAfterCover from 'dummy/images/media-registry/covers/Happy-Ever-After.jpg';
-import HappyEverAfterThumb from 'dummy/images/media-registry/covers/thumb/Happy-Ever-After.jpg';
-import HappyEverAfterMedium from 'dummy/images/media-registry/covers/medium/Happy-Ever-After.jpg';
-import HappyEverAfterLarge from 'dummy/images/media-registry/covers/large/Happy-Ever-After.jpg';
-
-import HaveFunCover from 'dummy/images/media-registry/covers/Have-Fun.jpg';
-import HaveFunThumb from 'dummy/images/media-registry/covers/thumb/Have-Fun.jpg';
-import HaveFunMedium from 'dummy/images/media-registry/covers/medium/Have-Fun.jpg';
-import HaveFunLarge from 'dummy/images/media-registry/covers/large/Have-Fun.jpg';
-
-import HomeIsntSweetCover from 'dummy/images/media-registry/covers/Home-Isnt-Sweet.jpg';
-import HomeIsntSweetThumb from 'dummy/images/media-registry/covers/thumb/Home-Isnt-Sweet.jpg';
-import HomeIsntSweetMedium from 'dummy/images/media-registry/covers/medium/Home-Isnt-Sweet.jpg';
-import HomeIsntSweetLarge from 'dummy/images/media-registry/covers/large/Home-Isnt-Sweet.jpg';
-
-import HomeSweetHomeCover from 'dummy/images/media-registry/covers/Home-Sweet-Home.jpg';
-import HomeSweetHomeThumb from 'dummy/images/media-registry/covers/thumb/Home-Sweet-Home.jpg';
-import HomeSweetHomeMedium from 'dummy/images/media-registry/covers/medium/Home-Sweet-Home.jpg';
-import HomeSweetHomeLarge from 'dummy/images/media-registry/covers/large/Home-Sweet-Home.jpg';
-
-import InfatuatedCover from 'dummy/images/media-registry/covers/Infatuated.jpg';
-import InfatuatedThumb from 'dummy/images/media-registry/covers/thumb/Infatuated.jpg';
-import InfatuatedMedium from 'dummy/images/media-registry/covers/medium/Infatuated.jpg';
-import InfatuatedLarge from 'dummy/images/media-registry/covers/large/Infatuated.jpg';
-
-import InnocentKittensCover from 'dummy/images/media-registry/covers/Innocent-Kittens.jpg';
-import InnocentKittensThumb from 'dummy/images/media-registry/covers/thumb/Innocent-Kittens.jpg';
-import InnocentKittensMedium from 'dummy/images/media-registry/covers/medium/Innocent-Kittens.jpg';
-import InnocentKittensLarge from 'dummy/images/media-registry/covers/large/Innocent-Kittens.jpg';
-
-import JustLikeBirdsCover from 'dummy/images/media-registry/covers/Just-Like-Birds.jpg';
-import JustLikeBirdsThumb from 'dummy/images/media-registry/covers/thumb/Just-Like-Birds.jpg';
-import JustLikeBirdsMedium from 'dummy/images/media-registry/covers/medium/Just-Like-Birds.jpg';
-import JustLikeBirdsLarge from 'dummy/images/media-registry/covers/large/Just-Like-Birds.jpg';
-
-import JustListenCover from 'dummy/images/media-registry/covers/Just-Listen.jpg';
-import JustListenThumb from 'dummy/images/media-registry/covers/thumb/Just-Listen.jpg';
-import JustListenMedium from 'dummy/images/media-registry/covers/medium/Just-Listen.jpg';
-import JustListenLarge from 'dummy/images/media-registry/covers/large/Just-Listen.jpg';
-
-import LeavetheDoorOpenCover from 'dummy/images/media-registry/covers/Leave-the-Door-Open.jpg';
-import LeavetheDoorOpenThumb from 'dummy/images/media-registry/covers/thumb/Leave-the-Door-Open.jpg';
-import LeavetheDoorOpenMedium from 'dummy/images/media-registry/covers/medium/Leave-the-Door-Open.jpg';
-import LeavetheDoorOpenLarge from 'dummy/images/media-registry/covers/large/Leave-the-Door-Open.jpg';
-
-import LiarsCover from 'dummy/images/media-registry/covers/Liars.jpg';
-import LiarsThumb from 'dummy/images/media-registry/covers/thumb/Liars.jpg';
-import LiarsMedium from 'dummy/images/media-registry/covers/medium/Liars.jpg';
-import LiarsLarge from 'dummy/images/media-registry/covers/large/Liars.jpg';
-
-import LittleLiesCover from 'dummy/images/media-registry/covers/Little-Lies.jpg';
-import LittleLiesThumb from 'dummy/images/media-registry/covers/thumb/Little-Lies.jpg';
-import LittleLiesMedium from 'dummy/images/media-registry/covers/medium/Little-Lies.jpg';
-import LittleLiesLarge from 'dummy/images/media-registry/covers/large/Little-Lies.jpg';
-
-import LongingCover from 'dummy/images/media-registry/covers/Longing.jpg';
-import LongingThumb from 'dummy/images/media-registry/covers/thumb/Longing.jpg';
-import LongingMedium from 'dummy/images/media-registry/covers/medium/Longing.jpg';
-import LongingLarge from 'dummy/images/media-registry/covers/large/Longing.jpg';
-
-import LoveConquersAllCover from 'dummy/images/media-registry/covers/Love-Conquers-All.jpg';
-import LoveConquersAllThumb from 'dummy/images/media-registry/covers/thumb/Love-Conquers-All.jpg';
-import LoveConquersAllMedium from 'dummy/images/media-registry/covers/medium/Love-Conquers-All.jpg';
-import LoveConquersAllLarge from 'dummy/images/media-registry/covers/large/Love-Conquers-All.jpg';
-
-import LoveNeverDiesCover from 'dummy/images/media-registry/covers/Love-Never-Dies.jpg';
-import LoveNeverDiesThumb from 'dummy/images/media-registry/covers/thumb/Love-Never-Dies.jpg';
-import LoveNeverDiesMedium from 'dummy/images/media-registry/covers/medium/Love-Never-Dies.jpg';
-import LoveNeverDiesLarge from 'dummy/images/media-registry/covers/large/Love-Never-Dies.jpg';
-
-import LovetheLoveCover from 'dummy/images/media-registry/covers/Love-the-Love.jpg';
-import LovetheLoveThumb from 'dummy/images/media-registry/covers/thumb/Love-the-Love.jpg';
-import LovetheLoveMedium from 'dummy/images/media-registry/covers/medium/Love-the-Love.jpg';
-import LovetheLoveLarge from 'dummy/images/media-registry/covers/large/Love-the-Love.jpg';
-
-import MagnaCumLoveCover from 'dummy/images/media-registry/covers/Magna-Cum-Love.jpg';
-import MagnaCumLoveThumb from 'dummy/images/media-registry/covers/thumb/Magna-Cum-Love.jpg';
-import MagnaCumLoveMedium from 'dummy/images/media-registry/covers/medium/Magna-Cum-Love.jpg';
-import MagnaCumLoveLarge from 'dummy/images/media-registry/covers/large/Magna-Cum-Love.jpg';
-
-import MagnitudeCover from 'dummy/images/media-registry/covers/Magnitude.jpg';
-import MagnitudeThumb from 'dummy/images/media-registry/covers/thumb/Magnitude.jpg';
-import MagnitudeMedium from 'dummy/images/media-registry/covers/medium/Magnitude.jpg';
-import MagnitudeLarge from 'dummy/images/media-registry/covers/large/Magnitude.jpg';
-
-import MakeMagicCover from 'dummy/images/media-registry/covers/Make-Magic.jpg';
-import MakeMagicThumb from 'dummy/images/media-registry/covers/thumb/Make-Magic.jpg';
-import MakeMagicMedium from 'dummy/images/media-registry/covers/medium/Make-Magic.jpg';
-import MakeMagicLarge from 'dummy/images/media-registry/covers/large/Make-Magic.jpg';
-
-import MaximumMildnessCover from 'dummy/images/media-registry/covers/Maximum-Mildness.jpg';
-import MaximumMildnessThumb from 'dummy/images/media-registry/covers/thumb/Maximum-Mildness.jpg';
-import MaximumMildnessMedium from 'dummy/images/media-registry/covers/medium/Maximum-Mildness.jpg';
-import MaximumMildnessLarge from 'dummy/images/media-registry/covers/large/Maximum-Mildness.jpg';
-
-import MightyMoonCover from 'dummy/images/media-registry/covers/Mighty-Moon.jpg';
-import MightyMoonThumb from 'dummy/images/media-registry/covers/thumb/Mighty-Moon.jpg';
-import MightyMoonMedium from 'dummy/images/media-registry/covers/medium/Mighty-Moon.jpg';
-import MightyMoonLarge from 'dummy/images/media-registry/covers/large/Mighty-Moon.jpg';
-
-import MomentsCover from 'dummy/images/media-registry/covers/Moments.jpg';
-import MomentsThumb from 'dummy/images/media-registry/covers/thumb/Moments.jpg';
-import MomentsMedium from 'dummy/images/media-registry/covers/medium/Moments.jpg';
-import MomentsLarge from 'dummy/images/media-registry/covers/large/Moments.jpg';
-
-import MoreThanWeKnowCover from 'dummy/images/media-registry/covers/More-Than-We-Know.jpg';
-import MoreThanWeKnowThumb from 'dummy/images/media-registry/covers/thumb/More-Than-We-Know.jpg';
-import MoreThanWeKnowMedium from 'dummy/images/media-registry/covers/medium/More-Than-We-Know.jpg';
-import MoreThanWeKnowLarge from 'dummy/images/media-registry/covers/large/More-Than-We-Know.jpg';
-
-import NeverLonelyCover from 'dummy/images/media-registry/covers/Never-Lonely.jpg';
-import NeverLonelyThumb from 'dummy/images/media-registry/covers/thumb/Never-Lonely.jpg';
-import NeverLonelyMedium from 'dummy/images/media-registry/covers/medium/Never-Lonely.jpg';
-import NeverLonelyLarge from 'dummy/images/media-registry/covers/large/Never-Lonely.jpg';
-
-import NobodysClaimsCover from 'dummy/images/media-registry/covers/Nobodys-Claims.jpg';
-import NobodysClaimsThumb from 'dummy/images/media-registry/covers/thumb/Nobodys-Claims.jpg';
-import NobodysClaimsMedium from 'dummy/images/media-registry/covers/medium/Nobodys-Claims.jpg';
-import NobodysClaimsLarge from 'dummy/images/media-registry/covers/large/Nobodys-Claims.jpg';
-
-import OntheBrinkofHappinessCover from 'dummy/images/media-registry/covers/On-the-Brink-of-Happiness.jpg';
-import OntheBrinkofHappinessThumb from 'dummy/images/media-registry/covers/thumb/On-the-Brink-of-Happiness.jpg';
-import OntheBrinkofHappinessMedium from 'dummy/images/media-registry/covers/medium/On-the-Brink-of-Happiness.jpg';
-import OntheBrinkofHappinessLarge from 'dummy/images/media-registry/covers/large/On-the-Brink-of-Happiness.jpg';
-
-import OntheDayYouWereBornCover from 'dummy/images/media-registry/covers/On-the-Day-You-Were-Born.jpg';
-import OntheDayYouWereBornThumb from 'dummy/images/media-registry/covers/thumb/On-the-Day-You-Were-Born.jpg';
-import OntheDayYouWereBornMedium from 'dummy/images/media-registry/covers/medium/On-the-Day-You-Were-Born.jpg';
-import OntheDayYouWereBornLarge from 'dummy/images/media-registry/covers/large/On-the-Day-You-Were-Born.jpg';
-
-import PinnaclesCover from 'dummy/images/media-registry/covers/Pinnacles.jpg';
-import PinnaclesThumb from 'dummy/images/media-registry/covers/thumb/Pinnacles.jpg';
-import PinnaclesMedium from 'dummy/images/media-registry/covers/medium/Pinnacles.jpg';
-import PinnaclesLarge from 'dummy/images/media-registry/covers/large/Pinnacles.jpg';
-
-import RollerCoasterCover from 'dummy/images/media-registry/covers/Roller-Coaster.jpg';
-import RollerCoasterThumb from 'dummy/images/media-registry/covers/thumb/Roller-Coaster.jpg';
-import RollerCoasterMedium from 'dummy/images/media-registry/covers/medium/Roller-Coaster.jpg';
-import RollerCoasterLarge from 'dummy/images/media-registry/covers/large/Roller-Coaster.jpg';
-
-import RollercoasterofEmotionsCover from 'dummy/images/media-registry/covers/Rollercoaster-of-Emotions.jpg';
-import RollercoasterofEmotionsThumb from 'dummy/images/media-registry/covers/thumb/Rollercoaster-of-Emotions.jpg';
-import RollercoasterofEmotionsMedium from 'dummy/images/media-registry/covers/medium/Rollercoaster-of-Emotions.jpg';
-import RollercoasterofEmotionsLarge from 'dummy/images/media-registry/covers/large/Rollercoaster-of-Emotions.jpg';
-
-import SailingCover from 'dummy/images/media-registry/covers/Sailing.jpg';
-import SailingThumb from 'dummy/images/media-registry/covers/thumb/Sailing.jpg';
-import SailingMedium from 'dummy/images/media-registry/covers/medium/Sailing.jpg';
-import SailingLarge from 'dummy/images/media-registry/covers/large/Sailing.jpg';
-
-import SaveHumankindCover from 'dummy/images/media-registry/covers/Save-Humankind.jpg';
-import SaveHumankindThumb from 'dummy/images/media-registry/covers/thumb/Save-Humankind.jpg';
-import SaveHumankindMedium from 'dummy/images/media-registry/covers/medium/Save-Humankind.jpg';
-import SaveHumankindLarge from 'dummy/images/media-registry/covers/large/Save-Humankind.jpg';
-
-import SevenSeasonsCover from 'dummy/images/media-registry/covers/Seven-Seasons.jpg';
-import SevenSeasonsThumb from 'dummy/images/media-registry/covers/thumb/Seven-Seasons.jpg';
-import SevenSeasonsMedium from 'dummy/images/media-registry/covers/medium/Seven-Seasons.jpg';
-import SevenSeasonsLarge from 'dummy/images/media-registry/covers/large/Seven-Seasons.jpg';
-
-import SevenSinsCover from 'dummy/images/media-registry/covers/Seven-Sins.jpg';
-import SevenSinsThumb from 'dummy/images/media-registry/covers/thumb/Seven-Sins.jpg';
-import SevenSinsMedium from 'dummy/images/media-registry/covers/medium/Seven-Sins.jpg';
-import SevenSinsLarge from 'dummy/images/media-registry/covers/large/Seven-Sins.jpg';
-
-import SoldOutCover from 'dummy/images/media-registry/covers/Sold-Out.jpg';
-import SoldOutThumb from 'dummy/images/media-registry/covers/thumb/Sold-Out.jpg';
-import SoldOutMedium from 'dummy/images/media-registry/covers/medium/Sold-Out.jpg';
-import SoldOutLarge from 'dummy/images/media-registry/covers/large/Sold-Out.jpg';
-
-import SulkingMaidsCover from 'dummy/images/media-registry/covers/Sulking-Maids.jpg';
-import SulkingMaidsThumb from 'dummy/images/media-registry/covers/thumb/Sulking-Maids.jpg';
-import SulkingMaidsMedium from 'dummy/images/media-registry/covers/medium/Sulking-Maids.jpg';
-import SulkingMaidsLarge from 'dummy/images/media-registry/covers/large/Sulking-Maids.jpg';
-
-import SunlightCover from 'dummy/images/media-registry/covers/Sunlight.jpg';
-import SunlightThumb from 'dummy/images/media-registry/covers/thumb/Sunlight.jpg';
-import SunlightMedium from 'dummy/images/media-registry/covers/medium/Sunlight.jpg';
-import SunlightLarge from 'dummy/images/media-registry/covers/large/Sunlight.jpg';
-
-import SunnySideUpCover from 'dummy/images/media-registry/covers/Sunny-Side-Up.jpg';
-import SunnySideUpThumb from 'dummy/images/media-registry/covers/thumb/Sunny-Side-Up.jpg';
-import SunnySideUpMedium from 'dummy/images/media-registry/covers/medium/Sunny-Side-Up.jpg';
-import SunnySideUpLarge from 'dummy/images/media-registry/covers/large/Sunny-Side-Up.jpg';
-
-import SuperficialCover from 'dummy/images/media-registry/covers/Superficial.jpg';
-import SuperficialThumb from 'dummy/images/media-registry/covers/thumb/Superficial.jpg';
-import SuperficialMedium from 'dummy/images/media-registry/covers/medium/Superficial.jpg';
-import SuperficialLarge from 'dummy/images/media-registry/covers/large/Superficial.jpg';
-
-import TheFutureIsOursCover from 'dummy/images/media-registry/covers/The-Future-Is-Ours.jpg';
-import TheFutureIsOursThumb from 'dummy/images/media-registry/covers/thumb/The-Future-Is-Ours.jpg';
-import TheFutureIsOursMedium from 'dummy/images/media-registry/covers/medium/The-Future-Is-Ours.jpg';
-import TheFutureIsOursLarge from 'dummy/images/media-registry/covers/large/The-Future-Is-Ours.jpg';
-
-import TheSunComesOutCover from 'dummy/images/media-registry/covers/The-Sun-Comes-Out.jpg';
-import TheSunComesOutThumb from 'dummy/images/media-registry/covers/thumb/The-Sun-Comes-Out.jpg';
-import TheSunComesOutMedium from 'dummy/images/media-registry/covers/medium/The-Sun-Comes-Out.jpg';
-import TheSunComesOutLarge from 'dummy/images/media-registry/covers/large/The-Sun-Comes-Out.jpg';
-
-import TheVampsoftheWorldCover from 'dummy/images/media-registry/covers/The-Vamps-of-the-World.jpg';
-import TheVampsoftheWorldThumb from 'dummy/images/media-registry/covers/thumb/The-Vamps-of-the-World.jpg';
-import TheVampsoftheWorldMedium from 'dummy/images/media-registry/covers/medium/The-Vamps-of-the-World.jpg';
-import TheVampsoftheWorldLarge from 'dummy/images/media-registry/covers/large/The-Vamps-of-the-World.jpg';
-
-import WhatMusicalInstrumentsCanDoCover from 'dummy/images/media-registry/covers/What-Musical-Instruments-Can-Do.jpg';
-import WhatMusicalInstrumentsCanDoThumb from 'dummy/images/media-registry/covers/thumb/What-Musical-Instruments-Can-Do.jpg';
-import WhatMusicalInstrumentsCanDoMedium from 'dummy/images/media-registry/covers/medium/What-Musical-Instruments-Can-Do.jpg';
-import WhatMusicalInstrumentsCanDoLarge from 'dummy/images/media-registry/covers/large/What-Musical-Instruments-Can-Do.jpg';
-
-import WhenYouHitMeCover from 'dummy/images/media-registry/covers/When-You-Hit-Me.jpg';
-import WhenYouHitMeThumb from 'dummy/images/media-registry/covers/thumb/When-You-Hit-Me.jpg';
-import WhenYouHitMeMedium from 'dummy/images/media-registry/covers/medium/When-You-Hit-Me.jpg';
-import WhenYouHitMeLarge from 'dummy/images/media-registry/covers/large/When-You-Hit-Me.jpg';
-
-import WhyDoYouLikeMeCover from 'dummy/images/media-registry/covers/Why-Do-You-Like-Me.jpg';
-import WhyDoYouLikeMeThumb from 'dummy/images/media-registry/covers/thumb/Why-Do-You-Like-Me.jpg';
-import WhyDoYouLikeMeMedium from 'dummy/images/media-registry/covers/medium/Why-Do-You-Like-Me.jpg';
-import WhyDoYouLikeMeLarge from 'dummy/images/media-registry/covers/large/Why-Do-You-Like-Me.jpg';
-
-import WhyNotCover from 'dummy/images/media-registry/covers/Why-Not.jpg';
-import WhyNotThumb from 'dummy/images/media-registry/covers/thumb/Why-Not.jpg';
-import WhyNotMedium from 'dummy/images/media-registry/covers/medium/Why-Not.jpg';
-import WhyNotLarge from 'dummy/images/media-registry/covers/large/Why-Not.jpg';
-
-import ZigandZagCover from 'dummy/images/media-registry/covers/Zig-and-Zag.jpg';
-import ZigandZagThumb from 'dummy/images/media-registry/covers/thumb/Zig-and-Zag.jpg';
-import ZigandZagMedium from 'dummy/images/media-registry/covers/medium/Zig-and-Zag.jpg';
-import ZigandZagLarge from 'dummy/images/media-registry/covers/large/Zig-and-Zag.jpg';
-
-import ZombiesCover from 'dummy/images/media-registry/covers/Zombies.jpg';
-import ZombiesThumb from 'dummy/images/media-registry/covers/thumb/Zombies.jpg';
-import ZombiesMedium from 'dummy/images/media-registry/covers/medium/Zombies.jpg';
-import ZombiesLarge from 'dummy/images/media-registry/covers/large/Zombies.jpg';
+import AccidentsCover from '@cardstack/boxel/images/media-registry/covers/Accidents.jpg';
+import AccidentsThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Accidents.jpg';
+import AccidentsMedium from '@cardstack/boxel/images/media-registry/covers/medium/Accidents.jpg';
+import AccidentsLarge from '@cardstack/boxel/images/media-registry/covers/large/Accidents.jpg';
+
+import AllAboutHeavenCover from '@cardstack/boxel/images/media-registry/covers/All-About-Heaven.jpg';
+import AllAboutHeavenThumb from '@cardstack/boxel/images/media-registry/covers/thumb/All-About-Heaven.jpg';
+import AllAboutHeavenMedium from '@cardstack/boxel/images/media-registry/covers/medium/All-About-Heaven.jpg';
+import AllAboutHeavenLarge from '@cardstack/boxel/images/media-registry/covers/large/All-About-Heaven.jpg';
+
+import AllAbouttheManCover from '@cardstack/boxel/images/media-registry/covers/All-About-the-Man.jpg';
+import AllAbouttheManThumb from '@cardstack/boxel/images/media-registry/covers/thumb/All-About-the-Man.jpg';
+import AllAbouttheManMedium from '@cardstack/boxel/images/media-registry/covers/medium/All-About-the-Man.jpg';
+import AllAbouttheManLarge from '@cardstack/boxel/images/media-registry/covers/large/All-About-the-Man.jpg';
+
+import AllAbouttheQualityofLifeCover from '@cardstack/boxel/images/media-registry/covers/All-About-the-Quality-of-Life.jpg';
+import AllAbouttheQualityofLifeThumb from '@cardstack/boxel/images/media-registry/covers/thumb/All-About-the-Quality-of-Life.jpg';
+import AllAbouttheQualityofLifeMedium from '@cardstack/boxel/images/media-registry/covers/medium/All-About-the-Quality-of-Life.jpg';
+import AllAbouttheQualityofLifeLarge from '@cardstack/boxel/images/media-registry/covers/large/All-About-the-Quality-of-Life.jpg';
+
+import AlwaysInLoveCover from '@cardstack/boxel/images/media-registry/covers/Always-In-Love.jpg';
+import AlwaysInLoveThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Always-In-Love.jpg';
+import AlwaysInLoveMedium from '@cardstack/boxel/images/media-registry/covers/medium/Always-In-Love.jpg';
+import AlwaysInLoveLarge from '@cardstack/boxel/images/media-registry/covers/large/Always-In-Love.jpg';
+
+import AnimalsCover from '@cardstack/boxel/images/media-registry/covers/Animals.jpg';
+import AnimalsThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Animals.jpg';
+import AnimalsMedium from '@cardstack/boxel/images/media-registry/covers/medium/Animals.jpg';
+import AnimalsLarge from '@cardstack/boxel/images/media-registry/covers/large/Animals.jpg';
+
+import AroundtheWorldCover from '@cardstack/boxel/images/media-registry/covers/Around-the-World.jpg';
+import AroundtheWorldThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Around-the-World.jpg';
+import AroundtheWorldMedium from '@cardstack/boxel/images/media-registry/covers/medium/Around-the-World.jpg';
+import AroundtheWorldLarge from '@cardstack/boxel/images/media-registry/covers/large/Around-the-World.jpg';
+
+import AutumnLeavesCover from '@cardstack/boxel/images/media-registry/covers/Autumn-Leaves.jpg';
+import AutumnLeavesThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Autumn-Leaves.jpg';
+import AutumnLeavesMedium from '@cardstack/boxel/images/media-registry/covers/medium/Autumn-Leaves.jpg';
+import AutumnLeavesLarge from '@cardstack/boxel/images/media-registry/covers/large/Autumn-Leaves.jpg';
+
+import BeautyvsRealityCover from '@cardstack/boxel/images/media-registry/covers/Beauty-vs-Reality.jpg';
+import BeautyvsRealityThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Beauty-vs-Reality.jpg';
+import BeautyvsRealityMedium from '@cardstack/boxel/images/media-registry/covers/medium/Beauty-vs-Reality.jpg';
+import BeautyvsRealityLarge from '@cardstack/boxel/images/media-registry/covers/large/Beauty-vs-Reality.jpg';
+
+import BeenThereDoneThatCover from '@cardstack/boxel/images/media-registry/covers/Been-There-Done-That.jpg';
+import BeenThereDoneThatThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Been-There-Done-That.jpg';
+import BeenThereDoneThatMedium from '@cardstack/boxel/images/media-registry/covers/medium/Been-There-Done-That.jpg';
+import BeenThereDoneThatLarge from '@cardstack/boxel/images/media-registry/covers/large/Been-There-Done-That.jpg';
+
+import CallMeCrazyCover from '@cardstack/boxel/images/media-registry/covers/Call-Me-Crazy.jpg';
+import CallMeCrazyThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Call-Me-Crazy.jpg';
+import CallMeCrazyMedium from '@cardstack/boxel/images/media-registry/covers/medium/Call-Me-Crazy.jpg';
+import CallMeCrazyLarge from '@cardstack/boxel/images/media-registry/covers/large/Call-Me-Crazy.jpg';
+
+import CastMeCover from '@cardstack/boxel/images/media-registry/covers/Cast-Me.jpg';
+import CastMeThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Cast-Me.jpg';
+import CastMeMedium from '@cardstack/boxel/images/media-registry/covers/medium/Cast-Me.jpg';
+import CastMeLarge from '@cardstack/boxel/images/media-registry/covers/large/Cast-Me.jpg';
+
+import ChangeIsGoodCover from '@cardstack/boxel/images/media-registry/covers/Change-Is-Good.jpg';
+import ChangeIsGoodThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Change-Is-Good.jpg';
+import ChangeIsGoodMedium from '@cardstack/boxel/images/media-registry/covers/medium/Change-Is-Good.jpg';
+import ChangeIsGoodLarge from '@cardstack/boxel/images/media-registry/covers/large/Change-Is-Good.jpg';
+
+import DramaQueenCover from '@cardstack/boxel/images/media-registry/covers/Drama-Queen.jpg';
+import DramaQueenThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Drama-Queen.jpg';
+import DramaQueenMedium from '@cardstack/boxel/images/media-registry/covers/medium/Drama-Queen.jpg';
+import DramaQueenLarge from '@cardstack/boxel/images/media-registry/covers/large/Drama-Queen.jpg';
+
+import DriveMeCrazyCover from '@cardstack/boxel/images/media-registry/covers/Drive-Me-Crazy.jpg';
+import DriveMeCrazyThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Drive-Me-Crazy.jpg';
+import DriveMeCrazyMedium from '@cardstack/boxel/images/media-registry/covers/medium/Drive-Me-Crazy.jpg';
+import DriveMeCrazyLarge from '@cardstack/boxel/images/media-registry/covers/large/Drive-Me-Crazy.jpg';
+
+import DrunkCover from '@cardstack/boxel/images/media-registry/covers/Drunk.jpg';
+import DrunkThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Drunk.jpg';
+import DrunkMedium from '@cardstack/boxel/images/media-registry/covers/medium/Drunk.jpg';
+import DrunkLarge from '@cardstack/boxel/images/media-registry/covers/large/Drunk.jpg';
+
+import EscapeCover from '@cardstack/boxel/images/media-registry/covers/Escape.jpg';
+import EscapeThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Escape.jpg';
+import EscapeMedium from '@cardstack/boxel/images/media-registry/covers/medium/Escape.jpg';
+import EscapeLarge from '@cardstack/boxel/images/media-registry/covers/large/Escape.jpg';
+
+import FairyTalesCover from '@cardstack/boxel/images/media-registry/covers/Fairy-Tales.jpg';
+import FairyTalesThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Fairy-Tales.jpg';
+import FairyTalesMedium from '@cardstack/boxel/images/media-registry/covers/medium/Fairy-Tales.jpg';
+import FairyTalesLarge from '@cardstack/boxel/images/media-registry/covers/large/Fairy-Tales.jpg';
+
+import FreedomCover from '@cardstack/boxel/images/media-registry/covers/Freedom.jpg';
+import FreedomThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Freedom.jpg';
+import FreedomMedium from '@cardstack/boxel/images/media-registry/covers/medium/Freedom.jpg';
+import FreedomLarge from '@cardstack/boxel/images/media-registry/covers/large/Freedom.jpg';
+
+import FriedPorkCover from '@cardstack/boxel/images/media-registry/covers/Fried-Pork.jpg';
+import FriedPorkThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Fried-Pork.jpg';
+import FriedPorkMedium from '@cardstack/boxel/images/media-registry/covers/medium/Fried-Pork.jpg';
+import FriedPorkLarge from '@cardstack/boxel/images/media-registry/covers/large/Fried-Pork.jpg';
+
+import FriendswithBenefitsCover from '@cardstack/boxel/images/media-registry/covers/Friends-with-Benefits.jpg';
+import FriendswithBenefitsThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Friends-with-Benefits.jpg';
+import FriendswithBenefitsMedium from '@cardstack/boxel/images/media-registry/covers/medium/Friends-with-Benefits.jpg';
+import FriendswithBenefitsLarge from '@cardstack/boxel/images/media-registry/covers/large/Friends-with-Benefits.jpg';
+
+import FullMoonCover from '@cardstack/boxel/images/media-registry/covers/Full-Moon.jpg';
+import FullMoonThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Full-Moon.jpg';
+import FullMoonMedium from '@cardstack/boxel/images/media-registry/covers/medium/Full-Moon.jpg';
+import FullMoonLarge from '@cardstack/boxel/images/media-registry/covers/large/Full-Moon.jpg';
+
+import GoodTimesCover from '@cardstack/boxel/images/media-registry/covers/Good-Times.jpg';
+import GoodTimesThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Good-Times.jpg';
+import GoodTimesMedium from '@cardstack/boxel/images/media-registry/covers/medium/Good-Times.jpg';
+import GoodTimesLarge from '@cardstack/boxel/images/media-registry/covers/large/Good-Times.jpg';
+
+import GottaBeSillyCover from '@cardstack/boxel/images/media-registry/covers/Gotta-Be-Silly.jpg';
+import GottaBeSillyThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Gotta-Be-Silly.jpg';
+import GottaBeSillyMedium from '@cardstack/boxel/images/media-registry/covers/medium/Gotta-Be-Silly.jpg';
+import GottaBeSillyLarge from '@cardstack/boxel/images/media-registry/covers/large/Gotta-Be-Silly.jpg';
+
+import GraduationDayCover from '@cardstack/boxel/images/media-registry/covers/Graduation-Day.jpg';
+import GraduationDayThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Graduation-Day.jpg';
+import GraduationDayMedium from '@cardstack/boxel/images/media-registry/covers/medium/Graduation-Day.jpg';
+import GraduationDayLarge from '@cardstack/boxel/images/media-registry/covers/large/Graduation-Day.jpg';
+
+import HandsOnCover from '@cardstack/boxel/images/media-registry/covers/Hands-On.jpg';
+import HandsOnThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Hands-On.jpg';
+import HandsOnMedium from '@cardstack/boxel/images/media-registry/covers/medium/Hands-On.jpg';
+import HandsOnLarge from '@cardstack/boxel/images/media-registry/covers/large/Hands-On.jpg';
+
+import HappyEverAfterCover from '@cardstack/boxel/images/media-registry/covers/Happy-Ever-After.jpg';
+import HappyEverAfterThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Happy-Ever-After.jpg';
+import HappyEverAfterMedium from '@cardstack/boxel/images/media-registry/covers/medium/Happy-Ever-After.jpg';
+import HappyEverAfterLarge from '@cardstack/boxel/images/media-registry/covers/large/Happy-Ever-After.jpg';
+
+import HaveFunCover from '@cardstack/boxel/images/media-registry/covers/Have-Fun.jpg';
+import HaveFunThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Have-Fun.jpg';
+import HaveFunMedium from '@cardstack/boxel/images/media-registry/covers/medium/Have-Fun.jpg';
+import HaveFunLarge from '@cardstack/boxel/images/media-registry/covers/large/Have-Fun.jpg';
+
+import HomeIsntSweetCover from '@cardstack/boxel/images/media-registry/covers/Home-Isnt-Sweet.jpg';
+import HomeIsntSweetThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Home-Isnt-Sweet.jpg';
+import HomeIsntSweetMedium from '@cardstack/boxel/images/media-registry/covers/medium/Home-Isnt-Sweet.jpg';
+import HomeIsntSweetLarge from '@cardstack/boxel/images/media-registry/covers/large/Home-Isnt-Sweet.jpg';
+
+import HomeSweetHomeCover from '@cardstack/boxel/images/media-registry/covers/Home-Sweet-Home.jpg';
+import HomeSweetHomeThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Home-Sweet-Home.jpg';
+import HomeSweetHomeMedium from '@cardstack/boxel/images/media-registry/covers/medium/Home-Sweet-Home.jpg';
+import HomeSweetHomeLarge from '@cardstack/boxel/images/media-registry/covers/large/Home-Sweet-Home.jpg';
+
+import InfatuatedCover from '@cardstack/boxel/images/media-registry/covers/Infatuated.jpg';
+import InfatuatedThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Infatuated.jpg';
+import InfatuatedMedium from '@cardstack/boxel/images/media-registry/covers/medium/Infatuated.jpg';
+import InfatuatedLarge from '@cardstack/boxel/images/media-registry/covers/large/Infatuated.jpg';
+
+import InnocentKittensCover from '@cardstack/boxel/images/media-registry/covers/Innocent-Kittens.jpg';
+import InnocentKittensThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Innocent-Kittens.jpg';
+import InnocentKittensMedium from '@cardstack/boxel/images/media-registry/covers/medium/Innocent-Kittens.jpg';
+import InnocentKittensLarge from '@cardstack/boxel/images/media-registry/covers/large/Innocent-Kittens.jpg';
+
+import JustLikeBirdsCover from '@cardstack/boxel/images/media-registry/covers/Just-Like-Birds.jpg';
+import JustLikeBirdsThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Just-Like-Birds.jpg';
+import JustLikeBirdsMedium from '@cardstack/boxel/images/media-registry/covers/medium/Just-Like-Birds.jpg';
+import JustLikeBirdsLarge from '@cardstack/boxel/images/media-registry/covers/large/Just-Like-Birds.jpg';
+
+import JustListenCover from '@cardstack/boxel/images/media-registry/covers/Just-Listen.jpg';
+import JustListenThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Just-Listen.jpg';
+import JustListenMedium from '@cardstack/boxel/images/media-registry/covers/medium/Just-Listen.jpg';
+import JustListenLarge from '@cardstack/boxel/images/media-registry/covers/large/Just-Listen.jpg';
+
+import LeavetheDoorOpenCover from '@cardstack/boxel/images/media-registry/covers/Leave-the-Door-Open.jpg';
+import LeavetheDoorOpenThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Leave-the-Door-Open.jpg';
+import LeavetheDoorOpenMedium from '@cardstack/boxel/images/media-registry/covers/medium/Leave-the-Door-Open.jpg';
+import LeavetheDoorOpenLarge from '@cardstack/boxel/images/media-registry/covers/large/Leave-the-Door-Open.jpg';
+
+import LiarsCover from '@cardstack/boxel/images/media-registry/covers/Liars.jpg';
+import LiarsThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Liars.jpg';
+import LiarsMedium from '@cardstack/boxel/images/media-registry/covers/medium/Liars.jpg';
+import LiarsLarge from '@cardstack/boxel/images/media-registry/covers/large/Liars.jpg';
+
+import LittleLiesCover from '@cardstack/boxel/images/media-registry/covers/Little-Lies.jpg';
+import LittleLiesThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Little-Lies.jpg';
+import LittleLiesMedium from '@cardstack/boxel/images/media-registry/covers/medium/Little-Lies.jpg';
+import LittleLiesLarge from '@cardstack/boxel/images/media-registry/covers/large/Little-Lies.jpg';
+
+import LongingCover from '@cardstack/boxel/images/media-registry/covers/Longing.jpg';
+import LongingThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Longing.jpg';
+import LongingMedium from '@cardstack/boxel/images/media-registry/covers/medium/Longing.jpg';
+import LongingLarge from '@cardstack/boxel/images/media-registry/covers/large/Longing.jpg';
+
+import LoveConquersAllCover from '@cardstack/boxel/images/media-registry/covers/Love-Conquers-All.jpg';
+import LoveConquersAllThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Love-Conquers-All.jpg';
+import LoveConquersAllMedium from '@cardstack/boxel/images/media-registry/covers/medium/Love-Conquers-All.jpg';
+import LoveConquersAllLarge from '@cardstack/boxel/images/media-registry/covers/large/Love-Conquers-All.jpg';
+
+import LoveNeverDiesCover from '@cardstack/boxel/images/media-registry/covers/Love-Never-Dies.jpg';
+import LoveNeverDiesThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Love-Never-Dies.jpg';
+import LoveNeverDiesMedium from '@cardstack/boxel/images/media-registry/covers/medium/Love-Never-Dies.jpg';
+import LoveNeverDiesLarge from '@cardstack/boxel/images/media-registry/covers/large/Love-Never-Dies.jpg';
+
+import LovetheLoveCover from '@cardstack/boxel/images/media-registry/covers/Love-the-Love.jpg';
+import LovetheLoveThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Love-the-Love.jpg';
+import LovetheLoveMedium from '@cardstack/boxel/images/media-registry/covers/medium/Love-the-Love.jpg';
+import LovetheLoveLarge from '@cardstack/boxel/images/media-registry/covers/large/Love-the-Love.jpg';
+
+import MagnaCumLoveCover from '@cardstack/boxel/images/media-registry/covers/Magna-Cum-Love.jpg';
+import MagnaCumLoveThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Magna-Cum-Love.jpg';
+import MagnaCumLoveMedium from '@cardstack/boxel/images/media-registry/covers/medium/Magna-Cum-Love.jpg';
+import MagnaCumLoveLarge from '@cardstack/boxel/images/media-registry/covers/large/Magna-Cum-Love.jpg';
+
+import MagnitudeCover from '@cardstack/boxel/images/media-registry/covers/Magnitude.jpg';
+import MagnitudeThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Magnitude.jpg';
+import MagnitudeMedium from '@cardstack/boxel/images/media-registry/covers/medium/Magnitude.jpg';
+import MagnitudeLarge from '@cardstack/boxel/images/media-registry/covers/large/Magnitude.jpg';
+
+import MakeMagicCover from '@cardstack/boxel/images/media-registry/covers/Make-Magic.jpg';
+import MakeMagicThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Make-Magic.jpg';
+import MakeMagicMedium from '@cardstack/boxel/images/media-registry/covers/medium/Make-Magic.jpg';
+import MakeMagicLarge from '@cardstack/boxel/images/media-registry/covers/large/Make-Magic.jpg';
+
+import MaximumMildnessCover from '@cardstack/boxel/images/media-registry/covers/Maximum-Mildness.jpg';
+import MaximumMildnessThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Maximum-Mildness.jpg';
+import MaximumMildnessMedium from '@cardstack/boxel/images/media-registry/covers/medium/Maximum-Mildness.jpg';
+import MaximumMildnessLarge from '@cardstack/boxel/images/media-registry/covers/large/Maximum-Mildness.jpg';
+
+import MightyMoonCover from '@cardstack/boxel/images/media-registry/covers/Mighty-Moon.jpg';
+import MightyMoonThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Mighty-Moon.jpg';
+import MightyMoonMedium from '@cardstack/boxel/images/media-registry/covers/medium/Mighty-Moon.jpg';
+import MightyMoonLarge from '@cardstack/boxel/images/media-registry/covers/large/Mighty-Moon.jpg';
+
+import MomentsCover from '@cardstack/boxel/images/media-registry/covers/Moments.jpg';
+import MomentsThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Moments.jpg';
+import MomentsMedium from '@cardstack/boxel/images/media-registry/covers/medium/Moments.jpg';
+import MomentsLarge from '@cardstack/boxel/images/media-registry/covers/large/Moments.jpg';
+
+import MoreThanWeKnowCover from '@cardstack/boxel/images/media-registry/covers/More-Than-We-Know.jpg';
+import MoreThanWeKnowThumb from '@cardstack/boxel/images/media-registry/covers/thumb/More-Than-We-Know.jpg';
+import MoreThanWeKnowMedium from '@cardstack/boxel/images/media-registry/covers/medium/More-Than-We-Know.jpg';
+import MoreThanWeKnowLarge from '@cardstack/boxel/images/media-registry/covers/large/More-Than-We-Know.jpg';
+
+import NeverLonelyCover from '@cardstack/boxel/images/media-registry/covers/Never-Lonely.jpg';
+import NeverLonelyThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Never-Lonely.jpg';
+import NeverLonelyMedium from '@cardstack/boxel/images/media-registry/covers/medium/Never-Lonely.jpg';
+import NeverLonelyLarge from '@cardstack/boxel/images/media-registry/covers/large/Never-Lonely.jpg';
+
+import NobodysClaimsCover from '@cardstack/boxel/images/media-registry/covers/Nobodys-Claims.jpg';
+import NobodysClaimsThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Nobodys-Claims.jpg';
+import NobodysClaimsMedium from '@cardstack/boxel/images/media-registry/covers/medium/Nobodys-Claims.jpg';
+import NobodysClaimsLarge from '@cardstack/boxel/images/media-registry/covers/large/Nobodys-Claims.jpg';
+
+import OntheBrinkofHappinessCover from '@cardstack/boxel/images/media-registry/covers/On-the-Brink-of-Happiness.jpg';
+import OntheBrinkofHappinessThumb from '@cardstack/boxel/images/media-registry/covers/thumb/On-the-Brink-of-Happiness.jpg';
+import OntheBrinkofHappinessMedium from '@cardstack/boxel/images/media-registry/covers/medium/On-the-Brink-of-Happiness.jpg';
+import OntheBrinkofHappinessLarge from '@cardstack/boxel/images/media-registry/covers/large/On-the-Brink-of-Happiness.jpg';
+
+import OntheDayYouWereBornCover from '@cardstack/boxel/images/media-registry/covers/On-the-Day-You-Were-Born.jpg';
+import OntheDayYouWereBornThumb from '@cardstack/boxel/images/media-registry/covers/thumb/On-the-Day-You-Were-Born.jpg';
+import OntheDayYouWereBornMedium from '@cardstack/boxel/images/media-registry/covers/medium/On-the-Day-You-Were-Born.jpg';
+import OntheDayYouWereBornLarge from '@cardstack/boxel/images/media-registry/covers/large/On-the-Day-You-Were-Born.jpg';
+
+import PinnaclesCover from '@cardstack/boxel/images/media-registry/covers/Pinnacles.jpg';
+import PinnaclesThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Pinnacles.jpg';
+import PinnaclesMedium from '@cardstack/boxel/images/media-registry/covers/medium/Pinnacles.jpg';
+import PinnaclesLarge from '@cardstack/boxel/images/media-registry/covers/large/Pinnacles.jpg';
+
+import RollerCoasterCover from '@cardstack/boxel/images/media-registry/covers/Roller-Coaster.jpg';
+import RollerCoasterThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Roller-Coaster.jpg';
+import RollerCoasterMedium from '@cardstack/boxel/images/media-registry/covers/medium/Roller-Coaster.jpg';
+import RollerCoasterLarge from '@cardstack/boxel/images/media-registry/covers/large/Roller-Coaster.jpg';
+
+import RollercoasterofEmotionsCover from '@cardstack/boxel/images/media-registry/covers/Rollercoaster-of-Emotions.jpg';
+import RollercoasterofEmotionsThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Rollercoaster-of-Emotions.jpg';
+import RollercoasterofEmotionsMedium from '@cardstack/boxel/images/media-registry/covers/medium/Rollercoaster-of-Emotions.jpg';
+import RollercoasterofEmotionsLarge from '@cardstack/boxel/images/media-registry/covers/large/Rollercoaster-of-Emotions.jpg';
+
+import SailingCover from '@cardstack/boxel/images/media-registry/covers/Sailing.jpg';
+import SailingThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Sailing.jpg';
+import SailingMedium from '@cardstack/boxel/images/media-registry/covers/medium/Sailing.jpg';
+import SailingLarge from '@cardstack/boxel/images/media-registry/covers/large/Sailing.jpg';
+
+import SaveHumankindCover from '@cardstack/boxel/images/media-registry/covers/Save-Humankind.jpg';
+import SaveHumankindThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Save-Humankind.jpg';
+import SaveHumankindMedium from '@cardstack/boxel/images/media-registry/covers/medium/Save-Humankind.jpg';
+import SaveHumankindLarge from '@cardstack/boxel/images/media-registry/covers/large/Save-Humankind.jpg';
+
+import SevenSeasonsCover from '@cardstack/boxel/images/media-registry/covers/Seven-Seasons.jpg';
+import SevenSeasonsThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Seven-Seasons.jpg';
+import SevenSeasonsMedium from '@cardstack/boxel/images/media-registry/covers/medium/Seven-Seasons.jpg';
+import SevenSeasonsLarge from '@cardstack/boxel/images/media-registry/covers/large/Seven-Seasons.jpg';
+
+import SevenSinsCover from '@cardstack/boxel/images/media-registry/covers/Seven-Sins.jpg';
+import SevenSinsThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Seven-Sins.jpg';
+import SevenSinsMedium from '@cardstack/boxel/images/media-registry/covers/medium/Seven-Sins.jpg';
+import SevenSinsLarge from '@cardstack/boxel/images/media-registry/covers/large/Seven-Sins.jpg';
+
+import SoldOutCover from '@cardstack/boxel/images/media-registry/covers/Sold-Out.jpg';
+import SoldOutThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Sold-Out.jpg';
+import SoldOutMedium from '@cardstack/boxel/images/media-registry/covers/medium/Sold-Out.jpg';
+import SoldOutLarge from '@cardstack/boxel/images/media-registry/covers/large/Sold-Out.jpg';
+
+import SulkingMaidsCover from '@cardstack/boxel/images/media-registry/covers/Sulking-Maids.jpg';
+import SulkingMaidsThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Sulking-Maids.jpg';
+import SulkingMaidsMedium from '@cardstack/boxel/images/media-registry/covers/medium/Sulking-Maids.jpg';
+import SulkingMaidsLarge from '@cardstack/boxel/images/media-registry/covers/large/Sulking-Maids.jpg';
+
+import SunlightCover from '@cardstack/boxel/images/media-registry/covers/Sunlight.jpg';
+import SunlightThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Sunlight.jpg';
+import SunlightMedium from '@cardstack/boxel/images/media-registry/covers/medium/Sunlight.jpg';
+import SunlightLarge from '@cardstack/boxel/images/media-registry/covers/large/Sunlight.jpg';
+
+import SunnySideUpCover from '@cardstack/boxel/images/media-registry/covers/Sunny-Side-Up.jpg';
+import SunnySideUpThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Sunny-Side-Up.jpg';
+import SunnySideUpMedium from '@cardstack/boxel/images/media-registry/covers/medium/Sunny-Side-Up.jpg';
+import SunnySideUpLarge from '@cardstack/boxel/images/media-registry/covers/large/Sunny-Side-Up.jpg';
+
+import SuperficialCover from '@cardstack/boxel/images/media-registry/covers/Superficial.jpg';
+import SuperficialThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Superficial.jpg';
+import SuperficialMedium from '@cardstack/boxel/images/media-registry/covers/medium/Superficial.jpg';
+import SuperficialLarge from '@cardstack/boxel/images/media-registry/covers/large/Superficial.jpg';
+
+import TheFutureIsOursCover from '@cardstack/boxel/images/media-registry/covers/The-Future-Is-Ours.jpg';
+import TheFutureIsOursThumb from '@cardstack/boxel/images/media-registry/covers/thumb/The-Future-Is-Ours.jpg';
+import TheFutureIsOursMedium from '@cardstack/boxel/images/media-registry/covers/medium/The-Future-Is-Ours.jpg';
+import TheFutureIsOursLarge from '@cardstack/boxel/images/media-registry/covers/large/The-Future-Is-Ours.jpg';
+
+import TheSunComesOutCover from '@cardstack/boxel/images/media-registry/covers/The-Sun-Comes-Out.jpg';
+import TheSunComesOutThumb from '@cardstack/boxel/images/media-registry/covers/thumb/The-Sun-Comes-Out.jpg';
+import TheSunComesOutMedium from '@cardstack/boxel/images/media-registry/covers/medium/The-Sun-Comes-Out.jpg';
+import TheSunComesOutLarge from '@cardstack/boxel/images/media-registry/covers/large/The-Sun-Comes-Out.jpg';
+
+import TheVampsoftheWorldCover from '@cardstack/boxel/images/media-registry/covers/The-Vamps-of-the-World.jpg';
+import TheVampsoftheWorldThumb from '@cardstack/boxel/images/media-registry/covers/thumb/The-Vamps-of-the-World.jpg';
+import TheVampsoftheWorldMedium from '@cardstack/boxel/images/media-registry/covers/medium/The-Vamps-of-the-World.jpg';
+import TheVampsoftheWorldLarge from '@cardstack/boxel/images/media-registry/covers/large/The-Vamps-of-the-World.jpg';
+
+import WhatMusicalInstrumentsCanDoCover from '@cardstack/boxel/images/media-registry/covers/What-Musical-Instruments-Can-Do.jpg';
+import WhatMusicalInstrumentsCanDoThumb from '@cardstack/boxel/images/media-registry/covers/thumb/What-Musical-Instruments-Can-Do.jpg';
+import WhatMusicalInstrumentsCanDoMedium from '@cardstack/boxel/images/media-registry/covers/medium/What-Musical-Instruments-Can-Do.jpg';
+import WhatMusicalInstrumentsCanDoLarge from '@cardstack/boxel/images/media-registry/covers/large/What-Musical-Instruments-Can-Do.jpg';
+
+import WhenYouHitMeCover from '@cardstack/boxel/images/media-registry/covers/When-You-Hit-Me.jpg';
+import WhenYouHitMeThumb from '@cardstack/boxel/images/media-registry/covers/thumb/When-You-Hit-Me.jpg';
+import WhenYouHitMeMedium from '@cardstack/boxel/images/media-registry/covers/medium/When-You-Hit-Me.jpg';
+import WhenYouHitMeLarge from '@cardstack/boxel/images/media-registry/covers/large/When-You-Hit-Me.jpg';
+
+import WhyDoYouLikeMeCover from '@cardstack/boxel/images/media-registry/covers/Why-Do-You-Like-Me.jpg';
+import WhyDoYouLikeMeThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Why-Do-You-Like-Me.jpg';
+import WhyDoYouLikeMeMedium from '@cardstack/boxel/images/media-registry/covers/medium/Why-Do-You-Like-Me.jpg';
+import WhyDoYouLikeMeLarge from '@cardstack/boxel/images/media-registry/covers/large/Why-Do-You-Like-Me.jpg';
+
+import WhyNotCover from '@cardstack/boxel/images/media-registry/covers/Why-Not.jpg';
+import WhyNotThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Why-Not.jpg';
+import WhyNotMedium from '@cardstack/boxel/images/media-registry/covers/medium/Why-Not.jpg';
+import WhyNotLarge from '@cardstack/boxel/images/media-registry/covers/large/Why-Not.jpg';
+
+import ZigandZagCover from '@cardstack/boxel/images/media-registry/covers/Zig-and-Zag.jpg';
+import ZigandZagThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Zig-and-Zag.jpg';
+import ZigandZagMedium from '@cardstack/boxel/images/media-registry/covers/medium/Zig-and-Zag.jpg';
+import ZigandZagLarge from '@cardstack/boxel/images/media-registry/covers/large/Zig-and-Zag.jpg';
+
+import ZombiesCover from '@cardstack/boxel/images/media-registry/covers/Zombies.jpg';
+import ZombiesThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Zombies.jpg';
+import ZombiesMedium from '@cardstack/boxel/images/media-registry/covers/medium/Zombies.jpg';
+import ZombiesLarge from '@cardstack/boxel/images/media-registry/covers/large/Zombies.jpg';
 
 // All covers reexpored at bottom of file
 export default [

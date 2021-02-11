@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { titleize } from 'dummy/utils/titleize';
-import MusicalWorkSvg from 'dummy/images/media-registry/musical-work.svg';
+import MusicalWorkSvg from '@cardstack/boxel/images/media-registry/musical-work.svg';
 
 export default class MediaRegistryItemMusicalWorkController extends Controller {
   get headerFields() {

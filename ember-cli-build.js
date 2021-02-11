@@ -24,10 +24,7 @@ module.exports = function (defaults) {
     'ember-faker': { enabled: true },
 
     svgJar: {
-      sourceDirs: [
-        'tests/dummy/app/images/icons',
-        'tests/dummy/app/images/media-registry',
-      ],
+      sourceDirs: ['addon/images/icons', 'addon/images/media-registry'],
     },
 
     // Add options here

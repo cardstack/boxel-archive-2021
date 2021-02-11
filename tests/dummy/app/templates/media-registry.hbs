@@ -6,7 +6,7 @@
       {{outlet}}
     {{else}}
       <aside class="media-registry__left-edge {{if this.isQueueFixed "with-queue"}}">
-        <Boxel::LeftEdgeNav
+        <CardHost::LeftEdgeNav
           @home={{hash icon="verifi-logo-dark-outline" action=(fn this.transition "warner-music-group") height="45px"}}
           @orgs={{@model.orgs}}
           @currentOrg={{@model.currentOrg}}
