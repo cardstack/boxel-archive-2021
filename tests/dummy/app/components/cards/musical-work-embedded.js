@@ -1,10 +1,10 @@
 import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
-import { truncateVerifiId } from '@cardstack/boxel/utils/truncate-verifi-id';
-import { titleize } from '@cardstack/boxel/utils/titleize';
-import { formatId } from '@cardstack/boxel/utils/format-id';
-import MusicalWorkSvg from '@cardstack/boxel/images/media-registry/musical-work.svg';
+import { truncateVerifiId } from 'dummy/utils/truncate-verifi-id';
+import { titleize } from 'dummy/utils/titleize';
+import { formatId } from 'dummy/utils/format-id';
+import MusicalWorkSvg from 'dummy/images/media-registry/musical-work.svg';
 
 export default class MusicalWorkEmbedded extends Component {
   @service router;

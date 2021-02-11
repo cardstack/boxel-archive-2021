@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import dbWorkflow from '@cardstack/boxel/data/db-workflow';
+import dbWorkflow from 'dummy/data/db-workflow';
 
 export default class WorkflowOrgRoute extends Route {
   async model({ orgId }) {

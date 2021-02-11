@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 // NOTE: This import should eventually be replaced by fetch to
 // mirage data
-import dbCardPay from '@cardstack/boxel/data/db-card-pay';
+import dbCardPay from 'dummy/data/db-card-pay';
 import cardstackLogo from '../images/icons/cardstack-logo.svg';
 
 // assuming this user has started a session

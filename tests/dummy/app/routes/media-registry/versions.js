@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { titleize } from '@cardstack/boxel/utils/titleize';
+import { titleize } from 'dummy/utils/titleize';
 import VERSION_HISTORY from '../../data/version-history';
 
 export default class MediaRegistryItemRoute extends Route {

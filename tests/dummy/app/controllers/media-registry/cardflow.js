@@ -2,13 +2,13 @@ import MediaRegistryController from '../media-registry';
 import { tracked } from '@glimmer/tracking';
 import { action, set, get } from '@ember/object';
 import { compare, isBlank } from '@ember/utils';
-import { fetchCollection } from '@cardstack/boxel/media';
-import { formatId } from '@cardstack/boxel/utils/format-id';
-import sunlightCoverThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Sunlight.jpg';
-import changeIsGoodCoverThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Change-Is-Good.jpg';
-import fullMoonCoverThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Full-Moon.jpg';
-import loveNeverDiesCoverThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Love-Never-Dies.jpg';
-import animalsCoverThumb from '@cardstack/boxel/images/media-registry/covers/thumb/Animals.jpg';
+import { fetchCollection } from 'dummy/media';
+import { formatId } from 'dummy/utils/format-id';
+import sunlightCoverThumb from 'dummy/images/media-registry/covers/thumb/Sunlight.jpg';
+import changeIsGoodCoverThumb from 'dummy/images/media-registry/covers/thumb/Change-Is-Good.jpg';
+import fullMoonCoverThumb from 'dummy/images/media-registry/covers/thumb/Full-Moon.jpg';
+import loveNeverDiesCoverThumb from 'dummy/images/media-registry/covers/thumb/Love-Never-Dies.jpg';
+import animalsCoverThumb from 'dummy/images/media-registry/covers/thumb/Animals.jpg';
 export default class MediaRegistryCardflowController extends MediaRegistryController {
   @tracked isolatedCollection = this.getIsolatedCollection(this.catalog.id);
   @tracked currentMilestone = this.model.currentOrg.queueCards

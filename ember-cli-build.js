@@ -1,7 +1,7 @@
 'use strict';
 
 const { Webpack } = require('@embroider/webpack');
-const EmberAddon = require('ember-cli/lib/broccoli/ember-app');
+const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 const mergeTrees = require('broccoli-merge-trees');
 const Funnel = require('broccoli-funnel');
 const SynthesizeTemplateOnlyComponents = require('@embroider/compat/src/synthesize-template-only-components')
@@ -24,7 +24,10 @@ module.exports = function (defaults) {
     'ember-faker': { enabled: true },
 
     svgJar: {
-      sourceDirs: ['app/images/icons', 'app/images/media-registry'],
+      sourceDirs: [
+        'tests/dummy/app/images/icons',
+        'tests/dummy/app/images/media-registry',
+      ],
     },
 
     // Add options here

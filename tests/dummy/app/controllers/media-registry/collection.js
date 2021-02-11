@@ -1,4 +1,4 @@
-import MediaRegistryIndexController from '@cardstack/boxel/controllers/media-registry/index';
+import MediaRegistryIndexController from 'dummy/controllers/media-registry/index';
 import { action } from '@ember/object';
 
 export default class MediaRegistryCollectionController extends MediaRegistryIndexController {

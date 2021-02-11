@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
 import { typeOf } from '@ember/utils';
-import { titleize } from '@cardstack/boxel/utils/titleize';
+import { titleize } from 'dummy/utils/titleize';
 
 export default helper(function formatComponentName([componentPath]) {
   if (!componentPath || typeOf(componentPath) !== 'string') {

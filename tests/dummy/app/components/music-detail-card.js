@@ -1,8 +1,8 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { truncateVerifiId } from '@cardstack/boxel/utils/truncate-verifi-id';
-import { titleize } from '@cardstack/boxel/utils/titleize';
-import { formatId } from '@cardstack/boxel/utils/format-id';
+import { truncateVerifiId } from 'dummy/utils/truncate-verifi-id';
+import { titleize } from 'dummy/utils/titleize';
+import { formatId } from 'dummy/utils/format-id';
 
 export default class MusicDetailCardComponent extends Component {
   @tracked model = this.args.model;

@@ -1,11 +1,11 @@
 import METADATASTEPS from './amend-metadata-steps';
 
-import ProgCircle0Lg from '@cardstack/boxel/images/icons/progress-circle-lg.svg';
-import ProgCircle20Lg from '@cardstack/boxel/images/media-registry/progress-pie/progress-20pct-lg.svg';
-import ProgCircle40Lg from '@cardstack/boxel/images/media-registry/progress-pie/progress-40pct-lg.svg';
-import ProgCircle60Lg from '@cardstack/boxel/images/media-registry/progress-pie/progress-60pct-lg.svg';
-import ProgCircle80Lg from '@cardstack/boxel/images/media-registry/progress-pie/progress-80pct-lg.svg';
-import ProgCircle100Lg from '@cardstack/boxel/images/media-registry/progress-pie/progress-100pct-lg.svg';
+import ProgCircle0Lg from 'dummy/images/icons/progress-circle-lg.svg';
+import ProgCircle20Lg from 'dummy/images/media-registry/progress-pie/progress-20pct-lg.svg';
+import ProgCircle40Lg from 'dummy/images/media-registry/progress-pie/progress-40pct-lg.svg';
+import ProgCircle60Lg from 'dummy/images/media-registry/progress-pie/progress-60pct-lg.svg';
+import ProgCircle80Lg from 'dummy/images/media-registry/progress-pie/progress-80pct-lg.svg';
+import ProgCircle100Lg from 'dummy/images/media-registry/progress-pie/progress-100pct-lg.svg';
 
 export default [
   {

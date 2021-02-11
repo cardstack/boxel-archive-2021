@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
-import { fetchCollection } from '@cardstack/boxel/media';
-import { formatId } from '@cardstack/boxel/utils/format-id';
-import { titleize } from '@cardstack/boxel/utils/titleize';
+import { fetchCollection } from 'dummy/media';
+import { formatId } from 'dummy/utils/format-id';
+import { titleize } from 'dummy/utils/titleize';
 
 export default class MediaRegistryProductsAlbumRoute extends Route {
   titleToken(model) {

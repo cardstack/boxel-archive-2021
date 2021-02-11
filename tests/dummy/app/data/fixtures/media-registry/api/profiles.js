@@ -2,16 +2,13 @@ import {
   emilioRossoThumb,
   mariaBianchiThumb,
   valentinoSolanoThumb,
-} from '@cardstack/boxel/data/comp-data';
-import {
-  lisaTrackProfile,
-  steveRightsProfile,
-} from '@cardstack/boxel/data/organizations';
-import alexSharpThumb from '@cardstack/boxel/images/media-registry/profiles/Alex-Sharp.jpg';
-import BellaSwanProfile from '@cardstack/boxel/images/media-registry/profiles/Bella-Swan.jpg';
-import milesPoniaThumb from '@cardstack/boxel/images/media-registry/profiles/Miles-Ponia.jpg';
-import michelleHarrisThumb from '@cardstack/boxel/images/media-registry/profiles/Michelle-Harris.jpg';
-import bbClarkThumb from '@cardstack/boxel/images/media-registry/profiles/BB-Clarke.jpg';
+} from 'dummy/data/comp-data';
+import { lisaTrackProfile, steveRightsProfile } from 'dummy/data/organizations';
+import alexSharpThumb from 'dummy/images/media-registry/profiles/Alex-Sharp.jpg';
+import BellaSwanProfile from 'dummy/images/media-registry/profiles/Bella-Swan.jpg';
+import milesPoniaThumb from 'dummy/images/media-registry/profiles/Miles-Ponia.jpg';
+import michelleHarrisThumb from 'dummy/images/media-registry/profiles/Michelle-Harris.jpg';
+import bbClarkThumb from 'dummy/images/media-registry/profiles/BB-Clarke.jpg';
 import {
   PIA_MIDINA,
   FRANCESCO_MIDINA,
@@ -22,7 +19,7 @@ import {
   JENNY_SPARKS,
   HELEN_GELLAR,
   SOPHIA_LANAGAN,
-} from '@cardstack/boxel/data/profiles';
+} from 'dummy/data/profiles';
 
 export default [
   {

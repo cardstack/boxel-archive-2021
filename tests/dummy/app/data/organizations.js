@@ -1,14 +1,14 @@
-import bunnyLogo from '@cardstack/boxel/images/media-registry/bunny-logo.svg';
-import crdRecordsLogo from '@cardstack/boxel/images/media-registry/crd_records_logo.svg';
-import bunnyLogoIcon from '@cardstack/boxel/images/media-registry/button-bunny-records.svg';
-import crdRecordsIcon from '@cardstack/boxel/images/media-registry/button-crd-records.svg';
-import lisaTrackProfile from '@cardstack/boxel/images/media-registry/profiles/Lisa-Track.jpg';
-import steveRightsProfile from '@cardstack/boxel/images/media-registry/profiles/Steve-Rights.jpg';
-import deezerLogo from '@cardstack/boxel/images/media-registry/deezer-logo.png';
-import ampLogo from '@cardstack/boxel/images/media-registry/amp-logo.png';
-import gmrLogo from '@cardstack/boxel/images/media-registry/gmr-logo.svg';
-import wcmLogo from '@cardstack/boxel/images/media-registry/wcm-logo.png';
-import wmgLogo from '@cardstack/boxel/images/media-registry/wmg-logo.svg';
+import bunnyLogo from 'dummy/images/media-registry/bunny-logo.svg';
+import crdRecordsLogo from 'dummy/images/media-registry/crd_records_logo.svg';
+import bunnyLogoIcon from 'dummy/images/media-registry/button-bunny-records.svg';
+import crdRecordsIcon from 'dummy/images/media-registry/button-crd-records.svg';
+import lisaTrackProfile from 'dummy/images/media-registry/profiles/Lisa-Track.jpg';
+import steveRightsProfile from 'dummy/images/media-registry/profiles/Steve-Rights.jpg';
+import deezerLogo from 'dummy/images/media-registry/deezer-logo.png';
+import ampLogo from 'dummy/images/media-registry/amp-logo.png';
+import gmrLogo from 'dummy/images/media-registry/gmr-logo.svg';
+import wcmLogo from 'dummy/images/media-registry/wcm-logo.png';
+import wmgLogo from 'dummy/images/media-registry/wmg-logo.svg';
 
 export {
   ampLogo,

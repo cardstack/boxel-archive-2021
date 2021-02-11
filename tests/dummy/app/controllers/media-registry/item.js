@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import { titleize } from '@cardstack/boxel/utils/titleize';
-import { formatId } from '@cardstack/boxel/utils/format-id';
+import { titleize } from 'dummy/utils/titleize';
+import { formatId } from 'dummy/utils/format-id';
 
 export default class MediaRegistryItemController extends Controller {
   get album() {

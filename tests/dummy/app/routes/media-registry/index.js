@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { fetchCollection } from '@cardstack/boxel/media';
+import { fetchCollection } from 'dummy/media';
 
 export default class MediaRegistryIndexRoute extends Route {
   titleToken(model) {

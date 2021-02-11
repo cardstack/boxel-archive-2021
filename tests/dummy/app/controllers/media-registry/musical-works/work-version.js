@@ -1,7 +1,7 @@
 /* eslint-disable ember/no-side-effects */
 import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
-import MusicalWorkSvg from '@cardstack/boxel/images/media-registry/musical-work.svg';
+import MusicalWorkSvg from 'dummy/images/media-registry/musical-work.svg';
 
 export default class MediaRegistryMusicalWorksWorkVersionController extends Controller {
   queryParams = ['version'];
