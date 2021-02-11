@@ -40,7 +40,7 @@
 .prepaid-card__issuer-image {
   width: 40px;
   height: 40px;
-  background-image: url('../../../images/media-registry/placeholders/profile-inverted.svg');
+  background-image: url('../../../images/placeholders/profile-inverted.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -61,7 +61,7 @@
   font-family: 'Roboto Mono', monospace;
   font-size: 1.125rem; /* 18px */
   letter-spacing: var(--boxel-lsp-sm);
-  line-height: calc(24/18);
+  line-height: calc(24 / 18);
 }
 
 .prepaid-card__account-network {
@@ -94,7 +94,7 @@
 .prepaid-card__balance span {
   margin-right: 4px;
   font-size: 2.5rem; /* 40px */
-  line-height: calc(55/40);
+  line-height: calc(55 / 40);
 }
 
 .prepaid-card__usd-balance {

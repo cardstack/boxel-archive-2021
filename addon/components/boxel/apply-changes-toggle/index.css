@@ -11,7 +11,8 @@
 }
 
 .apply-changes-toggle--active {
-  background-image: url('../../../images/icons/arrows.svg'), url('../../../images/icons/arrows.svg');
+  background-image: url('../../../images/icons/arrows.svg'),
+    url('../../../images/icons/arrows.svg');
   background-position: left center, right center;
   background-size: 70px 20px, 70px 20px;
   background-repeat: no-repeat, no-repeat;
@@ -21,7 +22,7 @@
   width: 60px;
   height: 60px;
   background-color: var(--boxel-light);
-  border: 1px solid #D6D6D6;
+  border: 1px solid #d6d6d6;
   border-radius: 100px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   padding: 0;

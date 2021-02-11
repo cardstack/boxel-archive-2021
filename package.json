@@ -26,8 +26,10 @@
     "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
+    "@embroider/compat": "^0.36.0",
     "broccoli-merge-trees": "^4.2.0",
     "broccoli-plugin": "^4.0.3",
+    "broccoli-funnel": "^3.0.3",
     "broccoli-stew": "^3.0.0",
     "ember-animated": "^0.10.1",
     "ember-animated-tools": "^0.4.1",
@@ -70,7 +72,6 @@
     "@types/ember": "^3.1.2",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
-    "broccoli-funnel": "^3.0.3",
     "ember-cli": "~3.24.0",
     "ember-cli-dependency-checker": "^3.1.0",
     "ember-cli-dependency-lint": "^2.0.0",

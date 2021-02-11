@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
-import LolaSampsonThumb from '../../../images/workflow/participants/thumb/Lola-Sampson.jpg';
-import HSHIcon from '../../../images/workflow/orgs/hsh-icon.png';
+import LolaSampsonThumb from '@cardstack/boxel/usage-support/images/workflow/participants/thumb/Lola-Sampson.jpg';
+import HSHIcon from '@cardstack/boxel/usage-support/images/workflow/orgs/hsh-icon.png';
 import { tracked } from '@glimmer/tracking';
 import { A } from '@ember/array';
 export default class ThreadMessageUsageComponent extends Component {

@@ -32,7 +32,8 @@
 .boxel-card--blank-card {
   width: 100%;
   height: 150px;
-  background: url('../../images/media-registry/placeholders/blank-card.png') center/contain no-repeat;
+  background: url('../../images/placeholders/blank-card.png') center/contain
+    no-repeat;
 }
 
 .boxel-card__header {
@@ -45,7 +46,8 @@
   font-weight: 600;
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
-  transition: background-image var(--boxel-transition), color var(--boxel-transition);
+  transition: background-image var(--boxel-transition),
+    color var(--boxel-transition);
 }
 
 .boxel-card__expand-overlay:hover {
@@ -55,7 +57,7 @@
 }
 
 .boxel-card__expand-overlay:hover + .boxel-card > .boxel-card__header {
-  background-image: url("../../images/icons/expand.svg");
+  background-image: url('../../images/icons/expand.svg');
   background-position: top 7px right 7px;
   background-size: 16px 16px;
   background-repeat: no-repeat;
@@ -98,12 +100,12 @@
 
 .boxel-card__inner--with-img {
   grid-template:
-  "img ."     auto
-  "img ."     auto
-  "img title" auto
-  "img desc"  auto
-  "img ."     auto
-  "img ."     auto / auto 1fr;
+    'img .' auto
+    'img .' auto
+    'img title' auto
+    'img desc' auto
+    'img .' auto
+    'img .' auto / auto 1fr;
 }
 
 .boxel-card__inner--with-img .boxel-card__title {
@@ -136,7 +138,6 @@
   white-space: nowrap;
 }
 
-
 /* Card type adjustments */
 .boxel-card--musical-work .boxel-card__bg-img {
   background-size: contain;
@@ -145,7 +146,8 @@
 .boxel-card__profile-org {
   width: 26px;
   height: 26px;
-  background: url('../../images/media-registry/verifi-logo.svg') center/26px 26px no-repeat;
+  background: url('../../images/media-registry/verifi-logo.svg') center/26px
+    26px no-repeat;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -153,7 +155,7 @@
 
 .boxel-card--profile .boxel-card__bg-img {
   border-radius: 100px;
-  background-image: url('../../images/media-registry/placeholders/profile.svg');
+  background-image: url('../../images/placeholders/profile.svg');
 }
 
 .boxel-card--audio .boxel-card__inner {
@@ -172,11 +174,10 @@
   width: auto;
 }
 
-
 /* Grid format */
 .boxel-card__inner--grid.boxel-card__inner--with-img {
   grid-column: 1 / -1;
-  grid-template: "img" "title" "desc";
+  grid-template: 'img' 'title' 'desc';
   padding: 10px;
   justify-items: center;
   width: 210px;
@@ -198,7 +199,6 @@
   display: none;
 }
 
-
 /* Sent to Field Renderer */
 .boxel-card-field.field-renderer {
   grid-template-columns: auto;
@@ -219,7 +219,6 @@
 .boxel-card-field .field-renderer__value {
   font: var(--boxel-font-sm);
 }
-
 
 /* Revenue Data card */
 .boxel-card--revenue-data .boxel-card__fields {
@@ -248,7 +247,6 @@
   font: var(--boxel-font-lg);
 }
 
-
 /* Schedule card */
 .boxel-card--schedule .boxel-card__inner {
   height: 155px;
@@ -267,7 +265,6 @@
 .boxel-card--schedule .boxel-card-field > .field-renderer__value {
   font: var(--boxel-font-lg);
 }
-
 
 /* Publishing Representation card */
 .publishing-representation > .boxel-card__inner {
@@ -320,11 +317,11 @@
   gap: 20px;
 }
 
-.publishing-representation__additional-field.publishing-representation__field .field-renderer__title {
+.publishing-representation__additional-field.publishing-representation__field
+  .field-renderer__title {
   font-size: 13px;
   letter-spacing: var(--boxel-lsp);
 }
-
 
 /* territory card */
 .territory-card .boxel-card__inner {

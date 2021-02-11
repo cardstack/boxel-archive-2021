@@ -2,12 +2,45 @@
 const mergeTrees = require('broccoli-merge-trees');
 const stew = require('broccoli-stew');
 const path = require('path');
+const Funnel = require('broccoli-funnel');
+const SynthesizeTemplateOnlyComponents = require('@embroider/compat/src/synthesize-template-only-components')
+  .default;
+const AddStyleImportsToComponents = require('./lib/add-style-imports-to-components');
 
 module.exports = {
   name: require('./package').name,
 
-  isDevelopingAddon: function () {
+  isDevelopingAddon() {
     return true;
+  },
+
+  setupPreprocessorRegistry(type, registry) {
+    if (type === 'parent') {
+      return;
+    }
+
+    registry.add('js', {
+      name: 'add-component-css-imports',
+      ext: 'js',
+      toTree(tree) {
+        let componentsTree = new Funnel(tree, {
+          include: ['components/**'],
+          allowEmpty: true,
+        });
+        let synthesizedTemplateOnlyJs = new SynthesizeTemplateOnlyComponents(
+          componentsTree,
+          ['components']
+        );
+        componentsTree = mergeTrees(
+          [componentsTree, synthesizedTemplateOnlyJs],
+          {
+            overwrite: true,
+          }
+        );
+        let treeWithImports = new AddStyleImportsToComponents([componentsTree]);
+        return mergeTrees([tree, treeWithImports], { overwrite: true });
+      },
+    });
   },
 
   treeForApp() {

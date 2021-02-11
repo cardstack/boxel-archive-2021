@@ -20,11 +20,12 @@
 .sort-menu-item__active {
   opacity: 1;
   font-weight: 700;
-  transition: opacity var(--boxel-transition), font-weight var(--boxel-transition);
+  transition: opacity var(--boxel-transition),
+    font-weight var(--boxel-transition);
 }
 
 .sort-menu-item__active::before {
-  content: url('@cardstack/boxel/images/icons/checkmark-highlighted.svg');
+  content: url('../../../../images/icons/checkmark-highlighted.svg');
   position: absolute;
   left: -10px;
 }

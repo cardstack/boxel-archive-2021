@@ -1,9 +1,9 @@
 import Component from '@glimmer/component';
-import HaleyOConnellThumb from '../../../images/workflow/participants/thumb/Haley-OConnell.jpg';
-import JuliaMasonThumb from '../../../images/workflow/participants/thumb/Julia-Mason.jpg';
-import LolaSampsonThumb from '../../../images/workflow/participants/thumb/Lola-Sampson.jpg';
-import RupertGrishamThumb from '../../../images/workflow/participants/thumb/Rupert-Grisham.jpg';
-import HSHIcon from '../../../images/workflow/orgs/hsh-icon.png';
+import HaleyOConnellThumb from '@cardstack/boxel/usage-support/images/workflow/participants/thumb/Haley-OConnell.jpg';
+import JuliaMasonThumb from '@cardstack/boxel/usage-support/images/workflow/participants/thumb/Julia-Mason.jpg';
+import LolaSampsonThumb from '@cardstack/boxel/usage-support/images/workflow/participants/thumb/Lola-Sampson.jpg';
+import RupertGrishamThumb from '@cardstack/boxel/usage-support/images/workflow/participants/thumb/Rupert-Grisham.jpg';
+import HSHIcon from '@cardstack/boxel/usage-support/images/workflow/orgs/hsh-icon.png';
 import { A } from '@ember/array';
 import { tracked } from '@glimmer/tracking';
 

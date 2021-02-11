@@ -1,7 +1,7 @@
 .progress-icon {
   --icon-color: var(--boxel-highlight);
   position: relative;
-  background-image: url('../../../images/media-registry/progress-pie/progress-circle-dark.svg');
+  background-image: url('../../../usage-support/images/media-registry/progress-pie/progress-circle-dark.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

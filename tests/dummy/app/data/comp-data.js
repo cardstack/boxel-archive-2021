@@ -1,11 +1,11 @@
 import { ampLogo, wcmLogo } from './organizations';
-import valentinoSolanoThumb from '@cardstack/boxel/images/media-registry/profiles/thumb/Valentino-Solano.jpg';
-import emilioRossoThumb from '@cardstack/boxel/images/media-registry/profiles/thumb/Emilio-Rosso.jpg';
-import mariaBianchiThumb from '@cardstack/boxel/images/media-registry/profiles/thumb/Maria-Bianchi.jpg';
-import theSunComesOutCover from '@cardstack/boxel/images/media-registry/covers/The-Sun-Comes-Out.jpg';
-import theSunComesOutThumb from '@cardstack/boxel/images/media-registry/covers/thumb/The-Sun-Comes-Out.jpg';
-import theSunComesOutMedium from '@cardstack/boxel/images/media-registry/covers/medium/The-Sun-Comes-Out.jpg';
-import theSunComesOutLarge from '@cardstack/boxel/images/media-registry/covers/large/The-Sun-Comes-Out.jpg';
+import valentinoSolanoThumb from 'dummy/images/media-registry/profiles/thumb/Valentino-Solano.jpg';
+import emilioRossoThumb from 'dummy/images/media-registry/profiles/thumb/Emilio-Rosso.jpg';
+import mariaBianchiThumb from 'dummy/images/media-registry/profiles/thumb/Maria-Bianchi.jpg';
+import theSunComesOutCover from 'dummy/images/media-registry/covers/The-Sun-Comes-Out.jpg';
+import theSunComesOutThumb from 'dummy/images/media-registry/covers/thumb/The-Sun-Comes-Out.jpg';
+import theSunComesOutMedium from 'dummy/images/media-registry/covers/medium/The-Sun-Comes-Out.jpg';
+import theSunComesOutLarge from 'dummy/images/media-registry/covers/large/The-Sun-Comes-Out.jpg';
 
 export { emilioRossoThumb, mariaBianchiThumb, valentinoSolanoThumb };
 

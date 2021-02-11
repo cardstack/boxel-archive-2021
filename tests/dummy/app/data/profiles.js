@@ -1,12 +1,12 @@
-import PiaMidinaProfile from '@cardstack/boxel/images/media-registry/profiles/Pia-Midina.jpg';
-import JennySparksProfile from '@cardstack/boxel/images/media-registry/profiles/Jenny-Sparks.jpg';
-import ArthurDoyleProfile from '@cardstack/boxel/images/media-registry/profiles/Arthur-Doyle.jpg';
-import SophiaLanaganProfile from '@cardstack/boxel/images/media-registry/profiles/Sophia-Lanagan.jpg';
-import HelenGellarProfile from '@cardstack/boxel/images/media-registry/profiles/Helen-Gellar.jpg';
-import FrancescoMidinaProfile from '@cardstack/boxel/images/media-registry/profiles/francesco-midina.jpg';
-import JoelKaplanProfile from '@cardstack/boxel/images/media-registry/profiles/Joel-Kaplan.jpg';
-import MariahSolisProfile from '@cardstack/boxel/images/media-registry/profiles/Mariah-Solis.jpg';
-import IanAdamsProfile from '@cardstack/boxel/images/media-registry/profiles/Ian-Adams.jpg';
+import PiaMidinaProfile from 'dummy/images/media-registry/profiles/Pia-Midina.jpg';
+import JennySparksProfile from 'dummy/images/media-registry/profiles/Jenny-Sparks.jpg';
+import ArthurDoyleProfile from 'dummy/images/media-registry/profiles/Arthur-Doyle.jpg';
+import SophiaLanaganProfile from 'dummy/images/media-registry/profiles/Sophia-Lanagan.jpg';
+import HelenGellarProfile from 'dummy/images/media-registry/profiles/Helen-Gellar.jpg';
+import FrancescoMidinaProfile from 'dummy/images/media-registry/profiles/francesco-midina.jpg';
+import JoelKaplanProfile from 'dummy/images/media-registry/profiles/Joel-Kaplan.jpg';
+import MariahSolisProfile from 'dummy/images/media-registry/profiles/Mariah-Solis.jpg';
+import IanAdamsProfile from 'dummy/images/media-registry/profiles/Ian-Adams.jpg';
 
 export const PIA_MIDINA = {
   id: 'pia-midina',

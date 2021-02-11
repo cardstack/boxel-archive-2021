@@ -17,7 +17,8 @@
 }
 
 .boxel-button--dropdown {
-  background: url('@cardstack/boxel/images/icons/carot-down.svg') center right 17px/8px auto no-repeat;
+  background: url('../../../images/icons/carot-down.svg') center right 17px/8px
+    auto no-repeat;
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -32,8 +33,8 @@
 }
 
 .boxel-button--disabled {
-  border-color: #D9D9D9;
-  background-color: #D9D9D9;
+  border-color: #d9d9d9;
+  background-color: #d9d9d9;
   color: rgba(0, 0, 0, 0.5);
 }
 

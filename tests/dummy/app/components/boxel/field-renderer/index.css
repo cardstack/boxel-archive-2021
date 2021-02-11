@@ -31,7 +31,8 @@
   padding: 0;
 }
 
-.field-renderer__meta-field.field-renderer--collection > .field-renderer__title {
+.field-renderer__meta-field.field-renderer--collection
+  > .field-renderer__title {
   font-weight: 600;
   letter-spacing: var(--boxel-lsp);
   text-transform: capitalize;
@@ -95,7 +96,8 @@
   color: transparent;
   width: 260px;
   height: 260px;
-  background: url("@cardstack/boxel/images/media-registry/placeholders/album_art.svg") center/cover no-repeat;
+  background: url('../../../images/placeholders/album_art.svg') center/cover
+    no-repeat;
 }
 
 .cover-art-field img {
@@ -125,7 +127,6 @@
 .field-renderer__view-all:hover {
   cursor: pointer;
 }
-
 
 /* Taglist */
 .field-renderer__taglist-title {
@@ -168,11 +169,12 @@
   height: 30px;
   padding: 0;
   border: none;
-  background: url('@cardstack/boxel/images/icons/icon-minus-circle.svg') center/16px 16px no-repeat;
+  background: url('../../../images/icons/icon-minus-circle.svg') center/16px
+    16px no-repeat;
 }
 
 .item__add-btn {
-  background-image: url('@cardstack/boxel/images/icons/icon-plus-circle-highlight-bg.svg');
+  background-image: url('../../../images/icons/icon-plus-circle-highlight-bg.svg');
   position: absolute;
   top: 15px;
   right: 0;
@@ -225,7 +227,8 @@
   right: 0;
   width: 50px;
   height: 50px;
-  background: url('@cardstack/boxel/images/icons/dropdown-arrows.svg') center/15px 15px no-repeat;
+  background: url('../../../images/icons/dropdown-arrows.svg') center/15px 15px
+    no-repeat;
 }
 
 .field-renderer__dropdown .ember-power-select-trigger:hover {
@@ -252,7 +255,6 @@
   cursor: pointer;
 }
 
-
 /* comparison mode */
 .field-renderer--comparison-mode {
   height: 100%;
@@ -263,7 +265,8 @@
   height: auto;
 }
 
-.field-renderer--comparison-mode.field-renderer--collection + .field-renderer--comparison-mode.field-renderer--collection {
+.field-renderer--comparison-mode.field-renderer--collection
+  + .field-renderer--comparison-mode.field-renderer--collection {
   margin-top: 20px;
 }
 

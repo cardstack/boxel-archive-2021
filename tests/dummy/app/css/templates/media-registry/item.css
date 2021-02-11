@@ -34,7 +34,6 @@
   margin-right: 10px;
 }
 
-
 /* Header + sections */
 .item {
   max-width: 940px;
@@ -71,9 +70,9 @@
   padding: 60px 30px 50px 70px;
   display: grid;
   grid-template:
-    "img title"   2fr
-    "img artist"  1fr
-    "img details" 1fr / minmax(160px, 260px) 1fr;
+    'img title' 2fr
+    'img artist' 1fr
+    'img details' 1fr / minmax(160px, 260px) 1fr;
   gap: 0 30px;
   backdrop-filter: brightness(0.75) blur(50px) contrast(1.2);
   border-radius: 10px 10px 0 0;
@@ -85,7 +84,7 @@
   position: relative;
   height: 0;
   padding-top: 100%;
-  background-image: url('../../../images/media-registry/placeholders/album_art.svg');
+  background-image: url('../../../images/placeholders/album_art.svg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -127,7 +126,6 @@
   font-weight: 400;
   letter-spacing: var(--boxel-lsp);
 }
-
 
 /* Sent to field renderer */
 .item-header-field.field-renderer {

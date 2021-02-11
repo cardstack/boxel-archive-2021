@@ -2,11 +2,6 @@
 
 const { Webpack } = require('@embroider/webpack');
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
-const mergeTrees = require('broccoli-merge-trees');
-const Funnel = require('broccoli-funnel');
-const SynthesizeTemplateOnlyComponents = require('@embroider/compat/src/synthesize-template-only-components')
-  .default;
-const AddStyleImportsToComponents = require('./lib/add-style-imports-to-components');
 
 // const { maybeEmbroider } = require('@embroider/test-setup');
 // return maybeEmbroider(app);
@@ -24,31 +19,14 @@ module.exports = function (defaults) {
     'ember-faker': { enabled: true },
 
     svgJar: {
-      sourceDirs: ['addon/images/icons', 'addon/images/media-registry'],
+      sourceDirs: [
+        'addon/images/icons',
+        'tests/dummy/app/images/media-registry',
+      ],
     },
 
     // Add options here
     'ember-power-select': { theme: false },
-  });
-
-  app.registry.add('js', {
-    name: 'add-component-css-imports',
-    ext: 'js',
-    toTree(tree) {
-      let componentsTree = new Funnel(tree, {
-        include: ['components/**'],
-        allowEmpty: true,
-      });
-      let synthesizedTemplateOnlyJs = new SynthesizeTemplateOnlyComponents(
-        componentsTree,
-        ['components']
-      );
-      componentsTree = mergeTrees([componentsTree, synthesizedTemplateOnlyJs], {
-        overwrite: true,
-      });
-      let treeWithImports = new AddStyleImportsToComponents([componentsTree]);
-      return mergeTrees([tree, treeWithImports], { overwrite: true });
-    },
   });
 
   return require('@embroider/compat').compatBuild(app, Webpack, {
