@@ -25,3 +25,4 @@ import './components/sidebar-related-card.css';
 import './components/version-history.css';
 import './components/tasklist.css';
 import './components/tasklist-table.css';
+import './components/collection-box.css';
