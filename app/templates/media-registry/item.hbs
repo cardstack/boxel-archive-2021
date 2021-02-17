@@ -44,20 +44,24 @@
       </MusicDetailCard>
     {{/if}}
 
-    <Boxel::Sidebar
-      class="item__sidebar"
-      as |SidebarSection|
-    >
+    <Boxel::Sidebar as |SidebarSection|>
       {{#if @model.collections.length}}
         <SidebarSection @title="In These Collections">
           {{#each @model.collections as |collection|}}
             <Card
+              class="item__sidebar-card-container"
               @mode="view"
               @model={{hash type="collection" id=collection.id title=collection.title}}
               @hasImage={{true}}
               @expandAction={{fn this.transitionToCatalog collection.id}}
             >
-              <Boxel::CoverArt class="item__sidebar-covers" @size={{50}} @covers={{collection.selected_art}} />
+              <Boxel::CoverArt
+                class="sidebar-related-card__covers"
+                @size={{50}}
+                @maxWidth={{60}}
+                @covers={{take 3 collection.selected_art}}
+                @spacingMultiplier={{0.85}}
+              />
               <div class="sidebar-related-card__count">
                 <span class="sidebar-related-card__count__number">
                   {{collection.count}}
@@ -71,6 +75,7 @@
       {{#if @model.album}}
         <SidebarSection @title="Related Products">
           <Card
+            class="item__sidebar-card-container"
             @model={{this.album}}
             @expandAction={{this.transitionToProduct}}
             @mode="view"

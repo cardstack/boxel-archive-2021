@@ -101,7 +101,7 @@
             </BoxelActions>
           {{/if}}
           <CardPlatter @class="field-renderer__card">
-            <Boxel::Header class="boxel-card__header">
+            <Boxel::Header>
               {{if @field.type (humanize @field.type) "text"}}
             </Boxel::Header>
             <div class="field-renderer__inner {{if @field.status "" "field-renderer__opacity-control"}}">
@@ -135,7 +135,7 @@
               </BoxelActions>
             {{/if}}
             <CardPlatter @class="field-renderer__card">
-              <Boxel::Header class="boxel-card__header">
+              <Boxel::Header>
                 {{if @field.type (humanize @field.type) "text"}}
               </Boxel::Header>
               <div class="field-renderer__inner {{if @field.status "" "field-renderer__opacity-control"}}">
