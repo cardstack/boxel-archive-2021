@@ -1,4 +1,5 @@
 .action-container {
+  position: relative;
   width: 100%;
   max-width: 43.75rem; /* 700px;*/
   min-width: 26.56rem;
@@ -21,10 +22,45 @@
 
 /* Card Header */
 .action-container__header {
+  --header-background-color: transparent;
   --header-text-color: var(--boxel-purple-300);
+
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.action-container__expand-button {
+  --icon-button-width: 1.875rem;
+  --icon-button-height: 1.875rem;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  color: transparent;
+  --icon-color: currentColor;
+  transition: color var(--boxel-transition);
+  /* this is so that the icon color change transition is in sync with
+  the header background-color change transition. */
+}
+
+.action-container__expand-button:focus {
+  color: initial;
+  /* the button is only stylistically hidden. it's accessible via keyboard shortcut. */
+}
+
+
+/* Container and Header interaction */
+.action-container:focus-within .action-container__header,
+.action-container:hover .action-container__header {
+  --header-background-color: var(--boxel-purple-100);
+  --header-text-color: var(--boxel-dark);
+}
+
+.action-container:focus-within .action-container__expand-button,
+.action-container:hover .action-container__expand-button {
+  color: initial;
 }
 
 

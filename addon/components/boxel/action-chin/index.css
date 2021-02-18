@@ -16,6 +16,12 @@
   height: 32px;
   padding: var(--boxel-sp-xxxs) var(--boxel-sp-xl);
   letter-spacing: var(--boxel-lsp-sm);
+  transition: filter var(--boxel-transition);
+}
+
+.action-chin > button:hover,
+.action-chin > button:focus {
+  filter: brightness(1.1);
 }
 
 .action-chin__lock-text {
@@ -34,4 +40,17 @@
 
 .action-chin--light > button {
   border-color: var(--boxel-purple-300);
+  transition: border-color var(--boxel-transition);
+}
+
+.action-chin--light > button:hover,
+.action-chin--light > button:focus {
+  border-color: var(--boxel-dark);
+}
+
+.action-chin > button:disabled {
+  background-color: var(--boxel-purple-300);
+  border-color: var(--boxel-purple-300);
+  color: var(--boxel-purple-500);
+  filter: none;
 }
