@@ -4,45 +4,59 @@
     <div class="sidebar-usage-container">
 
       <Boxel::Sidebar as |SidebarSection|>
-        <SidebarSection @border={{false}} @title="Section Title">
+        <SidebarSection @title="Section Title">
           <div>Content goes here!</div>
           <div>Some more goes here!</div>
         </SidebarSection>
-        <SidebarSection @border={{false}} @title="Another Title">
-          <div>Content goes here!</div>
-          <div>Some more goes here!</div>
-        </SidebarSection>
-      </Boxel::Sidebar>
-
-      <Boxel::Sidebar as |SidebarSection|>
-        <SidebarSection @border={{true}} @header="Section Title">
-          <div>Content goes here!</div>
-          <div>Some more goes here!</div>
-        </SidebarSection>
-        <SidebarSection @border={{true}} @header="Another Section">
+        <SidebarSection @title="Another Title">
           <div>Content goes here!</div>
           <div>Some more goes here!</div>
         </SidebarSection>
       </Boxel::Sidebar>
 
       <Boxel::Sidebar as |SidebarSection|>
-        <SidebarSection @border={{true}} @header="Section Title" @attachNext={{true}}>
-          <div>Content goes here!</div>
-          <div>Some more goes here!</div>
+        <SidebarSection @title="Section Title">
+          <Boxel::Sidebar::CardContainer @header="Title">
+            Content goes here
+          </Boxel::Sidebar::CardContainer>
         </SidebarSection>
-        <SidebarSection @border={{true}} @header="Another Section">
-          <div>Notice how this one is attached to the one above!</div>
-          <div>Some more goes here!</div>
-          <div>Lots of great stuff!</div>
-          <div>Some more goes here!</div>
-        </SidebarSection>
-        <SidebarSection @border={{true}} @header="A Third Section">
-          <div>Content goes here!</div>
-          <div>Some more goes here!</div>
+        <SidebarSection>
+          <Boxel::Sidebar::CardContainer>
+            <div>This one has no title</div>
+          </Boxel::Sidebar::CardContainer>
         </SidebarSection>
       </Boxel::Sidebar>
 
-    
+      <Boxel::Sidebar as |SidebarSection|>
+        <SidebarSection>
+          <Boxel::Sidebar::CardContainer
+            @header="Sidebar Card Container Title"
+            @attachNext={{true}}
+          >
+            <div>Content goes here!</div>
+            <div>Some more goes here!</div>
+          </Boxel::Sidebar::CardContainer>
+
+          <Boxel::Sidebar::CardContainer
+            @header="Another Sidebar Card Container Title"
+            @attachNext={{true}}
+          >
+            <div>Notice how this one is attached to the one above!</div>
+            <div>Some more goes here!</div>
+          </Boxel::Sidebar::CardContainer>
+
+          <Boxel::Sidebar::CardContainer>
+            <div>This one has no title</div>
+          </Boxel::Sidebar::CardContainer>
+        </SidebarSection>
+
+
+        <SidebarSection @title="A Different Section">
+          <Boxel::Sidebar::CardContainer @header="Another Title">
+            <div>More Content</div>
+          </Boxel::Sidebar::CardContainer>
+        </SidebarSection>
+      </Boxel::Sidebar>
     </div>
   </:example>
 </Freestyle::Usage>

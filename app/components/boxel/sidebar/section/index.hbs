@@ -1,27 +1,10 @@
-<section class={{cn
-    "sidebar-section"
-    sidebar-section--bordered=@border
-    sidebar-section--attach-next=@attachNext
-  }}
-  ...attributes
->
+<section class="sidebar-section" ...attributes>
   {{#if @title}}
     <h3 class="sidebar-section__title">
       {{@title}}
     </h3>
   {{/if}}
-  {{#if @header}}
-    <Boxel::Header
-      class="sidebar-section__header"
-      style={{css-var
-        header-padding="0"
-        header-background-color="transparent"
-        header-min-height="0"
-      }}
-    >
-      {{@header}}
-    </Boxel::Header>
-  {{/if}}
+
   <div class="sidebar-section__content">
     {{yield}}
   </div>
