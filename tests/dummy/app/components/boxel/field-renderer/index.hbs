@@ -93,61 +93,54 @@
       {{#if (and @field.value (or @field.id (eq @field.type "card")))}}
         {{component (or @field.component "card") model=@field.value mode="view" status=(if @showCompHighlights (if @field.status @field.status "no-change")) comparisonType=@comparisonType drillDown=@drillDown fieldData=@field}}
       {{else if (and @field.value (is-array @field.value))}}
-        <Boxel>
-          {{#if @showCompHighlights}}
-            <BoxelHighlight @status={{@field.status}} />
-            <BoxelActions @class="boxel-actions--comparison-mode" @status={{if @field.status @field.status "no-change"}}>
-              <ComparisonModeLabel @status={{@field.status}} @comparisonType={{@comparisonType}} />
-            </BoxelActions>
-          {{/if}}
-          <CardPlatter @class="field-renderer__card">
-            <Boxel::Header>
-              {{if @field.type (humanize @field.type) "text"}}
-            </Boxel::Header>
-            <div class="field-renderer__inner {{if @field.status "" "field-renderer__opacity-control"}}">
-              {{#let (filter-by "title" @field.value) as |multiTagList|}}
-                {{#if multiTagList.length}}
+        <Card
+          @header="text"
+          @model={{@field}}
+          @customTemplate={{true}}
+          @status={{if (and @showCompHighlights @field.status) @field.status "no-change"}}
+          @comparisonType={{and @showCompHighlights @comparisonType}}
+        >
+          <div class="field-renderer__inner {{if @field.status "" "field-renderer__opacity-control"}}">
+            {{#let (filter-by "title" @field.value) as |multiTagList|}}
+              {{#if multiTagList.length}}
+                {{#each @field.value as |val|}}
+                  <Boxel::FieldRenderer
+                    @class="field-renderer__meta-field"
+                    @field={{val}}
+                    @mode="view"
+                  />
+                {{/each}}
+              {{else}}
+                <span>
                   {{#each @field.value as |val|}}
-                    <Boxel::FieldRenderer
-                      @class="field-renderer__meta-field"
-                      @field={{val}}
-                      @mode="view"
-                    />
+                    {{val}}{{#if (has-next val @field.value)}}, {{/if}}
                   {{/each}}
-                {{else}}
-                  <span>
-                    {{#each @field.value as |val|}}
-                      {{val}}{{#if (has-next val @field.value)}}, {{/if}}
-                    {{/each}}
-                  </span>
-                {{/if}}
-              {{/let}}
-            </div>
-          </CardPlatter>
-        </Boxel>
+                </span>
+              {{/if}}
+            {{/let}}
+          </div>
+        </Card>
       {{else}}
         {{#if @field.value}}
-          <Boxel>
-            {{#if @showCompHighlights}}
-              <BoxelHighlight @status={{@field.status}} />
-              <BoxelActions @class="boxel-actions--comparison-mode" @status={{if @field.status @field.status "no-change"}}>
-                <ComparisonModeLabel @status={{@field.status}} @comparisonType={{@comparisonType}} />
-              </BoxelActions>
-            {{/if}}
-            <CardPlatter @class="field-renderer__card">
-              <Boxel::Header>
-                {{if @field.type (humanize @field.type) "text"}}
-              </Boxel::Header>
-              <div class="field-renderer__inner {{if @field.status "" "field-renderer__opacity-control"}}">
-                {{@field.value}}
-              </div>
-            </CardPlatter>
-          </Boxel>
+          <Card
+            @header="text"
+            @model={{@field}}
+            @customTemplate={{true}}
+            @status={{if (and @showCompHighlights @field.status) @field.status "no-change"}}
+            @comparisonType={{and @showCompHighlights @comparisonType}}
+          >
+            <div class="field-renderer__inner {{if @field.status "" "field-renderer__opacity-control"}}">
+              {{@field.value}}
+            </div>
+          </Card>
         {{else}}
           {{#if (includes @field.title @omittedFields)}}
             N/A
           {{else}}
-            <CardPlatter @class="field-renderer__card field-renderer__card--blank" />
+            <Card
+              @model={{hash id="dashed-placeholder"}}
+              @customTemplate={{true}}
+            />
           {{/if}}
         {{/if}}
       {{/if}}
@@ -189,7 +182,7 @@
               {{component (or @field.component "card") model=@field.value mode="view"}}
             </Boxel>
           {{else}}
-            {{component (or @field.component "card") model=@field.value mode="view" expandAction=@expandAction}}
+            {{component (or @field.component "card") model=@field.value mode="view" expandAction=@expandAction attachNext=@attachNext}}
           {{/if}}
         {{else if (eq @field.type "collection")}}
           <EmbeddedCollection

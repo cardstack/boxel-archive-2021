@@ -270,12 +270,6 @@
   margin-top: 20px;
 }
 
-.field-renderer__card {
-  min-height: auto;
-  border: var(--boxel-border);
-  box-shadow: none;
-}
-
 .field-renderer__inner {
   padding: 15px;
 }

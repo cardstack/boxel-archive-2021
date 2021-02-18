@@ -1,30 +1,15 @@
-<Boxel class="boxel-card__container boxel-card__container--{{or @format "list"}}">
-  <div class="card__gradient" />
-  {{#if @status}}
-    <BoxelHighlight @status={{@status}} />
-    <BoxelActions @status={{@status}} @class="{{if @comparisonType "boxel-actions--comparison-mode"}} {{if (and @drillDown (not-eq @status "no-change")) "with-expand"}}">
-      {{#if @comparisonType}}
-        <ComparisonModeLabel @status={{@status}} @modifiedCount={{@fieldData.modifiedCount}} @statusText={{@statusText}} @comparisonType={{@comparisonType}} />
-      {{/if}}
-    </BoxelActions>
-    {{#if (and @drillDown (not-eq @status "no-change"))}}
-      <BoxelActions @status={{@status}} @class="boxel-actions__expand">
-        <Boxel::IconButton
-          @icon="expand"
-          class="boxel-actions__expand-btn"
-          aria-label="expand"
-          {{on "click" (fn @drillDown @model @fieldData)}}
-        />
-      </BoxelActions>
-    {{/if}}
-  {{/if}}
-  {{#if @expandAction}}
-    <BoxelHighlight {{on "click" @expandAction}} @class="boxel-card__expand-overlay" />
-  {{/if}}
-  <div class="boxel-card boxel-card--default boxel-card--profile">
-    <Boxel::Header>
-      {{humanize @model.type}}
-    </Boxel::Header>
+<Card
+  @mode="view"
+  @model={{@model}}
+  @format={{@format}}
+  @status={{@status}}
+  @statusText={{@status}}
+  @comparisonType={{@comparisonType}}
+  @customTemplate={{true}}
+  @showGradient={{true}}
+  @attachNext={{@attachNext}}
+>
+  <article class="boxel-card boxel-card--default boxel-card--profile">
     <div class="boxel-card__inner boxel-card__inner--with-img boxel-card__inner--{{or @format "list"}} {{if (and @status (not-eq @status "no-change")) "" "field-renderer__opacity-control"}}">
       {{#if (eq @model.organization "verifi")}}
         <div class="boxel-card__profile-org" />
@@ -63,5 +48,5 @@
         </li>
       </ul>
     </div>
-  </div>
-</Boxel>
+  </article>
+</Card>

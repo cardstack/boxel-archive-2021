@@ -1,9 +1,5 @@
 .boxel-card__container {
   position: relative;
-  width: 100%;
-  background-color: var(--boxel-light);
-  border-radius: var(--boxel-border-radius);
-  border: var(--boxel-border);
 }
 
 .boxel-card__container--grid {
@@ -14,13 +10,35 @@
   padding: 0;
 }
 
+.boxel-card__container--attach-next .boxel-card__container-platter {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: none;
+}
+
+.boxel-card--dashed-placeholder {
+  height: 100%;
+}
+
+.boxel-card--dashed-placeholder .boxel-card__container-platter {
+  height: 100%;
+  border: 1.5px dashed var(--boxel-border-color);
+  background-color: transparent;
+}
+
+.boxel-card__container-platter {
+  width: 100%;
+  background-color: var(--boxel-light);
+  border-radius: var(--boxel-border-radius);
+  border: var(--boxel-border);
+}
+
 .boxel-card__container-header {
   border-top-left-radius: var(--boxel-border-radius);
   border-top-right-radius: var(--boxel-border-radius);
 }
 
-
-.card__gradient {
+.boxel-card__container-gradient {
   z-index: 1;
   position: absolute;
   right: 2px;
@@ -47,6 +65,8 @@
   cursor: pointer;
   outline: 0;
 }
+
+
 
 .boxel-card__inner {
   position: relative;

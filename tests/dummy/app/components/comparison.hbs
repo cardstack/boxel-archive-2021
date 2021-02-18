@@ -152,7 +152,10 @@
                                 drillDown=(if (eq mode "comparison") (fn @drillDown field))
                                 fieldData=f}}
                             {{else}}
-                              <CardPlatter @class="field-renderer__card field-renderer__card--blank" />
+                              <Card
+                                @model={{hash id="dashed-placeholder"}}
+                                @customTemplate={{true}}
+                              />
                             {{/if}}
                             </Boxel>
                           </div>
@@ -163,7 +166,10 @@
                         <Boxel @class="field-renderer field-renderer--{{mode}}-mode field-renderer--{{field.type}} {{dasherize field.title}}-field discrepancy-field-renderer base-card-field {{if (eq mode "comparison") "comp-view"}}" style={{html-safe (concat "height: calc(100%/" compField.value.length ")")}}>
                           <div class="field-renderer__title">{{#if (eq i 0)}}{{compField.title}}{{/if}}</div>
                           <div class="field-renderer__value">
-                            <CardPlatter @class="field-renderer__card field-renderer__card--blank" />
+                            <Card
+                              @model={{hash id="dashed-placeholder"}}
+                              @customTemplate={{true}}
+                            />
                           </div>
                         </Boxel>
                       {{/each}}
@@ -204,7 +210,7 @@
                                   (fn this.reconciliateField (get field.value i) f)
                                 )}}
                               />
-                            {{/let}}                              
+                            {{/let}}
                           {{/if}}
                           {{component
                             (or compField.component "card")
