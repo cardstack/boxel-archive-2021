@@ -1,26 +1,19 @@
-.layout-display-view {
+.layout-display-view__field {
   --preview-card-width: 14.375rem;
   --preview-card-height: 9.06rem;
   --header-color: var(--boxel-lime);
   --header-pattern: var(--boxel-light);
 
   display: grid;
-  gap: 1.5625rem 1.875rem;
-  padding: 0 1.875rem 3.125rem;
-  overflow: hidden;
-}
-
-.layout-display-view__field {
-  display: grid;
   grid-template-columns: 7.5rem 1fr;
-  gap: 1.875rem;
+  gap: var(--boxel-sp-lg);
 }
 
 .layout-display-view__preview {
   display: grid;
   grid-template-columns: var(--preview-card-width) auto;
   grid-template-rows: var(--preview-card-height);
-  gap: 1.875rem;
+  gap: var(--boxel-sp-lg);
 }
 
 .layout-display-view__scaled-card {
@@ -44,7 +37,7 @@
 
 .layout-display-view__swatch-group {
   display: flex;
-  gap: 0.8125rem;
+  gap: var(--boxel-sp-xs);
   padding: var(--boxel-spacing) 0;
 }
 

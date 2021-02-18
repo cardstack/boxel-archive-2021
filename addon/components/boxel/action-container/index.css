@@ -19,6 +19,14 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
+.action-container__content {
+  padding: var(--boxel-sp) var(--boxel-sp-xl) var(--boxel-sp-xxl);
+}
+
+.action-container__content > * + * {
+  margin-top: var(--boxel-sp-xxl);
+}
+
 
 /* Card Header */
 .action-container__header {
@@ -52,13 +60,11 @@
 
 
 /* Container and Header interaction */
-.action-container:focus-within .action-container__header,
 .action-container:hover .action-container__header {
   --header-background-color: var(--boxel-purple-100);
   --header-text-color: var(--boxel-dark);
 }
 
-.action-container:focus-within .action-container__expand-button,
 .action-container:hover .action-container__expand-button {
   color: initial;
 }
@@ -67,7 +73,6 @@
 /* Optional prompt */
 .action-container__prompt {
   margin: 0;
-  padding: var(--boxel-spacing) 30px 50px;
   font-size: 1.125rem; /* 18px */
   font-weight: 700;
   line-height: 1.33;

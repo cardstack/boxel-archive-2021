@@ -1,39 +1,37 @@
-<section class="layout-display-view" ...attributes>
-  <section class="layout-display-view__field">
-    <div class="layout-display-view__label">
-      Card Preview
+<section class="layout-display-view__field">
+  <div class="layout-display-view__label">
+    Card Preview
+  </div>
+  <div class="layout-display-view__preview">
+    <div class="layout-display-view__scaled-card">
+      <CardPay::PrepaidCard
+        @issuerName={{@issuerName}}
+        @issuerIcon={{@issuerIcon}}
+        @headerColor={{@headerColor.value}}
+        @darkTheme={{eq @headerColor.theme 'dark'}}
+        @headerPattern={{@headerPattern}}
+        @balance={{1234}}
+        @accountAddress="0x123499999995678"
+        @accountNetwork="xDai Chain"
+      />
     </div>
-    <div class="layout-display-view__preview">
-      <div class="layout-display-view__scaled-card">
-        <CardPay::PrepaidCard
-          @issuerName={{@issuerName}}
-          @issuerIcon={{@issuerIcon}}
-          @headerColor={{@headerColor.value}}
-          @darkTheme={{eq @headerColor.theme 'dark'}}
-          @headerPattern={{@headerPattern}}
-          @balance={{1234}}
-          @accountAddress="0x123499999995678"
-          @accountNetwork="xDai Chain"
-        />
-      </div>
-      <div class="layout-display-view__swatch-group">
-        <div
-          class="layout-display-view__swatch"
-          style={{css-var header-color=@headerColor.value}}
-        />
-        <div
-          class="layout-display-view__swatch layout-display-view__pattern-swatch"
-          style={{css-var header-pattern=@headerPattern.value}}
-        />
-      </div>
-    </div>
-  </section>
-  <div class="layout-display-view__field">
-    <div class="layout-display-view__label">
-      Name of Issuer
-    </div>
-    <div class="layout-display-view__value">
-      {{@issuerName}}
+    <div class="layout-display-view__swatch-group">
+      <div
+        class="layout-display-view__swatch"
+        style={{css-var header-color=@headerColor.value}}
+      />
+      <div
+        class="layout-display-view__swatch layout-display-view__pattern-swatch"
+        style={{css-var header-pattern=@headerPattern.value}}
+      />
     </div>
   </div>
 </section>
+<div class="layout-display-view__field">
+  <div class="layout-display-view__label">
+    Name of Issuer
+  </div>
+  <div class="layout-display-view__value">
+    {{@issuerName}}
+  </div>
+</div>

@@ -1,19 +1,12 @@
-.layout-form-view {
-  --header-color: var(--boxel-lime);
-  --field-height: 2.5rem;
-
-  display: grid;
-  gap: 3.125rem;
-  padding: 0 1.875rem 3.125rem;
-}
-
 .layout-form-view__preview-field {
+  --header-color: var(--boxel-lime);
   display: grid;
   justify-items: center;
-  gap: 0.625rem 1.875rem;
+  gap: var(--boxel-sp-xs) var(--boxel-sp-lg);
 }
 
 .layout-form-view__fields {
+  --field-height: 2.5rem;
   display: grid;
   gap: var(--boxel-spacing);
 }
@@ -22,7 +15,7 @@
   display: grid;
   grid-template-columns: 7.5rem 1fr;
   align-items: center;
-  gap: 0.625rem 1.875rem;
+  gap: var(--boxel-sp-xs) var(--boxel-sp-lg);
 }
 
 .layout-form-view__label {
@@ -36,9 +29,9 @@
 .layout-form-view__input {
   width: 100%;
   height: var(--field-height);
-  padding: 0.5rem var(--boxel-spacing);
+  padding: var(--boxel-sp-xxs) var(--boxel-sp);
   border: 1px solid var(--boxel-purple-300);
-  border-radius: 6px;
+  border-radius: 5px;
   font: var(--boxel-font);
   letter-spacing: var(--boxel-lsp-sm);
   transition: border-color var(--boxel-transition);
@@ -57,7 +50,7 @@
   background: url('../@cardstack/boxel/images/icons/carot-down.svg') right 18px center/auto 8px no-repeat;
   background-color: var(--boxel-light);
   border: 1px solid var(--boxel-purple-300);
-  border-radius: 6px;
+  border-radius: 5px;
   font: var(--boxel-font);
   letter-spacing: var(--boxel-lsp-sm);
   transition: border-color var(--boxel-transition);
@@ -72,7 +65,7 @@
 .layout-form-view__dropdown .ember-basic-dropdown-content {
   min-width: 15.625rem;
   max-height: 15.625rem;
-  border-radius: var(--boxel-border-radius);
+  border-radius: 5px;
   box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.25);
   overflow-y: auto;
 }
@@ -86,9 +79,9 @@
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 0.625rem;
+  gap: var(--boxel-sp-xs);
   height: var(--field-height);
-  padding: 0 0.625rem;
+  padding: 0 var(--boxel-sp-xs);
 }
 .layout-form-view__dropdown .ember-power-select-dropdown .layout-form-view__dropdown-option:hover {
   background-color: var(--boxel-light-300);
