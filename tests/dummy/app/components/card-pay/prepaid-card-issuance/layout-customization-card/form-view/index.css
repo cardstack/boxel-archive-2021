@@ -1,41 +1,42 @@
 .layout-form-view {
   --header-color: var(--boxel-lime);
-  --field-width: 470px;
-  --field-height: 40px;
+  --field-height: 2.5rem;
 
   display: grid;
-  gap: var(--boxel-spacing);
-  padding: 0 30px 60px;
+  gap: 3.125rem;
+  padding: 0 1.875rem 3.125rem;
 }
 
 .layout-form-view__preview-field {
-  grid-column: 1 / -1;
-  display: inline-grid;
+  display: grid;
   justify-items: center;
-  padding-bottom: var(--boxel-spacing);
+  gap: 0.625rem 1.875rem;
+}
+
+.layout-form-view__fields {
+  display: grid;
+  gap: var(--boxel-spacing);
 }
 
 .layout-form-view__field {
   display: grid;
-  grid-template-columns: 120px auto;
+  grid-template-columns: 7.5rem 1fr;
   align-items: center;
-  gap: var(--boxel-spacing);
+  gap: 0.625rem 1.875rem;
 }
 
 .layout-form-view__label {
-  padding: 10px;
   color: var(--boxel-purple-400);
   font: var(--boxel-font-xs);
   font-weight: 600;
   letter-spacing: var(--boxel-lsp-xl);
-  text-align: right;
   text-transform: uppercase;
 }
 
 .layout-form-view__input {
-  max-width: var(--field-width);
+  width: 100%;
   height: var(--field-height);
-  padding: 8px var(--boxel-spacing);
+  padding: 0.5rem var(--boxel-spacing);
   border: 1px solid var(--boxel-purple-300);
   border-radius: 6px;
   font: var(--boxel-font);
@@ -50,11 +51,11 @@
 }
 
 .layout-form-view__dropdown {
-  max-width: var(--field-width);
   height: var(--field-height);
 }
 .layout-form-view__dropdown > .ember-power-select-trigger {
   background: url('../@cardstack/boxel/images/icons/carot-down.svg') right 18px center/auto 8px no-repeat;
+  background-color: var(--boxel-light);
   border: 1px solid var(--boxel-purple-300);
   border-radius: 6px;
   font: var(--boxel-font);
@@ -69,8 +70,8 @@
   outline-color: var(--boxel-highlight);
 }
 .layout-form-view__dropdown .ember-basic-dropdown-content {
-  min-width: 250px;
-  max-height: 250px;
+  min-width: 15.625rem;
+  max-height: 15.625rem;
   border-radius: var(--boxel-border-radius);
   box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.25);
   overflow-y: auto;
@@ -85,17 +86,17 @@
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 10px;
-  height: 40px;
-  padding: 0 10px;
+  gap: 0.625rem;
+  height: var(--field-height);
+  padding: 0 0.625rem;
 }
 .layout-form-view__dropdown .ember-power-select-dropdown .layout-form-view__dropdown-option:hover {
   background-color: var(--boxel-light-300);
   cursor: pointer;
 }
 .layout-form-view__dropdown-option-icon {
-  width: 25px;
-  height: 25px;
+  width: 1.5rem;
+  height: 1.5rem;
   border: 1px solid var(--boxel-purple-300);
   border-radius: 5px;
   background: var(--header-color);
