@@ -1,9 +1,9 @@
 <article class={{cn "action-container" action-container--is-complete=@isComplete}}
   ...attributes
 >
-  <header class="action-container__header">
+  <Boxel::Header @noBackground={{true}} class="action-container__header">
     {{@header}}
-  </header>
+  </Boxel::Header>
 
   {{#if @prompt}}
     <p class="action-container__prompt">

@@ -21,15 +21,7 @@
 
 /* Card Header */
 .action-container__header {
-  height: 1.875rem; /* 30px; */
-  padding: 0.5rem 1rem;
-  border-top-right-radius: var(--boxel-border-radius);
-  border-top-left-radius: var(--boxel-border-radius);
-  color: var(--boxel-purple-300);
-  font: var(--boxel-font-xs);
-  font-weight: 600;
-  letter-spacing: var(--boxel-lsp-xl);
-  text-transform: uppercase;
+  --header-text-color: var(--boxel-purple-300);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -39,7 +31,7 @@
 /* Optional prompt */
 .action-container__prompt {
   margin: 0;
-  padding: var(--boxel-spacing) 1.875rem 3.125rem;
+  padding: var(--boxel-spacing) 30px 50px;
   font-size: 1.125rem; /* 18px */
   font-weight: 700;
   line-height: 1.33;
