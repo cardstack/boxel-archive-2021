@@ -14,6 +14,12 @@
   padding: 0;
 }
 
+.boxel-card__container-header {
+  border-top-left-radius: var(--boxel-border-radius);
+  border-top-right-radius: var(--boxel-border-radius);
+}
+
+
 .card__gradient {
   z-index: 1;
   position: absolute;
