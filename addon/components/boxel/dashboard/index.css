@@ -11,8 +11,8 @@
   display: flex;
   align-items: center;
   min-height: 115px;
-  padding-left: 42px;
-  padding-right: 40px;
+  padding-left: var(--boxel-sp-xl);
+  padding-right: var(--boxel-sp-xl);
   background-color: var(--boxel-dark);
 }
 
@@ -34,7 +34,7 @@
 }
 
 .dashboard__logo + .dashboard__title {
-  margin-left: 15px;
+  margin-left: var(--boxel-sp-sm);
 }
 
 .dashboard__body {
