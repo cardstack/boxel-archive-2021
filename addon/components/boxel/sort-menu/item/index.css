@@ -30,6 +30,7 @@
   left: -10px;
 }
 
+/* TODO: discuss exceptions for margin */
 .sort-menu-item__active > span {
   padding-left: 0.4em;
 }
