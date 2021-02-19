@@ -19,6 +19,7 @@
 }
 
 .thread-header__title {
+  /* TODO: discuss exceptions for margin */
   margin-top: 4px;
   margin-bottom: var(--boxel-sp-xxxs);
   margin-left: var(--boxel-sp);
@@ -66,6 +67,7 @@
   position: absolute;
   top: 0;
   right: 0;
+  /* TODO: discuss exceptions for padding */
   padding: 2px 13px 3px;
   border-radius: 0 10px 0 5px;
   background-color: var(--boxel-error-100);
