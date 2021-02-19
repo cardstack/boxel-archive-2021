@@ -11,7 +11,7 @@
   width: auto;
   max-width: 100%;
   height: var(--mode-container-height);
-  padding: 11px 40px;
+  padding: var(--boxel-sp-xs) var(--boxel-sp-xl);
   background-color: var(--boxel-highlight);
   background-image: var(--mode-icon), url('../@cardstack/boxel/images/icons/close.svg');
   background-position: var(--mode-icon-position), center right 15px;
