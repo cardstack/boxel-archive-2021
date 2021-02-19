@@ -23,7 +23,7 @@
   display: grid;
   grid-template-columns: 16px 1fr;
   grid-template-rows: 1.125rem;
-  gap: 0 14px;
+  gap: 0 var(--boxel-sp-sm);
   align-items: center;
 }
 
