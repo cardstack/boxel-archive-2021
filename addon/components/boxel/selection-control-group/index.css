@@ -3,6 +3,7 @@
 }
 
 .selection-control-group__select-button {
+  /* TODO: discuss exception for margin */
   margin-right: 1px;
 }
 
