@@ -13,7 +13,7 @@
 
 .layout-form-view__field {
   display: grid;
-  grid-template-columns: 7.5rem 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
   align-items: center;
   gap: var(--boxel-sp-xs) var(--boxel-sp-lg);
 }
@@ -24,6 +24,10 @@
   font-weight: 600;
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
+}
+
+.layout-form-view__value {
+  grid-column: span 3;
 }
 
 .layout-form-view__input {

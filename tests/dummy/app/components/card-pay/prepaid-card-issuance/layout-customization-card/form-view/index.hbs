@@ -19,7 +19,7 @@
     <label class="layout-form-view__field">
       <span class="layout-form-view__label">Name of Issuer</span>
       <Input
-        class="layout-form-view__input"
+        class="layout-form-view__value layout-form-view__input"
         @value={{@issuerName}}
         {{on "input" @updateIssuerName}}
       />
@@ -30,7 +30,7 @@
     <label class="layout-form-view__field">
       <span class="layout-form-view__label">Background Color</span>
       <PowerSelect
-        class="layout-form-view__dropdown"
+        class="layout-form-view__value layout-form-view__dropdown"
         @options={{@colorOptions}}
         @selected={{@headerColor}}
         @onChange={{@updateHeaderColor}}
@@ -53,7 +53,7 @@
     <label class="layout-form-view__field">
       <span class="layout-form-view__label">Pattern</span>
       <PowerSelect
-        class="layout-form-view__dropdown"
+        class="layout-form-view__value layout-form-view__dropdown"
         @options={{@patternOptions}}
         @selected={{@headerPattern}}
         @onChange={{@updateHeaderPattern}}

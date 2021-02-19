@@ -5,8 +5,8 @@
   --header-pattern: var(--boxel-light);
 
   display: grid;
-  grid-template-columns: 7.5rem 1fr;
-  gap: var(--boxel-sp-lg);
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+  gap: var(--boxel-sp-xs) var(--boxel-sp-lg);
 }
 
 .layout-display-view__preview {
@@ -30,6 +30,7 @@
 }
 
 .layout-display-view__value {
+  grid-column: span 2;
   color: var(--boxel-dark);
   font: var(--boxel-font);
   letter-spacing: var(--boxel-lsp-sm);
