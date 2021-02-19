@@ -20,8 +20,8 @@
 
 .thread-header__title {
   margin-top: 4px;
-  margin-bottom: 6px;
-  margin-left: 20px;
+  margin-bottom: var(--boxel-sp-xxxs);
+  margin-left: var(--boxel-sp);
   font: var(--boxel-font-lg);
   font-weight: 700;
   letter-spacing: var(--boxel-lsp-xs);
@@ -30,7 +30,7 @@
 .thread-header__expand-button {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: var(--boxel-sp-xs);
   border: none;
   background: none;
   font: var(--boxel-font-xs);
@@ -43,7 +43,7 @@
 }
 
 .thread-header__expand-button > svg {
-  margin-left: 15px;
+  margin-left: var(--boxel-sp-sm);
 }
 
 @media only screen and (max-width: 1149px) {
@@ -56,7 +56,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 0 15px;
+  gap: 0 var(--boxel-sp-sm);
   color: var(--boxel-dark);
   font-weight: 600;
   letter-spacing: var(--boxel-lsp-xl);
