@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  padding: var(--boxel-sp-lg) var(--boxel-sp-xl);
+  padding: var(--boxel-sp-lg);
   gap: var(--boxel-sp-xs);
   background-color: var(--boxel-purple-700);
   color: var(--boxel-purple-300);

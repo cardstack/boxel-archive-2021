@@ -6,10 +6,15 @@
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+  align-items: center;
   gap: var(--boxel-sp-xs) var(--boxel-sp-lg);
 }
 
-.layout-display-view__preview {
+.layout-display-view__preview-label {
+  align-self: start;
+}
+
+.layout-display-view__preview-value {
   display: grid;
   grid-template-columns: var(--preview-card-width) auto;
   grid-template-rows: var(--preview-card-height);
@@ -34,6 +39,8 @@
   color: var(--boxel-dark);
   font: var(--boxel-font);
   letter-spacing: var(--boxel-lsp-sm);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .layout-display-view__swatch-group {
@@ -43,7 +50,7 @@
 }
 
 .layout-display-view__swatch {
-  width: 1.5625rem;
+  width: 1.5625rem; /* 25px */
   height: 1.5625rem;
   border: 1px solid var(--boxel-purple-300);
   border-radius: 5px;

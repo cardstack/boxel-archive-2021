@@ -20,7 +20,7 @@
 }
 
 .action-container__content {
-  padding: var(--boxel-sp) var(--boxel-sp-xl) var(--boxel-sp-xxl);
+  padding: var(--boxel-sp) var(--boxel-sp-lg) var(--boxel-sp-xxl);
 }
 
 .action-container__content > * + * {
