@@ -166,7 +166,7 @@ export default [
   },
   {
     id: 'the-sun-comes-out',
-    owner_id: 'deezer',
+    owner_id: 'dsp',
     type: 'musical-work',
     title: 'The Sun Comes Out',
     description: 'Valentino Solano, Emilio Rosso (1 more)',

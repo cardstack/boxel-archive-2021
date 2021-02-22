@@ -189,7 +189,7 @@ export default [
     musicalWorkOnly: true,
   },
   {
-    id: 'deezer',
-    title: 'Deezer',
+    id: 'dsp',
+    title: 'DSP',
   },
 ];

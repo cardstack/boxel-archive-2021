@@ -689,12 +689,12 @@ export default [
     ],
   },
 
-  // Deezer 1
+  // DSP 1
   {
     id: 'dsp-the-sun-comes-out',
     title: 'The Sun Comes Out',
     type: 'musical-work',
-    owner: 'Deezer',
+    owner: 'DSP',
     ownerId: 'dzr',
     datetime: '2020-07-10T14:24',
     isolatedFields: [
@@ -734,12 +734,12 @@ export default [
       },
     ],
   },
-  // Deezer 2
+  // DSP 2
   {
     id: 'dzr-the-sun-comes-out',
     title: 'The Sun Comes Out',
     type: 'musical-work',
-    owner: 'Deezer',
+    owner: 'DSP',
     ownerId: 'dzr',
     datetime: '2020-06-09T18:10',
     isolatedFields: [
