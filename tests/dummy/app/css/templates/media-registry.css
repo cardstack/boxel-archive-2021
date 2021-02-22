@@ -88,20 +88,6 @@
   z-index: 2;
 }
 
-.media-registry__header.media-registry__header--bunny_records {
-  --header-background: #FF1D6C;
-  --header-logo-size-sm: 25px 34px;
-}
-
-.media-registry__header.media-registry__header--crd_records {
-  --header-background: #0069F9;
-  --header-logo-size-sm: 36px 35px;
-}
-
-.media-registry__header.media-registry__header--warner-music-group {
-  --header-background: #0061aa;
-}
-
 .media-registry__header--sm {
   height: 130px;
   padding-top: 25px;
@@ -187,4 +173,23 @@
 
 .media-registry__outlet {
   overflow: auto;
+}
+
+
+/* Customization */
+.media-registry__header.media-registry__header--bunny_records {
+  --header-background: #FF1D6C;
+  --header-logo-size-sm: 25px 34px;
+}
+
+.media-registry__header.media-registry__header--crd_records {
+  --header-background: #0069F9;
+  --header-logo-size-sm: 36px 35px;
+}
+
+.media-registry__header.media-registry__header--realtunes-publishing {
+  --header-background: #3F356F;
+}
+.media-registry__logo--realtunes-publishing {
+  background-position: top center;
 }

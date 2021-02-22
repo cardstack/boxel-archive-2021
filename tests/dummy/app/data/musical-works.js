@@ -175,7 +175,7 @@ export default [
       {
         title: 'copyright_notice',
         value: [
-          '© 2019 Warner Chappell Music',
+          '© 2019 RealTunes Publishing',
           '© 2019 Allegro Music Publishing',
         ],
       },
@@ -259,7 +259,7 @@ export default [
       {
         title: 'copyright_notice',
         value: [
-          '© 2019 Warner Chappell Music',
+          '© 2019 RealTunes Publishing',
           '© 2019 Allegro Music Publishing',
         ],
       },
@@ -345,7 +345,7 @@ export default [
       {
         title: 'copyright_notice',
         value: [
-          '© 2019 Warner Chappell Music',
+          '© 2019 RealTunes Publishing',
           '© 2019 Allegro Music Publishing',
         ],
       },
@@ -357,8 +357,9 @@ export default [
     id: 'the-sun-comes-out-wcm-v1',
     title: 'The Sun Comes Out',
     type: 'musical-work',
-    owner: 'Warner Chappell Music',
+    owner: 'RealTunes Publishing',
     ownerId: 'wcm',
+    iconURL: WCM.logoURL,
     datetime: '2019-11-11T13:54',
     isolatedFields: [
       {
@@ -426,7 +427,7 @@ export default [
       {
         title: 'copyright_notice',
         value: [
-          '© 2019 Warner Chappell Music',
+          '© 2019 RealTunes Publishing',
           '© 2019 Allegro Music Publishing',
         ],
       },
@@ -437,8 +438,9 @@ export default [
     id: 'the-sun-comes-out-wcm-v2',
     title: 'The Sun Comes Out',
     type: 'musical-work',
-    owner: 'Warner Chappell Music',
+    owner: 'RealTunes Publishing',
     ownerId: 'wcm',
+    iconURL: WCM.logoURL,
     datetime: '2020-05-18T15:31',
     isolatedFields: [
       {
@@ -510,7 +512,7 @@ export default [
       {
         title: 'copyright_notice',
         value: [
-          '© 2019 Warner Chappell Music',
+          '© 2019 RealTunes Publishing',
           '© 2019 Allegro Music Publishing',
         ],
       },
@@ -521,8 +523,9 @@ export default [
     id: 'wcm-the-sun-comes-out',
     title: 'The Sun Comes Out',
     type: 'musical-work',
-    owner: 'Warner Chappell Music',
+    owner: 'RealTunes Publishing',
     ownerId: 'wcm',
+    iconURL: WCM.logoURL,
     datetime: '2020-06-09T18:10',
     isolatedFields: [
       {
@@ -594,7 +597,7 @@ export default [
       {
         title: 'copyright_notice',
         value: [
-          '© 2019 Warner Chappell Music',
+          '© 2019 RealTunes Publishing',
           '© 2019 Allegro Music Publishing',
         ],
       },
@@ -679,7 +682,7 @@ export default [
       {
         title: 'copyright_notice',
         value: [
-          '© 2019 Warner Chappell Music',
+          '© 2019 RealTunes Publishing',
           '© 2019 Allegro Music Publishing',
         ],
       },
@@ -809,7 +812,7 @@ export default [
       {
         title: 'copyright_notice',
         value: [
-          '© 2019 Warner Chappell Music',
+          '© 2019 RealTunes Publishing',
           '© 2019 Allegro Music Publishing',
         ],
       },

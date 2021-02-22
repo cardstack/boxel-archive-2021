@@ -32,15 +32,15 @@ export default {
   id: 'the-sun-comes-out-wcm-gmr',
   type: 'Musical Work',
   title: 'The Sun Comes Out',
-  ownerId: 'warner-chappell-music',
-  baseOwner: 'Warner Chappell Music',
+  ownerId: 'realtunes-publishing',
+  baseOwner: 'RealTunes Publishing',
   compOwner: 'Global Music Rights',
   baseCard: {
     isPublisher: true,
     type: 'musical-work',
     version: 'v3',
-    owner: 'Warner Chappell Music',
-    ownerId: 'warner-chappell-music',
+    owner: 'RealTunes Publishing',
+    ownerId: 'realtunes-publishing',
     datetime: '2020-05-18T15:31',
     id: 'the-sun-comes-out-wcm-v2',
     nextId: 'wcm-the-sun-comes-out',
@@ -115,7 +115,7 @@ export default {
       {
         title: 'copyright_notice',
         value: [
-          '© 2019 Warner Chappell Music',
+          '© 2019 RealTunes Publishing',
           '© 2019 Allegro Music Publishing',
         ],
       },
@@ -197,7 +197,7 @@ export default {
       {
         title: 'copyright_notice',
         value: [
-          '© 2019 Warner Chappell Music',
+          '© 2019 RealTunes Publishing',
           '© 2019 Allegro Music Publishing',
         ],
       },

@@ -1,4 +1,4 @@
-import { ampLogo } from './organizations';
+import { ampLogo, realtunesLogo } from './organizations';
 import valentinoSolanoThumb from 'dummy/images/media-registry/profiles/thumb/Valentino-Solano.jpg';
 import emilioRossoThumb from 'dummy/images/media-registry/profiles/thumb/Emilio-Rosso.jpg';
 import mariaBianchiThumb from 'dummy/images/media-registry/profiles/thumb/Maria-Bianchi.jpg';
@@ -21,12 +21,12 @@ export const AMP = {
 };
 
 export const WCM = {
-  id: 'warner-chappell-music',
+  id: 'realtunes-publishing',
   type: 'publisher',
-  title: 'Warner Chappell Music',
+  title: 'RealTunes Publishing',
+  logoURL: realtunesLogo,
   territory: 'worldwide',
-  ipi: '00160187388',
-  website: 'www.warnerchappell.com',
+  website: 'www.realtunes.com',
   main_office: 'Los Angeles, USA',
 };
 
@@ -126,7 +126,7 @@ export const MUSICAL_WORK = {
   version_type: 'Original work',
   publishers: [WCM, AMP],
   copyright_notice:
-    '© 2019 Warner Chappell Music, © 2019 Allegro Music Publishing',
+    '© 2019 RealTunes Publishing, © 2019 Allegro Music Publishing',
 };
 
 // MASTER DETAIL

@@ -37,7 +37,7 @@ export default [
     email: 'valentino@valsolanomusic.com',
     website: 'www.valsolanomusic.com',
     role: 'Lyricist',
-    publisher_id: 'warner-chappell-music',
+    publisher_id: 'realtunes-publishing',
   },
   {
     id: 'valentino-solano',
@@ -49,7 +49,7 @@ export default [
     email: 'valentino@valsolanomusic.com',
     website: 'www.valsolanomusic.com',
     role: 'Lyricist',
-    publisher_id: 'warner-chappell-music',
+    publisher_id: 'realtunes-publishing',
   },
   {
     id: 'emilio-rosso',

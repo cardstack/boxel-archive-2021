@@ -28,10 +28,10 @@ export default [
     verifi_asset_type: 'Original work',
     version_type: 'Original work',
     copyright_notice: [
-      '© 2019 Warner Chappell Music',
+      '© 2019 RealTunes Publishing',
       '© 2019 Allegro Music Publishing',
     ],
-    source: 'Warner Chappell Music',
+    source: 'RealTunes Publishing',
   },
   {
     id: 'the-sun-comes-out',
@@ -48,10 +48,10 @@ export default [
     verifi_asset_type: 'Original work',
     version_type: 'Original work',
     copyright_notice: [
-      '© 2019 Warner Chappell Music',
+      '© 2019 RealTunes Publishing',
       '© 2019 Allegro Music Publishing',
     ],
-    source: 'Warner Chappell Music',
+    source: 'RealTunes Publishing',
   },
   {
     id: 'the-sun-comes-out',
@@ -67,10 +67,10 @@ export default [
     verifi_asset_type: 'Original work',
     version_type: 'Original work',
     copyright_notice: [
-      '© 2019 Warner Chappell Music',
+      '© 2019 RealTunes Publishing',
       '© 2019 Allegro Music Publishing',
     ],
-    source: 'Warner Chappell Music',
+    source: 'RealTunes Publishing',
   },
   {
     id: 'the-sun-comes-out',
@@ -86,14 +86,14 @@ export default [
     verifi_asset_type: 'Original work',
     version_type: 'Original work',
     copyright_notice: [
-      '© 2019 Warner Chappell Music',
+      '© 2019 RealTunes Publishing',
       '© 2019 Allegro Music Publishing',
     ],
   },
   {
     id: 'the-sun-comes-out',
     version: 'v2',
-    owner_id: 'warner-chappell-music',
+    owner_id: 'realtunes-publishing',
     type: 'musical-work',
     title: 'The Sun Comes Out',
     description: 'Valentino Solano, Emilio Rosso',
@@ -105,14 +105,14 @@ export default [
     verifi_asset_type: 'Original work',
     version_type: 'Original work',
     copyright_notice: [
-      '© 2019 Warner Chappell Music',
+      '© 2019 RealTunes Publishing',
       '© 2019 Allegro Music Publishing',
     ],
   },
   {
     id: 'the-sun-comes-out',
     version: 'v3',
-    owner_id: 'warner-chappell-music',
+    owner_id: 'realtunes-publishing',
     type: 'musical-work',
     title: 'The Sun Comes Out',
     description: 'Valentino Solano, Emilio Rosso (1 more)',
@@ -124,13 +124,13 @@ export default [
     verifi_asset_type: 'Original work',
     version_type: 'Original work',
     copyright_notice: [
-      '© 2019 Warner Chappell Music',
+      '© 2019 RealTunes Publishing',
       '© 2019 Allegro Music Publishing',
     ],
   },
   {
     id: 'the-sun-comes-out',
-    owner_id: 'warner-chappell-music',
+    owner_id: 'realtunes-publishing',
     type: 'musical-work',
     title: 'The Sun Comes Out',
     description: 'Valentino Solano, Emilio Rosso (1 more)',
@@ -142,7 +142,7 @@ export default [
     verifi_asset_type: 'Original work',
     version_type: 'Original work',
     copyright_notice: [
-      '© 2019 Warner Chappell Music',
+      '© 2019 RealTunes Publishing',
       '© 2019 Allegro Music Publishing',
     ],
   },
@@ -160,7 +160,7 @@ export default [
     verifi_asset_type: 'Original work',
     version_type: 'Original work',
     copyright_notice: [
-      '© 2019 Warner Chappell Music',
+      '© 2019 RealTunes Publishing',
       '© 2019 Allegro Music Publishing',
     ],
   },
@@ -178,10 +178,10 @@ export default [
     verifi_asset_type: 'Original work',
     version_type: 'Original work',
     copyright_notice: [
-      '© 2019 Warner Chappell Music',
+      '© 2019 RealTunes Publishing',
       '© 2019 Allegro Music Publishing',
     ],
-    source: 'Warner Chappell Music',
+    source: 'RealTunes Publishing',
   },
   {
     id: 'you-make-me-crazy',

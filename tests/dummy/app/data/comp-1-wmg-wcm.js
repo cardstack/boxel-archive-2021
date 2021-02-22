@@ -1,4 +1,5 @@
 import { WCM, AMP, EMILIO_PR, valentinoSolanoThumb } from './comp-data';
+import { realtunesLogo } from './organizations';
 
 const VALENTINO_SOLANO_V0 = {
   id: 'valentino-solano',
@@ -50,7 +51,7 @@ export default {
   title: 'The Sun Comes Out',
   ownerId: 'warner-music-group',
   baseOwner: 'Warner Music Group',
-  compOwner: 'Warner Chappell Music',
+  compOwner: 'RealTunes Publishing',
   baseCard: {
     type: 'musical-work',
     version: 'v1',
@@ -116,8 +117,9 @@ export default {
   compCard: {
     type: 'musical-work',
     version: 'v2',
-    owner: 'Warner Chappell Music',
-    ownerId: 'warner-chappell-music',
+    owner: 'RealTunes Publishing',
+    ownerId: 'realtunes-publishing',
+    iconURL: realtunesLogo,
     datetime: '2019-11-11T13:54',
     id: 'the-sun-comes-out-wcm-v1',
     isolatedFields: [
@@ -186,7 +188,7 @@ export default {
       {
         title: 'copyright_notice',
         value: [
-          '© 2019 Warner Chappell Music',
+          '© 2019 RealTunes Publishing',
           '© 2019 Allegro Music Publishing',
         ],
       },

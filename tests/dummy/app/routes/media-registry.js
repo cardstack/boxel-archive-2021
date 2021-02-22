@@ -16,7 +16,7 @@ export default class MediaRegistryRoute extends Route {
   verifiGroup = [
     'warner-music-group',
     'allegro-music-publishing',
-    'warner-chappell-music',
+    'realtunes-publishing',
     'global-music-rights',
     'deezer',
   ];

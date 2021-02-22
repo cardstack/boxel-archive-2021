@@ -112,13 +112,6 @@
   text-align: center;
 }
 
-.discrepancy__profile-icon--allegro-music-publishing {
-  background-size: auto 23px;
-}
-.boxel-card__bg-img--allegro-music-publishing {
-  border-radius: 100px;
-}
-
 .discrepancy__comparison-header-icons-carot {
   display: inline-block;
   width: 30px;
@@ -391,4 +384,17 @@
 
 .discrepancy-field-renderer.base-card-field.comp-view .boxel-highlight {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Dummy */
+.discrepancy__profile-icon--allegro-music-publishing {
+  background-size: auto 23px;
+}
+.boxel-card__bg-img--allegro-music-publishing {
+  border-radius: 100px;
+}
+.discrepancy__profile-icon--realtunes-publishing {
+  background-color: #3F356F;
 }

@@ -5,6 +5,7 @@ import crdRecordsIcon from 'dummy/images/media-registry/button-crd-records.svg';
 import lisaTrackProfile from 'dummy/images/media-registry/profiles/Lisa-Track.jpg';
 import steveRightsProfile from 'dummy/images/media-registry/profiles/Steve-Rights.jpg';
 import ampLogo from 'dummy/images/media-registry/amp-logo.png';
+import realtunesLogo from 'dummy/images/media-registry/realtunes-logo.png';
 
 export {
   ampLogo,
@@ -12,6 +13,7 @@ export {
   bunnyLogoIcon,
   crdRecordsIcon,
   crdRecordsLogo,
+  realtunesLogo,
   lisaTrackProfile,
   steveRightsProfile,
 };
@@ -171,12 +173,13 @@ export default [
     musicalWorkOnly: true,
   },
   {
-    id: 'warner-chappell-music',
+    id: 'realtunes-publishing',
     type: 'publisher',
-    title: 'Warner Chappell Music',
+    title: 'RealTunes Publishing',
+    iconURL: realtunesLogo,
+    logoURL: realtunesLogo,
     territory: 'worldwide',
-    ipi: '00160187388',
-    website: 'www.warnerchappell.com',
+    website: 'www.realtunes.com',
     main_office: 'Los Angeles, USA',
     musicalWorkOnly: true,
   },
@@ -251,12 +254,13 @@ export default [
     musicalWorkOnly: true,
   },
   {
-    id: 'warner-chappell-music',
+    id: 'realtunes-publishing',
     type: 'publisher',
-    title: 'Warner Chappell Music',
+    title: 'RealTunes Publishing',
+    iconURL: '/media-registry/realtunes-logo.png',
+    logoURL: '/media-registry/realtunes-logo.png',
     territory: 'worldwide',
-    ipi: '00160187388',
-    website: 'www.warnerchappell.com',
+    website: 'www.realtunes.com',
     main_office: 'Los Angeles, USA',
     musicalWorkOnly: true,
   },
