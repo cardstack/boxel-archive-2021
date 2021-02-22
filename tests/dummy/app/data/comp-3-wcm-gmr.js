@@ -6,7 +6,7 @@ const VALENTINO_SOLANO_V1 = {
   title: 'Valentino Solano',
   imgURL: VALENTINO_PR.writer.imgURL,
   ipi: '00815723492',
-  pro: 'Global Music Rights',
+  pro: 'SOMOA',
   email: 'valentino@valsolanomusic.com',
   website: 'www.valsolanomusic.com',
   expandable: true,
@@ -34,7 +34,7 @@ export default {
   title: 'The Sun Comes Out',
   ownerId: 'realtunes-publishing',
   baseOwner: 'RealTunes Publishing',
-  compOwner: 'Global Music Rights',
+  compOwner: 'SOMOA Music Rights',
   baseCard: {
     isPublisher: true,
     type: 'musical-work',
@@ -123,8 +123,8 @@ export default {
   },
   compCard: {
     type: 'musical-work',
-    owner: 'Global Music Rights',
-    ownerId: 'global-music-rights',
+    owner: 'SOMOA Music Rights',
+    ownerId: 'somoa',
     datetime: '2020-06-09T16:18',
     id: 'the-sun-comes-out-gmr',
     isolatedFields: [

@@ -184,8 +184,8 @@ export default [
     musicalWorkOnly: true,
   },
   {
-    id: 'global-music-rights',
-    title: 'Global Music Rights',
+    id: 'somoa',
+    title: 'SOMOA Music Rights',
     musicalWorkOnly: true,
   },
   {

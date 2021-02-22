@@ -148,7 +148,7 @@ export default [
   },
   {
     id: 'the-sun-comes-out',
-    owner_id: 'global-music-rights',
+    owner_id: 'somoa',
     type: 'musical-work',
     title: 'The Sun Comes Out',
     description: 'Valentino Solano, Emilio Rosso (1 more)',

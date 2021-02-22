@@ -24,7 +24,7 @@ const VALENTINO_SOLANO_V1 = {
   title: 'Valentino Solano',
   imgURL: valentinoSolanoThumb,
   ipi: '00815723492',
-  pro: 'Global Music Rights',
+  pro: 'SOMOA',
   email: 'valentino@valsolanomusic.com',
   website: 'www.valsolanomusic.com',
   expandable: true,
