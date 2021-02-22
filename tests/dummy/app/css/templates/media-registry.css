@@ -97,7 +97,6 @@
 .media-registry__title {
   grid-area: title;
   display: grid;
-  grid-template-columns: auto 1fr;
   gap: 0 3px;
   align-items: center;
   font-size: 1.1875rem; /* 19px */
@@ -107,7 +106,12 @@
   text-transform: uppercase;
 }
 
+.media-registry__title--has-logo {
+  grid-template-columns: auto 1fr;
+}
+
 .media-registry__header--sm .media-registry__title {
+  height: 50px;
   font: var(--boxel-font-sm);
   font-weight: 700;
 }
@@ -183,8 +187,16 @@
 }
 
 .media-registry__header.media-registry__header--crd_records {
-  --header-background: #0069F9;
+  --header-background: var(--boxel-blue);
   --header-logo-size-sm: 36px 35px;
+}
+
+.media-registry__header.media-registry__header--warbler-music {
+  --header-background: var(--boxel-navy);
+}
+
+.media-registry__header.media-registry__header--somoa {
+  --header-background: var(--boxel-lilac);
 }
 
 .media-registry__header.media-registry__header--realtunes-publishing {

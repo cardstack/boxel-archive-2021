@@ -156,9 +156,9 @@ export default [
     ],
   },
   {
-    id: 'warner-music-group',
+    id: 'warbler-music',
     type: 'label',
-    title: 'Warner Music Group',
+    title: 'Warbler Music',
   },
   {
     id: 'allegro-music-publishing',

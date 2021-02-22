@@ -104,6 +104,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   color: var(--boxel-light);
+  border: 1px solid var(--boxel-dark);
   border-radius: 7px;
   font: var(--boxel-font-sm);
   font-weight: 700;
@@ -395,6 +396,15 @@
 .boxel-card__bg-img--allegro-music-publishing {
   border-radius: 100px;
 }
+
+.discrepancy__profile-icon--warbler-music {
+  background-color: var(--boxel-navy);
+}
+
 .discrepancy__profile-icon--realtunes-publishing {
   background-color: #3F356F;
+}
+
+.discrepancy__profile-icon--somoa {
+  background-color: var(--boxel-lilac);
 }

@@ -6,7 +6,7 @@ export default {
   title: 'The Sun Comes Out',
   ownerId: 'dsp',
   baseOwner: 'DSP',
-  compOwner: 'Warner Music Group',
+  compOwner: 'Warbler Music',
   baseCard: {
     type: 'musical-work',
     version: 'v0',
@@ -75,8 +75,8 @@ export default {
   },
   compCard: {
     type: 'musical-work',
-    owner: 'Warner Music Group',
-    ownerId: 'warner-music-group',
+    owner: 'Warbler Music',
+    ownerId: 'warbler-music',
     datetime: '2020-06-09T18:10',
     id: 'wmg-the-sun-comes-out',
     isolatedFields: [

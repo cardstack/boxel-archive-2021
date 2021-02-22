@@ -2,7 +2,7 @@ export default [
   {
     id: 'the-sun-comes-out',
     version: 'v1',
-    owner_id: 'warner-music-group',
+    owner_id: 'warbler-music',
     type: 'musical-work',
     title: 'The Sun Comes Out',
     description: 'Valentino Solano',
@@ -16,7 +16,7 @@ export default [
   {
     id: 'the-sun-comes-out',
     version: 'v2',
-    owner_id: 'warner-music-group',
+    owner_id: 'warbler-music',
     type: 'musical-work',
     title: 'The Sun Comes Out',
     description: 'Valentino Solano, Emilio Rosso',
@@ -36,7 +36,7 @@ export default [
   {
     id: 'the-sun-comes-out',
     version: 'v3',
-    owner_id: 'warner-music-group',
+    owner_id: 'warbler-music',
     type: 'musical-work',
     title: 'The Sun Comes Out',
     description: 'Valentino Solano, Emilio Rosso (1 more)',
@@ -55,7 +55,7 @@ export default [
   },
   {
     id: 'the-sun-comes-out',
-    owner_id: 'warner-music-group',
+    owner_id: 'warbler-music',
     type: 'musical-work',
     title: 'The Sun Comes Out',
     description: 'Valentino Solano, Emilio Rosso (1 more)',

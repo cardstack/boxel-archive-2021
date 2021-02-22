@@ -49,14 +49,14 @@ export default {
   id: 'the-sun-comes-out-wmg-wcm',
   type: 'Musical Work',
   title: 'The Sun Comes Out',
-  ownerId: 'warner-music-group',
-  baseOwner: 'Warner Music Group',
+  ownerId: 'warbler-music',
+  baseOwner: 'Warbler Music',
   compOwner: 'RealTunes Publishing',
   baseCard: {
     type: 'musical-work',
     version: 'v1',
-    owner: 'Warner Music Group',
-    ownerId: 'warner-music-group',
+    owner: 'Warbler Music',
+    ownerId: 'warbler-music',
     datetime: '2020-04-08T10:45',
     id: 'the-sun-comes-out',
     isolatedFields: [

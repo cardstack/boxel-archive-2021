@@ -52,8 +52,8 @@ export default [
     id: 'the-sun-comes-out-wmg-v1',
     title: 'The Sun Comes Out',
     type: 'musical-work',
-    owner: 'Warner Music Group',
-    ownerId: 'wmg',
+    owner: 'Warbler Music',
+    ownerId: 'warbler-music',
     datetime: '2020-04-08T10:45',
     isolatedFields: [
       {
@@ -106,8 +106,8 @@ export default [
     id: 'the-sun-comes-out-wmg-v2',
     title: 'The Sun Comes Out',
     type: 'musical-work',
-    owner: 'Warner Music Group',
-    ownerId: 'wmg',
+    owner: 'Warbler Music',
+    ownerId: 'warbler-music',
     datetime: '2019-11-11T13:54',
     isolatedFields: [
       {
@@ -186,8 +186,8 @@ export default [
     id: 'wmg-the-sun-comes-out',
     title: 'The Sun Comes Out',
     type: 'musical-work',
-    owner: 'Warner Music Group',
-    ownerId: 'wmg',
+    owner: 'Warbler Music',
+    ownerId: 'warbler-music',
     datetime: '2020-06-09T18:10',
     isolatedFields: [
       {

@@ -14,11 +14,12 @@
           @onChooseOrg={{fn this.transition}}
         />
 
-        {{#each @model.orgs as |org|}}
+        {{!-- TODO: Better way to display queue on hover --}}
+        {{!-- {{#each @model.orgs as |org|}}
           {{#if org.user}}
             <Boxel::IconButton {{on "click" (fn this.transition org.id)}} class="media-registry__hover-zone media-registry__hover-zone--{{org.id}}" />
           {{/if}}
-        {{/each}}
+        {{/each}} --}}
         {{#if @model.currentOrg.user}}
           <div class="media-registry__left-edge-queue {{if this.isQueueFixed "slide-in"}}">
             <Boxel::IconButton

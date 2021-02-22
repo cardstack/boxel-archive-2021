@@ -7,6 +7,11 @@
   background-position: center;
   background-size: 40px 40px;
   background-repeat: no-repeat;
+  color: var(--boxel-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
 }
 
 /* Dummy */
@@ -15,7 +20,11 @@
 }
 
 .boxel-org-switcher-button__logo--crd_records {
-  background-color: #0069F9;
+  background-color: var(--boxel-blue);
+}
+
+.boxel-org-switcher-button__logo--warbler-music {
+  background-color: var(--boxel-navy);
 }
 
 .boxel-org-switcher-button__logo--allegro-music-publishing {
@@ -24,4 +33,8 @@
 
 .boxel-org-switcher-button__logo--realtunes-publishing {
   background-color: #3F356F;
+}
+
+.boxel-org-switcher-button__logo--somoa {
+  background-color: var(--boxel-lilac);
 }
