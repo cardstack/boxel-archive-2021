@@ -18,21 +18,6 @@
   background-color: #0069F9;
 }
 
-.boxel-org-switcher-button__logo--warner-music-group {
-  background-color: #0061aa;
-  background-size: auto;
-}
-
-.boxel-org-switcher-button__logo--warner-chappell-music {
-  background-size: 25px 25px;
-}
-
-.boxel-org-switcher-button__logo--allegro-music-publishing,
-.boxel-org-switcher-button__logo--global-music-rights {
+.boxel-org-switcher-button__logo--allegro-music-publishing {
   background-size: 30px 30px;
-}
-
-.boxel-org-switcher-button__logo--deezer {
-  background-size: auto 25px;
-  background-position: top 5px center;
 }

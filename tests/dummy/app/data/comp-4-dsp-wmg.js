@@ -1,5 +1,4 @@
 import { WCM, AMP, VALENTINO_PR, EMILIO_PR, MARIA_PR } from './comp-data';
-import { deezerLogo } from './organizations';
 
 export default {
   id: 'the-sun-comes-out-dzr-wmg',
@@ -13,7 +12,6 @@ export default {
     version: 'v0',
     owner: 'Deezer',
     ownerId: 'deezer',
-    iconURL: deezerLogo,
     datetime: '2020-07-10T14:24',
     id: 'dsp-the-sun-comes-out',
     isolatedFields: [

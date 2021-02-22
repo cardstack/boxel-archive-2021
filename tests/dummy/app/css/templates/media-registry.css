@@ -140,15 +140,6 @@
   background-size: var(--header-logo-size-sm);
 }
 
-.media-registry__header--sm .media-registry__logo--warner-music-group {
-  background-size: auto;
-  background-position: left center;
-}
-
-.media-registry__header--sm .media-registry__logo--deezer {
-  background-position: top center;
-}
-
 .media-registry__logo svg {
   display: block;
   margin: auto;

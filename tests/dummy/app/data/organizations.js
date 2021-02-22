@@ -4,7 +4,6 @@ import bunnyLogoIcon from 'dummy/images/media-registry/button-bunny-records.svg'
 import crdRecordsIcon from 'dummy/images/media-registry/button-crd-records.svg';
 import lisaTrackProfile from 'dummy/images/media-registry/profiles/Lisa-Track.jpg';
 import steveRightsProfile from 'dummy/images/media-registry/profiles/Steve-Rights.jpg';
-import deezerLogo from 'dummy/images/media-registry/deezer-logo.png';
 import ampLogo from 'dummy/images/media-registry/amp-logo.png';
 
 export {
@@ -13,7 +12,6 @@ export {
   bunnyLogoIcon,
   crdRecordsIcon,
   crdRecordsLogo,
-  deezerLogo,
   lisaTrackProfile,
   steveRightsProfile,
 };
@@ -190,8 +188,6 @@ export default [
   {
     id: 'deezer',
     title: 'Deezer',
-    iconURL: deezerLogo,
-    logoURL: deezerLogo,
     queueCards: [
       {
         id: '1',
@@ -272,7 +268,5 @@ export default [
   {
     id: 'deezer',
     title: 'Deezer',
-    iconURL: '/media-registry/deezer-logo.png',
-    logoURL: '/media-registry/deezer-logo.png',
   },
 ];

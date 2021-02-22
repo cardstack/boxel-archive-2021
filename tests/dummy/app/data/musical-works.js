@@ -1,5 +1,4 @@
 import { WCM, AMP, VALENTINO_PR, EMILIO_PR, MARIA_PR } from './comp-data';
-import { deezerLogo } from './organizations';
 
 // Profiles
 const VALENTINO_SOLANO_V0 = {
@@ -694,7 +693,6 @@ export default [
     type: 'musical-work',
     owner: 'Deezer',
     ownerId: 'dzr',
-    iconURL: deezerLogo,
     datetime: '2020-07-10T14:24',
     isolatedFields: [
       {
@@ -740,7 +738,6 @@ export default [
     type: 'musical-work',
     owner: 'Deezer',
     ownerId: 'dzr',
-    iconURL: deezerLogo,
     datetime: '2020-06-09T18:10',
     isolatedFields: [
       {
