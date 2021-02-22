@@ -1,5 +1,5 @@
 import { WCM, AMP, VALENTINO_PR, EMILIO_PR, MARIA_PR } from './comp-data';
-import { deezerLogo, gmrLogo, wmgLogo } from './organizations';
+import { deezerLogo, gmrLogo } from './organizations';
 
 // Profiles
 const VALENTINO_SOLANO_V0 = {
@@ -55,7 +55,6 @@ export default [
     type: 'musical-work',
     owner: 'Warner Music Group',
     ownerId: 'wmg',
-    iconURL: wmgLogo,
     datetime: '2020-04-08T10:45',
     isolatedFields: [
       {
@@ -110,7 +109,6 @@ export default [
     type: 'musical-work',
     owner: 'Warner Music Group',
     ownerId: 'wmg',
-    iconURL: wmgLogo,
     datetime: '2019-11-11T13:54',
     isolatedFields: [
       {
@@ -191,7 +189,6 @@ export default [
     type: 'musical-work',
     owner: 'Warner Music Group',
     ownerId: 'wmg',
-    iconURL: wmgLogo,
     datetime: '2020-06-09T18:10',
     isolatedFields: [
       {

@@ -8,7 +8,6 @@ import deezerLogo from 'dummy/images/media-registry/deezer-logo.png';
 import ampLogo from 'dummy/images/media-registry/amp-logo.png';
 import gmrLogo from 'dummy/images/media-registry/gmr-logo.svg';
 import wcmLogo from 'dummy/images/media-registry/wcm-logo.png';
-import wmgLogo from 'dummy/images/media-registry/wmg-logo.svg';
 
 export {
   ampLogo,
@@ -19,7 +18,6 @@ export {
   deezerLogo,
   gmrLogo,
   wcmLogo,
-  wmgLogo,
   lisaTrackProfile,
   steveRightsProfile,
 };
@@ -165,8 +163,6 @@ export default [
     id: 'warner-music-group',
     type: 'label',
     title: 'Warner Music Group',
-    iconURL: wmgLogo,
-    logoURL: wmgLogo,
   },
   {
     id: 'allegro-music-publishing',
@@ -253,8 +249,6 @@ export default [
     id: 'warner-music-group',
     type: 'label',
     title: 'Warner Music Group',
-    iconURL: '/media-registry/wmg-logo.svg',
-    logoURL: '/media-registry/wmg-logo.svg',
   },
   {
     id: 'allegro-music-publishing',

@@ -1,5 +1,5 @@
 import { WCM, AMP, EMILIO_PR, valentinoSolanoThumb } from './comp-data';
-import { wcmLogo, wmgLogo } from './organizations';
+import { wcmLogo } from './organizations';
 
 const VALENTINO_SOLANO_V0 = {
   id: 'valentino-solano',
@@ -57,7 +57,6 @@ export default {
     version: 'v1',
     owner: 'Warner Music Group',
     ownerId: 'warner-music-group',
-    iconUrl: wmgLogo,
     datetime: '2020-04-08T10:45',
     id: 'the-sun-comes-out',
     isolatedFields: [

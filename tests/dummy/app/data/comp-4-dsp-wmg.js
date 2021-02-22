@@ -1,5 +1,5 @@
 import { WCM, AMP, VALENTINO_PR, EMILIO_PR, MARIA_PR } from './comp-data';
-import { wmgLogo, deezerLogo } from './organizations';
+import { deezerLogo } from './organizations';
 
 export default {
   id: 'the-sun-comes-out-dzr-wmg',
@@ -79,7 +79,6 @@ export default {
     type: 'musical-work',
     owner: 'Warner Music Group',
     ownerId: 'warner-music-group',
-    iconUrl: wmgLogo,
     datetime: '2020-06-09T18:10',
     id: 'wmg-the-sun-comes-out',
     isolatedFields: [
