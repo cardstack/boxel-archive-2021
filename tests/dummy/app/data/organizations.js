@@ -6,7 +6,6 @@ import lisaTrackProfile from 'dummy/images/media-registry/profiles/Lisa-Track.jp
 import steveRightsProfile from 'dummy/images/media-registry/profiles/Steve-Rights.jpg';
 import deezerLogo from 'dummy/images/media-registry/deezer-logo.png';
 import ampLogo from 'dummy/images/media-registry/amp-logo.png';
-import gmrLogo from 'dummy/images/media-registry/gmr-logo.svg';
 
 export {
   ampLogo,
@@ -15,7 +14,6 @@ export {
   crdRecordsIcon,
   crdRecordsLogo,
   deezerLogo,
-  gmrLogo,
   lisaTrackProfile,
   steveRightsProfile,
 };
@@ -187,8 +185,6 @@ export default [
   {
     id: 'global-music-rights',
     title: 'Global Music Rights',
-    iconURL: gmrLogo,
-    logoURL: gmrLogo,
     musicalWorkOnly: true,
   },
   {
@@ -271,8 +267,6 @@ export default [
   {
     id: 'global-music-rights',
     title: 'Global Music Rights',
-    iconURL: '/media-registry/gmr-logo.svg',
-    logoURL: '/media-registry/gmr-logo.svg',
     musicalWorkOnly: true,
   },
   {

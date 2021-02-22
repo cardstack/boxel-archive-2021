@@ -1,5 +1,5 @@
 import { WCM, AMP, VALENTINO_PR, EMILIO_PR, MARIA_PR } from './comp-data';
-import { deezerLogo, gmrLogo } from './organizations';
+import { deezerLogo } from './organizations';
 
 // Profiles
 const VALENTINO_SOLANO_V0 = {
@@ -609,7 +609,6 @@ export default [
     type: 'musical-work',
     owner: 'Global Music Rights',
     ownerId: 'gmr',
-    iconURL: gmrLogo,
     datetime: '2020-06-09T16:18',
     isolatedFields: [
       {
