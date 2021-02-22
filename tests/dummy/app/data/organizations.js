@@ -7,7 +7,6 @@ import steveRightsProfile from 'dummy/images/media-registry/profiles/Steve-Right
 import deezerLogo from 'dummy/images/media-registry/deezer-logo.png';
 import ampLogo from 'dummy/images/media-registry/amp-logo.png';
 import gmrLogo from 'dummy/images/media-registry/gmr-logo.svg';
-import wcmLogo from 'dummy/images/media-registry/wcm-logo.png';
 
 export {
   ampLogo,
@@ -17,7 +16,6 @@ export {
   crdRecordsLogo,
   deezerLogo,
   gmrLogo,
-  wcmLogo,
   lisaTrackProfile,
   steveRightsProfile,
 };
@@ -180,8 +178,6 @@ export default [
     id: 'warner-chappell-music',
     type: 'publisher',
     title: 'Warner Chappell Music',
-    iconURL: wcmLogo,
-    logoURL: wcmLogo,
     territory: 'worldwide',
     ipi: '00160187388',
     website: 'www.warnerchappell.com',
@@ -266,8 +262,6 @@ export default [
     id: 'warner-chappell-music',
     type: 'publisher',
     title: 'Warner Chappell Music',
-    iconURL: '/media-registry/wcm-logo.png',
-    logoURL: '/media-registry/wcm-logo.png',
     territory: 'worldwide',
     ipi: '00160187388',
     website: 'www.warnerchappell.com',

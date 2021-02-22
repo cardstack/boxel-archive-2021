@@ -5,7 +5,7 @@ import {
   MARIA_PR,
   valentinoSolanoThumb,
 } from './comp-data';
-import { wcmLogo, ampLogo } from './organizations';
+import { ampLogo } from './organizations';
 
 const VALENTINO_SOLANO_V1 = {
   id: 'valentino-solano',
@@ -49,7 +49,6 @@ export default {
     type: 'musical-work',
     owner: 'Warner Chappell Music',
     ownerId: 'warner-chappell-music',
-    iconURL: wcmLogo,
     datetime: '2019-11-11T13:54',
     isolatedFields: [
       {

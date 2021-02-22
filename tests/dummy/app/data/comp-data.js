@@ -1,4 +1,4 @@
-import { ampLogo, wcmLogo } from './organizations';
+import { ampLogo } from './organizations';
 import valentinoSolanoThumb from 'dummy/images/media-registry/profiles/thumb/Valentino-Solano.jpg';
 import emilioRossoThumb from 'dummy/images/media-registry/profiles/thumb/Emilio-Rosso.jpg';
 import mariaBianchiThumb from 'dummy/images/media-registry/profiles/thumb/Maria-Bianchi.jpg';
@@ -24,7 +24,6 @@ export const WCM = {
   id: 'warner-chappell-music',
   type: 'publisher',
   title: 'Warner Chappell Music',
-  logoURL: wcmLogo,
   territory: 'worldwide',
   ipi: '00160187388',
   website: 'www.warnerchappell.com',

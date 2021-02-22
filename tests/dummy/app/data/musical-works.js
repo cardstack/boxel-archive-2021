@@ -360,7 +360,6 @@ export default [
     type: 'musical-work',
     owner: 'Warner Chappell Music',
     ownerId: 'wcm',
-    iconURL: WCM.logoURL,
     datetime: '2019-11-11T13:54',
     isolatedFields: [
       {
@@ -441,7 +440,6 @@ export default [
     type: 'musical-work',
     owner: 'Warner Chappell Music',
     ownerId: 'wcm',
-    iconURL: WCM.logoURL,
     datetime: '2020-05-18T15:31',
     isolatedFields: [
       {
@@ -526,7 +524,6 @@ export default [
     type: 'musical-work',
     owner: 'Warner Chappell Music',
     ownerId: 'wcm',
-    iconURL: WCM.logoURL,
     datetime: '2020-06-09T18:10',
     isolatedFields: [
       {
