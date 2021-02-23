@@ -1,10 +1,8 @@
-<header class="media-registry__header media-registry__header--sm media-registry__header--{{@id}}">
-  <h1 class={{cn "media-registry__title" media-registry__title--has-logo=@logoURL}}>
-    {{#if @logoURL}}
-      <span class="media-registry__logo media-registry__logo--{{@id}}" style={{css-url "background-image" @logoURL}} />
-    {{/if}}
-    {{@title}}
-  </h1>
+<Boxel::OrgHeader
+  @title={{@title}}
+  @logoURL={{@logoURL}}
+  class="media-registry__header media-registry__header--{{@id}}"
+>
   <input class="media-registry__search-bar" type="search" placeholder="Search" />
   <nav class="media-registry__nav">
     <ul>
@@ -24,4 +22,4 @@
       {{/if}}
     </ul>
   </nav>
-</header>
+</Boxel::OrgHeader>
