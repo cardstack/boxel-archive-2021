@@ -1,0 +1,68 @@
+<Freestyle::Usage @name="Boxel:OrgHeader">
+  <:description>
+    Usually shown at the top of a dashboard
+  </:description>
+  <:example>
+    <h4>Default usage with title:</h4>
+    <Boxel::OrgHeader @title="Card Pay" />
+
+    <br>
+
+    <h4>With logo and style args:</h4>
+    <Boxel::OrgHeader
+      @title={{this.title}}
+      @logoURL={{this.logoURL}}
+      style={{css-var
+        header-background-color=this.headerBackgroundColor
+        header-text-color=this.headerTextColor
+        header-logo-size=this.headerLogoSize
+        header-logo-position=this.headerLogoPosition
+      }}
+    >
+      More Stuff Here
+    </Boxel::OrgHeader>
+  </:example>
+  <:api as |Args|>
+    <Args.String
+      @name="title"
+      @value={{this.title}}
+      @onInput={{fn (mut this.title)}}
+    />
+    <Args.String
+      @name="logoURL"
+      @value={{this.logoURL}}
+      @onInput={{fn (mut this.logoURL)}}
+    />
+    <Args.String
+      @name="--header-background-color"
+      @description="background-color CSS style"
+      @defaultValue="var(--boxel-dark)"
+      @value={{this.headerBackgroundColor}}
+      @onInput={{fn (mut this.headerBackgroundColor)}}
+    />
+    <Args.String
+      @name="--header-text-color"
+      @description="color CSS style"
+      @defaultValue="var(--boxel-light)"
+      @value={{this.headerTextColor}}
+      @onInput={{fn (mut this.headerTextColor)}}
+    />
+    <Args.String
+      @name="--header-logo-size"
+      @description="background-size CSS style"
+      @defaultValue="auto 2rem"
+      @value={{this.headerLogoSize}}
+      @onInput={{fn (mut this.headerLogoSize)}}
+    />
+    <Args.String
+      @name="--header-logo-position"
+      @description="background-position CSS style"
+      @defaultValue="center"
+      @value={{this.headerLogoPosition}}
+      @onInput={{fn (mut this.headerLogoPosition)}}
+    />
+    <Args.Yield
+      @description="Other header content"
+    />
+  </:api>
+</Freestyle::Usage>
