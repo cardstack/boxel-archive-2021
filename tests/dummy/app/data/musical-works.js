@@ -272,7 +272,7 @@ export default [
     title: 'The Sun Comes Out',
     type: 'musical-work',
     owner: 'Allegro Music Publishing',
-    ownerId: 'amp',
+    ownerId: 'allegro-music-publishing',
     iconURL: AMP.logoURL,
     datetime: '2020-05-18T11:36',
     isolatedFields: [
@@ -358,7 +358,7 @@ export default [
     title: 'The Sun Comes Out',
     type: 'musical-work',
     owner: 'RealTunes Publishing',
-    ownerId: 'wcm',
+    ownerId: 'realtunes-publishing',
     iconURL: WCM.logoURL,
     datetime: '2019-11-11T13:54',
     isolatedFields: [
@@ -439,7 +439,7 @@ export default [
     title: 'The Sun Comes Out',
     type: 'musical-work',
     owner: 'RealTunes Publishing',
-    ownerId: 'wcm',
+    ownerId: 'realtunes-publishing',
     iconURL: WCM.logoURL,
     datetime: '2020-05-18T15:31',
     isolatedFields: [
@@ -524,7 +524,7 @@ export default [
     title: 'The Sun Comes Out',
     type: 'musical-work',
     owner: 'RealTunes Publishing',
-    ownerId: 'wcm',
+    ownerId: 'realtunes-publishing',
     iconURL: WCM.logoURL,
     datetime: '2020-06-09T18:10',
     isolatedFields: [
@@ -695,7 +695,7 @@ export default [
     title: 'The Sun Comes Out',
     type: 'musical-work',
     owner: 'DSP',
-    ownerId: 'dzr',
+    ownerId: 'dsp',
     datetime: '2020-07-10T14:24',
     isolatedFields: [
       {
@@ -740,7 +740,7 @@ export default [
     title: 'The Sun Comes Out',
     type: 'musical-work',
     owner: 'DSP',
-    ownerId: 'dzr',
+    ownerId: 'dsp',
     datetime: '2020-06-09T18:10',
     isolatedFields: [
       {
