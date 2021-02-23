@@ -1,0 +1,19 @@
+.dashboard {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  background-color: var(--background-color, var(--boxel-light-100));
+  color: var(--text-color, var(--boxel-dark));
+  font: var(--font, var(--boxel-font));
+}
+
+.dashboard__sticky-header-container {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.dashboard__body-container {
+  z-index: 0;
+  overflow: auto;
+}
