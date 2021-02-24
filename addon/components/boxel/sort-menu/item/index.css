@@ -30,8 +30,8 @@
   left: -10px;
 }
 
-/* TODO: discuss exceptions for margin */
 .sort-menu-item__active > span {
+  /* Not using variables so that the spacing between column and order is proportional to font-size */
   padding-left: 0.4em;
 }
 
