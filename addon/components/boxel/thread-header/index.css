@@ -20,6 +20,7 @@
 }
 
 .thread-header__title {
+  /* Not using variables for margin-top because it seems to make a significant difference to typography (@Aierie's judgement) */
   margin-top: 4px;
   margin-bottom: var(--boxel-sp-xxxs);
   margin-left: var(--boxel-sp);
@@ -65,6 +66,7 @@
   position: absolute;
   top: 0;
   right: 0;
+  /* Not using variables because this might overlap with things below */
   padding: 2px 13px 3px;
   border-radius: 0 10px 0 5px;
   background-color: var(--boxel-error-100);
