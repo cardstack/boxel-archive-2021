@@ -16,7 +16,7 @@ export default class CardPayRoute extends Route {
     let user = users.find((el) => el.id === this.userId);
 
     return {
-      title: 'CardPay',
+      title: 'Card Pay',
       logo: CardstackLogo,
       user,
       users,

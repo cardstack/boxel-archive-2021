@@ -1,19 +1,21 @@
-.card-pay__header {
+.card-pay-header {
   grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   padding-bottom: 0;
 }
 
-.card-pay__header h1 {
+.card-pay-header h1 {
   font-family: var(--boxel-font-family);
   font-size: 1.125rem; /* 18px */
   font-weight: 900;
   letter-spacing: 0.2em;
   line-height: 1.333;
+  gap: 0 var(--boxel-sp-xs);
+  white-space: nowrap;
 }
 
 
 /* Connect wallet component */
-.card-pay__header-item-list {
+.card-pay-header__item-list {
   grid-column-end: -1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
@@ -22,58 +24,71 @@
   white-space: nowrap;
 }
 
-.card-pay__header-item {
+.card-pay-header__item {
   display: inline-grid;
   grid-template-columns: auto auto;
   align-items: center;
   gap: var(--boxel-sp);
 }
 
-.card-pay__header-item-label {
+.card-pay-header__item-label {
   color: var(--boxel-purple-300);
   font: var(--boxel-font-xs);
   letter-spacing: 0.075em;
   text-transform: uppercase;
 }
 
-.card-pay__header-item-title {
+.card-pay-header__item-title {
   font: var(--boxel-font-sm);
   font-weight: 600;
   letter-spacing: var(--boxel-lsp-sm);
 }
 
-.card-pay__header-button {
-  --button-min-height: 30px;
-  --button-min-width: 175px;
-  --button-padding: 0;
+.card-pay-header__item-button {
+  min-height: 2rem;
+  min-width: 10rem;
+  padding: 0;
 }
-.card-pay__header-button.card-pay__header-button-monospace {
+.card-pay-header__item-button.card-pay-header__item-button-monospace {
   background-color: var(--boxel-light);
   font-family: var(--boxel-font-monospace);
   font-weight: 400;
 }
 
 
+
 /* Navbar component */
-.card-pay__header-nav {
+.card-pay-header__nav {
   grid-column: 1 / -1;
 }
 
-.card-pay__nav-list {
+.card-pay-header__nav-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   justify-items: center;
   white-space: nowrap;
 }
 
-.card-pay__nav-tab {
+.card-pay-header__nav-list > li {
+  width: 100%;
+}
+
+.card-pay-header__nav-tab {
+  width: 100%;
   padding: var(--boxel-sp);
   font: var(--boxel-font-sm);
   font-weight: 700;
   letter-spacing: var(--boxel-lsp-xxl);
+  text-align: center;
   text-transform: uppercase;
   transition: color var(--boxel-transition);
 }
-.card-pay__nav-tab:hover {
+.card-pay-header__nav-tab:hover,
+.card-pay-header__nav-tab:focus {
+  color: var(--boxel-highlight);
+}
+
+.card-pay-header__nav-tab.selected {
+  background-color: var(--boxel-purple-800);
   color: var(--boxel-highlight);
 }

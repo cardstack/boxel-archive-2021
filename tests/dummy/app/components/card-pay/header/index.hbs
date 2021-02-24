@@ -1,60 +1,62 @@
 <Boxel::OrgHeader
   @title={{@title}}
   @logoURL={{@logoURL}}
-  class="card-pay__header"
+  class="card-pay-header"
 >
-  <ul class="card-pay__header-item-list">
-    <li class="card-pay__header-item">
+  {{!-- TODO: extract component --}}
+  <ul class="card-pay-header__item-list">
+    <li class="card-pay-header__item">
       <div>
-        <div class="card-pay__header-item-label">
+        <div class="card-pay-header__item-label">
           Layer 1
         </div>
-        <div class="card-pay__header-item-title">
+        <div class="card-pay-header__item-title">
           Mainnet
         </div>
       </div>
       <Boxel::Button
-        class="card-pay__header-button"
+        class="card-pay-header__item-button"
         @primary={{true}}
       >
         Connect Wallet
       </Boxel::Button>
     </li>
-    <li class="card-pay__header-item">
+    <li class="card-pay-header__item">
       <div>
-        <div class="card-pay__header-item-label">
+        <div class="card-pay-header__item-label">
           Layer 2
         </div>
-        <div class="card-pay__header-item-title">
+        <div class="card-pay-header__item-title">
           xDai
         </div>
       </div>
-      <Boxel::Button class="card-pay__header-button card-pay__header-button-monospace">
+      <Boxel::Button class="card-pay-header__item-button card-pay-header__item-button-monospace">
         0xcd98...1a4B
       </Boxel::Button>
     </li>
   </ul>
 
-  <nav class="card-pay__header-nav">
-    <ul class="card-pay__nav-list">
+  {{!-- TODO: extract component --}}
+  <nav class="card-pay-header__nav">
+    <ul class="card-pay-header__nav-list">
       <li>
-        <LinkTo @route="card-pay" class="card-pay__nav-tab">
-          <span class="card-pay__nav-tab-icon" />
+        <LinkTo @route="card-pay" class="card-pay-header__nav-tab selected">
+          <span class="card-pay-header__nav-tab-icon" />
           Card Balances
         </LinkTo>
       </li>
       <li>
-        <LinkTo @route="card-pay" class="card-pay__nav-tab">
+        <LinkTo @route="card-pay" class="card-pay-header__nav-tab">
           Merchant Services
         </LinkTo>
       </li>
       <li>
-        <LinkTo @route="card-pay" class="card-pay__nav-tab">
+        <LinkTo @route="card-pay" class="card-pay-header__nav-tab">
           Reward Programs
         </LinkTo>
       </li>
       <li>
-        <LinkTo @route="card-pay" class="card-pay__nav-tab">
+        <LinkTo @route="card-pay" class="card-pay-header__nav-tab">
           Token Suppliers
         </LinkTo>
       </li>
