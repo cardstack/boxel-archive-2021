@@ -1,12 +1,12 @@
-<div class="dashboard" ...attributes>
-  <div class="dashboard__sticky-header-container">
+<Boxel::Dashboard>
+  <:header>
     <CardPay::Header
       @title={{@title}}
       @logoURL={{@logo}}
     />
-  </div>
+  </:header>
 
-  <div class="dashboard__body-container">
+  <:body>
     <ul>
       <li>
         <LinkTo @route="card-pay.workflow" @model="prepaid-card-issuance">Issue new Prepaid Card</LinkTo>
@@ -18,5 +18,5 @@
         <LinkTo @route="card-pay.workflow" @model="prepaid-card-transfer">Transfer Prepaid Card</LinkTo>
       </li>
     </ul>
-  </div>
-</div>
+  </:body>
+</Boxel::Dashboard>
