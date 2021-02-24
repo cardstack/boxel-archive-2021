@@ -1,6 +1,11 @@
 .card-pay-header {
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-  padding-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-pay-header > *:last-child {
+  flex-grow: 1;
 }
 
 .card-pay-header h1 {
@@ -17,16 +22,18 @@
 /* Connect wallet component */
 .card-pay-header__item-list {
   grid-column-end: -1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-end;
   gap: var(--boxel-sp);
+  text-align: right;
   white-space: nowrap;
 }
 
 .card-pay-header__item {
-  display: inline-grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   gap: var(--boxel-sp);
 }
@@ -59,7 +66,7 @@
 
 /* Navbar component */
 .card-pay-header__nav {
-  grid-column: 1 / -1;
+  background-color: var(--boxel-dark);
 }
 
 .card-pay-header__nav-list {
