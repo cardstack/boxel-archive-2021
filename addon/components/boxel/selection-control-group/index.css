@@ -2,11 +2,6 @@
   display: flex;
 }
 
-.selection-control-group__select-button {
-  /* TODO: discuss exception for margin */
-  margin-right: 1px;
-}
-
 .selection-control-group__select-all {
   position: relative;
   width: 116px;
