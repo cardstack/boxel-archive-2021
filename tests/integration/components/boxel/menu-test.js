@@ -17,7 +17,7 @@ module('Integration | Component | Menu', function (hooks) {
       this.set('lastClicked', v);
     });
     this.set('closeMenu', () => {
-        this.set('closedMenuTimes', this.closedMenuTimes + 1);
+      this.set('closedMenuTimes', this.closedMenuTimes + 1);
     });
     await render(hbs`
       <Boxel::Menu
@@ -31,7 +31,7 @@ module('Integration | Component | Menu', function (hooks) {
     `);
     await click(`[${TEST_MENU_ITEM_TEXT_ATTRIBUTE}='One']`);
     assert.equal(this.lastClicked, 'One');
-    assert.equal(this.closedMenuTimes, 1)
+    assert.equal(this.closedMenuTimes, 1);
     await click(`[${TEST_MENU_ITEM_TEXT_ATTRIBUTE}='Two']`);
     assert.equal(this.lastClicked, 'Two');
     assert.equal(this.closedMenuTimes, 2);
@@ -52,7 +52,7 @@ module('Integration | Component | Menu', function (hooks) {
         }}
       />
     `);
-    assert.dom(`${MENU_SEPARATOR_SELECTOR}:nth-child(2)`).exists()
+    assert.dom(`${MENU_SEPARATOR_SELECTOR}:nth-child(2)`).exists();
   });
 
   test('It can render variants with appropriate classes', async function (assert) {
@@ -67,10 +67,18 @@ module('Integration | Component | Menu', function (hooks) {
         }}
       />
     `);
-    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(1)`).matchesSelector(`${MENU_ITEM_SELECTOR}--dangerous`)
-    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(2)`).matchesSelector(`${MENU_ITEM_SELECTOR}--has-icon`)
-    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(2) svg`).exists()
-    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(3)`).matchesSelector(`${MENU_ITEM_SELECTOR}--has-icon${MENU_ITEM_SELECTOR}--dangerous`)
-    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(3) svg`).exists()
+    assert
+      .dom(`${MENU_ITEM_SELECTOR}:nth-child(1)`)
+      .matchesSelector(`${MENU_ITEM_SELECTOR}--dangerous`);
+    assert
+      .dom(`${MENU_ITEM_SELECTOR}:nth-child(2)`)
+      .matchesSelector(`${MENU_ITEM_SELECTOR}--has-icon`);
+    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(2) svg`).exists();
+    assert
+      .dom(`${MENU_ITEM_SELECTOR}:nth-child(3)`)
+      .matchesSelector(
+        `${MENU_ITEM_SELECTOR}--has-icon${MENU_ITEM_SELECTOR}--dangerous`
+      );
+    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(3) svg`).exists();
   });
 });
