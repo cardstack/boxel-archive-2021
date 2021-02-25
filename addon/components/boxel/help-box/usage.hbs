@@ -1,0 +1,27 @@
+<Freestyle::Usage @name="HelpBox">
+  <:description>
+    Used on the sidebar in thread container.
+  </:description>
+  <:example>
+    <Boxel::HelpBox />
+  </:example>
+  <:api as |Args|>
+    {{!-- <Args.Bool
+      @name="noBackground"
+      @description="if true, container has no background-color"
+      @defaultValue={{false}}
+      @value={{this.hasBackground}}
+      @onInput={{fn (mut this.hasBackground)}}
+    />
+    <Args.String
+      @name="--header-padding"
+      @description="padding CSS style"
+      @defaultValue="var(--boxel-sp-xxxs) var(--boxel-sp-sm)"
+      @value={{this.headerPadding}}
+      @onInput={{fn (mut this.headerPadding)}}
+    />
+    <Args.Yield
+      @description="Header text to show"
+    /> --}}
+  </:api>
+</Freestyle::Usage>
