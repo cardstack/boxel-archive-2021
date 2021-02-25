@@ -27,7 +27,7 @@ module('Integration | Component | Button', function (hooks) {
       this.set('clicked', true);
     });
     await render(
-      hbs`<Boxel::Button {{ on 'click' (fn this.onClick)}}>A button</Boxel::Button>`
+      hbs`<Boxel::Button {{ on 'click' this.onClick}}>A button</Boxel::Button>`
     );
     await click(BUTTON_SELECTOR);
     assert.equal(this.clicked, true);
