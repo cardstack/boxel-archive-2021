@@ -1,14 +1,11 @@
 .boxel-help-box__title {
   --icon-color: var(--boxel-teal);
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--boxel-sp-xxs);
   font: 600 var(--boxel-font);
   letter-spacing: var(--boxel-lsp-sm);
-}
-
-.boxel-help-box__title-icon {
-  width: 1rem;
-  height: 1rem;
-  background: url('../@cardstack/boxel/images/icons/help-circle.svg') center/contain no-repeat;
 }
 
 .boxel-help-box__button {
