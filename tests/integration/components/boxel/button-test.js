@@ -1,37 +1,95 @@
-/**
- * Scaffolding tests for Button component (https://cardstack.github.io/boxel/#/docs?s=Components&ss=%3CBoxel%3A%3AButton%3E)
- * path from project root: addon/components/boxel/button
- */
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, click } from '@ember/test-helpers';
+import { hbs } from 'ember-cli-htmlbars';
 
-/**
- * ### Things I'm not sure about:
- * - Why do we provide @disabled, and allow it to be overridden via splattributes?
- */
+const BUTTON_SELECTOR = '.boxel-button';
+const DROPDOWN_BUTTON_SELECTOR = '.boxel-dropdown-button';
 
-/**
- * TODO: Accepts and renders yield correctly
- */
+module('Integration | Component | Button', function (hooks) {
+  setupRenderingTest(hooks);
 
-/**
- * TODO: Able to be clicked and calls callback when clicked
- */
+  test('It renders with the correct text contents', async function (assert) {
+    await render(hbs`<Boxel::Button>A button</Boxel::Button>`);
+    assert.dom(BUTTON_SELECTOR).hasText('A button');
+  });
 
-/**
- * TODO: Able to be disabled and does not call callback when disabled
- */
+  test('It renders with the correct html inside', async function (assert) {
+    await render(
+      hbs`<Boxel::Button><span class="test-span">Testing!</span></Boxel::Button>`
+    );
+    assert.dom(`${BUTTON_SELECTOR} span.test-span`).exists();
+  });
 
-/**
- * TODO: Accepts the following arguments and produces the correct state based on their values:
- * - primary
- * - dropdownIcon
- * - disabled
- * - collectionStyle
- */
+  test('It can be clicked and call a callback', async function (assert) {
+    this.set('clicked', false);
+    this.set('onClick', () => {
+      this.set('clicked', true);
+    });
+    await render(
+      hbs`<Boxel::Button {{ on 'click' (fn this.onClick)}}>A button</Boxel::Button>`
+    );
+    await click(BUTTON_SELECTOR);
+    assert.equal(this.clicked, true);
+  });
 
-/**
- * TODO: Able to render MoreButton if yielded component uses it (actually DropdownButton)
- */
+  test('It can be disabled via html attribute', async function (assert) {
+    await render(hbs`<Boxel::Button disabled>A button</Boxel::Button>`);
+    assert.dom(BUTTON_SELECTOR).isDisabled();
+  });
 
-/**
- * TODO: disabled should be overwritable by splattributes?
- */
+  test('It can be disabled via argument', async function (assert) {
+    await render(
+      hbs`<Boxel::Button @disabled={{true}}>A button</Boxel::Button>`
+    );
+    assert.dom(BUTTON_SELECTOR).isDisabled();
+  });
+
+  test('It can apply appropriate styles depending on arguments', async function (assert) {
+    this.setProperties({
+      primary: true,
+      dropdownIcon: true,
+      collectionStyle: true,
+    });
+
+    await render(
+      hbs`<Boxel::Button 
+            @primary={{this.primary}} 
+            @dropdownIcon={{this.dropdownIcon}} 
+            @collectionStyle={{this.collectionStyle}}
+          >
+          A button
+          </Boxel::Button>`
+    );
+
+    assert
+      .dom(BUTTON_SELECTOR)
+      .hasClass(/--primary/)
+      .hasClass(/--dropdown/)
+      .hasClass(/--collection-style/);
+
+    this.setProperties({
+      primary: false,
+      dropdownIcon: false,
+      collectionStyle: false,
+    });
+    assert
+      .dom(BUTTON_SELECTOR)
+      .doesNotHaveClass(/--primary/)
+      .doesNotHaveClass(/--dropdown/)
+      .doesNotHaveClass(/--collection-style/);
+  });
+
+  test('It can include a dropdown button', async function (assert) {
+    this.set('menuComponent', 'boxel/menu');
+    await render(hbs`
+          <Boxel::Button as |b|>
+              A button
+              <b.MoreButton />
+          </Boxel::Button>
+      `);
+    assert.dom(DROPDOWN_BUTTON_SELECTOR).exists();
+    // am not testing ember-basic-dropdown functionality here
+    // their tests seem to use a form of mock dropdown
+  });
+});
