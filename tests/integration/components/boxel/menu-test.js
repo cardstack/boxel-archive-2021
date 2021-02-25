@@ -1,23 +1,76 @@
-/**
- * Scaffolding tests for Menu component (https://cardstack.github.io/boxel/#/docs?s=Components&ss=%3CBoxel%3A%3AMenu%3E)
- * path from project root: addon/components/boxel/menu
- */
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, click } from '@ember/test-helpers';
+import { hbs } from 'ember-cli-htmlbars';
 
-/**
- * TODO: can render a list of items
- */
+const MENU_ITEM_SELECTOR = '.menu__item';
+const MENU_SEPARATOR_SELECTOR = '.menu__separator';
+const TEST_MENU_ITEM_TEXT_ATTRIBUTE = 'data-test-menu-item';
 
-/**
- * TODO: can render variants of menu items
- * - dangerous
- * - icon
- * - divider
- */
+module('Integration | Component | Menu', function (hooks) {
+  setupRenderingTest(hooks);
 
-/**
- * TODO: triggers appropriate callbacks when menu item is clicked
- * and performs other necessary actions
- * - transitionTo
- * - link
- * - closeMenu
- */
+  test('It can render a list of menu items that trigger appropriate callbacks when clicked', async function (assert) {
+    this.set('lastClicked', null);
+    this.set('closedMenuTimes', 0);
+    this.set('record', (v) => {
+      this.set('lastClicked', v);
+    });
+    this.set('closeMenu', () => {
+        this.set('closedMenuTimes', this.closedMenuTimes + 1);
+    });
+    await render(hbs`
+      <Boxel::Menu
+        @closeMenu={{fn this.closeMenu}}
+        @items={{array 
+          (menu-item 'One' (fn this.record 'One'))
+          (menu-item 'Two' (fn this.record 'Two') dangerous=true)
+          (menu-item 'Three' (fn this.record 'Three') icon='gear')
+        }}
+      />
+    `);
+    await click(`[${TEST_MENU_ITEM_TEXT_ATTRIBUTE}='One']`);
+    assert.equal(this.lastClicked, 'One');
+    assert.equal(this.closedMenuTimes, 1)
+    await click(`[${TEST_MENU_ITEM_TEXT_ATTRIBUTE}='Two']`);
+    assert.equal(this.lastClicked, 'Two');
+    assert.equal(this.closedMenuTimes, 2);
+    await click(`[${TEST_MENU_ITEM_TEXT_ATTRIBUTE}='Three']`);
+    assert.equal(this.lastClicked, 'Three');
+    assert.equal(this.closedMenuTimes, 3);
+  });
+
+  test('It can render dividers', async function (assert) {
+    this.set('dummyFunction', () => {});
+    await render(hbs`
+      <Boxel::Menu
+        @closeMenu={{fn this.dummyFunction}}
+        @items={{array 
+          (menu-item 'Top' (fn this.dummyFunction))
+          (menu-item '---')
+          (menu-item 'Three' (fn this.dummyFunction))
+        }}
+      />
+    `);
+    assert.dom(`${MENU_SEPARATOR_SELECTOR}:nth-child(2)`).exists()
+  });
+
+  test('It can render variants with appropriate classes', async function (assert) {
+    this.set('dummyFunction', () => {});
+    await render(hbs`
+      <Boxel::Menu
+        @closeMenu={{fn this.dummyFunction}}
+        @items={{array 
+          (menu-item 'Dangerous' (fn this.dummyFunction) dangerous=true)
+          (menu-item 'Icon' (fn this.dummyFunction) icon='gear')
+          (menu-item 'Icon' (fn this.dummyFunction) icon='gear' dangerous=true)
+        }}
+      />
+    `);
+    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(1)`).matchesSelector(`${MENU_ITEM_SELECTOR}--dangerous`)
+    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(2)`).matchesSelector(`${MENU_ITEM_SELECTOR}--has-icon`)
+    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(2) svg`).exists()
+    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(3)`).matchesSelector(`${MENU_ITEM_SELECTOR}--has-icon${MENU_ITEM_SELECTOR}--dangerous`)
+    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(3) svg`).exists()
+  });
+});
