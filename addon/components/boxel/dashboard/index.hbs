@@ -1,5 +1,12 @@
-<div class="boxel-dashboard" ...attributes>
-  {{yield to="left-edge"}}
+<div
+  class={{cn "boxel-dashboard" boxel-dashboard--with-left-edge=@displayLeftEdge}}
+  ...attributes
+>
+  {{#if @displayLeftEdge}}
+    <div class="boxel-dashboard__left-edge-container">
+      {{yield to="left-edge"}}
+    </div>
+  {{/if}}
 
   <div class="boxel-dashboard__sticky-header-container">
     {{yield to="header"}}

@@ -1,15 +1,18 @@
 /* Org Header */
 .boxel-org-header {
-  --header-background-color: var(--boxel-dark);
-  --header-text-color: var(--boxel-light);
-  --header-logo-size: auto 2rem;
-  --header-logo-position: center;
-  display: grid;
+  --boxel-org-header-background-color: inherit;
+  --boxel-org-header-color: inherit;
+  --boxel-org-header-logo-size: auto 2rem;
+  --boxel-org-header-logo-position: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   gap: var(--boxel-sp);
   padding: var(--boxel-sp-lg);
-  background-color: var(--header-background-color);
-  color: var(--header-text-color);
+  background-color: var(--boxel-org-header-background-color);
+  color: var(--boxel-org-header-color);
 }
 
 .boxel-org-header__title {
@@ -30,9 +33,9 @@
 .boxel-org-header__logo {
   width: 3.125rem; /* 50px */
   height: 3.125rem;
-  background-position: var(--header-logo-position);
+  background-position: var(--boxel-org-header-logo-position);
   background-repeat: no-repeat;
-  background-size: var(--header-logo-size);
+  background-size: var(--boxel-org-header-logo-size);
 }
 
 .boxel-org-header__logo svg {

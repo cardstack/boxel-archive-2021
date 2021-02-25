@@ -1,6 +1,8 @@
 .boxel-dashboard {
   --boxel-dashboard-background-color: var(--boxel-light-100);
   --boxel-dashboard-color: var(--boxel-dark);
+  --boxel-dashboard-header-background-color: var(--boxel-dark);
+  --boxel-dashboard-header-color: var(--boxel-light);
 
   display: grid;
   grid-template-rows: auto 1fr;
@@ -8,16 +10,27 @@
   background-color: var(--boxel-dashboard-background-color);
   color: var(--boxel-dashboard-color);
   font: var(--boxel-font);
+  letter-spacing: var(--boxel-lsp-lg);
 }
 
 .boxel-dashboard__sticky-header-container {
   position: sticky;
   top: 0;
   z-index: 1;
+  background-color: var(--boxel-dashboard-header-background-color);
+  color: var(--boxel-dashboard-header-color);
 }
 
 .boxel-dashboard__body-container {
-  z-index: 0;
   overflow: auto;
   min-height: 50vh;
+}
+
+.boxel-dashboard--with-left-edge {
+  grid-template-columns: auto 1fr;
+}
+
+.boxel-dashboard__left-edge-container {
+  grid-row: 1 / -1;
+  grid-column: 1;
 }

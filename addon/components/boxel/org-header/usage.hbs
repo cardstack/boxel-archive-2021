@@ -3,20 +3,14 @@
     Usually shown at the top of a dashboard
   </:description>
   <:example>
-    <h4>Default usage with title:</h4>
-    <Boxel::OrgHeader @title="Card Pay" />
-
-    <br>
-
-    <h4>With logo and style args:</h4>
     <Boxel::OrgHeader
       @title={{this.title}}
       @logoURL={{this.logoURL}}
       style={{css-var
-        header-background-color=this.headerBackgroundColor
-        header-text-color=this.headerTextColor
-        header-logo-size=this.headerLogoSize
-        header-logo-position=this.headerLogoPosition
+        boxel-org-header-background-color=this.backgroundColor
+        boxel-org-header-color=this.color
+        boxel-org-header-logo-size=this.logoSize
+        boxel-org-header-logo-position=this.logoPosition
       }}
     >
       More Stuff Here
@@ -34,32 +28,32 @@
       @onInput={{fn (mut this.logoURL)}}
     />
     <Args.String
-      @name="--header-background-color"
+      @name="--boxel-org-header-background-color"
       @description="background-color CSS style"
-      @defaultValue="var(--boxel-dark)"
-      @value={{this.headerBackgroundColor}}
-      @onInput={{fn (mut this.headerBackgroundColor)}}
+      @defaultValue="inherit"
+      @value={{this.backgroundColor}}
+      @onInput={{fn (mut this.backgroundColor)}}
     />
     <Args.String
-      @name="--header-text-color"
+      @name="--boxel-org-header-color"
       @description="color CSS style"
-      @defaultValue="var(--boxel-light)"
-      @value={{this.headerTextColor}}
-      @onInput={{fn (mut this.headerTextColor)}}
+      @defaultValue="inherit"
+      @value={{this.color}}
+      @onInput={{fn (mut this.color)}}
     />
     <Args.String
-      @name="--header-logo-size"
-      @description="background-size CSS style"
+      @name="--boxel-org-header-logo-size"
+      @description="background-size CSS style for the icon"
       @defaultValue="auto 2rem"
-      @value={{this.headerLogoSize}}
-      @onInput={{fn (mut this.headerLogoSize)}}
+      @value={{this.logoSize}}
+      @onInput={{fn (mut this.logoSize)}}
     />
     <Args.String
-      @name="--header-logo-position"
-      @description="background-position CSS style"
+      @name="--boxel-org-header-logo-position"
+      @description="background-position CSS style for the icon"
       @defaultValue="center"
-      @value={{this.headerLogoPosition}}
-      @onInput={{fn (mut this.headerLogoPosition)}}
+      @value={{this.logoPosition}}
+      @onInput={{fn (mut this.logoPosition)}}
     />
     <Args.Yield
       @description="Other header content"

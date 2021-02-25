@@ -5,8 +5,8 @@ import CRDLogo from '@cardstack/boxel/usage-support/images/media-registry/orgs/c
 export default class BoxelOrgHeaderComponent extends Component {
   @tracked title = 'CRD Records';
   @tracked logoURL = CRDLogo;
-  @tracked headerBackgroundColor = 'var(--boxel-blue)';
-  @tracked headerTextColor = 'var(--boxel-light)';
-  @tracked headerLogoSize = 'auto 2rem';
-  @tracked headerLogoPosition = 'center';
+  @tracked backgroundColor = 'var(--boxel-blue)';
+  @tracked color = 'var(--boxel-light)';
+  @tracked logoSize = 'auto 2rem';
+  @tracked logoPosition = 'center';
 }

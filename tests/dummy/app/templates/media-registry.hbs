@@ -1,48 +1,11 @@
 {{#if (or (eq this.target.currentRouteName "media-registry.versions") (eq (truncate this.target.currentRouteName 40 false) "media-registry.discrepancies.discrepancy"))}}
   {{outlet}}
 {{else}}
-  <Boxel::Dashboard class="media-registry media-registry--{{@model.currentOrg.id}}">
-    <:left-edge>
-      <aside class="media-registry__left-edge {{if this.isQueueFixed "with-queue"}}">
-        <CardHost::LeftEdgeNav
-          @home={{hash icon="cardstack" action=this.goHome height="35px"}}
-          @orgs={{@model.orgs}}
-          @currentOrg={{@model.currentOrg}}
-          @ariaLabel="View catalog for "
-          @onChooseOrg={{fn this.transition}}
-        />
-
-        {{#if @model.currentOrg.user}}
-          <div class="media-registry__left-edge-queue {{if this.isQueueFixed "slide-in"}}">
-            <Boxel::IconButton
-              @icon={{if this.isQueueFixed "arrow-left" "sidebar"}}
-              class="media-registry__queue-btn"
-              aria-label="Toggle fix cardflow queue"
-              {{on "click" (fn (mut this.isQueueFixed) (not this.isQueueFixed))}}
-            />
-            <CardflowQueue
-              @class="media-registry__queue {{if (and (not this.isQueueFixed) (not-eq this.target.currentRouteName "media-registry.cardflow")) "with-box-shadow"}}"
-              @model={{@model}}
-              @currentMilestone={{this.latestMilestone}}
-            />
-          </div>
-        {{/if}}
-      </aside>
-    </:left-edge>
-
-    <:header>
-      <MediaRegistry::Header
-        @org={{@model.currentOrg}}
-        @id={{@model.currentOrg.id}}
-        @title={{@model.currentOrg.title}}
-        @logoURL={{@model.currentOrg.logoURL}}
-        @musicalWorkOnly={{@model.currentOrg.musicalWorkOnly}}
-      />
-    </:header>
-
-
-    <:body>
-      {{outlet}}
-    </:body>
-  </Boxel::Dashboard>
+  <MediaRegistry::DashboardCard
+    @currentOrg={{@model.currentOrg}}
+    @orgs={{@model.orgs}}
+    @currentMilestone={{this.latestMilestone}}
+    @transition={{fn this.transition}}
+    @home={{hash icon="cardstack" action=this.goHome height="35px"}}
+  />
 {{/if}}
