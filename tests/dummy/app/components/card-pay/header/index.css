@@ -22,8 +22,8 @@
 /* Connect wallet component */
 .card-pay-header__item-list {
   grid-column-end: -1;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto;
   align-items: center;
   justify-content: flex-end;
   gap: var(--boxel-sp);
@@ -32,8 +32,8 @@
 }
 
 .card-pay-header__item {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: var(--boxel-sp);
 }
