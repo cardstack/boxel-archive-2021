@@ -1,9 +1,5 @@
 <label class="boxel-text-field" ...attributes>
-  <span class="boxel-text-field__label">{{@label}}</span>
-  <Input
-    class="boxel-input"
-    @value={{@value}}
-    {{on "input" (optional @updateValue)}}
-    ...attributes
-  />
+  {{@label}}
+
+  {{yield}}
 </label>
