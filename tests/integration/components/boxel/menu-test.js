@@ -65,18 +65,13 @@ module('Integration | Component | Menu', function (hooks) {
         }}
       />
     `);
-    assert
-      .dom(`${MENU_ITEM_SELECTOR}:nth-child(1)`)
-      .matchesSelector(`${MENU_ITEM_SELECTOR}--dangerous`);
-    assert
-      .dom(`${MENU_ITEM_SELECTOR}:nth-child(2)`)
-      .matchesSelector(`${MENU_ITEM_SELECTOR}--has-icon`);
+    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(1)`).hasClass(/--dangerous/);
+    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(2)`).hasClass(/--has-icon/);
     assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(2) svg`).exists();
     assert
       .dom(`${MENU_ITEM_SELECTOR}:nth-child(3)`)
-      .matchesSelector(
-        `${MENU_ITEM_SELECTOR}--has-icon${MENU_ITEM_SELECTOR}--dangerous`
-      );
+      .hasClass(/--has-icon/)
+      .hasClass(/--dangerous/);
     assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(3) svg`).exists();
   });
 });

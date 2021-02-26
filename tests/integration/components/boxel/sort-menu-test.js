@@ -68,7 +68,7 @@ module('Integration | Component | SortMenu', function (hooks) {
       .dom(
         `[${TEST_DIRECTION_ATTRIBUTE}='asc'][${TEST_COLUMN_ATTRIBUTE}='Title']`
       )
-      .hasClass(/.*__active.*/);
+      .hasClass(/__active/);
   });
 
   test('It calls the callback with the appropriate arguments on click', async function (assert) {
@@ -103,7 +103,7 @@ module('Integration | Component | SortMenu', function (hooks) {
       .dom(
         `[${TEST_DIRECTION_ATTRIBUTE}='asc'][${TEST_COLUMN_ATTRIBUTE}='Year']`
       )
-      .hasClass(/.*__active.*/);
+      .hasClass(/__active/);
 
     await click(
       `[${TEST_DIRECTION_ATTRIBUTE}='desc'][${TEST_COLUMN_ATTRIBUTE}='Title']`
@@ -114,6 +114,6 @@ module('Integration | Component | SortMenu', function (hooks) {
       .dom(
         `[${TEST_DIRECTION_ATTRIBUTE}='desc'][${TEST_COLUMN_ATTRIBUTE}='Title']`
       )
-      .hasClass(/.*__active.*/);
+      .hasClass(/__active/);
   });
 });
