@@ -1,27 +1,37 @@
 <Freestyle::Usage @name="HelpBox">
   <:description>
-    Used on the sidebar in thread container.
+    Used for customer support purposes.
   </:description>
   <:example>
-    <Boxel::HelpBox />
+    <Boxel::HelpBox
+      @prompt={{this.prompt}}
+      @buttonText={{this.ctaText}}
+      @onClickButton={{fn this.log "clicked"}}>
+      More content here
+    </Boxel::HelpBox>
   </:example>
   <:api as |Args|>
-    {{!-- <Args.Bool
-      @name="noBackground"
-      @description="if true, container has no background-color"
-      @defaultValue={{false}}
-      @value={{this.hasBackground}}
-      @onInput={{fn (mut this.hasBackground)}}
+    <Args.String
+      @name="prompt"
+      @optional={{true}}
+      @defaultValue="Need help?"
+      @value={{this.prompt}}
+      @onInput={{fn (mut this.prompt)}}
     />
     <Args.String
-      @name="--header-padding"
-      @description="padding CSS style"
-      @defaultValue="var(--boxel-sp-xxxs) var(--boxel-sp-sm)"
-      @value={{this.headerPadding}}
-      @onInput={{fn (mut this.headerPadding)}}
+      @name="buttonText"
+      @optional={{true}}
+      @defaultValue="Request live support"
+      @value={{this.ctaText}}
+      @onInput={{fn (mut this.ctaText)}}
+    />
+    <Args.Object
+      @name="onClickButton"
+      @description="Action function triggered by the button"
     />
     <Args.Yield
-      @description="Header text to show"
-    /> --}}
+      @optional={{true}}
+      @description="Space for additional content"
+    />
   </:api>
 </Freestyle::Usage>
