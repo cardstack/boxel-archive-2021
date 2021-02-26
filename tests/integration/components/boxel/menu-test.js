@@ -41,14 +41,13 @@ module('Integration | Component | Menu', function (hooks) {
   });
 
   test('It can render dividers', async function (assert) {
-    this.set('dummyFunction', () => {});
     await render(hbs`
       <Boxel::Menu
-        @closeMenu={{fn this.dummyFunction}}
+        @closeMenu={{noop}}
         @items={{array 
-          (menu-item 'Top' (fn this.dummyFunction))
+          (menu-item 'Top' (noop))
           (menu-item '---')
-          (menu-item 'Three' (fn this.dummyFunction))
+          (menu-item 'Three' (noop))
         }}
       />
     `);
@@ -56,14 +55,13 @@ module('Integration | Component | Menu', function (hooks) {
   });
 
   test('It can render variants with appropriate classes', async function (assert) {
-    this.set('dummyFunction', () => {});
     await render(hbs`
       <Boxel::Menu
-        @closeMenu={{fn this.dummyFunction}}
+        @closeMenu={{noop}}
         @items={{array 
-          (menu-item 'Dangerous' (fn this.dummyFunction) dangerous=true)
-          (menu-item 'Icon' (fn this.dummyFunction) icon='gear')
-          (menu-item 'Icon' (fn this.dummyFunction) icon='gear' dangerous=true)
+          (menu-item 'Dangerous' (noop) dangerous=true)
+          (menu-item 'Icon' (noop) icon='gear')
+          (menu-item 'Icon' (noop) icon='gear' dangerous=true)
         }}
       />
     `);
