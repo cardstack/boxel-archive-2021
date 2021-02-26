@@ -8,7 +8,7 @@ const SELECTION_CONTROL_GROUP_TOGGLE_SELECTOR =
   '.selection-control-group__select-button';
 const SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR =
   '.boxel-dropdown-button__trigger';
-const SELECT_BUTTON_SELECTOR = '.select-button'
+const SELECT_BUTTON_SELECTOR = '.select-button';
 
 module('Integration | Component | SelectionControlGroup', function (hooks) {
   setupRenderingTest(hooks);
@@ -33,7 +33,7 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
               )}}
           />`
     );
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--selected`).exists()
+    assert.dom(`${SELECT_BUTTON_SELECTOR}--selected`).exists();
     assert.dom(SELECTION_CONTROL_GROUP_SELECTOR).includesText('5 selected');
     assert.dom(SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR).exists();
 
@@ -62,7 +62,7 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
               )}}
           />`
     );
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--partial`).exists()
+    assert.dom(`${SELECT_BUTTON_SELECTOR}--partial`).exists();
     assert.dom(SELECTION_CONTROL_GROUP_SELECTOR).includesText('4 selected');
     assert.dom(SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR).exists();
 
@@ -115,7 +115,7 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
             @isSelected={{this.isSelected}} 
           />`
     );
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--selected`).exists()
+    assert.dom(`${SELECT_BUTTON_SELECTOR}--selected`).exists();
     assert.dom(SELECTION_CONTROL_GROUP_SELECTOR).includesText('4 selected');
     assert.dom(SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR).doesNotExist();
 
