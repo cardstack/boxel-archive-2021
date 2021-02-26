@@ -1,53 +1,126 @@
-/**
- * Scaffolding tests for SelectionControlGroup component (https://cardstack.github.io/boxel/#/docs?s=Components&ss=%3CBoxel%3A%3ASelectionControlGroup%3E)
- * path from project root: addon/components/boxel/selection-control-group
- */
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, click } from '@ember/test-helpers';
+import { hbs } from 'ember-cli-htmlbars';
 
-/**
- * ### Things I'm not sure about
- * Wondering why we don't toggleSelectAll on the Boxel::Button as well, if its text is select all
- * - because there's a nested component that wants to be clicked.
- * - should we still allow people to click it and "Select All" when there are no items selected?
- * We use ember-basic-dropdown in the DropdownButton component but don't list it in package.json.
- * It's a dependency of ember-power-select, so it's installed at the moment, I think we should probably specify it as a dependency explicitly so we don't accidentally break things.
- */
+const SELECTION_CONTROL_GROUP_SELECTOR = '.selection-control-group';
+const SELECTION_CONTROL_GROUP_TOGGLE_SELECTOR =
+  '.selection-control-group__select-button';
+const SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR =
+  '.boxel-dropdown-button__trigger';
+const SELECT_BUTTON_SELECTOR = '.select-button'
 
-/**
- * TODO: test render + behavior for selecting all items
- * - isSelected = true
- * - selectedItemCount > 0
- *
- * test for:
- * - Text shows number of items selected
- * - checkbox state
- * - toggleSelectAll triggered when checkbox clicked
- * - dropdown menu opens when clicked
- */
+module('Integration | Component | SelectionControlGroup', function (hooks) {
+  setupRenderingTest(hooks);
 
-/**
- * TODO: test render + behavior for selecting some, but not all items
- * - isSelected = false
- * - selectedItemCount > 0
- *
- * test for:
- * - Text shows number of items selected
- * - checkbox state
- * - toggleSelectAll triggered when checkbox clicked
- * - dropdown menu opens when clicked
- */
+  test('It can render a state where all items are selected', async function (assert) {
+    this.setProperties({
+      toggled: false,
+      selectedItemCount: 5,
+      toggleSelectAll: () => {
+        this.set('toggled', true);
+      },
+      isSelected: true,
+    });
+    await render(
+      hbs`<Boxel::SelectionControlGroup 
+            @selectedItemCount={{this.selectedItemCount}} 
+            @toggleSelectAll={{fn this.toggleSelectAll}} 
+            @isSelected={{this.isSelected}} 
+            @menuComponent={{component 'boxel/menu' items=(array
+                (menu-item "Delete" (noop))
+                (menu-item "Duplicate" (noop))
+              )}}
+          />`
+    );
+    assert.dom(`${SELECT_BUTTON_SELECTOR}--selected`).exists()
+    assert.dom(SELECTION_CONTROL_GROUP_SELECTOR).includesText('5 selected');
+    assert.dom(SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR).exists();
 
-/**
- * TODO: test render + behavior for selecting no items
- * - isSelected = false
- * - selectedItemCount = 0
- *
- * test for:
- * - text shows "Select All"
- * - checkbox state
- * - toggleSelectAll
- * - no dropdown menu
- */
+    await click(SELECTION_CONTROL_GROUP_TOGGLE_SELECTOR);
 
-/**
- * TODO: accepts and renders custom menu components passed to the @menuComponent argument
- */
+    assert.equal(this.toggled, true);
+  });
+
+  test('It can render a state where not all, but some items are selected', async function (assert) {
+    this.setProperties({
+      toggled: false,
+      selectedItemCount: 4,
+      toggleSelectAll: () => {
+        this.set('toggled', true);
+      },
+      isSelected: false,
+    });
+    await render(
+      hbs`<Boxel::SelectionControlGroup 
+            @selectedItemCount={{this.selectedItemCount}} 
+            @toggleSelectAll={{fn this.toggleSelectAll}} 
+            @isSelected={{this.isSelected}} 
+            @menuComponent={{component 'boxel/menu' items=(array
+                (menu-item "Delete" (noop))
+                (menu-item "Duplicate" (noop))
+              )}}
+          />`
+    );
+    assert.dom(`${SELECT_BUTTON_SELECTOR}--partial`).exists()
+    assert.dom(SELECTION_CONTROL_GROUP_SELECTOR).includesText('4 selected');
+    assert.dom(SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR).exists();
+
+    await click(SELECTION_CONTROL_GROUP_TOGGLE_SELECTOR);
+
+    assert.equal(this.toggled, true);
+  });
+
+  test('It can render a state where no items are selected', async function (assert) {
+    this.setProperties({
+      toggled: false,
+      selectedItemCount: 0,
+      toggleSelectAll: () => {
+        this.set('toggled', true);
+      },
+      isSelected: true,
+    });
+    await render(
+      hbs`<Boxel::SelectionControlGroup 
+            @selectedItemCount={{this.selectedItemCount}} 
+            @toggleSelectAll={{fn this.toggleSelectAll}} 
+            @isSelected={{this.isSelected}} 
+            @menuComponent={{component 'boxel/menu' items=(array
+                (menu-item "Delete" (noop))
+                (menu-item "Duplicate" (noop))
+              )}}
+          />`
+    );
+    assert.dom(SELECTION_CONTROL_GROUP_SELECTOR).includesText('Select all');
+    assert.dom(SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR).doesNotExist();
+
+    await click(SELECTION_CONTROL_GROUP_TOGGLE_SELECTOR);
+
+    assert.equal(this.toggled, true);
+  });
+
+  test('It can render without having a menu component passed in', async function (assert) {
+    this.setProperties({
+      toggled: false,
+      selectedItemCount: 4,
+      toggleSelectAll: () => {
+        this.set('toggled', true);
+      },
+      isSelected: true,
+    });
+    await render(
+      hbs`<Boxel::SelectionControlGroup 
+            @selectedItemCount={{this.selectedItemCount}} 
+            @toggleSelectAll={{fn this.toggleSelectAll}} 
+            @isSelected={{this.isSelected}} 
+          />`
+    );
+    assert.dom(`${SELECT_BUTTON_SELECTOR}--selected`).exists()
+    assert.dom(SELECTION_CONTROL_GROUP_SELECTOR).includesText('4 selected');
+    assert.dom(SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR).doesNotExist();
+
+    await click(SELECTION_CONTROL_GROUP_TOGGLE_SELECTOR);
+
+    assert.equal(this.toggled, true);
+  });
+});
