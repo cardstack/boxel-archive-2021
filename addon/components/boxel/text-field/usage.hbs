@@ -8,6 +8,30 @@
         @updateValue={{this.updateValue}}
       />
     </Boxel::TextField>
+
+    <h4>Multiple fields:</h4>
+
+    <Boxel::TextField
+      @label="Name of the Artist"
+    >
+      <Boxel::Input
+        @value="Pieter Bruegel the Elder"
+      />
+    </Boxel::TextField>
+    <Boxel::TextField
+      @label="Painting Title"
+    >
+      <Boxel::Input
+        @value="The Hunters in the Snow (aka The Return of the Hunters)"
+      />
+    </Boxel::TextField>
+    <Boxel::TextField
+      @label="Current Location"
+    >
+      <Boxel::Input
+        @value="Kunsthistorisches Museum, Vienna"
+      />
+    </Boxel::TextField>
   </:example>
 
   {{!-- <:api as |Args|>

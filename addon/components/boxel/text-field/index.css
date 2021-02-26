@@ -1,0 +1,26 @@
+.boxel-text-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  /* label styling */
+  color: var(--boxel-purple-400);
+  font: 600 var(--boxel-font-xs);
+  letter-spacing: var(--boxel-lsp-xl);
+  text-transform: uppercase;
+}
+
+.boxel-text-field > *:first-child {
+  flex-basis: 8.5rem;
+  flex-grow: 1;
+}
+
+.boxel-text-field > *:last-child {
+  flex-basis: 15rem;
+  flex-grow: 999;
+  flex-shrink: 0;
+}
+
+.boxel-text-field > * {
+  padding: var(--boxel-sp-xxs);
+}

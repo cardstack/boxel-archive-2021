@@ -1,0 +1,20 @@
+.boxel-input {
+  --boxel-input-height: auto;
+
+  width: 100%;
+  height: var(--boxel-input-height);
+  padding: var(--boxel-sp-xxs) 0 var(--boxel-sp-xxs) var(--boxel-sp);
+  border: 1px solid var(--boxel-purple-300);
+  border-radius: 5px;
+  font: var(--boxel-font);
+  letter-spacing: var(--boxel-lsp-sm);
+  transition: border-color var(--boxel-transition);
+}
+
+.boxel-input:hover {
+  border-color: var(--boxel-dark);
+}
+
+.boxel-input:focus {
+  outline-color: var(--boxel-highlight);
+}
