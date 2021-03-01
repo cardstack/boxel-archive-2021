@@ -1,0 +1,19 @@
+{{#if (eq @mode "edit")}}
+  <label class="boxel-field" ...attributes>
+    <span class="boxel-field__label">
+      {{@label}}
+    </span>
+    <span>
+      {{yield}}
+    </span>
+  </label>
+{{else}}
+  <div class="boxel-field" ...attributes>
+    <span class="boxel-field__label">
+      {{@label}}
+    </span>
+    <span>
+      {{yield}}
+    </span>
+  </div>
+{{/if}}

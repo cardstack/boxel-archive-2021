@@ -2,7 +2,7 @@
   <div class="layout-display-view__label layout-display-view__preview-label">
     Card Preview
   </div>
-  <div class="layout-display-view__value layout-display-view__preview-value">
+  <Boxel::Field class="layout-display-view__value layout-display-view__preview-value">
     <div class="layout-display-view__scaled-card">
       <CardPay::PrepaidCard
         @issuerName={{@issuerName}}
@@ -15,23 +15,8 @@
         @accountNetwork="xDai Chain"
       />
     </div>
-    <div class="layout-display-view__swatch-group">
-      <div
-        class="layout-display-view__swatch"
-        style={{css-var header-color=@headerColor.value}}
-      />
-      <div
-        class="layout-display-view__swatch layout-display-view__pattern-swatch"
-        style={{css-var header-pattern=@headerPattern.value}}
-      />
-    </div>
-  </div>
-</section>
-<div class="layout-display-view__field">
-  <div class="layout-display-view__label">
-    Name of Issuer
-  </div>
-  <div class="layout-display-view__value">
+  </Boxel::Field>
+  <Boxel::Field @label="Name of Issuer">
     {{@issuerName}}
-  </div>
-</div>
+  </Boxel::Field>
+</section>

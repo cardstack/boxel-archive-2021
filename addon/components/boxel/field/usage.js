@@ -5,6 +5,7 @@ import { action } from '@ember/object';
 export default class extends Component {
   @tracked label = 'Name';
   @tracked value = 'Lila';
+  @tracked isEditMode = true;
 
   @action updateValue(ev) {
     this.value = ev.target.value;

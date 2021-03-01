@@ -1,0 +1,35 @@
+<Freestyle::Usage @name="TextField">
+  <:example>
+    <Boxel::Field
+      @label={{this.label}}
+      @mode={{if this.isEditMode "edit" "view"}}
+    >
+      {{#if this.isEditMode}}
+        <Boxel::Input
+          @value={{this.value}}
+          @updateValue={{this.updateValue}}
+        />
+      {{else}}
+        {{this.value}}
+      {{/if}}
+    </Boxel::Field>
+  </:example>
+
+  <:api as |Args|>
+    <Args.String
+      @name="label"
+      @description="field label"
+      @value={{this.label}}
+      @onInput={{fn (mut this.label)}}
+    />
+    <Args.Bool
+      @name="mode"
+      @description="field mode. wrapper uses `label` tag if mode is `edit`"
+      @defaultValue="false"
+      @onInput={{fn (mut this.isEditMode)}}
+    />
+    <Args.Yield
+      @description="Yield value or form field"
+    />
+  </:api>
+</Freestyle::Usage>
