@@ -22,15 +22,15 @@ module('Integration | Component | Button', function (hooks) {
   });
 
   test('It can be clicked and call a callback', async function (assert) {
-    this.set('clicked', false);
+    let clicked = false;
     this.set('onClick', () => {
-      this.set('clicked', true);
+      clicked = true;
     });
     await render(
       hbs`<Boxel::Button {{ on 'click' this.onClick}}>A button</Boxel::Button>`
     );
     await click(BUTTON_SELECTOR);
-    assert.equal(this.clicked, true);
+    assert.equal(clicked, true);
   });
 
   test('It can be disabled via html attribute', async function (assert) {

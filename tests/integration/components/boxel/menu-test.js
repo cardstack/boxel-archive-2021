@@ -11,13 +11,13 @@ module('Integration | Component | Menu', function (hooks) {
   setupRenderingTest(hooks);
 
   test('It can render a list of menu items that trigger appropriate callbacks when clicked', async function (assert) {
-    this.set('lastClicked', null);
-    this.set('closedMenuTimes', 0);
+    let lastClicked = null;
+    let closedMenuTimes = 0;
     this.set('record', (v) => {
-      this.set('lastClicked', v);
+      lastClicked = v;
     });
     this.set('closeMenu', () => {
-      this.set('closedMenuTimes', this.closedMenuTimes + 1);
+      closedMenuTimes += 1;
     });
     await render(hbs`
       <Boxel::Menu
@@ -30,14 +30,14 @@ module('Integration | Component | Menu', function (hooks) {
       />
     `);
     await click(`[${TEST_MENU_ITEM_TEXT_ATTRIBUTE}='One']`);
-    assert.equal(this.lastClicked, 'One');
-    assert.equal(this.closedMenuTimes, 1);
+    assert.equal(lastClicked, 'One');
+    assert.equal(closedMenuTimes, 1);
     await click(`[${TEST_MENU_ITEM_TEXT_ATTRIBUTE}='Two']`);
-    assert.equal(this.lastClicked, 'Two');
-    assert.equal(this.closedMenuTimes, 2);
+    assert.equal(lastClicked, 'Two');
+    assert.equal(closedMenuTimes, 2);
     await click(`[${TEST_MENU_ITEM_TEXT_ATTRIBUTE}='Three']`);
-    assert.equal(this.lastClicked, 'Three');
-    assert.equal(this.closedMenuTimes, 3);
+    assert.equal(lastClicked, 'Three');
+    assert.equal(closedMenuTimes, 3);
   });
 
   test('It can render dividers', async function (assert) {

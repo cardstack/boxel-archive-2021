@@ -14,11 +14,11 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
   setupRenderingTest(hooks);
 
   test('It can render a state where all items are selected', async function (assert) {
+    let toggled = false;
     this.setProperties({
-      toggled: false,
       selectedItemCount: 5,
       toggleSelectAll: () => {
-        this.set('toggled', true);
+        toggled = true;
       },
       isSelected: true,
     });
@@ -39,15 +39,15 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
 
     await click(SELECTION_CONTROL_GROUP_TOGGLE_SELECTOR);
 
-    assert.equal(this.toggled, true);
+    assert.equal(toggled, true);
   });
 
   test('It can render a state where not all, but some items are selected', async function (assert) {
+    let toggled = false;
     this.setProperties({
-      toggled: false,
       selectedItemCount: 4,
       toggleSelectAll: () => {
-        this.set('toggled', true);
+        toggled = true;
       },
       isSelected: false,
     });
@@ -68,15 +68,15 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
 
     await click(SELECTION_CONTROL_GROUP_TOGGLE_SELECTOR);
 
-    assert.equal(this.toggled, true);
+    assert.equal(toggled, true);
   });
 
   test('It can render a state where no items are selected', async function (assert) {
+    let toggled = false;
     this.setProperties({
-      toggled: false,
       selectedItemCount: 0,
       toggleSelectAll: () => {
-        this.set('toggled', true);
+        toggled = true;
       },
       isSelected: true,
     });
@@ -96,15 +96,15 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
 
     await click(SELECTION_CONTROL_GROUP_TOGGLE_SELECTOR);
 
-    assert.equal(this.toggled, true);
+    assert.equal(toggled, true);
   });
 
   test('It can render without having a menu component passed in', async function (assert) {
+    let toggled = false;
     this.setProperties({
-      toggled: false,
       selectedItemCount: 4,
       toggleSelectAll: () => {
-        this.set('toggled', true);
+        toggled = true;
       },
       isSelected: true,
     });
@@ -121,6 +121,6 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
 
     await click(SELECTION_CONTROL_GROUP_TOGGLE_SELECTOR);
 
-    assert.equal(this.toggled, true);
+    assert.equal(toggled, true);
   });
 });
