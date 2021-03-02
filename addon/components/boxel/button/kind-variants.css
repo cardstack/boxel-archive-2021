@@ -30,3 +30,11 @@
   --boxel-button-border: 1px solid var(--boxel-light-600);
   --boxel-button-text-color: black;
 }
+
+/* We only use this in one/two places right now, but putting it here just in case */
+/* TODO: decide what to do with collection style */
+.boxel-button.boxel-button--kind-collection-style {
+  --boxel-button-color: transparent;
+  --boxel-button-border: 1px solid var(--boxel-purple-300);
+  --boxel-button-text-color: black;
+}

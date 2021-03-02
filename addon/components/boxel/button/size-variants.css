@@ -44,3 +44,14 @@
   --boxel-button-icon-spacing: var(--boxel-sp-xs);
   --boxel-button-min-height: 46px;
 }
+
+/* We only use this in one/two places right now, but putting it here just in case */
+/* TODO: decide what to do with collection style */
+.boxel-button.boxel-button--size-collection-style {
+  --boxel-button-padding: var(--boxel-sp-xs) var(--boxel-sp-sm) var(--boxel-sp-xs) var(--boxel-sp-lg);
+  --boxel-button-font: 600 var(--boxel-font-sm);
+  --boxel-button-min-height: 41px;
+  --boxel-button-min-width: 100%;
+  --boxel-button-icon-size: 8px;
+  --boxel-button-icon-spacing: var(--boxel-sp-sm);
+}
