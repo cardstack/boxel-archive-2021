@@ -28,7 +28,7 @@
 }
 
 .boxel-button.boxel-button--layout-icon {
-  display: grid;
+  display: inline-grid;
   height: min-content;
   gap: var(--boxel-button-icon-spacing);
   align-items: center;
