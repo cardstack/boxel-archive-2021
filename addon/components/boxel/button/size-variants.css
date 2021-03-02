@@ -1,0 +1,46 @@
+/** 
+ * Size variants - variants that control the size and spacing of a button
+ * 
+ * The @size argument on the button component should create a corresponding class with format
+ * boxel-button--size-@size 
+ * 
+ * Classes for the @size argument can control the following properties:
+ * 
+ * --boxel-button-padding
+ * --boxel-button-min-width
+ * --boxel-button-min-height
+ * --boxel-button-font
+ * --boxel-button-icon-size
+ * --boxel-button-icon-spacing
+ * --boxel-button-letter-spacing
+ * 
+ */
+.boxel-button.boxel-button--size-icon {
+  --boxel-button-padding: 0px;
+  --boxel-button-min-width: 30px;
+  --boxel-button-min-height: 30px;
+}
+
+.boxel-button.boxel-button--size-small {
+  --boxel-button-padding: var(--boxel-sp-xxxs) var(--boxel-sp-sm);
+  --boxel-button-font: 600 var(--boxel-font-sm);
+  --boxel-button-min-height: 30px;
+  --boxel-button-icon-size: var(--boxel-font-size-sm);
+  --boxel-button-icon-spacing: var(--boxel-sp-xxs);
+}
+
+.boxel-button.boxel-button--size-base {
+  --boxel-button-padding: var(--boxel-sp-xs) var(--boxel-sp-sm);
+  --boxel-button-font: 600 var(--boxel-font-sm);
+  --boxel-button-icon-size: var(--boxel-font-size-sm);
+  --boxel-button-icon-spacing: var(--boxel-sp-xs);
+  --boxel-button-min-height: 41px;
+}
+
+.boxel-button.boxel-button--size-large {
+  --boxel-button-padding: var(--boxel-sp-xs) var(--boxel-sp-sm);
+  --boxel-button-font: 600 var(--boxel-font);
+  --boxel-button-icon-size: var(--boxel-font-size-sm);
+  --boxel-button-icon-spacing: var(--boxel-sp-xs);
+  --boxel-button-min-height: 46px;
+}

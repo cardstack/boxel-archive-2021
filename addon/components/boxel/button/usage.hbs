@@ -1,42 +1,94 @@
-<Freestyle::Usage @name="Button">
+<Freestyle::Usage @name="Button" @description="Light mode">
   <:example>
-    <Boxel::Button
-      @primary={{this.primary}}
-      @disabled={{this.disabled}}
-      @dropdownIcon={{this.dropdownIcon}}
-      @collectionStyle={{this.collectionStyle}}
-      {{on 'click' (fn this.log 'Button clicked')}}
-    >
-      Hello World
-    </Boxel::Button>
+    <table>
+      <tbody>
+        {{#each this.sizeVariants as |size|}}
+          <tr>
+            {{#each this.appearanceVariants.light as |kind|}}
+              <td>
+                <Boxel::Button @kind={{kind}} @size={{size}}>
+                  {{kind}}
+                </Boxel::Button>
+              </td>
+            {{/each}}
+            <td>
+              <Boxel::Button @kind={{'secondary-light'}} @size={{size}} @disabled={{true}}>
+                disabled
+              </Boxel::Button>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
   </:example>
-
-  <:api as |Args|>
-    <Args.Bool @name="primary"
-      @description='render with primary style'
-      @defaultValue={{false}}
-      @value={{this.primary}}
-      @onInput={{fn (mut this.primary)}}
-    />
-    <Args.Bool @name="disabled"
-      @description='for use when the button cannot be clicked, renders disabled attribute and style'
-      @defaultValue={{false}}
-      @value={{this.disabled}}
-      @onInput={{fn (mut this.disabled)}}
-    />
-    <Args.Bool @name="dropdownIcon"
-      @description='when true, shows a dropdown icon on the right side of the button'
-      @defaultValue={{false}}
-      @value={{this.dropdownIcon}}
-      @onInput={{fn (mut this.dropdownIcon)}}
-    />
-    <Args.Bool @name="collectionStyle"
-      @description='apply the style variation used in the collection header'
-      @defaultValue={{false}}
-      @value={{this.collectionStyle}}
-      @onInput={{fn (mut this.collectionStyle)}}
-    />
-    <Args.Yield @optional={{true}} @description="The content of the button." />
-  </:api>
 </Freestyle::Usage>
 
+<Freestyle::Usage @name="Button" @description="Dark mode">
+  <:example>
+    <table class="usage-button-dark-mode-background">
+      <tbody>
+        {{#each this.sizeVariants as |size|}}
+          <tr>
+            {{#each this.appearanceVariants.dark as |kind|}}
+              <td>
+                <Boxel::Button @kind={{kind}} @size={{size}}>
+                  {{kind}}
+                </Boxel::Button>
+              </td>
+            {{/each}}
+            <td>
+              <Boxel::Button @kind={{'secondary-light'}} @size={{size}} @disabled={{true}}>
+                disabled
+              </Boxel::Button>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </:example>
+</Freestyle::Usage>
+
+<Freestyle::Usage @slug="button-icon" @description="Buttons with icons">
+  <:example>
+    <table>
+      <tbody>
+        {{#each this.sizeVariants as |size|}}
+          <tr>
+            {{#each this.iconVariants as |i|}}
+              <td>
+                <Boxel::Button
+                  @kind={{'primary'}}
+                  @size={{size}}
+                  @iconLeft={{i.iconLeft}}
+                  @iconRight={{i.iconRight}}
+                >
+                  {{i.text}}
+                </Boxel::Button>
+              </td>
+            {{/each}}
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <table class="usage-button-dark-mode-background">
+      <tbody>
+        {{#each this.sizeVariants as |size|}}
+          <tr>
+            {{#each this.iconVariants as |i|}}
+              <td>
+                <Boxel::Button
+                  @kind={{'secondary-dark'}}
+                  @size={{size}}
+                  @iconLeft={{i.iconLeft}}
+                  @iconRight={{i.iconRight}}
+                >
+                  {{i.text}}
+                </Boxel::Button>
+              </td>
+            {{/each}}
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </:example>
+</Freestyle::Usage>

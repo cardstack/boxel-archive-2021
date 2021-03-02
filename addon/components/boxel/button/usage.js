@@ -1,14 +1,27 @@
 /* eslint-disable no-console */
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
 
 export default class extends Component {
-  @tracked primary = false;
-  @tracked dropdownIcon = false;
-  @tracked disabled = false;
-  @tracked collectionStyle = false;
-  @action log(text) {
-    console.log(text);
-  }
+  appearanceVariants = {
+    light: ['primary', 'secondary-light'],
+    dark: ['primary', 'secondary-dark'],
+  };
+  sizeVariants = ['small', 'base', 'large'];
+  iconVariants = [
+    {
+      text: 'left',
+      iconLeft: 'gear',
+      iconRight: null,
+    },
+    {
+      text: 'right',
+      iconLeft: null,
+      iconRight: 'close',
+    },
+    {
+      text: 'both',
+      iconLeft: 'gear',
+      iconRight: 'close',
+    },
+  ];
 }
