@@ -51,8 +51,8 @@
     {{#if (not-eq this.status "complete")}}
       <footer class="agreements-card__footer">
         {{#if (and (eq this.status "view") (eq @model.org.id "crd_records"))}}
-          <Boxel::Button {{on "click" this.completeAgreement}} @primary={{true}} @disabled={{true}}>Accept Transfer</Boxel::Button>
-          <Boxel::Button {{on "click" this.rejectAgreement}} @primary={{true}}>Reject Transfer</Boxel::Button>
+          <Boxel::Button {{on "click" this.completeAgreement}} @kind='primary' @disabled={{true}}>Accept Transfer</Boxel::Button>
+          <Boxel::Button {{on "click" this.rejectAgreement}} @kind='primary'>Reject Transfer</Boxel::Button>
         {{else if (and (eq this.status "view") (eq @model.org.id "bunny_records"))}}
           <div />
           <Boxel::Button @disabled={{true}}>
@@ -60,7 +60,7 @@
           </Boxel::Button>
         {{else}}
           <div />
-          <Boxel::Button {{on "click" this.viewAgreement}} @primary={{true}}>
+          <Boxel::Button {{on "click" this.viewAgreement}} @kind='primary'>
             Initiate Transfer
           </Boxel::Button>
         {{/if}}
