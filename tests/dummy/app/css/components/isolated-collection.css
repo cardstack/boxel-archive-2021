@@ -105,6 +105,11 @@
   padding: 20px 50px 20px 8px;
 }
 
+.media-collection__actions-row-pill svg {
+  width: 8px;
+  height: 8px;
+}
+
 .media-collection__btn-group {
   display: grid;
   grid-auto-flow: column;

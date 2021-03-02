@@ -42,7 +42,7 @@
         />
       {{/if}}
       {{#if (and (eq @model.type "collection") this.collection.selectedItemCount)}}
-        <Boxel::Button @dropdownIcon={{true}} @collectionStyle={{true}}>
+        <Boxel::Button @kind='collection-style' @size='collection-style' @iconRight='carot-down' class="media-collection__actions-row-pill">
           Add to Collection
         </Boxel::Button>
       {{/if}}
