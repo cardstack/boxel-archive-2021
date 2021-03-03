@@ -2,7 +2,6 @@
   <:example>
     <Boxel::Field
       @label={{this.label}}
-      @isFlexField={{this.isFlexField}}
       @labelClass={{this.labelClass}}
     >
       <Boxel::Input
@@ -18,14 +17,6 @@
       @description="field label"
       @value={{this.label}}
       @onInput={{fn (mut this.label)}}
-    />
-    <Args.Bool
-      @name="isFlexField"
-      @description="Layout styling"
-      @defaultValue="false"
-      @optional={{true}}
-      @value={{this.isFlexField}}
-      @onInput={{fn (mut this.isFlexField)}}
     />
     <Args.String
       @name="labelClass"
