@@ -9,7 +9,14 @@
   data-test-boxel-button
   ...attributes
 >
-  {{yield (hash
-    MoreButton=(component 'boxel/dropdown-button' class="boxel-button__more-button" button="more-actions" icon="more-actions")
-  )}}
+  {{yield
+    (hash
+      MoreButton=(component
+        "boxel/dropdown-button"
+        class="boxel-button__more-button"
+        button="more-actions"
+        icon="more-actions"
+      )
+    )
+  }}
 </button>
