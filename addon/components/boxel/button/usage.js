@@ -46,7 +46,7 @@ export default class extends Component {
   @tracked iconLeft = '';
   @tracked iconRight = '';
   @tracked iconSpacing = 'var(--boxel-sp-xs)';
-  @tracked iconSize = 'var(--boxel-font-sm)';
+  @tracked iconSize = 'var(--boxel-font-size-sm)';
 
   @action
   alert() {
