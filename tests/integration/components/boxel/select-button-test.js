@@ -3,7 +3,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-const SELECT_BUTTON_SELECTOR = '.select-button';
+const SELECT_BUTTON_SELECTOR = '[data-test-boxel-select-button]';
 
 module('Integration | Component | SelectButton', function (hooks) {
   setupRenderingTest(hooks);
@@ -29,9 +29,9 @@ module('Integration | Component | SelectButton', function (hooks) {
   test('It is assigned the correct css classes for mode', async function (assert) {
     this.set('mode', 'edit');
     await render(hbs`<Boxel::SelectButton @mode={{this.mode}}/>`);
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--edit`).exists();
+    assert.dom(SELECT_BUTTON_SELECTOR).hasClass(/--edit/);
     this.set('mode', 'view');
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--view`).exists();
+    assert.dom(SELECT_BUTTON_SELECTOR).hasClass(/--view/);
   });
 
   test('It is assigned the correct class and aria for no selection', async function (assert) {
@@ -46,8 +46,8 @@ module('Integration | Component | SelectButton', function (hooks) {
     );
 
     assert.dom(SELECT_BUTTON_SELECTOR).exists();
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--partial`).doesNotExist();
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--selected`).doesNotExist();
+    assert.dom(SELECT_BUTTON_SELECTOR).doesNotHaveClass(/--partial/);
+    assert.dom(SELECT_BUTTON_SELECTOR).doesNotHaveClass(/--selected/);
     assert.dom(SELECT_BUTTON_SELECTOR).hasAria('label', 'select');
   });
 
@@ -61,9 +61,8 @@ module('Integration | Component | SelectButton', function (hooks) {
     await render(
       hbs`<Boxel::SelectButton @isPartial={{this.isPartial}} @isSelected={{this.isSelected}} @mode={{this.mode}}/>`
     );
-
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--partial`).exists();
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--selected`).doesNotExist();
+    assert.dom(SELECT_BUTTON_SELECTOR).hasClass(/--partial/);
+    assert.dom(SELECT_BUTTON_SELECTOR).doesNotHaveClass(/--selected/);
     assert.dom(SELECT_BUTTON_SELECTOR).hasAria('label', 'select');
   });
 
@@ -77,8 +76,8 @@ module('Integration | Component | SelectButton', function (hooks) {
       hbs`<Boxel::SelectButton @isPartial={{this.isPartial}} @isSelected={{this.isSelected}} @mode={{this.mode}}/>`
     );
 
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--partial`).doesNotExist();
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--selected`).exists();
+    assert.dom(SELECT_BUTTON_SELECTOR).doesNotHaveClass(/--partial/);
+    assert.dom(SELECT_BUTTON_SELECTOR).hasClass(/--selected/);
     assert.dom(SELECT_BUTTON_SELECTOR).hasAria('label', 'selected');
   });
 
