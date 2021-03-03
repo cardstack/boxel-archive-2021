@@ -4,7 +4,7 @@ import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 const MENU_ITEM_SELECTOR = '[data-test-boxel-menu-item]';
-const MENU_ITEM_ICON_SELECTOR = '[data-test-boxel-menu-item-icon]'
+const MENU_ITEM_ICON_SELECTOR = '[data-test-boxel-menu-item-icon]';
 const MENU_SEPARATOR_SELECTOR = '[data-test-boxel-menu-separator]';
 const TEST_MENU_ITEM_TEXT_ATTRIBUTE = 'data-test-boxel-menu-item-text';
 
@@ -68,11 +68,15 @@ module('Integration | Component | Menu', function (hooks) {
     `);
     assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(1)`).hasClass(/--dangerous/);
     assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(2)`).hasClass(/--has-icon/);
-    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(2) ${MENU_ITEM_ICON_SELECTOR}`).exists();
+    assert
+      .dom(`${MENU_ITEM_SELECTOR}:nth-child(2) ${MENU_ITEM_ICON_SELECTOR}`)
+      .exists();
     assert
       .dom(`${MENU_ITEM_SELECTOR}:nth-child(3)`)
       .hasClass(/--has-icon/)
       .hasClass(/--dangerous/);
-    assert.dom(`${MENU_ITEM_SELECTOR}:nth-child(3) ${MENU_ITEM_ICON_SELECTOR}`).exists();
+    assert
+      .dom(`${MENU_ITEM_SELECTOR}:nth-child(3) ${MENU_ITEM_ICON_SELECTOR}`)
+      .exists();
   });
 });
