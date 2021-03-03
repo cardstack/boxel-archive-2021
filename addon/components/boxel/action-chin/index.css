@@ -12,10 +12,6 @@
 }
 
 .action-chin > button {
-  min-height: initial;
-  height: 32px;
-  padding: var(--boxel-sp-xxxs) var(--boxel-sp-xl);
-  letter-spacing: var(--boxel-lsp-sm);
   transition: filter var(--boxel-transition);
 }
 
