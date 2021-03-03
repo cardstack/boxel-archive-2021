@@ -14,21 +14,21 @@
 .boxel-button.boxel-button--kind-primary:not(:disabled) {
   --boxel-button-color: var(--boxel-highlight);
   --boxel-button-border: 1px solid var(--boxel-highlight);
-  --boxel-button-text-color: black;
+  --boxel-button-text-color: var(--boxel-dark);
 }
 
 .boxel-button.boxel-button--kind-secondary-dark:not(:disabled) {
   /* transparent on dark background */
   --boxel-button-color: transparent;
   --boxel-button-border: 1px solid var(--boxel-purple-400);
-  --boxel-button-text-color: white;
+  --boxel-button-text-color: var(--boxel-light);
 }
 
 .boxel-button.boxel-button--kind-secondary-light:not(:disabled) {
   /* transparent on light background */
   --boxel-button-color: transparent;
   --boxel-button-border: 1px solid var(--boxel-light-600);
-  --boxel-button-text-color: black;
+  --boxel-button-text-color: var(--boxel-dark);
 }
 
 /* We only use this in one/two places right now, but putting it here just in case */
@@ -36,5 +36,5 @@
 .boxel-button.boxel-button--kind-collection-style {
   --boxel-button-color: transparent;
   --boxel-button-border: 1px solid var(--boxel-purple-300);
-  --boxel-button-text-color: black;
+  --boxel-button-text-color: var(--boxel-dark);
 }
