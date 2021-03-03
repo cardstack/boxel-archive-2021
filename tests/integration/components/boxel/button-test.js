@@ -4,7 +4,8 @@ import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 const BUTTON_SELECTOR = '[data-test-boxel-button]';
-const DROPDOWN_BUTTON_SELECTOR = '[data-test-boxel-dropdown-button]';
+const LEFT_ICON_SELECTOR = '[data-test-boxel-button-icon-left]';
+const RIGHT_ICON_SELECTOR = '[data-test-boxel-button-icon-right]';
 
 module('Integration | Component | Button', function (hooks) {
   setupRenderingTest(hooks);
@@ -45,51 +46,111 @@ module('Integration | Component | Button', function (hooks) {
     assert.dom(BUTTON_SELECTOR).isDisabled();
   });
 
-  test('It can apply appropriate styles depending on arguments', async function (assert) {
+  test('It can apply appropriate classes depending on the kind argument', async function (assert) {
+    const kinds = ['primary', 'dropdown', 'collection-style'];
+    const kindClassRegexes = kinds.map((v) => new RegExp('--kind-' + v));
+
     this.setProperties({
-      primary: true,
-      dropdownIcon: true,
-      collectionStyle: true,
+      kind: kinds[0],
     });
 
     await render(
-      hbs`<Boxel::Button 
-            @primary={{this.primary}} 
-            @dropdownIcon={{this.dropdownIcon}} 
-            @collectionStyle={{this.collectionStyle}}
-          >
+      hbs`<Boxel::Button @kind={{this.kind}}>
           A button
           </Boxel::Button>`
     );
 
-    assert
-      .dom(BUTTON_SELECTOR)
-      .hasClass(/--primary/)
-      .hasClass(/--dropdown/)
-      .hasClass(/--collection-style/);
+    for (let i = 0; i < kindClassRegexes.length; i++) {
+      this.setProperties({
+        kind: kinds[i],
+      });
+      for (let j = 0; j < kindClassRegexes.length; j++) {
+        if (j === i) assert.dom(BUTTON_SELECTOR).hasClass(kindClassRegexes[j]);
+        else assert.dom(BUTTON_SELECTOR).doesNotHaveClass(kindClassRegexes[j]);
+      }
+    }
 
-    this.setProperties({
-      primary: false,
-      dropdownIcon: false,
-      collectionStyle: false,
-    });
-    assert
-      .dom(BUTTON_SELECTOR)
-      .doesNotHaveClass(/--primary/)
-      .doesNotHaveClass(/--dropdown/)
-      .doesNotHaveClass(/--collection-style/);
+    // check that there is a default value set
+    this.set('kind', '');
+    assert.dom(BUTTON_SELECTOR).hasClass(/--kind-secondary-light/);
   });
 
-  test('It can include a dropdown button', async function (assert) {
-    this.set('menuComponent', 'boxel/menu');
-    await render(hbs`
-          <Boxel::Button as |b|>
-              A button
-              <b.MoreButton />
-          </Boxel::Button>
-      `);
-    assert.dom(DROPDOWN_BUTTON_SELECTOR).exists();
-    // am not testing ember-basic-dropdown functionality here
-    // their tests seem to use a form of mock dropdown
+  test('It can apply appropriate classes depending on the size argument', async function (assert) {
+    const sizes = ['small', 'base', 'large'];
+    const sizeClassRegexes = sizes.map((v) => new RegExp('--size-' + v));
+
+    this.setProperties({
+      size: sizes[0],
+    });
+
+    await render(
+      hbs`<Boxel::Button @size={{this.size}}>
+          A button
+          </Boxel::Button>`
+    );
+
+    for (let i = 0; i < sizeClassRegexes.length; i++) {
+      this.setProperties({
+        size: sizes[i],
+      });
+      for (let j = 0; j < sizeClassRegexes.length; j++) {
+        if (j === i) assert.dom(BUTTON_SELECTOR).hasClass(sizeClassRegexes[j]);
+        else assert.dom(BUTTON_SELECTOR).doesNotHaveClass(sizeClassRegexes[j]);
+      }
+    }
+
+    // check that there is a default value set
+    this.set('size', '');
+    assert.dom(BUTTON_SELECTOR).hasClass(/--size-base/);
+  });
+
+  test('It can accept iconLeft and iconRight arguments and render icons with appropriate classes', async function (assert) {
+    this.setProperties({
+      iconLeft: '',
+      iconRight: '',
+    });
+
+    await render(
+      hbs`<Boxel::Button @iconRight={{this.iconRight}} @iconLeft={{this.iconLeft}}>Button Text</Boxel::Button>`
+    );
+
+    assert.dom(BUTTON_SELECTOR).hasClass(/--layout-centered/);
+    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--layout-icon/);
+
+    this.setProperties({
+      iconLeft: 'gear',
+      iconRight: 'gear',
+    });
+
+    assert.dom(BUTTON_SELECTOR).hasClass(/--layout-icon/);
+    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--layout-centered/);
+    assert.dom(BUTTON_SELECTOR).hasClass(/--has-left-icon/);
+    assert.dom(BUTTON_SELECTOR).hasClass(/--has-right-icon/);
+    assert.dom(RIGHT_ICON_SELECTOR).exists();
+    assert.dom(LEFT_ICON_SELECTOR).exists();
+
+    this.setProperties({
+      iconLeft: 'gear',
+      iconRight: '',
+    });
+
+    assert.dom(BUTTON_SELECTOR).hasClass(/--layout-icon/);
+    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--layout-centered/);
+    assert.dom(BUTTON_SELECTOR).hasClass(/--has-left-icon/);
+    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--has-right-icon/);
+    assert.dom(LEFT_ICON_SELECTOR).exists();
+    assert.dom(RIGHT_ICON_SELECTOR).doesNotExist();
+
+    this.setProperties({
+      iconLeft: '',
+      iconRight: 'gear',
+    });
+
+    assert.dom(BUTTON_SELECTOR).hasClass(/--layout-icon/);
+    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--layout-centered/);
+    assert.dom(BUTTON_SELECTOR).hasClass(/--has-right-icon/);
+    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--has-left-icon/);
+    assert.dom(RIGHT_ICON_SELECTOR).exists();
+    assert.dom(LEFT_ICON_SELECTOR).doesNotExist();
   });
 });

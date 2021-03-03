@@ -12,12 +12,12 @@
   ...attributes
 >
   {{#if @iconLeft}}
-      {{svg-jar @iconLeft class="boxel-button__icon"}}
+      {{svg-jar @iconLeft class="boxel-button__icon" data-test-boxel-button-icon-left=true}}
   {{/if}}
 
   {{yield}}
 
   {{#if @iconRight}}
-    {{svg-jar @iconRight class="boxel-button__icon"}}
+    {{svg-jar @iconRight class="boxel-button__icon" data-test-boxel-button-icon-right=true}}
   {{/if}}
 </button>
