@@ -18,14 +18,18 @@
   <:api as |Args|>
     <Args.String
       @name="kind"
+      @optional={{true}}
       @description="Controls the colors of the button"
+      @defaultValue={{"secondary-light"}}
       @options={{this.kindVariants.light}}
       @onInput={{fn (mut this.kind)}}
       @value={{this.kind}}
     />
     <Args.String
       @name="size"
+      @optional={{true}}
       @description="Controls the size of the button"
+      @defaultValue={{"base"}}
       @options={{this.sizeVariants}}
       @onInput={{fn (mut this.size)}}
       @value={{this.size}}
