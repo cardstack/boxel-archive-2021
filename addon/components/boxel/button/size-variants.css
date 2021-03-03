@@ -15,12 +15,6 @@
  * --boxel-button-letter-spacing
  * 
  */
-.boxel-button.boxel-button--size-icon {
-  --boxel-button-padding: 0px;
-  --boxel-button-min-width: 30px;
-  --boxel-button-min-height: 30px;
-}
-
 .boxel-button.boxel-button--size-small {
   --boxel-button-padding: var(--boxel-sp-xxxs) var(--boxel-sp-sm);
   --boxel-button-font: 600 var(--boxel-font-sm);
