@@ -21,6 +21,7 @@
   --boxel-button-min-height: 30px;
   --boxel-button-icon-size: var(--boxel-font-size-sm);
   --boxel-button-icon-spacing: var(--boxel-sp-xxs);
+  --boxel-button-letter-spacing: var(--boxel-lsp);
 }
 
 .boxel-button--size-base {
@@ -28,6 +29,7 @@
   --boxel-button-font: 600 var(--boxel-font-sm);
   --boxel-button-icon-size: var(--boxel-font-size-sm);
   --boxel-button-icon-spacing: var(--boxel-sp-xs);
+  --boxel-button-letter-spacing: var(--boxel-lsp-sm);
   --boxel-button-min-height: 41px;
 }
 
@@ -36,6 +38,7 @@
   --boxel-button-font: 600 var(--boxel-font);
   --boxel-button-icon-size: var(--boxel-font-size-sm);
   --boxel-button-icon-spacing: var(--boxel-sp-xs);
+  --boxel-button-letter-spacing: var(--boxel-lsp-xs);
   --boxel-button-min-height: 46px;
 }
 
