@@ -3,8 +3,8 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-const TEST_COLUMN_ATTRIBUTE = 'data-test-sort-menu-item-column';
-const TEST_DIRECTION_ATTRIBUTE = 'data-test-sort-menu-item-direction';
+const TEST_COLUMN_ATTRIBUTE = 'data-test-boxel-sort-menu-item-column';
+const TEST_DIRECTION_ATTRIBUTE = 'data-test-boxel-sort-menu-item-direction';
 const ASCENDING_NUMERIC_REGEX = /1\s+9/;
 const DESCENDING_NUMERIC_REGEX = /9\s+1/;
 const ASCENDING_ALPHABETICAL_REGEX = /A\s+Z/;
