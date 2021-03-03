@@ -3,8 +3,8 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-const BUTTON_SELECTOR = '.boxel-button';
-const DROPDOWN_BUTTON_SELECTOR = '.boxel-dropdown-button';
+const BUTTON_SELECTOR = '[data-test-boxel-button]';
+const DROPDOWN_BUTTON_SELECTOR = '[data-test-boxel-dropdown-button]';
 
 module('Integration | Component | Button', function (hooks) {
   setupRenderingTest(hooks);
