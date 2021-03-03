@@ -3,12 +3,14 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-const SELECTION_CONTROL_GROUP_SELECTOR = '.selection-control-group';
+const SELECTION_CONTROL_GROUP_DATA_ATTRIBUTE =
+  'data-test-boxel-selection-control-group';
+const SELECTION_CONTROL_GROUP_SELECTOR =
+  '[data-test-boxel-selection-control-group]';
 const SELECTION_CONTROL_GROUP_TOGGLE_SELECTOR =
-  '.selection-control-group__select-button';
+  '[data-test-boxel-selection-control-group-toggle]';
 const SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR =
-  '.boxel-dropdown-button__trigger';
-const SELECT_BUTTON_SELECTOR = '.select-button';
+  '[data-test-boxel-dropdown-button]';
 
 module('Integration | Component | SelectionControlGroup', function (hooks) {
   setupRenderingTest(hooks);
@@ -33,7 +35,7 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
               )}}
           />`
     );
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--selected`).exists();
+    assert.dom(`[${SELECTION_CONTROL_GROUP_DATA_ATTRIBUTE}=selected]`).exists();
     assert.dom(SELECTION_CONTROL_GROUP_SELECTOR).includesText('5 selected');
     assert.dom(SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR).exists();
 
@@ -62,7 +64,7 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
               )}}
           />`
     );
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--partial`).exists();
+    assert.dom(`[${SELECTION_CONTROL_GROUP_DATA_ATTRIBUTE}=partial]`).exists();
     assert.dom(SELECTION_CONTROL_GROUP_SELECTOR).includesText('4 selected');
     assert.dom(SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR).exists();
 
@@ -78,7 +80,7 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
       toggleSelectAll: () => {
         toggled = true;
       },
-      isSelected: true,
+      isSelected: false,
     });
     await render(
       hbs`<Boxel::SelectionControlGroup 
@@ -91,6 +93,7 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
               )}}
           />`
     );
+    assert.dom(`[${SELECTION_CONTROL_GROUP_DATA_ATTRIBUTE}=none]`).exists();
     assert.dom(SELECTION_CONTROL_GROUP_SELECTOR).includesText('Select all');
     assert.dom(SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR).doesNotExist();
 
@@ -115,7 +118,7 @@ module('Integration | Component | SelectionControlGroup', function (hooks) {
             @isSelected={{this.isSelected}} 
           />`
     );
-    assert.dom(`${SELECT_BUTTON_SELECTOR}--selected`).exists();
+    assert.dom(`[${SELECTION_CONTROL_GROUP_DATA_ATTRIBUTE}=selected]`).exists();
     assert.dom(SELECTION_CONTROL_GROUP_SELECTOR).includesText('4 selected');
     assert.dom(SELECTION_CONTROL_GROUP_DROPDOWN_SELECTOR).doesNotExist();
 
