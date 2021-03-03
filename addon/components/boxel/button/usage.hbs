@@ -1,10 +1,86 @@
+<Freestyle::Usage @name="Button">
+  <:example>
+    <Boxel::Button
+      @kind={{this.kind}}
+      @size={{this.size}}
+      @disabled={{this.disabled}}
+      @iconLeft={{this.iconLeft}}
+      @iconRight={{this.iconRight}}
+      style={{css-var
+        boxel-button-icon-size=this.iconSize
+        boxel-button-icon-spacing=this.iconSpacing
+      }}
+      {{on "click" this.alert}}
+    >
+      Button Text
+    </Boxel::Button>
+  </:example>
+  <:api as |Args|>
+    <Args.String
+      @name="kind"
+      @description="Controls the colors of the button"
+      @options={{this.kindVariants.light}}
+      @onInput={{fn (mut this.kind)}}
+      @value={{this.kind}}
+    />
+    <Args.String
+      @name="size"
+      @description="Controls the size of the button"
+      @options={{this.sizeVariants}}
+      @onInput={{fn (mut this.size)}}
+      @value={{this.size}}
+    />
+    <Args.Bool
+      @name="disabled"
+      @optional={{true}}
+      @description="Controls whether the button is disabled"
+      @onInput={{fn (mut this.disabled)}}
+      @value={{this.disabled}}
+    />
+    <Args.String
+      @name="iconLeft"
+      @optional={{true}}
+      @description="Asset name for the left icon of the button, passed to svg-jar"
+      @onInput={{fn (mut this.iconLeft)}}
+      @value={{this.iconLeft}}
+    />
+    <Args.String
+      @name="iconRight"
+      @optional={{true}}
+      @description="Asset name for the right icon of the button, passed to svg-jar"
+      @onInput={{fn (mut this.iconRight)}}
+      @value={{this.iconRight}}
+    />
+    <Args.String
+      @name="--boxel-button-icon-size"
+      @optional={{true}}
+      @description="CSS variable for icon width and height."
+      @defaultValue={{"var(--boxel-font-size-sm)"}}
+      @options={{this.boxelFontSizes}}
+      @onInput={{fn (mut this.iconSize)}}
+      @value={{this.iconSize}}
+    />
+    <Args.String
+      @name="--boxel-button-icon-spacing"
+      @optional={{true}}
+      @description="CSS variable for space between icon and edge of button, and button content"
+      @defaultValue={{"var(--boxel-sp-xs)"}}
+      @options={{this.boxelSpacingSizes}}
+      @onInput={{fn (mut this.iconSpacing)}}
+      @value={{this.iconSpacing}}
+    />
+    <Args.Yield 
+      @description="Contents of the button"
+    />
+  </:api>
+</Freestyle::Usage>
 <Freestyle::Usage @name="Button" @description="Light mode">
   <:example>
     <table>
       <tbody>
         {{#each this.sizeVariants as |size|}}
           <tr>
-            {{#each this.appearanceVariants.light as |kind|}}
+            {{#each this.kindVariants.light as |kind|}}
               <td>
                 <Boxel::Button @kind={{kind}} @size={{size}}>
                   {{kind}}
@@ -12,7 +88,11 @@
               </td>
             {{/each}}
             <td>
-              <Boxel::Button @kind={{'secondary-light'}} @size={{size}} @disabled={{true}}>
+              <Boxel::Button
+                @kind={{'secondary-light'}}
+                @size={{size}}
+                @disabled={{true}}
+              >
                 disabled
               </Boxel::Button>
             </td>
@@ -22,14 +102,13 @@
     </table>
   </:example>
 </Freestyle::Usage>
-
 <Freestyle::Usage @name="Button" @description="Dark mode">
   <:example>
     <table class="usage-button-dark-mode-background">
       <tbody>
         {{#each this.sizeVariants as |size|}}
           <tr>
-            {{#each this.appearanceVariants.dark as |kind|}}
+            {{#each this.kindVariants.dark as |kind|}}
               <td>
                 <Boxel::Button @kind={{kind}} @size={{size}}>
                   {{kind}}
@@ -37,7 +116,11 @@
               </td>
             {{/each}}
             <td>
-              <Boxel::Button @kind={{'secondary-light'}} @size={{size}} @disabled={{true}}>
+              <Boxel::Button
+                @kind={{'secondary-light'}}
+                @size={{size}}
+                @disabled={{true}}
+              >
                 disabled
               </Boxel::Button>
             </td>
@@ -47,7 +130,6 @@
     </table>
   </:example>
 </Freestyle::Usage>
-
 <Freestyle::Usage @slug="button-icon" @description="Buttons with icons">
   <:example>
     <table>
