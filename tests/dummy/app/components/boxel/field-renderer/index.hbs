@@ -62,28 +62,33 @@
       {{/if}}
     </div>
   {{else}}
-    <label class="field-renderer">
-      <div class="field-renderer__title">{{humanize @field.title}}</div>
-      <div class="field-renderer__value">
-        {{#if (eq @field.type "dropdown")}}
-          <div class="field-renderer__dropdown">
-            <PowerSelect
-              @options={{@field.options}}
-              @selected={{@field.value}}
-              @onChange={{fn (mut @field.value)}}
-              @renderInPlace={{true}}
-              @verticalPosition="below"
-            as |option|>
-              {{option}}
-            </PowerSelect>
-          </div>
-        {{else if (eq @field.type "textarea")}}
-          <Textarea @type={{@field.type}} @class="field-renderer__input field-renderer__textarea" @value={{@field.value}} />
-        {{else}}
-          <Input @type={{@field.type}} @class="field-renderer__input" @value={{if (eq @field.title "title") (titleize @field.value) @field.value}} />
-        {{/if}}
-      </div>
-    </label>
+    <Boxel::Field
+      class="field-renderer"
+      @label={{humanize @field.title}}
+      @labelClass="field-renderer__title"
+    >
+      {{#if (eq @field.type "dropdown")}}
+        <div class="field-renderer__dropdown">
+          <PowerSelect
+            @options={{@field.options}}
+            @selected={{@field.value}}
+            @onChange={{fn (mut @field.value)}}
+            @renderInPlace={{true}}
+            @verticalPosition="below"
+          as |option|>
+            {{option}}
+          </PowerSelect>
+        </div>
+      {{else if (eq @field.type "textarea")}}
+        <Textarea @type={{@field.type}} @class="field-renderer__input field-renderer__textarea" @value={{@field.value}} />
+      {{else}}
+        <Boxel::Input
+          type={{@field.type}}
+          class="field-renderer__input"
+          @value={{if (eq @field.title "title") (titleize @field.value) @field.value}}
+        />
+      {{/if}}
+    </Boxel::Field>
   {{/if}}
 
 {{else if (eq @mode "comparison")}}
