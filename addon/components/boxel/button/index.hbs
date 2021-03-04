@@ -1,9 +1,6 @@
 <button
   class={{cn
     'boxel-button'
-    (if (or @iconLeft @iconRight) 'boxel-button--layout-icon' 'boxel-button--layout-centered')
-    (if @iconLeft 'boxel-button--has-left-icon')
-    (if @iconRight 'boxel-button--has-right-icon')
     (concat 'boxel-button--size-' (or @size this.defaultSize))
     (concat 'boxel-button--kind-' (or @kind this.defaultKind))
   }}
@@ -11,13 +8,5 @@
   data-test-boxel-button
   ...attributes
 >
-  {{#if @iconLeft}}
-      {{svg-jar @iconLeft class="boxel-button__icon" data-test-boxel-button-icon-left=true}}
-  {{/if}}
-
   {{yield}}
-
-  {{#if @iconRight}}
-    {{svg-jar @iconRight class="boxel-button__icon" data-test-boxel-button-icon-right=true}}
-  {{/if}}
 </button>

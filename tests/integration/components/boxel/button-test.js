@@ -4,8 +4,6 @@ import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 const BUTTON_SELECTOR = '[data-test-boxel-button]';
-const LEFT_ICON_SELECTOR = '[data-test-boxel-button-icon-left]';
-const RIGHT_ICON_SELECTOR = '[data-test-boxel-button-icon-right]';
 
 module('Integration | Component | Button', function (hooks) {
   setupRenderingTest(hooks);
@@ -102,55 +100,5 @@ module('Integration | Component | Button', function (hooks) {
     // check that there is a default value set
     this.set('size', '');
     assert.dom(BUTTON_SELECTOR).hasClass(/--size-base/);
-  });
-
-  test('It can accept iconLeft and iconRight arguments and render icons with appropriate classes', async function (assert) {
-    this.setProperties({
-      iconLeft: '',
-      iconRight: '',
-    });
-
-    await render(
-      hbs`<Boxel::Button @iconRight={{this.iconRight}} @iconLeft={{this.iconLeft}}>Button Text</Boxel::Button>`
-    );
-
-    assert.dom(BUTTON_SELECTOR).hasClass(/--layout-centered/);
-    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--layout-icon/);
-
-    this.setProperties({
-      iconLeft: 'gear',
-      iconRight: 'gear',
-    });
-
-    assert.dom(BUTTON_SELECTOR).hasClass(/--layout-icon/);
-    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--layout-centered/);
-    assert.dom(BUTTON_SELECTOR).hasClass(/--has-left-icon/);
-    assert.dom(BUTTON_SELECTOR).hasClass(/--has-right-icon/);
-    assert.dom(RIGHT_ICON_SELECTOR).exists();
-    assert.dom(LEFT_ICON_SELECTOR).exists();
-
-    this.setProperties({
-      iconLeft: 'gear',
-      iconRight: '',
-    });
-
-    assert.dom(BUTTON_SELECTOR).hasClass(/--layout-icon/);
-    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--layout-centered/);
-    assert.dom(BUTTON_SELECTOR).hasClass(/--has-left-icon/);
-    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--has-right-icon/);
-    assert.dom(LEFT_ICON_SELECTOR).exists();
-    assert.dom(RIGHT_ICON_SELECTOR).doesNotExist();
-
-    this.setProperties({
-      iconLeft: '',
-      iconRight: 'gear',
-    });
-
-    assert.dom(BUTTON_SELECTOR).hasClass(/--layout-icon/);
-    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--layout-centered/);
-    assert.dom(BUTTON_SELECTOR).hasClass(/--has-right-icon/);
-    assert.dom(BUTTON_SELECTOR).doesNotHaveClass(/--has-left-icon/);
-    assert.dom(RIGHT_ICON_SELECTOR).exists();
-    assert.dom(LEFT_ICON_SELECTOR).doesNotExist();
   });
 });

@@ -7,6 +7,10 @@
   border-radius: 100px;
   outline: 0;
   white-space: nowrap;
+  display: inline-flex;
+  justify-content: center;
+  height: min-content;
+  align-items: center;
 
   /* kind variants + disabled state */
   border: var(--boxel-button-border, var(--boxel-border));
@@ -14,24 +18,11 @@
   background-color: var(--boxel-button-color, transparent);
 
   /* size variants */
-  font: var(
-    --boxel-button-font,
-    var(--boxel-font-sm)
-  ); /* font is a bit less clear, should it be controlled by the size variants? */
+  font: var(--boxel-button-font, var(--boxel-font-sm));
   min-height: var(--boxel-button-min-height);
   min-width: var(--boxel-button-min-width, 120px);
-  padding: var(
-    --boxel-button-padding,
-    var(--boxel-sp-xs) var(--boxel-sp-sm)
-  ); /* also by icon layout variant */
+  padding: var(--boxel-button-padding, var(--boxel-sp-xs) var(--boxel-sp-sm));
   letter-spacing: var(--boxel-button-letter-spacing, var(--boxel-lsp-lg));
-}
-
-.boxel-button__icon {
-  width: var(--boxel-button-icon-size);
-  height: var(--boxel-button-icon-size);
-  user-select: none;
-  --icon-color: var(--boxel-button-text-color);
 }
 
 .boxel-button:not(:disabled):hover {
