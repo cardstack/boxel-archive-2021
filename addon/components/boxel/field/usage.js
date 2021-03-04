@@ -8,9 +8,6 @@ export default class extends Component {
   @tracked mode = 'edit';
   @tracked labelClass;
   @tracked labelWidth = '7.5rem';
-  @tracked labelSize = 'default';
-  @tracked labelColor = 'default';
-  @tracked labelCase = 'default';
 
   @action onInput(ev) {
     this.value = ev.target.value;

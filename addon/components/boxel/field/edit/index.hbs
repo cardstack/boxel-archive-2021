@@ -1,17 +1,7 @@
-{{#let (eq @labelSize "large") as |isLarge|}}
-  <label class={{cn
-    "boxel-edit-field"
-    boxel-edit-field--large=isLarge
-  }} ...attributes>
-    <span class={{cn
-      "boxel-edit-field__label"
-      (if isLarge "boxel-edit-field__label--large")
-      (if @labelColor (concat "boxel-edit-field__label--" @labelColor))
-      (if (eq @labelCase "lowercase") "boxel-edit-field__label--lowercase")
-    }}>
-      {{@label}}
-    </span>
+<label class="boxel-edit-field" ...attributes>
+  <span class={{cn "boxel-edit-field__label" (if @labelClass @labelClass)}}>
+    {{@label}}
+  </span>
 
-    {{yield}}
-  </label>
-{{/let}}
+  {{yield}}
+</label>
