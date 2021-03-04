@@ -4,13 +4,17 @@
  */
 
 .boxel-button {
-  border-radius: 100px;
-  outline: 0;
-  white-space: nowrap;
   display: inline-flex;
   justify-content: center;
   height: min-content;
   align-items: center;
+
+  border-radius: 100px;
+  outline: 0;
+  white-space: nowrap;
+
+  transition: background-color var(--boxel-transition),
+    border var(--boxel-transition);
 
   /* kind variants + disabled state */
   border: var(--boxel-button-border, var(--boxel-border));

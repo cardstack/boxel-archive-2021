@@ -19,7 +19,8 @@
 }
 
 .boxel-button--kind-primary:not(:disabled):hover,
-.boxel-button--kind-primary:not(:disabled):active {
+.boxel-button--kind-primary:not(:disabled):active,
+.boxel-button--kind-primary:not(:disabled):focus {
   /* result from putting a 10% opacity black overlay over */
   --boxel-button-border: 1px solid #00D3CE;
   --boxel-button-color: #00D3CE; 
@@ -33,8 +34,9 @@
 }
 
 .boxel-button--kind-secondary-dark:not(:disabled):hover,
-.boxel-button--kind-secondary-dark:not(:disabled):active {
-  --boxel-button-border: 1px solid var(--boxel-boxel-dark);
+.boxel-button--kind-secondary-dark:not(:disabled):active,
+.boxel-button--kind-secondary-dark:not(:disabled):focus {
+  --boxel-button-border: 1px solid var(--boxel-light);
 }
 
 .boxel-button--kind-secondary-light:not(:disabled) {
@@ -44,9 +46,10 @@
   --boxel-button-text-color: var(--boxel-dark);
 }
 
-.boxel-button--kind-secondary-dark:not(:disabled):hover,
-.boxel-button--kind-secondary-dark:not(:disabled):active {
-  --boxel-button-border: 1px solid var(--boxel-boxel-light);
+.boxel-button--kind-secondary-light:not(:disabled):hover,
+.boxel-button--kind-secondary-light:not(:disabled):active,
+.boxel-button--kind-secondary-light:not(:disabled):focus {
+  --boxel-button-border: 1px solid var(--boxel-dark);
 }
 
 /* We only use this in one/two places right now, but putting it here just in case */
@@ -58,6 +61,7 @@
 }
 
 .boxel-button--kind-collection-style:not(:disabled):hover,
-.boxel-button--kind-collection-style:not(:disabled):active {
-  --boxel-button-border: 1px solid var(--boxel-boxel-dark);
+.boxel-button--kind-collection-style:not(:disabled):active,
+.boxel-button--kind-collection-style:not(:disabled):focus {
+  --boxel-button-border: 1px solid var(--boxel-dark);
 }
