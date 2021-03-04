@@ -5280,6 +5280,11 @@ css-element-queries@^0.4.0:
   resolved "https://registry.yarnpkg.com/css-element-queries/-/css-element-queries-0.4.0.tgz#cb5bcde9d980ac3699e7471f798e70600088d3de"
   integrity sha1-y1vN6dmArDaZ50cfeY5wYACI094=
 
+css-element-queries@^1.1.1:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/css-element-queries/-/css-element-queries-1.2.3.tgz#e14940b1fcd4bf0da60ea4145d05742d7172e516"
+  integrity sha512-QK9uovYmKTsV2GXWQiMOByVNrLn2qz6m3P7vWpOR4IdD6I3iXoDw5qtgJEN3Xq7gIbdHVKvzHjdAtcl+4Arc4Q==
+
 css-loader@^3.0.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.6.0.tgz#2e4b2c7e6e2d27f8c8f28f61bffcd2e6c91ef645"
@@ -6559,6 +6564,17 @@ ember-concurrency-decorators@^2.0.0, ember-concurrency-decorators@^2.0.3:
     ember-cli-htmlbars "^5.3.1"
     ember-compatibility-helpers "^1.2.0"
     ember-destroyable-polyfill "^2.0.2"
+
+ember-css-element-queries@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ember-css-element-queries/-/ember-css-element-queries-1.0.0.tgz#130cd69d8b61cbfc2c53c28fb7c4880b94bfa325"
+  integrity sha512-7Ajx2SFWIa+dat5Um6EfPP39wDy0FJswzXqxzUIYbHge8GU0pgDOhhYivQz+OLf+U4gqkJBnC/cfStVVOY110A==
+  dependencies:
+    broccoli-concat "^3.7.3"
+    broccoli-funnel "^2.0.1"
+    css-element-queries "^1.1.1"
+    ember-cli-babel "^6.16.0"
+    resolve "^1.8.1"
 
 ember-css-url@^0.2.1:
   version "0.2.1"

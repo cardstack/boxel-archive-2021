@@ -1,10 +1,19 @@
 .field-renderer {
-  display: grid;
-  grid-template-columns: 190px 450px;
+  --boxel-field-label-width: 12rem;
+
+  align-items: start;
   gap: 30px;
   padding: 10px;
   max-width: 690px;
   margin: 0 auto;
+}
+
+.field-renderer[max-width~="30rem"] {
+  grid-template-columns: 1fr;
+}
+
+.field-renderer[max-width~="30rem"] .field-renderer__title {
+  text-align: left;
 }
 
 .field-renderer.table-field {
@@ -39,11 +48,8 @@
 }
 
 .field-renderer__title {
-  font: var(--boxel-font-sm);
-  font-weight: 700;
-  letter-spacing: var(--boxel-lsp-xl);
-  line-height: 22px;
-  text-transform: uppercase;
+  color: var(--boxel-dark);
+  font: 700 var(--boxel-font-sm);
   text-align: right;
 }
 

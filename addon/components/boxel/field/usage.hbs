@@ -1,17 +1,29 @@
-<Freestyle::Usage @name="Form Field">
+<Freestyle::Usage @name="Field">
   <:example>
     <Boxel::Field
       @label={{this.label}}
       @labelClass={{this.labelClass}}
+      @mode={{this.mode}}
+      style={{css-var boxel-field-label-width=this.labelWidth}}
     >
-      <Boxel::Input
-        @value={{this.value}}
-        @updateValue={{this.updateValue}}
-      />
+      {{#if (eq this.mode "edit")}}
+        <Boxel::Input
+          @value={{this.value}}
+          @updateValue={{this.updateValue}}
+        />
+      {{else}}
+        {{this.value}}
+      {{/if}}
     </Boxel::Field>
   </:example>
 
   <:api as |Args|>
+    <Args.String
+      @name="mode"
+      @description="if mode is `edit`, field is wrapped in label element"
+      @value={{this.mode}}
+      @onInput={{fn (mut this.mode)}}
+    />
     <Args.String
       @name="label"
       @description="field label"
@@ -20,10 +32,16 @@
     />
     <Args.String
       @name="labelClass"
-      @description="css class name for the label element"
+      @description="css class name for the field title"
       @value={{this.labelClass}}
       @optional={{true}}
       @onInput={{fn (mut this.labelClass)}}
+    />
+    <Args.String
+      @name="--boxel-field-label-width"
+      @description="css variable for the width of the label column"
+      @value={{this.labelWidth}}
+      @onInput={{fn (mut this.labelWidth)}}
     />
     <Args.Yield
       @description="Yield value or form field"

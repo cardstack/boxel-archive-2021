@@ -1,8 +1,17 @@
-<label class="boxel-edit-field" ...attributes>
-  <span class={{cn "boxel-edit-field__label" (if @labelClass @labelClass)}}>
-    {{@label}}
-  </span>
-  <span>
+{{#if (eq @mode "edit")}}
+  <Boxel::Field::Edit
+    @label={{@label}}
+    @labelClass={{@labelClass}}
+    ...attributes
+  >
     {{yield}}
-  </span>
-</label>
+  </Boxel::Field::Edit>
+{{else}}
+  <Boxel::Field::View
+    @label={{@label}}
+    @labelClass={{@labelClass}}
+    ...attributes
+  >
+    {{yield}}
+  </Boxel::Field::View>
+{{/if}}
