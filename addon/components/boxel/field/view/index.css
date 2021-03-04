@@ -1,5 +1,9 @@
 .boxel-field {
   --boxel-field-label-width: 7.5rem;
+  --boxel-field-label-color: var(--boxel-purple-400);
+  --boxel-field-label-font: 600 var(--boxel-font-xs);
+  --boxel-field-label-letter-spacing: var(--boxel-lsp-xl);
+  --boxel-field-label-text-transform: uppercase;
 
   display: grid;
   grid-template-columns: var(--boxel-field-label-width) 1fr;
@@ -8,12 +12,39 @@
 }
 
 .boxel-field__label {
-  color: var(--boxel-purple-400);
-  font: 600 var(--boxel-font-xs);
-  letter-spacing: var(--boxel-lsp-xl);
-  text-transform: uppercase;
+  color: var(--boxel-field-label-color);
+  font: var(--boxel-field-label-font);
+  letter-spacing: var(--boxel-field-label-letter-spacing);
+  text-transform: var(--boxel-field-label-text-transform);
 }
 
 .boxel-field[max-width~="30rem"] {
   grid-template-columns: 1fr;
+}
+
+
+/* Variants */
+
+/* @labelSize="large" */
+.boxel-field--large {
+  --boxel-field-label-width: 12rem;
+}
+
+.boxel-field__label--large {
+  --boxel-field-label-font: 700 var(--boxel-font-sm);
+}
+
+/* @labelColor="black" */
+.boxel-field__label--dark {
+  --boxel-field-label-color: var(--boxel-dark);
+}
+.boxel-field__label--medium-dark {
+  --boxel-field-label-color: var(--boxel-purple-500);
+}
+
+/* @labelCase="lowercase" */
+.boxel-field__label--lowercase {
+  --boxel-field-label-letter-spacing: var(--boxel-lsp);
+  --boxel-field-label-text-transform: initial;
+  font-weight: initial;
 }

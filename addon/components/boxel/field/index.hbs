@@ -1,7 +1,9 @@
 {{#if (eq @mode "edit")}}
   <Boxel::Field::Edit
     @label={{@label}}
-    @labelClass={{@labelClass}}
+    @labelSize={{@labelSize}}
+    @labelColor={{@labelColor}}
+    @labelCase={{@labelCase}}
     ...attributes
   >
     {{yield}}
@@ -9,7 +11,9 @@
 {{else}}
   <Boxel::Field::View
     @label={{@label}}
-    @labelClass={{@labelClass}}
+    @labelSize={{@labelSize}}
+    @labelColor={{@labelColor}}
+    @labelCase={{@labelCase}}
     ...attributes
   >
     {{yield}}

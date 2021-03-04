@@ -1,10 +1,11 @@
 <Freestyle::Usage @name="Field">
   <:example>
     <Boxel::Field
-      @label={{this.label}}
-      @labelClass={{this.labelClass}}
       @mode={{this.mode}}
-      style={{css-var boxel-field-label-width=this.labelWidth}}
+      @label={{this.label}}
+      @labelSize={{this.labelSize}}
+      @labelColor={{this.labelColor}}
+      @labelCase={{this.labelCase}}
     >
       {{#if (eq this.mode "edit")}}
         <Boxel::Input
@@ -33,16 +34,25 @@
       @onInput={{fn (mut this.label)}}
     />
     <Args.String
-      @name="labelClass"
-      @description="optional css class name for the field label"
-      @value={{this.labelClass}}
-      @onInput={{fn (mut this.labelClass)}}
+      @name="labelSize"
+      @description="label font size options"
+      @value={{this.labelSize}}
+      @options={{w "default large"}}
+      @onInput={{fn (mut this.labelSize)}}
     />
     <Args.String
-      @name="--boxel-field-label-width"
-      @description="css variable for the width of the label column"
-      @value={{this.labelWidth}}
-      @onInput={{fn (mut this.labelWidth)}}
+      @name="labelColor"
+      @description="label color options"
+      @value={{this.labelColor}}
+      @options={{w "default dark medium-dark"}}
+      @onInput={{fn (mut this.labelColor)}}
+    />
+    <Args.String
+      @name="labelCase"
+      @description="label text casing"
+      @value={{this.labelCase}}
+      @options={{w "default lowercase"}}
+      @onInput={{fn (mut this.labelCase)}}
     />
     <Args.Yield
       @description="Yield value or form field"

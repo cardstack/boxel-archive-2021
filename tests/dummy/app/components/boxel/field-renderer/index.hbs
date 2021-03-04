@@ -4,7 +4,8 @@
     <Boxel::Field
       class="field-renderer {{lowercase (dasherize (trim @field.title))}}-edit-field {{@class}}"
       @label={{humanize @field.title}}
-      @labelClass="field-renderer__title"
+      @labelSize="large"
+      @labelColor="dark"
     >
       {{#if (eq @field.type "card")}}
         <EmbeddedCollectionEditor
@@ -69,7 +70,8 @@
       class="field-renderer"
       @mode="edit"
       @label={{humanize @field.title}}
-      @labelClass="field-renderer__title"
+      @labelSize="large"
+      @labelColor="dark"
     >
       {{#if (eq @field.type "dropdown")}}
         <div class="field-renderer__dropdown">
@@ -89,6 +91,7 @@
         <Boxel::Input
           type={{@field.type}}
           class="field-renderer__input"
+          @size="large"
           @value={{if (eq @field.title "title") (titleize @field.value) @field.value}}
         />
       {{/if}}
