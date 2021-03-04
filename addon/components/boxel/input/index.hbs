@@ -1,6 +1,13 @@
-<Input
-  class="boxel-input"
-  @value={{@value}}
-  {{on "input" (optional @updateValue)}}
-  ...attributes
-/>
+{{#let (eq @size "large") as |isLarge|}}
+  <Input
+    class={{cn
+      "boxel-input"
+      boxel-input--large=isLarge
+    }}
+    @id={{@id}}
+    @value={{@value}}
+    {{on "input" (optional @onInput)}}
+    disabled={{@disabled}}
+    ...attributes
+  />
+{{/let}}

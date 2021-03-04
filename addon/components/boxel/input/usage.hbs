@@ -1,7 +1,40 @@
 <Freestyle::Usage @name="Input">
   <:example>
     <Boxel::Input
-
+      @size={{this.size}}
+      @id={{this.id}}
+      @value={{this.value}}
+      @onInput={{this.onInput}}
+      @disabled={{this.disabled}}
     />
   </:example>
+  <:api as |Args|>
+    <Args.String
+      @name="size"
+      @description="input height options"
+      @value={{this.size}}
+      @options={{w "default large"}}
+      @defaultValue="2.5rem or ~40px"
+      @onInput={{fn (mut this.size)}}
+    />
+    <Args.String
+      @name="id"
+      @value={{this.id}}
+      @onInput={{fn (mut this.id)}}
+    />
+    <Args.String
+      @name="value"
+      @value={{this.value}}
+      @onInput={{fn (mut this.value)}}
+    />
+    <Args.Bool
+      @name="disabled"
+      @value={{this.disabled}}
+      @onInput={{fn (mut this.disabled)}}
+    />
+    <Args.Action
+      @name="updateValue"
+      @description="function to update `value`"
+    />
+  </:api>
 </Freestyle::Usage>

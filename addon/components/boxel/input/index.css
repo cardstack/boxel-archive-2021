@@ -1,5 +1,5 @@
 .boxel-input {
-  --boxel-input-height: auto;
+  --boxel-input-height: calc(40/16 * 1rem);
 
   width: 100%;
   height: var(--boxel-input-height);
@@ -17,4 +17,14 @@
 
 .boxel-input:focus {
   outline-color: var(--boxel-highlight);
+}
+
+.boxel-input:disabled {
+  background-color: var(--boxel-light-100);
+  border-color: var(--boxel-purple-300);
+  color: var(--boxel-purple-300);
+}
+
+.boxel-input--large {
+  --boxel-input-height: calc(60/16 * 1rem);
 }

@@ -9,7 +9,7 @@
       {{#if (eq this.mode "edit")}}
         <Boxel::Input
           @value={{this.value}}
-          @updateValue={{this.updateValue}}
+          @onInput={{this.onInput}}
         />
       {{else}}
         {{this.value}}
@@ -20,8 +20,10 @@
   <:api as |Args|>
     <Args.String
       @name="mode"
-      @description="if mode is `edit`, field is wrapped in label element"
+      @description="field mode"
       @value={{this.mode}}
+      @options={{w "view edit"}}
+      @defaultValue="view"
       @onInput={{fn (mut this.mode)}}
     />
     <Args.String
@@ -32,9 +34,8 @@
     />
     <Args.String
       @name="labelClass"
-      @description="css class name for the field title"
+      @description="optional css class name for the field label"
       @value={{this.labelClass}}
-      @optional={{true}}
       @onInput={{fn (mut this.labelClass)}}
     />
     <Args.String
