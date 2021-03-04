@@ -11,15 +11,6 @@
   transition: background-color var(--boxel-transition);
 }
 
-.action-chin > button {
-  transition: filter var(--boxel-transition);
-}
-
-.action-chin > button:hover,
-.action-chin > button:focus {
-  filter: brightness(1.1);
-}
-
 .action-chin__lock-text {
   display: grid;
   grid-auto-flow: column;
