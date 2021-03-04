@@ -1,13 +1,15 @@
 <Freestyle::Usage @name="Button">
   <:example>
-    <Boxel::Button
-      @kind={{this.kind}}
-      @size={{this.size}}
-      @disabled={{this.disabled}}
-      {{on "click" this.alert}}
-    >
-      Button Text
-    </Boxel::Button>
+    <div class={{cn usage-button-dark-mode-background=(eq this.kind "secondary-dark")}}>
+      <Boxel::Button
+        @kind={{this.kind}}
+        @size={{this.size}}
+        @disabled={{this.disabled}}
+        {{on "click" this.alert}}
+      >
+        Button Text
+      </Boxel::Button>
+    </div>
   </:example>
   <:api as |Args|>
     <Args.String
@@ -15,7 +17,7 @@
       @optional={{true}}
       @description="Controls the colors of the button"
       @defaultValue={{"secondary-light"}}
-      @options={{this.kindVariants.light}}
+      @options={{this.kindVariants.all}}
       @onInput={{fn (mut this.kind)}}
       @value={{this.kind}}
     />
@@ -35,9 +37,7 @@
       @onInput={{fn (mut this.disabled)}}
       @value={{this.disabled}}
     />
-    <Args.Yield 
-      @description="Contents of the button"
-    />
+    <Args.Yield @description="Contents of the button" />
   </:api>
 </Freestyle::Usage>
 <Freestyle::Usage @name="Button" @description="Light mode">
@@ -55,7 +55,7 @@
             {{/each}}
             <td>
               <Boxel::Button
-                @kind={{'secondary-light'}}
+                @kind={{"secondary-light"}}
                 @size={{size}}
                 @disabled={{true}}
               >
@@ -83,7 +83,7 @@
             {{/each}}
             <td>
               <Boxel::Button
-                @kind={{'secondary-light'}}
+                @kind={{"secondary-light"}}
                 @size={{size}}
                 @disabled={{true}}
               >

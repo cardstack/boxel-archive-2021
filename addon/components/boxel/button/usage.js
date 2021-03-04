@@ -5,6 +5,7 @@ import { action } from '@ember/object';
 export default class extends Component {
   sizeVariants = ['small', 'base', 'large'];
   kindVariants = {
+    all: ['primary', 'secondary-light', 'secondary-dark'],
     light: ['primary', 'secondary-light'],
     dark: ['primary', 'secondary-dark'],
   };
