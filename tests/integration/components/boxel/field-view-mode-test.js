@@ -22,7 +22,11 @@ module('Integration | Component | Field - View Mode', function (hooks) {
   });
 
   test('it renders with id and labelClass', async function (assert) {
-    await render(hbs`<Boxel::Field @id="breed" @label="Breed" @labelClass="dog-breed">
+    await render(hbs`<Boxel::Field
+      @id="breed"
+      @label="Breed"
+      @labelClass="dog-breed"
+    >
       Beagle
     </Boxel::Field>`);
     assert.dom('[data-test-boxel-field-id="breed"]').hasText('Breed Beagle');

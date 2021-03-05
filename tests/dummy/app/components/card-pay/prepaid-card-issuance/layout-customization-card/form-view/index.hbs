@@ -19,7 +19,7 @@
     <li>
       <Boxel::Field
         @label="Name of Issuer"
-        @mode="edit"
+        @fieldMode="edit"
       >
         <Boxel::Input
           @value={{@issuerName}}
@@ -30,7 +30,7 @@
     <li>
       <Boxel::Field
         @label="Background Color"
-        @mode="edit"
+        @fieldMode="edit"
       >
         {{!-- TODO: Extract dropdown component + hover and selection styles --}}
         <PowerSelect
@@ -56,7 +56,7 @@
     <li>
       <Boxel::Field
         @label="Pattern"
-        @mode="edit"
+        @fieldMode="edit"
       >
         <PowerSelect
           class="layout-form-view__value layout-form-view__dropdown"
