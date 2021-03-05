@@ -7,8 +7,7 @@
   ...attributes
 >
   <Boxel::Button
-    @size={{'small'}}
-    @kind={{if this.isDataEntryMode 'primary'}}
+    @kind={{if this.isDataEntryMode "primary"}}
     @disabled={{@disabled}}
     {{on 'click' (optional @onClickButton)}}
   >

@@ -74,7 +74,7 @@ module('Integration | Component | Button', function (hooks) {
   });
 
   test('It can apply appropriate classes depending on the size argument', async function (assert) {
-    const sizes = ['small', 'base', 'large'];
+    const sizes = ['small', 'base', 'tall', 'touch'];
     const sizeClassRegexes = sizes.map((v) => new RegExp('--size-' + v));
 
     this.setProperties({

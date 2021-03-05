@@ -10,34 +10,39 @@
  * --boxel-button-min-width
  * --boxel-button-min-height
  * --boxel-button-font
- * --boxel-button-icon-size
- * --boxel-button-icon-spacing
  * --boxel-button-letter-spacing
  * 
  */
+ /* thinner base button */
 .boxel-button--size-small {
-  --boxel-button-padding: var(--boxel-sp-xxxs) var(--boxel-sp-sm);
+  --boxel-button-padding: var(--boxel-sp-xxxs) var(--boxel-sp);
   --boxel-button-font: 600 var(--boxel-font-sm);
-  --boxel-button-min-height: 30px;
-  --boxel-button-icon-size: var(--boxel-font-size-sm);
-  --boxel-button-icon-spacing: var(--boxel-sp-xxs);
   --boxel-button-letter-spacing: var(--boxel-lsp);
+  --boxel-button-min-height: 2rem;
 }
 
 .boxel-button--size-base {
-  --boxel-button-padding: var(--boxel-sp-xs) var(--boxel-sp-sm);
+  --boxel-button-padding: var(--boxel-sp-xxxs) var(--boxel-sp-xl);
   --boxel-button-font: 600 var(--boxel-font-sm);
-  --boxel-button-icon-size: var(--boxel-font-size-sm);
-  --boxel-button-icon-spacing: var(--boxel-sp-xs);
-  --boxel-button-letter-spacing: var(--boxel-lsp-sm);
-  --boxel-button-min-height: 41px;
+  --boxel-button-letter-spacing: var(--boxel-lsp);
+  --boxel-button-min-height: 2rem;
 }
 
-.boxel-button--size-large {
-  --boxel-button-padding: var(--boxel-sp-xs) var(--boxel-sp-sm);
+/* tall but thinner button */
+.boxel-button--size-tall {
+  --boxel-button-padding: var(--boxel-sp-xs) var(--boxel-sp-lg);
+  --boxel-button-font: 600 var(--boxel-font-sm);
+  --boxel-button-letter-spacing: var(--boxel-lsp);
+  --boxel-button-min-height: 2.25rem;
+}
+
+/* 
+  extra tall button mainly used in mobile screens 
+  touchable as it's bigger
+  */
+.boxel-button--size-touch {
+  --boxel-button-padding: var(--boxel-sp-xs) var(--boxel-sp-lg);
   --boxel-button-font: 600 var(--boxel-font);
-  --boxel-button-icon-size: var(--boxel-font-size-sm);
-  --boxel-button-icon-spacing: var(--boxel-sp-xs);
   --boxel-button-letter-spacing: var(--boxel-lsp-xs);
-  --boxel-button-min-height: 46px;
+  --boxel-button-min-height: 3rem;
 }
