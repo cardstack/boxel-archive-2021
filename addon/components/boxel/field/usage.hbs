@@ -27,6 +27,12 @@
       @onInput={{fn (mut this.mode)}}
     />
     <Args.String
+      @name="id"
+      @description="optional field id"
+      @value={{this.id}}
+      @onInput={{fn (mut this.id)}}
+    />
+    <Args.String
       @name="label"
       @description="field label"
       @value={{this.label}}

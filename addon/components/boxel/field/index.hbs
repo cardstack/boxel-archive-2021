@@ -1,5 +1,6 @@
 {{#if (eq @mode "edit")}}
   <Boxel::Field::Edit
+    @id={{@id}}
     @label={{@label}}
     @labelClass={{@labelClass}}
     ...attributes
@@ -8,6 +9,7 @@
   </Boxel::Field::Edit>
 {{else}}
   <Boxel::Field::View
+    @id={{@id}}
     @label={{@label}}
     @labelClass={{@labelClass}}
     ...attributes

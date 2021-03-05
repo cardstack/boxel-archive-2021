@@ -1,5 +1,12 @@
-<label class="boxel-edit-field" ...attributes>
-  <span class={{cn "boxel-edit-field__label" (if @labelClass @labelClass)}}>
+<label
+  class="boxel-edit-field"
+  data-test-boxel-edit-field={{@id}}
+  ...attributes
+>
+  <span
+    class={{cn "boxel-edit-field__label" (if @labelClass @labelClass)}}
+    data-test-boxel-edit-field-label={{@id}}
+  >
     {{@label}}
   </span>
 
