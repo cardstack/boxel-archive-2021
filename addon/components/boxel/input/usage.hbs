@@ -3,7 +3,7 @@
     <Boxel::Input
       @id={{this.id}}
       @value={{this.value}}
-      @onInput={{this.onInput}}
+      @onInput={{@onInput}}
       @disabled={{this.disabled}}
     />
   </:example>
@@ -25,6 +25,7 @@
     />
     <Args.Action
       @name="onInput"
+      @description="Optional argument to pass in custom function"
     />
   </:api>
 </Freestyle::Usage>
