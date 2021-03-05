@@ -21,8 +21,8 @@
 .boxel-button--kind-primary:not(:disabled):hover,
 .boxel-button--kind-primary:not(:disabled):active {
   /* result from putting a 10% opacity black overlay over */
-  --boxel-button-border: 1px solid #00D3CE;
-  --boxel-button-color: #00D3CE; 
+  --boxel-button-border: 1px solid var(--boxel-highlight-hover);
+  --boxel-button-color: var(--boxel-highlight-hover); 
 }
 
 .boxel-button--kind-secondary-dark:not(:disabled) {
