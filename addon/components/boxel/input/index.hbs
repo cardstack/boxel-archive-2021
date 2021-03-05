@@ -1,13 +1,9 @@
-{{#let (eq @size "large") as |isLarge|}}
-  <Input
-    class={{cn
-      "boxel-input"
-      boxel-input--large=isLarge
-    }}
-    @id={{@id}}
-    @value={{@value}}
-    {{on "input" (optional @onInput)}}
-    disabled={{@disabled}}
-    ...attributes
-  />
-{{/let}}
+<Input
+  class="boxel-input"
+  @id={{@id}}
+  @value={{@value}}
+  {{on "input" (optional @onInput)}}
+  disabled={{@disabled}}
+  data-test-boxel-input={{@id}}
+  ...attributes
+/>
