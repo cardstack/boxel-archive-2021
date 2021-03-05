@@ -29,7 +29,7 @@
   letter-spacing: var(--boxel-button-letter-spacing, var(--boxel-lsp-lg));
 }
 
-button:focus:not(:focus-visible) {
+.boxel-button:focus:not(:focus-visible) {
   outline: 0;
 }
 
