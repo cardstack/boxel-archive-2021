@@ -33,7 +33,7 @@
   --boxel-button-padding: var(--boxel-sp-xs) var(--boxel-sp-lg);
   --boxel-button-font: 600 var(--boxel-font-sm);
   --boxel-button-letter-spacing: var(--boxel-lsp);
-  --boxel-button-min-height: 2.25rem;
+  --boxel-button-min-height: 2.5rem;
 }
 
 /* 
