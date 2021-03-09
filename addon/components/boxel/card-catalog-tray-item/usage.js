@@ -10,7 +10,7 @@ export default class CardCatalogTrayItemUsage extends Component {
   @tracked state = null;
 
   /* dragging example start */
-  @tracked dragExampleState = 'rest';
+  @tracked dragExampleState = null;
 
   @action onDragStart(e) {
     // copy the item that is hidden far far away and set it as the drag image
@@ -21,7 +21,7 @@ export default class CardCatalogTrayItemUsage extends Component {
     this.dragExampleState = 'dragged-in-tray';
   }
   @action onDragEnd() {
-    this.dragExampleState = 'rest';
+    this.dragExampleState = null;
   }
   /* dragging example end */
 
