@@ -13,7 +13,3 @@
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
 }
-
-.boxel-edit-field[max-width~="30rem"] {
-  grid-template-columns: 1fr;
-}

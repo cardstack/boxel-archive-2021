@@ -8,14 +8,6 @@
   margin: 0 auto;
 }
 
-.field-renderer[max-width~="30rem"] {
-  grid-template-columns: 1fr;
-}
-
-.field-renderer[max-width~="30rem"] .field-renderer__title {
-  text-align: left;
-}
-
 .field-renderer.table-field {
   grid-template-columns: 1fr;
   gap: 10px;

@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, fillIn } from '@ember/test-helpers';
+import { render, fillIn, pauseTest } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 module('Integration | Component | Input', function (hooks) {
@@ -9,11 +9,13 @@ module('Integration | Component | Input', function (hooks) {
   test('it renders', async function (assert) {
     await render(hbs`<Boxel::Input />`);
     assert.dom('[data-test-boxel-input]').exists();
+    assert.dom('[data-test-boxel-input]').isNotDisabled();
+    assert.dom('[data-test-boxel-input]').isNotRequired();
   });
 
   test('it renders with arguments', async function (assert) {
     await render(
-      hbs`<Boxel::Input @id="input-test" @value="Puppies" @disabled={{true}} />`
+      hbs`<Boxel::Input @id="input-test" @value="Puppies" @disabled={{true}} @required={{true}} />`
     );
     assert
       .dom('[data-test-boxel-input-id="input-test"]')
@@ -24,11 +26,15 @@ module('Integration | Component | Input', function (hooks) {
     assert
       .dom('[data-test-boxel-input-id="input-test"]')
       .isDisabled('can be disabled');
+    assert
+      .dom('[data-test-boxel-input-id="input-test"]')
+      .isRequired('can be required');
   });
 
   test('it accepts input', async function (assert) {
     await render(hbs`<Boxel::Input />`);
     assert.dom('[data-test-boxel-input]').hasNoValue();
+
     await fillIn('[data-test-boxel-input]', 'Puppies');
     assert.dom('[data-test-boxel-input]').hasValue('Puppies');
   });

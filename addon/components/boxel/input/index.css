@@ -5,7 +5,7 @@
   min-height: var(--boxel-input-height);
   padding: var(--boxel-sp-xxs) 0 var(--boxel-sp-xxs) var(--boxel-sp);
   border: 1px solid var(--boxel-purple-300);
-  border-radius: 5px;
+  border-radius: var(--boxel-border-radius-sm);
   font: var(--boxel-font);
   letter-spacing: var(--boxel-lsp-sm);
   transition: border-color var(--boxel-transition);
