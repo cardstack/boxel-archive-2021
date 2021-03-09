@@ -70,7 +70,7 @@
 }
 
 .boxel-searchbox__clear-button {
-  --icon-color: white;
+  --icon-color: var(--boxel-light);
   right: var(--boxel-sp-xs);
 
   /* override button styles */
