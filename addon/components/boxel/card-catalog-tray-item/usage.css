@@ -1,0 +1,79 @@
+/* a dummy item to do drag and drop */
+.very-far-away {
+  position: absolute;
+  top: -1000px;
+}
+
+/* card catalog tray usage */
+.boxel-card-catalog-tray-example {
+  /* background-image: url('../@cardstack/boxel/images/icons/close.svg'); */
+  --close-button-width: 8px;
+  border: 1px solid var(--boxel-dark);
+  padding: var(--boxel-sp-sm) 0;
+  border-radius: 10px;
+  background-color: var(--boxel-purple-600);
+  color: var(--boxel-light);
+  min-height: 170px;
+}
+
+.boxel-card-catalog-tray-example__header-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0
+    calc(var(--boxel-sp-sm) + var(--boxel-sp) + var(--close-button-width)) 0
+    var(--boxel-sp);
+}
+
+.boxel-card-catalog-tray-example__close-button {
+  position: absolute;
+  padding: 0;
+  background: transparent;
+  border: none;
+  height: min-content;
+  width: min-content;
+  line-height: 0;
+  top: var(--boxel-sp-xs);
+  right: var(--boxel-sp);
+  cursor: pointer;
+  --icon-color: var(--boxel-light);
+}
+
+.boxel-card-catalog-tray-example__header-title {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.boxel-card-catalog-tray-example__header-title svg {
+  margin-right: var(--boxel-sp-xs);
+  --icon-color: var(--boxel-cyan);
+}
+
+.boxel-card-catalog-tray-example__header-search {
+  align-self: center;
+  justify-self: end;
+  width: 100%;
+  max-width: 240px;
+  margin-left: var(--boxel-sp-xxxs);
+}
+
+.boxel-card-catalog-tray-example__list-container {
+  padding: var(--boxel-sp-xs) 0;
+  overflow: scroll;
+}
+
+.boxel-card-catalog-tray-example__list {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--boxel-sp);
+}
+
+.boxel-card-catalog-tray-example__list > * {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.boxel-card-catalog-tray-example__list > * + * {
+  margin-left: var(--boxel-sp);
+}
