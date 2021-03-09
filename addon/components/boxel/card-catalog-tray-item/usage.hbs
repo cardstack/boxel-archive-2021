@@ -12,7 +12,7 @@
       @name="state"
       @description="State of the tray item, controls its visual styles."
       @value={{this.state}}
-      @options={{array null 'dragged-item' 'dragged-in-tray' 'used'}}
+      @options={{array null "dragged-item" "dragged-in-tray" "used"}}
       @onInput={{fn (mut this.state)}}
     />
     <Args.String
@@ -46,8 +46,8 @@
       @description="Some content"
       @icon="gear"
       @state={{this.dragExampleState}}
-      {{on 'dragstart' this.onDragStart}}
-      {{on 'dragend' this.onDragEnd}}
+      {{on "dragstart" this.onDragStart}}
+      {{on "dragend" this.onDragEnd}}
     />
     <Boxel::CardCatalogTrayItem
       class="very-far-away"
@@ -65,10 +65,10 @@
       <header class="boxel-card-catalog-tray-example__header-container">
         <h4 class="boxel-card-catalog-tray-example__header-title">
           {{svg-jar
-            'card-catalog'
+            "card-catalog"
             width=20
             height=20
-            class='boxel-card-catalog-tray-example__header-icon'
+            class="boxel-card-catalog-tray-example__header-icon"
           }}
           Card Catalog
         </h4>
@@ -84,7 +84,7 @@
           type="button"
           aria-label="Close"
         >
-          {{svg-jar 'close' width=8 height=8 aria-hidden=true}}
+          {{svg-jar "close" width=8 height=8 aria-hidden=true}}
         </button>
       </header>
       <div class="boxel-card-catalog-tray-example__list-container">
