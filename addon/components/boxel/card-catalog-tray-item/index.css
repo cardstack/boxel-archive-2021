@@ -23,7 +23,7 @@
 }
 
 .boxel-card-catalog-tray-item--dragged-item {
-  --boxel-card-catalog-tray-item-border: 1px solid rgba(39,35,48, 0.15);
+  --boxel-card-catalog-tray-item-border: 1px solid rgba(39,35,48, 0.15); /* #272330 with 15% opacity */
   filter:  drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
 }
 
