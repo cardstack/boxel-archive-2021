@@ -70,5 +70,5 @@ export default class CardCatalogTrayItemUsage extends Component {
   @action onClearFilter() {
     this.filter = '';
   }
-  /* dragging example end */
+  /* tray example end */
 }
