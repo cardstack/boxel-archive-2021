@@ -1,19 +1,21 @@
 <section class="layout-display-view__field">
-  <div class="layout-display-view__label layout-display-view__preview-label">
-    Card Preview
-  </div>
-  <Boxel::Field class="layout-display-view__value layout-display-view__preview-value">
-    <div class="layout-display-view__scaled-card">
-      <CardPay::PrepaidCard
-        @issuerName={{@issuerName}}
-        @issuerIcon={{@issuerIcon}}
-        @headerColor={{@headerColor.value}}
-        @darkTheme={{eq @headerColor.theme "dark"}}
-        @headerPattern={{@headerPattern}}
-        @balance={{1234}}
-        @accountAddress="0x123499999995678"
-        @accountNetwork="xDai Chain"
-      />
+  <Boxel::Field
+    @label="Card Preview"
+    class="layout-display-view__preview-field"
+  >
+    <div class="layout-display-view__value layout-display-view__preview-value">
+      <div class="layout-display-view__scaled-card">
+        <CardPay::PrepaidCard
+          @issuerName={{@issuerName}}
+          @issuerIcon={{@issuerIcon}}
+          @headerColor={{@headerColor.value}}
+          @darkTheme={{eq @headerColor.theme "dark"}}
+          @headerPattern={{@headerPattern}}
+          @balance={{1234}}
+          @accountAddress="0x123499999995678"
+          @accountNetwork="xDai Chain"
+        />
+      </div>
     </div>
   </Boxel::Field>
   <Boxel::Field @label="Name of Issuer">
