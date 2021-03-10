@@ -6,7 +6,6 @@
 
 /* card catalog tray usage */
 .boxel-card-catalog-tray-example {
-  /* background-image: url('../@cardstack/boxel/images/icons/close.svg'); */
   --close-button-width: 8px;
   border: 1px solid var(--boxel-dark);
   padding: var(--boxel-sp-sm) 0;
@@ -67,6 +66,8 @@
   display: inline-flex;
   align-items: center;
   padding: 0 var(--boxel-sp);
+  min-height: 80px;
+  min-width: 100%;
 }
 
 .boxel-card-catalog-tray-example__list > * {
