@@ -1,8 +1,11 @@
-<Freestyle::Usage @name="Input">
+<Freestyle::Usage @name="TextField">
   <:example>
-    <Boxel::Input
+    <Boxel::TextField
       @id={{this.id}}
       @value={{this.value}}
+      @label={{this.label}}
+      @labelClass={{this.labelClass}}
+      @fieldMode={{this.mode}}
       @onInput={{@onInput}}
       @disabled={{this.disabled}}
       @required={{this.required}}
@@ -10,7 +13,16 @@
   </:example>
   <:api as |Args|>
     <Args.String
+      @name="fieldMode"
+      @description="field mode"
+      @value={{this.mode}}
+      @options={{w "view edit"}}
+      @defaultValue="view"
+      @onInput={{fn (mut this.mode)}}
+    />
+    <Args.String
       @name="id"
+      @description="optional field id"
       @value={{this.id}}
       @onInput={{fn (mut this.id)}}
     />
@@ -18,6 +30,18 @@
       @name="value"
       @value={{this.value}}
       @onInput={{fn (mut this.value)}}
+    />
+    <Args.String
+      @name="label"
+      @description="field label"
+      @value={{this.label}}
+      @onInput={{fn (mut this.label)}}
+    />
+    <Args.String
+      @name="labelClass"
+      @description="optional css class name for the field label"
+      @value={{this.labelClass}}
+      @onInput={{fn (mut this.labelClass)}}
     />
     <Args.Bool
       @name="disabled"

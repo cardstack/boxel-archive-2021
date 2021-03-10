@@ -1,8 +1,8 @@
 <Input
   class="boxel-input"
   @id={{@id}}
-  @value={{this.value}}
-  {{on "input" this.onInput}}
+  @value={{@value}}
+  {{on "input" (optional @onInput)}}
   required={{@required}}
   disabled={{@disabled}}
   data-test-boxel-input

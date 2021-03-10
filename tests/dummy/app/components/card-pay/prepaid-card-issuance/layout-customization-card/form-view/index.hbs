@@ -17,15 +17,12 @@
 
   <ul class="layout-form-view__fields">
     <li>
-      <Boxel::Field
+      <Boxel::TextField
         @label="Name of Issuer"
         @fieldMode="edit"
-      >
-        <Boxel::Input
-          @value={{@issuerName}}
-          @updateValue={{@updateIssuerName}}
-        />
-      </Boxel::Field>
+        @value={{@issuerName}}
+        @updateValue={{@updateIssuerName}}
+      />
     </li>
     <li>
       <Boxel::Field
