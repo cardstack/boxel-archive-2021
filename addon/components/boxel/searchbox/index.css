@@ -18,7 +18,7 @@
   padding-left: calc(var(--boxel-searchbox-icon-size) + var(--boxel-sp-xs) + var(--boxel-sp-xs));
   padding-right: calc(var(--boxel-searchbox-icon-size) + var(--boxel-sp-xs) + var(--boxel-sp-xxxs));
   border-radius: 100px;
-  background-color: #272330;
+  background-color: var(--boxel-purple-900);
   color: var(--boxel-light);
   font-size: 13px;
 }
