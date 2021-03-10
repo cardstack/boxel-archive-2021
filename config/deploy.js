@@ -26,6 +26,12 @@ module.exports = function (deployTarget) {
       secretAccessKey: process.env['YAPP_AWS_SECRET'],
       bucket: 'boxel-assets',
       region: 'ap-southeast-1',
+      filePattern:
+        '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,otf,wasm,json,flac}',
+    };
+    ENV.manifest = {
+      filePattern:
+        '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,otf,wasm,json,flac}',
     };
     ENV['s3-index'] = {
       accessKeyId: process.env['YAPP_AWS_KEY'],
