@@ -22,8 +22,8 @@ module.exports = function (deployTarget) {
       activateOnDeploy: true,
     };
     ENV.s3 = {
-      accessKeyId: process.env['YAPP_AWS_KEY'],
-      secretAccessKey: process.env['YAPP_AWS_SECRET'],
+      accessKeyId: process.env['TEMP_AWS_KEY'],
+      secretAccessKey: process.env['TEMP_AWS_SECRET'],
       bucket: 'boxel-assets',
       region: 'ap-southeast-1',
       filePattern:
@@ -34,8 +34,8 @@ module.exports = function (deployTarget) {
         '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,otf,wasm,json,flac}',
     };
     ENV['s3-index'] = {
-      accessKeyId: process.env['YAPP_AWS_KEY'],
-      secretAccessKey: process.env['YAPP_AWS_SECRET'],
+      accessKeyId: process.env['TEMP_AWS_KEY'],
+      secretAccessKey: process.env['TEMP_AWS_SECRET'],
       bucket: 'boxel-preview',
       region: 'ap-southeast-1',
       prefix: process.env['PR_BRANCH_NAME'],
