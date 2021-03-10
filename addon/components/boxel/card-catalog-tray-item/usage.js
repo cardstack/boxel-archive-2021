@@ -29,20 +29,22 @@ export default class CardCatalogTrayItemUsage extends Component {
   @tracked filter = '';
   items = [
     {
-      state: 'used',
-      icon: 'gear',
-      title: 'First item',
-      description: 'A used item',
-    },
-    {
-      state: null,
-      icon: 'gear',
-      title: 'Second item',
-      description: 'Unused item',
-    },
-    {
       state: null,
       icon: 'eye',
+      title: 'Premium content',
+      description:
+        'Content in this area is only visible to your paying supporters',
+    },
+    {
+      state: 'used',
+      icon: 'gear',
+      title: 'Second item',
+      description:
+        'A used item. This should appear darker and with a check mark on the right.',
+    },
+    {
+      state: null,
+      icon: 'gear',
       title: 'Third item',
       description: 'Unused item',
     },
