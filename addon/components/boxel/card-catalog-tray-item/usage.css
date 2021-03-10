@@ -6,13 +6,14 @@
 
 /* card catalog tray usage */
 .boxel-card-catalog-tray-example {
-  --close-button-width: 8px;
+  --close-button-size: 0.5rem;
   border: 1px solid var(--boxel-dark);
   padding: var(--boxel-sp-sm) 0;
-  border-radius: 10px;
+  border-radius: var(--boxel-border-radius);
   background-color: var(--boxel-purple-600);
   color: var(--boxel-light);
-  min-height: 170px;
+  min-height: 10.625rem;
+  line-height: 0;
 }
 
 .boxel-card-catalog-tray-example__header-container {
@@ -20,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0
-    calc(var(--boxel-sp-sm) + var(--boxel-sp) + var(--close-button-width)) 0
+    calc(var(--boxel-sp-sm) + var(--boxel-sp) + var(--close-button-size)) 0
     var(--boxel-sp);
 }
 
@@ -29,8 +30,8 @@
   padding: 0;
   background: transparent;
   border: none;
-  height: min-content;
-  width: min-content;
+  height: var(--close-button-size);
+  width: var(--close-button-size);
   line-height: 0;
   top: var(--boxel-sp-xs);
   right: var(--boxel-sp);
@@ -42,6 +43,12 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  font: 600 var(--boxel-font);
+}
+
+.boxel-card-catalog-tray-example__header-icon {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .boxel-card-catalog-tray-example__header-title svg {
@@ -53,7 +60,7 @@
   align-self: center;
   justify-self: end;
   width: 100%;
-  max-width: 240px;
+  max-width: 15rem;
   margin-left: var(--boxel-sp-xxxs);
 }
 
@@ -66,7 +73,7 @@
   display: inline-flex;
   align-items: center;
   padding: 0 var(--boxel-sp);
-  min-height: 80px;
+  min-height: calc(5rem + 2px); /* 2px for the borders */
   min-width: 100%;
 }
 

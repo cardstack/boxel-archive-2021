@@ -4,8 +4,8 @@
   --boxel-card-catalog-tray-item-icon-color: var(--boxel-teal);
   --boxel-card-catalog-tray-item-background-color: var(--boxel-purple-100);
   --boxel-card-catalog-tray-item-border: 1px solid var(--boxel-purple-900);
-  width: 300px;
-  min-height: 80px;
+  width: 18.75rem;
+  min-height: 5rem;
   padding: var(--boxel-sp-sm) var(--boxel-sp-xs) var(--boxel-sp-sm) var(--boxel-sp-lg);
   position: relative;
   border: var(--boxel-card-catalog-tray-item-border);
@@ -13,8 +13,8 @@
   background-color: var(--boxel-card-catalog-tray-item-background-color);
 
   display: grid;
-  grid-template-rows: 20px 30px;
-  grid-template-columns: 20px 1fr 8px;
+  grid-template-rows: 1.25rem 1.875rem;
+  grid-template-columns: 1.25rem 1fr .5rem;
   gap: 0px var(--boxel-sp);
   grid-template-areas:
     'icon title drag'
@@ -37,8 +37,8 @@
 
 .boxel-card-catalog-tray-item__icon {
   grid-area: icon;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   --icon-color: var(--boxel-card-catalog-tray-item-icon-color);
 }
 
@@ -54,7 +54,7 @@
 
 .boxel-card-catalog-tray-item__description {
   grid-area: description;
-  height: 30px;
+  height: 1.875rem;
   margin: 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -66,6 +66,8 @@
 }
 
 .boxel-card-catalog-tray-item__drag-handle {
+  width: .5rem;
+  height: 1.5rem;
   grid-area: drag;
   margin-left: auto;
   cursor: grab;
@@ -73,6 +75,8 @@
 
 .boxel-card-catalog-tray-item__used-icon {
   position: absolute;
+  width: 1rem;
+  height: 1rem;
   right: var(--boxel-sp-xxxs);
   top: var(--boxel-sp-xxxs);
 }
