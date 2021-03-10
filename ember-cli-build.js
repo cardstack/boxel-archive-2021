@@ -36,7 +36,7 @@ module.exports = function (defaults) {
     packagerOptions: {
       publicAssetURL:
         process.env.DEPLOY_TARGET === 's3-preview'
-          ? 'https://boxel-assets.s3.amazonaws.com/'
+          ? 'https://boxel-assets.s3-ap-southeast-1.amazonaws.com/'
           : undefined,
       webpackConfig: {
         module: {
