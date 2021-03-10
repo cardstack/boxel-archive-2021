@@ -34,6 +34,10 @@ module.exports = function (defaults) {
     // staticComponents: true,
     staticAppPaths: ['data'],
     packagerOptions: {
+      publicAssetURL:
+        process.env.DEPLOY_TARGET === 's3-preview'
+          ? 'https://boxel-assets.s3.amazonaws.com/'
+          : undefined,
       webpackConfig: {
         module: {
           rules: [
