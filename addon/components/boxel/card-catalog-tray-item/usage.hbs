@@ -73,6 +73,9 @@
           Card Catalog
         </h4>
         <Boxel::Searchbox
+          @placeholder="Search"
+          @label="Search for cards to use"
+          @id="card-catalog-tray-search"
           @value={{this.filter}}
           @onInput={{this.onSearchboxInput}}
           @onClear={{this.onClearFilter}}

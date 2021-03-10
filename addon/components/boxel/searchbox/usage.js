@@ -6,6 +6,7 @@ export default class SearchboxUsage extends Component {
   @tracked value = '';
   @tracked id = 'searchbox-id';
   @tracked label = 'A searchbox example input';
+  @tracked placeholder = 'Search';
 
   @action onInput(e) {
     console.log('input:', e.target.value);

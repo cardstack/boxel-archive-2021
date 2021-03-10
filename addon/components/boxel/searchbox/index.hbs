@@ -12,7 +12,7 @@
       {{on "input" (optional @onInput)}}
       {{on "change" (optional @onChange)}}
       disabled={{@disabled}}
-      placeholder="Search" 
+      placeholder={{@placeholder}}
     />
     {{!-- TODO: additionally, effect of disappearing and reappearing clear button on accessibility --}}
     {{#if @value}}
