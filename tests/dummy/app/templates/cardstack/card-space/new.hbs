@@ -1,6 +1,7 @@
 <Boxel::Dashboard
   class="card-space-dashboard"
   @displayLeftEdge={{true}}
+  @darkTheme={{true}}
 >
   <:left-edge>
     <CardHost::LeftEdgeNav
@@ -8,16 +9,16 @@
     />
   </:left-edge>
 
-  <:header>
-    <Boxel::OrgHeader>
-      <h1></h1>
+  <:body>
+    <div class="top-edge">
       <Boxel::Button @kind="secondary-light">
         Connect Account
       </Boxel::Button>
-    </Boxel::OrgHeader>
-  </:header>
+    </div>
 
-  <:body>
-    <Boxel::DropTarget></Boxel::DropTarget>
+    <Boxel::LayoutContainer>
+
+    </Boxel::LayoutContainer>
+    {{!-- <Boxel::DropTarget></Boxel::DropTarget> --}}
   </:body>
 </Boxel::Dashboard>
