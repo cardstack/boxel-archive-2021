@@ -1,0 +1,11 @@
+name: Node CI/CD
+
+on:
+  pull_request:
+    branches: [master]
+
+env:
+  NODE_VERSION: '12.x'
+
+## same tests as test-and-deploy
+## then we deploy to preview, and comment on the PR if it is successful, and a new PR, or an old PR reopened
