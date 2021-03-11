@@ -1,3 +1,8 @@
+.media-registry {
+  --boxel-dashboard-header-background-color: var(--boxel-dark);
+  --boxel-dashboard-header-color: var(--boxel-light);
+}
+
 /* Left-edge and queue */
 .media-registry__left-edge {
   grid-row: 1 / 3;

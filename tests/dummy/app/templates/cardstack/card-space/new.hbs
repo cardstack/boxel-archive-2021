@@ -1,0 +1,23 @@
+<Boxel::Dashboard
+  class="card-space-dashboard"
+  @displayLeftEdge={{true}}
+>
+  <:left-edge>
+    <CardHost::LeftEdgeNav
+      @home={{hash icon="cardstack-logo" width="33px" height="35px"}}
+    />
+  </:left-edge>
+
+  <:header>
+    <Boxel::OrgHeader>
+      <h1></h1>
+      <Boxel::Button @kind="secondary-light">
+        Connect Account
+      </Boxel::Button>
+    </Boxel::OrgHeader>
+  </:header>
+
+  <:body>
+    <Boxel::DropTarget></Boxel::DropTarget>
+  </:body>
+</Boxel::Dashboard>
