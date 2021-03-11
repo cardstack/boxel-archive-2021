@@ -1,10 +1,6 @@
-<ToolbarManager>
+<ToolbarManager
+  @topLeftCornerBelongsTo="left"
+  @bottomLeftCornerBelongsTo="left"
+>
   {{outlet}}
-
-
 </ToolbarManager>
-
-{{in-left-toolbar show=(
-  component "card-host/left-edge-nav"
-  home=(hash icon="cardstack-logo" width="33px" height="35px")
-)}}
