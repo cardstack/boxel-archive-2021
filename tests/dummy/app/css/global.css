@@ -95,8 +95,51 @@ ul {
   list-style-type: circle;
 }
 
-
-/* for ember-toolbars */
-.ember-toolbars {
+.cardstack-toolbar-manager {
+  position: relative;
   height: 100%;
+  padding: 0;
+  transition: padding var(--boxel-transition);
 }
+
+.cardstack-toolbar-manager--left-edge {
+  padding-left: 80px;
+  background-color: var(--boxel-purple-800);
+}
+
+.cardstack-toolbar-manager--left-edge-hidden {
+  padding-left: 0;
+  transition: padding var(--boxel-transition);
+  background-color: initial;
+}
+
+.cardstack-left-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 80px;;
+  transition: transform var(--boxel-transition);
+}
+
+.cardstack-toolbar-manager--left-edge ~ .cardstack-left-edge {
+  transform: translateX(0);
+}
+
+.cardstack-toolbar-manager--left-edge-hidden ~ .cardstack-left-edge {
+  transform: translateX(-100%);
+  transition: transform var(--boxel-transition);
+}
+
+/* .cardstack-left-edge--visible {
+  transform: translateX(0);
+}
+
+.cardstack-left-edge--hidden {
+  transform: translateX(-100%);
+  transition: transform var(--boxel-transition);
+}
+
+.cardstack-toolbar-manager--disabled {
+  margin: 0;
+} */
