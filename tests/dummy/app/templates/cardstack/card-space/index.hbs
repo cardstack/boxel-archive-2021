@@ -1,18 +1,10 @@
-<Boxel::Dashboard
-  @darkTheme={{true}}
->
+<Boxel::Dashboard {{did-insert (fn this.updateEdges)}} @darkTheme={{true}}>
+  <:header>
+    <Boxel::OrgHeader @title="Card Space" />
+  </:header>
   <:body>
     <Boxel::Button @kind="primary" {{on "click" this.transitionToSpace}}>
       Create Space
     </Boxel::Button>
   </:body>
 </Boxel::Dashboard>
-
-{{in-top-toolbar show=(
-  component "card-space/top-edge"
-)}}
-
-{{in-left-toolbar show=(
-  component "card-host/left-edge-nav"
-  home=(hash icon="cardstack-logo" width="33px" height="35px")
-)}}

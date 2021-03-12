@@ -1,6 +1,6 @@
 <div class="card-space-top-edge">
   <Boxel::Button
-    @kind="secondary-light"
+    @kind={{if @darkTheme "secondary-dark" "secondary-light"}}
     {{on "click" (optional @onClick)}}
   >
     Connect Account

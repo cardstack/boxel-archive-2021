@@ -1,7 +1,7 @@
-import Controller from '@ember/controller';
+import CardstackController from '../../cardstack';
 import { action } from '@ember/object';
 
-export default class CardSpaceIndexController extends Controller {
+export default class CardSpaceIndexController extends CardstackController {
   @action
   transitionToSpace() {
     this.transitionToRoute('cardstack.card-space.new');
