@@ -1,12 +1,18 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
+import { inject as service } from '@ember/service';
 
 export default class CardSpaceNewController extends Controller {
-  @tracked displayLeftEdge = false;
+  @service('edges') edges;
+  @service('cardstack-session') cardstackSession;
 
-  @action
-  showLeftEdge() {
-    this.displayLeftEdge = true;
+  @action updateEdges() {
+    if (this.cardstackSession.isAuthenticated) {
+      this.edges.showLeftEdge();
+    } else {
+      this.edges.hideLeftEdge();
+    }
+
+    this.edges.hasLightTheme();
   }
 }
