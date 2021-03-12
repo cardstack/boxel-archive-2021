@@ -1,6 +1,57 @@
 .boxel-layout-container {
-  display: grid;
+  /* display: grid; */
   width: 100%;
   height: 100%;
   background-color: var(--boxel-light);
+}
+
+.boxel-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--boxel-sp);
+}
+
+.grid-column {
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: var(--boxel-sp-sm);
+  background-color: var(--boxel-light-500);
+  padding: 30px;
+}
+
+.full-width-column {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.grid-card {
+  min-height: 200px;
+  border: 1px solid var(--boxel-light-500);
+  border-radius: var(--boxel-border-radius);
+  background-color: var(--boxel-light);
+}
+
+.card-content {
+  padding: var(--boxel-sp);
+}
+
+.card-content-large {
+  height: 800px;
+  border: 1px solid var(--boxel-teal);
+  margin-top: 20px;
+}
+
+.card-1 {
+  min-height: 300px;
+}
+
+.card-2 {
+  min-height: 400px;
+}
+
+.card-3 {
+}
+
+.card-4 {
+  min-height: 250px;
 }
