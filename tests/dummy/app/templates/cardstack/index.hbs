@@ -1,7 +1,7 @@
-<Boxel::Dashboard
-  @darkTheme={{true}}
-  @displayLeftEdge={{true}}
->
+<Boxel::Dashboard {{did-insert (fn this.updateEdges)}} @darkTheme={{true}}>
+  <:header>
+    <Boxel::OrgHeader @title="Cardstack" />
+  </:header>
   <:body>
     <section>
       <h2>Join an Org</h2>
@@ -20,5 +20,4 @@
       </ul>
     </section>
   </:body>
-
 </Boxel::Dashboard>

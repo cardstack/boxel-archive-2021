@@ -1,24 +1,6 @@
-<Boxel::Dashboard
-  class="card-space-dashboard"
-  {{!-- @displayLeftEdge={{true}} --}}
-  @darkTheme={{true}}
+<CardSpace::Space
+  {{did-insert (fn this.updateEdges)}}
+  @isAuthenticated={{this.cardstackSession.isAuthenticated}}
 >
-  <:body>
-    <Boxel::LayoutContainer>
 
-    </Boxel::LayoutContainer>
-    {{!-- <Boxel::DropTarget></Boxel::DropTarget> --}}
-  </:body>
-</Boxel::Dashboard>
-
-{{in-top-toolbar show=(
-  component "card-space/top-edge"
-  onClick=this.showLeftEdge
-)}}
-
-{{#if this.displayLeftEdge}}
-  {{in-left-toolbar show=(
-    component "card-host/left-edge-nav"
-    home=(hash icon="cardstack-logo" width="33px" height="35px")
-  )}}
-{{/if}}
+</CardSpace::Space>

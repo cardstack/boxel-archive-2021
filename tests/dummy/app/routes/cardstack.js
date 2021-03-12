@@ -27,6 +27,6 @@ export default class CardstackRoute extends Route {
     return {
       logo: CardstackLogo,
       orgs: ORGS,
-    }
+    };
   }
 }

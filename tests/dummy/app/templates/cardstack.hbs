@@ -4,3 +4,19 @@
 >
   {{outlet}}
 </ToolbarManager>
+
+{{#unless this.edges.disableEdges}}
+  {{#unless this.cardstackSession.isAuthenticated}}
+    <CardSpace::TopEdge
+      @onClick={{this.cardstackSession.login}}
+      @darkTheme={{this.edges.darkTheme}}
+    />
+  {{/unless}}
+
+  {{#if (or this.edges.displayLeftEdge this.cardstackSession.isAuthenticated)}}
+    {{in-left-toolbar show=(
+      component "card-host/left-edge-nav"
+      home=(hash icon="cardstack-logo" action=this.transitionHome width="33px" height="35px")
+    )}}
+  {{/if}}
+{{/unless}}
