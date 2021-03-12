@@ -61,6 +61,8 @@
     "walk-sync": "^2.2.0"
   },
   "devDependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^2.1.1",
     "@ember/jquery": "^1.1.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/render-modifiers": "^1.0.2",

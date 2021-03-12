@@ -261,7 +261,7 @@ jobs:
         PREVIEW_DEPLOY_AWS_ACCESS_SECRET: ${{ secrets.PREVIEW_DEPLOY_AWS_ACCESS_SECRET }}
     - name: Comment on PR
       if: success() && (github.event.action == 'opened' || github.event.action == 'reopened')
-      uses: Janealter/branch-pr-comment@v1
+      uses: ./.github/actions/pr-comment
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
