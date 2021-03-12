@@ -17,7 +17,7 @@ module.exports = function (deployTarget) {
   if (deployTarget === 's3-preview') {
     ENV.pipeline = {
       disabled: {
-        allExcept: ['build', 'revision-data', 's3-index', 'manifest'],
+        allExcept: ['build', 'revision-data', 's3', 's3-index', 'manifest'],
       },
       activateOnDeploy: true,
     };
