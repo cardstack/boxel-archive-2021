@@ -235,7 +235,7 @@ jobs:
       S3_PREVIEW_INDEX_BUCKET_NAME: boxel-preview.cardstack.com
       S3_PREVIEW_ASSET_BUCKET_NAME: boxel-preview-assets.cardstack.com
       S3_PREVIEW_WEBSITE_URL: http://boxel-preview.cardstack.com.s3-website-us-east-1.amazonaws.com
-      S3_PREVIEW_ASSET_BUCKET_ENDPOINT: https://boxel-preview-assets.cardstack.com.s3.amazonaws.com
+      S3_PREVIEW_ASSET_BUCKET_ENDPOINT: http://boxel-preview-assets.cardstack.com.s3.amazonaws.com
       S3_PREVIEW_REGION: us-east-1
     steps:
     - uses: actions/checkout@v1
