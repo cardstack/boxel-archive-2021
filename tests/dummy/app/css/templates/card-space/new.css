@@ -1,4 +1,4 @@
-.card-space {
+.card-space-new {
   position: relative;
   width: 100%;
   height: 100%;
@@ -8,6 +8,6 @@
   transition: padding var(--boxel-transition);
 }
 
-.card-space--logged-in {
+.card-space-new--logged-in {
   padding: var(--boxel-sp-lg);
 }

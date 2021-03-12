@@ -1,7 +1,8 @@
-<div class="card-space-top-edge">
+<div class="card-space-top-edge" data-test-card-space-top-edge>
   <Boxel::Button
     @kind={{if @darkTheme "secondary-dark" "secondary-light"}}
     {{on "click" (optional @onClick)}}
+    data-test-card-space-top-edge-login-button
   >
     Connect Account
   </Boxel::Button>
