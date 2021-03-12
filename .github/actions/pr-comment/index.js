@@ -1,8 +1,8 @@
 // This action was vendored from: https://github.com/Janealter/branch-pr-comment/blob/master/src/main.ts
 // and then edited
 
-const core = require('@actions/core');
-const github = require('@actions/github');
+const core = require('@actions/core'); // eslint-disable-line node/no-unpublished-require
+const github = require('@actions/github'); // eslint-disable-line node/no-unpublished-require
 
 async function run() {
   const message = core.getInput('message');
