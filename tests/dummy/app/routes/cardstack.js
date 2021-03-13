@@ -1,5 +1,7 @@
 import Route from '@ember/routing/route';
 import CardstackLogo from '../../../public/@cardstack/boxel/images/icons/cardstack-logo.svg';
+import 'dummy/css/templates/cardstack.css';
+import 'dummy/css/templates/card-space/new.css';
 
 const ORGS = [
   {

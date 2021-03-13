@@ -7,10 +7,14 @@
 
 {{#unless this.edges.disableEdges}}
   {{#unless this.cardstackSession.isAuthenticated}}
-    <CardSpace::TopEdge
-      @onClick={{this.cardstackSession.login}}
-      @darkTheme={{this.edges.darkTheme}}
-    />
+    <Boxel::Button
+      class="cardstack__login-button"
+      @kind={{if this.edges.darkTheme "secondary-dark" "secondary-light"}}
+      {{on "click" this.cardstackSession.login}}
+      data-test-card-space-top-edge-login-button
+    >
+      Connect Account
+    </Boxel::Button>
   {{/unless}}
 
   {{#if (or this.edges.displayLeftEdge this.cardstackSession.isAuthenticated)}}
