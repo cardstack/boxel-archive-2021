@@ -23,7 +23,8 @@
     color var(--boxel-transition);
 }
 
-.boxel-header:hover {
+.boxel-header:hover,
+.boxel-header:focus-within {
   color: var(--boxel-dark);
 }
 
@@ -34,6 +35,10 @@
 .boxel-header--selected {
   background-color: var(--boxel-highlight);
   color: var(--boxel-dark);
+}
+
+.boxel-header--selected:hover {
+  background-color: var(--boxel-highlight-hover);
 }
 
 .boxel-header__content {
@@ -55,15 +60,11 @@
   font: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
+  outline: 0; /* different focus styles depending on button */
 }
 
 .boxel-header__button:hover {
   cursor: pointer;
-}
-
-.boxel-header__button:focus {
-  outline: 2px solid var(--boxel-highlight);
-  outline-offset: -2px;
 }
 
 
@@ -75,6 +76,12 @@
 }
 
 
+/* edit button */
+.boxel-header__text-button {
+  padding: var(--boxel-sp-xxxs);
+}
+
+
 /* button group  */
 .boxel-header__button-group {
   display: grid;
@@ -83,6 +90,11 @@
   gap: 0.2rem;
 }
 
-.boxel-header__text-button {
-  padding: var(--boxel-sp-xxxs);
+.boxel-header__button-group > *:last-child {
+  margin-right: var(--boxel-sp-xxxs);
+}
+
+.boxel-header__button-group .boxel-header__button:focus {
+  outline: 2px solid var(--boxel-highlight);
+  outline-offset: -2px;
 }

@@ -6,3 +6,8 @@
   border-radius: var(--boxel-border-radius);
   background-color: var(--boxel-light);
 }
+
+.boxel-embedded-card-container__header {
+  border-top-right-radius: var(--boxel-border-radius);
+  border-top-left-radius: var(--boxel-border-radius);
+}

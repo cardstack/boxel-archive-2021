@@ -2,11 +2,16 @@
   {{#if @displayHeader}}
     <Boxel::Header
       class="boxel-embedded-card-container__header"
+      @header={{@header}}
+      @selectionHeader={{@selectionHeader}}
+      @isSelected={{@isSelected}}
+      @editable={{@editable}}
+      @hasContextMenu={{@hasContextMenu}}
+      @expandable={{@expandable}}
       @noBackground={{@noHeaderBackground}}
-    >
-      {{@header}}
-    </Boxel::Header>
+    />
   {{/if}}
+
   <div class="boxel-embedded-card-container__content">
     {{yield}}
   </div>
