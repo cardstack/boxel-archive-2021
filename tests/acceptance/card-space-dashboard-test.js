@@ -11,8 +11,7 @@ module('Acceptance | card space dashboard', function (hooks) {
 
     assert.dom('[data-test-card-space-dashboard]').exists();
     assert.dom('[data-test-left-edge-nav]').exists();
-    assert.dom('[data-test-card-space-top-edge]').exists();
-    assert.dom('[data-test-card-space-top-edge-login-button]').exists();
+    assert.dom('[data-test-cardstack-login-button]').exists();
     assert.dom('[data-test-card-space-create-button]').exists();
   });
 
@@ -38,18 +37,18 @@ module('Acceptance | card space dashboard', function (hooks) {
 
     assert.dom('[data-test-left-edge-nav]').exists();
 
-    await click('[data-test-card-space-top-edge-login-button]');
+    await click('[data-test-cardstack-login-button]');
     assert.equal(service.isAuthenticated, true);
 
     assert.dom('[data-test-left-edge-nav]').exists();
-    assert.dom('[data-test-card-space-top-edge-login-button]').doesNotExist();
+    assert.dom('[data-test-cardstack-login-button]').doesNotExist();
 
     await click('[data-test-left-edge-nav-home-button]');
     assert.equal(currentURL(), '/scenarios/cardstack');
     assert.equal(service.isAuthenticated, true);
 
     assert.dom('[data-test-left-edge-nav]').exists();
-    assert.dom('[data-test-card-space-top-edge-login-button]').doesNotExist();
+    assert.dom('[data-test-cardstack-login-button]').doesNotExist();
   });
 
   test('navigating to create new space while logged out', async function (assert) {
@@ -65,7 +64,7 @@ module('Acceptance | card space dashboard', function (hooks) {
 
     assert.dom('[data-test-card-space-layout-container]').exists();
     assert.dom('[data-test-left-edge-nav]').doesNotExist();
-    assert.dom('[data-test-card-space-top-edge-login-button]').exists();
+    assert.dom('[data-test-cardstack-login-button]').exists();
   });
 
   test('navigating to create new space while logged in', async function (assert) {
@@ -73,7 +72,7 @@ module('Acceptance | card space dashboard', function (hooks) {
 
     await visit('/scenarios/cardstack/card-space');
     assert.equal(currentURL(), '/scenarios/cardstack/card-space');
-    await click('[data-test-card-space-top-edge-login-button]');
+    await click('[data-test-cardstack-login-button]');
     assert.equal(service.isAuthenticated, true);
 
     await click('[data-test-card-space-create-button]');
@@ -82,6 +81,6 @@ module('Acceptance | card space dashboard', function (hooks) {
 
     assert.dom('[data-test-card-space-layout-container]').exists();
     assert.dom('[data-test-left-edge-nav]').exists();
-    assert.dom('[data-test-card-space-top-edge-login-button]').doesNotExist();
+    assert.dom('[data-test-cardstack-login-button]').doesNotExist();
   });
 });

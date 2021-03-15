@@ -11,7 +11,7 @@ module('Acceptance | create new page', function (hooks) {
 
     assert.dom('[data-test-card-space-layout-container]').exists();
     assert.dom('[data-test-left-edge-nav]').doesNotExist();
-    assert.dom('[data-test-card-space-top-edge-login-button]').exists();
+    assert.dom('[data-test-cardstack-login-button]').exists();
   });
 
   test('logging in', async function (assert) {
@@ -21,10 +21,10 @@ module('Acceptance | create new page', function (hooks) {
     assert.equal(currentURL(), '/scenarios/cardstack/card-space/new');
     assert.equal(service.isAuthenticated, false);
 
-    await click('[data-test-card-space-top-edge-login-button]');
+    await click('[data-test-cardstack-login-button]');
     assert.equal(service.isAuthenticated, true);
     assert.dom('[data-test-left-edge-nav]').exists();
-    assert.dom('[data-test-card-space-top-edge-login-button]').doesNotExist();
+    assert.dom('[data-test-cardstack-login-button]').doesNotExist();
   });
 
   test('navigating to cardstack dashboard using the left-edge', async function (assert) {
@@ -35,7 +35,7 @@ module('Acceptance | create new page', function (hooks) {
     assert.equal(service.isAuthenticated, false);
     assert.dom('[data-test-left-edge-nav-home-button]').doesNotExist;
 
-    await click('[data-test-card-space-top-edge-login-button]');
+    await click('[data-test-cardstack-login-button]');
     assert.equal(service.isAuthenticated, true);
     assert.dom('[data-test-left-edge-nav-home-button]').exists;
 
@@ -44,6 +44,6 @@ module('Acceptance | create new page', function (hooks) {
     assert.equal(service.isAuthenticated, true);
 
     assert.dom('[data-test-left-edge-nav]').exists();
-    assert.dom('[data-test-card-space-top-edge-login-button]').doesNotExist();
+    assert.dom('[data-test-cardstack-login-button]').doesNotExist();
   });
 });
