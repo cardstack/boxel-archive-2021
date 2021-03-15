@@ -1,0 +1,8 @@
+.boxel-embedded-card-container {
+  --boxel-embedded-card-container-min-height: 12.5rem;
+
+  min-height: var(--boxel-embedded-card-container-min-height);
+  border: 1px solid var(--boxel-light-500);
+  border-radius: var(--boxel-border-radius);
+  background-color: var(--boxel-light);
+}

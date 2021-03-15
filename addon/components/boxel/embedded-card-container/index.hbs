@@ -1,0 +1,13 @@
+<div class="boxel-embedded-card-container" data-test-boxel-embedded-card-container ...attributes>
+  {{#if @displayHeader}}
+    <Boxel::Header
+      class="boxel-embedded-card-container__header"
+      @noBackground={{@noHeaderBackground}}
+    >
+      {{@header}}
+    </Boxel::Header>
+  {{/if}}
+  <div class="boxel-embedded-card-container__content">
+    {{yield}}
+  </div>
+</div>

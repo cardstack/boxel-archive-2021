@@ -1,0 +1,42 @@
+<Freestyle::Usage @name="EmbeddedCardContainer">
+  <:description>
+    Container for an embedded card.
+  </:description>
+
+  <:example>
+    <Boxel::EmbeddedCardContainer
+      @displayHeader={{this.displayHeader}}
+      @header={{this.header}}
+      @noHeaderBackground={{this.noHeaderBackground}}
+    >
+      Card content
+    </Boxel::EmbeddedCardContainer>
+  </:example>
+
+  <:api as |Args|>
+  <Args.Bool
+      @name="displayHeader"
+      @description="if true, card header will be visible"
+      @defaultValue={{false}}
+      @value={{this.displayHeader}}
+      @onInput={{fn (mut this.displayHeader)}}
+    />
+    <Args.String
+      @name="header"
+      @description="content of the card header"
+      @value={{this.header}}
+      @onInput={{fn (mut this.header)}}
+    />
+    <Args.Bool
+      @name="noHeaderBackground"
+      @description="if true, card header will have transparent background"
+      @defaultValue={{false}}
+      @value={{this.noHeaderBackground}}
+      @onInput={{fn (mut this.noHeaderBackground)}}
+    />
+    <Args.Yield
+      @optional={{true}}
+      @description="Unstyled area for custom card content and fields"
+    />
+  </:api>
+</Freestyle::Usage>
