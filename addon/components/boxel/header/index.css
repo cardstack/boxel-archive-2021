@@ -1,17 +1,20 @@
 .boxel-header {
+  --header-min-height: 1.875rem; /* 30px */
+  --boxel-header-padding: var(--boxel-sp-xxxs) var(--boxel-sp-sm);
+  --header-text-color: var(--boxel-purple-300);
+  --header-background-color: var(--boxel-purple-100);
+
   /* container styling */
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  min-height: var(--header-min-height, 1.875rem);
-  padding: var(--header-padding, var(--boxel-sp-xxxs) var(--boxel-sp-sm));
-  background-color: var(--header-background-color, var(--boxel-purple-100));
-  border-top-left-radius: var(--boxel-border-radius);
-  border-top-right-radius: var(--boxel-border-radius);
+  min-height: var(--header-min-height);
+  padding: 0;
+  background-color: var(--header-background-color);
 
   /* text styling */
-  color: var(--header-text-color, var(--boxel-purple-400));
-  font: var(--boxel-font-xs);
-  font-weight: 600;
+  color: var(--header-text-color);
+  font: 600 var(--boxel-font-xs);
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
 
@@ -20,6 +23,66 @@
     color var(--boxel-transition);
 }
 
+.boxel-header:hover {
+  color: var(--boxel-dark);
+}
+
 .boxel-header--no-background {
   background-color: transparent;
+}
+
+.boxel-header--selected {
+  background-color: var(--boxel-highlight);
+  color: var(--boxel-dark);
+}
+
+.boxel-header__content {
+  padding: var(--boxel-header-padding);
+}
+
+
+/* for all buttons */
+.boxel-header__button {
+  --icon-button-width: var(--header-min-height);
+  --icon-button-height: var(--header-min-height);
+  --icon-color: var(--boxel-dark);
+
+  min-height: var(--icon-button-height);
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--boxel-dark);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.boxel-header__button:hover {
+  cursor: pointer;
+}
+
+.boxel-header__button:focus {
+  outline: 2px solid var(--boxel-highlight);
+  outline-offset: -2px;
+}
+
+
+/* header title button */
+.boxel-header__label-text-button {
+  padding: var(--boxel-header-padding);
+  color: inherit;
+  text-align: left;
+}
+
+
+/* button group  */
+.boxel-header__button-group {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.boxel-header__text-button {
+  padding: var(--boxel-sp-xxxs);
 }

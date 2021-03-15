@@ -1,8 +1,39 @@
 <header class={{cn
     "boxel-header"
     boxel-header--no-background=@noBackground
+    boxel-header--selected=@isSelected
   }}
   ...attributes
 >
-  {{yield}}
+  {{#if @selectionHeader}}
+    <button class="boxel-header__button boxel-header__label-text-button boxel-header__content">
+      {{@header}}
+    </button>
+  {{else}}
+    <span class="boxel-header__content">
+      {{@header}}
+    </span>
+  {{/if}}
+
+  <div class="boxel-header__button-group">
+    {{#if @editable}}
+      <button class="boxel-header__button boxel-header__text-button">
+        Edit
+      </button>
+    {{/if}}
+    {{#if @hasContextMenu}}
+      <Boxel::IconButton
+        class="boxel-header__button"
+        @icon="more-actions"
+        aria-label="More Actions"
+      />
+    {{/if}}
+    {{#if @expandable}}
+      <Boxel::IconButton
+        class="boxel-header__button"
+        @icon="expand"
+        aria-label="Isolate"
+      />
+    {{/if}}
+  </div>
 </header>
