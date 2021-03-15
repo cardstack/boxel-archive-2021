@@ -262,7 +262,7 @@ jobs:
 
   comment-on-pr:
     name: Comment on PR
-    uses: ubuntu-latest
+    runs-on: ubuntu-latest
     if: always() && github.head_ref && (github.event.action == 'opened' || github.event.action == 'reopened')
     needs: [deploy-preview]
     env:
