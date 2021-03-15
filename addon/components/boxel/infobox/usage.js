@@ -1,8 +1,9 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import rightInfoboxImage from '@cardstack/boxel/usage-support/images/cardspace/infobox/right-infobox-image.svg';
 
 export default class InfoboxUsage extends Component {
-  @tracked image = '../@cardstack/boxel/images/right-infobox-image.svg';
+  @tracked image = rightInfoboxImage;
   @tracked imageSize = 'auto 100%';
   @tracked imagePosition = 'right -2.25rem bottom -2.25rem';
   @tracked title = 'Add cards to your space';
