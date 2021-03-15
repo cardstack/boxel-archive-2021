@@ -46,4 +46,16 @@ module('Acceptance | cardstack dashboard', function (hooks) {
     assert.dom('[data-test-left-edge-nav]').exists();
     assert.dom('[data-test-cardstack-login-button]').doesNotExist();
   });
+
+  test('can navigate to /card-pay', async function (assert) {
+    await visit('/scenarios/cardstack');
+    assert.equal(currentURL(), '/scenarios/cardstack');
+
+    await click('[data-test-cardstack-dashboard-link="card-pay"]');
+    assert.equal(currentURL(), '/scenarios/cardstack/card-pay');
+
+    assert.dom('[data-test-card-pay-dashboard]').exists();
+    assert.dom('[data-test-left-edge-nav]').doesNotExist();
+    assert.dom('[data-test-cardstack-login-button]').doesNotExist();
+  });
 });
