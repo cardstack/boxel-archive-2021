@@ -1,4 +1,10 @@
-<div class="boxel-embedded-card-container" data-test-boxel-embedded-card-container ...attributes>
+<div class={{cn
+    "boxel-embedded-card-container"
+    boxel-embedded-card-container--selected=@isSelected
+  }}
+  data-test-boxel-embedded-card-container
+  ...attributes
+>
   {{#if @displayHeader}}
     <Boxel::Header
       class="boxel-embedded-card-container__header"
@@ -12,7 +18,11 @@
     />
   {{/if}}
 
-  <div class="boxel-embedded-card-container__content">
+  <div class={{cn
+      "boxel-embedded-card-container__content"
+      boxel-embedded-card-container__content--with-header=@displayHeader
+    }}
+  >
     {{yield}}
   </div>
 </div>

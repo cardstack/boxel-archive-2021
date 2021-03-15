@@ -1,13 +1,36 @@
 .boxel-embedded-card-container {
-  --boxel-embedded-card-container-min-height: 12.5rem;
+  --boxel-embedded-card-min-height: 5rem;
+  --boxel-embedded-card-inner-border-radius: calc(var(--boxel-border-radius) - 1px);
+  /* inner border-radius = outer border-radius - outer border-width */
 
-  min-height: var(--boxel-embedded-card-container-min-height);
+  position: relative;
   border: 1px solid var(--boxel-light-500);
   border-radius: var(--boxel-border-radius);
   background-color: var(--boxel-light);
+  transition:
+    border-color var(--boxel-transition),
+    box-shadow var(--boxel-transition);
+}
+
+.boxel-embedded-card-container--selected {
+  border-color: var(--boxel-highlight);
+  box-shadow: 0 0 0 1px var(--boxel-highlight);
 }
 
 .boxel-embedded-card-container__header {
-  border-top-right-radius: var(--boxel-border-radius);
-  border-top-left-radius: var(--boxel-border-radius);
+  border-top-right-radius: var(--boxel-embedded-card-inner-border-radius);
+  border-top-left-radius: var(--boxel-embedded-card-inner-border-radius);
+}
+
+.boxel-embedded-card-container__content {
+  position: relative;
+  display: grid;
+  min-height: var(--boxel-embedded-card-min-height);
+  border-radius: var(--boxel-embedded-card-inner-border-radius);
+  overflow: hidden;
+}
+
+.boxel-embedded-card-container__content--with-header {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
