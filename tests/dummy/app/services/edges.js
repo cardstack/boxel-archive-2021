@@ -14,13 +14,12 @@ export default class EdgesService extends Service {
   @equal('routeName', 'cardstack.card-pay') disableEdges;
 
   @action
-  showLeftEdge() {
-    this.displayLeftEdge = true;
-  }
-
-  @action
-  hideLeftEdge() {
-    this.displayLeftEdge = false;
+  updateDisplayLeftEdge(isDisplayed) {
+    if (isDisplayed) {
+      this.displayLeftEdge = true;
+    } else {
+      this.displayLeftEdge = false;
+    }
   }
 
   @action

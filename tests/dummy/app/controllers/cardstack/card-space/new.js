@@ -7,12 +7,7 @@ export default class CardSpaceNewController extends Controller {
   @service('cardstack-session') cardstackSession;
 
   @action updateEdges() {
-    if (this.cardstackSession.isAuthenticated) {
-      this.edges.showLeftEdge();
-    } else {
-      this.edges.hideLeftEdge();
-    }
-
+    this.edges.updateDisplayLeftEdge(this.cardstackSession.isAuthenticated);
     this.edges.hasLightTheme();
   }
 }

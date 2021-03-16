@@ -22,10 +22,13 @@ module('Unit | Service | edges', function (hooks) {
   test('can change left-edge display state', async function (assert) {
     let service = this.owner.lookup('service:edges');
 
-    await service.showLeftEdge();
+    await service.updateDisplayLeftEdge(true);
     assert.equal(service.displayLeftEdge, true);
 
-    await service.hideLeftEdge();
+    await service.updateDisplayLeftEdge();
+    assert.equal(service.displayLeftEdge, false);
+
+    await service.updateDisplayLeftEdge(false);
     assert.equal(service.displayLeftEdge, false);
   });
 
