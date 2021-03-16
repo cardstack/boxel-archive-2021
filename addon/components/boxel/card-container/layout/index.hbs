@@ -1,6 +1,6 @@
 <Boxel::CardContainer
   @displayHeader={{@displayTools}}
-  @displayCardBoundaries={{@displayTools}}
+  @displayBoundaries={{@displayTools}}
   @isSelected={{@isSelected}}
   @header="Layout"
   @selectAction={{@selectAction}}
@@ -8,7 +8,10 @@
   @editable={{@displayTools}}
   @hasContextMenu={{@displayTools}}
   @expandable={{@displayTools}}
-  class="boxel-layout-container"
+  class={{cn
+    "boxel-layout-container"
+    boxel-layout-container--boundaries=@displayTools
+  }}
   data-test-boxel-layout-container
   ...attributes
 >

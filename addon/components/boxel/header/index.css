@@ -9,7 +9,6 @@
   grid-template-columns: 1fr auto;
   align-items: center;
   min-height: var(--header-min-height);
-  padding: 0;
   background-color: var(--header-background-color);
 
   /* text styling */
@@ -25,7 +24,7 @@
 
 .boxel-header:hover,
 .boxel-header:focus-within {
-  color: var(--boxel-dark);
+  --header-text-color: var(--boxel-dark);
 }
 
 .boxel-header--no-background {
@@ -35,10 +34,6 @@
 .boxel-header--selected {
   background-color: var(--boxel-highlight);
   color: var(--boxel-dark);
-}
-
-.boxel-header--selected:hover {
-  background-color: var(--boxel-highlight-hover);
 }
 
 .boxel-header__content {
@@ -60,11 +55,10 @@
   font: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
-  outline: 0; /* different focus styles depending on button */
 }
 
-.boxel-header__button:hover {
-  cursor: pointer;
+.boxel-header--selected .boxel-header__button:focus {
+  outline-color: var(--boxel-highlight-hover);
 }
 
 
@@ -94,7 +88,6 @@
   margin-right: var(--boxel-sp-xxxs);
 }
 
-.boxel-header__button-group .boxel-header__button:focus {
-  outline: 2px solid var(--boxel-highlight);
+.boxel-header__button-group > .boxel-header__button:focus {
   outline-offset: -2px;
 }

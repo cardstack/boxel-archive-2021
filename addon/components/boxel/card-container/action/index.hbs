@@ -1,20 +1,16 @@
-<article
+<Boxel::CardContainer
+  @displayHeader={{true}}
+  @header={{@header}}
+  @headerClass="boxel-action-container__header"
+  @hasContextMenu={{true}}
+  @expandable={{true}}
   class={{cn
     "boxel-action-container"
     boxel-action-container--is-complete=@isComplete
   }}
+  data-test-boxel-action-container
   ...attributes
 >
-  <Boxel::Header class="boxel-action-container__header">
-    {{@header}}
-
-    <Boxel::IconButton
-      class="boxel-action-container__expand-button"
-      @icon="expand"
-      aria-label="Expand card"
-    />
-  </Boxel::Header>
-
   {{#if @prompt}}
     <p class="boxel-action-container__prompt">
       {{@prompt}}
@@ -30,4 +26,4 @@
     @onClickButton={{@onClickButton}}
     @disabled={{@disabled}}
   />
-</article>
+</Boxel::CardContainer>

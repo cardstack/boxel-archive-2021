@@ -46,7 +46,7 @@
   </:api>
 
   <:example>
-    <Boxel::ActionContainer
+    <Boxel::CardContainer::Action
       @header="Card Header"
       @incompleteActionLabel={{this.incompleteActionLabel}}
       @completeActionLabel={{this.completeActionLabel}}
@@ -56,11 +56,11 @@
       {{!-- Sample block yield --}}
         <div>Content goes here</div>
       {{!-- End of sample block yield --}}
-    </Boxel::ActionContainer>
+    </Boxel::CardContainer::Action>
 
     <br>
 
-    <Boxel::ActionContainer
+    <Boxel::CardContainer::Action
       @header={{this.header}}
       @prompt={{this.prompt}}
       @incompleteActionLabel={{this.incompleteActionLabel}}
@@ -71,6 +71,6 @@
       {{!-- Sample block yield --}}
         <div>Content goes here</div>
       {{!-- End of sample block yield --}}
-    </Boxel::ActionContainer>
+    </Boxel::CardContainer::Action>
   </:example>
 </Freestyle::Usage>

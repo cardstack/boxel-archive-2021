@@ -1,14 +1,17 @@
 <div class={{cn
     "boxel-card-container"
     boxel-card-container--selected=@isSelected
-    boxel-card-container--boundaries=@displayCardBoundaries
+    boxel-card-container--boundaries=@displayBoundaries
   }}
   data-test-boxel-card-container
   ...attributes
 >
   {{#if @displayHeader}}
     <Boxel::Header
-      class="boxel-card-container__header"
+      class={{cn
+        "boxel-card-container__header"
+        (if @headerClass @headerClass)
+      }}
       @header={{@header}}
       @selectAction={{@selectAction}}
       @selectionHeader={{@selectionHeader}}

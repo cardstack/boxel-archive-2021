@@ -1,14 +1,14 @@
 <Freestyle::Usage @name="LayoutContainer">
   <:example>
-    <Boxel::LayoutContainer
+    <Boxel::CardContainer::Layout
       @displayTools={{this.displayTools}}
-      @selectAction={{this.toggleSelect}}
+      @selectAction={{@selectAction}}
       @isSelected={{this.isSelected}}
     >
       <div>
-        Template here
+        Layout Card here
       </div>
-    </Boxel::LayoutContainer>
+    </Boxel::CardContainer::Layout>
   </:example>
   <:api as |Args|>
     <Args.Bool
