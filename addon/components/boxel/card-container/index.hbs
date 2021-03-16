@@ -1,14 +1,16 @@
 <div class={{cn
-    "boxel-embedded-card-container"
-    boxel-embedded-card-container--selected=@isSelected
+    "boxel-card-container"
+    boxel-card-container--selected=@isSelected
+    boxel-card-container--boundaries=@displayCardBoundaries
   }}
-  data-test-boxel-embedded-card-container
+  data-test-boxel-card-container
   ...attributes
 >
   {{#if @displayHeader}}
     <Boxel::Header
-      class="boxel-embedded-card-container__header"
+      class="boxel-card-container__header"
       @header={{@header}}
+      @selectAction={{@selectAction}}
       @selectionHeader={{@selectionHeader}}
       @isSelected={{@isSelected}}
       @editable={{@editable}}
@@ -19,8 +21,8 @@
   {{/if}}
 
   <div class={{cn
-      "boxel-embedded-card-container__content"
-      boxel-embedded-card-container__content--with-header=@displayHeader
+      "boxel-card-container__content"
+      boxel-card-container__content--with-header=@displayHeader
     }}
   >
     {{yield}}

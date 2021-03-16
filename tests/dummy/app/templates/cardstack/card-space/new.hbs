@@ -6,6 +6,14 @@
   data-test-card-space-new
   ...attributes
 >
-  <Boxel::LayoutContainer data-test-card-space-layout-container>
+  <Boxel::LayoutContainer
+    @displayTools={{this.cardstackSession.isAuthenticated}}
+    @selectAction={{this.toggleSelect}}
+    @isSelected={{this.isSelected}}
+  >
+    <div class="data-test-card-space-layout__grid">
+      <div></div>
+      <div></div>
+    </div>
   </Boxel::LayoutContainer>
 </div>

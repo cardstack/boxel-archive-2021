@@ -1,12 +1,14 @@
-<Freestyle::Usage @name="EmbeddedCardContainer">
+<Freestyle::Usage @name="CardContainer">
   <:description>
     Container for an embedded card.
   </:description>
 
   <:example>
-    <Boxel::EmbeddedCardContainer
+    <Boxel::CardContainer
       @displayHeader={{this.displayHeader}}
+      @displayCardBoundaries={{this.displayBoundaries}}
       @header={{this.header}}
+      @selectAction={{@selectAction}}
       @selectionHeader={{this.selectionHeader}}
       @isSelected={{this.isSelected}}
       @editable={{this.editable}}
@@ -17,16 +19,23 @@
       <div>
         Card Here
       </div>
-    </Boxel::EmbeddedCardContainer>
+    </Boxel::CardContainer>
   </:example>
 
   <:api as |Args|>
-  <Args.Bool
+    <Args.Bool
       @name="displayHeader"
       @description="if true, card header will be visible"
       @defaultValue={{false}}
       @value={{this.displayHeader}}
       @onInput={{fn (mut this.displayHeader)}}
+    />
+    <Args.Bool
+      @name="displayBoundaries"
+      @description="if true, card borders will be visible"
+      @defaultValue={{false}}
+      @value={{this.displayBoundaries}}
+      @onInput={{fn (mut this.displayBoundaries)}}
     />
     <Args.String
       @name="header"
@@ -75,6 +84,10 @@
       @defaultValue={{false}}
       @value={{this.noHeaderBackground}}
       @onInput={{fn (mut this.noHeaderBackground)}}
+    />
+    <Args.Action
+      @name="selectAction"
+      @description="action to take when container is selected"
     />
     <Args.Yield
       @optional={{true}}

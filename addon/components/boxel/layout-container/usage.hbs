@@ -1,5 +1,31 @@
 <Freestyle::Usage @name="LayoutContainer">
   <:example>
-    <Boxel::LayoutContainer></Boxel::LayoutContainer>
+    <Boxel::LayoutContainer
+      @displayTools={{this.displayTools}}
+      @selectAction={{this.toggleSelect}}
+      @isSelected={{this.isSelected}}
+    >
+      <div>
+        Template here
+      </div>
+    </Boxel::LayoutContainer>
   </:example>
+  <:api as |Args|>
+    <Args.Bool
+      @name="displayTools"
+      @defaultValue={{false}}
+      @value={{this.displayTools}}
+      @onInput={{fn (mut this.displayTools)}}
+    />
+    <Args.Bool
+      @name="isSelected"
+      @defaultValue={{false}}
+      @value={{this.isSelected}}
+      @onInput={{fn (mut this.isSelected)}}
+    />
+    <Args.Action
+      @name="selectAction"
+      @description="action to take when container is selected"
+    />
+  </:api>
 </Freestyle::Usage>

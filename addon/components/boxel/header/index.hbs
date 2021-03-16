@@ -6,7 +6,10 @@
   ...attributes
 >
   {{#if @selectionHeader}}
-    <button class="boxel-header__button boxel-header__label-text-button boxel-header__content">
+    <button
+      class="boxel-header__button boxel-header__label-text-button boxel-header__content"
+      {{on "click" (optional @selectAction)}}
+    >
       {{@header}}
     </button>
   {{else}}
