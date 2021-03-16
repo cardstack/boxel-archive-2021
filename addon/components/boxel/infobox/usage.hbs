@@ -1,24 +1,15 @@
-<Freestyle::Usage @name="InfoBox" @description="Prototype 1 - Use gradient to cover background image">
+<Freestyle::Usage @name="InfoBox">
     <:example>
-      <div class="prototype-1">
-        <div class="boxel-infobox" style={{css-var 
-            boxel-infobox-image=this.imageUrl
-            boxel-infobox-image-size=this.imageSize
-            boxel-infobox-image-position=this.imagePosition
-          }}>
-            <div class="boxel-infobox__text-container">
-              <h2 class="boxel-infobox__title">{{this.title}}</h2>
-              <p class="boxel-infobox__description">{{this.description}}</p>
-            </div>
-            <button
-              class="boxel-infobox__close-button"
-              type="button"
-              aria-label="Close"
-            >
-              {{svg-jar "close" width="100%" height="100%" aria-hidden=true}}
-            </button>
-        </div>
-      </div>
+      <Boxel::Infobox 
+        @title={{this.title}} 
+        @description={{this.description}} 
+        style={{css-var 
+          boxel-infobox-image=this.imageUrl
+          boxel-infobox-image-size=this.imageSize
+          boxel-infobox-image-position=this.imagePosition
+        }}
+      >
+      </Boxel::Infobox>
     </:example>
 
     <:api as |Args|>
@@ -46,46 +37,6 @@
         @name="--boxel-infobox-image-size"
         @value={{this.imageSize}}
         @onInput={{fn (mut this.imageSize)}}
-      />
-    </:api>
-</Freestyle::Usage>
-
-<Freestyle::Usage @name="InfoBox" @description="Prototype 2 - Image is in same context as text and is cropped out as width decreases">
-    <:example>
-      <div class="prototype-2">
-        <div class="boxel-infobox">
-            <div class="boxel-infobox__text-container">
-              <h2 class="boxel-infobox__title">{{this.title}}</h2>
-              <p class="boxel-infobox__description">{{this.description}}</p>
-            </div>
-            {{!-- {{#if @image}} --}}
-              <img class="boxel-infobox__image" src={{this.image}} alt="Illustration of a group of people creating a profile page">
-            {{!-- {{/if}} --}}
-            <button
-              class="boxel-infobox__close-button"
-              type="button"
-              aria-label="Close"
-            >
-              {{svg-jar "close" width="100%" height="100%" aria-hidden=true}}
-            </button>
-        </div>
-      </div>
-    </:example>
-    <:api as |Args|>
-      <Args.String
-        @name="title"
-        @value={{this.title}}
-        @onInput={{fn (mut this.title)}}
-      />
-      <Args.String
-        @name="description"
-        @value={{this.description}}
-        @onInput={{fn (mut this.description)}}
-      />
-      <Args.String
-        @name="image"
-        @value={{this.image}}
-        @onInput={{fn (mut this.image)}}
       />
     </:api>
 </Freestyle::Usage>
