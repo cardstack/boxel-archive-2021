@@ -10,7 +10,6 @@
   align-items: center;
 
   border-radius: 100px;
-  outline-offset: 1px;
   white-space: nowrap;
 
   transition: background-color var(--boxel-transition),
