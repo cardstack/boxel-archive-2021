@@ -27,6 +27,10 @@ a:focus {
   outline-color: var(--boxel-blue);
 }
 
+a:focus:not(:focus-visible) {
+  outline-color: transparent;
+}
+
 svg {
   display: inline-block;
 }
@@ -61,6 +65,10 @@ button {
 
 button:focus {
   outline-color: var(--boxel-blue);
+}
+
+button:focus:not(:focus-visible) {
+  outline-color: transparent;
 }
 
 ul {
