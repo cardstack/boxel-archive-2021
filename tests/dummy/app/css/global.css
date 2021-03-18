@@ -71,6 +71,14 @@ button:focus:not(:focus-visible) {
   outline-color: transparent;
 }
 
+input:focus {
+  outline-color: var(--boxel-blue);
+}
+
+input:focus:not(:focus-visible) {
+  outline-color: transparent;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
