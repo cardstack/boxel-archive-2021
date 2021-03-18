@@ -29,10 +29,6 @@
   letter-spacing: var(--boxel-button-letter-spacing, var(--boxel-lsp-lg));
 }
 
-.boxel-button:focus:not(:focus-visible) {
-  outline: 0;
-}
-
 .boxel-button:not(:disabled):hover {
   cursor: pointer;
 }
