@@ -229,7 +229,7 @@ jobs:
   deploy-preview:
     name: Deploy a preview to S3
     runs-on: ubuntu-latest
-    if: github.head_ref
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref
     needs: [try-scenarios, floating-dependencies]
     env:
       S3_PREVIEW_INDEX_BUCKET_NAME: boxel-preview.cardstack.com
@@ -263,7 +263,7 @@ jobs:
   comment-on-pr:
     name: Comment on PR
     runs-on: ubuntu-latest
-    if: always() && github.head_ref && (github.event.action == 'opened' || github.event.action == 'reopened')
+    if: always() && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref && (github.event.action == 'opened' || github.event.action == 'reopened')
     needs: [deploy-preview]
     env:
       S3_PREVIEW_WEBSITE_URL: http://boxel-preview.cardstack.com.s3-website-us-east-1.amazonaws.com
