@@ -24,7 +24,7 @@ a {
 }
 
 a:focus {
-  outline-color: var(--boxel-blue);
+  outline: 2px solid var(--boxel-blue);
 }
 
 a:focus:not(:focus-visible) {
@@ -64,7 +64,7 @@ button {
 }
 
 button:focus {
-  outline-color: var(--boxel-blue);
+  outline: 2px solid var(--boxel-blue);
 }
 
 button:focus:not(:focus-visible) {
@@ -72,7 +72,7 @@ button:focus:not(:focus-visible) {
 }
 
 input:focus {
-  outline-color: var(--boxel-blue);
+  outline: 2px solid var(--boxel-blue);
 }
 
 input:focus:not(:focus-visible) {
