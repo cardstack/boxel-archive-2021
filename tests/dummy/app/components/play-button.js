@@ -2,10 +2,9 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { dropTask } from 'ember-concurrency-decorators';
-import demoFlac from '../../../public/@cardstack/boxel/assets/demo_flac.flac';
 
 export default class PlayButtonComponent extends Component {
-  url = demoFlac;
+  url = '';
   @tracked isPlaying = false;
 
   willDestroy() {
