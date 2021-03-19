@@ -1,18 +1,13 @@
 .boxel-header {
-  --header-min-height: 1.875rem; /* 30px */
-  --boxel-header-padding: var(--boxel-sp-xxxs) var(--boxel-sp-sm);
-  --header-text-color: var(--boxel-purple-300);
-  --header-background-color: var(--boxel-purple-100);
-
   /* container styling */
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  min-height: var(--header-min-height);
-  background-color: var(--header-background-color);
+  min-height: var(--header-min-height, 1.875rem); /* 30px */
+  background-color: var(--header-background-color, var(--boxel-purple-100));
 
   /* text styling */
-  color: var(--header-text-color);
+  color: var(--header-text-color, var(--boxel-dark));
   font: 600 var(--boxel-font-xs);
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
@@ -20,11 +15,6 @@
   transition:
     background-color var(--boxel-transition),
     color var(--boxel-transition);
-}
-
-.boxel-header:hover,
-.boxel-header:focus-within {
-  --header-text-color: var(--boxel-dark);
 }
 
 .boxel-header--no-background {
@@ -36,16 +26,25 @@
   color: var(--boxel-dark);
 }
 
-.boxel-header__content {
-  padding: var(--boxel-header-padding);
+.boxel-header__label {
+  padding: var(--boxel-sp-xxxs) var(--boxel-sp-sm);
+}
+
+
+/* button group  */
+.boxel-header__button-group {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding-right: var(--boxel-sp-xxxs);
 }
 
 
 /* for all buttons */
 .boxel-header__button {
-  --icon-button-width: var(--header-min-height);
-  --icon-button-height: var(--header-min-height);
-  --icon-color: var(--boxel-dark);
+  --icon-button-width: var(--header-min-height, 1.875rem);
+  --icon-button-height: var(--header-min-height, 1.875rem);
 
   min-height: var(--icon-button-height);
   padding: 0;
@@ -57,14 +56,14 @@
   text-transform: inherit;
 }
 
-.boxel-header--selected .boxel-header__button:focus {
-  outline-color: var(--boxel-highlight-hover);
+.boxel-header__button:focus {
+  outline-offset: -2px;
 }
 
 
-/* header title button */
+/* header label button */
 .boxel-header__label-text-button {
-  padding: var(--boxel-header-padding);
+  padding: var(--boxel-sp-xxxs) var(--boxel-sp-sm);
   color: inherit;
   text-align: left;
 }
@@ -73,21 +72,4 @@
 /* edit button */
 .boxel-header__text-button {
   padding: var(--boxel-sp-xxxs);
-}
-
-
-/* button group  */
-.boxel-header__button-group {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  gap: 0.2rem;
-}
-
-.boxel-header__button-group > *:last-child {
-  margin-right: var(--boxel-sp-xxxs);
-}
-
-.boxel-header__button-group > .boxel-header__button:focus {
-  outline-offset: -2px;
 }

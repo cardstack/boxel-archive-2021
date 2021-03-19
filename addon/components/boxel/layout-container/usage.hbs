@@ -1,14 +1,16 @@
 <Freestyle::Usage @name="LayoutContainer">
   <:example>
-    <Boxel::CardContainer::Layout
+    <Boxel::LayoutContainer
       @displayTools={{this.displayTools}}
-      @selectAction={{@selectAction}}
       @isSelected={{this.isSelected}}
+      @selectAction={{@selectAction}}
+      @editAction={{@editAction}}
+      @expandAction={{@expandAction}}
     >
       <div>
         Layout Card here
       </div>
-    </Boxel::CardContainer::Layout>
+    </Boxel::LayoutContainer>
   </:example>
   <:api as |Args|>
     <Args.Bool
@@ -22,6 +24,14 @@
       @defaultValue={{false}}
       @value={{this.isSelected}}
       @onInput={{fn (mut this.isSelected)}}
+    />
+    <Args.Action
+      @name="editAction"
+      @description="action to take when edit button is clicked"
+    />
+    <Args.Action
+      @name="expandAction"
+      @description="action to take when expand button is clicked"
     />
     <Args.Action
       @name="selectAction"

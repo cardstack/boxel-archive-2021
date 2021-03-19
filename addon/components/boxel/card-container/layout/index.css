@@ -1,7 +1,0 @@
-.boxel-layout-container {
-  border-radius: 0;
-}
-
-.boxel-layout-container--boundaries {
-  border-radius: var(--boxel-border-radius);
-}

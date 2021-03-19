@@ -1,4 +1,4 @@
-<Freestyle::Usage @name="BoxelHeader">
+<Freestyle::Usage @name="Header">
   <:description>
     Usually shown at the top of card containers
   </:description>
@@ -8,17 +8,27 @@
       @selectionHeader={{this.selectionHeader}}
       @isSelected={{this.isSelected}}
       @editable={{this.editable}}
+      @editAction={{@editAction}}
       @hasContextMenu={{this.hasContextMenu}}
       @expandable={{this.expandable}}
+      @expandAction={{@expandAction}}
       @noBackground={{this.noBackground}}
     />
   </:example>
   <:api as |Args|>
     <Args.String
       @name="header"
-      @description="header text"
+      @description="header label text"
+      @required={{true}}
       @value={{this.header}}
       @onInput={{fn (mut this.header)}}
+    />
+    <Args.Bool
+      @name="noBackground"
+      @description="(styling) header does not have background color"
+      @defaultValue={{false}}
+      @value={{this.noBackground}}
+      @onInput={{fn (mut this.noBackground)}}
     />
     <Args.Bool
       @name="selectionHeader"
@@ -41,6 +51,10 @@
       @value={{this.editable}}
       @onInput={{fn (mut this.editable)}}
     />
+    <Args.Action
+      @name="editAction"
+      @description="action for the `edit` button"
+    />
     <Args.Bool
       @name="hasContextMenu"
       @description="header has 'more actions' dropdown menu"
@@ -55,12 +69,9 @@
       @value={{this.expandable}}
       @onInput={{fn (mut this.expandable)}}
     />
-    <Args.Bool
-      @name="noBackground"
-      @description="card header does not have background color"
-      @defaultValue={{false}}
-      @value={{this.noBackground}}
-      @onInput={{fn (mut this.noBackground)}}
+    <Args.Action
+      @name="expandAction"
+      @description="action for the `expand` button"
     />
   </:api>
 </Freestyle::Usage>

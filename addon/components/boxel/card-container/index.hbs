@@ -2,32 +2,10 @@
     "boxel-card-container"
     boxel-card-container--selected=@isSelected
     boxel-card-container--boundaries=@displayBoundaries
+    boxel-card-container--with-header=@hasHeader
   }}
   data-test-boxel-card-container
   ...attributes
 >
-  {{#if @displayHeader}}
-    <Boxel::Header
-      class={{cn
-        "boxel-card-container__header"
-        (if @headerClass @headerClass)
-      }}
-      @header={{@header}}
-      @selectAction={{@selectAction}}
-      @selectionHeader={{@selectionHeader}}
-      @isSelected={{@isSelected}}
-      @editable={{@editable}}
-      @hasContextMenu={{@hasContextMenu}}
-      @expandable={{@expandable}}
-      @noBackground={{@noHeaderBackground}}
-    />
-  {{/if}}
-
-  <div class={{cn
-      "boxel-card-container__content"
-      boxel-card-container__content--with-header=@displayHeader
-    }}
-  >
-    {{yield}}
-  </div>
+  {{yield}}
 </div>

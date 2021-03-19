@@ -3,40 +3,47 @@
     boxel-header--no-background=@noBackground
     boxel-header--selected=@isSelected
   }}
+  data-test-boxel-header
   ...attributes
 >
   {{#if @selectionHeader}}
     <button
-      class="boxel-header__button boxel-header__label-text-button boxel-header__content"
+      class="boxel-header__button boxel-header__label-text-button"
       {{on "click" (optional @selectAction)}}
     >
       {{@header}}
     </button>
   {{else}}
-    <span class="boxel-header__content">
+    <span class="boxel-header__label">
       {{@header}}
     </span>
   {{/if}}
 
-  <div class="boxel-header__button-group">
-    {{#if @editable}}
-      <button class="boxel-header__button boxel-header__text-button">
-        Edit
-      </button>
-    {{/if}}
-    {{#if @hasContextMenu}}
-      <Boxel::IconButton
-        class="boxel-header__button"
-        @icon="more-actions"
-        aria-label="More Actions"
-      />
-    {{/if}}
-    {{#if @expandable}}
-      <Boxel::IconButton
-        class="boxel-header__button"
-        @icon="expand"
-        aria-label="Isolate"
-      />
-    {{/if}}
-  </div>
+  {{#if (or @editable @hasContextMenu @expandable)}}
+    <div class="boxel-header__button-group">
+      {{#if @editable}}
+        <button
+          class="boxel-header__button boxel-header__text-button"
+          {{on "click" (optional @editAction)}}
+        >
+          Edit
+        </button>
+      {{/if}}
+      {{#if @hasContextMenu}}
+        <Boxel::IconButton
+          class="boxel-header__button"
+          @icon="more-actions"
+          aria-label="More Actions"
+        />
+      {{/if}}
+      {{#if @expandable}}
+        <Boxel::IconButton
+          class="boxel-header__button"
+          @icon="expand"
+          aria-label="Isolate"
+          {{on "click" (optional @expandAction)}}
+        />
+      {{/if}}
+    </div>
+  {{/if}}
 </header>
