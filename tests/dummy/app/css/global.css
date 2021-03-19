@@ -68,15 +68,18 @@ button {
   font: inherit;
 }
 
-button:not(:disabled):hover {
+button:not(:disabled):hover,
+*[role="button"]:not(:disabled):hover {
   cursor: pointer;
 }
 
-button:focus {
+button:focus,
+*[role="button"]:focus {
   outline: 2px solid var(--boxel-blue);
 }
 
-button:focus:not(:focus-visible) {
+button:focus:not(:focus-visible),
+*[role="button"]:focus:not(:focus-visible) {
   outline-color: transparent;
 }
 
