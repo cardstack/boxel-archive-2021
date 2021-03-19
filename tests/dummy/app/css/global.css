@@ -68,6 +68,10 @@ button {
   font: inherit;
 }
 
+button:not(:disabled):hover {
+  cursor: pointer;
+}
+
 button:focus {
   outline: 2px solid var(--boxel-blue);
 }

@@ -11,7 +11,7 @@
         {{/if}}
       </div>
       {{#if (eq @mode "edit")}}
-        <button {{on "click" @transitionToView}} class="media-collection__btn mode-indicator mode-indicator--edit">{{@mode}} mode</button>
+        <Boxel::ModeIndicator @mode="edit" {{on "click" @transitionToView}} />
       {{else}}
         <BoxelActions
           @class="media-collection__btn-overlay"
