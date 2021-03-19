@@ -1,6 +1,7 @@
 .field-renderer {
   --boxel-field-label-width: 12rem;
 
+  position: relative;
   align-items: start;
   gap: 30px;
   padding: 10px;
