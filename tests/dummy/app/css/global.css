@@ -23,6 +23,11 @@ a {
   display: inline-block;
 }
 
+a:hover {
+  color: var(--boxel-text-highlight);
+  cursor: pointer;
+}
+
 a:focus {
   outline: 2px solid var(--boxel-blue);
 }
