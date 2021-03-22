@@ -1,0 +1,22 @@
+<Freestyle::Usage
+  @name="Modal"
+>
+<:example>
+<button {{on "click" (fn (mut this.open) true)}}>Open</button>
+{{#if this.open}}
+  <Boxel::Modal
+    @onClose={{fn this.onClose}}
+    @overlayClass={{this.overlayClass}}
+  >
+      <div class="white">
+          Hi! This is some content. Try changing `@overlayClass` to red, or blue.
+      </div>
+  </Boxel::Modal>
+{{/if}}
+</:example>
+<:api as |Args|>
+  <Args.String @name="overlayClass" @description="Class(es) assigned to the modal's background overlay" @value={{this.overlayClass}} @onInput={{fn (mut this.overlayClass)}} @optional={{true}}/>
+  <Args.Action @name="onClose" @description="Callback when the modal's background overlay is clicked" @value={{this.onClose}} @optional={{true}}/>
+  <Args.Yield @description="The content of the modal" @optional={{true}}/>
+</:api>
+</Freestyle::Usage>
