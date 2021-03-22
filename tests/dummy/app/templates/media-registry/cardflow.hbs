@@ -26,7 +26,7 @@
 
 <div class="media-registry__outlet">
   {{#if (and this.displayItemModal this.record)}}
-    <Boxel::Modal @overlayClass="cardflow-overlay" @class="cardflow__modal">
+    <Boxel::Modal @overlayClass="cardflow-overlay" class="cardflow__modal">
       <header class="cardflow__modal-header">Workflow Thread - {{this.projectTitle}}</header>
       <Boxel::IconButton @icon="close" @class="cardflow__modal-close-btn" {{on "click" this.closeModal}} />
       <div class="cardflow__nested-grid">
@@ -90,7 +90,7 @@
       </div>
     </Boxel::Modal>
   {{else if (and this.displayCatalogModal this.isolatedCollection)}}
-    <Boxel::Modal @overlayClass="cardflow-overlay" @class="cardflow__modal">
+    <Boxel::Modal @overlayClass="cardflow-overlay" class="cardflow__modal">
       <header class="cardflow__modal-header">Workflow Thread - {{this.projectTitle}}</header>
       <Boxel::IconButton @icon="close" @class="cardflow__modal-close-btn" {{on "click" this.closeModal}} />
       <div class="cardflow__nested-grid">
