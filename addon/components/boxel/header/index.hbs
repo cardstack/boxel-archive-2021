@@ -26,6 +26,7 @@
         <button
           class="boxel-header__button boxel-header__text-button"
           {{on "click" (optional @editAction)}}
+          data-test-boxel-header-button
           data-test-boxel-header-edit-button
         >
           Edit
@@ -36,6 +37,7 @@
           class="boxel-header__button"
           @icon="more-actions"
           aria-label="More Actions"
+          data-test-boxel-header-button
           data-test-boxel-header-menu-button
         />
       {{/if}}
@@ -45,6 +47,7 @@
           @icon="expand"
           aria-label="Isolate"
           {{on "click" (optional @expandAction)}}
+          data-test-boxel-header-button
           data-test-boxel-header-expand-button
         />
       {{/if}}
