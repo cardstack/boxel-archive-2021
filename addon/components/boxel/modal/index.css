@@ -13,16 +13,16 @@
 }
 
 .boxel-modal {
-  --modal-offset-top: 30px;
-  --modal-offset-right: 0px;
-  --modal-offset-left: 0px;
-  --modal-max-width: 1000px;
+  --boxel-modal-offset-top: 30px;
+  --boxel-modal-offset-right: 0px;
+  --boxel-modal-offset-left: 0px;
+  --boxel-modal-max-width: 1000px;
 
   position: fixed;
-  height: calc(100vh - var(--modal-offset-top));
-  top: var(--modal-offset-top);
-  left: var(--modal-offset-left);
-  right: var(--modal-offset-right);
+  height: calc(100vh - var(--boxel-modal-offset-top));
+  top: var(--boxel-modal-offset-top);
+  left: var(--boxel-modal-offset-left);
+  right: var(--boxel-modal-offset-right);
   margin: 0 auto;
   border: none;
   overflow: hidden;
@@ -33,7 +33,7 @@
 .boxel-modal__inner {
   width: 100%;
   height: 100%;
-  max-width: var(--modal-max-width);
+  max-width: var(--boxel-modal-max-width);
   margin: 0 auto;
   transition: max-width var(--boxel-transition);
 }
