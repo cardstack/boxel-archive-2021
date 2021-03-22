@@ -19,6 +19,7 @@
   --modal-max-width: 1000px;
 
   position: fixed;
+  height: calc(100vh - var(--modal-offset-top));
   top: var(--modal-offset-top);
   left: var(--modal-offset-left);
   right: var(--modal-offset-right);
@@ -30,7 +31,7 @@
 
 .boxel-modal__inner {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   max-width: var(--modal-max-width);
   margin: 0 auto;
   transition: max-width var(--boxel-transition);
