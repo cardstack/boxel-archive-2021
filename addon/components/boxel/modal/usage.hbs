@@ -1,5 +1,6 @@
 <Freestyle::Usage
   @name="Modal"
+  @description="A 'renderless' modal that places provided content on top of a dark, translucent overlay that obscures the page underneath."
 >
 <:example>
 <button {{on "click" (fn (mut this.open) true)}}>Open</button>
@@ -28,6 +29,6 @@
   <Args.String @name="--boxel-modal-max-width" @description="Maximum width of the modal" @value={{this.maxWidth}} @onInput={{fn (mut this.maxWidth)}} @optional={{true}}/>
 
   <Args.Action @name="onClose" @description="Callback when the modal's background overlay is clicked" @value={{this.onClose}} @optional={{true}}/>
-  <Args.Yield @description="The content of the modal" @optional={{true}}/>
+  <Args.Yield @description="The content of the modal. This visually sits directly on the overlay - there is no 'container' rendered by default." @optional={{true}}/>
 </:api>
 </Freestyle::Usage>
