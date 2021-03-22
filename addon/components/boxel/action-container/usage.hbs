@@ -1,8 +1,22 @@
 <Freestyle::Usage @name="ActionContainer">
   <:description>
-    Container for an action card.
+    Preconfigured CardContainer for an action card
   </:description>
-
+  <:example>
+    <Boxel::ActionContainer
+      @header={{this.header}}
+      @prompt={{this.prompt}}
+      @incompleteActionLabel={{this.incompleteActionLabel}}
+      @completeActionLabel={{this.completeActionLabel}}
+      @isComplete={{this.isComplete}}
+      @onClickButton={{fn (mut this.isComplete) (not this.isComplete)}}
+      @expandAction={{@expandAction}}
+    >
+      {{!-- Sample block yield --}}
+        <div>Action Card here</div>
+      {{!-- End of sample block yield --}}
+    </Boxel::ActionContainer>
+  </:example>
   <:api as |Args|>
     <Args.String
       @name="header"
@@ -54,34 +68,4 @@
       @description="Unstyled area for custom card content and fields"
     />
   </:api>
-
-  <:example>
-    <Boxel::ActionContainer
-      @header="Card Header"
-      @incompleteActionLabel={{this.incompleteActionLabel}}
-      @completeActionLabel={{this.completeActionLabel}}
-      @isComplete={{this.isComplete}}
-      @onClickButton={{fn (mut this.isComplete) (not this.isComplete)}}
-    >
-      {{!-- Sample block yield --}}
-        <div>Content goes here</div>
-      {{!-- End of sample block yield --}}
-    </Boxel::ActionContainer>
-
-    <br>
-
-    <Boxel::ActionContainer
-      @header={{this.header}}
-      @prompt={{this.prompt}}
-      @incompleteActionLabel={{this.incompleteActionLabel}}
-      @completeActionLabel={{this.completeActionLabel}}
-      @isComplete={{this.isComplete}}
-      @onClickButton={{fn (mut this.isComplete) (not this.isComplete)}}
-      @expandAction={{@expandAction}}
-    >
-      {{!-- Sample block yield --}}
-        <div>Content goes here</div>
-      {{!-- End of sample block yield --}}
-    </Boxel::ActionContainer>
-  </:example>
 </Freestyle::Usage>

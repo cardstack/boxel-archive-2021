@@ -1,4 +1,7 @@
 <Freestyle::Usage @name="LayoutContainer">
+  <:description>
+    Preconfigured CardContainer for a layout card
+  </:description>
   <:example>
     <Boxel::LayoutContainer
       @displayTools={{this.displayTools}}
@@ -7,9 +10,11 @@
       @editAction={{@editAction}}
       @expandAction={{@expandAction}}
     >
-      <div>
-        Layout Card here
-      </div>
+      {{!-- Sample block yield --}}
+        <div>
+          Layout Card here
+        </div>
+      {{!-- End of sample block yield --}}
     </Boxel::LayoutContainer>
   </:example>
   <:api as |Args|>

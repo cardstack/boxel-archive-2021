@@ -89,18 +89,26 @@ module('Integration | Component | ActionContainer', function (hooks) {
     `);
 
     assert.dom('[data-test-boxel-action-container]').exists();
-    assert.dom('[data-test-boxel-action-container]').doesNotHaveClass('boxel-action-container--is-complete');
+    assert
+      .dom('[data-test-boxel-action-container]')
+      .doesNotHaveClass('boxel-action-container--is-complete');
     assert.dom('[data-test-boxel-action-container] label').hasText('Full Name');
-    assert.dom('[data-test-boxel-action-container] input').hasValue('Gary Walker');
+    assert
+      .dom('[data-test-boxel-action-container] input')
+      .hasValue('Gary Walker');
     assert.dom('[data-test-boxel-action-footer] button').hasText('Save');
 
     await click('[data-test-boxel-action-footer] button');
 
-    assert.dom('[data-test-boxel-action-container]').hasClass('boxel-action-container--is-complete');
+    assert
+      .dom('[data-test-boxel-action-container]')
+      .hasClass('boxel-action-container--is-complete');
     assert.dom('[data-test-boxel-action-container] label').doesNotExist();
     assert.dom('[data-test-boxel-action-container] input').doesNotExist();
     assert.dom('[data-test-boxel-field-label]').hasText('Full Name');
-    assert.dom('[data-test-action-container-test-value]').hasText('Gary Walker');
+    assert
+      .dom('[data-test-action-container-test-value]')
+      .hasText('Gary Walker');
     assert.dom('[data-test-boxel-action-footer] button').hasText('Edit');
   });
 });

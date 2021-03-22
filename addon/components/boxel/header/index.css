@@ -3,11 +3,11 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  min-height: var(--header-min-height, 1.875rem); /* 30px */
-  background-color: var(--header-background-color, var(--boxel-purple-100));
+  min-height: var(--boxel-header-min-height, 1.875rem); /* 30px */
+  background-color: var(--boxel-header-background-color, var(--boxel-purple-100));
 
   /* text styling */
-  color: var(--header-text-color, var(--boxel-dark));
+  color: var(--boxel-header-text-color, var(--boxel-dark));
   font: 600 var(--boxel-font-xs);
   letter-spacing: var(--boxel-lsp-xl);
   text-transform: uppercase;
@@ -43,8 +43,8 @@
 
 /* for all buttons */
 .boxel-header__button {
-  --icon-button-width: var(--header-min-height, 1.875rem);
-  --icon-button-height: var(--header-min-height, 1.875rem);
+  --icon-button-width: var(--boxel-header-min-height, 1.875rem);
+  --icon-button-height: var(--boxel-header-min-height, 1.875rem);
 
   min-height: var(--icon-button-height);
   padding: 0;
