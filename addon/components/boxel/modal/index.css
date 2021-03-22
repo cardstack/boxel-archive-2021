@@ -27,6 +27,7 @@
   border: none;
   overflow: hidden;
   z-index: 15;
+  pointer-events: none;
 }
 
 .boxel-modal__inner {
@@ -35,4 +36,9 @@
   max-width: var(--modal-max-width);
   margin: 0 auto;
   transition: max-width var(--boxel-transition);
+}
+
+
+.boxel-modal__inner > * {
+  pointer-events: auto;
 }
