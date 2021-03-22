@@ -14,8 +14,8 @@
 
 .boxel-modal {
   --modal-offset-top: 30px;
-  --modal-offset-right: 30px;
-  --modal-offset-left: 110px;
+  --modal-offset-right: 0px;
+  --modal-offset-left: 0px;
   --modal-max-width: 1000px;
 
   position: fixed;
