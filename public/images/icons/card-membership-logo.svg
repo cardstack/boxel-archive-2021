@@ -2,19 +2,19 @@
   <g data-name="Group 12114">
     <g data-name="Group 12101">
       <g data-name="Group 12098">
-        <rect data-name="Rectangle 3140" width="70" height="70" rx="18" fill="#281e78"/>
+        <rect width="70" height="70" rx="18" fill="#281e78"/>
       </g>
     </g>
     <g data-name="Group 12108">
-      <g data-name="Group 12143" transform="translate(5352 -15069)">
-        <g data-name="Rectangle 3142" transform="translate(-5333 15093)" fill="none" stroke="#37eb77" stroke-width="4">
+      <g transform="translate(5352 -15069)">
+        <g transform="translate(-5333 15093)" fill="none" stroke="#37eb77" stroke-width="4">
           <rect width="34" height="24" rx="6" stroke="none"/>
           <rect x="2" y="2" width="30" height="20" rx="4"/>
         </g>
-        <path data-name="Rectangle 3143" fill="#281e78" d="M-5336 15087h26v20h-26z"/>
-        <circle data-name="Ellipse 1178" cx="2" cy="2" r="2" transform="translate(-5312 15093)" fill="#37eb77"/>
-        <circle data-name="Ellipse 1179" cx="2" cy="2" r="2" transform="translate(-5333 15105)" fill="#37eb77"/>
-        <path data-name="Path 8700" d="M-5334.1 15100.076h13.921l2.9-9.281-5.421 2.672-4.426-7.311-4.076 7.311-5.8-2.672z" fill="none" stroke="#00ebe5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <path fill="#281e78" d="M-5336 15087h26v20h-26z"/>
+        <circle cx="2" cy="2" r="2" transform="translate(-5312 15093)" fill="#37eb77"/>
+        <circle cx="2" cy="2" r="2" transform="translate(-5333 15105)" fill="#37eb77"/>
+        <path d="M-5334.1 15100.076h13.921l2.9-9.281-5.421 2.672-4.426-7.311-4.076 7.311-5.8-2.672z" fill="none" stroke="#00ebe5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
       </g>
     </g>
   </g>
