@@ -3,3 +3,89 @@
   top: var(--boxel-sp);
   right: var(--boxel-sp);
 }
+
+.cardstack-container {
+  --card-width: 33.125rem;
+  --horizontal-card-gap: var(--boxel-sp-lg);
+
+  width: 100%;
+  max-width: calc(var(--card-width) * 2 + var(--horizontal-card-gap) + var(--boxel-sp-lg) * 2);
+  margin: auto;
+  padding-left: var(--boxel-sp-lg);
+  padding-right: var(--boxel-sp-lg);
+  padding-bottom: 9.375rem;
+}
+
+.cardstack-section-header {
+  font: 600 var(--boxel-font-lg);
+  letter-spacing: 0;
+  margin: var(--boxel-sp-lg) 0;
+}
+
+.cardstack-landing-hero {
+  width: 100%;
+  height: 18.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--boxel-border-radius);
+  background-color: var(--boxel-navy);
+  background-image: url('../../../../public/@cardstack/boxel/images/illustrations/landing-hero.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 18.75rem;
+  overflow: hidden;
+}
+
+.cardstack-landing-hero__logo {
+  width: 5rem;
+  height: 5rem;
+}
+
+.cardstack-landing-hero__title {
+  margin-top: var(--boxel-sp-sm);
+  margin-bottom: var(--boxel-sp);
+
+  font-weight: 700; 
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  /* font-family: Karbon; */
+  letter-spacing: var(--boxel-lsp-xxl);
+}
+
+.cardstack-landing-hero__content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cardstack-landing-hero__description {
+  font-size: 1.25rem;
+  font-family: var(--boxel-font-family);
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+.cardstack-landing-hero__cta {
+  display: flex;
+  align-items: center;
+  margin-top: var(--boxel-sp-xs);
+  font: 400 var(--boxel-font);
+  --icon-color: var(--boxel-teal);
+}
+
+.cardstack-landing-hero__cta-icon {
+  margin-left: var(--boxel-sp-xxs);
+}
+
+.cardstack-org-grid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, var(--card-width));
+  grid-template-rows: auto auto;
+  gap: var(--boxel-sp-xl) var(--horizontal-card-gap);
+}
+
+.cardstack-org-grid .org-card {
+  height: 100%;
+}
