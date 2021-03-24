@@ -1,5 +1,5 @@
 .org-card__container {
-  max-width: 33.125rem;
+  width: 33.125rem;
   min-height: 18.75rem;
   display: flex;
   border-radius: var(--boxel-border-radius);
