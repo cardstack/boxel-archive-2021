@@ -6,7 +6,6 @@ export default class CardStackController extends Controller {
 
   @action updateEdges() {
     this.edges.updateDisplayLeftEdge(true);
-    this.edges.hasDarkTheme(); // updates login button variant
   }
 
   @action transitionHome() {
