@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import CardstackLogo from '../../../public/@cardstack/boxel/images/icons/cardstack-logo.svg';
+import CardstackLogo from '../../../public/@cardstack/boxel/images/icons/cardstack-logo-white-text.svg';
 import CardSpaceLogo from '../../../public/@cardstack/boxel/images/icons/card-space-logo.svg';
 import CardPayLogo from '../../../public/@cardstack/boxel/images/icons/card-pay-logo.svg';
 import CardMembershipLogo from '../../../public/@cardstack/boxel/images/icons/card-membership-logo.svg';
