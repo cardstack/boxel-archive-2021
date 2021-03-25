@@ -1,17 +1,52 @@
 /* styling */
 .boxel-expandable-banner__details {
+  --boxel-expandable-banner-text-color: var(--boxel-light);
+  --boxel-expandanble-banner-background-color: var(--boxel-purple-400);
+
+  color: var(--boxel-expandable-banner-text-color);
+  background: var(--boxel-expandanble-banner-background-color);
+  border-radius: var(--boxel-border-radius);
 }
 
 .boxel-expandable-banner__summary {
-    position: relative;
-    padding: var(--boxel-sp-lg);
+  position: relative;
+  padding: var(--boxel-sp-lg) calc(3.375rem + var(--boxel-sp-lg))
+    var(--boxel-sp-lg) var(--boxel-sp-lg);
+  min-height: 5rem;
+  cursor: pointer;
+  border-radius: inherit;
 }
 
-.boxel-expandable-banner__summary-close-marker, .boxel-expandable-banner__summary-open-marker {
-    position: absolute;
-    right: var(--boxel-sp-lg);
-    top: 50%;
-    transform: translateY(-50%);
+.boxel-expandable-banner__summary-close-marker,
+.boxel-expandable-banner__summary-open-marker {
+  --icon-color: var(--boxel-expandable-banner-text-color);
+
+  position: absolute;
+  right: var(--boxel-sp-lg);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 3.375rem;
+  font: var(--boxel-font-sm);
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+.boxel-expandable-banner__summary-close-marker svg,
+.boxel-expandable-banner__summary-open-marker svg {
+  width: .75rem;
+  height: .75rem;
+}
+
+/* focus */
+/* TODO: review - could move this to global styles */
+.boxel-expandable-banner__summary:focus:not(:focus-visible) {
+  outline: 2px solid transparent;
+}
+
+.boxel-expandable-banner__summary:focus {
+  outline: 2px solid var(--boxel-blue);
 }
 
 /* behavior */
