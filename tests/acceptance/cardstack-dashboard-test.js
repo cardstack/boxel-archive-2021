@@ -13,8 +13,12 @@ module('Acceptance | cardstack dashboard', function (hooks) {
     assert.dom('[data-test-cardstack-dashboard-header]').hasText('Cardstack');
     assert.dom('[data-test-cardstack-login-button]').exists();
     assert.dom('[data-test-left-edge-nav]').exists();
-    assert.dom('[data-test-cardstack-dashboard-link="cardstack.card-space"]').exists();
-    assert.dom('[data-test-cardstack-dashboard-link="cardstack.card-pay"]').exists();
+    assert
+      .dom('[data-test-cardstack-dashboard-link="cardstack.card-space"]')
+      .exists();
+    assert
+      .dom('[data-test-cardstack-dashboard-link="cardstack.card-pay"]')
+      .exists();
   });
 
   test('can navigate to /card-space', async function (assert) {
