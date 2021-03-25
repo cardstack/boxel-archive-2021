@@ -6,16 +6,17 @@
   color: var(--boxel-expandable-banner-text-color);
   background: var(--boxel-expandanble-banner-background-color);
   border-radius: var(--boxel-border-radius);
-  padding: 0 var(--boxel-sp-lg) var(--boxel-sp-lg) var(--boxel-sp-lg);
+  padding: var(--boxel-sp-lg);
 }
 
 .boxel-expandable-banner__summary {
   position: relative;
-  padding: var(--boxel-sp-lg) calc(3.375rem + var(--boxel-sp-lg))
-    var(--boxel-sp-lg) var(--boxel-sp-lg);
-  min-height: 5rem;
   cursor: pointer;
   border-radius: inherit;
+}
+
+.boxel-expandable-banner__details[open] .boxel-expandable-banner__summary {
+  margin-bottom: var(--boxel-sp-lg);
 }
 
 .boxel-expandable-banner__summary-close-marker,
@@ -23,7 +24,7 @@
   --icon-color: var(--boxel-expandable-banner-text-color);
 
   position: absolute;
-  right: var(--boxel-sp-lg);
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
