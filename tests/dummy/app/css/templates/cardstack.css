@@ -14,6 +14,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* quick hack to prevent layout shift when connect account button is pressed */
+  max-height: 1.875rem;
+  overflow: visible;
 }
 
 .cardstack-section-header__title {
