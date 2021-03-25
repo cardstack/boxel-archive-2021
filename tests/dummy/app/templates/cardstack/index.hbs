@@ -9,14 +9,16 @@
     <h2 class="cardstack-section-header__title">
       Cardstack
     </h2>
+    {{#unless this.cardstackSession.isAuthenticated}}
     <Boxel::Button
       {{!-- @kind={{if this.edges.darkTheme "secondary-dark" "secondary-light"}} --}}
       @kind="secondary-dark"
       @size="tall"
-      {{on "click" (noop)}}
+      {{on "click" this.cardstackSession.login}}
     >
       Connect Account
     </Boxel::Button>
+    {{/unless}}
     </div>
    {{!-- <Boxel::OrgHeader @title="Cardstack" data-test-cardstack-dashboard-header /> --}}
    <div class="cardstack-landing-hero">
