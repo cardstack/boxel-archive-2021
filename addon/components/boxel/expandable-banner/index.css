@@ -1,0 +1,46 @@
+/* styling */
+.boxel-expandable-banner__details {
+}
+
+.boxel-expandable-banner__summary {
+    position: relative;
+    padding: var(--boxel-sp-lg);
+}
+
+.boxel-expandable-banner__summary-close-marker, .boxel-expandable-banner__summary-open-marker {
+    position: absolute;
+    right: var(--boxel-sp-lg);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* behavior */
+/* the marker to signal that the details element is closable (close-marker) is visible when it's open */
+/* the marker to signal that the details element is openable (open-marker) is visible when it's closed */
+.boxel-expandable-banner__details[open]
+  .boxel-expandable-banner__summary-close-marker,
+.boxel-expandable-banner__details:not([open])
+  .boxel-expandable-banner__summary-open-marker {
+  /* visible */
+  visibility: visible;
+}
+
+/* the opposite of above block - hide the close-marker when it's not open, hide the open marker when it's open */
+.boxel-expandable-banner__details[open]
+  .boxel-expandable-banner__summary-open-marker,
+.boxel-expandable-banner__details:not([open])
+  .boxel-expandable-banner__summary-close-marker {
+  /* visible */
+  visibility: hidden;
+}
+
+/* 
+  remove the summary disclosure widget (the default triangle)
+  support is currently pretty decent: https://caniuse.com/?search=%3A%3Amarker
+  and certainly on our main browsers - Chrome, Safari, Firefox
+*/
+.boxel-expandable-banner__summary::marker,
+.boxel-expandable-banner__summary::-webkit-details-marker {
+  display: none;
+  content: '';
+}

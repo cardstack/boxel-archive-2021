@@ -1,0 +1,15 @@
+<details class="boxel-expandable-banner__details">
+    <summary class="boxel-expandable-banner__summary">
+        {{#if @icon}}
+        {{svg-jar @icon}}
+        {{/if}}
+        {{yield to="summary"}}
+        <div class="boxel-expandable-banner__summary-close-marker">
+            close this
+        </div>
+        <div class="boxel-expandable-banner__summary-open-marker">
+            open this
+        </div>
+    </summary>
+    {{yield to="details"}}
+</details>
