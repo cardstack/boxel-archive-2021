@@ -5,6 +5,16 @@
 >
   <:header>
     <Boxel::OrgHeader @title="Card Space" />
+    {{#unless this.cardstackSession.isAuthenticated}}
+      <Boxel::Button
+        class="card-space-login-button"
+        @kind="secondary-dark"
+        @size="tall"
+        {{on "click" this.cardstackSession.login}}
+      >
+        Connect Account
+      </Boxel::Button>
+    {{/unless}}
   </:header>
   <:body>
     <Boxel::Button

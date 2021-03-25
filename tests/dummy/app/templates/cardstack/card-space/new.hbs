@@ -6,6 +6,16 @@
   data-test-card-space-new
   ...attributes
 >
+  {{#unless this.cardstackSession.isAuthenticated}}
+    <Boxel::Button
+      class="card-space-login-button"
+      @kind="secondary-light"
+      @size="tall"
+      {{on "click" this.login}}
+    >
+      Connect Account
+    </Boxel::Button>
+  {{/unless}}
   <Boxel::LayoutContainer
     @displayTools={{this.cardstackSession.isAuthenticated}}
     @selectAction={{this.toggleSelect}}

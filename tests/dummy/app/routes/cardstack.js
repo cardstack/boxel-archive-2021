@@ -11,6 +11,7 @@ import CardCatalogImage from '../../../public/@cardstack/boxel/images/illustrati
 import CardMembershipImage from '../../../public/@cardstack/boxel/images/illustrations/card-membership.svg';
 
 import 'dummy/css/templates/cardstack.css';
+import 'dummy/css/templates/card-space/index.css';
 import 'dummy/css/templates/card-space/new.css';
 
 const ORGS = [
