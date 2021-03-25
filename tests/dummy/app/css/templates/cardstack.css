@@ -1,9 +1,3 @@
-.cardstack__login-button {
-  position: fixed;
-  top: var(--boxel-sp);
-  right: var(--boxel-sp);
-}
-
 .cardstack-container {
   --card-width: 33.125rem;
   --horizontal-card-gap: var(--boxel-sp-lg);
@@ -17,9 +11,16 @@
 }
 
 .cardstack-section-header {
+  margin: var(--boxel-sp-lg) 0;
+  margin: var(--boxel-sp-lg) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardstack-section-header__title {
   font: 600 var(--boxel-font-lg);
   letter-spacing: 0;
-  margin: var(--boxel-sp-lg) 0;
 }
 
 .cardstack-landing-hero {
