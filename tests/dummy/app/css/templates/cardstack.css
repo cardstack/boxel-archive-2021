@@ -3,10 +3,8 @@
   --horizontal-card-gap: var(--boxel-sp-lg);
 
   width: 100%;
-  max-width: calc(var(--card-width) * 2 + var(--horizontal-card-gap) + var(--boxel-sp-lg) * 2);
+  max-width: calc(var(--card-width) * 2 + var(--horizontal-card-gap));
   margin: auto;
-  padding-left: var(--boxel-sp-lg);
-  padding-right: var(--boxel-sp-lg);
   padding-bottom: 9.375rem;
 }
 
