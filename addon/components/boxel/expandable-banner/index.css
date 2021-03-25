@@ -6,6 +6,7 @@
   color: var(--boxel-expandable-banner-text-color);
   background: var(--boxel-expandanble-banner-background-color);
   border-radius: var(--boxel-border-radius);
+  padding: 0 var(--boxel-sp-lg) var(--boxel-sp-lg) var(--boxel-sp-lg);
 }
 
 .boxel-expandable-banner__summary {
