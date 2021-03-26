@@ -1,15 +1,10 @@
 <Freestyle::Usage>
     <:example>
-        <Boxel::ExpandableBanner>
-            <:summary>
-            <div class="summary-content">
-                {{svg-jar "payment" class="summary-content__icon"}}
-                Summary
-            </div>
-            </:summary>
-            <:details>
-                Details here.
-            </:details>
+        <Boxel::ExpandableBanner
+          @icon="payment"
+          @summary="Issue a Prepaid Card and receive the Issuer badge"
+        >
+            Details here.
         </Boxel::ExpandableBanner>
     </:example>
 </Freestyle::Usage>
