@@ -6,6 +6,7 @@
   color: var(--boxel-expandable-banner-text-color);
   background: var(--boxel-expandanble-banner-background-color);
   border-radius: var(--boxel-border-radius);
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
 }
 
 /* Content within the details element, shown when it's expanded */
