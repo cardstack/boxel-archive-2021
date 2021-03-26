@@ -1,8 +1,8 @@
 <Freestyle::Usage>
     <:example>
         <Boxel::ExpandableBanner
-          @icon="payment"
-          @summary="Deposit funds to become a Supplier"
+          @icon={{this.icon}}
+          @summary={{this.summary}}
         >
           <p class="expandable-banner-usage-paragraph">
               As a Supplier, you deposit funds from your Ethereum Mainnet wallet into the CARD Protocol’s Reserve Pool and receive the corresponding amount of CPXD tokens in your xDai Chain wallet.
@@ -22,4 +22,10 @@
           </p>
         </Boxel::ExpandableBanner>
     </:example>
+
+    <:api as |Args|>
+        <Args.String @name="icon" @value={{this.icon}} @onInput={{fn (mut this.icon)}} @description="Name of the icon on the left of the summary text, passed to svg-jar."/>
+        <Args.String @name="summary" @value={{this.summary}} @onInput={{fn (mut this.summary)}} @description="The text of the summary element"/>
+        <Args.Yield @description="The content in the details element"/>
+    </:api>
 </Freestyle::Usage>
