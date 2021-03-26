@@ -1,10 +1,10 @@
 /* The details element that contains everything */
 .boxel-expandable-banner__details {
   --boxel-expandable-banner-text-color: var(--boxel-light);
-  --boxel-expandanble-banner-background-color: var(--boxel-purple-400);
+  --boxel-expandable-banner-background-color: var(--boxel-purple-400);
 
   color: var(--boxel-expandable-banner-text-color);
-  background: var(--boxel-expandanble-banner-background-color);
+  background: var(--boxel-expandable-banner-background-color);
   border-radius: var(--boxel-border-radius);
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
 }
