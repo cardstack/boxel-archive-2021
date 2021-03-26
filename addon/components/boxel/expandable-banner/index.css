@@ -6,13 +6,31 @@
   color: var(--boxel-expandable-banner-text-color);
   background: var(--boxel-expandanble-banner-background-color);
   border-radius: var(--boxel-border-radius);
-  padding: var(--boxel-sp-lg);
+  padding: var(--boxel-sp);
 }
 
 .boxel-expandable-banner__summary {
   position: relative;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   border-radius: inherit;
+  padding-right: calc(var(--boxel-sp-xs) + 3.375rem);
+}
+
+.boxel-expandable-banner__summary-text {
+  font: 600 var(--boxel-font);
+  letter-spacing: var(--boxel-lsp-xs);
+}
+
+
+.boxel-expandable-banner__summary-icon {
+  --icon-color: var(--boxel-cyan);
+
+  width: 2.125rem;
+  height: 2.125rem;
+  margin-right: var(--boxel-sp-xs);
+  flex-shrink: 0;
 }
 
 .boxel-expandable-banner__details[open] .boxel-expandable-banner__summary {
@@ -42,7 +60,7 @@
 }
 
 /* focus */
-/* TODO: review - could move this to global styles */
+/* TODO: review - could move this to global styles? */
 .boxel-expandable-banner__summary:focus:not(:focus-visible) {
   outline: 2px solid transparent;
 }
