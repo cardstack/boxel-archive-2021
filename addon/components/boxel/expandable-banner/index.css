@@ -1,4 +1,4 @@
-/* styling */
+/* The details element that contains everything */
 .boxel-expandable-banner__details {
   --boxel-expandable-banner-text-color: var(--boxel-light);
   --boxel-expandanble-banner-background-color: var(--boxel-purple-400);
@@ -8,6 +8,7 @@
   border-radius: var(--boxel-border-radius);
 }
 
+/* Content within the details element, shown when it's expanded */
 .boxel-expandable-banner__details-content {
   padding: 0 var(--boxel-sp) var(--boxel-sp) var(--boxel-sp);
 }
@@ -18,14 +19,14 @@
   align-items: center;
   cursor: pointer;
   border-radius: inherit;
-  padding: var(--boxel-sp) calc(var(--boxel-sp-xs) + 3.375rem + var(--boxel-sp)) var(--boxel-sp) var(--boxel-sp);
+  padding: var(--boxel-sp) calc(var(--boxel-sp-xs) + 3.375rem + var(--boxel-sp))
+    var(--boxel-sp) var(--boxel-sp);
 }
 
 .boxel-expandable-banner__summary-text {
   font: 600 var(--boxel-font);
   letter-spacing: var(--boxel-lsp-xs);
 }
-
 
 .boxel-expandable-banner__summary-icon {
   --icon-color: var(--boxel-cyan);
@@ -36,6 +37,27 @@
   flex-shrink: 0;
 }
 
+.boxel-expandable-banner__summary:focus:not(:focus-visible) {
+  outline: 2px solid transparent;
+}
+
+.boxel-expandable-banner__summary:focus {
+  outline: 2px solid var(--boxel-blue);
+}
+
+/* marker styling */
+/* 
+  remove the summary disclosure widget (the default triangle)
+  support is currently pretty decent: https://caniuse.com/?search=%3A%3Amarker
+  and certainly on our main browsers - Chrome, Safari, Firefox
+*/
+.boxel-expandable-banner__summary::marker,
+.boxel-expandable-banner__summary::-webkit-details-marker {
+  display: none;
+  content: '';
+}
+
+/* style our custom markers */
 .boxel-expandable-banner__summary-close-marker,
 .boxel-expandable-banner__summary-open-marker {
   --icon-color: var(--boxel-expandable-banner-text-color);
@@ -54,47 +76,29 @@
 
 .boxel-expandable-banner__summary-close-marker svg,
 .boxel-expandable-banner__summary-open-marker svg {
-  width: .75rem;
-  height: .75rem;
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
-/* focus */
-/* TODO: review - could move this to global styles? */
-.boxel-expandable-banner__summary:focus:not(:focus-visible) {
-  outline: 2px solid transparent;
-}
-
-.boxel-expandable-banner__summary:focus {
-  outline: 2px solid var(--boxel-blue);
-}
-
-/* behavior */
-/* the marker to signal that the details element is closable (close-marker) is visible when it's open */
-/* the marker to signal that the details element is openable (open-marker) is visible when it's closed */
-.boxel-expandable-banner__details[open]
-  .boxel-expandable-banner__summary-close-marker,
-.boxel-expandable-banner__details:not([open])
-  .boxel-expandable-banner__summary-open-marker {
-  /* visible */
-  visibility: visible;
-}
-
-/* the opposite of above block - hide the close-marker when it's not open, hide the open marker when it's open */
-.boxel-expandable-banner__details[open]
-  .boxel-expandable-banner__summary-open-marker,
+/* Only show the close marker when the details are expanded */
 .boxel-expandable-banner__details:not([open])
   .boxel-expandable-banner__summary-close-marker {
-  /* visible */
   visibility: hidden;
 }
 
-/* 
-  remove the summary disclosure widget (the default triangle)
-  support is currently pretty decent: https://caniuse.com/?search=%3A%3Amarker
-  and certainly on our main browsers - Chrome, Safari, Firefox
-*/
-.boxel-expandable-banner__summary::marker,
-.boxel-expandable-banner__summary::-webkit-details-marker {
-  display: none;
-  content: '';
+.boxel-expandable-banner__details[open]
+  .boxel-expandable-banner__summary-close-marker {
+  visibility: visible;
+}
+
+
+/* Only show the open marker when the details are not expanded */
+.boxel-expandable-banner__details[open]
+  .boxel-expandable-banner__summary-open-marker {
+  visibility: hidden;
+}
+
+.boxel-expandable-banner__details:not([open])
+  .boxel-expandable-banner__summary-open-marker {
+  visibility: visible;
 }
