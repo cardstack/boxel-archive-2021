@@ -1,0 +1,103 @@
+<Boxel::Thread ...attributes>
+  <:header>
+    <Boxel::ThreadHeader
+      @title={{@title}}
+      @expanded={{@expanded}}
+      @toggleExpand={{@toggleExpand}}
+    />
+  </:header>
+
+  <:content>
+    <Boxel::DateDivider @date={{this.startTimestamp}} />
+    {{#each @milestones as |milestone i|}}
+      {{#if (and (lte i this.progress) milestone.message)}}
+        <Boxel::ThreadMessage
+          @content={{milestone.message}}
+          @datetime={{milestone.datetime}}
+          @imgURL={{@workflowBot.imgURL}}
+        />
+
+        <AnimatedContainer onInitialRender={{true}}>
+          {{#animated-value milestone.datetime initialInsertion=true use=this.revealCard duration=milestone.delayMs}}
+            <Boxel::ActionContainer
+              @header={{milestone.title}}
+              @prompt="Milestone Action"
+              @incompleteActionLabel="Complete"
+              @completeActionLabel="Edit"
+              @isComplete={{milestone.complete}}
+              @onClickButton={{fn this.toggleComplete milestone}}
+            />
+          {{/animated-value}}
+        </AnimatedContainer>
+
+        <AnimatedContainer>
+          {{#animated-if milestone.complete use=this.bannerTransition}}
+            <Boxel::MilestoneBanner
+              @title={{milestone.statusOnCompletion}}
+              {{on "click" this.updateProgress}}
+            />
+          {{/animated-if}}
+        </AnimatedContainer>
+
+        {{#if (and milestone.messageOnCompletion this.displayCompletionMessage)}}
+          <Boxel::ThreadMessage
+            @content={{milestone.messageOnCompletion}}
+            @datetime={{milestone.datetimeOnCompletion}}
+            @imgURL={{@workflowBot.imgURL}}
+          />
+        {{/if}}
+      {{/if}}
+    {{/each}}
+  </:content>
+
+  <:sidebar as |SidebarSection|>
+    <SidebarSection>
+      <Boxel::Sidebar::CardContainer
+        @header={{html-safe (concat "Workflow:<br>" @title)}}
+        @attachNext={{true}}
+      >
+        <div>
+          <Boxel::ProgressCircle
+            @percentComplete={{percent-complete total=@milestones.length completed=this.progress}}
+          />
+        </div>
+        <div class="boxel-thread-modal__milestone-progress-status">
+          {{this.progressStatus}}
+        </div>
+      </Boxel::Sidebar::CardContainer>
+
+      <Boxel::Sidebar::CardContainer @header="Milestones">
+        <Boxel::Milestones
+          @milestones={{@milestones}}
+          @completedCount={{this.progress}}
+        />
+      </Boxel::Sidebar::CardContainer>
+    </SidebarSection>
+
+    <SidebarSection>
+      <Boxel::HelpBox />
+    </SidebarSection>
+
+    <SidebarSection>
+      <Boxel::Sidebar::CardContainer
+        @header="Participants"
+        @attachNext={{true}}
+      >
+        <Boxel::ParticipantList
+          @fullWidth={{true}}
+          @participants={{@participants}}
+        />
+      </Boxel::Sidebar::CardContainer>
+
+      <Boxel::Sidebar::CardContainer>
+        <Boxel::ParticipantList
+          @fullWidth={{true}}
+          @participants={{@orgParticipants}}
+        />
+        <Boxel::AddParticipantButton
+          {{on "click" (optional @addParticipant)}}
+        />
+      </Boxel::Sidebar::CardContainer>
+    </SidebarSection>
+  </:sidebar>
+</Boxel::Thread>

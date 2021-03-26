@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import { reads } from 'macro-decorators';
+import { reads, not } from 'macro-decorators';
 import move from 'ember-animated/motions/move';
 import { fadeIn } from 'ember-animated/motions/opacity';
 import { parallel, wait } from 'ember-animated';
@@ -7,7 +7,8 @@ import { easeOut } from 'ember-animated/easings/cosine';
 // import { printSprites } from 'ember-animated';
 
 export default class ThreadMessageComponent extends Component {
-  @reads('args.iconSize', 40) iconSize;
+  @reads('args.iconSize', '2.5rem') iconSize;
+  @not('args.isRound') hasLogo;
 
   *transition({ insertedSprites }) {
     // printSprites(arguments[0]);

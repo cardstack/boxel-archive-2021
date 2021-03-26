@@ -7,10 +7,6 @@
   --boxel-modal-max-width: 100%;
 }
 
-.boxel-thread-modal > .boxel-thread-modal__inner {
-  height: calc(100% - 60px);
-}
-
 .boxel-thread-modal__milestone-progress-status {
   color: var(--boxel-dark);
   font: var(--boxel-font-sm);
