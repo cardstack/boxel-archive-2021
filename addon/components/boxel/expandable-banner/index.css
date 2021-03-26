@@ -6,7 +6,10 @@
   color: var(--boxel-expandable-banner-text-color);
   background: var(--boxel-expandanble-banner-background-color);
   border-radius: var(--boxel-border-radius);
-  padding: var(--boxel-sp);
+}
+
+.boxel-expandable-banner__details-content {
+  padding: 0 var(--boxel-sp) var(--boxel-sp) var(--boxel-sp);
 }
 
 .boxel-expandable-banner__summary {
@@ -15,7 +18,7 @@
   align-items: center;
   cursor: pointer;
   border-radius: inherit;
-  padding-right: calc(var(--boxel-sp-xs) + 3.375rem);
+  padding: var(--boxel-sp) calc(var(--boxel-sp-xs) + 3.375rem + var(--boxel-sp)) var(--boxel-sp) var(--boxel-sp);
 }
 
 .boxel-expandable-banner__summary-text {
@@ -33,16 +36,12 @@
   flex-shrink: 0;
 }
 
-.boxel-expandable-banner__details[open] .boxel-expandable-banner__summary {
-  margin-bottom: var(--boxel-sp-lg);
-}
-
 .boxel-expandable-banner__summary-close-marker,
 .boxel-expandable-banner__summary-open-marker {
   --icon-color: var(--boxel-expandable-banner-text-color);
 
   position: absolute;
-  right: 0;
+  right: var(--boxel-sp);
   top: 50%;
   transform: translateY(-50%);
   display: flex;
