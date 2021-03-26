@@ -2,6 +2,8 @@
 .boxel-expandable-banner__details {
   --boxel-expandable-banner-text-color: var(--boxel-light);
   --boxel-expandable-banner-background-color: var(--boxel-purple-400);
+  --boxel-expandable-banner-vertical-gap: var(--boxel-sp);
+  --boxel-expandable-banner-horizontal-gap: var(--boxel-sp-lg);
 
   color: var(--boxel-expandable-banner-text-color);
   background: var(--boxel-expandable-banner-background-color);
@@ -11,7 +13,7 @@
 
 /* Content within the details element, shown when it's expanded */
 .boxel-expandable-banner__details-content {
-  padding: 0 var(--boxel-sp) var(--boxel-sp) var(--boxel-sp);
+  padding: 0 var(--boxel-expandable-banner-horizontal-gap) var(--boxel-expandable-banner-vertical-gap) var(--boxel-expandable-banner-horizontal-gap);
 }
 
 .boxel-expandable-banner__summary {
@@ -20,8 +22,8 @@
   align-items: center;
   cursor: pointer;
   border-radius: inherit;
-  padding: var(--boxel-sp) calc(var(--boxel-sp-xs) + 3.375rem + var(--boxel-sp))
-    var(--boxel-sp) var(--boxel-sp);
+  padding: var(--boxel-expandable-banner-vertical-gap) calc(var(--boxel-sp-xs) + 3.375rem + var(--boxel-expandable-banner-horizontal-gap))
+    var(--boxel-expandable-banner-vertical-gap) var(--boxel-expandable-banner-horizontal-gap);
 }
 
 .boxel-expandable-banner__summary-text {
@@ -64,7 +66,7 @@
   --icon-color: var(--boxel-expandable-banner-text-color);
 
   position: absolute;
-  right: var(--boxel-sp);
+  right: var(--boxel-expandable-banner-horizontal-gap);
   top: 50%;
   transform: translateY(-50%);
   display: flex;
