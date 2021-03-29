@@ -298,14 +298,15 @@ jobs:
       run: echo "COMMENT_IDENTIFIER=PR_${{ steps.fpr.outputs.pr-number }}_PREVIEW_BUILD_LINK_COMMENT" >> $GITHUB_ENV
 
     # finding a comment in given PR that contains the identifier string
-    - uses: peter-evans/find-comment@v1
+    - name: Find comment that contains identifier
+      uses: peter-evans/find-comment@v1
       id: fc
       with:
         body-includes: ${{ env.COMMENT_IDENTIFIER }}
         issue-number: ${{ steps.fpr.outputs.pr-number }}
     
-    # create a new comment if none exists
-    - uses: peter-evans/create-or-update-comment@v1
+    - name: Create new comment if none exists
+      uses: peter-evans/create-or-update-comment@v1
       if: steps.fc.outputs.comment-id == ''
       with: 
         issue-number: ${{ steps.fpr.outputs.pr-number }}
