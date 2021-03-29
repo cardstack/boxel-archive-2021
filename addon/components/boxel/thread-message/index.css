@@ -37,10 +37,10 @@
   letter-spacing: var(--boxel-lsp-sm);
 }
 
-.boxel-thread-message__content > p {
+.boxel-thread-message__content > * {
   margin: 0;
 }
 
-.boxel-thread-message__content > p + p {
+.boxel-thread-message__content > * + * {
   margin-top: var(--boxel-sp-lg);
 }

@@ -9,13 +9,17 @@ import { parallel, wait } from 'ember-animated';
 import { easeOut } from 'ember-animated/easings/cosine';
 
 export default class WorkflowThread extends Component {
-  @tracked progress = 0;
   @tracked displayCompletionMessage = false;
+  @tracked progress = this.progressLevel || 0;
   @reads('args.milestones.0.datetime') startTimestamp;
   @reads('args.milestones.length') milestonesLength;
 
   get milestone() {
     return this.args.milestones[this.progress];
+  }
+
+  get progressLevel() {
+    return this.args.milestones.filter((el) => el.complete === true).length;
   }
 
   get progressStatus() {
@@ -33,6 +37,7 @@ export default class WorkflowThread extends Component {
   @action
   toggleComplete(milestone) {
     set(milestone, 'complete', !milestone.complete);
+    set(milestone, 'rendered', true);
   }
 
   @action
@@ -48,14 +53,17 @@ export default class WorkflowThread extends Component {
     }
   }
 
-  *revealCard({ insertedSprites, duration }) {
+  *transition({ insertedSprites }) {
+    // printSprites(arguments[0]);
+
     for (let sprite of insertedSprites) {
-      yield wait(duration);
       sprite.startTranslatedBy(0, 30);
       parallel(
-        fadeIn(sprite, { easing: easeOut, duration: 400 }),
-        move(sprite, { easing: easeOut, duration: 400 })
+        fadeIn(sprite, { easing: easeOut, duration: 200 }),
+        move(sprite, { easing: easeOut, duration: 200 })
       );
+      // stagger
+      yield wait(800);
     }
   }
 

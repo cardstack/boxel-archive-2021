@@ -10,24 +10,35 @@
   <:content>
     <Boxel::DateDivider @date={{this.startTimestamp}} />
     {{#each @milestones as |milestone i|}}
-      {{#if (and (lte i this.progress) milestone.message)}}
-        <Boxel::ThreadMessage
-          @content={{milestone.message}}
-          @datetime={{milestone.datetime}}
-          @imgURL={{@workflowBot.imgURL}}
-        />
-
-        <AnimatedContainer onInitialRender={{true}}>
-          {{#animated-value milestone.datetime initialInsertion=true use=this.revealCard duration=milestone.delayMs}}
-            <Boxel::ActionContainer
-              @header={{milestone.title}}
-              @prompt="Milestone Action"
-              @incompleteActionLabel="Complete"
-              @completeActionLabel="Edit"
-              @isComplete={{milestone.complete}}
-              @onClickButton={{fn this.toggleComplete milestone}}
-            />
-          {{/animated-value}}
+      {{#let (or milestone.complete (lte i this.progress)) as |displayMilestone|}}
+        <AnimatedContainer>
+          {{#animated-if (and displayMilestone milestone.message) use=this.transition}}
+            <Boxel::ThreadMessage
+              @content={{if (is-array milestone.message) null milestone.message}}
+              @datetime={{milestone.datetime}}
+              @imgURL={{@workflowBot.imgURL}}
+            >
+              <AnimatedContainer onInitialRender={{not milestone.complete}}>
+                {{#animated-each milestone.message initialInsertion=(not milestone.complete) use=this.transition as |content|}}
+                  {{#if content.component}}
+                    <div class="card-pay-workflow-thread__message">
+                      {{!-- Sample component --}}
+                      <Boxel::ActionContainer
+                        @header={{milestone.title}}
+                        @prompt="Milestone Action"
+                        @incompleteActionLabel="Complete"
+                        @completeActionLabel="Edit"
+                        @isComplete={{milestone.complete}}
+                        @onClickButton={{fn this.toggleComplete milestone}}
+                      />
+                    </div>
+                  {{else}}
+                    <p class="card-pay-workflow-thread__message">{{content}}</p>
+                  {{/if}}
+                {{/animated-each}}
+              </AnimatedContainer>
+            </Boxel::ThreadMessage>
+          {{/animated-if}}
         </AnimatedContainer>
 
         <AnimatedContainer>
@@ -39,14 +50,16 @@
           {{/animated-if}}
         </AnimatedContainer>
 
-        {{#if (and milestone.messageOnCompletion this.displayCompletionMessage)}}
-          <Boxel::ThreadMessage
-            @content={{milestone.messageOnCompletion}}
-            @datetime={{milestone.datetimeOnCompletion}}
-            @imgURL={{@workflowBot.imgURL}}
-          />
-        {{/if}}
-      {{/if}}
+        <AnimatedContainer>
+          {{#animated-if (and milestone.messageOnCompletion this.displayCompletionMessage) use=this.transition}}
+            <Boxel::ThreadMessage
+              @content={{milestone.messageOnCompletion}}
+              @datetime={{milestone.datetimeOnCompletion}}
+              @imgURL={{@workflowBot.imgURL}}
+            />
+          {{/animated-if}}
+        </AnimatedContainer>
+      {{/let}}
     {{/each}}
   </:content>
 
@@ -61,7 +74,7 @@
             @percentComplete={{percent-complete total=@milestones.length completed=this.progress}}
           />
         </div>
-        <div class="boxel-thread-modal__milestone-progress-status">
+        <div class="card-pay-workflow-thread__status">
           {{this.progressStatus}}
         </div>
       </Boxel::Sidebar::CardContainer>

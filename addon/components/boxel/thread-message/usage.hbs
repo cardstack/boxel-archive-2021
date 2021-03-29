@@ -63,14 +63,18 @@
       @content={{this.messageArray}}
       @imgURL={{this.botImg}}
       @datetime={{this.datetime}}
-    />
+    >
+      <Boxel::CardContainer @hasHeader={{true}} @displayBoundaries={{true}}>
+        <Boxel::Header @header="Card" />
+        <p>Sample yield.</p>
+      </Boxel::CardContainer>
+    </Boxel::ThreadMessage>
   </:example>
   <:api as |Args|>
     <Args.Array
       @name="content"
       @type="String"
       @description="Message content. Can be a string or an array of strings"
-      @required={{true}}
       @items={{this.messageArray}}
       @onChange={{fn (mut this.messageArray)}}
     />
@@ -87,6 +91,9 @@
       @defaultValue="(now)"
       @value={{this.datetime}}
       @onInput={{fn (mut this.datetime)}}
+    />
+    <Args.Yield
+      @description="Optional yield"
     />
   </:api>
 </Freestyle::Usage>
