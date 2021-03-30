@@ -295,7 +295,8 @@ jobs:
 
     - name: Set env var for message
       shell: bash
-      run: echo "COMMENT_TEXT=### Preview this change [here](${{ env.S3_PREVIEW_WEBSITE_URL }}/${{ github.head_ref }})" >> $GITHUB_ENV
+      run: |
+        echo "COMMENT_TEXT=### :sparkles: Preview this change [here](${{ env.S3_PREVIEW_WEBSITE_URL }}/${{ github.head_ref }})" >> $GITHUB_ENV
 
     # finding a comment in given PR that contains the identifier string
     - name: Find comment that contains identifier
