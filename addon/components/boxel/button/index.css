@@ -28,8 +28,19 @@
   letter-spacing: var(--boxel-button-letter-spacing, var(--boxel-lsp-lg));
 }
 
-.boxel-button:disabled {
+/* select disabled buttons and links that don't have href */
+.boxel-button:disabled, a.boxel-button:not([href]),a.boxel-button[href=""] {
   --boxel-button-color: var(--boxel-purple-300);
   --boxel-button-border: 1px solid var(--boxel-purple-300);
   --boxel-button-text-color: var(--boxel-purple-400);
+}
+
+/* the a element does not have a disabled attribute. Clicking will still trigger event listeners */
+a.boxel-button:not([href]),a.boxel-button[href=""] {
+  pointer-events: none;
+}
+
+/* overwrite the global style for links in global.css */
+a.boxel-button:hover {
+  color: var(--boxel-button-text-color);
 }

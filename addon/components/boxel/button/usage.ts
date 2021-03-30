@@ -13,6 +13,7 @@ export default class extends Component {
   @tracked size = 'base';
   @tracked kind = 'primary';
   @tracked disabled = false;
+  @tracked href = '#';
 
   @action
   alert(): void {
