@@ -1,3 +1,17 @@
+{{#if @href}}
+<a
+  class={{cn
+    "boxel-button"
+    (concat "boxel-button--size-" (or @size this.defaultSize))
+    (concat "boxel-button--kind-" (or @kind this.defaultKind))
+  }} 
+  href={{unless @disabled @href}}
+  data-test-boxel-button 
+  ...attributes
+>
+  {{yield}}
+</a>
+{{else}}
 <button
   class={{cn
     "boxel-button"
@@ -10,3 +24,4 @@
 >
   {{yield}}
 </button>
+{{/if}}

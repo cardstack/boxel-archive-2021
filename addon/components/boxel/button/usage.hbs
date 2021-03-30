@@ -5,6 +5,7 @@
         @kind={{this.kind}}
         @size={{this.size}}
         @disabled={{this.disabled}}
+        @href={{this.href}}
         {{on "click" this.alert}}
       >
         Button Text
@@ -12,6 +13,13 @@
     </div>
   </:example>
   <:api as |Args|>
+    <Args.String
+      @name="href"
+      @optional={{true}}
+      @description="A route that the button can lead to. If used, an anchor element is used instead of a button. Note that for accessibility purposes, you should be careful about adding aria/other attributes to a disabled link."
+      @onInput={{fn (mut this.href)}}
+      @value={{this.href}}
+    />
     <Args.String
       @name="kind"
       @optional={{true}}
