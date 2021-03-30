@@ -1,6 +1,16 @@
 <Freestyle::Usage @name="Button">
   <:example>
     <div class={{cn usage-button-dark-mode-background=(eq this.kind "secondary-dark")}}>
+      {{#if this.href}}
+      <Boxel::Button
+        @kind={{this.kind}}
+        @size={{this.size}}
+        @disabled={{this.disabled}}
+        @href={{this.href}}
+      >
+        Button Text
+      </Boxel::Button>
+      {{else}}
       <Boxel::Button
         @kind={{this.kind}}
         @size={{this.size}}
@@ -10,6 +20,7 @@
       >
         Button Text
       </Boxel::Button>
+      {{/if}}
     </div>
   </:example>
   <:api as |Args|>
