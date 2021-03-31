@@ -1,0 +1,64 @@
+.card-pay-suggested-next-steps-box {
+  background: #363441;
+  border-radius: var(--boxel-border-radius);
+  min-width: min-content;
+}
+
+.card-pay-suggested-next-steps-box__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--boxel-sp-sm) var(--boxel-sp-lg);
+  min-width: max-content;
+}
+
+.card-pay-suggested-next-steps-box__header-title {
+  color: var(--boxel-light);
+  font: 700 var(--boxel-font-sm);
+}
+
+.card-pay-suggested-next-steps-box__header-private-notice {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: end;
+  gap: var(--boxel-sp-xs);
+  text-align: right;
+  margin-left: var(--boxel-sp-sm);
+
+  font: var(--boxel-font-xs);
+  color: var(--boxel-purple-300);
+  --icon-color: var(--boxel-purple-300);
+}
+
+.card-pay-suggested-next-steps-box__content {
+  padding: var(--boxel-sp-xxs) var(--boxel-sp-lg) var(--boxel-sp-lg) var(--boxel-sp-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* see every-layout's cluster */
+.card-pay-suggested-next-steps-box__cluster {
+  --horizontal-space: var(--boxel-sp-lg);
+  --vertical-space: var(--boxel-sp);
+  /* ↓ Suppress horizontal scrolling caused by
+  the negative margin in some circumstances */
+  overflow: hidden;
+}
+
+.card-pay-suggested-next-steps-box__cluster-body {
+  display: flex;
+  flex-wrap: wrap;
+  /* ↓ multiply by -1 to negate the halved value */
+  margin: calc(var(--vertical-space) / 2 * -1) calc(var(--horizontal-space) / 2 * -1);
+}
+
+.card-pay-suggested-next-steps-box__cluster-body > * {
+  /* ↓ half the value, because of the 'doubling up' */
+  margin: calc(var(--vertical-space) / 2) calc(var(--horizontal-space) / 2);
+}
+
+.card-pay-suggested-next-steps-box__footer {
+  margin-top: var(--boxel-sp-xl);
+}

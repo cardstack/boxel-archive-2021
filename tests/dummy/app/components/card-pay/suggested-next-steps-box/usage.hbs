@@ -1,0 +1,27 @@
+<Freestyle::Usage @name="SuggestedNextStepsBox">
+  <:example>
+    <CardPay::SuggestedNextStepsBox class="usage-suggested-next-steps-box">
+      <:body as |BodyButton|>
+        {{#each this.nextSteps as |item|}}
+          <BodyButton @href={{item.href}}>
+            {{item.text}}
+          </BodyButton>
+        {{/each}}
+      </:body>
+      <:footer as |FooterButton|>
+        <FooterButton @href={{this.toHome.href}}>
+          {{this.toHome.text}}
+        </FooterButton>
+      </:footer>
+    </CardPay::SuggestedNextStepsBox>
+  </:example>
+
+  <:api as |Args|>
+  <Args.Yield
+    name="body"
+  />
+  <Args.Yield
+    name="footer"
+  />
+  </:api>
+</Freestyle::Usage>
