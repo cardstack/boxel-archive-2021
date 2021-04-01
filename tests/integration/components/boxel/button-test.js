@@ -102,18 +102,22 @@ module('Integration | Component | Button', function (hooks) {
     assert.dom(BUTTON_SELECTOR).hasClass(/--size-base/);
   });
 
-  test('It can render an anchor element with the correct href if there is a href argument and a button otherwise', async function (assert) {
+  test('It can render as both anchor and link-to depending on @as', async function (assert) {
+    this.set('as', 'anchor');
     this.set('href', '#');
     await render(
-      hbs`<Boxel::Button @href={{ this.href }}>
+      hbs`<Boxel::Button @as={{ this.as }} @href={{ this.href }}>
           This should be an anchor
           </Boxel::Button>`
     );
     assert.dom(`a${BUTTON_SELECTOR}`).hasAttribute('href', '#');
     assert.dom(`button${BUTTON_SELECTOR}`).doesNotExist();
-    this.set('href', '');
+    this.set('as', '');
     assert.dom(`a${BUTTON_SELECTOR}`).doesNotExist();
     assert.dom(`button${BUTTON_SELECTOR}`).doesNotHaveAttribute('href');
+    this.set('as', 'link-to');
+    assert.dom(`a${BUTTON_SELECTOR}`).exists();
+    assert.dom(`button${BUTTON_SELECTOR}`).doesNotExist();
   });
 
   test('An anchor element button should be able to receive event listeners', async function (assert) {
@@ -124,7 +128,7 @@ module('Integration | Component | Button', function (hooks) {
     });
     await render(hbs`
       <Boxel::Button @href={{ this.href }} {{ on "click" this.onClick }}>      
-        A disabled anchor
+        An anchor
       </Boxel::Button>
     `);
     await click(BUTTON_SELECTOR);
