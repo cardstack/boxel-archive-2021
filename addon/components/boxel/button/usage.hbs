@@ -1,4 +1,4 @@
-<Freestyle::Usage @name="Plain Button">
+<Freestyle::Usage @name="Button">
   <:description>
   Depending on the value of `@as`, the button will accept different arguments.
       <table class="usage-button-explanation">
@@ -101,8 +101,8 @@
       @value={{this.route}}
     />
     <Args.Object
-      @name="model"
-      @description="The model argument for LinkTo"
+      @name="models"
+      @description="The models argument for LinkTo"
       @optional={{true}}
       @defaultValue="[]"
     />
@@ -145,4 +145,21 @@
     />
     <Args.Yield @description="Contents of the button" />
   </:api>
+</Freestyle::Usage>
+
+<Freestyle::Usage @name="LinkTo button" @description="This button links you to the media registry page">
+  <:example>
+    <div class={{cn "usage-button-centers-component" usage-button-dark-mode-background=(eq this.kind "secondary-dark")}}>
+      <Boxel::Button
+        @as="link-to"
+        @kind="primary"
+        @size="base"
+        @route="media-registry"
+        @models={{array "bunny_records"}}
+        @query=""
+      >
+        Button Text
+      </Boxel::Button>
+    </div>
+  </:example>
 </Freestyle::Usage>
