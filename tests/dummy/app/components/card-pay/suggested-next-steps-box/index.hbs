@@ -7,11 +7,11 @@
     </span>
   </div>
   <div class="card-pay-suggested-next-steps-box__content">
-  <div class="card-pay-suggested-next-steps-box__cluster">
-    <div class="card-pay-suggested-next-steps-box__cluster-body">
+  <ul class="card-pay-suggested-next-steps-box__cluster">
+    <li class="card-pay-suggested-next-steps-box__cluster-body">
       {{yield (component "boxel/button" kind="primary") to="body"}}
-    </div>
-  </div>
+    </li>
+  </ul>
 
   {{#if (has-block "footer")}}
     <div class="card-pay-suggested-next-steps-box__footer">
