@@ -1,0 +1,33 @@
+<Boxel::CardContainer @hasHeader={{true}} class="next-steps-box" ...attributes>
+  <header class="next-steps-box__header">
+    <span class="next-steps-box__header-title">
+      Suggested Next Steps
+    </span>
+    <span class="next-steps-box__header-notice">
+      Only visible to you
+      {{svg-jar "lock-filled" width="0.75rem" height="0.75rem"}}
+    </span>
+  </header>
+
+  <div class="next-steps-box__content">
+    {{#if (has-block "default")}}
+      {{yield to="default"}}
+    {{/if}}
+
+    {{#if (has-block "item")}}
+      <ul class="next-steps-box__list">
+        {{#each @items as |item|}}
+          <li class="next-steps-box__list-item">
+            {{yield item to="item"}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+
+    {{#if (has-block "footer")}}
+      <footer class="next-steps-box__footer">
+        {{yield to="footer"}}
+      </footer>
+    {{/if}}
+  </div>
+</Boxel::CardContainer>
