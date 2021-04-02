@@ -3,13 +3,13 @@
     <CardPay::SuggestedNextStepsBox class="usage-suggested-next-steps-box">
       <:body as |BodyButton|>
         {{#each this.nextSteps as |item|}}
-          <BodyButton @href={{item.href}}>
+          <BodyButton @as="anchor" @href={{item.href}}>
             {{item.text}}
           </BodyButton>
         {{/each}}
       </:body>
       <:footer as |FooterButton|>
-        <FooterButton @href={{this.toHome.href}}>
+        <FooterButton @as="anchor" @href={{this.toHome.href}}>
           {{this.toHome.text}}
         </FooterButton>
       </:footer>
