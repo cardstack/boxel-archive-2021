@@ -1,15 +1,19 @@
 <div class="boxel-thread-message" ...attributes>
   <span class="boxel-thread-message__avatar">
     {{#unless @hideMeta}}
-      <img
-        src={{or @imgURL "../@cardstack/boxel/images/placeholders/profile.svg"}}
-        role="presentation"
-        aria-hidden="true"
-        alt=""
-        width="40px"
-        height="40px"
-        class={{cn "boxel-thread-message__avatar-img" boxel-thread-message__avatar-img--not-round=@notRound}}
-      />
+      {{#if @imgURL}}
+        <img
+          src={{@imgURL}}
+          role="presentation"
+          aria-hidden="true"
+          alt=""
+          width="40px"
+          height="40px"
+          class={{cn "boxel-thread-message__avatar-img" boxel-thread-message__avatar-img--not-round=@notRound}}
+        />
+      {{else}}
+        {{svg-jar "profile" width="40px" height="40px" aria-hidden="true"}}
+      {{/if}}
     {{/unless}}
   </span>
   <span>
