@@ -1,0 +1,5 @@
+<Boxel::CustomRadio::Container @groupDescription={{@groupDescription}}>
+    {{#each @items as |item|}}
+      {{yield (component "boxel/custom-radio/item") item}}
+    {{/each}}
+</Boxel::CustomRadio::Container>

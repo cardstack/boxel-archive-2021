@@ -1,0 +1,7 @@
+.show-focus:focus-within {
+  outline: 1px solid var(--boxel-outline-color);
+}
+
+.show-focus > input[checked] {
+  clip-path: none;
+}

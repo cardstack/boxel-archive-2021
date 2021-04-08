@@ -1,0 +1,14 @@
+.boxel-custom-radio__label {
+}
+
+/* https://css-tricks.com/customise-radio-buttons-without-compromising-accessibility/ */
+.boxel-custom-radio__hidden-input {
+  position: absolute;
+  clip-path: polygon(0 0);
+  width: 1px;
+  height: 1px;
+}
+
+.boxel-custom-radio__hidden-input:focus + .boxel-custom-radio__label {
+  outline: 1px solid var(--boxel-outline-color);
+}

@@ -1,0 +1,37 @@
+<Freestyle::Usage>
+    <:example>
+        <Input @type="radio"/>
+        <Input @type="radio" checked={{true}}/>
+    </:example>
+</Freestyle::Usage>
+
+<Freestyle::Usage>
+    <:example>
+        <Boxel::CustomRadio @groupDescription="Example Radio Usage" @items={{array 'hello' 'hi' 'yes'}} as |RadioItem data|>
+            <RadioItem class="show-focus" @id={{data}} @name="example-radio-usage" @checked={{eq data 'yes'}}>
+                {{data}}
+            </RadioItem>
+        </Boxel::CustomRadio>
+    </:example>
+</Freestyle::Usage>
+
+<Freestyle::Usage>
+    <:example>
+    <Boxel::CustomRadio::Container @groupDescription="Example Radio Usage">
+      <Boxel::CustomRadio::Item
+        @id="radio-1"
+        @name="radio-usage"
+        class="show-focus"
+      >
+          Radio 1
+      </Boxel::CustomRadio::Item>
+      <Boxel::CustomRadio::Item
+        @id="radio-2"
+        @name="radio-usage"
+        class="show-focus"
+      >
+          Radio 2
+      </Boxel::CustomRadio::Item>
+    </Boxel::CustomRadio::Container>
+    </:example>
+</Freestyle::Usage>
