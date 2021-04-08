@@ -4,7 +4,7 @@ that seems ok, since you probably shouldn't make a form work as document hierarc
 aria-labelledby seems friendlier to safari than the for element, but unsure about other browsers.
 --}}
 <label 
-  class={{cn "boxel-custom-radio__label" (if this.focused this.focusedClass)}} 
+  class={{cn "boxel-custom-radio__label" (if this.focused this.focusedClass) (if @checked this.checkedClass)}} 
   ...attributes 
   for={{@id}} 
   {{!-- id={{concat "checkbox-label-for-" @id}} --}}
