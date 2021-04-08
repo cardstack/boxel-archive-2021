@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { A } from '@ember/array';
+import { action } from '@ember/object';
 
 export default class CustomRadioUsage extends Component {
   @tracked items = A([
@@ -20,4 +21,8 @@ export default class CustomRadioUsage extends Component {
   @tracked groupDescription =
     'Select one of these options for breakfast sandwiches';
   @tracked checkedId = 'strawberry';
+
+  @action onChange(e: InputEvent): void {
+    this.checkedId = e.target.id;
+  }
 }
