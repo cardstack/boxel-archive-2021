@@ -1,5 +1,11 @@
 <Boxel::CustomRadio::Container @groupDescription={{@groupDescription}}>
     {{#each @items as |item|}}
-      {{yield (component "boxel/custom-radio/item") item}}
+      {{yield 
+        (hash
+          component=(component "boxel/custom-radio/item") 
+          data=item
+          selected=(eq item.id @checkedId)
+        )
+      }}
     {{/each}}
 </Boxel::CustomRadio::Container>
