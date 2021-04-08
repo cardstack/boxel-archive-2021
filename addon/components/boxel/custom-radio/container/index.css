@@ -9,6 +9,7 @@
 .boxel-custom-radio__group-description {
   opacity: 0;
   position: absolute;
-  width: 1px;
-  height: 1px;
+  left: -9999px;
+  max-width: 1px;
+  max-height: 1px;
 }
