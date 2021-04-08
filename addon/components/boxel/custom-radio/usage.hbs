@@ -1,37 +1,87 @@
-<Freestyle::Usage>
+<Freestyle::Usage @name="CustomRadio" @description="A custom radio button component with some accessibility considerations built in">
     <:example>
-        <Input @type="radio"/>
-        <Input @type="radio" checked={{true}}/>
+      <Boxel::CustomRadio @groupDescription={{this.groupDescription}} @items={{this.items}} @checkedId={{this.checkedId}} as |item|>
+          <item.component @id={{item.data.id}} @name="example-radio-usage" @checked={{item.selected}}>
+              {{item.data.id}}
+          </item.component>
+      </Boxel::CustomRadio>
     </:example>
+
+    <:api as |Args|>
+      <Args.String
+        @name="groupDescription"
+        @description="Description for this group of radio buttons"
+        @value={{this.groupDescription}}
+        @onInput={{fn (mut this.groupDescription)}}
+        @optional={{true}}
+      />
+      <Args.Array
+        @name="items"
+        @description="Items which will be represented by radio buttons. Each should have a unique 'id' attribute."
+        @value={{this.items}}
+        @onInput={{fn (mut this.items)}}
+      />
+      <Args.String
+        @name="checkedId"
+        @description="The id of the currently checked/selected item."
+        @value={{this.checkedId}}
+        @onInput={{fn (mut this.checkedId)}}
+        @optional={{true}}
+      />
+      <Args.Yield
+        @description="Yields an object with the default component to use (CustomRadio::Item), the data for the item passed in, and whether that item is selected"
+      />
+    </:api>
 </Freestyle::Usage>
 
-<Freestyle::Usage>
-    <:example>
-        <Boxel::CustomRadio @groupDescription="Example Radio Usage" @items={{array 'hello' 'hi' 'yes'}} as |RadioItem data|>
-            <RadioItem class="show-focus" @id={{data}} @name="example-radio-usage" @checked={{eq data 'yes'}}>
-                {{data}}
-            </RadioItem>
-        </Boxel::CustomRadio>
-    </:example>
-</Freestyle::Usage>
-
-<Freestyle::Usage>
+<Freestyle::Usage @name="CustomRadio::Container" @description="Container/group component for the custom radio button">
     <:example>
     <Boxel::CustomRadio::Container @groupDescription="Example Radio Usage">
       <Boxel::CustomRadio::Item
         @id="radio-1"
         @name="radio-usage"
-        class="show-focus"
       >
-          Radio 1
+        Item 1
       </Boxel::CustomRadio::Item>
       <Boxel::CustomRadio::Item
         @id="radio-2"
         @name="radio-usage"
-        class="show-focus"
       >
-          Radio 2
+        Item 2
       </Boxel::CustomRadio::Item>
     </Boxel::CustomRadio::Container>
     </:example>
+    <:api as |Args|>
+       <Args.String
+        @name="groupDescription"
+        @description="Description for this group of radio buttons"
+        @optional={{true}}
+      />
+      <Args.Yield
+        @description="Add radio buttons here"
+      />
+    </:api>
 </Freestyle::Usage>
+{{!-- 
+<Freestyle::Usage @name="CustomRadio::Item" @description>
+  <:example>
+    <Boxel::CustomRadio::Item
+      @id={{this.radioId}}
+      @name={{this.radioName}}
+      @value={{this.radioValue}}
+      @checked={{this.radioChecked}}
+      @onChange={{this.onChange}}
+    >
+      I've got custom checked styles
+    </Boxel::CustomRadio::Item>
+    <Boxel::CustomRadio::Item
+      @id={{this.radioId}}
+      @name={{this.radioName}}
+      @value={{this.radioValue}}
+      @checked={{this.radioChecked}}
+      @onChange={{this.onChange}}
+    >
+      I've got custom focus styles
+    </Boxel::CustomRadio::Item>
+  </:example>
+</Freestyle::Usage> --}}
