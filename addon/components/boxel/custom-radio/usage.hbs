@@ -1,6 +1,6 @@
 <Freestyle::Usage @name="CustomRadio" @description="A custom radio button component with some accessibility considerations built in">
     <:example>
-      <Boxel::CustomRadio @groupDescription={{this.groupDescription}} @items={{this.items}} @checkedId={{this.checkedId}} as |item|>
+      <Boxel::CustomRadio @groupDescription={{this.groupDescription}} @items={{this.items}} @checkedId={{this.checkedId}} @disabled={{this.disabled}} as |item|>
           <item.component 
             @id={{item.data.id}} 
             @name="example-radio-usage" 
@@ -33,6 +33,13 @@
         @description="The id of the currently checked/selected item."
         @value={{this.checkedId}}
         @onInput={{fn (mut this.checkedId)}}
+        @optional={{true}}
+      />
+      <Args.Bool
+        @name="disabled"
+        @description="Whether selection is disabled."
+        @value={{this.disabled}}
+        @onInput={{fn (mut this.disabled)}}
         @optional={{true}}
       />
       <Args.Yield

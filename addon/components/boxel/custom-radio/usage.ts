@@ -21,6 +21,7 @@ export default class CustomRadioUsage extends Component {
   @tracked groupDescription =
     'Select one of these options for breakfast sandwiches';
   @tracked checkedId = 'strawberry';
+  @tracked disabled = false;
 
   @action onChange(e: InputEvent): void {
     this.checkedId = e.target.id;
