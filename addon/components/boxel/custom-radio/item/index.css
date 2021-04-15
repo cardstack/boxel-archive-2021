@@ -1,5 +1,5 @@
-/* 
-  set default display to block, because we are using a label 
+/*
+  set default display to block, because we are using a label
   that is inline by default.
 */
 .boxel-custom-radio__label {
@@ -18,6 +18,3 @@
 .boxel-custom-radio__focused-item {
   outline: 1px solid var(--boxel-outline-color);
 }
-
-/* default checked class - can be overwritten by providing @checkedClass */
-.boxel-custom-radio__checked-item {}
