@@ -12,12 +12,12 @@ aria-labelledby seems friendlier to safari than the for element, but unsure abou
     {{yield}}
 </label>
 
-<input
-  type="radio"
-  id={{@id}} 
-  name={{@name}} 
-  value={{or @value @id}} 
-  checked={{@checked}}
+<Input
+  @type="radio"
+  @id={{@id}} 
+  @value={{or @value @id}} 
+  @checked={{@checked}}
+  name={{@name}}
   class="boxel-custom-radio__hidden-input" 
   {{!-- aria-labelledby={{concat "checkbox-label-for-" @id}} --}}
   {{on "change" (optional @onChange)}} 
