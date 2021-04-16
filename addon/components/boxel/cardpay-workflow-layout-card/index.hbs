@@ -1,0 +1,7 @@
+<Boxel::CardContainer class="cardpay-workflow-layout-card">
+  {{yield (component "boxel/header" editable=false expandable=false hasContextMenu=false) to="header"}}
+  <div class="cardpay-workflow-layout-card-body">
+    {{yield (component "boxel/cardpay-workflow-layout-card/section") to="body"}}
+  </div>
+  {{yield (component "boxel/cta-block") to="footer"}}
+</Boxel::CardContainer>

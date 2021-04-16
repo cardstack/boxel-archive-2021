@@ -1,0 +1,26 @@
+<Freestyle::Usage>
+    <:example>
+      <Boxel::CardpayWorkflowLayoutCard>
+        <:header as |Header|>
+          <Header @header="Header text"/>
+        </:header>
+        <:body as |Section|>
+          <Section @headerText="Section 1">
+            Body content
+          </Section>
+          <Section @headerText="Section 2">
+            Body content
+          </Section>
+        </:body>
+        <:footer as |CtaBlock|>
+          <CtaBlock @state="default">
+            <:default as |a|>
+              <a.ActionButton>
+                Cta here.
+              </a.ActionButton>
+            </:default>
+          </CtaBlock>
+        </:footer>
+      </Boxel::CardpayWorkflowLayoutCard>
+    </:example>
+</Freestyle::Usage>

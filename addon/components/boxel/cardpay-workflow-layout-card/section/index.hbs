@@ -1,0 +1,16 @@
+<section class="cardpay-workflow-layout-card__section" ...attributes>
+  {{#if @headerText}}
+    <header class="cardpay-workflow-layout-card__section-header">
+      {{#if @icon}}
+        {{svg-jar @icon class="cardpay-workflow-layout-card__section-logo"}}
+      {{/if}}
+      {{@headerText}}
+      {{#if @logo}}
+        <img class="cardpay-workflow-layout-card__section-logo" src={{@logo}} alt="" role="presentation">
+      {{/if}}
+    </header>
+  {{/if}}
+  <div class="cardpay-workflow-layout-card__section-body">
+      {{yield}}
+    </div>
+</section>

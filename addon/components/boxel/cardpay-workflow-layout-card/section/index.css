@@ -1,0 +1,22 @@
+.cardpay-workflow-layout-card__section + .cardpay-workflow-layout-card__section {
+    border-top: 1px solid #efefef;
+}
+
+.cardpay-workflow-layout-card__section-header {
+  padding: var(--boxel-sp-xl) 0;
+  max-height: 6rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.cardpay-workflow-layout-card__section-icon {
+    
+}
+
+.cardpay-workflow-layout-card__section-logo {
+    
+}
+
+.cardpay-workflow-layout-card__section-body {
+  margin-bottom: var(--boxel-sp-xl);
+}
