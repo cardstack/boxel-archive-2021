@@ -1,3 +1,4 @@
+/* stylelint-disable */
 .cardpay-workflow-layout-card {
   --horizontal-padding: var(--boxel-sp-lg);
   filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));

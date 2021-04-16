@@ -1,3 +1,4 @@
+/* stylelint-disable */
 .cardpay-workflow-layout-card__section + .cardpay-workflow-layout-card__section {
     border-top: 1px solid #efefef;
 }
