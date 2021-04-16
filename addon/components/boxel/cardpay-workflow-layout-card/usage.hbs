@@ -23,4 +23,46 @@
         </:footer>
       </Boxel::CardpayWorkflowLayoutCard>
     </:example>
+    <:api as |Args|>
+      <Args.Yield
+        @name="header"
+        @description="Yields the Boxel Header component with some presets"
+      />
+      <Args.Yield
+        @name="body"
+        @description="Yields a Section component that scaffolds some layout"
+      />
+      <Args.Yield
+        @name="footer"
+        @description="Yields the Boxel CtaBlock component"
+      />
+    </:api>
+</Freestyle::Usage>
+
+<Freestyle::Usage>
+  <:example>
+  <Boxel::CardpayWorkflowLayoutCard::Section @headerText="Header Text" @icon="" @logo="">
+    This is one section
+  </Boxel::CardpayWorkflowLayoutCard::Section>
+  <Boxel::CardpayWorkflowLayoutCard::Section @icon="" @logo="">
+    This is another section with no header - though this does not occur in current design.
+  </Boxel::CardpayWorkflowLayoutCard::Section>
+  </:example>
+  <:api as |Args|>
+    <Args.String
+      @name="Header Text"
+      @description="Header text for the section. If not provided, will not render a header."
+      @optional={{true}}
+    />
+    <Args.String
+      @name="icon"
+      @description="Icon to be shown before the header text"
+      @optional={{true}}
+    />
+    <Args.String
+      @name="logo"
+      @description="Logo to be shown at the end of the header text"
+      @optional={{true}}
+    />
+  </:api>
 </Freestyle::Usage>
