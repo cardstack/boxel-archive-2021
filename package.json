@@ -36,6 +36,7 @@
     "broccoli-merge-trees": "^4.2.0",
     "broccoli-plugin": "^4.0.3",
     "broccoli-stew": "^3.0.0",
+    "dayjs": "^1.10.4",
     "ember-animated": "^0.10.1",
     "ember-auto-import": "^1.10.1",
     "ember-class-names-helper": "^0.2.1",
