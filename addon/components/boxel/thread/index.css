@@ -15,7 +15,6 @@
   display: grid;
   grid-template-columns: 1fr auto;
   background-color: var(--boxel-light-300);
-  border-radius: var(--boxel-border-radius);
   overflow: hidden;
 }
 

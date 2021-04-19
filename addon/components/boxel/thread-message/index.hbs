@@ -18,7 +18,7 @@
   <span>
     <h3 class={{cn "boxel-thread-message__info" boxel-sr-only=@hideMeta}}>
       {{#if @name}}
-        <span class="boxel-thread-message__name" data-test-boxel-thread-message-name>
+        <span class={{cn "boxel-thread-message__name" boxel-sr-only=@hideName}} data-test-boxel-thread-message-name>
           {{@name}}
         </span>
       {{/if}}
