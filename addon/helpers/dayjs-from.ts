@@ -5,8 +5,11 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
 
 export default Helper.helper(function compute(
-  [datetime, relativeTo],
+  [datetime, relativeTo, paramWithoutSuffix],
   { withoutSuffix }: { withoutSuffix: boolean | undefined }
 ) {
-  return dayjs(datetime).from(relativeTo || dayjs(), withoutSuffix);
+  return dayjs(datetime).from(
+    relativeTo || dayjs(),
+    paramWithoutSuffix || withoutSuffix
+  );
 });
