@@ -23,7 +23,7 @@ module('Integration | Component | Field - View Mode', function (hooks) {
 
   test('it renders with id and labelClass', async function (assert) {
     await render(hbs`<Boxel::Field
-      @id="breed"
+      @fieldId="breed"
       @label="Breed"
       @labelClass="dog-breed"
     >

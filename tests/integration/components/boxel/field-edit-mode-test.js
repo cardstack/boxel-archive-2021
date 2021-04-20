@@ -25,7 +25,7 @@ module('Integration | Component | Field - Edit Mode', function (hooks) {
   test('it renders with id and labelClass', async function (assert) {
     await render(hbs`<Boxel::Field
       @fieldMode="edit"
-      @id="breed"
+      @fieldId="breed"
       @label="Breed"
       @labelClass="dog-breed"
     >
