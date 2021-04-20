@@ -1,74 +1,64 @@
 // https://github.com/stefanpenner/ember-moment/blob/master/tests/unit/helpers/moment-diff-test.js
 
-import hbs from 'htmlbars-inline-precompile';
-import {
-  moduleForComponent,
-  test
-} from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
+import { hbs } from 'ember-cli-htmlbars';
+import dayjs from 'dayjs';
 
-moduleForComponent('moment-diff', {
-  integration: true,
-  beforeEach() {
-    this.container.lookup('service:moment').changeLocale('en');
-  }
-});
+module('Integration | Helper | dayjs-diff', function (hooks) {
+  setupRenderingTest(hooks);
 
-test('two args with (dateA, dateB)', function(assert) {
-  assert.expect(1);
-  const momentService = this.container.lookup('service:moment');
-  this.setProperties({
-    dateA: momentService.moment('2017-01-10'),
-    dateB: momentService.moment('2017-01-15')
+  test('two args with (dateA, dateB)', async function (assert) {
+    this.setProperties({
+      dateA: '2017-01-10',
+      dateB: '2017-01-15',
+    });
+
+    await render(hbs`{{dayjs-diff this.dateA this.dateB}}`);
+    assert.equal(this.element.textContent.trim(), '432000000');
   });
 
-  this.render(hbs `{{moment-diff dateA dateB}}`);
-  assert.equal(this.$().text(), '432000000');
-});
+  test('two args with a dayjs instance and a string (dayJsInstance, dateString)', async function (assert) {
+    this.setProperties({
+      dayJsInstance: dayjs('2017-01-10'),
+      dateString: '2017-01-15',
+    });
 
-test('two args with a moment and a string (dateMoment, dateString)', function(assert) {
-  assert.expect(1);
-  const momentService = this.container.lookup('service:moment');
-  this.setProperties({
-    dateMoment: momentService.moment('2017-01-10'),
-    dateString: '2017-01-15'
+    await render(hbs`{{dayjs-diff this.dayJsInstance this.dateString}}`);
+    assert.equal(this.element.textContent.trim(), '432000000');
   });
 
-  this.render(hbs `{{moment-diff dateMoment dateString}}`);
-  assert.equal(this.$().text(), '432000000');
-});
+  test('two args with (dateA, dateB) and expect a negative result', async function (assert) {
+    this.setProperties({
+      dateA: '2017-01-15',
+      dateB: '2017-01-10',
+    });
 
-test('two args with (dateA, dateB) and expect a negative result', function(assert) {
-  assert.expect(1);
-  const momentService = this.container.lookup('service:moment');
-  this.setProperties({
-    dateA: momentService.moment('2017-01-15'),
-    dateB: momentService.moment('2017-01-10')
+    await render(hbs`{{dayjs-diff this.dateA this.dateB}}`);
+    assert.equal(this.element.textContent.trim(), '-432000000');
   });
 
-  this.render(hbs `{{moment-diff dateA dateB}}`);
-  assert.equal(this.$().text(), '-432000000');
-});
+  test('two args with precision (dateA, dateB, precision)', async function (assert) {
+    this.setProperties({
+      dateA: new Date(0),
+      dateB: dayjs(0).add(5, 'day'),
+    });
 
-test('two args with precision (dateA, dateB, precision)', function(assert) {
-  assert.expect(1);
-  const momentService = this.container.lookup('service:moment');
-  this.setProperties({
-    dateA: new Date(),
-    dateB: momentService.moment().add(5, 'day')
+    await render(hbs`{{dayjs-diff this.dateA this.dateB precision="day"}}`);
+    assert.equal(this.element.textContent.trim(), '5');
   });
 
-  this.render(hbs `{{moment-diff dateA dateB precision='day'}}`);
-  assert.ok(this.$().text(), '5');
-});
+  // this test is not very consistent - the floating number has javascript floating point issues
+  test('two args with precision and float (dateA, dateB, precision, float)', async function (assert) {
+    this.setProperties({
+      dateA: new Date(0),
+      dateB: dayjs(0).add(6, 'month'),
+    });
 
-test('two args with precision and float (dateA, dateB, precision, float)', function(assert) {
-  assert.expect(1);
-  const momentService = this.container.lookup('service:moment');
-  this.setProperties({
-    dateA: new Date(),
-    dateB: momentService.moment().add(6, 'month')
+    await render(
+      hbs`{{dayjs-diff this.dateA this.dateB precision="year" float=true}}`
+    );
+    assert.equal(this.element.textContent.trim(), '0.5');
   });
-
-  this.render(hbs `{{moment-diff dateA dateB precision='year' float=true}}`);
-  assert.ok(this.$().text(), '.5');
 });
