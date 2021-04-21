@@ -23,6 +23,15 @@
   overflow-y: auto;
 }
 
+.boxel-thread__scroll-wrapper:focus {
+  outline-color: var(--boxel-outline-color);
+  outline-offset: -1px;
+}
+
+.boxel-thread__scroll-wrapper:focus:not(:focus-visible) {
+  outline: none;
+}
+
 .boxel-thread__content {
   padding: var(--boxel-sp);
   padding-left: var(--boxel-sp-xl);

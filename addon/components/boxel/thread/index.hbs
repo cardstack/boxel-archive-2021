@@ -4,7 +4,7 @@
   </div>
 
   <div class="boxel-thread__content-wrapper">
-    <div class="boxel-thread__scroll-wrapper">
+    <div class="boxel-thread__scroll-wrapper" tabindex="0">
       <div class="boxel-thread__sticky-container">
         {{yield to="taskbar"}}
       </div>
@@ -13,7 +13,7 @@
       </section>
     </div>
 
-    <div class="boxel-thread__scroll-wrapper">
+    <div class="boxel-thread__scroll-wrapper" tabindex="0">
       <Boxel::Sidebar class="boxel-thread__sidebar" as |SidebarSection|>
         {{yield SidebarSection to="sidebar"}}
       </Boxel::Sidebar>
