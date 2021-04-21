@@ -121,7 +121,6 @@
     "ember-cli-deploy-s3-index": "^1.2.0",
     "ember-cli-document-title-northm": "^1.0.3",
     "ember-cli-inject-live-reload": "^2.0.2",
-    "ember-cli-moment-shim": "^3.8.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-stylelint": "^4.0.0",
     "ember-cli-terser": "^4.0.1",
