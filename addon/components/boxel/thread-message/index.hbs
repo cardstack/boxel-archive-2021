@@ -4,14 +4,14 @@
       {{#if @imgURL}}
         <img
           src={{@imgURL}}
-          alt={{@name}}
+          alt={{or @name "participant"}}
           width="40px"
           height="40px"
           class={{cn "boxel-thread-message__avatar-img" boxel-thread-message__avatar-img--not-round=@notRound}}
           data-test-boxel-thread-message-avatar
         />
       {{else}}
-        {{svg-jar "profile" width="40px" height="40px" aria-hidden="true"}}
+        {{svg-jar "profile" width="40px" height="40px" aria-label=(or @name "participant")}}
       {{/if}}
     {{/unless}}
   </span>

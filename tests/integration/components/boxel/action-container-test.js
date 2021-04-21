@@ -6,7 +6,7 @@ import click from '@ember/test-helpers/dom/click';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
 module('Integration | Component | ActionContainer', function (hooks) {
-  setupRenderingTest(hooks);;
+  setupRenderingTest(hooks);
 
   test('it renders in data-entry mode by default', async function (assert) {
     await render(hbs`
