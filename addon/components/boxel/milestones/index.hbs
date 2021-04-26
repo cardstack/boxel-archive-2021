@@ -1,14 +1,18 @@
 <ul class="boxel-milestones" ...attributes>
   {{#each @milestones as |milestone i|}}
     {{#let (gt @completedCount i) (eq @completedCount i) as |isCompleted isCurrent|}}
-      <li class={{cn "boxel-milestones__item" completed=isCompleted current=isCurrent}}>
+      <li class={{cn "boxel-milestones__item" boxel-milestones__item--completed=isCompleted boxel-milestones__item--current=isCurrent}}>
         <span class="boxel-milestones__item-grid">
           <span class="boxel-milestones__item-bullet">
             {{#if isCompleted}}
               {{svg-jar "check-mark" width="10px" height="10px"}}
             {{/if}}
           </span>
+          {{#if (has-block)}}
+            {{yield (hash title=milestone.title data=milestone index=i completed=isCompleted current=isCurrent)}}
+          {{else}}
           <span>{{milestone.title}}</span>
+          {{/if}}
         </span>
       </li>
     {{/let}}

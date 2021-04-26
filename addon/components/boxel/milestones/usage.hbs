@@ -25,5 +25,30 @@
       @description="(integer) — Number of milestones completed."
       @onInput={{fn (mut this.completedCount)}}
     />
+    <Args.Yield
+      @description="Render custom milestones.Yields an object with keys { title, data, index, completed, current }."
+    />
   </:api>
+</Freestyle::Usage>
+
+<Freestyle::Usage @description="Usage with block">
+  <:example>
+    <Boxel::Milestones
+      @milestones={{this.milestones}}
+      @completedCount={{this.completedCount}}
+      as |milestone|
+    >
+    <div class={{cn 
+      "milestones-usage-item" 
+      milestones-usage-item--current=milestone.current 
+      milestones-usage-item--completed=milestone.completed
+      }}
+    >
+      <span class="milestones-usage-title">{{if milestone.completed milestone.data.statusOnCompletion milestone.title}}</span>
+      {{#if milestone.completed}}
+        <span class="milestones-usage-number">Milestone number {{add milestone.index 1}} done</span>
+      {{/if}}
+    </div>
+    </Boxel::Milestones>
+  </:example>
 </Freestyle::Usage>

@@ -40,18 +40,18 @@
   text-align: center;
 }
 
-.boxel-milestones__item.current {
+.boxel-milestones__item--current {
   color: var(--boxel-dark);
   font-weight: 600;
 }
 
-.boxel-milestones__item.current .boxel-milestones__item-bullet {
+.boxel-milestones__item--current .boxel-milestones__item-bullet {
   --bullet-fill-color: var(--boxel-dark);
 
   border: 6px solid var(--boxel-highlight);
 }
 
-.boxel-milestones__item.completed .boxel-milestones__item-bullet {
+.boxel-milestones__item--completed .boxel-milestones__item-bullet {
   --icon-color: var(--boxel-dark);
   --bullet-fill-color: var(--boxel-highlight);
 }
