@@ -1,20 +1,26 @@
 .boxel-thread-message {
-  --boxel-thread-message-avatar-size: 2.5rem;
+  --boxel-thread-message-avatar-size: calc(2 * var(--boxel-sp));
+  --boxel-thread-message-gap: var(--boxel-sp);
+  --boxel-thread-message-meta-height: var(--boxel-sp); /* set the height to the text height so that we can do layout based on this */
+  --child-card-margin: var(--boxel-sp);
 
+  min-height: var(--boxel-thread-message-avatar-size); /* if meta is showing, we need to account for short heights which might (unlikely) lead to overlap with other text messages */
+}
+
+.boxel-thread-message--hide-meta {
+  min-height: 0;
+}
+
+.boxel-thread-message__meta {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: var(--boxel-thread-message-avatar-size) 1fr var(--boxel-thread-message-avatar-size);
+  grid-template-rows: var(--boxel-thread-message-meta-height);
   align-items: start;
-  gap: var(--boxel-sp);
+  gap: var(--boxel-thread-message-gap);
 }
 
-@media only screen and (min-width: 1440px) {
-  .boxel-thread-message {
-    padding-right: var(--boxel-sp-xl);
-  }
-}
-
-.boxel-thread-message + .boxel-thread-message {
-  margin-top: var(--boxel-sp-lg);
+.boxel-thread-message--card .boxel-thread-message__meta {
+  align-items: center;
 }
 
 .boxel-thread-message__avatar {
@@ -35,7 +41,7 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
-  min-height: 1.25rem; /* 20px */
+  height: var(--boxel-thread-message-meta-height); /* 20px */
   margin: 0;
   font: 600 var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
@@ -49,4 +55,29 @@
   color: var(--boxel-purple-400);
   font-size: var(--boxel-font-size-xs);
   letter-spacing: var(--boxel-lsp-lg);
+}
+
+.boxel-thread-message__content {
+  /* mimic the grid using margins, but don't use grid - if multiple items are children of a thread message, grid will mess things up. */
+  width: calc(100% - 2 * (var(--boxel-thread-message-gap) + var(--boxel-thread-message-avatar-size)));
+  margin-left: auto;
+  margin-right: auto;
+  transition: width var(--boxel-transition);
+}
+
+.boxel-thread-message--card .boxel-thread-message__content {
+  margin-top: var(--child-card-margin);
+}
+
+.boxel-thread-message--full-content-width .boxel-thread-message__content {
+  width: 100%;
+}
+
+/* spacing for sequential thread messages */
+.boxel-thread-message + .boxel-thread-message {
+  margin-top: calc(2 * var(--boxel-sp));
+}
+
+.boxel-thread-message + .boxel-thread-message--hide-meta {
+  margin-top: var(--boxel-sp);
 }

@@ -7,6 +7,8 @@
       @notRound={{this.notRound}}
       @hideMeta={{this.hideMeta}}
       @hideName={{this.hideName}}
+      @fullWidth={{this.fullWidth}}
+      @containsCard={{this.containsCard}}
     >
       Hi Haley, Here’s your manuscript with all the edits I would recommend. Please review and let me know if you have any questions. I also added a couple tasks for you about things you should think about, as you figure out the rest of your story.
     </Boxel::ThreadMessage>
@@ -57,6 +59,20 @@
       @defaultValue={{false}}
       @onInput={{fn (mut this.hideName)}}
     />
+    <Args.Bool
+      @name="fullWidth"
+      @value={{this.fullWidth}}
+      @description="Whether to allocate the full width to the content. This only works if containsCard is also true"
+      @defaultValue={{false}}
+      @onInput={{fn (mut this.fullWidth)}}
+    />
+    <Args.Bool
+      @name="containsCard"
+      @value={{this.containsCard}}
+      @description="Whether or not the ThreadMessage contains a card as its first child. This modifies some layout rules for the message meta."
+      @defaultValue={{false}}
+      @onInput={{fn (mut this.containsCard)}}
+    />
   </:api>
 </Freestyle::Usage>
 
@@ -76,6 +92,58 @@
           {{message}}
         </Boxel::ThreadMessage>
       {{/each}}
+    </div>
+  </:example>
+</Freestyle::Usage>
+
+<Freestyle::Usage
+  @description="Layout rules displayed"
+>
+  <:example>
+    <div>
+      <Boxel::ThreadMessage
+        role="listitem"
+        @name="Cardbot"
+        @imgURL={{this.cardbotIcon}}
+      >
+        First thread message does not apply margins.
+      </Boxel::ThreadMessage>
+      <Boxel::ThreadMessage
+        role="listitem"
+        @name="Cardbot"
+        @imgURL={{this.cardbotIcon}}
+        @hideMeta={{true}}
+      >
+        A message with meta hidden has a margin-top of 1.25rem. 
+      </Boxel::ThreadMessage>
+      <Boxel::ThreadMessage
+        role="listitem"
+        @name="Cardbot"
+        @imgURL={{this.cardbotIcon}}
+      >
+        A message without meta hidden has a margin-top of 2.5rem. 
+      </Boxel::ThreadMessage>
+      <Boxel::ThreadMessage
+        role="listitem"
+        @name="Cardbot"
+        @imgURL={{this.cardbotIcon}}
+        @hideMeta={{true}}
+      >
+        The following message which contains a card will have its meta centered relative to its avatar.
+      </Boxel::ThreadMessage>
+      <Boxel::ThreadMessage
+        role="listitem"
+        @name="Cardbot"
+        @imgURL={{this.cardbotIcon}}
+        @containsCard={{true}}
+        @fullWidth={{this.layoutExampleFullWidth}}
+      >
+        <Boxel::CardContainer 
+          class="thread-message-usage-card"
+        >
+          <Boxel::Button @kind="primary" {{on "click" this.toggleLayoutExampleFullWidth}}>Click to toggle @fullWidth</Boxel::Button>
+        </Boxel::CardContainer>
+      </Boxel::ThreadMessage>
     </div>
   </:example>
 </Freestyle::Usage>
