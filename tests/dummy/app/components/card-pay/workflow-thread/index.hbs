@@ -16,27 +16,49 @@
             <div>
               <AnimatedContainer onInitialRender={{not milestone.complete}}>
                 {{#animated-each milestone.message initialInsertion=(not milestone.complete) use=this.transition as |content i|}}
-                  <Boxel::ThreadMessage
-                    @name="Cardbot"
-                    @hideName={{true}}
-                    @imgURL={{@workflowBot.imgURL}}
-                    @datetime={{milestone.datetime}}
-                    @hideMeta={{gt i 0}}
-                  >
                     {{#if content.component}}
-                      {{!-- Sample component --}}
-                      <Boxel::ActionContainer
-                        @header={{milestone.title}}
-                        @prompt="Milestone Action"
-                        @incompleteActionLabel="Complete"
-                        @completeActionLabel="Edit"
-                        @isComplete={{milestone.complete}}
-                        @onClickButton={{fn this.toggleComplete milestone}}
-                      />
+                      <Boxel::ThreadMessage
+                        class="workflow-thread__message"
+                        @name="Cardbot"
+                        @hideName={{true}}
+                        @imgURL={{@workflowBot.imgURL}}
+                        @datetime={{milestone.datetime}}
+                        @hideMeta={{gt i 0}}
+                        @fullWidth={{true}}
+                      >
+                        <div class={{cn
+                          "workflow-thread__message-card"
+                          workflow-thread__message-card--completed=milestone.complete
+                        }}>
+                          {{!-- Sample component --}}
+                            <Boxel::ActionContainer
+                              @header={{milestone.title}}
+                              @prompt="Milestone Action"
+                              @isComplete={{milestone.complete}}
+                            >
+                              <Boxel::ActionChin
+                                @mode={{if milestone.complete "memorialized" "data-entry"}}
+                                @buttonText={{if milestone.complete "Edit" "Save"}}
+                                @onClickButton={{fn this.toggleComplete milestone}}
+                              />
+                            </Boxel::ActionContainer>
+                          {{!-- End of sample component --}}
+                        </div>
+                      </Boxel::ThreadMessage>
                     {{else}}
-                      {{content}}
+                      <Boxel::ThreadMessage
+                        class="workflow-thread__message"
+                        @name="Cardbot"
+                        @hideName={{true}}
+                        @imgURL={{@workflowBot.imgURL}}
+                        @datetime={{milestone.datetime}}
+                        @hideMeta={{gt i 0}}
+                      >
+                        <div class="workflow-thread__message-content">
+                          {{content}}
+                        </div>
+                      </Boxel::ThreadMessage>
                     {{/if}}
-                  </Boxel::ThreadMessage>
                 {{/animated-each}}
               </AnimatedContainer>
             </div>

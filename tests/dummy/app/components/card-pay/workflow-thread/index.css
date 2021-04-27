@@ -14,3 +14,21 @@
   letter-spacing: var(--boxel-lsp);
   text-align: center;
 }
+
+.workflow-thread__message {
+  font-size: 0.9375rem;
+  line-height: calc(23/15);
+  letter-spacing: var(--boxel-lsp-sm);
+}
+
+.workflow-thread__message-content {
+  max-width: 585px;
+}
+
+.workflow-thread__message-card {
+  transition: margin-left var(--boxel-transition);
+}
+
+.workflow-thread__message-card--completed {
+  margin-left: 60px;
+}
