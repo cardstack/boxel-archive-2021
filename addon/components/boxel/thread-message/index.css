@@ -31,16 +31,6 @@
   border-radius: initial;
 }
 
-.boxel-thread-message__initial {
-  width: var(--boxel-thread-message-avatar-size);
-  height: var(--boxel-thread-message-avatar-size);
-  border: var(--boxel-border);
-  border-radius: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .boxel-thread-message__info {
   display: flex;
   align-items: center;
