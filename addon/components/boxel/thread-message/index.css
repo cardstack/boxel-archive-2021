@@ -2,7 +2,6 @@
   --boxel-thread-message-avatar-size: calc(2 * var(--boxel-sp));
   --boxel-thread-message-gap: var(--boxel-sp);
   --boxel-thread-message-meta-height: var(--boxel-sp); /* set the height to the text height so that we can do layout based on this */
-  --child-card-margin: var(--boxel-sp);
 
   min-height: var(--boxel-thread-message-avatar-size); /* if meta is showing, we need to account for short heights which might (unlikely) lead to overlap with other text messages */
 }
@@ -66,7 +65,7 @@
 }
 
 .boxel-thread-message--card .boxel-thread-message__content {
-  margin-top: var(--child-card-margin);
+  margin-top: var(--boxel-sp);
 }
 
 .boxel-thread-message--full-content-width .boxel-thread-message__content {
