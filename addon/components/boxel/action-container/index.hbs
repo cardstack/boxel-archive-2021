@@ -7,11 +7,13 @@
   data-test-boxel-action-container-is-complete={{@isComplete}}
   ...attributes
 >
-  <Boxel::Header
-    class="boxel-action-container__header"
-    @header={{@header}}
-    data-test-boxel-action-header
-  />
+  {{#if @header}}
+    <Boxel::Header
+      class="boxel-action-container__header"
+      @header={{@header}}
+      data-test-boxel-action-header
+    />
+  {{/if}}
 
   {{#if @prompt}}
     <p class="boxel-action-container__prompt" data-test-boxel-action-prompt>
@@ -20,13 +22,4 @@
   {{/if}}
 
   {{yield}}
-
-  <Boxel::ActionChin
-    class="boxel-action-container__footer"
-    @mode={{if @isComplete "memorialized" "data-entry"}}
-    @buttonText={{if @isComplete @completeActionLabel @incompleteActionLabel}}
-    @onClickButton={{@onClickButton}}
-    @disabled={{@disabled}}
-    data-test-boxel-action-footer
-  />
 </Boxel::CardContainer>
