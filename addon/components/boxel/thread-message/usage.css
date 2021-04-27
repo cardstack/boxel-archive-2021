@@ -1,8 +1,8 @@
 .thread-message-usage-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.25rem;
-    background: var(--boxel-purple-600);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: var(--boxel-purple-600);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
