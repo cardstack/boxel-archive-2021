@@ -3,8 +3,8 @@
 
   display: grid;
   grid-template-columns: auto 1fr;
-  align-items: start;
-  gap: var(--boxel-sp);
+  grid-template-rows: auto auto;
+  gap: 0 var(--boxel-sp);
 }
 
 @media only screen and (min-width: 1440px) {
@@ -14,11 +14,17 @@
 }
 
 .boxel-thread-message + .boxel-thread-message {
-  margin-top: var(--boxel-sp-lg);
+  margin-top: var(--boxel-sp-xl);
+}
+
+.boxel-thread-message + .boxel-thread-message--meta-hidden {
+  margin-top: var(--boxel-sp);
 }
 
 .boxel-thread-message__avatar {
+  grid-row: 1 / -1;
   width: var(--boxel-thread-message-avatar-size);
+  max-height: var(--boxel-thread-message-avatar-size);
 }
 
 .boxel-thread-message__avatar-img {
@@ -59,4 +65,18 @@
   color: var(--boxel-purple-400);
   font-size: var(--boxel-font-size-xs);
   letter-spacing: var(--boxel-lsp-lg);
+}
+
+/* With full-width message content */
+.boxel-thread-message--fw .boxel-thread-message__info {
+  grid-row: span 2;
+}
+
+.boxel-thread-message--fw .boxel-thread-message__content {
+  grid-column: 1 / -1;
+  margin-top: var(--boxel-sp-xxxs);
+}
+
+.boxel-thread-message--fw.boxel-thread-message--meta-hidden .boxel-thread-message__content {
+  margin-top: initial;
 }

@@ -7,6 +7,7 @@
       @notRound={{this.notRound}}
       @hideMeta={{this.hideMeta}}
       @hideName={{this.hideName}}
+      @fullWidth={{this.fullWidth}}
     >
       Hi Haley, Here’s your manuscript with all the edits I would recommend. Please review and let me know if you have any questions. I also added a couple tasks for you about things you should think about, as you figure out the rest of your story.
     </Boxel::ThreadMessage>
@@ -44,6 +45,13 @@
       @onInput={{fn (mut this.notRound)}}
     />
     <Args.Bool
+      @name="fullWidth"
+      @value={{this.fullWidth}}
+
+      @defaultValue={{false}}
+      @onInput={{fn (mut this.fullWidth)}}
+    />
+    <Args.Bool
       @name="hideMeta"
       @value={{this.hideMeta}}
       @description="Visually hides the user avatar, name, and message timestamp"
@@ -76,6 +84,115 @@
           {{message}}
         </Boxel::ThreadMessage>
       {{/each}}
+    </div>
+  </:example>
+</Freestyle::Usage>
+
+<Freestyle::Usage
+  @description="With Card"
+>
+  <:example>
+    <div class="thread-message-usage">
+      <Boxel::ThreadMessage
+        @name="Cardbot"
+        @hideName={{true}}
+        @imgURL={{this.cardbotIcon}}
+      >
+        <p class="thread-message-usage__content">
+          Hello, it’s nice to see you!
+        </p>
+      </Boxel::ThreadMessage>
+      <Boxel::ThreadMessage
+        @name="Cardbot"
+        @hideName={{true}}
+        @hideMeta={{true}}
+        @imgURL={{this.cardbotIcon}}
+      >
+        <p class="thread-message-usage__content">
+          Let’s issue a Prepaid Card.
+        </p>
+      </Boxel::ThreadMessage>
+      <Boxel::ThreadMessage
+        @name="Cardbot"
+        @hideName={{true}}
+        @imgURL={{this.cardbotIcon}}
+      >
+        <p class="thread-message-usage__content">
+          Before we get started...
+        </p>
+      </Boxel::ThreadMessage>
+      <Boxel::ThreadMessage
+        @name="Cardbot"
+        @hideMeta={{true}}
+        @hideName={{true}}
+        @imgURL={{this.cardbotIcon}}
+      >
+        <p class="thread-message-usage__content">
+          Let’s get down to business. Please choose the asset you would like
+          to deposit into the CARD Protocol’s reserve pool.
+        </p>
+      </Boxel::ThreadMessage>
+      <Boxel::ThreadMessage
+        @name="Cardbot"
+        @hideName={{true}}
+        @hideMeta={{true}}
+        @imgURL={{this.cardbotIcon}}
+        @fullWidth={{true}}
+      >
+        <Boxel::ActionContainer
+          class={{cn
+            "thread-message-usage__card"
+            thread-message-usage__card--view-only=this.isComplete
+          }}
+          @header="Deposit"
+          @isComplete={{this.isComplete}}
+        >
+          <p>Card Content...</p>
+
+          <Boxel::ActionChin
+            @mode={{if this.isComplete "memorialized" "data-entry"}}
+            @buttonText={{if this.isComplete "Edit" "Save"}}
+            @onClickButton={{this.toggleIsComplete}}
+          />
+        </Boxel::ActionContainer>
+      </Boxel::ThreadMessage>
+      <Boxel::ThreadMessage
+        @name="Cardbot"
+        @hideName={{true}}
+        @imgURL={{this.cardbotIcon}}
+        @fullWidth={{true}}
+      >
+        <Boxel::ActionContainer
+          class="thread-message-usage__card thread-message-usage__card--view-only"
+          @header="Wallet"
+          @isComplete={{true}}
+        >
+          <p>Card Content...</p>
+        </Boxel::ActionContainer>
+      </Boxel::ThreadMessage>
+      <Boxel::ThreadMessage
+        @name="Cardbot"
+        @hideName={{true}}
+        @imgURL={{this.cardbotIcon}}
+        @fullWidth={{true}}
+      >
+        <Boxel::ActionContainer
+          class={{cn
+            "thread-message-usage__card"
+            thread-message-usage__card--view-only=this.isComplete
+          }}
+          @header="Wallet"
+          @isComplete={{this.isComplete}}
+        >
+          <p>Card Content...</p>
+
+          <Boxel::ActionChin
+            @mode={{if this.isComplete "memorialized" "data-entry"}}
+            @buttonText={{if this.isComplete "Edit" "Save"}}
+            @onClickButton={{this.toggleIsComplete}}
+          />
+        </Boxel::ActionContainer>
+      </Boxel::ThreadMessage>
     </div>
   </:example>
 </Freestyle::Usage>

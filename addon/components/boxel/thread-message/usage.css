@@ -1,0 +1,22 @@
+.thread-message-usage {
+  --content-max-width: 585px;
+  --card-max-width: 700px;
+}
+
+.thread-message-usage__content {
+  max-width: var(--content-max-width);
+  margin: 0;
+}
+
+.thread-message-usage__card {
+  max-width: var(--card-max-width);
+  transition: all var(--boxel-transition);
+}
+
+.thread-message-usage__card--view-only {
+  max-width: var(--content-max-width);
+}
+
+.boxel-thread-message--fw .thread-message-usage__card--view-only {
+  margin-left: calc(var(--boxel-thread-message-avatar-size) + var(--boxel-sp));
+}

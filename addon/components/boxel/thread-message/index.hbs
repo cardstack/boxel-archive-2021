@@ -1,4 +1,11 @@
-<div class="boxel-thread-message" data-test-boxel-thread-message ...attributes>
+<div class={{cn
+  "boxel-thread-message"
+  boxel-thread-message--meta-hidden=@hideMeta
+  boxel-thread-message--fw=@fullWidth
+}}
+  data-test-boxel-thread-message
+  ...attributes
+>
   <span class="boxel-thread-message__avatar">
     {{#unless @hideMeta}}
       {{#if @imgURL}}
@@ -15,18 +22,17 @@
       {{/if}}
     {{/unless}}
   </span>
-  <span>
-    <h3 class={{cn "boxel-thread-message__info" boxel-sr-only=@hideMeta}}>
-      {{#if @name}}
-        <span class={{cn "boxel-thread-message__name" boxel-sr-only=@hideName}} data-test-boxel-thread-message-name>
-          {{@name}}
-        </span>
-      {{/if}}
-      <time datetime={{or @datetime (now)}} class="boxel-thread-message__time">
-        {{dayjs-format (or @datetime (now)) "MMM D, h:mm A"}}
-      </time>
-    </h3>
-
+  <h3 class={{cn "boxel-thread-message__info" boxel-sr-only=@hideMeta}}>
+    {{#if @name}}
+      <span class={{cn "boxel-thread-message__name" boxel-sr-only=@hideName}} data-test-boxel-thread-message-name>
+        {{@name}}
+      </span>
+    {{/if}}
+    <time datetime={{or @datetime (now)}} class="boxel-thread-message__time">
+      {{dayjs-format (or @datetime (now)) "MMM D, h:mm A"}}
+    </time>
+  </h3>
+  <div class="boxel-thread-message__content">
     {{yield}}
-  </span>
+  </div>
 </div>

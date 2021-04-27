@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 import { A } from '@ember/array';
 
 import LolaSampsonThumb from '@cardstack/boxel/usage-support/images/users/Lola-Sampson.jpg';
@@ -17,4 +18,10 @@ export default class ThreadMessageUsageComponent extends Component {
     'Let’s issue a Prepaid Card.',
     'First, you can choose the look and feel of your card, so that your customers and other users recognize that this Prepaid Card came from you.',
   ]);
+  @tracked fullWidth = false;
+  @tracked isComplete = false;
+
+  @action toggleIsComplete(): void {
+    this.isComplete = !this.isComplete;
+  }
 }
