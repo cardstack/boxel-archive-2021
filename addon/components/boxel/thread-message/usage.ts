@@ -19,10 +19,12 @@ export default class ThreadMessageUsageComponent extends Component {
     'First, you can choose the look and feel of your card, so that your customers and other users recognize that this Prepaid Card came from you.',
   ]);
   @tracked fullWidth = false;
-  @tracked containsCard = false;
-
-  @tracked layoutExampleFullWidth = true;
+  @tracked layoutExampleFullWidth = false;
   @action toggleLayoutExampleFullWidth(): void {
     this.layoutExampleFullWidth = !this.layoutExampleFullWidth;
+  }
+  @tracked isComplete = false;
+  @action toggleIsComplete(): void {
+    this.isComplete = !this.isComplete;
   }
 }

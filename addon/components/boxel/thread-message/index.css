@@ -1,9 +1,8 @@
 .boxel-thread-message {
-  --boxel-thread-message-avatar-size: calc(2 * var(--boxel-sp));
+  --boxel-thread-message-avatar-size: 2.5rem; /* 40px. Avatar should not be set to be larger than 60px or smaller than 20px. */
+  --boxel-thread-message-meta-height: 1.25rem; /* 20px */
   --boxel-thread-message-gap: var(--boxel-sp);
-  --boxel-thread-message-meta-height: var(--boxel-sp); /* set the height to the text height so that we can do layout based on this */
-
-  min-height: var(--boxel-thread-message-avatar-size); /* if meta is showing, we need to account for short heights which might (unlikely) lead to overlap with other text messages */
+  --boxel-thread-message-margin-left: calc(var(--boxel-thread-message-avatar-size) + var(--boxel-thread-message-gap));
 }
 
 .boxel-thread-message--hide-meta {
@@ -12,18 +11,14 @@
 
 .boxel-thread-message__meta {
   display: grid;
-  grid-template-columns: var(--boxel-thread-message-avatar-size) 1fr var(--boxel-thread-message-avatar-size);
+  grid-template-columns: var(--boxel-thread-message-avatar-size) 1fr;
   grid-template-rows: var(--boxel-thread-message-meta-height);
   align-items: start;
   gap: var(--boxel-thread-message-gap);
 }
 
-.boxel-thread-message--card .boxel-thread-message__meta {
+.boxel-thread-message--full-width .boxel-thread-message__meta {
   align-items: center;
-}
-
-.boxel-thread-message__avatar {
-  width: var(--boxel-thread-message-avatar-size);
 }
 
 .boxel-thread-message__avatar-img {
@@ -38,9 +33,7 @@
 
 .boxel-thread-message__info {
   display: flex;
-  align-items: center;
   white-space: nowrap;
-  height: var(--boxel-thread-message-meta-height); /* 20px */
   margin: 0;
   font: 600 var(--boxel-font-sm);
   letter-spacing: var(--boxel-lsp);
@@ -57,24 +50,18 @@
 }
 
 .boxel-thread-message__content {
-  /* mimic the grid using margins, but don't use grid - if multiple items are children of a thread message, grid will mess things up. */
-  width: calc(100% - 2 * (var(--boxel-thread-message-gap) + var(--boxel-thread-message-avatar-size)));
-  margin-left: auto;
-  margin-right: auto;
-  transition: width var(--boxel-transition);
+  /* mimic the grid using margins */
+  margin-left: var(--boxel-thread-message-margin-left);
 }
 
-.boxel-thread-message--card .boxel-thread-message__content {
+.boxel-thread-message--full-width .boxel-thread-message__content {
+  margin-left: 0;
   margin-top: var(--boxel-sp);
-}
-
-.boxel-thread-message--full-content-width .boxel-thread-message__content {
-  width: 100%;
 }
 
 /* spacing for sequential thread messages */
 .boxel-thread-message + .boxel-thread-message {
-  margin-top: calc(2 * var(--boxel-sp));
+  margin-top: var(--boxel-sp-xl);
 }
 
 .boxel-thread-message + .boxel-thread-message--hide-meta {

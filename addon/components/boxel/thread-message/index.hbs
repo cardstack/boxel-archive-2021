@@ -1,11 +1,10 @@
-<div 
- class={{cn 
-   "boxel-thread-message" 
-   boxel-thread-message--hide-meta=@hideMeta 
-   boxel-thread-message--card=@containsCard 
-   boxel-thread-message--full-content-width=(and @fullWidth @containsCard)
-  }} 
- data-test-boxel-thread-message 
+<div
+ class={{cn
+   "boxel-thread-message"
+   boxel-thread-message--hide-meta=@hideMeta
+   boxel-thread-message--full-width=@fullWidth
+  }}
+ data-test-boxel-thread-message
  ...attributes
 >
   <div class={{cn "boxel-thread-message__meta"  boxel-sr-only=@hideMeta}}>
