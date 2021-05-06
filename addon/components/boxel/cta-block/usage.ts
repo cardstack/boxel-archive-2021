@@ -7,19 +7,32 @@ export default class CtaBlockUsage extends Component {
   @tracked stepNumber = 1;
   @tracked canCancel = true;
   @tracked canEdit = false;
-  @tracked state = 'memorialized';
+  @tracked state = 'default';
 
   @action changeState(str: string): void {
-    console.log(str);
+    console.log(str, this.state);
+    let prevState = this.state;
     this.state = str;
     if (str === 'in-progress') {
       inProgressTimeout = window.setTimeout(() => {
-        this.changeState('memorialized');
+        if (prevState === 'memorialized') {
+          this.state = 'default';
+        } else {
+          this.state = 'memorialized';
+        }
       }, 1500);
     }
 
-    if (str === 'memorialized' || str === 'default') {
+    if (this.state === 'memorialized' || this.state === 'default') {
       window.clearTimeout(inProgressTimeout);
+    }
+  }
+
+  @action toggleComplete() {
+    if (this.state === 'default') {
+      this.state = 'memorialized';
+    } else {
+      this.state = 'default';
     }
   }
 }

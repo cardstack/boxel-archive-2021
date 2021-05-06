@@ -1,88 +1,83 @@
-<Freestyle::Usage @name="CtaBlock" @description="A CTA block, mainly used in the footer of a card.">
-    <:example>
-        <Boxel::CtaBlock
-          @stepNumber={{this.stepNumber}}
-          @state={{this.state}}
-        >
-            <:default as |a|>
-              <a.ActionButton {{on "click" (fn this.changeState "in-progress")}}>
-                Do this
-              </a.ActionButton>
-              <a.InfoArea>
-                Custom info area
-              </a.InfoArea>
-            </:default>
-
-            <:disabled as |d|>
-              <d.ActionButton {{on "click" (fn this.changeState "in-progress")}}>
-                Disabled
-              </d.ActionButton>
-            </:disabled>
-
-            <:in-progress as |i|>
-              <i.ActionButton>
-                Loading
-              </i.ActionButton>
-              <i.CancelButton {{on "click" (fn this.changeState "default")}}>
-                Cancel
-              </i.CancelButton>
-            </:in-progress>
-
-            <:memorialized as |m|>
-              <m.ActionStatusArea>
-                Using an area instead of the action button
-              </m.ActionStatusArea>
-            </:memorialized>
-        </Boxel::CtaBlock>
-    </:example>
-
-    <:api as |Args|>
-      <Args.String
-        @name="state"
-        @description="Whether the action is at at rest, disabled, in progress, or memorialized."
-        @options={{array "default" "disabled" "in-progress" "memorialized"}}
-        @defaultValue="default"
-        @value={{this.state}}
-        @onInput={{fn (mut this.state)}}
-      />
-      <Args.Number
-        @name="stepNumber"
-        @description="If passed, will add the step number to the left of the block. Having a step number affects the padding of the block in the memorialized and disabled states."
-        @optional={{true}}
-        @value={{this.stepNumber}}
-        @onInput={{fn (mut this.stepNumber)}}
-      />
-      <Args.Yield
-        @name="default"
-        @description="The block shown when @state is 'default'. Yields { ActionButton, InfoArea }"
-      />
-      <Args.Yield
-        @name="disabled"
-        @description="The block shown when @state is 'disabled'. Yields { ActionButton }"
-      />
-      <Args.Yield
-        @name="in-progress"
-        @description="The block shown when @state is 'in-progress'. Yields { ActionButton, CancelButton, InfoArea }"
-      />
-      <Args.Yield
-        @name="memorialized"
-        @description="The block shown when @state is 'memorialized'. Yields { ActionButton, ActionStatusArea, InfoArea }"
-      />
-    </:api>
-</Freestyle::Usage>
-
-<Freestyle::Usage @name="Minimal CtaBlock Usage">
+<Freestyle::Usage @name="ActionChin Usage">
   <:description>
     You can use the default block for convenience.
   </:description>
-    <:example>
-        <Boxel::CtaBlock @state="default" as |a|>
-            <a.ActionButton>
-              Do this
-            </a.ActionButton>
-        </Boxel::CtaBlock>
-    </:example>
+  <:example>
+    <Boxel::CtaBlock @state={{this.state}} as |a|>
+      <a.ActionButton {{on "click" this.toggleComplete}}>
+        {{#if (eq this.state "memorialized")}}
+          Edit
+        {{else}}
+          Save
+        {{/if}}
+      </a.ActionButton>
+    </Boxel::CtaBlock>
+  </:example>
 </Freestyle::Usage>
+
+<Freestyle::Usage @name="Usage with processing state">
+  <:example>
+    <Boxel::CtaBlock
+      @stepNumber={{this.stepNumber}}
+      @state={{this.state}}
+    >
+      <:default as |a|>
+        <a.ActionButton @disabled={{eq this.state "disabled"}} {{on "click" (fn this.changeState "in-progress")}}>
+          {{#if (eq this.state "memorialized")}}
+            Disconnect
+          {{else}}
+            Connect
+          {{/if}}
+        </a.ActionButton>
+      </:default>
+
+      <:in-progress as |i|>
+        <i.ActionButton>
+          Loading
+        </i.ActionButton>
+        <i.CancelButton {{on "click" (fn this.changeState "memorialized")}}>
+          Cancel
+        </i.CancelButton>
+      </:in-progress>
+    </Boxel::CtaBlock>
+  </:example>
+
+  <:api as |Args|>
+    <Args.String
+      @name="state"
+      @description="Whether the action is at at rest, disabled, in progress, or memorialized."
+      @options={{array "default" "disabled" "in-progress" "memorialized"}}
+      @defaultValue="default"
+      @value={{this.state}}
+      @onInput={{fn (mut this.state)}}
+    />
+    <Args.Number
+      @name="stepNumber"
+      @description="If passed, will add the step number to the left of the block. Having a step number affects the padding of the block in the memorialized and disabled states."
+      @optional={{true}}
+      @value={{this.stepNumber}}
+      @onInput={{fn (mut this.stepNumber)}}
+    />
+    <Args.Yield
+      @name="default"
+      @description="The block shown when @state is 'default'. Yields { ActionButton, InfoArea }"
+    />
+    <Args.Yield
+      @name="disabled"
+      @description="The block shown when @state is 'disabled'. Yields { ActionButton }"
+    />
+    <Args.Yield
+      @name="in-progress"
+      @description="The block shown when @state is 'in-progress'. Yields { ActionButton, CancelButton, InfoArea }"
+    />
+    <Args.Yield
+      @name="memorialized"
+      @description="The block shown when @state is 'memorialized'. Yields { ActionButton, ActionStatusArea, InfoArea }"
+    />
+  </:api>
+</Freestyle::Usage>
+
+
 
 
 <Freestyle::Usage @name="CtaBlock Explanation">
