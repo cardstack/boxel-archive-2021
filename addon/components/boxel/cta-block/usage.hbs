@@ -1,6 +1,6 @@
 <Freestyle::Usage @name="ActionChin Usage">
   <:description>
-    You can use the default block for convenience.
+    Bottom action area for an action card, a.k.a the "Chin".
   </:description>
   <:example>
     <Boxel::CtaBlock @state={{this.state}} as |a|>
@@ -15,7 +15,17 @@
   </:example>
 </Freestyle::Usage>
 
-<Freestyle::Usage @name="Usage with processing state">
+<Freestyle::Usage @name="Usage with ActionStatusArea">
+  <:example>
+    <Boxel::CtaBlock @state={{this.state}} as |a|>
+      <a.ActionStatusArea>
+        Using an area instead of the action button
+      </a.ActionStatusArea>
+    </Boxel::CtaBlock>
+  </:example>
+</Freestyle::Usage>
+
+<Freestyle::Usage @name="Usage with in-progress block">
   <:example>
     <Boxel::CtaBlock
       @stepNumber={{this.stepNumber}}
@@ -29,6 +39,9 @@
             Connect
           {{/if}}
         </a.ActionButton>
+        <a.InfoArea>
+          Custom info area
+        </a.InfoArea>
       </:default>
 
       <:in-progress as |i|>
@@ -38,6 +51,9 @@
         <i.CancelButton {{on "click" (fn this.changeState "memorialized")}}>
           Cancel
         </i.CancelButton>
+        <i.InfoArea>
+          Custom info area
+        </i.InfoArea>
       </:in-progress>
     </Boxel::CtaBlock>
   </:example>
@@ -60,25 +76,14 @@
     />
     <Args.Yield
       @name="default"
-      @description="The block shown when @state is 'default'. Yields { ActionButton, InfoArea }"
-    />
-    <Args.Yield
-      @name="disabled"
-      @description="The block shown when @state is 'disabled'. Yields { ActionButton }"
+      @description="The block shown when @state is 'default'. Yields { ActionButton, ActionStatusArea, InfoArea }"
     />
     <Args.Yield
       @name="in-progress"
       @description="The block shown when @state is 'in-progress'. Yields { ActionButton, CancelButton, InfoArea }"
     />
-    <Args.Yield
-      @name="memorialized"
-      @description="The block shown when @state is 'memorialized'. Yields { ActionButton, ActionStatusArea, InfoArea }"
-    />
   </:api>
 </Freestyle::Usage>
-
-
-
 
 <Freestyle::Usage @name="CtaBlock Explanation">
   <:description>

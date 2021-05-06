@@ -1,10 +1,9 @@
 <div
   class={{cn
     "boxel-cta-block"
-    (concat "boxel-cta-block--" this.theme)
-    (if this.isDisabled "boxel-cta-block--disabled")
-    (if this.isMemorialized "boxel-cta-block--memorialized")
-    (if @stepNumber "boxel-cta-block--has-step")
+    boxel-cta-block--memorialized=this.isMemorialized
+    boxel-cta-block--disabled=this.isDisabled
+    boxel-cta-block--has-step=@stepNumber
   }}
   ...attributes
   data-test-boxel-cta-block
@@ -43,7 +42,15 @@
         ActionButton=(component
           "boxel/button"
           kind=(if this.isMemorialized "secondary-light" "primary")
-          disabled=@disabled
+          disabled=this.isDisabled
+        )
+        ActionStatusArea=(component
+          "boxel/cta-block/action-status-area"
+          icon="checkbox-primary-checked"
+        )
+        InfoArea=(component
+          "boxel/cta-block/area"
+          ctaClass="boxel-cta-block__info-area"
         )
       )
       to="default"
