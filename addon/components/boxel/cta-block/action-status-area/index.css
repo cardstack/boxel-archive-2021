@@ -1,8 +1,7 @@
 .boxel-cta-block__action-status-area-icon {
-  --icon-color: var(--cta-block-emphasis-text-color);
-
+  --status-icon-size: 1.25rem;
   display: block;
-  width: var(--boxel-sp);
-  height: var(--boxel-sp);
-  margin-right: var(--boxel-sp-xxs);
+  width: var(--status-icon-size);
+  height: var(--status-icon-size);
+  margin-right: var(--boxel-sp-xs);
 }

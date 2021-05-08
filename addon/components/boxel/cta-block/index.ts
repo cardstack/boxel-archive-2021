@@ -25,12 +25,4 @@ export default class CtaBlock extends Component<CtaBlockArguments> {
   @equal('args.state', CtaBlockState.inProgress) declare isInProgress: boolean;
   @equal('args.state', CtaBlockState.memorialized)
   declare isMemorialized: boolean;
-
-  get theme(): string {
-    if (this.isMemorialized) {
-      return 'light';
-    } else {
-      return 'dark';
-    }
-  }
 }

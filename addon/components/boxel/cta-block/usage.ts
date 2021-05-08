@@ -8,31 +8,29 @@ export default class CtaBlockUsage extends Component {
   @tracked canCancel = true;
   @tracked canEdit = false;
   @tracked state = 'default';
+  @tracked isComplete = false;
+  @tracked depositState = 'disabled';
+
+  get depositIsDisabled(): boolean {
+    return this.state !== 'memorialized' || this.depositState === 'disabled';
+  }
 
   @action changeState(str: string): void {
-    console.log(str, this.state);
-    let prevState = this.state;
+    console.log(str);
     this.state = str;
     if (str === 'in-progress') {
       inProgressTimeout = window.setTimeout(() => {
-        if (prevState === 'memorialized') {
-          this.state = 'default';
-        } else {
-          this.state = 'memorialized';
-        }
+        this.changeState('memorialized');
+        this.depositState = 'default';
       }, 1500);
     }
 
-    if (this.state === 'memorialized' || this.state === 'default') {
+    if (str === 'memorialized' || str === 'default') {
       window.clearTimeout(inProgressTimeout);
     }
   }
 
   @action toggleComplete() {
-    if (this.state === 'default') {
-      this.state = 'memorialized';
-    } else {
-      this.state = 'default';
-    }
+    this.isComplete = !this.isComplete;
   }
 }

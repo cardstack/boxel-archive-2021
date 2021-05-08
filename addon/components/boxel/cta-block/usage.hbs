@@ -3,29 +3,35 @@
     Bottom action area for an action card, a.k.a the "Chin".
   </:description>
   <:example>
-    <Boxel::CtaBlock @state={{this.state}} as |a|>
-      <a.ActionButton {{on "click" this.toggleComplete}}>
-        {{#if (eq this.state "memorialized")}}
+    <Boxel::CtaBlock @state={{if this.isComplete "memorialized" "default"}} as |chin|>
+      <chin.ActionButton
+        @kind={{if this.isComplete "secondary-light" "primary"}}
+        {{on "click" this.toggleComplete}}
+      >
+        {{#if this.isComplete}}
           Edit
         {{else}}
           Save
         {{/if}}
-      </a.ActionButton>
+      </chin.ActionButton>
     </Boxel::CtaBlock>
   </:example>
 </Freestyle::Usage>
 
-<Freestyle::Usage @name="Usage with ActionStatusArea">
+<Freestyle::Usage @name="Usage with ActionStatusArea and InfoArea (small text)">
   <:example>
-    <Boxel::CtaBlock @state={{this.state}} as |a|>
-      <a.ActionStatusArea>
-        Using an area instead of the action button
-      </a.ActionStatusArea>
+    <Boxel::CtaBlock as |chin|>
+      <chin.ActionStatusArea @icon="metamask">
+        Waiting for you to connect Card Pay with your mainnet wallet…
+      </chin.ActionStatusArea>
+      <chin.InfoArea>
+        Only visible to you
+      </chin.InfoArea>
     </Boxel::CtaBlock>
   </:example>
 </Freestyle::Usage>
 
-<Freestyle::Usage @name="Usage with in-progress block">
+<Freestyle::Usage @name="Multiple chins (stacked usage)">
   <:example>
     <Boxel::CtaBlock
       @stepNumber={{this.stepNumber}}
@@ -33,28 +39,50 @@
     >
       <:default as |a|>
         <a.ActionButton @disabled={{eq this.state "disabled"}} {{on "click" (fn this.changeState "in-progress")}}>
-          {{#if (eq this.state "memorialized")}}
-            Disconnect
-          {{else}}
-            Connect
-          {{/if}}
+          Unlock
         </a.ActionButton>
-        <a.InfoArea>
-          Custom info area
-        </a.InfoArea>
       </:default>
-
       <:in-progress as |i|>
         <i.ActionButton>
-          Loading
+          Unlocking
         </i.ActionButton>
         <i.CancelButton {{on "click" (fn this.changeState "memorialized")}}>
           Cancel
         </i.CancelButton>
-        <i.InfoArea>
-          Custom info area
-        </i.InfoArea>
       </:in-progress>
+      <:memorialized as |m|>
+        <m.ActionStatusArea>
+          Unlocked
+        </m.ActionStatusArea>
+        <m.InfoArea>
+          <Boxel::Button @kind="secondary-light">
+            View on Etherscan
+          </Boxel::Button>
+        </m.InfoArea>
+      </:memorialized>
+    </Boxel::CtaBlock>
+    <Boxel::CtaBlock
+      @stepNumber={{add this.stepNumber 1}}
+      @state={{if this.depositIsDisabled "disabled" this.depositState}}
+    >
+      <:default as |a|>
+        <a.ActionButton
+          @disabled={{this.depositIsDisabled}}
+          {{on "click" (fn (mut this.depositState) "memorialized")}}
+        >
+          Deposit
+        </a.ActionButton>
+      </:default>
+      <:memorialized as |m|>
+        <m.ActionStatusArea>
+          Deposited
+        </m.ActionStatusArea>
+        <m.InfoArea>
+          <Boxel::Button @kind="secondary-light">
+            View on Etherscan
+          </Boxel::Button>
+        </m.InfoArea>
+      </:memorialized>
     </Boxel::CtaBlock>
   </:example>
 
