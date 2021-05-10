@@ -1,9 +1,9 @@
-<Freestyle::Usage @name="ActionChin Usage">
+<Freestyle::Usage @name="ActionChin">
   <:description>
     Bottom action area for an action card, a.k.a the "Chin".
   </:description>
   <:example>
-    <Boxel::CtaBlock @state={{if this.isComplete "memorialized" "default"}} as |chin|>
+    <Boxel::ActionChin @state={{if this.isComplete "memorialized" "default"}} as |chin|>
       <chin.ActionButton
         @kind={{if this.isComplete "secondary-light" "primary"}}
         {{on "click" this.toggleComplete}}
@@ -14,26 +14,27 @@
           Save
         {{/if}}
       </chin.ActionButton>
-    </Boxel::CtaBlock>
+    </Boxel::ActionChin>
   </:example>
 </Freestyle::Usage>
 
-<Freestyle::Usage @name="Usage with ActionStatusArea and InfoArea (small text)">
+<Freestyle::Usage @name="Usage with ActionStatusArea and InfoArea">
   <:example>
-    <Boxel::CtaBlock as |chin|>
-      <chin.ActionStatusArea @icon="metamask">
+    <Boxel::ActionChin as |chin|>
+      <chin.ActionStatusArea @icon="metamask" style={{css-var status-icon-size="2.5rem"}}>
+        {{svg-jar "loading-indicator" width="20" height="20" class="usage-action-chin__loading-indicator" alt="loading indicator"}}
         Waiting for you to connect Card Pay with your mainnet wallet…
       </chin.ActionStatusArea>
       <chin.InfoArea>
         Only visible to you
       </chin.InfoArea>
-    </Boxel::CtaBlock>
+    </Boxel::ActionChin>
   </:example>
 </Freestyle::Usage>
 
-<Freestyle::Usage @name="Multiple chins (stacked usage)">
+<Freestyle::Usage @name="Usage with in-progress block and stacked chins">
   <:example>
-    <Boxel::CtaBlock
+    <Boxel::ActionChin
       @stepNumber={{this.stepNumber}}
       @state={{this.state}}
     >
@@ -60,8 +61,8 @@
           </Boxel::Button>
         </m.InfoArea>
       </:memorialized>
-    </Boxel::CtaBlock>
-    <Boxel::CtaBlock
+    </Boxel::ActionChin>
+    <Boxel::ActionChin
       @stepNumber={{add this.stepNumber 1}}
       @state={{if this.depositIsDisabled "disabled" this.depositState}}
     >
@@ -83,7 +84,7 @@
           </Boxel::Button>
         </m.InfoArea>
       </:memorialized>
-    </Boxel::CtaBlock>
+    </Boxel::ActionChin>
   </:example>
 
   <:api as |Args|>
@@ -110,10 +111,14 @@
       @name="in-progress"
       @description="The block shown when @state is 'in-progress'. Yields { ActionButton, CancelButton, InfoArea }"
     />
+    <Args.Yield
+        @name="memorialized"
+        @description="The block shown when @state is 'memorialized'. Yields { ActionButton, ActionStatusArea, InfoArea }"
+      />
   </:api>
 </Freestyle::Usage>
 
-<Freestyle::Usage @name="CtaBlock Explanation">
+<Freestyle::Usage @name="ActionChin Explanation">
   <:description>
     <div class="usage-cta-block-explanation">
       CTAs are meant to guide users to take a single action.
@@ -122,7 +127,6 @@
         <tbody>
           <tr><td>State</td><td>Explanation</td></tr>
           <tr><td>default</td> <td>When the user has not met the requirements for the cta to be considered done</td></tr>
-          <tr><td>disabled</td> <td>When the user cannot yet take this action</td></tr>
           <tr><td>in-progress</td> <td>When the action is in progress</td></tr>
           <tr><td>memorialized</td> <td>When the action is done</td></tr>
         </tbody>
@@ -153,7 +157,6 @@
             <td>
               <ul>
                 <li>default</li>
-                <li>disabled</li>
                 <li>memorialized</li>
                 <li>in-progress</li>
               </ul>

@@ -17,7 +17,7 @@ interface CtaBlockArguments {
   stepNumber: number;
   state: CtaBlockState;
 }
-export default class CtaBlock extends Component<CtaBlockArguments> {
+export default class ActionChin extends Component<CtaBlockArguments> {
   // convenience getters for state booleans. they are mutually exclusive since all are
   // derived from the args.state argument.
   @equal('args.state', CtaBlockState.default) declare isDefault: boolean;

@@ -5,8 +5,10 @@ import { hbs } from 'ember-cli-htmlbars';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
 const CTA_BLOCK_SELECTOR = '[data-test-boxel-cta-block]';
-const MAIN_ACTION_BUTTON_SELECTOR = '.boxel-cta-block__action-button';
-const CANCEL_ACTION_BUTTON_SELECTOR = '.boxel-cta-block__cancel-button';
+const MAIN_ACTION_BUTTON_SELECTOR =
+  '[data-test-boxel-cta-block] [data-test-boxel-button]:nth-of-type(1)';
+const CANCEL_CTA =
+  '[data-test-boxel-cta-block] [data-test-boxel-button]:nth-of-type(2)';
 const MAIN_ACTION_AREA_SELECTOR =
   '[data-test-boxel-cta-block-action-status-area]';
 const MAIN_ACTION_AREA_ICON_SELECTOR =
@@ -17,7 +19,7 @@ const DEFAULT_PRIVATE_NOTICE_SELECTOR =
 
 const STEP_DATA_TEST_ATTRIBUTE = 'data-test-boxel-cta-block-step';
 
-module('Integration | Component | CtaBlock', function (hooks) {
+module('Integration | Component | ActionChin', function (hooks) {
   setupRenderingTest(hooks);
 
   const mainActionButtonText = 'mainActionButtonText';
@@ -32,7 +34,7 @@ module('Integration | Component | CtaBlock', function (hooks) {
       infoAreaText,
     });
     await render(hbs`
-      <Boxel::CtaBlock
+      <Boxel::ActionChin
         @state={{this.state}}
         as |a|
       >
@@ -42,7 +44,7 @@ module('Integration | Component | CtaBlock', function (hooks) {
         <a.InfoArea>
           {{this.infoAreaText}}
         </a.InfoArea>
-      </Boxel::CtaBlock>
+      </Boxel::ActionChin>
     `);
     assert.dom(MAIN_ACTION_BUTTON_SELECTOR).containsText(mainActionButtonText);
     assert.dom(INFO_AREA_SELECTOR).containsText(infoAreaText);
@@ -51,23 +53,21 @@ module('Integration | Component | CtaBlock', function (hooks) {
     assert.ok(true, 'no a11y errors found!');
   });
 
-  test('it accepts and renders the disabled named block with the ActionButton component', async function (assert) {
+  test('it accepts and renders the default block with disabled ActionButton component', async function (assert) {
     this.setProperties({
       state: 'disabled',
       stepNumber: null,
       mainActionButtonText,
     });
     await render(hbs`
-      <Boxel::CtaBlock
+      <Boxel::ActionChin
         @state={{this.state}}
         @stepNumber={{this.stepNumber}}
-      >
-      <:disabled as |d|>
-        <d.ActionButton>
+      as |d|>
+        <d.ActionButton @disabled={{true}}>
           {{this.mainActionButtonText}}
         </d.ActionButton>
-      </:disabled>
-      </Boxel::CtaBlock>
+      </Boxel::ActionChin>
     `);
     assert.dom(MAIN_ACTION_BUTTON_SELECTOR).containsText(mainActionButtonText);
     assert.dom(MAIN_ACTION_BUTTON_SELECTOR).isDisabled();
@@ -88,7 +88,7 @@ module('Integration | Component | CtaBlock', function (hooks) {
       infoAreaText,
     });
     await render(hbs`
-      <Boxel::CtaBlock
+      <Boxel::ActionChin
         @state={{this.state}}
       >
       <:in-progress as |i|>
@@ -104,12 +104,10 @@ module('Integration | Component | CtaBlock', function (hooks) {
           {{this.infoAreaText}}
         </i.InfoArea>
       </:in-progress>
-      </Boxel::CtaBlock>
+      </Boxel::ActionChin>
     `);
     assert.dom(MAIN_ACTION_BUTTON_SELECTOR).containsText(mainActionButtonText);
-    assert
-      .dom(CANCEL_ACTION_BUTTON_SELECTOR)
-      .containsText(cancelActionButtonText);
+    assert.dom(CANCEL_CTA).containsText(cancelActionButtonText);
     assert.dom(INFO_AREA_SELECTOR).containsText(infoAreaText);
 
     await a11yAudit();
@@ -124,7 +122,7 @@ module('Integration | Component | CtaBlock', function (hooks) {
       infoAreaText,
     });
     await render(hbs`
-      <Boxel::CtaBlock
+      <Boxel::ActionChin
         @state={{this.state}}
       >
       <:memorialized as |m|>
@@ -140,7 +138,7 @@ module('Integration | Component | CtaBlock', function (hooks) {
           {{this.infoAreaText}}
         </m.InfoArea>
       </:memorialized>
-      </Boxel::CtaBlock>
+      </Boxel::ActionChin>
     `);
     assert.dom(MAIN_ACTION_BUTTON_SELECTOR).containsText(mainActionButtonText);
     assert.dom(INFO_AREA_SELECTOR).containsText(infoAreaText);
@@ -149,7 +147,7 @@ module('Integration | Component | CtaBlock', function (hooks) {
     assert.ok(true, 'no a11y errors found!');
 
     await render(hbs`
-      <Boxel::CtaBlock
+      <Boxel::ActionChin
         @state={{this.state}}
       >
       <:memorialized as |m|>
@@ -157,7 +155,7 @@ module('Integration | Component | CtaBlock', function (hooks) {
           {{this.mainActionAreaText}}
         </m.ActionStatusArea>
       </:memorialized>
-      </Boxel::CtaBlock>
+      </Boxel::ActionChin>
     `);
     assert.dom(MAIN_ACTION_AREA_SELECTOR).containsText(mainActionAreaText);
   });
@@ -165,7 +163,6 @@ module('Integration | Component | CtaBlock', function (hooks) {
   test('it changes rendered contents when @state argument changes', async function (assert) {
     const stateText = {
       default: 'Default state here',
-      disabled: 'Disabled state here',
       'in-progress': 'In progress state here',
       memorialized: 'Memorialized state here',
     };
@@ -174,24 +171,21 @@ module('Integration | Component | CtaBlock', function (hooks) {
       stateText,
     });
     await render(hbs`
-      <Boxel::CtaBlock
+      <Boxel::ActionChin
         @state={{this.state}}
       >
       <:default>
         {{get this.stateText "default"}}
       </:default>
-      <:disabled>
-        {{get this.stateText "disabled"}}
-      </:disabled>
       <:in-progress>
         {{get this.stateText "in-progress"}}
       </:in-progress>
       <:memorialized>
         {{get this.stateText "memorialized"}}
       </:memorialized>
-      </Boxel::CtaBlock>
+      </Boxel::ActionChin>
     `);
-    const states = ['default', 'disabled', 'in-progress', 'memorialized'];
+    const states = ['default', 'in-progress', 'memorialized'];
     for (const state of states) {
       this.set('state', state);
       assert.dom(CTA_BLOCK_SELECTOR).containsText(stateText[state]);
@@ -208,11 +202,11 @@ module('Integration | Component | CtaBlock', function (hooks) {
       stepNumber: 1,
     });
     await render(hbs`
-      <Boxel::CtaBlock
+      <Boxel::ActionChin
         @state={{this.state}}
         @stepNumber={{this.stepNumber}}
       >
-      </Boxel::CtaBlock>
+      </Boxel::ActionChin>
     `);
 
     assert.dom(`[${STEP_DATA_TEST_ATTRIBUTE}="1"]`).containsText('Step 1');
@@ -226,7 +220,7 @@ module('Integration | Component | CtaBlock', function (hooks) {
   test('In the memorialized state, the ActionStatusArea icon can be configured', async function (assert) {
     this.set('state', 'memorialized');
     await render(hbs`
-      <Boxel::CtaBlock
+      <Boxel::ActionChin
         @state={{this.state}}
       >
       <:memorialized as |m|>
@@ -234,11 +228,11 @@ module('Integration | Component | CtaBlock', function (hooks) {
           {{this.mainActionAreaText}}
         </m.ActionStatusArea>
       </:memorialized>
-      </Boxel::CtaBlock>
+      </Boxel::ActionChin>
     `);
     assert.dom(MAIN_ACTION_AREA_ICON_SELECTOR).exists();
     await render(hbs`
-      <Boxel::CtaBlock
+      <Boxel::ActionChin
         @state={{this.state}}
       >
       <:memorialized as |m|>
@@ -246,7 +240,7 @@ module('Integration | Component | CtaBlock', function (hooks) {
           {{this.mainActionAreaText}}
         </m.ActionStatusArea>
       </:memorialized>
-      </Boxel::CtaBlock>
+      </Boxel::ActionChin>
     `);
     assert.dom(MAIN_ACTION_AREA_ICON_SELECTOR).doesNotExist();
   });
@@ -254,7 +248,7 @@ module('Integration | Component | CtaBlock', function (hooks) {
   test('It renders the private notice regardless of InfoArea component use for the default, in-progress, and memorialized states', async function (assert) {
     this.set('state', 'default');
     await render(hbs`
-      <Boxel::CtaBlock
+      <Boxel::ActionChin
         @state={{this.state}}
       >
       <:default as |a|>
@@ -272,7 +266,7 @@ module('Integration | Component | CtaBlock', function (hooks) {
           Info area that visually replaces the private notice
         </m.InfoArea>
       </:memorialized>
-      </Boxel::CtaBlock>
+      </Boxel::ActionChin>
     `);
     assert.dom(DEFAULT_PRIVATE_NOTICE_SELECTOR).exists();
     this.set('state', 'in-progress');

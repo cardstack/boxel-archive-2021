@@ -10,6 +10,7 @@
       @completeActionLabel={{this.completeActionLabel}}
       @isComplete={{this.isComplete}}
       @onClickButton={{fn (mut this.isComplete) (not this.isComplete)}}
+      @disabled={{not this.isComplete}}
     >
       {{!-- Sample block yield --}}
         <div>Action Card here</div>
