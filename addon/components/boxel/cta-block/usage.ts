@@ -30,7 +30,7 @@ export default class CtaBlockUsage extends Component {
     }
   }
 
-  @action toggleComplete() {
+  @action toggleComplete(): boolean {
     this.isComplete = !this.isComplete;
   }
 }

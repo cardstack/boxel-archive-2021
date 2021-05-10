@@ -1,5 +1,6 @@
 .boxel-cta-block__action-status-area-icon {
   --status-icon-size: 1.25rem;
+
   display: block;
   width: var(--status-icon-size);
   height: var(--status-icon-size);
