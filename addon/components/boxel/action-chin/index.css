@@ -1,11 +1,12 @@
-.boxel-cta-block {
-  --cta-block-padding-horizontal: var(--boxel-sp-lg);
-  --cta-block-padding-vertical: var(--boxel-sp-lg);
+.boxel-action-chin {
+  --boxel-action-chin-padding-horizontal: var(--boxel-sp-lg);
+  --boxel-action-chin-padding-vertical: var(--boxel-sp-lg);
   --button-base-height: 2rem; /* The height of the boxel button, used for calculating the min-height to reduce layout shift */
-  --cta-block-background-color: var(--boxel-purple-700);
-  --cta-block-emphasis-text-color: var(--boxel-light);
-  --cta-block-text-color: var(--boxel-purple-300);
-  --icon-color: var(--cta-block-text-color);
+  --boxel-action-chin-background-color: var(--boxel-purple-700);
+  --boxel-action-chin-emphasis-text-color: var(--boxel-light);
+  --boxel-action-chin-text-color: var(--boxel-purple-300);
+  --icon-color: var(--boxel-action-chin-text-color);
+  --boxel-purple-700-opacity90: rgba(57, 54, 66, 0.9);
 
   position: relative;
   display: grid;
@@ -13,74 +14,74 @@
   grid-template-rows: auto;
   grid-template-areas: "main cancel _ info lock-icon";
   align-items: center;
-  padding: var(--cta-block-padding-vertical) var(--cta-block-padding-horizontal);
-  background-color: var(--cta-block-background-color);
-  color: var(--cta-block-text-color);
+  padding: var(--boxel-action-chin-padding-vertical) var(--boxel-action-chin-padding-horizontal);
+  background-color: var(--boxel-action-chin-background-color);
+  color: var(--boxel-action-chin-text-color);
   font: var(--boxel-font-xs);
   transition: background-color var(--boxel-transition), padding var(--boxel-transition);
 }
 
 /* minimize layout shift by calculating a min-height for those cta blocks without steps */
-.boxel-cta-block:not(.boxel-cta-block--has-step) {
-  min-height: calc(var(--button-base-height) + var(--cta-block-padding-vertical) * 2);
+.boxel-action-chin:not(.boxel-action-chin--has-step) {
+  min-height: calc(var(--button-base-height) + var(--boxel-action-chin-padding-vertical) * 2);
 }
 
-.boxel-cta-block--memorialized {
-  --cta-block-background-color: var(--boxel-purple-100);
-  --cta-block-emphasis-text-color: var(--boxel-dark);
-  --cta-block-text-color: var(--boxel-purple-400);
+.boxel-action-chin--memorialized {
+  --boxel-action-chin-background-color: var(--boxel-purple-100);
+  --boxel-action-chin-emphasis-text-color: var(--boxel-dark);
+  --boxel-action-chin-text-color: var(--boxel-purple-400);
 }
 
-.boxel-cta-block + .boxel-cta-block {
+.boxel-action-chin + .boxel-action-chin {
   border-top: 1px solid var(--boxel-purple-700);
 }
 
-.boxel-cta-block--memorialized + .boxel-cta-block--memorialized {
+.boxel-action-chin--memorialized + .boxel-action-chin--memorialized {
   border-top: 1px solid var(--boxel-light-600);
 }
 
 /* paddings are different if there is a step */
-.boxel-cta-block--has-step {
-  --cta-block-padding-horizontal: var(--boxel-sp-xl);
-  --cta-block-padding-vertical: var(--boxel-sp-xl);
+.boxel-action-chin--has-step {
+  --boxel-action-chin-padding-horizontal: var(--boxel-sp-xl);
+  --boxel-action-chin-padding-vertical: var(--boxel-sp-xl);
 }
 
-.boxel-cta-block--memorialized.boxel-cta-block--has-step {
-  --cta-block-padding-vertical: var(--boxel-sp-xs);
+.boxel-action-chin--memorialized.boxel-action-chin--has-step {
+  --boxel-action-chin-padding-vertical: var(--boxel-sp-xs);
 }
 
-.boxel-cta-block--disabled.boxel-cta-block--has-step {
-  --cta-block-padding-vertical: var(--boxel-sp-xs);
-  --cta-block-background-color: rgba(57, 54, 66, 0.9);
+.boxel-action-chin--disabled.boxel-action-chin--has-step {
+  --boxel-action-chin-padding-vertical: var(--boxel-sp-xs);
+  --boxel-action-chin-background-color: var(--boxel-purple-700-opacity90);
 }
 
 /* add the step using a pseudoelement */
-.boxel-cta-block__step {
+.boxel-action-chin__step {
   position: absolute;
-  width: var(--cta-block-padding-horizontal);
+  width: var(--boxel-action-chin-padding-horizontal);
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.boxel-cta-block__step::before {
+.boxel-action-chin__step::before {
   content: attr(data-step);
   font: 700 var(--boxel-font-sm);
-  color: var(--cta-block-emphasis-text-color);
+  color: var(--boxel-action-chin-emphasis-text-color);
 }
 
 /* grid elements */
-.boxel-cta-block__action-button {
+.boxel-action-chin__action-button {
   grid-area: main;
 }
 
-.boxel-cta-block__cancel-button {
+.boxel-action-chin__cancel-button {
   grid-area: cancel;
   margin-left: var(--boxel-sp);
 }
 
-.boxel-cta-block__info-area {
+.boxel-action-chin__info-area {
   grid-area: info;
 
   /*
@@ -92,21 +93,21 @@
   justify-content: center;
 }
 
-.boxel-cta-block__action-status-area {
+.boxel-action-chin__action-status-area {
   grid-area: main;
   display: flex;
   align-items: center;
   justify-content: center;
   font: 600 var(--boxel-font-sm);
-  color: var(--cta-block-emphasis-text-color);
+  color: var(--boxel-action-chin-emphasis-text-color);
 }
 
 /*
   The lock icon and notice is not shown when the cta is disabled
   and we have a step. This is handled in the template
  */
-.boxel-cta-block__private-notice {
-  --boxel-cta-block-lock-icon-size: 0.75rem;
+.boxel-action-chin__private-notice {
+  --boxel-action-chin-lock-icon-size: 0.75rem;
 
   grid-area: info;
   display: flex;
@@ -115,10 +116,10 @@
   text-align: right;
 }
 
-.boxel-cta-block__lock-icon {
+.boxel-action-chin__lock-icon {
   grid-area: lock-icon;
-  width: var(--boxel-cta-block-lock-icon-size);
-  height: var(--boxel-cta-block-lock-icon-size);
+  width: var(--boxel-action-chin-lock-icon-size);
+  height: var(--boxel-action-chin-lock-icon-size);
   margin-left: var(--boxel-sp-xs);
 }
 
@@ -127,7 +128,7 @@
   Since the lock seems to be a visual cue that actions are only visible to the user
   We keep the text around and visible to screenreaders (tested only on VoiceOver)
 */
-.boxel-cta-block__info-area ~ .boxel-cta-block__private-notice {
+.boxel-action-chin__info-area ~ .boxel-action-chin__private-notice {
   position: absolute;
   display: block;
   width: 1px;

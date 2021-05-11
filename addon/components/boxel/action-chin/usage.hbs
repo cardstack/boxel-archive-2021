@@ -1,26 +1,117 @@
 <Freestyle::Usage @name="ActionChin">
   <:description>
-    Bottom action area for an action card, a.k.a the "Chin".
+  <p>Bottom action area for an action card, a.k.a the "Chin".</p>
+  <p>Use the API controls below to change <code>state</code> and <code>stepNumber</code>.</p>
   </:description>
   <:example>
-    <Boxel::ActionChin @state={{if this.isComplete "memorialized" "default"}} as |chin|>
-      <chin.ActionButton
-        @kind={{if this.isComplete "secondary-light" "primary"}}
-        {{on "click" this.toggleComplete}}
-      >
-        {{#if this.isComplete}}
-          Edit
-        {{else}}
+    <Boxel::ActionChin
+      @stepNumber={{this.stepNumber}}
+      @state={{this.state}}
+    >
+      <:default as |a|>
+        <a.ActionButton>
+          Default CTA
+        </a.ActionButton>
+        <a.InfoArea>
+          Custom info area
+        </a.InfoArea>
+      </:default>
+      <:disabled as |d|>
+        <d.ActionButton>
+          Disabled
+        </d.ActionButton>
+        <d.InfoArea>
+          Custom info area
+        </d.InfoArea>
+      </:disabled>
+      <:in-progress as |i|>
+        <i.ActionButton>
+          In-progress
+        </i.ActionButton>
+        <i.CancelButton>
+          Cancel
+        </i.CancelButton>
+        <i.InfoArea>
+          Custom info area
+        </i.InfoArea>
+      </:in-progress>
+      <:memorialized as |m|>
+        <m.ActionStatusArea>
+          Memorialized
+        </m.ActionStatusArea>
+        <m.InfoArea>
+          Custom info area
+        </m.InfoArea>
+      </:memorialized>
+    </Boxel::ActionChin>
+  </:example>
+  <:api as |Args|>
+    <Args.String
+      @name="state"
+      @description="Whether the action is at at rest, disabled, in progress, or memorialized."
+      @options={{array "default" "disabled" "in-progress" "memorialized"}}
+      @defaultValue="default"
+      @value={{this.state}}
+      @onInput={{fn (mut this.state)}}
+    />
+    <Args.Number
+      @name="stepNumber"
+      @description="If passed, will add the step number to the left of the block. Having a step number affects the styling of the chin."
+      @optional={{true}}
+      @value={{this.stepNumber}}
+      @onInput={{fn (mut this.stepNumber)}}
+    />
+    <Args.Yield
+      @name="disabled"
+      @description="The block shown when @state is 'disabled'. Yields { ActionButton, InfoArea }"
+    />
+    <Args.Yield
+      @name="in-progress"
+      @description="The block shown when @state is 'in-progress'. Yields { ActionButton, CancelButton, ActionStatusArea, InfoArea }"
+    />
+    <Args.Yield
+      @name="memorialized"
+      @description="The block shown when @state is 'memorialized'. Yields { ActionButton, ActionStatusArea, InfoArea }"
+    />
+    <Args.Yield
+      @name="default"
+      @description="The default block shown when @state is none of the states above. Yields { ActionButton, ActionStatusArea, InfoArea }"
+    />
+  </:api>
+</Freestyle::Usage>
+
+<Freestyle::Usage @name="Usage with default and memorialized blocks only">
+  <:description>
+    Click the button to toggle between <code>memorialized</code> and <code>default</code> states.
+  </:description>
+  <:example>
+    <Boxel::ActionChin @state={{if this.isComplete "memorialized" "default"}}>
+      <:default as |d|>
+        <d.ActionButton {{on "click" this.toggleComplete}}>
           Save
-        {{/if}}
-      </chin.ActionButton>
+        </d.ActionButton>
+      </:default>
+      <:memorialized as |m|>
+        <m.ActionButton {{on "click" this.toggleComplete}}>
+          Edit
+        </m.ActionButton>
+      </:memorialized>
     </Boxel::ActionChin>
   </:example>
 </Freestyle::Usage>
 
-<Freestyle::Usage @name="Usage with ActionStatusArea and InfoArea">
+<Freestyle::Usage @name="Usage with customized ActionStatusArea and InfoArea">
+  <:description>
+    <p>
+      <code>ActionStatusArea</code> displays custom content in the action chin.
+      It can be used with any block except the <code>:disabled</code> named block.
+      It accepts an <code>@icon</code> argument.
+      In the <code>:memorialized</code> block, the icon is a checkmark by default.
+    </p>
+    <p><code>InfoArea</code> replaces the small text area. It can be used with any named block.</p>
+  </:description>
   <:example>
-    <Boxel::ActionChin as |chin|>
+    <Boxel::ActionChin @state="in-progress" as |chin|>
       <chin.ActionStatusArea @icon="metamask" style={{css-var status-icon-size="2.5rem"}}>
         {{svg-jar "loading-indicator" width="20" height="20" class="usage-action-chin__loading-indicator" alt="loading indicator"}}
         Waiting for you to connect Card Pay with your mainnet wallet…
@@ -32,14 +123,14 @@
   </:example>
 </Freestyle::Usage>
 
-<Freestyle::Usage @name="Usage with in-progress block and stacked chins">
+<Freestyle::Usage @name="Multiple chins (stacked chins) with stepNumber">
   <:example>
     <Boxel::ActionChin
-      @stepNumber={{this.stepNumber}}
-      @state={{this.state}}
+      @stepNumber={{1}}
+      @state={{this.unlockState}}
     >
       <:default as |a|>
-        <a.ActionButton @disabled={{eq this.state "disabled"}} {{on "click" (fn this.changeState "in-progress")}}>
+        <a.ActionButton {{on "click" (fn this.changeState "in-progress")}}>
           Unlock
         </a.ActionButton>
       </:default>
@@ -47,7 +138,7 @@
         <i.ActionButton>
           Unlocking
         </i.ActionButton>
-        <i.CancelButton {{on "click" (fn this.changeState "memorialized")}}>
+        <i.CancelButton {{on "click" (fn this.changeState "default")}}>
           Cancel
         </i.CancelButton>
       </:in-progress>
@@ -63,7 +154,7 @@
       </:memorialized>
     </Boxel::ActionChin>
     <Boxel::ActionChin
-      @stepNumber={{add this.stepNumber 1}}
+      @stepNumber={{2}}
       @state={{if this.depositIsDisabled "disabled" this.depositState}}
     >
       <:default as |a|>
@@ -86,36 +177,6 @@
       </:memorialized>
     </Boxel::ActionChin>
   </:example>
-
-  <:api as |Args|>
-    <Args.String
-      @name="state"
-      @description="Whether the action is at at rest, disabled, in progress, or memorialized."
-      @options={{array "default" "disabled" "in-progress" "memorialized"}}
-      @defaultValue="default"
-      @value={{this.state}}
-      @onInput={{fn (mut this.state)}}
-    />
-    <Args.Number
-      @name="stepNumber"
-      @description="If passed, will add the step number to the left of the block. Having a step number affects the padding of the block in the memorialized and disabled states."
-      @optional={{true}}
-      @value={{this.stepNumber}}
-      @onInput={{fn (mut this.stepNumber)}}
-    />
-    <Args.Yield
-      @name="default"
-      @description="The block shown when @state is 'default'. Yields { ActionButton, ActionStatusArea, InfoArea }"
-    />
-    <Args.Yield
-      @name="in-progress"
-      @description="The block shown when @state is 'in-progress'. Yields { ActionButton, CancelButton, InfoArea }"
-    />
-    <Args.Yield
-        @name="memorialized"
-        @description="The block shown when @state is 'memorialized'. Yields { ActionButton, ActionStatusArea, InfoArea }"
-      />
-  </:api>
 </Freestyle::Usage>
 
 <Freestyle::Usage @name="ActionChin Explanation">
@@ -127,6 +188,7 @@
         <tbody>
           <tr><td>State</td><td>Explanation</td></tr>
           <tr><td>default</td> <td>When the user has not met the requirements for the cta to be considered done</td></tr>
+          <tr><td>disabled</td> <td>When the user cannot yet take this action</td></tr>
           <tr><td>in-progress</td> <td>When the action is in progress</td></tr>
           <tr><td>memorialized</td> <td>When the action is done</td></tr>
         </tbody>
@@ -157,6 +219,7 @@
             <td>
               <ul>
                 <li>default</li>
+                <li>disabled</li>
                 <li>memorialized</li>
                 <li>in-progress</li>
               </ul>
@@ -178,7 +241,9 @@
             </td>
             <td>
               <ul>
+                <li>default</li>
                 <li>memorialized</li>
+                <li>in-progress</li>
               </ul>
             </td>
           </tr>
@@ -206,6 +271,7 @@
             <td>
               <ul>
                 <li>default</li>
+                <li>disabled</li>
                 <li>memorialized</li>
                 <li>in-progress</li>
               </ul>

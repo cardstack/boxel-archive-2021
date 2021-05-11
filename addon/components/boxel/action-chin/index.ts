@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { equal } from 'macro-decorators';
 
-enum CtaBlockState {
+enum ActionChinState {
   // state before the cta has been activated/the action done
   default = 'default',
   // disabled state - currently visually corresponds to the default state.
@@ -13,16 +13,17 @@ enum CtaBlockState {
   memorialized = 'memorialized',
 }
 
-interface CtaBlockArguments {
+interface ActionChinArguments {
   stepNumber: number;
-  state: CtaBlockState;
+  state: ActionChinState;
 }
-export default class ActionChin extends Component<CtaBlockArguments> {
+export default class ActionChin extends Component<ActionChinArguments> {
   // convenience getters for state booleans. they are mutually exclusive since all are
   // derived from the args.state argument.
-  @equal('args.state', CtaBlockState.default) declare isDefault: boolean;
-  @equal('args.state', CtaBlockState.disabled) declare isDisabled: boolean;
-  @equal('args.state', CtaBlockState.inProgress) declare isInProgress: boolean;
-  @equal('args.state', CtaBlockState.memorialized)
+  @equal('args.state', ActionChinState.default) declare isDefault: boolean;
+  @equal('args.state', ActionChinState.disabled) declare isDisabled: boolean;
+  @equal('args.state', ActionChinState.inProgress)
+  declare isInProgress: boolean;
+  @equal('args.state', ActionChinState.memorialized)
   declare isMemorialized: boolean;
 }
