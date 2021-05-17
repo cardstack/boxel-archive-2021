@@ -14,16 +14,6 @@
       {{yield to="default"}}
     {{/if}}
 
-    {{#if (has-block "item")}}
-      <ul class="boxel-next-steps-box__list">
-        {{#each @items as |item|}}
-          <li class="boxel-next-steps-box__list-item">
-            {{yield item to="item"}}
-          </li>
-        {{/each}}
-      </ul>
-    {{/if}}
-
     {{#if (has-block "footer")}}
       <footer class="boxel-next-steps-box__footer">
         {{yield to="footer"}}

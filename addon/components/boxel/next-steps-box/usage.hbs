@@ -1,19 +1,19 @@
 <Freestyle::Usage @name="NextStepsBox">
   <:example>
-    <Boxel::NextStepsBox @items={{this.items}}>
-      <:item as |item|>
-        {{!-- Sample item content --}}
-          <Boxel::Button @kind="primary">
-            {{item}}
-          </Boxel::Button>
-        {{!-- Sample item content end --}}
-      </:item>
+    <Boxel::NextStepsBox>
+      <:default>
+      <div class="next-steps-box-usage__button-container">
+          {{#each this.items as |item|}}
+            <Boxel::Button @kind="primary">
+              {{item}}
+            </Boxel::Button>
+          {{/each}}
+        </div>
+      </:default>
       <:footer>
-        {{!-- Sample footer content --}}
-          <Boxel::Button @kind="secondary-dark">
-            Return to dashboard
-          </Boxel::Button>
-        {{!-- Sample footer content end --}}
+        <Boxel::Button @kind="secondary-dark">
+          Return to dashboard
+        </Boxel::Button>
       </:footer>
     </Boxel::NextStepsBox>
   </:example>
@@ -26,16 +26,12 @@
       @onChange={{fn (mut this.items)}}
     />
     <Args.Yield
-      @name="item"
-      @description="Yields a list item block. The provided argument is a single item from the @items array."
+      @name="default"
+      @description="Yields the contents of this box"
     />
     <Args.Yield
       @name="footer"
       @description="Yields footer block"
-    />
-    <Args.Yield
-      @name="default"
-      @description="Optional yield for any other content. Generally for use when the item named block is not used."
     />
   </:api>
 </Freestyle::Usage>
@@ -50,16 +46,6 @@
           </Boxel::Button>
         {{!-- Sample item content end --}}
       </:item>
-    </Boxel::NextStepsBox>
-  </:example>
-</Freestyle::Usage>
-
-<Freestyle::Usage @slug="default-block">
-  <:example>
-    <Boxel::NextStepsBox @items={{this.items}}>
-      <:default>
-        Any content here.
-      </:default>
     </Boxel::NextStepsBox>
   </:example>
 </Freestyle::Usage>
