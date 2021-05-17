@@ -13,7 +13,7 @@
     ...attributes
   >
   {{#if @loading}}
-    <Boxel::LoadingIndicator class="boxel-button__loading-indicator" @color="var(--boxel-button-text-color)"/>
+    <Boxel::LoadingIndicator class="boxel-button__loading-indicator" @color="var(--boxel-button-text-color)" data-test-boxel-button-loading-indicator/>
   {{/if}}
     {{yield}}
   </button>
