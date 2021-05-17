@@ -2,13 +2,11 @@
   <:example>
     <Boxel::NextStepsBox>
       <:default>
-      <div class="next-steps-box-usage__button-container">
           {{#each this.items as |item|}}
             <Boxel::Button @kind="primary">
               {{item}}
             </Boxel::Button>
           {{/each}}
-        </div>
       </:default>
       <:footer>
         <Boxel::Button @kind="secondary-dark">
@@ -21,7 +19,7 @@
   <:api as |Args|>
     <Args.Yield
       @name="default"
-      @description="Yields the contents of this box"
+      @description="Yields the body of this box. Its contents are arranged in a cluster/flex wrapped layout "
     />
     <Args.Yield
       @name="footer"

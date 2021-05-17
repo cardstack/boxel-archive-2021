@@ -11,7 +11,9 @@
 
   <div class="boxel-next-steps-box__content">
     {{#if (has-block "default")}}
-      {{yield to="default"}}
+      <div class="boxel-next-steps-box__button-container">
+        {{yield to="default"}}
+      </div>
     {{/if}}
 
     {{#if (has-block "footer")}}
