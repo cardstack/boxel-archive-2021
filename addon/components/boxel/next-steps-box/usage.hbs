@@ -19,12 +19,6 @@
   </:example>
 
   <:api as |Args|>
-    <Args.Array
-      @name="items"
-      @description="Array of list items of any type"
-      @items={{this.items}}
-      @onChange={{fn (mut this.items)}}
-    />
     <Args.Yield
       @name="default"
       @description="Yields the contents of this box"
@@ -34,18 +28,4 @@
       @description="Yields footer block"
     />
   </:api>
-</Freestyle::Usage>
-
-<Freestyle::Usage @slug="no-footer-block">
-  <:example>
-    <Boxel::NextStepsBox @items={{array "Visit Space"}}>
-      <:item as |item|>
-        {{!-- Sample item content --}}
-          <Boxel::Button @kind="primary">
-            {{item}}
-          </Boxel::Button>
-        {{!-- Sample item content end --}}
-      </:item>
-    </Boxel::NextStepsBox>
-  </:example>
 </Freestyle::Usage>
