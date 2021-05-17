@@ -2,7 +2,14 @@
   <:example>
     <Boxel::NextStepsBox>
       <:default>
-          {{#each this.items as |item|}}
+          {{#each 
+            (array 
+              "Transfer Prepaid Card" 
+              "Create new Prepaid Card" 
+              "Split Prepaid Card" 
+              "Use as template for new Prepaid Card"
+            )
+           as |item|}}
             <Boxel::Button @kind="primary">
               {{item}}
             </Boxel::Button>
