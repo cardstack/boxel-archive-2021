@@ -4,15 +4,15 @@
   height: 1.25rem;
 }
 
-/* 
+/*
   Only animate if the user has not said that they want reduced motion
 */
-@media (prefers-reduced-motion:no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .boxel-loading-indicator {
     animation: spin 6000ms linear infinite;
   }
 }
 
 @keyframes spin {
-  to {transform:rotate(360deg);}
+  to { transform: rotate(360deg); }
 }
