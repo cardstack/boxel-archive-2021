@@ -1,11 +1,23 @@
+{{#if (and (not @required) @optional)}}
+  <div class="boxel-input__optional">Optional</div>
+{{/if}}
 <Input
-  class="boxel-input"
+  class={{cn "boxel-input" boxel-input--invalid=@errorMessage}}
   id={{@id}}
   @value={{@value}}
   {{on "input" (optional @onInput)}}
   required={{@required}}
   disabled={{@disabled}}
+  aria-describedby={{if @helperText "helper-text" false}}
+  aria-invalid={{if @errorMessage true false}}
+  aria-errormessage={{if @errorMessage "error-message" false}}
   data-test-boxel-input
   data-test-boxel-input-id={{@id}}
   ...attributes
 />
+{{#if @errorMessage}}
+  <div id="error-message" class="boxel-input__error-message">{{@errorMessage}}</div>
+{{/if}}
+{{#if @helperText}}
+  <div id="helper-text" class="boxel-input__helper-text">{{@helperText}}</div>
+{{/if}}

@@ -4,9 +4,13 @@
     <Boxel::Input
       @id={{this.id}}
       @value={{this.value}}
-      @onInput={{@onInput}}
+      @onInput={{this.validate}}
       @disabled={{this.disabled}}
       @required={{this.required}}
+      @optional={{this.optional}}
+      @errorMessage={{this.errorMessage}}
+      @helperText={{this.helperText}}
+      {{on "blur" this.validate}}
     />
   </:example>
   <:api as |Args|>
@@ -29,6 +33,22 @@
       @name="required"
       @value={{this.required}}
       @onInput={{fn (mut this.required)}}
+    />
+    <Args.Bool
+      @name="optional"
+      @value={{this.optional}}
+      @onInput={{fn (mut this.optional)}}
+      @description="Displays 'optional' label, unless the `@required` arg is also true"
+    />
+    <Args.String
+      @name="errorMessage"
+      @value={{this.errorMessage}}
+      @onInput={{fn (mut this.errorMessage)}}
+    />
+    <Args.String
+      @name="helperText"
+      @value={{this.helperText}}
+      @onInput={{fn (mut this.helperText)}}
     />
     <Args.Action
       @name="onInput"
