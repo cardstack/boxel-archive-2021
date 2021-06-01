@@ -8,6 +8,7 @@
       @disabled={{this.disabled}}
       @required={{this.required}}
       @optional={{this.optional}}
+      @invalid={{this.invalid}}
       @errorMessage={{this.errorMessage}}
       @helperText={{this.helperText}}
       {{on "blur" this.validate}}
@@ -39,6 +40,11 @@
       @value={{this.optional}}
       @onInput={{fn (mut this.optional)}}
       @description="Displays 'optional' label, unless the `@required` arg is also true"
+    />
+    <Args.String
+      @name="invalid"
+      @value={{this.invalid}}
+      @onInput={{fn (mut this.invalid)}}
     />
     <Args.String
       @name="errorMessage"

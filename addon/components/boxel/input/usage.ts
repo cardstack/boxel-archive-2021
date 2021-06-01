@@ -8,12 +8,14 @@ export default class extends Component {
   @tracked disabled = false;
   @tracked required = false;
   @tracked optional = false;
+  @tracked invalid = false;
   @tracked errorMessage = '';
   @tracked helperText = '';
 
   @action validate(ev: Event): void {
     let target = ev.target as HTMLInputElement;
     if (!target.validity?.valid) {
+      this.invalid = true;
       if (target.validity?.valueMissing) {
         this.errorMessage = 'This is a required field';
       } else {
@@ -21,6 +23,7 @@ export default class extends Component {
       }
       return;
     }
+    this.invalid = false;
     this.errorMessage = '';
   }
 }
