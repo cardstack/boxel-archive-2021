@@ -7,6 +7,7 @@
     <Boxel::ActionChin
       @stepNumber={{this.stepNumber}}
       @state={{this.state}}
+      @disabled={{this.disabled}}
     >
       <:default as |a|>
         <a.ActionButton>
@@ -49,10 +50,17 @@
     <Args.String
       @name="state"
       @description="Whether the action is at at rest, disabled, in progress, or memorialized."
-      @options={{array "default" "disabled" "in-progress" "memorialized"}}
+      @options={{array "default" "in-progress" "memorialized"}}
       @defaultValue="default"
       @value={{this.state}}
       @onInput={{fn (mut this.state)}}
+    />
+    <Args.Bool
+      @name="disabled"
+      @description="Whether the action chin is disabled. If state is default, will show the disabled named block if available."
+      @defaultValue={{false}}
+      @value={{this.disabled}}
+      @onInput={{fn (mut this.disabled)}}
     />
     <Args.Number
       @name="stepNumber"
@@ -155,7 +163,8 @@
     </Boxel::ActionChin>
     <Boxel::ActionChin
       @stepNumber={{2}}
-      @state={{if this.depositIsDisabled "disabled" this.depositState}}
+      @state={{this.depositState}}
+      @disabled={{this.depositIsDisabled}}
     >
       <:default as |a|>
         <a.ActionButton
