@@ -95,7 +95,7 @@ module('Integration | Component | Input', function (hooks) {
       '[data-test-boxel-input-error-message]'
     ).id;
 
-    assert.dom('[data-test-boxel-input]').hasAria('invalid', '');
+    assert.dom('[data-test-boxel-input]').hasAria('invalid', 'true');
     assert
       .dom('[data-test-boxel-input]')
       .hasAria('errormessage', errorMessageId);
@@ -105,7 +105,7 @@ module('Integration | Component | Input', function (hooks) {
 
     this.set('errorMessage', '');
 
-    assert.dom('[data-test-boxel-input]').hasAria('invalid', '');
+    assert.dom('[data-test-boxel-input]').hasAria('invalid', 'true');
     assert.dom('[data-test-boxel-input-error-message]').doesNotExist();
     assert.dom('[data-test-boxel-input]').doesNotHaveAria('errormessage');
   });

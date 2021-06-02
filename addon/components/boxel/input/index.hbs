@@ -11,7 +11,7 @@
       required={{@required}}
       disabled={{@disabled}}
       aria-describedby={{if @helperText (concat "helper-text-" helperId) false}}
-      aria-invalid={{if @invalid true false}}
+      aria-invalid={{if @invalid "true"}}
       aria-errormessage={{if shouldShowErrorMessage (concat "error-message-" helperId) false}}
       data-test-boxel-input
       data-test-boxel-input-id={{@id}}
