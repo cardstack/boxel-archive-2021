@@ -41,7 +41,7 @@
       @onInput={{fn (mut this.optional)}}
       @description="Displays 'optional' label, unless the `@required` arg is also true"
     />
-    <Args.String
+    <Args.Bool
       @name="invalid"
       @value={{this.invalid}}
       @onInput={{fn (mut this.invalid)}}
@@ -50,6 +50,7 @@
       @name="errorMessage"
       @value={{this.errorMessage}}
       @onInput={{fn (mut this.errorMessage)}}
+      @description="This will only show up if the `@invalid` arg returns true"
     />
     <Args.String
       @name="helperText"
