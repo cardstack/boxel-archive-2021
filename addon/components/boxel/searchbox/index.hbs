@@ -1,7 +1,7 @@
 <div class="boxel-searchbox" ...attributes>
     {{svg-jar "search" class="boxel-searchbox__search-icon"}}
     {{#if (and @id @label)}}
-      <label for={{@id}} class="boxel-searchbox__input-label">{{@label}}</label>
+      <label for={{@id}} class="boxel-sr-only">{{@label}}</label>
     {{/if}}
     {{!-- TODO: review accessibility of type=text vs type=search --}}
     <Input
