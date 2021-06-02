@@ -65,14 +65,48 @@ module('Integration | Component | Input', function (hooks) {
     );
 
     const errorMessageId = this.element.querySelector(
-      '.boxel-input__error-message'
+      '[data-test-boxel-input-error-message]'
     ).id;
-    const helperTextId = this.element.querySelector('.boxel-input__helper-text')
-      .id;
+    const helperTextId = this.element.querySelector(
+      '[data-test-boxel-input-helper-text]'
+    ).id;
 
     assert
       .dom('[data-test-boxel-input]')
       .hasAria('errormessage', errorMessageId);
     assert.dom('[data-test-boxel-input]').hasAria('describedby', helperTextId);
+  });
+
+  test('It only shows the error message when there is one and the input state is invalid', async function (assert) {
+    this.set('invalid', false);
+    this.set('errorMessage', 'Error message');
+
+    await render(
+      hbs`<Boxel::Input @invalid={{this.invalid}} @errorMessage={{this.errorMessage}}/>`
+    );
+
+    assert.dom('[data-test-boxel-input]').doesNotHaveAria('invalid');
+    assert.dom('[data-test-boxel-input]').doesNotHaveAria('errormessage');
+    assert.dom('[data-test-boxel-input-error-message]').doesNotExist();
+
+    this.set('invalid', true);
+
+    const errorMessageId = this.element.querySelector(
+      '[data-test-boxel-input-error-message]'
+    ).id;
+
+    assert.dom('[data-test-boxel-input]').hasAria('invalid', '');
+    assert
+      .dom('[data-test-boxel-input]')
+      .hasAria('errormessage', errorMessageId);
+    assert
+      .dom('[data-test-boxel-input-error-message]')
+      .containsText('Error message');
+
+    this.set('errorMessage', '');
+
+    assert.dom('[data-test-boxel-input]').hasAria('invalid', '');
+    assert.dom('[data-test-boxel-input-error-message]').doesNotExist();
+    assert.dom('[data-test-boxel-input]').doesNotHaveAria('errormessage');
   });
 });
