@@ -1,23 +1,25 @@
 {{#if (and (not @required) @optional)}}
   <div class="boxel-input__optional">Optional</div>
 {{/if}}
-<Input
-  class={{cn "boxel-input" boxel-input--invalid=@invalid}}
-  id={{@id}}
-  @value={{@value}}
-  {{on "input" (optional @onInput)}}
-  required={{@required}}
-  disabled={{@disabled}}
-  aria-describedby={{if @helperText (concat "helper-text-" @id) false}}
-  aria-invalid={{if @invalid true false}}
-  aria-errormessage={{if @errorMessage (concat "error-message-" @id) false}}
-  data-test-boxel-input
-  data-test-boxel-input-id={{@id}}
-  ...attributes
-/>
-{{#if @errorMessage}}
-  <div id={{concat "error-message-" @id}} class="boxel-input__error-message">{{@errorMessage}}</div>
-{{/if}}
-{{#if @helperText}}
-  <div id={{concat "helper-text-" @id}} class="boxel-input__helper-text">{{@helperText}}</div>
-{{/if}}
+{{#let (unique-id) as |helperId|}}
+  <Input
+    class={{cn "boxel-input" boxel-input--invalid=@invalid}}
+    id={{@id}}
+    @value={{@value}}
+    {{on "input" (optional @onInput)}}
+    required={{@required}}
+    disabled={{@disabled}}
+    aria-describedby={{if @helperText (concat "helper-text-" helperId) false}}
+    aria-invalid={{if @invalid true false}}
+    aria-errormessage={{if @errorMessage (concat "error-message-" helperId) false}}
+    data-test-boxel-input
+    data-test-boxel-input-id={{@id}}
+    ...attributes
+  />
+  {{#if @errorMessage}}
+    <div id={{concat "error-message-" helperId}} class="boxel-input__error-message">{{@errorMessage}}</div>
+  {{/if}}
+  {{#if @helperText}}
+    <div id={{concat "helper-text-" helperId}} class="boxel-input__helper-text">{{@helperText}}</div>
+  {{/if}}
+{{/let}}

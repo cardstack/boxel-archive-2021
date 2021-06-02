@@ -58,4 +58,21 @@ module('Integration | Component | Input', function (hooks) {
     await fillIn('[data-test-boxel-input]', 'Ice-cream');
     assert.dom('[data-test-boxel-input]').hasValue('Ice-cream with puppies');
   });
+
+  test('It adds appropriate aria and ids to input helper and error text', async function (assert) {
+    await render(
+      hbs`<Boxel::Input @invalid={{true}} @errorMessage="Error message" @helperText="Helper text" />`
+    );
+
+    const errorMessageId = this.element.querySelector(
+      '.boxel-input__error-message'
+    ).id;
+    const helperTextId = this.element.querySelector('.boxel-input__helper-text')
+      .id;
+
+    assert
+      .dom('[data-test-boxel-input]')
+      .hasAria('errormessage', errorMessageId);
+    assert.dom('[data-test-boxel-input]').hasAria('describedby', helperTextId);
+  });
 });
