@@ -14,7 +14,7 @@
       aria-errormessage={{if shouldShowErrorMessage (concat "error-message-" helperId) false}}
       data-test-boxel-input
       data-test-boxel-input-id={{@id}}
-      {{on "input" this.handleInput}}
+      {{on "input" (pick "target.value" (optional @onInput))}}
       ...attributes
     />
     {{#if shouldShowErrorMessage}}
