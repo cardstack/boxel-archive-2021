@@ -3,10 +3,10 @@
 {{/if}}
 {{#let (and @invalid @errorMessage) as |shouldShowErrorMessage|}}
   {{#let (unique-id) as |helperId|}}
-    <Input
+    <input
       class={{cn "boxel-input" boxel-input--invalid=@invalid}}
       id={{@id}}
-      @value={{@value}}
+      value={{@value}}
       {{on "input" (optional @onInput)}}
       required={{@required}}
       disabled={{@disabled}}
