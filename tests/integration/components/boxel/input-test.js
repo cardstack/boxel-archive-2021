@@ -38,12 +38,27 @@ module('Integration | Component | Input', function (hooks) {
 
   test('it accepts input and can use the onInput action', async function (assert) {
     this.value = 'Hello world';
+    this.inputAction = (value) => {
+      this.set('value', `${value} with puppies`);
+    };
+
+    await render(
+      hbs`<Boxel::Input @value={{this.value}} @onInput={{this.inputAction}} />`
+    );
+    assert.dom('[data-test-boxel-input]').hasValue('Hello world');
+
+    await fillIn('[data-test-boxel-input]', 'Ice-cream');
+    assert.dom('[data-test-boxel-input]').hasValue('Ice-cream with puppies');
+  });
+
+  test('it accepts input and can update using the input event', async function (assert) {
+    this.value = 'Hello world';
     this.inputAction = (ev) => {
       this.set('value', `${ev.target.value} with puppies`);
     };
 
     await render(
-      hbs`<Boxel::Input @value={{this.value}} @onInput={{this.inputAction}} />`
+      hbs`<Boxel::Input @value={{this.value}} {{on "input" this.inputAction}} />`
     );
     assert.dom('[data-test-boxel-input]').hasValue('Hello world');
 
