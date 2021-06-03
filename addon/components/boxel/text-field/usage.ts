@@ -12,7 +12,7 @@ export default class extends Component {
   @tracked errorMessage = '';
   @tracked helperText = '';
 
-  @action onInput(ev: InputEvent): void {
-    this.value = (ev.target as HTMLInputElement).value;
+  @action onInput(value: string): void {
+    this.value = value;
   }
 }

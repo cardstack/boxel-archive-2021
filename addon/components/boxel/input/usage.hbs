@@ -4,7 +4,7 @@
     <Boxel::Input
       @id={{this.id}}
       @value={{this.value}}
-      @onInput={{this.set}}
+      @onInput={{this.logValue}}
       @disabled={{this.disabled}}
       @required={{this.required}}
       @optional={{this.optional}}
@@ -12,6 +12,7 @@
       @errorMessage={{this.errorMessage}}
       @helperText={{this.helperText}}
       {{on "blur" this.validate}}
+      {{on "input" this.set}}
     />
   </:example>
   <:api as |Args|>

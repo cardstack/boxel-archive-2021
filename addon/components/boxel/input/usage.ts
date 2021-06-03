@@ -18,6 +18,10 @@ export default class extends Component {
     this.validate(ev);
   }
 
+  @action logValue(value: string): void {
+    console.log(value);
+  }
+
   @action validate(ev: Event): void {
     let target = ev.target as HTMLInputElement;
     if (!target.validity?.valid) {
