@@ -40,6 +40,7 @@
   --boxel-icon-sm: 1.25rem; /* 20px */
   --boxel-icon-lg: 2.5rem;  /* 40px */
 
+  /* other */
   --boxel-border-color: var(--boxel-light-500);
   --boxel-border: 1px solid var(--boxel-border-color);
   --boxel-border-dark: 1px solid var(--boxel-dark);
