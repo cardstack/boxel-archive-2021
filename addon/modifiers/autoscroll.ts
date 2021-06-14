@@ -1,6 +1,7 @@
 import { modifier } from 'ember-modifier';
 
 interface AutoscrollOptions {
+  disable?: boolean;
   lockThreshold?: number;
 }
 
@@ -16,6 +17,10 @@ function autoscroll(
   _optionsParams: unknown[] = [], // eslint-disable-line @typescript-eslint/no-unused-vars
   optionsHash: AutoscrollOptions = {}
 ) {
+  if (optionsHash.disable) {
+    return;
+  }
+
   const options = {
     ...optionsHash,
   };
