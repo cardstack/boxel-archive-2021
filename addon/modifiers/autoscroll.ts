@@ -17,8 +17,11 @@ function autoscroll(
   _optionsParams: unknown[] = [], // eslint-disable-line @typescript-eslint/no-unused-vars
   optionsHash: AutoscrollOptions = {}
 ) {
+  // if the 'enabled' property was provided and falsey (including null and undefined), we consider this disabled
+  // when we used Object.prototype.hasOwnProperty, getOwnPropertyDescriptor caused
+  // a failing assertion in tests with ember-source@3.27
   if (
-    Object.prototype.hasOwnProperty.call(optionsHash, 'enabled') &&
+    Reflect.ownKeys(optionsHash).includes('enabled') &&
     !optionsHash.enabled
   ) {
     return;
