@@ -41,7 +41,6 @@ export default class ThreadMessageComponent extends Component<ThreadMessageCompo
 
       let diff = elementBounds.top - scrollBounds.bottom;
 
-      // need to handle for when the scroll element touches bottom of screen
       if (diff < LOCK_THRESHOLD && diff >= -LOCK_THRESHOLD) {
         this.scrollEl?.scrollTo({
           top: element.offsetTop,
