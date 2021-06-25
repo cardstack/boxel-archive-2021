@@ -1,8 +1,9 @@
 import { modifier } from 'ember-modifier';
 
 interface AutoscrollOptions {
+  onChildrenChanged?: () => void;
   onChildrenAdded?: (nodes: Array<HTMLElement>) => void;
-  filter?: string;
+  filter?: string; // css selector
   enabled?: boolean;
 }
 
@@ -16,6 +17,8 @@ function contentsModified(
   }
 
   const observer = new MutationObserver((mutationRecords) => {
+    optionsHash.onChildrenChanged?.();
+
     let matchingNodes: HTMLElement[] = [];
     for (let m of mutationRecords) {
       for (let addedNode of m.addedNodes) {
