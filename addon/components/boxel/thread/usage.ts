@@ -42,8 +42,15 @@ export default class ThreadMessageUsageComponent extends Component {
   milestones = MILESTONES;
   @tracked messages: number[] = [1];
   @tracked autoscroll = false;
+  @tracked lastMessage: HTMLElement | null = null;
 
   @action addMessage(): void {
     this.messages = [...this.messages, 1];
+  }
+
+  @action onThreadContentChanged(threadRoot: HTMLElement): void {
+    this.lastMessage = threadRoot.querySelector(
+      '.boxel-thread__content > *:last-child'
+    );
   }
 }

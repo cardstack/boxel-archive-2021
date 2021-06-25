@@ -1,3 +1,7 @@
 .boxel-thread-usage {
   max-height: 300px;
 }
+
+.boxel-thread-usage-footer {
+  background-color: aliceblue;
+}
