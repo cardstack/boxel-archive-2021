@@ -1,4 +1,5 @@
-<article class="boxel-thread" data-test-boxel-thread ...attributes>
+{{#let (optional @onThreadContentChanged) as |contentChanged|}}
+<article class="boxel-thread" data-test-boxel-thread {{create-ref "threadRoot"}} {{did-insert contentChanged}} ...attributes>
   <div class="boxel-thread__sticky-container">
     {{yield to="header"}}
   </div>
@@ -9,7 +10,7 @@
       tabindex="0"
       {{did-insert this.setScrollEl}}
       {{visibility-checker
-        watchedElement=this.watchedElement
+        watchedElement=@lastElement
         onElementVisible=this.onElementVisible
         onElementHidden=this.onElementHidden
         initArgs=(hash
@@ -21,10 +22,16 @@
       <div class="boxel-thread__sticky-container">
         {{yield to="taskbar"}}
       </div>
-      <section class="boxel-thread__content" {{contents-modified onChildrenAdded=this.scrollDownToFirst}}>
+      <section
+        class="boxel-thread__content"
+        {{contents-modified
+          onChildrenAdded=this.scrollDownToFirst
+          onChildrenChanged=(fn contentChanged this.threadRoot)
+        }}
+      >
         {{yield this.setWatchedElement to="content"}}
       </section>
-      <div style="position: absolute; bottom: 0;">
+      <div class="boxel-thread__footer-container">
         {{#if this.showFooter}}
           {{yield to="footer"}}
         {{/if}}
@@ -37,3 +44,4 @@
     </div>
   </div>
 </article>
+{{/let}}
