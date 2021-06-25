@@ -57,9 +57,48 @@ module('Integration | Component | Thread', function (hooks) {
     await waitUntil(() => find('[data-test-footer]'));
 
     assert.dom('[data-test-footer]').exists();
+  });
 
-    if (window.location.href.includes('devmode')) {
-      await this.pauseTest();
-    }
+  test('lastElement can refer to any arbitrary element whose hiddenness the footer reflects', async function (assert) {
+    this.set('messages', [1, 2, 1, 2, 1, 2]);
+    this.set('cardBotIcon', CardBot);
+
+    this.set('onThreadContentChanged', (threadEl) => {
+      let type1Messages = threadEl.querySelectorAll('[data-type="1"]');
+      this.set('lastElement', type1Messages[type1Messages.length - 1]);
+    });
+
+    await render(hbs`
+      <Boxel::Thread
+        @onThreadContentChanged={{this.onThreadContentChanged}}
+        @lastElement={{this.lastElement}}
+        class="boxel-thread-usage">
+        <:content>
+          {{#each this.messages as |type|}}
+            <div
+              style={{html-safe (concat "border-left: 1px solid black; " (if (eq type 2) "height: 1000px"))}}
+              data-message
+              data-type={{type}}
+            >
+              Here is a {{if (eq type 2) "tall" "short"}} message.
+            </div>
+          {{/each}}
+          <div data-end />
+        </:content>
+        <:footer>
+          <span data-test-footer>The last short message is not visible</span>
+        </:footer>
+      </Boxel::Thread>
+    `);
+
+    find('[data-end]').scrollIntoView();
+    await waitFor('[data-test-footer]');
+
+    assert.dom('[data-test-footer]').exists();
+
+    find('[data-message]:nth-child(5)').scrollIntoView();
+    await waitFor('[data-test-footer]', { count: 0 });
+
+    assert.dom('[data-test-footer]').doesNotExist();
   });
 });
