@@ -1,6 +1,6 @@
 import { modifier } from 'ember-modifier';
 
-interface AutoscrollOptions {
+interface VisibilityCheckerOptions {
   onElementVisible?: () => void;
   onElementHidden?: () => void;
   watchedElement?: HTMLElement;
@@ -10,7 +10,7 @@ interface AutoscrollOptions {
 function visiblityChecker(
   element: HTMLElement,
   _optionsParams: unknown[] = [], // eslint-disable-line @typescript-eslint/no-unused-vars
-  optionsHash: AutoscrollOptions = {}
+  optionsHash: VisibilityCheckerOptions = {}
 ) {
   if (!optionsHash.watchedElement) {
     return;

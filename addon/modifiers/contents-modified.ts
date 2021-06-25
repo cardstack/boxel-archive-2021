@@ -1,6 +1,6 @@
 import { modifier } from 'ember-modifier';
 
-interface AutoscrollOptions {
+interface ContentsModifiedOptions {
   onChildrenChanged?: () => void;
   onChildrenAdded?: (nodes: Array<HTMLElement>) => void;
   filter?: string; // css selector
@@ -10,7 +10,7 @@ interface AutoscrollOptions {
 function contentsModified(
   element: HTMLElement,
   _optionsParams: unknown[] = [], // eslint-disable-line @typescript-eslint/no-unused-vars
-  optionsHash: AutoscrollOptions = {}
+  optionsHash: ContentsModifiedOptions = {}
 ) {
   function isHtmlElement(n: Node): n is HTMLElement {
     return n.nodeType === Node.ELEMENT_NODE;
