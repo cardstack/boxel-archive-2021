@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { find, render, waitUntil } from '@ember/test-helpers';
+import { find, render, waitUntil, waitFor } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 import CardBot from '@cardstack/boxel/usage-support/images/orgs/cardbot.svg';
@@ -23,10 +23,11 @@ module('Integration | Component | Thread', function (hooks) {
           <Boxel::ThreadHeader @title="Project Title" />
         </:header>
 
-        <:content>
+        <:content as |setWatchedElement|>
           <Boxel::DateDivider @date={{dayjs-format (now)}} />
           {{#each this.messages}}
             <Boxel::ThreadMessage
+              {{did-insert setWatchedElement}}
               @name="Cardbot"
               @hideName={{true}}
               @imgURL={{this.cardBotIcon}}
@@ -40,6 +41,9 @@ module('Integration | Component | Thread', function (hooks) {
         </:footer>
       </Boxel::Thread>
     `);
+
+    await waitFor('[data-test-footer]');
+
     assert.dom('[data-test-footer]').exists();
 
     find('[data-test-boxel-thread-message]:last-child').scrollIntoView();
