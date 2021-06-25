@@ -62,11 +62,11 @@
     "ember-table": "^2.2.3",
     "ember-test-selectors": "^5.0.0",
     "ember-truth-helpers": "^3.0.0",
+    "ember-unique-id-helper-polyfill": "^0.1.0",
     "file-loader": "^6.2.0",
     "macro-decorators": "^0.1.2",
     "qunit": "^2.14.0",
-    "walk-sync": "^2.2.0",
-    "ember-unique-id-helper-polyfill": "^0.1.0"
+    "walk-sync": "^2.2.0"
   },
   "devDependencies": {
     "@actions/core": "^1.2.6",
@@ -141,6 +141,7 @@
     "ember-modifier": "^2.1.1",
     "ember-page-title": "^6.2.1",
     "ember-power-select": "^4.1.5",
+    "ember-ref-bucket": "^2.0.0",
     "ember-resolver": "^8.0.2",
     "ember-router-scroll": "^4.0.1",
     "ember-source": "3.24.1",
