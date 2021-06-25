@@ -25,7 +25,7 @@
       </:content>
       <:footer>
         <div class="boxel-thread-usage-footer">
-          Something
+          You're viewing older messages!
         </div>
       </:footer>
     </Boxel::Thread>
@@ -38,6 +38,36 @@
     @default={{false}}
     @value={{this.autoscroll}}
     @onInput={{fn (mut this.autoscroll)}}
+  />
+  <Args.Object
+    @name="lastElement"
+    @description="The last html element in the thread; the component checks whether it is visible within its scrollable area and shows the footer if not."
+    @optional={{true}}
+  />
+  <Args.Action
+    @name="onThreadContentChanged"
+    @description="A callback called whenever the children of the <content> named block are added or removed. The callback is called with the thread component's root element as the argument."
+    @optional={{true}}
+  />
+  <Args.Yield
+    @name="header"
+    @description="Named block for the header"
+  />
+  <Args.Yield
+    @name="content"
+    @description="Named block for thread messages/content"
+  />
+  <Args.Yield
+    @name="sidebar"
+    @description="Named block for a sidebar shown on the right of the thread messages"
+  />
+  <Args.Yield
+    @name="taskbar"
+    @description="Named block for a taskbar that is placed at the top of the thread and is positioned stickily."
+  />
+  <Args.Yield
+    @name="footer"
+    @description="Named block for a footer that is shown when the `lastElement` is no longer visible"
   />
   </:api>
 </Freestyle::Usage>
