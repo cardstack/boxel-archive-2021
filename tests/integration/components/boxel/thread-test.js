@@ -17,20 +17,30 @@ module('Integration | Component | Thread', function (hooks) {
     this.set('messages', [1, 1, 1, 1]);
     this.set('cardBotIcon', CardBot);
 
+    this.set('onThreadContentChanged', (threadEl) =>
+      this.set(
+        'lastElement',
+        threadEl.querySelector('[data-message]:last-child')
+      )
+    );
+
     await render(hbs`
-      <Boxel::Thread @autoscroll={{this.autoscroll}} class="boxel-thread-usage">
+      <Boxel::Thread
+        @onThreadContentChanged={{this.onThreadContentChanged}}
+        @lastElement={{this.lastElement}}
+        class="boxel-thread-usage">
         <:header>
           <Boxel::ThreadHeader @title="Project Title" />
         </:header>
 
-        <:content as |setWatchedElement|>
+        <:content>
           <Boxel::DateDivider @date={{dayjs-format (now)}} />
           {{#each this.messages}}
             <Boxel::ThreadMessage
-              {{did-insert setWatchedElement}}
               @name="Cardbot"
               @hideName={{true}}
               @imgURL={{this.cardBotIcon}}
+              data-message
             >
               Hello, it's nice to see you!
             </Boxel::ThreadMessage>
@@ -54,7 +64,7 @@ module('Integration | Component | Thread', function (hooks) {
 
     this.set('messages', [1, 1, 1, 1, 1, 1, 1]);
 
-    await waitUntil(() => find('[data-test-footer]'));
+    await waitFor('[data-test-footer]');
 
     assert.dom('[data-test-footer]').exists();
 
