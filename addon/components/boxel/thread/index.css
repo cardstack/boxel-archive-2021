@@ -8,10 +8,21 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
+.boxel-thread__messages-container {
+  grid-column: 1/2;
+  grid-row: 1/span 2;
+}
+
+.boxel-thread__sidebar-container {
+  grid-column: 2/3;
+  grid-row: 1/span 2;
+}
+
 .boxel-thread__content-wrapper {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
   background-color: var(--boxel-light-300);
   overflow: hidden;
 }
@@ -52,8 +63,8 @@
 }
 
 .boxel-thread__footer-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  grid-row: 2/3;
+  grid-column: 1/2;
+  position: relative;
+  z-index: 1;
 }
