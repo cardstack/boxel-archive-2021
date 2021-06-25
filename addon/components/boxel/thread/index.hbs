@@ -24,8 +24,12 @@
       <section class="boxel-thread__content" {{contents-modified onChildrenAdded=this.scrollDownToFirst}}>
         {{yield this.setWatchedElement to="content"}}
       </section>
+      <div style="position: absolute; bottom: 0;">
+        {{#if this.showFooter}}
+          {{yield to="footer"}}
+        {{/if}}
+      </div>
     </div>
-
     <div class="boxel-thread__scroll-wrapper" tabindex="0">
       <Boxel::Sidebar class="boxel-thread__sidebar" as |SidebarSection|>
         {{yield SidebarSection to="sidebar"}}

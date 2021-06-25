@@ -5,6 +5,7 @@ import Component from '@glimmer/component';
 export default class ThreadMessageUsageComponent extends Component {
   @tracked watchedElement: HTMLElement | null = null;
   @tracked scrollEl: HTMLElement | null = null;
+  @tracked showFooter = false;
 
   @action setWatchedElement(element: HTMLElement): void {
     this.watchedElement = element;
@@ -15,10 +16,10 @@ export default class ThreadMessageUsageComponent extends Component {
   }
 
   @action onElementVisible(): void {
-    console.log('It is visible');
+    this.showFooter = false;
   }
   @action onElementHidden(): void {
-    console.log('It is hidden');
+    this.showFooter = true;
   }
 
   @action scrollDownToFirst(elements: HTMLElement[]): void {
