@@ -15,10 +15,6 @@ export default class ThreadMessageComponent extends Component<ThreadMessageCompo
   @tracked scrollEl: HTMLElement | null = null;
   @tracked showFooter = false;
 
-  @action setWatchedElement(element: HTMLElement): void {
-    this.watchedElement = element;
-  }
-
   @action setScrollEl(element: HTMLElement): void {
     this.scrollEl = element;
   }

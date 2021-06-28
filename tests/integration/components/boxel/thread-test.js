@@ -17,17 +17,26 @@ module('Integration | Component | Thread', function (hooks) {
     this.set('messages', [1, 1, 1, 1]);
     this.set('cardBotIcon', CardBot);
 
+    this.set('onThreadContentChanged', (threadEl) => {
+      let messages = threadEl.querySelectorAll('.boxel-thread-message');
+      this.set('lastElement', messages[messages.length - 1]);
+    });
+
     await render(hbs`
-      <Boxel::Thread @autoscroll={{this.autoscroll}} class="boxel-thread-usage">
+      <Boxel::Thread
+        @onThreadContentChanged={{this.onThreadContentChanged}}
+        @lastElement={{this.lastElement}}
+        @autoscroll={{this.autoscroll}}
+        class="boxel-thread-usage"
+      >
         <:header>
           <Boxel::ThreadHeader @title="Project Title" />
         </:header>
 
-        <:content as |setWatchedElement|>
+        <:content>
           <Boxel::DateDivider @date={{dayjs-format (now)}} />
           {{#each this.messages}}
             <Boxel::ThreadMessage
-              {{did-insert setWatchedElement}}
               @name="Cardbot"
               @hideName={{true}}
               @imgURL={{this.cardBotIcon}}
